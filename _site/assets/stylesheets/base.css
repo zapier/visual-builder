@@ -393,33 +393,33 @@ template {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: url("/assets/fonts/open-sans-regular.eot");
+  src: url("/visual-builder/assets/fonts/open-sans-regular.eot");
   /* IE9 Compat Modes */
-  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("/assets/fonts/open-sans-regular.woff2") format("woff2"), url("/assets/fonts/open-sans-regular.woff") format("woff"), url("/assets/fonts/open-sans-regular.ttf") format("truetype"), url("/assets/fonts/open-sans-regular.svg#OpenSans") format("svg");
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("/visual-builder/assets/fonts/open-sans-regular.woff2") format("woff2"), url("/visual-builder/assets/fonts/open-sans-regular.woff") format("woff"), url("/visual-builder/assets/fonts/open-sans-regular.ttf") format("truetype"), url("/visual-builder/assets/fonts/open-sans-regular.svg#OpenSans") format("svg");
   /* Legacy iOS */ }
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: 400;
-  src: url("/assets/fonts/open-sans-italic.eot");
+  src: url("/visual-builder/assets/fonts/open-sans-italic.eot");
   /* IE9 Compat Modes */
-  src: local("Open Sans Italic"), local("OpenSans-Italic"), url("/assets/fonts/open-sans-italic.woff2") format("woff2"), url("/assets/fonts/open-sans-italic.woff") format("woff"), url("/assets/fonts/open-sans-italic.ttf") format("truetype"), url("/assets/fonts/open-sans-italic.svg#OpenSans") format("svg");
+  src: local("Open Sans Italic"), local("OpenSans-Italic"), url("/visual-builder/assets/fonts/open-sans-italic.woff2") format("woff2"), url("/visual-builder/assets/fonts/open-sans-italic.woff") format("woff"), url("/visual-builder/assets/fonts/open-sans-italic.ttf") format("truetype"), url("/visual-builder/assets/fonts/open-sans-italic.svg#OpenSans") format("svg");
   /* Legacy iOS */ }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  src: url("/assets/fonts/open-sans-600.eot");
+  src: url("/visual-builder/assets/fonts/open-sans-600.eot");
   /* IE9 Compat Modes */
-  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"), url("/assets/fonts/open-sans-600.woff2") format("woff2"), url("/assets/fonts/open-sans-600.woff") format("woff"), url("/assets/fonts/open-sans-600.ttf") format("truetype"), url("/assets/fonts/open-sans-600.svg#OpenSans") format("svg");
+  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"), url("/visual-builder/assets/fonts/open-sans-600.woff2") format("woff2"), url("/visual-builder/assets/fonts/open-sans-600.woff") format("woff"), url("/visual-builder/assets/fonts/open-sans-600.ttf") format("truetype"), url("/visual-builder/assets/fonts/open-sans-600.svg#OpenSans") format("svg");
   /* Legacy iOS */ }
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: url("/assets/fonts/open-sans-700.eot");
+  src: url("/visual-builder/assets/fonts/open-sans-700.eot");
   /* IE9 Compat Modes */
-  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("/assets/fonts/open-sans-700.woff2") format("woff2"), url("/assets/fonts/open-sans-700.woff") format("woff"), url("/assets/fonts/open-sans-700.ttf") format("truetype"), url("/assets/fonts/open-sans-700.svg#OpenSans") format("svg");
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("/visual-builder/assets/fonts/open-sans-700.woff2") format("woff2"), url("/visual-builder/assets/fonts/open-sans-700.woff") format("woff"), url("/visual-builder/assets/fonts/open-sans-700.ttf") format("truetype"), url("/visual-builder/assets/fonts/open-sans-700.svg#OpenSans") format("svg");
   /* Legacy iOS */ }
 *,
 *::before,
@@ -661,7 +661,7 @@ th {
     .sidebar__logo:hover {
       text-decoration: none; }
   .sidebar__icon {
-    background: url("/assets/images/zapier-logo.svg") no-repeat;
+    background: url("/visual-builder/assets/images/zapier-logo.svg") no-repeat;
     width: 30px;
     height: 30px;
     margin-right: 10px; }
@@ -678,7 +678,7 @@ th {
     background: none;
     padding: 0; }
     .sidebar .menu-toggle__icon {
-      background: url("/assets/images/toggle.svg") no-repeat;
+      background: url("/visual-builder/assets/images/toggle.svg") no-repeat;
       width: 30px;
       height: 30px; }
   @media (max-width: 769px) {
@@ -700,7 +700,7 @@ th {
       .sidebar .menu-toggle {
         display: block; }
         .sidebar .menu-toggle[aria-expanded="true"] .menu-toggle__icon {
-          background: url("/assets/images/toggle-close.svg") no-repeat; }
+          background: url("/visual-builder/assets/images/toggle-close.svg") no-repeat; }
       .sidebar nav {
         transition: transform .25s ease-in-out;
         background: #fff;
@@ -744,7 +744,7 @@ th {
       .sidebar__toggle--is-selected .sidebar__title {
         margin-left: -5px; }
     .sidebar__toggle .sidebar__arrow {
-      background: url("/assets/images/arrow.svg") no-repeat center;
+      background: url("/visual-builder/assets/images/arrow.svg") no-repeat center;
       width: 6px;
       height: 6px; }
     .sidebar__toggle .sidebar__arrow[aria-expanded="true"] {

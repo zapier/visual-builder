@@ -5,7 +5,11 @@
     {% include side-nav.html %}
     <main class="container">
       <section class="content">{{ content }}</section>
-      <footer class="prev-next">{% include prev-next.html %}</footer>
+      <footer class="prev-next">
+      	{% include prev-next.html %}
+      	<hr>
+      	<p><em>Have any feedback or questions? <a href="https://github.com/zapier/visual-builder/issues/new/choose">Let us know</a>.</em></p>
+	</footer>
     </main>
     {% include javascript.html %}
   </body>
