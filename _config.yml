@@ -13,7 +13,7 @@ sass:
   sass_dir: assets/stylesheets
 
 # Collections
-collections_dir: collections
+collections_dir: docs
 
 collections:
   quickstart:
