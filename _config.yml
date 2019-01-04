@@ -3,7 +3,7 @@ title: Zapier Visual Builder Documentation
 description: "Zapier Visual Builder"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: kramdown
-baseurl: ""
+baseurl: "/visual-builder"
 
 plugins:
   - jekyll-redirect-from
