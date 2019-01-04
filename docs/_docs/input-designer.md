@@ -70,6 +70,7 @@ Say you have a field that is only shown depending on the value of a previous fie
 
 If you check the _Alters Dynamic Fields_ option on a field, Zapier will automatically recompute any dynamic fields in your Zapier integration anytime this field is changed. Do not check the _Alters Dynamic Fields_ box unless the field is needed for your integrations’ dynamic fields.
 
+<a id="dropdown"></a>
 #### Dropdown
 
 ![Zapier form field dropdown][image-4]
