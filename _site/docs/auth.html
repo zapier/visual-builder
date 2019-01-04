@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test Your Integration |  Zapier Visual Builder Documentation</title>
+  <title>Authentication |  Zapier Visual Builder Documentation</title>
   <meta name="description" content="Zapier Visual Builder">
   <link rel="icon" href="/visual-builder/assets/images/favicon.ico">
   <link rel="stylesheet" href="/visual-builder/assets/stylesheets/base.css">
@@ -35,12 +35,12 @@
   <nav id="menu" class="sidebar__nav">
     
 
-<a class="sidebar__toggle  sidebar__toggle--is-selected " href="/visual-builder/quickstart/introduction">
+<a class="sidebar__toggle " href="/visual-builder/quickstart/introduction">
   <h3 class="sidebar__title">Quick Start</h3>
-  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="quickstart-list" aria-expanded="true"></div>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="quickstart-list" aria-expanded="false"></div>
 </a>
 
-<ul id=quickstart-list class="sidebar__list" aria-hidden="false">
+<ul id=quickstart-list class="sidebar__list" aria-hidden="true">
   
     <li class="sidebar__list-item">
       <a href="/visual-builder/quickstart/introduction" class="sidebar__list-link ">Intro</a>
@@ -71,19 +71,19 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/quickstart/test-complete" class="sidebar__list-link  sidebar__list-link--is-selected ">Test Your Integration</a>
+      <a href="/visual-builder/quickstart/test-complete" class="sidebar__list-link ">Test Your Integration</a>
     </li>
   
 </ul>
 
     
 
-<a class="sidebar__toggle " href="/visual-builder/docs/intro">
+<a class="sidebar__toggle  sidebar__toggle--is-selected " href="/visual-builder/docs/intro">
   <h3 class="sidebar__title">Beta Documentation</h3>
-  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="docs-list" aria-expanded="false"></div>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="docs-list" aria-expanded="true"></div>
 </a>
 
-<ul id=docs-list class="sidebar__list" aria-hidden="true">
+<ul id=docs-list class="sidebar__list" aria-hidden="false">
   
     <li class="sidebar__list-item">
       <a href="/visual-builder/docs/intro" class="sidebar__list-link ">Intro</a>
@@ -94,7 +94,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/auth" class="sidebar__list-link ">Authentication</a>
+      <a href="/visual-builder/docs/auth" class="sidebar__list-link  sidebar__list-link--is-selected ">Authentication</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -131,27 +131,29 @@
 </div>
 
     <main class="container">
-      <section class="content"><h2 id="test-your-integration">Test Your Integration</h2>
+      <section class="content"><h2 id="authentication">Authentication</h2>
 
-<p><img src="https://cdn.zapier.com/storage/photos/bcad0a485f61f4acccf36cb19a0261ec.gif" alt="Testing Zapier Integration" /></p>
+<p><img src="https://cdn.zapier.com/storage/photos/5f1a0e1fc0eb5635bdf1a2983f31a9ba.png" alt="Add Zapier integration" /></p>
 
-<p><em>Here’s how your example GitHub integration looks inside Zapier</em></p>
+<p>Most apps require authentication to access data via API calls, whether to let users access their personal data or enable access to restricted APIs. When building a Zapier integration, you define how the Zapier platform connects to your app and authenticates users.</p>
 
-<p>You’ve already tested your GitHub authentication, trigger, and action in Zapier’s integration visual builder. Now try using your GitHub integration in a Zap.</p>
+<p>Zapier supports five authentication schemes: Basic Auth, Session Auth, API Keys, OAuth v2, and Digest Auth. The default settings for each cover most applications’ authentication, or you can customize the authentication if your API has specific needs.</p>
 
-<p>Open Zapier, click <em><a href="https://zapier.com/app/editor/">Make a Zap</a></em>, and select the <em>GitHub</em> app with the <code class="highlighter-rouge">By Invite</code> tag to use your new integration. Try building Zaps using the trigger and action you created to test your Zapier integration. Want to do more with it? Go back to the Zapier visual builder and add more input fields to gather more data or create new triggers and actions to do more with GitHub.</p>
+<p>When users select your app’s integration inside a Zap, Zapier will use the authentication settings to request the user account, API key, or other details needed—or with session and OAuth authentication, Zapier will redirect users to your application where they can allow access to their accounts and your app can send credentials to Zapier.</p>
 
-<p><img src="https://cdn.zapier.com/storage/photos/653cbb9882546956d2da9c60d3291590.png" alt="Zapier Invite Beta Access" /></p>
+<p>Zapier supports:</p>
 
-<p>You could also invite others to help test your app—something you won’t need with your sample GitHub integration, but that will be helpful when you build a new integration with your API. Click the <em>Visibility</em> tab, then copy the link on that page or enter a contact’s email address to send them an invite to try your app. Once they accept, they’ll see your integration inside their Zap editor, ready to use in any Zaps they build.</p>
+<ul>
+  <li>Basic Auth</li>
+  <li>Session Auth</li>
+  <li>API Keys</li>
+  <li>OAuth v2</li>
+  <li>Digest Auth</li>
+</ul>
 
-<hr />
+<p>Get a quick guide to adding authentication in <a href="https://zapier.github.io/visual-builder/quickstart/auth">Zapier’s Visual Builder Quick Start guide</a>.</p>
 
-<p>You’ve just built your first Zapier integration, and used it in your Zapier account! Congrats!</p>
-
-<p>Take a break, then come back and give <a href="https://zapier.com/app/developer/">Zapier visual builder</a> a try with your app. Connect your app’s API, add the triggers and actions that will be most useful with your app, and build input forms to gather the data your app would need from users. If you get stuck, <a href="https://zapier.github.io/zapier-platform-cli/">Zapier’s developer docs</a> will help you learn more about the Zapier platform and build more detailed functionality into your integration—or <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs0u5YppMGGwCuyVJJRdJuVcTEqOSV7tI5pzU4Szac2ii0Pg/viewform">send the Zapier platform team feedback</a> about any problems you encounter.</p>
-
-<p>Happy building!</p>
+<p><em>Full Documentation Coming Soon</em></p>
 </section>
       <footer class="prev-next">
       	
@@ -159,8 +161,8 @@
 
 
 <hr>
-<a class="button blue" href="/visual-builder/quickstart/build-action">Previous: Add an Action</a>
-
+<a class="button blue" href="/visual-builder/docs/input-designer">Previous: Input Designer</a>
+<a class="button blue" href="/visual-builder/docs/triggers">Next: Triggers (coming soon)</a>
       	<hr>
       	<p><em>Have any feedback or questions? <a href="https://github.com/zapier/visual-builder/issues/new/choose">Let us know</a>.</em></p>
 	</footer>

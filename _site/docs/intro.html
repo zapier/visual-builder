@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test Your Integration |  Zapier Visual Builder Documentation</title>
+  <title>Intro |  Zapier Visual Builder Documentation</title>
   <meta name="description" content="Zapier Visual Builder">
   <link rel="icon" href="/visual-builder/assets/images/favicon.ico">
   <link rel="stylesheet" href="/visual-builder/assets/stylesheets/base.css">
@@ -35,12 +35,12 @@
   <nav id="menu" class="sidebar__nav">
     
 
-<a class="sidebar__toggle  sidebar__toggle--is-selected " href="/visual-builder/quickstart/introduction">
+<a class="sidebar__toggle " href="/visual-builder/quickstart/introduction">
   <h3 class="sidebar__title">Quick Start</h3>
-  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="quickstart-list" aria-expanded="true"></div>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="quickstart-list" aria-expanded="false"></div>
 </a>
 
-<ul id=quickstart-list class="sidebar__list" aria-hidden="false">
+<ul id=quickstart-list class="sidebar__list" aria-hidden="true">
   
     <li class="sidebar__list-item">
       <a href="/visual-builder/quickstart/introduction" class="sidebar__list-link ">Intro</a>
@@ -71,22 +71,22 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/quickstart/test-complete" class="sidebar__list-link  sidebar__list-link--is-selected ">Test Your Integration</a>
+      <a href="/visual-builder/quickstart/test-complete" class="sidebar__list-link ">Test Your Integration</a>
     </li>
   
 </ul>
 
     
 
-<a class="sidebar__toggle " href="/visual-builder/docs/intro">
+<a class="sidebar__toggle  sidebar__toggle--is-selected " href="/visual-builder/docs/intro">
   <h3 class="sidebar__title">Beta Documentation</h3>
-  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="docs-list" aria-expanded="false"></div>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="docs-list" aria-expanded="true"></div>
 </a>
 
-<ul id=docs-list class="sidebar__list" aria-hidden="true">
+<ul id=docs-list class="sidebar__list" aria-hidden="false">
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/intro" class="sidebar__list-link ">Intro</a>
+      <a href="/visual-builder/docs/intro" class="sidebar__list-link  sidebar__list-link--is-selected ">Intro</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -131,27 +131,43 @@
 </div>
 
     <main class="container">
-      <section class="content"><h2 id="test-your-integration">Test Your Integration</h2>
+      <section class="content"><h2 id="zapier-intro">Zapier Intro</h2>
 
-<p><img src="https://cdn.zapier.com/storage/photos/bcad0a485f61f4acccf36cb19a0261ec.gif" alt="Testing Zapier Integration" /></p>
+<p>Your app shouldn’t do everything. It can’t. For all the feature requests that come in, the best thing for your app is a clear focus on what makes it unique.</p>
 
-<p><em>Here’s how your example GitHub integration looks inside Zapier</em></p>
+<p>For everything else, there are Zapier integrations. Zapier is the most popular way to automate tasks through customized workflows with 1,300+ web apps. Its Zaps—or automated workflows—watch for new or updated data in a connected app, then use that data to do anything else you need in that or other connected apps. Integrations like that let your app rely on other best-in-class tools to do the extra things your users want, freeing your team to focus on your app’s core features.</p>
 
-<p>You’ve already tested your GitHub authentication, trigger, and action in Zapier’s integration visual builder. Now try using your GitHub integration in a Zap.</p>
+<p>Build a Zapier integration, and you’ll clear dozens of your app’s top feature requests at once. You don’t need to build custom integrations with every app. One Zapier integration automatically connects you to every other app with a Zapier integration, with more added every day.</p>
 
-<p>Open Zapier, click <em><a href="https://zapier.com/app/editor/">Make a Zap</a></em>, and select the <em>GitHub</em> app with the <code class="highlighter-rouge">By Invite</code> tag to use your new integration. Try building Zaps using the trigger and action you created to test your Zapier integration. Want to do more with it? Go back to the Zapier visual builder and add more input fields to gather more data or create new triggers and actions to do more with GitHub.</p>
+<p>And it’s not much harder than building a form.</p>
 
-<p><img src="https://cdn.zapier.com/storage/photos/653cbb9882546956d2da9c60d3291590.png" alt="Zapier Invite Beta Access" /></p>
+<h2 id="what-is-a-zapier-integration">What is a Zapier Integration?</h2>
 
-<p>You could also invite others to help test your app—something you won’t need with your sample GitHub integration, but that will be helpful when you build a new integration with your API. Click the <em>Visibility</em> tab, then copy the link on that page or enter a contact’s email address to send them an invite to try your app. Once they accept, they’ll see your integration inside their Zap editor, ready to use in any Zaps they build.</p>
+<p>Zapier integration are different from standalone app. Say you were building a new email app. You would either use Gmail and Exchange’s APIs to connect to their services, or would build in support for IMAP, SMTP, and/or POP3 protocols. Your app would likely need a database to store every email message, and features to support folders, tags, attached files, and HTML email messages. You’d also need to build a rich text editor to create and send new email messages. Essentially, you would need to support every core feature an email service like Gmail offers.</p>
 
-<hr />
+<p>Zapier integrations are far simpler. Instead of building a complete application that supports every part of your app’s API, like you would if you built a mobile version of your app, your Zapier integration is instead a curated set of your API’s most important features.</p>
 
-<p>You’ve just built your first Zapier integration, and used it in your Zapier account! Congrats!</p>
+<p>Zapier is built to take action on your app and API’s most popular features to watch for new items created in your app then find, create, and/or update items in your app.</p>
 
-<p>Take a break, then come back and give <a href="https://zapier.com/app/developer/">Zapier visual builder</a> a try with your app. Connect your app’s API, add the triggers and actions that will be most useful with your app, and build input forms to gather the data your app would need from users. If you get stuck, <a href="https://zapier.github.io/zapier-platform-cli/">Zapier’s developer docs</a> will help you learn more about the Zapier platform and build more detailed functionality into your integration—or <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs0u5YppMGGwCuyVJJRdJuVcTEqOSV7tI5pzU4Szac2ii0Pg/viewform">send the Zapier platform team feedback</a> about any problems you encounter.</p>
+<p>Take Gmail’s API for example. It includes API calls to check forwarding and IMAP settings, see the history of a mailbox, undelete messages, and more—along with the more popular options to watch mailboxes for new emails, create new draft messages, and send emails. What should go in Gmail’s Zapier integration?</p>
 
-<p>Happy building!</p>
+<p>You first want triggers, the API calls that would tell Zapier when new items came into Gmail. We would definitely want to watch for new emails, and might also want to watch for new draft emails, labels, and attachments. You’d then want actions, API calls that let Zapier do something with Gmail. We would want to send email messages, and likely would also want to create new labels, and drafts. And you would want a search action to find email messages.</p>
+
+<p>Those core features would let users automate their inbox and fit it into their ecosystem of apps. Extra Gmail API calls to see the mailbox history or check IMAP settings wouldn’t be nearly as useful, and couldn’t fit well into a Zap.</p>
+
+<p>Your app’s Zapier integration will be the same. Think through your app’s core features that are supported by your API. The API calls that surface new data would be great for triggers; if they support lookups and filtering, they may also make great search actions. The API calls to create or update things in your app would make great actions. And the API calls for settings, deleting data, or seldom-used features would likely be best left out.</p>
+
+<h2 id="what-do-zapier-integrations-include">What do Zapier Integrations Include?</h2>
+
+<p>Zapier integrations require three core things: Authentication, curated API features, and forms.</p>
+
+<p>Start with Authentication. Most apps require authentication, ranging from an API key to access shared data from weather or statistics apps to username-and-password powered Basic auth or OAuth v2 for apps with private user data. When building a Zapier integration, first tell Zapier how to authenticate your apps’ users. Set this once and Zapier will use the same authentication scheme for every API call it makes. The same goes for users: Once they’ve authenticated your app in Zapier, they can use any of its triggers and actions without authenticating again (unless they wish to add a second account).</p>
+
+<p>Next, decide which parts of your app fit best with Zapier. Anything to watch for new data, find existing data, or add new data would likely fit in well. Figure out which of these are most important to your users and would fit best into automated workflows, and list the API calls and input data needed for each.</p>
+
+<p>Then turn that input data into forms. Triggers often don’t need any extra detail—the API call is enough to get the newest data from your app, and you only need more info to filter that new data (say, to watch for emails with specific labels or from certain mailboxes). Actions, on the other hand, <em>always</em> need data to create new things, the email addresses and names and dates and prices and more Zapier uses to create messages, invoices, events, tasks, and everything else in apps. For that, you need a form. Inside Zapier, users always see a form to fill in data, either with plain text or mapped input fields from previous steps.</p>
+
+<p>You build that form when creating Zapier actions. List the data your API endpoints need to create and find items, and make matching form fields in your Zapier integration actions. That together with the action API call will let a simple form in Zapier create anything you want in your app.</p>
 </section>
       <footer class="prev-next">
       	
@@ -159,8 +175,8 @@
 
 
 <hr>
-<a class="button blue" href="/visual-builder/quickstart/build-action">Previous: Add an Action</a>
 
+<a class="button blue" href="/visual-builder/docs/input-designer">Next: Input Designer</a>
       	<hr>
       	<p><em>Have any feedback or questions? <a href="https://github.com/zapier/visual-builder/issues/new/choose">Let us know</a>.</em></p>
 	</footer>

@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test Your Integration |  Zapier Visual Builder Documentation</title>
+  <title>Advanced Features |  Zapier Visual Builder Documentation</title>
   <meta name="description" content="Zapier Visual Builder">
   <link rel="icon" href="/visual-builder/assets/images/favicon.ico">
   <link rel="stylesheet" href="/visual-builder/assets/stylesheets/base.css">
@@ -35,12 +35,12 @@
   <nav id="menu" class="sidebar__nav">
     
 
-<a class="sidebar__toggle  sidebar__toggle--is-selected " href="/visual-builder/quickstart/introduction">
+<a class="sidebar__toggle " href="/visual-builder/quickstart/introduction">
   <h3 class="sidebar__title">Quick Start</h3>
-  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="quickstart-list" aria-expanded="true"></div>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="quickstart-list" aria-expanded="false"></div>
 </a>
 
-<ul id=quickstart-list class="sidebar__list" aria-hidden="false">
+<ul id=quickstart-list class="sidebar__list" aria-hidden="true">
   
     <li class="sidebar__list-item">
       <a href="/visual-builder/quickstart/introduction" class="sidebar__list-link ">Intro</a>
@@ -71,19 +71,19 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/quickstart/test-complete" class="sidebar__list-link  sidebar__list-link--is-selected ">Test Your Integration</a>
+      <a href="/visual-builder/quickstart/test-complete" class="sidebar__list-link ">Test Your Integration</a>
     </li>
   
 </ul>
 
     
 
-<a class="sidebar__toggle " href="/visual-builder/docs/intro">
+<a class="sidebar__toggle  sidebar__toggle--is-selected " href="/visual-builder/docs/intro">
   <h3 class="sidebar__title">Beta Documentation</h3>
-  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="docs-list" aria-expanded="false"></div>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="docs-list" aria-expanded="true"></div>
 </a>
 
-<ul id=docs-list class="sidebar__list" aria-hidden="true">
+<ul id=docs-list class="sidebar__list" aria-hidden="false">
   
     <li class="sidebar__list-item">
       <a href="/visual-builder/docs/intro" class="sidebar__list-link ">Intro</a>
@@ -114,7 +114,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/advanced" class="sidebar__list-link ">Advanced Features</a>
+      <a href="/visual-builder/docs/advanced" class="sidebar__list-link  sidebar__list-link--is-selected ">Advanced Features</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -131,27 +131,50 @@
 </div>
 
     <main class="container">
-      <section class="content"><h2 id="test-your-integration">Test Your Integration</h2>
+      <section class="content"><p><a id="environment"></a></p>
+<h2 id="environment-variables">Environment Variables</h2>
 
-<p><img src="https://cdn.zapier.com/storage/photos/bcad0a485f61f4acccf36cb19a0261ec.gif" alt="Testing Zapier Integration" /></p>
+<p>Some APIs require additional data to authenticate or connect to your app. You may need a custom API key to pass to the API, along with users’ authentication credentials. Or you might want to set a sub-domain, role, user permissions, or other API configurations differently for your beta integration and live, active versions of your integration.</p>
 
-<p><em>Here’s how your example GitHub integration looks inside Zapier</em></p>
+<p>Zapier’s environment variables let you set these on a per-version basis for your app. Much like in local development environments such as the one in <a href="https://zapier.github.io/zapier-platform-cli/#environment">Zapier’s CLI developer platform</a>, environment variables store key and value pairs outside of your app’s API calls. Instead of hardcoding critical, secret values into your API authentication, trigger, and action calls, it’s best to add them as environment variables in your app’s <em>Advanced</em> settings, then reference the environment variable in your API calls.</p>
 
-<p>You’ve already tested your GitHub authentication, trigger, and action in Zapier’s integration visual builder. Now try using your GitHub integration in a Zap.</p>
+<blockquote>
+  <p><strong>Tip</strong>: Zapier’s built-in OAuth v2 Authentication automatically includes client ID and client secret fields, for two of the most commonly used environment variables. Only use the custom environment variables for other variables.</p>
+</blockquote>
 
-<p>Open Zapier, click <em><a href="https://zapier.com/app/editor/">Make a Zap</a></em>, and select the <em>GitHub</em> app with the <code class="highlighter-rouge">By Invite</code> tag to use your new integration. Try building Zaps using the trigger and action you created to test your Zapier integration. Want to do more with it? Go back to the Zapier visual builder and add more input fields to gather more data or create new triggers and actions to do more with GitHub.</p>
+<h3 id="how-to-add-environment-variables">How to Add Environment Variables</h3>
 
-<p><img src="https://cdn.zapier.com/storage/photos/653cbb9882546956d2da9c60d3291590.png" alt="Zapier Invite Beta Access" /></p>
+<p><img src="https://cdn.zapier.com/storage/photos/031d216898813b0d07c5d3936f075e51.png" alt="Zapier Environment Variables" />
+<em>Add any environment variables you need in key and value pairs</em></p>
 
-<p>You could also invite others to help test your app—something you won’t need with your sample GitHub integration, but that will be helpful when you build a new integration with your API. Click the <em>Visibility</em> tab, then copy the link on that page or enter a contact’s email address to send them an invite to try your app. Once they accept, they’ll see your integration inside their Zap editor, ready to use in any Zaps they build.</p>
+<p>To add environment variables, open your integration in Zapier visual editor and select the <em>Advanced</em> tab in the left sidebar. There you can add your environment variables including a key and a value for each. Click <em>Add</em> to include additional environment variables, or click the <code class="highlighter-rouge">x</code> icon to remove variables if needed.</p>
 
-<hr />
+<h3 id="how-to-reference-environment-variables">How to Reference Environment Variables</h3>
 
-<p>You’ve just built your first Zapier integration, and used it in your Zapier account! Congrats!</p>
+<p><img src="https://cdn.zapier.com/storage/photos/0b8ad13d723229c67df03ad1c114dd91.png" alt="Use Zapier Environment Variable" />
+<em>Use environment variables in Zapier’s API call forms or in custom code</em></p>
 
-<p>Take a break, then come back and give <a href="https://zapier.com/app/developer/">Zapier visual builder</a> a try with your app. Connect your app’s API, add the triggers and actions that will be most useful with your app, and build input forms to gather the data your app would need from users. If you get stuck, <a href="https://zapier.github.io/zapier-platform-cli/">Zapier’s developer docs</a> will help you learn more about the Zapier platform and build more detailed functionality into your integration—or <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs0u5YppMGGwCuyVJJRdJuVcTEqOSV7tI5pzU4Szac2ii0Pg/viewform">send the Zapier platform team feedback</a> about any problems you encounter.</p>
+<p>The easiest way to use environment variables in any Zapier integration API call is through the <em>Request Body</em> form. Add your API URL, then click the <em>Show Options</em> link and select <em>Request Body</em> to see the data Zapier will send to your API. Add a new row, then enter your environment variable key as your API expects, then reference the environment variable in Zapier with the following text, replacing <code class="highlighter-rouge">YOUR_KEY</code> with your actual key:</p>
 
-<p>Happy building!</p>
+<p>``</p>
+
+<p>Zapier will then replace that variable with the value for that key from your <em>Advanced</em> settings—and will use the correct value every time if you change it in the future.</p>
+
+<p>You can reference environment variables directly in your API calls the same way—though it’s best practice to include them in Zapier’s default request body instead. You can also reference them in custom code if you switch your API call to code mode.</p>
+
+<h3 id="how-to-change-environment-variables">How to Change Environment Variables</h3>
+
+<p><img src="https://cdn.zapier.com/storage/photos/b3273bf07dc46636595fd11edee1da1f.png" alt="Edit Zapier Environment Variables" />
+<em>You can change environment variable values, but not the original keys</em></p>
+
+<p>Need to change your environment variables for a new version of your integration, or before releasing your beta integration to the public? Open the <em>Advanced</em> page in Zapier visual editor, and this time edit the text in the <em>Values</em> column with the new variable values. You cannot edit the keys.</p>
+
+<p>If you need to change a key and its value, first delete the old key, then add a new one instead.</p>
+
+<p><a id="computed"></a></p>
+<h2 id="computed-fields">Computed Fields</h2>
+
+<p><em>Coming Soon</em></p>
 </section>
       <footer class="prev-next">
       	
@@ -159,8 +182,8 @@
 
 
 <hr>
-<a class="button blue" href="/visual-builder/quickstart/build-action">Previous: Add an Action</a>
-
+<a class="button blue" href="/visual-builder/docs/testing">Previous: Testing (coming soon)</a>
+<a class="button blue" href="/visual-builder/docs/versions">Next: Versions</a>
       	<hr>
       	<p><em>Have any feedback or questions? <a href="https://github.com/zapier/visual-builder/issues/new/choose">Let us know</a>.</em></p>
 	</footer>
