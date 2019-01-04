@@ -1,0 +1,84 @@
+<script>
+(function() {
+
+const toggleMenu = (isOpen, id) => {
+  const toggle = document.querySelector(`[aria-controls="${id}"]`);
+  const list = document.querySelector(`#${id}`);
+  if (toggle) {
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  if (list) {
+    list.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  }
+  if (isOpen) {
+    localStorage.setItem(id, 'open');
+  } else {
+    localStorage.removeItem(id);
+  }
+};
+
+const selectSidebarToggles = () => document.querySelectorAll('.js-sidebar-toggle');
+
+selectSidebarToggles().forEach(function(toggle) {
+  var listId = toggle.getAttribute('aria-controls');
+  var list = document.getElementById(listId);
+  toggle.addEventListener('click', function(event){
+    const isListHidden = list.getAttribute('aria-hidden') === 'true';
+    event.preventDefault();
+    event.stopPropagation();
+    selectSidebarToggles().forEach((tgl) => {
+      toggleMenu(false, tgl.getAttribute('aria-controls'));
+      toggleMenu(isListHidden, listId);
+    });
+  });
+});
+
+/* Sidebar menu */
+var menuToggle = document.querySelector('.js-menu-toggle');
+var menu = document.getElementById('menu');
+var MEDIUM_SCREEN = 770;
+
+// On initial page load, hide menu on iPad and smaller
+if (window.innerWidth < MEDIUM_SCREEN) {
+  menu.setAttribute('aria-hidden', 'true');
+  menuToggle.setAttribute('aria-expanded', 'false');
+} else {
+  menu.setAttribute('aria-hidden', 'false');
+}
+
+// On window resize, show the menu if it's hidden on large screens
+window.addEventListener('resize', function() {
+  if (window.innerWidth >= MEDIUM_SCREEN) {
+    menu.setAttribute('aria-hidden', 'false');
+    menuToggle.setAttribute('aria-expanded', 'true');
+  } else {
+    menu.setAttribute('aria-hidden', 'true');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+})
+
+menuToggle.addEventListener('click', function(event) {
+  if (menuToggle.getAttribute('aria-expanded') === 'true') {
+    // Close menu
+    menu.setAttribute('aria-hidden', 'true');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  } else {
+    // Open menu
+    menu.setAttribute('aria-hidden', 'false');
+    menuToggle.setAttribute('aria-expanded', 'true');
+  }
+})
+
+})()
+</script>
+
+<script type="text/javascript">
+  (function (w, d, t, u, n, s, e) {
+  w['SwiftypeObject'] = n; w[n] = w[n] || function () {
+    (w[n].q = w[n].q || []).push(arguments);
+  }; s = d.createElement(t);
+    e = d.getElementsByTagName(t)[0]; s.async = 1; s.src = u; e.parentNode.insertBefore(s, e);
+  })(window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st');
+
+  _st('install', 'ZEr4Hw56b1TGkz2qViWp', '2.0.0');
+</script>

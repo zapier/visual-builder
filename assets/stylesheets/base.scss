@@ -1,0 +1,21 @@
+---
+---
+$baseurl: "{{ site.baseurl }}";
+
+// Vendor
+@import "vendor/normalize";
+
+// Core
+@import "core/variables";
+@import "core/fonts";
+@import "core/layout";
+
+// Elements (styles basic HTML elements)
+@import "elements/typography";
+@import "elements/lists";
+@import "elements/button";
+@import "elements/tables";
+
+// Components
+@import "components/sidebar";
+@import "components/toc";

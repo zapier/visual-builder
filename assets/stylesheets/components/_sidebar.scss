@@ -1,0 +1,244 @@
+.sidebar {
+  user-select: none;
+  border-top: 5px solid $lava;
+  border-right: 1px solid $adamantium;
+  width: 265px;
+  flex: 0 0 auto;
+  max-height: 100vh;
+  overflow: auto;
+
+  &__header {
+    display: flex;
+    border-bottom: 1px solid $adamantium;
+    justify-content: space-between;
+    align-content: center;
+    margin-bottom: 20px;
+    position: fixed;
+    background: #fff;
+    width: 264px;
+    z-index: 9999;
+  }
+
+  &__nav {
+    padding: 90px 0;
+    overflow-y: scroll;
+  }
+
+  &__footer {
+    background: #ffffff;
+    border-top: 1px solid $adamantium;
+    padding: 20px;
+    position:fixed;
+    bottom: 0px;
+    width: 264px;
+  }
+
+  &__logo {
+    display: flex;
+    font-weight: 600;
+    margin: 0;
+    padding: 20px;
+    text-decoration: none;
+    color: $blackwidow;
+    width: 100%;
+    flex: 1;
+    align-items: center;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__icon {
+    background: url($baseurl + "/assets/images/zapier-logo.svg") no-repeat;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  &__arrow {
+    width: 9px;
+    padding: 10px;
+    box-sizing: content-box;
+  }
+
+  .menu-toggle {
+    outline: none;
+    display: none;
+    cursor: pointer;
+    line-height: 0;
+    border: none;
+    background: none;
+    padding: 0;
+
+    &__icon {
+      background: url($baseurl + "/assets/images/toggle.svg") no-repeat;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @media (max-width: 769px) {
+    padding-bottom: 50px;
+    border-top: none;
+    border-right: none;
+    width: 100%;
+
+    &__header {
+      margin-bottom: 0;
+      width: 100%;
+      padding: 10px;
+    }
+
+    &__nav {
+      padding-bottom: 0;
+    }
+
+    &__footer {
+      display: none;
+    }
+
+    &__logo {
+      padding: 0;
+    }
+
+    .menu-toggle {
+      display: block;
+
+      &[aria-expanded="true"] {
+        .menu-toggle__icon {
+          background: url($baseurl + "/assets/images/toggle-close.svg") no-repeat;
+        }
+      }
+    }
+
+    nav {
+      transition: transform .25s ease-in-out;
+      background: #fff;
+      position: fixed;
+      top: 50px;
+      padding-top: 20px;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+
+      &[aria-hidden="true"] {
+        transition: none;
+        transform: translateX(100%);
+      }
+
+      @media (max-width: 769px) {
+        height: auto;
+        bottom: 0;
+        overflow: auto;
+      }
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 0;
+    padding: 0 14px 0 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    text-align: left;
+    width: 100%;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $heroine;
+      text-decoration: none;
+    }
+
+    &--is-selected {
+      border-left: 5px solid $heroine;
+      color: $heroine;
+
+      .sidebar__title {
+        margin-left: -5px;
+      }
+    }
+
+    .sidebar__arrow {
+      background: url($baseurl + "/assets/images/arrow.svg") no-repeat center;
+      width: 6px;
+      height: 6px;
+    }
+
+    .sidebar__arrow[aria-expanded="true"] {
+      transform: rotate(180deg);
+    }
+
+    &:focus {
+      color: $heroine;
+    }
+  }
+
+  &__title {
+    flex: 1;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  &__list {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    margin-bottom: 20px;
+    padding: 0;
+    padding-left: 20px;
+
+    &[aria-hidden="true"] {
+      display: none;
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list-link {
+    display: block;
+    text-decoration: none;
+    color: $blackwidow;
+    padding: 0 20px;
+
+    &:hover {
+      color: $heroine;
+      text-decoration: none;
+    }
+
+    &--is-selected {
+      color: $heroine;
+      font-weight: 600;
+    }
+  }
+
+  &__search {
+    padding: 0 1.4rem;
+    margin-bottom: 2rem;
+
+    input {
+      border: 1px solid $adamantium;
+      border-radius: 4px;
+      box-sizing: border-box;
+      height: 40px;
+      background-position: 10px 50%;
+      font-family: "Open Sans";
+      width: 100%;
+    }
+  }
+}

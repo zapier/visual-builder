@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url($baseurl + '/assets/fonts/open-sans-regular.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url($baseurl + '/assets/fonts/open-sans-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url($baseurl + '/assets/fonts/open-sans-regular.woff') format('woff'), /* Modern Browsers */
+       url($baseurl + '/assets/fonts/open-sans-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url($baseurl + '/assets/fonts/open-sans-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url($baseurl + '/assets/fonts/open-sans-italic.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Italic'), local('OpenSans-Italic'),
+       url($baseurl + '/assets/fonts/open-sans-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url($baseurl + '/assets/fonts/open-sans-italic.woff') format('woff'), /* Modern Browsers */
+       url($baseurl + '/assets/fonts/open-sans-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url($baseurl + '/assets/fonts/open-sans-italic.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url($baseurl + '/assets/fonts/open-sans-600.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+       url($baseurl + '/assets/fonts/open-sans-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url($baseurl + '/assets/fonts/open-sans-600.woff') format('woff'), /* Modern Browsers */
+       url($baseurl + '/assets/fonts/open-sans-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url($baseurl + '/assets/fonts/open-sans-600.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url($baseurl + '/assets/fonts/open-sans-700.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url($baseurl + '/assets/fonts/open-sans-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url($baseurl + '/assets/fonts/open-sans-700.woff') format('woff'), /* Modern Browsers */
+       url($baseurl + '/assets/fonts/open-sans-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url($baseurl + '/assets/fonts/open-sans-700.svg#OpenSans') format('svg'); /* Legacy iOS */
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-27002928-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-27002928-5');
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Structure |  Zapier Visual Builder Documentation</title>
+  <meta name="description" content="Zapier Visual Builder">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="/assets/stylesheets/base.css">
+</head>
+
+  <body class="split-layout">
+    
+
+
+<div class="sidebar">
+  <div class="sidebar__header">
+    <a href="/" class="sidebar__logo">
+      <div class="sidebar__icon"></div> Zapier Visual Builder
+    </a>
+    <button class="menu-toggle js-menu-toggle" aria-controls="menu" aria-expanded="false">
+      <div class="menu-toggle__icon" alt="Menu icon">
+    </button>
+  </div>
+  <nav id="menu" class="sidebar__nav">
+    
+
+<a class="sidebar__toggle  sidebar__toggle--is-selected " href="/quickstart/introduction">
+  <h3 class="sidebar__title">Quick Start</h3>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="quickstart-list" aria-expanded="true"></div>
+</a>
+
+<ul id=quickstart-list class="sidebar__list" aria-hidden="false">
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/introduction" class="sidebar__list-link ">Introduction</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/what-you-need" class="sidebar__list-link ">What You Need</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/create-integration" class="sidebar__list-link ">Create a New Integration</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/project-structure" class="sidebar__list-link  sidebar__list-link--is-selected ">Project Structure</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/auth" class="sidebar__list-link ">Handle Authentication</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/build-trigger" class="sidebar__list-link ">Add a Trigger</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/build-action" class="sidebar__list-link ">Add an Action</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/test-complete" class="sidebar__list-link ">Test Your Integration</a>
+    </li>
+  
+</ul>
+
+    
+
+<a class="sidebar__toggle " href="/docs/index">
+  <h3 class="sidebar__title">Documentation</h3>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="docs-list" aria-expanded="false"></div>
+</a>
+
+<ul id=docs-list class="sidebar__list" aria-hidden="true">
+  
+    <li class="sidebar__list-item">
+      <a href="/docs/index" class="sidebar__list-link ">Index</a>
+    </li>
+  
+</ul>
+
+  </nav>
+</div>
+
+    <main class="container">
+      <section class="content"><h2 id="build-your-integration">Build Your Integration</h2>
+
+<h3 id="project-structure">Project Structure</h3>
+
+<p><img src="https://cdn.zapier.com/storage/photos/2316a669768c5c2ee9f4b1e84c70d1d0.png" alt="Zapier visual builder new integration" /></p>
+
+<p><em>Build and manage your app’s integration in the Zapier Visual Builder</em></p>
+
+<p><a href="https://zapier.com/app/developer/">Zapier visual builder</a> includes everything needed to build a new Zapier integration. The left sidebar outlines the core project structure. Each part of your integration definition for the Zapier platform is in the <em>Build</em> tabs:</p>
+
+<ul>
+  <li><em>Authentication</em> sets how users authenticate with your API, using basic, API key, or OAuth2 authentication.</li>
+  <li><em>Triggers</em> control how Zapier gets data from your API into a Zap, with <code class="highlighter-rouge">GET</code> HTTP actions or webhooks.</li>
+  <li><em>Actions</em> control how Zapier sends data to your API, including:
+    <ul>
+      <li><em>Create Actions</em>  control how Zapier sends data from a Zap to your API, with <code class="highlighter-rouge">POST</code> or <code class="highlighter-rouge">PUT</code> HTTP actions to create or update items.</li>
+      <li><em>Search Actions</em>  allow users to perform lookups through your API using <code class="highlighter-rouge">GET</code> actions within a Zap.</li>
+    </ul>
+  </li>
+  <li><em>Advanced</em> manages environment variables to store secret data your integration needs to communicate with your API, including  API keys or client secrets.</li>
+</ul>
+
+<p>Your task is to define the core details of your API, and build input forms so users can enter the data that Zapier will send to your API. The Zapier platform then automatically handles the authentication flow, deduplication, and keeps track of which things have already been processed.</p>
+
+<p>This is where you need to think through your integration. What outputs from your app would make good Zapier triggers, and what inputs would your app need to create items in Zapier actions? For an email service, say, a <em>New Email</em> would need a recipient email address, subject, and message body. A GitHub issue would need an issue name, body, and repository name. List each detail needed to build items in your app, as you’ll need to build a form to gather that data while creating your Zapier integration.</p>
+
+<p>Back in the Zapier visual builder, there are a few more tools under the <em>Manage</em> tab to maintain your Zapier integration with stats, logs, bugs, feature requests, and versions.</p>
+
+<p>First, though, you need to build that integration. Let’s start with authentication.</p>
+</section>
+      <footer class="prev-next">
+
+
+
+<hr>
+<a class="button blue" href="/quickstart/create-integration">Previous: Create a New Integration</a>
+<a class="button blue" href="/quickstart/auth">Next: Handle Authentication</a>
+</footer>
+    </main>
+    <script>
+(function() {
+
+const toggleMenu = (isOpen, id) => {
+  const toggle = document.querySelector(`[aria-controls="${id}"]`);
+  const list = document.querySelector(`#${id}`);
+  if (toggle) {
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  if (list) {
+    list.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  }
+  if (isOpen) {
+    localStorage.setItem(id, 'open');
+  } else {
+    localStorage.removeItem(id);
+  }
+};
+
+const selectSidebarToggles = () => document.querySelectorAll('.js-sidebar-toggle');
+
+selectSidebarToggles().forEach(function(toggle) {
+  var listId = toggle.getAttribute('aria-controls');
+  var list = document.getElementById(listId);
+  toggle.addEventListener('click', function(event){
+    const isListHidden = list.getAttribute('aria-hidden') === 'true';
+    event.preventDefault();
+    event.stopPropagation();
+    selectSidebarToggles().forEach((tgl) => {
+      toggleMenu(false, tgl.getAttribute('aria-controls'));
+      toggleMenu(isListHidden, listId);
+    });
+  });
+});
+
+/* Sidebar menu */
+var menuToggle = document.querySelector('.js-menu-toggle');
+var menu = document.getElementById('menu');
+var MEDIUM_SCREEN = 770;
+
+// On initial page load, hide menu on iPad and smaller
+if (window.innerWidth < MEDIUM_SCREEN) {
+  menu.setAttribute('aria-hidden', 'true');
+  menuToggle.setAttribute('aria-expanded', 'false');
+} else {
+  menu.setAttribute('aria-hidden', 'false');
+}
+
+// On window resize, show the menu if it's hidden on large screens
+window.addEventListener('resize', function() {
+  if (window.innerWidth >= MEDIUM_SCREEN) {
+    menu.setAttribute('aria-hidden', 'false');
+    menuToggle.setAttribute('aria-expanded', 'true');
+  } else {
+    menu.setAttribute('aria-hidden', 'true');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+})
+
+menuToggle.addEventListener('click', function(event) {
+  if (menuToggle.getAttribute('aria-expanded') === 'true') {
+    // Close menu
+    menu.setAttribute('aria-hidden', 'true');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  } else {
+    // Open menu
+    menu.setAttribute('aria-hidden', 'false');
+    menuToggle.setAttribute('aria-expanded', 'true');
+  }
+})
+
+})()
+</script>
+
+<script type="text/javascript">
+  (function (w, d, t, u, n, s, e) {
+  w['SwiftypeObject'] = n; w[n] = w[n] || function () {
+    (w[n].q = w[n].q || []).push(arguments);
+  }; s = d.createElement(t);
+    e = d.getElementsByTagName(t)[0]; s.async = 1; s.src = u; e.parentNode.insertBefore(s, e);
+  })(window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st');
+
+  _st('install', 'ZEr4Hw56b1TGkz2qViWp', '2.0.0');
+</script>
+
+  </body>
+</html>

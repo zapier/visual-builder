@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-27002928-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-27002928-5');
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handle Authentication |  Zapier Visual Builder Documentation</title>
+  <meta name="description" content="Zapier Visual Builder">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="/assets/stylesheets/base.css">
+</head>
+
+  <body class="split-layout">
+    
+
+
+<div class="sidebar">
+  <div class="sidebar__header">
+    <a href="/" class="sidebar__logo">
+      <div class="sidebar__icon"></div> Zapier Visual Builder
+    </a>
+    <button class="menu-toggle js-menu-toggle" aria-controls="menu" aria-expanded="false">
+      <div class="menu-toggle__icon" alt="Menu icon">
+    </button>
+  </div>
+  <nav id="menu" class="sidebar__nav">
+    
+
+<a class="sidebar__toggle  sidebar__toggle--is-selected " href="/quickstart/introduction">
+  <h3 class="sidebar__title">Quick Start</h3>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="quickstart-list" aria-expanded="true"></div>
+</a>
+
+<ul id=quickstart-list class="sidebar__list" aria-hidden="false">
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/introduction" class="sidebar__list-link ">Introduction</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/what-you-need" class="sidebar__list-link ">What You Need</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/create-integration" class="sidebar__list-link ">Create a New Integration</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/project-structure" class="sidebar__list-link ">Project Structure</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/auth" class="sidebar__list-link  sidebar__list-link--is-selected ">Handle Authentication</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/build-trigger" class="sidebar__list-link ">Add a Trigger</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/build-action" class="sidebar__list-link ">Add an Action</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/quickstart/test-complete" class="sidebar__list-link ">Test Your Integration</a>
+    </li>
+  
+</ul>
+
+    
+
+<a class="sidebar__toggle " href="/docs/index">
+  <h3 class="sidebar__title">Documentation</h3>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="docs-list" aria-expanded="false"></div>
+</a>
+
+<ul id=docs-list class="sidebar__list" aria-hidden="true">
+  
+    <li class="sidebar__list-item">
+      <a href="/docs/index" class="sidebar__list-link ">Index</a>
+    </li>
+  
+</ul>
+
+  </nav>
+</div>
+
+    <main class="container">
+      <section class="content"><h2 id="build-your-integration">Build Your Integration</h2>
+
+<h3 id="handle-authentication">Handle Authentication</h3>
+
+<p><img src="https://cdn.zapier.com/storage/photos/6234e3eb4aa23975b9f89139ebffe3ac.gif" alt="Zapier Example OAuth Authentication" /></p>
+
+<p><em>Many Zapier integrations use OAuth2 authentication to connect user accounts, including Zapier’s built-in GitHub integration</em></p>
+
+<p>The first thing to set up is authentication. Your integration defines how Zapier’s platform authenticates with the API and what data needs to be collected from users to set up their Zaps. Zapier supports most authentication schemes, including basic auth with username and password, API key auth, and OAuth2.</p>
+
+<p>Whenever someone uses your integration in a Zap, they’ll first select your app, then will need to select their account. That’s where the authentication flow comes in. Zapier shows a popup window where they can login and select their account with OAuth2, or where they can enter account details with basic auth.</p>
+
+<h3 id="1-select-your-authentication-scheme">1. Select Your Authentication Scheme</h3>
+
+<p><img src="https://cdn.zapier.com/storage/photos/a2855758dabdb228966b1bad7238814a.png" alt="Zapier Visual Builder select auth" /></p>
+
+<p><em>Zapier supports a wide range of authentication schemes—select the best one for your app</em></p>
+
+<p>We’ll use basic auth in this sample GitHub integration to keep things simple. Select <em>Basic Auth</em> from the menu and Zapier will create a form with input fields to collect the username and password automatically.</p>
+
+<blockquote>
+  <p><em>If you want to use <a href="https://zapier.github.io/zapier-platform-cli/#oauth2?from_url=https%3A%2F%2Fzapier.com%2Fdeveloper%2Fstart%2Fproject-structure">OAuth</a> or another authentication scheme, check our docs for more details and use them instead of the steps below.</em></p>
+</blockquote>
+
+<h3 id="2-add-authentication-details">2. Add Authentication Details</h3>
+
+<p><img src="https://cdn.zapier.com/storage/photos/f245b3d5504000186a035e040aab02d5.png" alt="Zapier Visual Builder Basic Auth" /></p>
+
+<p><em>Zapier automatically creates a form for Basic Auth—all you need to add is a test API call to ensure those credentials work</em></p>
+
+<p>With Basic Auth, you only need to add details to the <em>Authentication</em> tab. Choose your authentication scheme (<em>Basic</em> for this GitHub example app). With Basic authentication, you only specify an API endpoint to test the user’s credentials. To do that, add GitHub’s user API url <code class="highlighter-rouge">https://api.github.com/user </code> to the <em>Test</em> field. Zapier’s already added a login form to ask for the user’s username and password for the authentication flow.</p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/f2c3d557023ce2a65b41122da34c1fdd.png" alt="Example connection label" /></p>
+
+<p><em>Add a connection label, and users’ accounts in Zapier will be personalized to easily distinguish between multiple accounts.</em></p>
+
+<p>You can also add details to the account. Whenever a new account is authenticated with Zapier, Zapier adds a <em>Connection Label</em> so users can identify accounts and add multiple accounts if desired. Customize this label with output fields from the API call, which Zapier stores in the <a href="https://github.com/zapier/zapier-platform-cli/blob/master/README.md#bundleauthdata">authData bundle</a>. For GitHub, add `` to the <em>Connection Label</em> to include users’ GitHub username along with the app name that Zapier automatically includes.</p>
+
+<h3 id="3-test-the-authentication">3. Test The Authentication</h3>
+
+<p><img src="https://cdn.zapier.com/storage/photos/97847990532583a4885b5479817e3a32.gif" alt="Basic Auth example" /></p>
+
+<p><em>Basic Auth in Zapier shows a form where users enter their username and password—unlike OAuth2 above where Zapier sends users to your site to authenticate</em></p>
+
+<p>Then test the authentication. You can test the authentication inside Zapier’s visual builder, with the same workflow as what users see when they authenticate your app in their Zaps, as in the animation above.</p>
+
+<p>To test the authentication inside visual builder, click <em>Connect an Account</em>, and enter your GitHub username and password or personal access token. You can now use this GitHub account to test triggers and actions as you build them into your integration. And when others use your integration, they’ll see a similar login flow to connect their GitHub account to Zapier.</p>
+</section>
+      <footer class="prev-next">
+
+
+
+<hr>
+<a class="button blue" href="/quickstart/project-structure">Previous: Project Structure</a>
+<a class="button blue" href="/quickstart/build-trigger">Next: Add a Trigger</a>
+</footer>
+    </main>
+    <script>
+(function() {
+
+const toggleMenu = (isOpen, id) => {
+  const toggle = document.querySelector(`[aria-controls="${id}"]`);
+  const list = document.querySelector(`#${id}`);
+  if (toggle) {
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  if (list) {
+    list.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  }
+  if (isOpen) {
+    localStorage.setItem(id, 'open');
+  } else {
+    localStorage.removeItem(id);
+  }
+};
+
+const selectSidebarToggles = () => document.querySelectorAll('.js-sidebar-toggle');
+
+selectSidebarToggles().forEach(function(toggle) {
+  var listId = toggle.getAttribute('aria-controls');
+  var list = document.getElementById(listId);
+  toggle.addEventListener('click', function(event){
+    const isListHidden = list.getAttribute('aria-hidden') === 'true';
+    event.preventDefault();
+    event.stopPropagation();
+    selectSidebarToggles().forEach((tgl) => {
+      toggleMenu(false, tgl.getAttribute('aria-controls'));
+      toggleMenu(isListHidden, listId);
+    });
+  });
+});
+
+/* Sidebar menu */
+var menuToggle = document.querySelector('.js-menu-toggle');
+var menu = document.getElementById('menu');
+var MEDIUM_SCREEN = 770;
+
+// On initial page load, hide menu on iPad and smaller
+if (window.innerWidth < MEDIUM_SCREEN) {
+  menu.setAttribute('aria-hidden', 'true');
+  menuToggle.setAttribute('aria-expanded', 'false');
+} else {
+  menu.setAttribute('aria-hidden', 'false');
+}
+
+// On window resize, show the menu if it's hidden on large screens
+window.addEventListener('resize', function() {
+  if (window.innerWidth >= MEDIUM_SCREEN) {
+    menu.setAttribute('aria-hidden', 'false');
+    menuToggle.setAttribute('aria-expanded', 'true');
+  } else {
+    menu.setAttribute('aria-hidden', 'true');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+})
+
+menuToggle.addEventListener('click', function(event) {
+  if (menuToggle.getAttribute('aria-expanded') === 'true') {
+    // Close menu
+    menu.setAttribute('aria-hidden', 'true');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  } else {
+    // Open menu
+    menu.setAttribute('aria-hidden', 'false');
+    menuToggle.setAttribute('aria-expanded', 'true');
+  }
+})
+
+})()
+</script>
+
+<script type="text/javascript">
+  (function (w, d, t, u, n, s, e) {
+  w['SwiftypeObject'] = n; w[n] = w[n] || function () {
+    (w[n].q = w[n].q || []).push(arguments);
+  }; s = d.createElement(t);
+    e = d.getElementsByTagName(t)[0]; s.async = 1; s.src = u; e.parentNode.insertBefore(s, e);
+  })(window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st');
+
+  _st('install', 'ZEr4Hw56b1TGkz2qViWp', '2.0.0');
+</script>
+
+  </body>
+</html>

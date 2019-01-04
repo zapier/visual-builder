@@ -1,0 +1,78 @@
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: $blackwidow;
+}
+
+a {
+  color: $heroine;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+  border-bottom: 1px dotted $adamantium;
+  padding-bottom: 10px;
+}
+
+.mega {
+  font-size: 42px;
+  line-height: 52px;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 20px 0;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+h4 {
+  font-size: 13px;
+  line-height: 23px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+strong {
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 20px 0;
+}
+
+small {
+  font-size: 12px;
+  line-height: 22px;
+}
+
+blockquote {
+  padding: 0 20px;
+  color: $batmobile;
+  border-left: 0.25em solid $adamantium;
+  margin: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $adamantium;
+  margin: 20px 0;
+}

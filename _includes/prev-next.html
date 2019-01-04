@@ -1,0 +1,19 @@
+{% if page.collection %}
+    {% assign links = site[page.collection] | sort:'order'  %}
+{% endif %}
+
+{% for link in links %}
+	{% if link.title == page.title %}
+		{% unless forloop.first %}
+			{% assign prev = tmpprev %}
+		{% endunless %}
+		{% unless forloop.last %}
+			{% assign next = links[forloop.index] %}
+		{% endunless %}
+	{% endif %}
+	{% assign tmpprev = link %}
+{% endfor %}
+
+<hr>
+{% if prev %}<a class="button blue" href="{{ site.baseurl }}{{ prev.url}}">Previous: {{ prev.title }}</a>{% endif %}
+{% if next %}<a class="button blue" href="{{ site.baseurl }}{{ next.url}}">Next: {{ next.title }}</a>{% endif %}

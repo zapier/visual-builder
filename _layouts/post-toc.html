@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+  <body class="split-layout">
+    {% include side-nav.html %}
+    <aside class="toc">
+      <h3>Contents</h3>
+      {% include toc.html html=content %}
+    </aside>
+    <main class="container">
+      <section class="content">{{ content }}</section>
+      <footer class="prev-next">{% include prev-next.html %}</footer>
+    </main>
+    {% include javascript.html %}
+  </body>
+</html>

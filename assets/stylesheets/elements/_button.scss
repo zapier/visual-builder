@@ -1,0 +1,56 @@
+button,
+input[type='submit'],
+.button,
+a.pill-button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+  border: 1px solid #d6d6d6;
+  cursor: pointer;
+  color: #555;
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1em;
+  margin: 0;
+  overflow: hidden;
+  padding: 8px 10px;
+  text-align: center;
+  white-space: nowrap;
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  &.big {
+    display: block;
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+  &.full {
+    width: 100%;
+  }
+  &.blue {
+    background-image: none;
+    background-color: $heroine;
+    color: #ffffff;
+    border-color: transparent;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: lighten($heroine, 5%);
+    }
+  }
+  &.gray {
+    background-image: none;
+    background-color: $storm;
+    color: $batmobile;
+    border-color: transparent;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($storm, 5%);
+    }
+  }
+}

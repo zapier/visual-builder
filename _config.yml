@@ -1,1 +1,36 @@
-theme: jekyll-theme-minimal
+# Settings
+title: Zapier Visual Builder Documentation
+description: "Zapier Visual Builder"
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+markdown: kramdown
+baseurl: ""
+
+plugins:
+  - jekyll-redirect-from
+
+# Sass Settings
+sass:
+  sass_dir: assets/stylesheets
+
+# Collections
+collections_dir: collections
+
+collections:
+  quickstart:
+    output: true
+    permalink: /:collection/:name
+  docs:
+    output: true
+    permalink: /:collection/:name
+
+defaults:
+  - scope:
+      path: ""
+      type: "quickstart"
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: default      

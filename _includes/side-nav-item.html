@@ -1,0 +1,14 @@
+{% assign sorted = (include.items | sort: 'order')%}
+
+<a class="sidebar__toggle {% if include.current_section == include.section_id %} sidebar__toggle--is-selected {% endif %}" href="{{ site.baseurl }}{{ sorted[0].url }}">
+  <h3 class="sidebar__title">{{ include.title }}</h3>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="{{ include.section_id | append: '-list' }}" aria-expanded="{% if include.current_section != include.section_id %}false{% else %}true{% endif %}"></div>
+</a>
+
+<ul id={{ include.section_id | append: '-list' }} class="sidebar__list" aria-hidden="{% if include.current_section != include.section_id %}true{% else %}false{% endif %}">
+  {% for item in sorted %}
+    <li class="sidebar__list-item">
+      <a href="{{ site.baseurl }}{{ item.url }}" class="sidebar__list-link {% if page.url == item.url %} sidebar__list-link--is-selected {% endif %}">{{ item.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

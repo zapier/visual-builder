@@ -1,0 +1,31 @@
+.toc {
+  order: 2;
+  border-left: 1px solid $adamantium;
+  min-width: 300px;
+  padding: 60px 30px;
+
+  ul {
+    font-size: 14px;
+    list-style: none;
+    font-weight: 400;
+    padding: 0;
+
+    a {
+      color: $deepspace;
+
+      &:hover {
+        color: $heroine;
+        text-decoration: none;
+      }
+    }
+
+    strong { font-weight: 400; }
+  }
+}
+
+@media (max-width: 769px) {
+  .toc {
+    padding: 20px;
+    border-bottom: 1px solid $adamantium;
+  }
+}

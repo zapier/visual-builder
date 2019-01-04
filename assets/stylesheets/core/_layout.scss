@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.split-layout {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: auto;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.container {
+  order: 1;
+  max-height: 100vh;
+  overflow: auto;
+  padding: 60px;
+  width: 100%;
+}
+
+.content, .prev-next {
+  max-width: 700px;
+}
+
+img {
+  width: 100%;
+}
+
+@media (max-width: 769px) {
+  .split-layout {
+    display: block;
+  }
+
+  .container {
+    padding: 20px;
+    max-height: none;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+}
