@@ -11,4 +11,8 @@ redirect_from: /docs/
 
 Learn how to build an Action in the [Visual Builder Quick Start Guide](https://zapier.github.io/visual-builder/quickstart/build-action).
 
+This is a <a href="https://zapier.com/" target="_blank">test</a>.
+
+And this is [another test](https://zapier.com/){:target="_blank"}.
+
 _Full Documentation Coming Soon_
