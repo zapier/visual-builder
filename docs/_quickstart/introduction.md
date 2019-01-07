@@ -7,7 +7,7 @@ redirect_from: /quick-start/
 
 ## Welcome to Zapier Zapier Visual Builder
 
-[Zapier](https://zapier.com/) is an app automation platform that helps over 2 million people connect apps into customized workflows—what we call Zaps. With a Zapier integration, your API will connect to the Zapier platform and instantly work with 1,300+ other popular apps.
+[Zapier](https://zapier.com/){:target="_blank"} is an app automation platform that helps over 2 million people connect apps into customized workflows—what we call Zaps. With a Zapier integration, your API will connect to the Zapier platform and instantly work with 1,300+ other popular apps.
 
 Zaps are powered by triggers, searches, and actions. Triggers watch for new data via polling API calls or webhooks, automatically deduplicating data to run the Zap only when something new is added. Zapier finds something new, it starts the rest of the workflow, with searches that lookup data via API calls or actions that create new items on an API with PUT or POST calls.
 
@@ -35,9 +35,9 @@ Each step in a Zap returns data. Triggers return individual details from the new
 
 ![Zapier Visual Builder](https://cdn.zapier.com/storage/photos/2316a669768c5c2ee9f4b1e84c70d1d0.png)
 
-To enable those workflows for your app's API, you need to build a Zapier integration. The easiest way to do that is with [Zapier Visual Builder](https://zapier.com/app/developer/), a new tool to build complete Zapier integrations online in minutes. Add your app's authentication scheme, turn your API calls into triggers, searches, and create actions, and create forms where users can input the data your app needs—then release your new integration to let users connect it to 1,300+ apps with Zapier.
+To enable those workflows for your app's API, you need to build a Zapier integration. The easiest way to do that is with [Zapier Visual Builder](https://zapier.com/app/developer/){:target="_blank"}, a new tool to build complete Zapier integrations online in minutes. Add your app's authentication scheme, turn your API calls into triggers, searches, and create actions, and create forms where users can input the data your app needs—then release your new integration to let users connect it to 1,300+ apps with Zapier.
 
-If you haven't used Zapier before, sign up for a free [Zapier](https://zapier.com/) account and check our [Zapier Getting Started guide](https://zapier.com/learn/getting-started-guide/) to learn the basics about using Zapier.
+If you haven't used Zapier before, sign up for a free [Zapier](https://zapier.com/){:target="_blank"} account and check our [Zapier Getting Started guide](https://zapier.com/learn/getting-started-guide/){:target="_blank"} to learn the basics about using Zapier.
 
 Then, in this Zapier Builder Getting Started guide, you'll learn how to create a new example GitHub integration in 15 minutes or less, using the Zapier visual builder. Explore Zapier's core features, learn how to add basic authentication, triggers, and actions to an integration, and build a working integration. You'll then be ready to use Zapier's visual builder to make an integration for your app.
 

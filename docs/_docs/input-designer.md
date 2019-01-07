@@ -33,7 +33,7 @@ To add a field, click the _Add_ button and select the field type. Enter the fiel
 
 - **Label**: A user friendly name for the field, such as `First Name`.
 - **Key**: A unique identifier for the field, without spaces, ideally with the same key as your API, such as `first_name`.
-- **Help Text**: (optional) A 20 character or longer description that appears under the field label, with [Markdown][1] formatting.
+- **Help Text**: (optional) A 20 character or longer description that appears under the field label, with [Markdown][1]{:target="_blank"} formatting.
 - **Type**: One of ten field types, with `String` as the default field type; see details on each field type below.
 - **Default Text**: (optional) Copy to include in the field if the user doesn’t enter anything; only include if this copy would work in every user’s account.
 - **Options**: (optional) Check whether this field should be required, if multiple values can be added, if the field is used to alter dynamic fields, or if it should be a dropdown.
@@ -151,7 +151,7 @@ Boolean fields let users select between `yes` and `no` values to set default set
 
 DateTime fields let users enter dates and times, using their human readable values, machine readable datetimes, or standard English words for time like `tomorrow`. Zapier interperpates the date input from users and outputs a standard UNIX time to your API.
 
-> Learn more about how users can [modify dates and times in Zapier][2].
+> Learn more about how users can [modify dates and times in Zapier][2]{:target="_blank"}.
 
 ### File
 
@@ -185,7 +185,7 @@ Line Items are a useful way to add as much data to an app as users need, especia
 
 Normal input fields in Zapier add one item each time the Zap runs. Fields inside a Line Item Group, however, are added once per comma separated value added to the field. Users would map, say, an order field containing `item1,item2,item3` and a price field with `1.99,12.95,9.99`, and Zapier would add three line item rows with each item and its correct price.
 
-> Learn more about line items from Zapier’s [Line Item Guide][4] and our [Line Item Help Docs][5].
+> Learn more about line items from Zapier’s [Line Item Guide][4]{:target="_blank"} and our [Line Item Help Docs][5]{:target="_blank"}.
 
 ![Add Zapier Line Item Group][image-18]
 
@@ -207,7 +207,7 @@ Dynamic Fields let Zapier run code to decide whether to show a field, and can dy
 
 There, you can write Node.js code that evaluates data from previous fields (referenced with `bundle.inputData.field_key` where `field_key` is replaced with the actual key of the field that Zapier is evaluating) and includes logic and details on another field to show depending on the value of the former.
 
-> Learn more about how to add custom fields in code with [Zapier’s Field Schema][6]
+> Learn more about how to add custom fields in code with [Zapier’s Field Schema][6]{:target="_blank"}
 
 [1]:	https://zapier.com/blog/beginner-ultimate-guide-markdown/
 [2]:	https://zapier.com/help/modifying-dates-and-times/

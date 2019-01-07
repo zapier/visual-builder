@@ -13,7 +13,7 @@ redirect_from: /quick-start/
 
 _Build and manage your app's integration in the Zapier Visual Builder_
 
-[Zapier visual builder](https://zapier.com/app/developer/) includes everything needed to build a new Zapier integration. The left sidebar outlines the core project structure. Each part of your integration definition for the Zapier platform is in the _Build_ tabs:
+[Zapier visual builder](https://zapier.com/app/developer/){:target="_blank"} includes everything needed to build a new Zapier integration. The left sidebar outlines the core project structure. Each part of your integration definition for the Zapier platform is in the _Build_ tabs:
 
 - _Authentication_ sets how users authenticate with your API, using basic, API key, or OAuth2 authentication.
 - _Triggers_ control how Zapier gets data from your API into a Zap, with `GET` HTTP actions or webhooks.

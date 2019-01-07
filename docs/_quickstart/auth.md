@@ -25,7 +25,7 @@ _Zapier supports a wide range of authentication schemes—select the best one fo
 
 We'll use basic auth in this sample GitHub integration to keep things simple. Select _Basic Auth_ from the menu and Zapier will create a form with input fields to collect the username and password automatically.
 
-> _If you want to use [OAuth](https://zapier.github.io/zapier-platform-cli/#oauth2?from_url=https%3A%2F%2Fzapier.com%2Fdeveloper%2Fstart%2Fproject-structure) or another authentication scheme, check our docs for more details and use them instead of the steps below._
+> _If you want to use [OAuth](https://zapier.github.io/zapier-platform-cli/#oauth2?from_url=https%3A%2F%2Fzapier.com%2Fdeveloper%2Fstart%2Fproject-structure){:target="_blank"} or another authentication scheme, check our docs for more details and use them instead of the steps below._
 
 ### 2. Add Authentication Details
 
@@ -39,7 +39,7 @@ With Basic Auth, you only need to add details to the _Authentication_ tab. Choos
 
 _Add a connection label, and users' accounts in Zapier will be personalized to easily distinguish between multiple accounts._
 
-You can also add details to the account. Whenever a new account is authenticated with Zapier, Zapier adds a _Connection Label_ so users can identify accounts and add multiple accounts if desired. Customize this label with output fields from the API call, which Zapier stores in the [authData bundle](https://github.com/zapier/zapier-platform-cli/blob/master/README.md#bundleauthdata). For GitHub, add `{{bundle.authData.username}}` to the _Connection Label_ to include users’ GitHub username along with the app name that Zapier automatically includes.
+You can also add details to the account. Whenever a new account is authenticated with Zapier, Zapier adds a _Connection Label_ so users can identify accounts and add multiple accounts if desired. Customize this label with output fields from the API call, which Zapier stores in the [authData bundle](https://github.com/zapier/zapier-platform-cli/blob/master/README.md#bundleauthdata){:target="_blank"}. For GitHub, add `{{bundle.authData.username}}` to the _Connection Label_ to include users’ GitHub username along with the app name that Zapier automatically includes.
 
 ### 3. Test The Authentication
 
