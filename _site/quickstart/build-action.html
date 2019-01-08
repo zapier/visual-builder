@@ -106,7 +106,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/actions" class="sidebar__list-link ">Actions (coming soon)</a>
+      <a href="/visual-builder/docs/actions" class="sidebar__list-link ">Actions</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -173,9 +173,9 @@
 
 <p><em>Add the URL where Zapier will send data to your app</em></p>
 
-<p>Now, select the <em>API Configuration</em> tab in Zapier visual builder to tell Zapier how to send the data to the API. Select the <code class="highlighter-rouge">POST</code> API call, then enter GitHub’s issue API endpoint with the <code class="highlighter-rouge"> </code> as with the trigger:</p>
+<p>Now, select the <em>API Configuration</em> tab in Zapier visual builder to tell Zapier how to send the data to the API. Select the <code class="highlighter-rouge">POST</code> API call, then enter GitHub’s issue API endpoint with the <code class="highlighter-rouge">{{bundle.inputData.repo}}</code> as with the trigger:</p>
 
-<p><code class="highlighter-rouge">https://api.github.com/repos//issues</code></p>
+<p><code class="highlighter-rouge">https://api.github.com/repos/{{bundle.inputData.repo}}/issues</code></p>
 
 <p>Zapier will automatically include the additional input fields in your API request body. Click the <em>Show Options</em> button to see the mapped fields and customize them if needed—though the defaults should work for most integrations.</p>
 

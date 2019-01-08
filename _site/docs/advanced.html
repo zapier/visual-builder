@@ -106,7 +106,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/actions" class="sidebar__list-link ">Actions (coming soon)</a>
+      <a href="/visual-builder/docs/actions" class="sidebar__list-link ">Actions</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -156,7 +156,7 @@
 
 <p>The easiest way to use environment variables in any Zapier integration API call is through the <em>Request Body</em> form. Add your API URL, then click the <em>Show Options</em> link and select <em>Request Body</em> to see the data Zapier will send to your API. Add a new row, then enter your environment variable key as your API expects, then reference the environment variable in Zapier with the following text, replacing <code class="highlighter-rouge">YOUR_KEY</code> with your actual key:</p>
 
-<p>``</p>
+<p><code class="highlighter-rouge">{{process.env.YOUR_KEY}}</code></p>
 
 <p>Zapier will then replace that variable with the value for that key from your <em>Advanced</em> settings—and will use the correct value every time if you change it in the future.</p>
 

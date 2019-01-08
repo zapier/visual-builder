@@ -47,9 +47,9 @@ For our example GitHub integration, we’ll use 3 input fields, for repo, title,
 
 _Add the URL where Zapier will send data to your app_
 
-Now, select the _API Configuration_ tab in Zapier visual builder to tell Zapier how to send the data to the API. Select the `POST` API call, then enter GitHub’s issue API endpoint with the `{{bundle.inputData.repo}} ` as with the trigger:
+Now, select the _API Configuration_ tab in Zapier visual builder to tell Zapier how to send the data to the API. Select the `POST` API call, then enter GitHub’s issue API endpoint with the {% raw %}`{{bundle.inputData.repo}}`{% endraw %} as with the trigger:
 
-`https://api.github.com/repos/{{bundle.inputData.repo}}/issues`
+{% raw %}`https://api.github.com/repos/{{bundle.inputData.repo}}/issues`{% endraw %}
 
 Zapier will automatically include the additional input fields in your API request body. Click the *Show Options* button to see the mapped fields and customize them if needed—though the defaults should work for most integrations.
 

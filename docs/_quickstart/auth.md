@@ -39,7 +39,7 @@ With Basic Auth, you only need to add details to the _Authentication_ tab. Choos
 
 _Add a connection label, and users' accounts in Zapier will be personalized to easily distinguish between multiple accounts._
 
-You can also add details to the account. Whenever a new account is authenticated with Zapier, Zapier adds a _Connection Label_ so users can identify accounts and add multiple accounts if desired. Customize this label with output fields from the API call, which Zapier stores in the [authData bundle](https://github.com/zapier/zapier-platform-cli/blob/master/README.md#bundleauthdata){:target="_blank"}. For GitHub, add `{{bundle.authData.username}}` to the _Connection Label_ to include users’ GitHub username along with the app name that Zapier automatically includes.
+You can also add details to the account. Whenever a new account is authenticated with Zapier, Zapier adds a _Connection Label_ so users can identify accounts and add multiple accounts if desired. Customize this label with output fields from the API call, which Zapier stores in the [authData bundle](https://github.com/zapier/zapier-platform-cli/blob/master/README.md#bundleauthdata){:target="_blank"}. For GitHub, add {% raw %}`{{bundle.authData.username}}`{% endraw %} to the _Connection Label_ to include users’ GitHub username along with the app name that Zapier automatically includes.
 
 ### 3. Test The Authentication
 

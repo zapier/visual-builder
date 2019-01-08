@@ -28,7 +28,7 @@ _Use environment variables in Zapier’s API call forms or in custom code_
 
 The easiest way to use environment variables in any Zapier integration API call is through the _Request Body_ form. Add your API URL, then click the _Show Options_ link and select _Request Body_ to see the data Zapier will send to your API. Add a new row, then enter your environment variable key as your API expects, then reference the environment variable in Zapier with the following text, replacing `YOUR_KEY` with your actual key:
 
-`{{process.env.YOUR_KEY}}`
+{% raw %}`{{process.env.YOUR_KEY}}`{% endraw %}
 
 Zapier will then replace that variable with the value for that key from your _Advanced_ settings—and will use the correct value every time if you change it in the future.
 
