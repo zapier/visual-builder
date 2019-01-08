@@ -62,9 +62,9 @@ _Add the URL where Zapier can request data from your app, and Zapier will config
 
 Now, add the GitHub API call. Select the _API Configuration_ tab in Zapier visual builder, choose the _Polling_ option, then enter GitHub’s issue API endpoint in the field:
 
-`https://api.github.com/repos/{{bundle.inputData.repo}}/issues`
+{% raw %}`https://api.github.com/repos/{{bundle.inputData.repo}}/issues`{% endraw %}
 
-Zapier dynamically replaces the `{{bundle.inputData.repo}}` field with the text users enter in our _Repo_ input field.
+Zapier dynamically replaces the {% raw %}`{{bundle.inputData.repo}}`{% endraw %} field with the text users enter in our _Repo_ input field.
 
 Zapier then automatically passes along every other field along with the authentication details automatically in the `GET` call.
 

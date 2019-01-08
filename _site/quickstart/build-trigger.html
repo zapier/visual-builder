@@ -190,9 +190,9 @@
 
 <p>Now, add the GitHub API call. Select the <em>API Configuration</em> tab in Zapier visual builder, choose the <em>Polling</em> option, then enter GitHub’s issue API endpoint in the field:</p>
 
-<p><code class="highlighter-rouge">https://api.github.com/repos//issues</code></p>
+<p><code class="highlighter-rouge">https://api.github.com/repos/{{bundle.inputData.repo}}/issues</code></p>
 
-<p>Zapier dynamically replaces the `` field with the text users enter in our <em>Repo</em> input field.</p>
+<p>Zapier dynamically replaces the <code class="highlighter-rouge">{{bundle.inputData.repo}}</code> field with the text users enter in our <em>Repo</em> input field.</p>
 
 <p>Zapier then automatically passes along every other field along with the authentication details automatically in the <code class="highlighter-rouge">GET</code> call.</p>
 

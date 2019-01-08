@@ -21,6 +21,8 @@ Zapier does not allow action steps to delete or remove data, to prevent data los
 
 ## How to Add a New Action to a Zapier Integration
 
+### 1. Configure Action Settings
+
 ![Zapier visual builder action settings](https://cdn.zapier.com/storage/photos/6774970e27535cea5db5f58bee6fa1b8.png)
 
 To add a new action step to a Zapier integration, open the _Actions_ page in Zapier visual builder from the sidebar on the left, and select _Add Action_. Start by selecting your action type. New actions are _Create_ type by default, and will add new data to your app. If your action should lookup existing items instead, select _Search_—then jump to the [Search](#search) section below for details on setting up a search action.
@@ -39,6 +41,8 @@ Then add the core details to your action, including:
 
 Once the action settings are added, click _Save and Continue_ to add the new action and save your settings. You can edit the settings any time later with the exception of the create or search option.
 
+### 2. Build Action Input Form
+
 ![Zapier input designer](https://cdn.zapier.com/storage/photos/31dfcf36c01b0ee0db946a6a46c3de8c.png)
 
 Then, the _Input Designer_ will open to build the input form field for your action. All action steps _must_ include an input form for Zapier to gather the data needed to create or find items in your app. Add at least one input field to your action before switching to the final _API Configuration_ tab.
@@ -49,7 +53,49 @@ Add action fields for each item your app needs to create or find this item in yo
 
 > **Tip**: Check our detailed [Zapier input designer](https://zapier.github.io/visual-builder/docs/input-designer) guide for details on each option in the input designer, along with each field type you can add to your action's form.
 
+### 3. Enter API Configuration
 
+![Zapier action API configuration](https://cdn.zapier.com/storage/photos/09bf074db0b6e8e02c049e2fed3983a9.png)
+
+The last part of building a Zapier action is the most crucial: tell Zapier how to send the data to your API. By default, Zapier will include a `POST` call for create actions, and a `GET` call for search actions. Additionally, Zapier will include each of your input form fields in the _Request Body_ automatically.
+
+For most actions, select the correct API call if your app expects something other than the default, then paste the URL for your API call in the box under _API Endpoint_. Zapier includes each input field in your request body by default.
+
+If your API call expects input data in the core URL, you can reference any input field's key with the following text, replacing `key` with your field key:
+
+{% raw %}`{{bundle.inputData.key}}`{% endraw %}
+
+The defaults on all other settings work for most basic API calls. If you need to configure more options, though, click _Show options_ to add URL Params, HTTP Headers, set your action to omit empty parameters, or customize the request body. Alternately, switch to [code mode](#code) to write custom JavaScript code for your action.
+
+![Test Zapier API Call](https://cdn.zapier.com/storage/photos/08da97b61a7f3cdbdd5335ba5a03f906.png)
+
+Once your API call is added, test it inside Zapier visual builder with testing data. Authenticate with your app if you haven't already, then fill in each input field under the _Configure Test Data_ section with data that will work in your app. Click _Test Your Result_ to have Zapier run the action as it would inside a Zap—and see the results instantly.
+
+If your app returns an error, be sure to check:
+
+- Authentication: Did your app's authentication work correctly in the authentication step? You can only test an integration once you've connected an app account to Zapier.
+- Test Data: Did your test data include the details your app expects, such as actual dates in date fields or complete email addresses in email address fields?
+- Input Field Keys: Did you use the same field keys in your input field as your API expects? Double-check that in the Input Designer, and change if needed.
+- API Call Customization: Does your API expect something different than the standard API call details Zapier sets by default? You may need to use custom coding if the options you need aren't available.
+
+![Zapier Define Output Fields](https://cdn.zapier.com/storage/photos/ae070045d9e23b162f1b0a0a1507b029.png)
+
+Every time your action step runs, your API will return data to Zapier—ideally detailing the item that was added to your app or found via a search. Each item includes multiple details, including each item users would add via the Zap input form along with extra details, often with items users may not care about as much.
+
+Zapier lets you define the most important fields with friendly field names. Each field you define will show up first in the output field list after the Zap runs, and will be usable in subsequent Zap steps.
+
+In the _Sample_ box, add a JSON formatted example of the output data from your API with the most commonly used output fields. Include the field key on the left, and sample data for that field on the right, using sample, demo data that can be used publicly.
+
+Then click _Generate Output Field Definitions_ and Zapier will list a table of the fields with the keys on the left and the field type on the right. Select the correct field type (including the default String field or Text, integer, number, boolean, datetime, file, and password field options), and add a human-friendly field name in the center column.
+
+<a id="code"></a>
+## How to Use Custom Code in Zapier Actions
+
+![Zapier visual builder code mode](https://cdn.zapier.com/storage/photos/0e52a1110b0f6cd37afd4c005e97dfa0.png)
+
+The default API settings form is the best option for most actions with default settings. If your action needs customized API calls, scripting to manipulate input field data, or other unique features, you can add custom Node.js powered JavaScript code for your API request.
+
+To use custom code, click the _Switch to Code Mode_ button. Zapier will translate your default API call settings into JavaScript code the first time you switch to code mode for an easy way to start. If you switch back to form mode, though, Zapier will not transfer your code settings back to the form.
 
 <a id="search"></a>
 ## How to Add a Search Action
