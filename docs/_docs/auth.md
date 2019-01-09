@@ -165,4 +165,4 @@ You cannot change an integration’s authentication scheme, but you can remove a
 
 Repeat the original steps to add your app’s new authentication scheme to the Zapier integration.
 
-> **Note:** Never remove authentication from an existing, live integration. If an integration’s authentication scheme needs changed, clone a new major version and add the new authentication. Then migrate users to the new version, and deprecate the original version with breaking changes. [Learn more](   https://github.com/zapier/developer-doc-content/blob/Matt-Godzilla-Quick-Start/Visual%20Builder%20Documentation/Manage%20Versions.md){:target="_blank"}
+> **Note:** Never remove authentication from an existing, live integration. If an integration’s authentication scheme needs changed, clone a new major version and add the new authentication. Then migrate users to the new version, and deprecate the original version with breaking changes. [Learn more](https://zapier.github.io/visual-builder/docs/versions){:target="_blank"}
