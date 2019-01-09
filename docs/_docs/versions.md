@@ -15,13 +15,17 @@ That’s where versions come in. Zapier lets you create multiple versions of you
 
 Here’s how.
 
-## Manage Your Integration Versions in Zapier
+## Manage Integration Versions in Zapier
+
+![Zapier integratin versions](https://cdn.zapier.com/storage/photos/4294ed1a2f6c7e3980cb9ac9c43f8655.png)
 
 Zapier’s visual builder includes a _Versions_ tab in the left sidebar. New integrations only include the original `1.0.0` version, the same version that Zapier lists in the top left of the visual builder as your app’s current version.
 
 Click either the version number in the top left of your Zapier visual creator sidebar or the gear icon beside your version in the _Versions_ tab to make changes. You can _Clone_ your integration to make a new version based on the features you already added to your integration—then once that version is ready, you can _Promote_ the new version to have new users start using it.
 
 ## Clone Your Integration
+
+![Clone Zapier integration](https://cdn.zapier.com/storage/photos/dca2130ce5dddca928519ad60130d35a.png)
 
 Creating a new version of your Zapier integration is easy as you never need to start over. Instead, to make a new version, always start by cloning an existing version. That lets you start with an exact copy of your integration where you can make the changes and additions you need.
 
@@ -35,6 +39,8 @@ Once you clone the integration, you can directly click the _Edit_ button to twea
 
 ## Edit a Version of Your Integration
 
+![Edit Zapier integration version](https://cdn.zapier.com/storage/photos/a506b0a211b75a473fe71a59781eca12.png)
+
 You can add, edit, and test features in your new integration version just as you did in the original version. All you need to do is switch between your integration versions to add changes to the new version, not the original.
 
 To edit a specific integration version, open the _Versions_ tab, click the gear icon beside the version you want to edit, and select _Edit_. You can then see anytime what version you’re editing from the version number in the top left of your Zapier visual editor sidebar.
@@ -42,6 +48,8 @@ To edit a specific integration version, open the _Versions_ tab, click the gear 
 You can also test any version of your integration from Zapier’s standard Zap editor. Search for your app name when adding a Zap step, and Zapier will show multiple entries on your account with the version number beside each. Select the newest one to test your new changes.
 
 ## Migrate Users to Your New Integration Version
+
+![Migrate users to new Zapier integration version](https://cdn.zapier.com/storage/photos/49423feb86f237b5186d7efdcaf2ac53.png)
 
 Once you’ve added all the changes needed to your integration, you can start rolling it out to users to update their existing Zaps and let users make new Zaps with your new integration features.
 
@@ -55,6 +63,8 @@ You can also Promote your new integration version to make it the default version
 
 ## Depreciate an Older Version of Your Integration
 
+![Depreciate Zapier integration version](https://cdn.zapier.com/storage/photos/dd6acdd75278ecd733a5f3945ea641a2.png)
+
 If you did introduce breaking changes to your integration and want existing users to switch to the new version, you can depreciate the old version. That will let your older integration and Zaps that use it continue to run—but they will include a `(Legacy)` tag in the Zapier editor to prompt users to re-build the Zap with the new integration. Additionally, when adding a new Zap step, Zapier will no longer recommend the older, depreciated version of your integration.
 
 To depreciate a version, select _Depreciate_ in the Versions menu, then select a date to depreciate the integration in the calendar drop-down. Choose a date between two weeks and a year from today, then click the _Depreciate_ button to confirm.
@@ -62,6 +72,8 @@ To depreciate a version, select _Depreciate_ in the Versions menu, then select a
 Zapier will then show a yellow exclamation mark beside that version in your integration’s versions menu, showing the date it will be depreciated if you hover over it. You’ll also be able to see your user count as it goes down, switching from the old integration version to the new.
 
 ## Delete Older Versions of Your Integration
+
+![Delete Zapier integration version](https://cdn.zapier.com/storage/photos/86bf4dbabd06b989d7717f95e8479fba.png)
 
 Once you’ve depreciated an integration version and it has no existing users, you can delete that version to clean up your Zapier integration.
 
