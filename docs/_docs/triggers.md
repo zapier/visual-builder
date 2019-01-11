@@ -49,15 +49,47 @@ Once your form is complete—or if you don't need to include an input form—cli
 
 ![Zapier Polling Trigger Settings](https://cdn.zapier.com/storage/photos/af53c9298cb9baf32abb17eb9e51a0dc.png)
 
+The last part of adding a trigger is setting is API configuration. Zapier selects _Polling_ by default, where Zapier will send a `GET` request to an API endpoint URL to request new data—and in live Zaps, Zapier automatically deduplicates and sorts for the newest data from the API. Live Zaps automatically poll the URL for new data every 5 to 15 minutes, depending on the user's Zapier plan.
 
+To add a polling trigger, select _Polling_ at the top of the settings page, then enter your API URL in the _API Endpoint_ field. If your API URL requires specific data in the URL, enter the following text in the URL where your API expects that data, replacing `key` for the input field key with the relevant data from the input form you created before:
+
+{% raw %}`{{bundle.inputData.key}}`{% endraw %}
+
+Otherwise, Zapier will automatically send any other input field data in the request body with the API call.
+
+If you plan to use this trigger to power dropdown menus in other Zap steps (such as to find users, projects, folders, and other app data often used to create new items), and if your API call can paginate data, check the _Support Paging_ box.
+
+If your API requires any additional data, you can add them from the _Show Options_ button. Or, if needed, click the _Switch to Code Mode_ to write a custom API call in node.js powered JavaScript code. The first time you switch to Code Mode, Zapier will translate the settings in the form to code so you can start with the basics already configured. If you switch back to form mode, though, Zapier will not transfer any changes from the code mode to the form.
+
+Once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
 
 ![Zapier Rest Hook Settings](https://cdn.zapier.com/storage/photos/de85ffb1cc01a16b4b0e753dd7c0745c.png)
 
+Alternately, if your app supports [REST Hooks](http://resthooks.org/)—or webhook subscriptions that can be manipulated through a REST API—select _Rest Hook_ for your trigger. This will let your trigger run in near realtime with your app pushing data to Zapier, running Zaps as soon as new data comes into your app instead of waiting for Zapier to fetch new data from your API.
+
+With a REST Hook trigger, you need to add a Subscribe and Unsubscribe URL, along with a Perform List URL where Zapier should check for recent items. Finally, you can customize the code to evaluate the data your app's webhooks pass to Zapier.
+
+As with polling triggers, once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
+
 ![Test Zapier Trigger](https://cdn.zapier.com/storage/photos/120d65ddd8baed9d781c358b66078851.png)
+
+Once you've finished adding your polling or rest hook trigger settings, it's time to make sure everything you've built so far works and fetches the correct data from Zapier. In the _Test Your API Request_ section, you should see the app account you added when testing your authentication. If not, add an app account first.
+
+Then if you added an input form for your Trigger, add data for each of those fields. Be sure to use real data that will work in your app, as Zapier will use it in an API call to your app to fetch live data from your authenticated app account.
+
+Click _Test Your Result_, and if your trigger is set up correctly, you'll see a green checkmark and a _Request Successful_ message in the top right.
 
 ![Zapier Trigger Test Results](https://cdn.zapier.com/storage/photos/a43315730778c1cf5251d1e80a465819.png)
 
+Zapier will show the raw, JSON formatted response from your API in the _Response_ tab with every output field your app sends to Zapier. You can see the data Zapier sent to your API in the _Bundle_ tab, or the raw HTTP request in the _HTTP_ tab.
+
 ![Zapier Define Output Fields](https://cdn.zapier.com/storage/photos/d9a84ecb06a3f8f9e40fb91ba1a63ea5.png)
+
+As a final step, you need to define the most important output fields to help users easily know what data from your app they should use in subsequent Zap steps. In the _Sample Data_ box, either click the _Use Response from Test Data_ button to import the fields your app sent to Zapier in the previous test, or add your own JSON-formatted fields. Only keep the most important fields, and make sure the data you include with those fields is non-private, non-identifiable testing data that can be shared publicly.
+
+Then click _Generate Output Field Definitions_, and Zapier will build a table of your fields under _Output Fields_. Add a human friendly name for each field and select the field type. Click _Save Output & Finish_ to finish the final part of your trigger.
+
+You can now make a new Zap using your trigger to test out the trigger live inside Zapier.
 
 ## How to Reorder Triggers in a Zapier Integration
 
