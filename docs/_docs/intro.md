@@ -1,7 +1,7 @@
 ---
 title: Intro
 order: 1
-layout: post
+layout: post-toc
 redirect_from: /docs/
 ---
 

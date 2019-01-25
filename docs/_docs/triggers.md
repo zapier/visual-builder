@@ -1,7 +1,7 @@
 ---
 title: Triggers
 order: 4
-layout: post
+layout: post-toc
 redirect_from: /docs/
 ---
 
