@@ -1,6 +1,6 @@
 ---
 title: Glossary
-order: 10
+order: 11
 layout: post
 redirect_from: /docs/
 ---
