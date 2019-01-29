@@ -16,6 +16,7 @@ When you add Basic Auth to your integration, Zapier adds a pre-built form that r
 
 Use Basic Auth if your API only requires a username and password, and needs no special configuration.
 
+<a id="configure"></a>
 ## How to Add Basic Auth to a Zapier Integration
 
 ![Add Basic Auth to Zapier integration](https://cdn.zapier.com/storage/photos/d5f4146ecea9123de570743234478dfa.png)
@@ -43,6 +44,7 @@ Finally, add a connection label to your Zapier integration. Zapier always includ
 - Plain text that will be included after your app's full name
 - Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.authData.field}}`{% endraw %} variables, replacing `field` for your API output field name.
 
+<a id="test"></a>
 ### Test Authentication
 
 ![Test Zapier authentication](https://cdn.zapier.com/storage/photos/37a59dae4fe33ffc4894b1df23e7be83.png)
@@ -66,7 +68,6 @@ If something didn't work, Zapier will show the error message in the _Response_ t
 With that, your app authentication should be finished, and your integration ready to add triggers and actions.
 
 <a id="error"></a>
-
 ## Common Basic Auth Error Messages
 
 ![404 error in Zapier basic auth](https://cdn.zapier.com/storage/photos/88b058e13a0321efdbdab3e0a046dfa5.png)
@@ -97,6 +98,7 @@ If you encounter this error, double-check both the API endpoint URL and the call
 The standard HTTP 401 `Unauthorized` error is commonly returned when:
 
 - User account credentials are incorrect, expired, or revoked
+- User account credentials are entered incorrectly when connecting an account
 
 Try authenticating your app user account with Zapier again. Click _Connect an Account_, add credentials for an active account on the app, then try the test again.
 
