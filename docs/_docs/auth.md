@@ -15,6 +15,7 @@ Once users authenticate their account on an app through Zapier, they can use any
 
 When building a Zapier integration, you define how the Zapier platform connects to your app to authenticates users, and add an API call where Zapier can test the account authentication. Then connect an account to Zapier to test the app authentication and any subsequent Zap Triggers and Actions you add to the integration.
 
+<a id="schemes"></a>
 ## Zapier Supported Authentication Schemes
 
 ![Zapier Authentication](https://cdn.zapier.com/storage/photos/5f1a0e1fc0eb5635bdf1a2983f31a9ba.png)
@@ -81,6 +82,7 @@ To add a connection label, you can enter an output field in the Connection Label
 
 You can include any field your authentication test API call returns in the connection label, though the best fields to use are usernames, account numbers, email addresses, or other identifiable but not fully private data. Never use passwords, API keys, or other critical, private info in connection labels.
 
+<a id="change"></a>
 ## How to Remove or Change Zapier Integration Authentication Scheme
 
 ![Zapier Remove Authentication Scheme](https://cdn.zapier.com/storage/photos/a84d330dce6ccc18cbdeb12ca555b12d.png)
@@ -92,7 +94,3 @@ To remove a Zapier integration's authentication scheme, open the _Authentication
 Then add your app’s new authentication scheme to the Zapier integration instead.
 
 > **Note:** Never remove authentication from an existing, live integration. If an integration’s authentication scheme needs changed, clone a new major version and add the new authentication. Then migrate users to the new version, and deprecate the original version with breaking changes. [Learn more](https://zapier.github.io/visual-builder/docs/versions){:target="_blank"}
-
-## Zapier Authentication FAQs
-
-_Coming Soon_

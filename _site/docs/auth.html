@@ -129,6 +129,10 @@
       <a href="/visual-builder/docs/glossary" class="sidebar__list-link ">Glossary</a>
     </li>
   
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+    </li>
+  
 </ul>
 
   </nav>
@@ -141,7 +145,6 @@
   <li><a href="#zapier-supported-authentication-schemes">Zapier Supported Authentication Schemes</a></li>
   <li><a href="#how-to-add-a-connection-label-to-authenticated-accounts">How to Add a Connection Label to Authenticated Accounts</a></li>
   <li><a href="#how-to-remove-or-change-zapier-integration-authentication-scheme">How to Remove or Change Zapier Integration Authentication Scheme</a></li>
-  <li><a href="#zapier-authentication-faqs">Zapier Authentication FAQs</a></li>
 </ul>
 
     </aside>
@@ -156,6 +159,7 @@
 
 <p>When building a Zapier integration, you define how the Zapier platform connects to your app to authenticates users, and add an API call where Zapier can test the account authentication. Then connect an account to Zapier to test the app authentication and any subsequent Zap Triggers and Actions you add to the integration.</p>
 
+<p><a id="schemes"></a></p>
 <h2 id="zapier-supported-authentication-schemes">Zapier Supported Authentication Schemes</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/5f1a0e1fc0eb5635bdf1a2983f31a9ba.png" alt="Zapier Authentication" /></p>
@@ -226,6 +230,7 @@
 
 <p>You can include any field your authentication test API call returns in the connection label, though the best fields to use are usernames, account numbers, email addresses, or other identifiable but not fully private data. Never use passwords, API keys, or other critical, private info in connection labels.</p>
 
+<p><a id="change"></a></p>
 <h2 id="how-to-remove-or-change-zapier-integration-authentication-scheme">How to Remove or Change Zapier Integration Authentication Scheme</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/a84d330dce6ccc18cbdeb12ca555b12d.png" alt="Zapier Remove Authentication Scheme" /></p>
@@ -239,10 +244,6 @@
 <blockquote>
   <p><strong>Note:</strong> Never remove authentication from an existing, live integration. If an integration’s authentication scheme needs changed, clone a new major version and add the new authentication. Then migrate users to the new version, and deprecate the original version with breaking changes. <a href="https://zapier.github.io/visual-builder/docs/versions" target="_blank">Learn more</a></p>
 </blockquote>
-
-<h2 id="zapier-authentication-faqs">Zapier Authentication FAQs</h2>
-
-<p><em>Coming Soon</em></p>
 </section>
       <footer class="prev-next">
 

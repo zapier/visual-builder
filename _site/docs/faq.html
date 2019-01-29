@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test Your Integration |  Zapier Visual Builder Documentation</title>
+  <title>FAQs |  Zapier Visual Builder Documentation</title>
   <meta name="description" content="Zapier Visual Builder">
   <link rel="icon" href="/visual-builder/assets/images/favicon.ico">
   <link rel="stylesheet" href="/visual-builder/assets/stylesheets/base.css">
@@ -35,12 +35,12 @@
   <nav id="menu" class="sidebar__nav">
     
 
-<a class="sidebar__toggle  sidebar__toggle--is-selected " href="/visual-builder/quickstart/introduction">
+<a class="sidebar__toggle " href="/visual-builder/quickstart/introduction">
   <h3 class="sidebar__title">Quick Start</h3>
-  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="quickstart-list" aria-expanded="true"></div>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="quickstart-list" aria-expanded="false"></div>
 </a>
 
-<ul id=quickstart-list class="sidebar__list" aria-hidden="false">
+<ul id=quickstart-list class="sidebar__list" aria-hidden="true">
   
     <li class="sidebar__list-item">
       <a href="/visual-builder/quickstart/introduction" class="sidebar__list-link ">Intro</a>
@@ -71,19 +71,19 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/quickstart/test-complete" class="sidebar__list-link  sidebar__list-link--is-selected ">Test Your Integration</a>
+      <a href="/visual-builder/quickstart/test-complete" class="sidebar__list-link ">Test Your Integration</a>
     </li>
   
 </ul>
 
     
 
-<a class="sidebar__toggle " href="/visual-builder/docs/intro">
+<a class="sidebar__toggle  sidebar__toggle--is-selected " href="/visual-builder/docs/intro">
   <h3 class="sidebar__title">Beta Documentation</h3>
-  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="docs-list" aria-expanded="false"></div>
+  <div class="sidebar__arrow js-sidebar-toggle" aria-controls="docs-list" aria-expanded="true"></div>
 </a>
 
-<ul id=docs-list class="sidebar__list" aria-hidden="true">
+<ul id=docs-list class="sidebar__list" aria-hidden="false">
   
     <li class="sidebar__list-item">
       <a href="/visual-builder/docs/intro" class="sidebar__list-link ">Intro</a>
@@ -130,7 +130,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+      <a href="/visual-builder/docs/faq" class="sidebar__list-link  sidebar__list-link--is-selected ">FAQs</a>
     </li>
   
 </ul>
@@ -139,27 +139,38 @@
 </div>
 
     <main class="container">
-      <section class="content"><h2 id="test-your-integration">Test Your Integration</h2>
+      <section class="content"><h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 
-<p><img src="https://cdn.zapier.com/storage/photos/bcad0a485f61f4acccf36cb19a0261ec.gif" alt="Testing Zapier Integration" /></p>
+<p><a id="code"></a></p>
+<h3 id="how-does-code-mode-work">How Does Code Mode Work?</h3>
 
-<p><em>Here’s how your example GitHub integration looks inside Zapier</em></p>
+<p><img src="https://cdn.zapier.com/storage/photos/5abf045cf0b8f3cce37d05d51071d6e9.png" alt="Zapier visual builder code mode" />
+<em>Each API call pane in Zapier visual builder includes a code mode toggle</em></p>
 
-<p>You’ve already tested your GitHub authentication, trigger, and action in Zapier’s integration visual builder. Now try using your GitHub integration in a Zap.</p>
+<p>Zapier visual builder includes a form to add API endpoint URLs and choose the API call type, then automatically includes any authentication details and input form data with the API call. You can additionally set any custom options your API may need, including custom URL params, HTTP headers, and request body items. Zapier then parses JSON encoded responses into individual output fields to use in subsequent Zap steps.</p>
 
-<p>Open Zapier, click <em><a href="https://zapier.com/app/editor/" target="_blank">Make a Zap</a></em>, and select the <em>GitHub</em> app with the <code class="highlighter-rouge">By Invite</code> tag to use your new integration. Try building Zaps using the trigger and action you created to test your Zapier integration. Want to do more with it? Go back to the Zapier visual builder and add more input fields to gather more data or create new triggers and actions to do more with GitHub.</p>
+<p>This is the best way to set up most API calls and options in Zapier integration authentication, triggers, and actions.</p>
 
-<p><img src="https://cdn.zapier.com/storage/photos/653cbb9882546956d2da9c60d3291590.png" alt="Zapier Invite Beta Access" /></p>
+<p>If your API calls need more customization, however, or your API response is in a non-JSON format, you will need to write custom JavaScript code to handle your API call and/or response parsing. Zapier visual builder includes a <em>Switch to Code Mode</em> toggle on every API request, similar to the one pictured above, that switches that specific API call to code mode.</p>
 
-<p>You could also invite others to help test your app—something you won’t need with your sample GitHub integration, but that will be helpful when you build a new integration with your API. Click the <em>Visibility</em> tab, then copy the link on that page or enter a contact’s email address to send them an invite to try your app. Once they accept, they’ll see your integration inside their Zap editor, ready to use in any Zaps they build.</p>
+<p>The first time you switch to code mode, Zapier copies everything entered in the API request form, including any custom options added, and converts them to JavaScript code. It then changes the UI to code mode where you can add code for your API call.</p>
 
-<hr />
+<p>Do note that changes are not saved automatically. Once you have added the code you want, click <em>Save &amp; Continue</em> to add the changes to your integration.</p>
 
-<p>You’ve just built your first Zapier integration, and used it in your Zapier account! Congrats!</p>
+<p><img src="https://cdn.zapier.com/storage/photos/ea2eb690bf92b55fab0bbad290107a97.png" alt="Zapier code mode switch to form mode" />
+<em>Switch back to form mode to use the form mode settings instead of your custom code</em></p>
 
-<p>Take a break, then come back and give <a href="https://zapier.com/app/developer/" target="_blank">Zapier visual builder</a> a try with your app. Connect your app’s API, add the triggers and actions that will be most useful with your app, and build input forms to gather the data your app would need from users. If you get stuck, <a href="https://zapier.github.io/zapier-platform-cli/" target="_blank">Zapier’s developer docs</a> will help you learn more about the Zapier platform and build more detailed functionality into your integration—or <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs0u5YppMGGwCuyVJJRdJuVcTEqOSV7tI5pzU4Szac2ii0Pg/viewform" target="_blank">send the Zapier platform team feedback</a> about any problems you encounter.</p>
+<p>Once you switch to code mode, Zapier uses your custom code for that API call, and does not use the data you previously entered in the form.</p>
 
-<p>Happy building!</p>
+<p>If you wish to switch back to the form mode, click the <em>Switch to Form Mode</em> button to see the form options as they were when you first switched to code mode. Zapier will save the code you entered, but will not convert it back to the form mode or use the custom code in your live integration.</p>
+
+<p>You may switch back to code mode again—though this time, Zapier will show the last saved version of your code, and will not copy any changes from your API call form to the code.</p>
+
+<h3 id="is-zapier-using-the-form-or-code-mode-settings">Is Zapier Using the Form or Code Mode Settings?</h3>
+
+<p>Zapier uses the currently visible option when running each part of your integration. If the form mode is visible for an API call in an integration’s authentication, trigger, or action settings, that Zapier integration is using the data from form mode. If the code mode is visible for an API call, Zapier is using the code instead to turn that part of the integration.</p>
+
+<p>To check which mode and settings Zapier is using for each API call, open that part of your Zapier integration and visually check to see if the form or code mode is visible.</p>
 </section>
       <footer class="prev-next">
       	
@@ -167,7 +178,7 @@
 
 
 <hr>
-<a class="button blue" href="/visual-builder/quickstart/build-action">Previous: Add an Action</a>
+<a class="button blue" href="/visual-builder/docs/glossary">Previous: Glossary</a>
 
       	<hr>
       	<p><em>Have any feedback or questions? <a href="https://github.com/zapier/visual-builder/issues/new/choose" target="_blank">Let us know</a>.</em></p>
