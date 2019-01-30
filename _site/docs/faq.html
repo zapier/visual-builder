@@ -153,6 +153,10 @@
 
 <p>If your API calls need more customization, however, or your API response is in a non-JSON format, you will need to write custom JavaScript code to handle your API call and/or response parsing. Zapier visual builder includes a <em>Switch to Code Mode</em> toggle on every API request, similar to the one pictured above, that switches that specific API call to code mode.</p>
 
+<blockquote>
+  <p><strong>Remember:</strong> Code Mode is a toggle. Code Mode and Form Mode are saved separately; changes to one do not affect the other. The settings in the currently visible editor are the ones Zapier uses in your integration.</p>
+</blockquote>
+
 <p>The first time you switch to code mode, Zapier copies everything entered in the API request form, including any custom options added, and converts them to JavaScript code. It then changes the UI to code mode where you can add code for your API call.</p>
 
 <p>Do note that changes are not saved automatically. Once you have added the code you want, click <em>Save &amp; Continue</em> to add the changes to your integration.</p>
@@ -166,11 +170,31 @@
 
 <p>You may switch back to code mode again—though this time, Zapier will show the last saved version of your code, and will not copy any changes from your API call form to the code.</p>
 
-<h3 id="is-zapier-using-the-form-or-code-mode-settings">Is Zapier Using the Form or Code Mode Settings?</h3>
+<h3 id="is-my-zapier-integration-using-the-form-or-code-mode-settings">Is my Zapier Integration Using the Form or Code Mode Settings?</h3>
 
 <p>Zapier uses the currently visible option when running each part of your integration. If the form mode is visible for an API call in an integration’s authentication, trigger, or action settings, that Zapier integration is using the data from form mode. If the code mode is visible for an API call, Zapier is using the code instead to turn that part of the integration.</p>
 
 <p>To check which mode and settings Zapier is using for each API call, open that part of your Zapier integration and visually check to see if the form or code mode is visible.</p>
+
+<p><a id="cli"></a></p>
+<h3 id="why-are-options-grayed-out-for-my-cli-built-integration">Why Are Options Grayed Out For my CLI-built Integration?</h3>
+
+<p>The Zapier Command Line Interface (CLI) is a separate SDK available to install on your local development machine to create Zapier integrations. It lets you work in code rather than a web based UI for more advanced integrations.</p>
+
+<p>Integrations created in the CLI cannot be edited in the visual builder UI. You can’t add triggers or actions, edit code or configurations, for instance.  Zapier’s platform site lists every integration you build, in the visual builder or CLI, but disables the core editing options for CLI-built integrations. These options will be grayed out in the UI.</p>
+
+<p>You <em>can</em> manage the other details of your CLI integration from the UI, however, including:</p>
+
+<ul>
+  <li>Invite testers and collaborators</li>
+  <li>Monitor integration usage</li>
+  <li>Change environment variables</li>
+  <li>Submit your integration to be made publicly available</li>
+  <li>Promote a new integration version to public</li>
+  <li>Migrate users between versions</li>
+</ul>
+
+<p><em>Coming Soon</em>: In an upcoming version of Zapier’s visual builder, you will be able to export a CLI version of your visual builder project. This will be a one-time export that converts your visual builder integration to a CLI format that you can edit and maintain on your local development machine. You can then create and push new versions of your integration via Zapier CLI, and can manage the details from the visual builder UI or the CLI. Once you enable CLI, though, you will not be able to edit or add authentication, trigger, or action details in the visual builder UI.</p>
 </section>
       <footer class="prev-next">
       	

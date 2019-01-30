@@ -34,8 +34,26 @@ If you wish to switch back to the form mode, click the _Switch to Form Mode_ but
 
 You may switch back to code mode again—though this time, Zapier will show the last saved version of your code, and will not copy any changes from your API call form to the code.
 
-### Is Zapier Using the Form or Code Mode Settings?
+### Is my Zapier Integration Using the Form or Code Mode Settings?
 
 Zapier uses the currently visible option when running each part of your integration. If the form mode is visible for an API call in an integration's authentication, trigger, or action settings, that Zapier integration is using the data from form mode. If the code mode is visible for an API call, Zapier is using the code instead to turn that part of the integration.
 
 To check which mode and settings Zapier is using for each API call, open that part of your Zapier integration and visually check to see if the form or code mode is visible.
+
+<a id="cli"></a>
+### Why Are Options Grayed Out For my CLI-built Integration?
+
+The Zapier Command Line Interface (CLI) is a separate SDK available to install on your local development machine to create Zapier integrations. It lets you work in code rather than a web based UI for more advanced integrations.
+
+Integrations created in the CLI cannot be edited in the visual builder UI. You can’t add triggers or actions, edit code or configurations, for instance.  Zapier's platform site lists every integration you build, in the visual builder or CLI, but disables the core editing options for CLI-built integrations. These options will be grayed out in the UI.
+
+You _can_ manage the other details of your CLI integration from the UI, however, including:
+
+- Invite testers and collaborators
+- Monitor integration usage
+- Change environment variables
+- Submit your integration to be made publicly available
+- Promote a new integration version to public
+- Migrate users between versions
+
+_Coming Soon_: In an upcoming version of Zapier's visual builder, you will be able to export a CLI version of your visual builder project. This will be a one-time export that converts your visual builder integration to a CLI format that you can edit and maintain on your local development machine. You can then create and push new versions of your integration via Zapier CLI, and can manage the details from the visual builder UI or the CLI. Once you enable CLI, though, you will not be able to edit or add authentication, trigger, or action details in the visual builder UI.
