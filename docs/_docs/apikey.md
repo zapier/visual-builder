@@ -51,13 +51,7 @@ Then fill in the optional fields, as appropriate, especially the _Label_:
 - **Help Text**: Include details to assist users in authenticating with your app, especially if they may be unsure where to find the data needed. Format text with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/), and include a link if needed.
 - **Default Value**: Include a value for this field to be used a fallback. For optional fields, the default value is set on initial creation and used instead of missing or null values every time the Zap runs. For required fields, this value is used during Zap creation, but not when the Zap runs (Zapier raises an error for missing/null values instead).
 
-![Zapier Computed Fields](https://cdn.zapier.com/storage/photos/b82edea722597f88f5c0d21a46d6c847.png)
-
-Zapier includes one more field option: Computed Fields. These are used to store values obtained from your API test call that would be referenced in your integration's subsequent API calls.
-
-Say your app includes a username that can be fetched with an API call using the API key—and your other API calls require the username be used. You would add a computed field that references that value from your server's response, much like the way you reference fields in connected accounts.
-
-Add your field's key as before, with the same key your API uses to reference that data. Zapier stores all fields returned by the authentication API test call, including the one you reference in the computed field, so you can use them in subsequent API calls. If your API does not return the field referenced in your computed field, Zapier will show an error since computed fields are required by default.
+> **Note:** The input field designer also includes an option for computed fields; those are not applicable to API key login, and are only used with OAuth v2 and Session auth.
 
 ![Edit API key input fields](https://cdn.zapier.com/storage/photos/b3d0bf644fd562435e5099083b8b66a2.png)
 
