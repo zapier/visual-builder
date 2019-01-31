@@ -94,3 +94,50 @@ To remove a Zapier integration's authentication scheme, open the _Authentication
 Then add your app’s new authentication scheme to the Zapier integration instead.
 
 > **Note:** Never remove authentication from an existing, live integration. If an integration’s authentication scheme needs changed, clone a new major version and add the new authentication. Then migrate users to the new version, and deprecate the original version with breaking changes. [Learn more](https://zapier.github.io/visual-builder/docs/versions){:target="_blank"}
+
+<a id="error"></a>
+## Common Authentication Error Messages
+
+![404 error in Zapier basic auth](https://cdn.zapier.com/storage/photos/88b058e13a0321efdbdab3e0a046dfa5.png)
+
+If Zapier cannot successfully make the test API call to verify users' credentials, you may see an error message in the Test section of your Zapier integration. Zapier shows a simplified error message in the _Response_ tab by default, along with a red x and a _Request Failed_ message in the top right.
+
+![Zapier Error Response Content](https://cdn.zapier.com/storage/photos/2511421236621c8c5ea7c160f2a2ca7e.png)
+
+You can find the original API response with the full error message in the _HTTP_ tab under _Response Content_.
+
+The most common errors include:
+
+### 404
+
+![404 error in Zapier basic auth](https://cdn.zapier.com/storage/photos/88b058e13a0321efdbdab3e0a046dfa5.png)
+
+The standard HTTP 404 `Not Found` error is commonly returned when:
+
+- Test API endpoint URL is incorrect
+- Test API call method is incorrect
+
+If you encounter this error, double-check both the API endpoint URL and the call method (typically `GET`). Ensure both are set to what your API expects, then click the _Save & Continue_ button, and click the _Test Connected Account_ button again.
+
+### 401 or 403
+
+![401 error in Zapier basic auth](https://cdn.zapier.com/storage/photos/d13a9b1ff308b520ae4b29461cc754d6.png)
+
+The standard HTTP 401 `Unauthorized` or HTTP 403 `Forbidden` error is commonly returned when:
+
+- User account credentials are incorrect, expired, or revoked
+
+Try authenticating your app user account with Zapier again. Click _Connect an Account_, add credentials for an active account on the app, then try the test again.
+
+### Error Parsing Response
+
+![Error Parsing Response in Zapier Basic Auth](https://cdn.zapier.com/storage/photos/deebd9e07497a209479a66e7f1d465b0.png)
+
+The _Error Parsing Response_ error is commonly returned when:
+
+- API returns non-standard and especially non-JSON output
+- Test API endpoint URL is incorrect
+
+Double-check the test API URL is entered correctly. If a standard, non-API endpoint URL is entered in the test field, the site will return its raw HTML page to Zapier and will result in this error. If you do change the URL, click _Save & Continue_ then test your connection again.
+
+If your API call is correct and returning data in a format Zapier does not expect, you will need to switch to code mode and add custom parsing for your API response. Under the _Test_ API call in the top of your app's Authentication settings, click _Switch to Code Mode_, then add custom JavaScript code to parse your API response.
