@@ -14,7 +14,7 @@ _Example Basic Auth screen for users inside Zapier_
 
 When you add Basic Auth to your integration, Zapier adds a pre-built form that requests a username and password whenever users authenticate with your API. Zapier then makes a test call to verify the credentials, and stores them to use with every subsequent API call Zapier makes to your app on behalf of the user. 
 
-Use Basic Auth if your API only requires a username and password, and needs no special configuration.
+Use Basic Auth if your API only requires a username and password, and needs no special configuration. If you need further customization of your login flow or need additional data from users, [API key authentication](https://zapier.github.io/visual-builder/docs/apikey) works the same as Basic auth but includes a customizable form where you can 
 
 ## How to Add Basic Auth to a Zapier Integration
 

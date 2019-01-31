@@ -7,7 +7,7 @@ redirect_from: /docs/
 
 ## Authentication
 
-Every Zapier step starts with the same thing: App authentication. Users select an app they wish to use in the step. They then authenticate with that app to allow Zapier to access their data.
+Every Zapier step starts with App authentication. Users select an app they wish to use in the step, then authenticate their account with that app to allow Zapier to access their data.
 
 Zapier authentication enables Zapier access to an individual account in an app. Users connect one specific app account to Zapier, that Zapier can then watch for new or updated data, search for existing data, and create or update new data in that individual account on the app. Zapier may access the account until the authorization expires, is revoked, or credentials are changed, and may automatically refresh OAuth 2-powered authentications if enabled in the integration.
 
