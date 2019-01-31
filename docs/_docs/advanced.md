@@ -52,9 +52,9 @@ When adding an input field in your integration's authentication, Zapier includes
 
 Computed Fields, on the other hand, store values obtained from an integration's API test call, so they can be referenced in your integration's subsequent API calls.
 
-Say your app includes a username that can be fetched with an API call using the API key—and your other API calls require the username be used. You would add a computed field that references that value from your server's response, much like the way you reference fields in connected accounts.
+Say your app includes a subdomain that can be fetched with an API call using the API key—and your other API calls require the subdomain be used in requests. You would add a computed field that references that value from your server's response, much like the way you reference fields in connected accounts.
 
-Zapier stores all fields returned by authentication API test call. Computed fields, however, are marked as _required_, so if the test API call does not return the field referenced in your computed field, Zapier will show an error.
+Zapier stores all fields returned by authentication API test call. Computed fields, however, are marked as _required_ internally, so if the auth request does not return the field referenced in your computed field, Zapier will show an error. For example, if using OAuth v.2 authentication, the `getAccessToken` request must return any computed fields included in your app's authentication input form.
 
 If your app API calls in triggers or actions require account details or other info that users shouldn't have to enter manually, include a computed field in your app's authentication input fields. For the _Key_, use the exact same field name as the one your API returns. Zapier then will match the API test call's output to the field you included, so you can reference it from the input bundle with the following text, replacing `field` with your field key:
 
