@@ -70,6 +70,22 @@ When you've added the needed forms, click _Continue_ to add a test API call and 
 
 ![Zapier test request API Key authentication](https://cdn.zapier.com/storage/photos/3130a3ad4c5b211de33886d4eff2abc0.png)
 
-Zapier then 
+Zapier then needs a way to test the API key and other input field data users enter, and ensure it enables a successful API call. For that, in step two, add an API call to your API that requires no configuration, typically a `/user` or `/me` call. Add the URL for the API call, and set the call type.
 
-Also add a Connection Label. 
+Zapier automatically includes the API key and any additional input fields you added to your input form in the URL Params. If your API needs that ddata as headers instead, click _Show Options_ and add the details there instead.
+
+![Zapier code mode API Key auth](https://cdn.zapier.com/storage/photos/a9a100a074dd9b0a9605464d21158268.png)
+
+If you need a custom API call, you can switch to code mode and write custom JavaScript code to handle your test API call and the response parsing, if needed. Click the _Switch to Code Mode_ toggle to enable it. The first time you click the toggle, Zapier will convert your API call to code. If you switch back to Form mode, though, Zapier will not convert your code changes to the form mode, nor will any subsequent changes in form mode be added to your code.
+
+![Zapier API Key auth connection label](https://cdn.zapier.com/storage/photos/f09f02450623750b70b67d0d7afa9e1c.png)
+
+Finally add a connection label to help users identify each account that they add from your app to Zapier. Zapier includes your app's name in the connection label by default, followed by the version number, then any text you include in the connection label. You can include:
+
+- Plain text that will be included in every account connection
+- Any input field from your authentication form—enter {% raw %}`{{bundle.authData.field}}`{% endraw %}, replacing `field` with your input form field key
+- Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name
+
+Click _Save & Continue_ when finished to save your authentication settings.
+
+Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://zapier.github.io/visual-builder/docs/auth#test) for more deatils, common errors you may encounter, and how to resolve those.
