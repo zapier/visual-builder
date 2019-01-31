@@ -74,11 +74,16 @@ The connection label settings in your app's authentication options let you custo
 Customize your app's connection label from the _Connection Label_ field in your Zapier integration. Zapier always includes the app's name in each account label. You can additionally include:
 
 - Plain text that will be included after your app's full name
-- Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.authData.field}}`{% endraw %} variables, replacing `field` for your API output field name.
+- Input fields with data users entered in the authentication form, referenced with {% raw %}`{{bundle.authData.field}}`{% endraw %} variables, replacing `field` for your input field name. With Basic auth, use `username` as the field.
+- Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name.
 
-To add a connection label, you can enter an output field in the Connection Label if you know the name of the field you wish to use that your API sends to Zapier. Otherwise, skip adding the connection label first, and instead click _Connect an Account_ under step 2. Then click _Test Connected Account_ and check the _Response_ tab for a field that includes the data your app should use in the connection label. Finally, use that field name to replace `field` in the following text, add it to your _Connection Label_ field, and save the changes:
+To add a connection label using an input field, enter the following in your _Connection Label_ field, optionally replacing `username` with the key for another input field your authentication form includes:
 
-{% raw %}`{{bundle.authData.field}}`{% endraw %}
+{% raw %}`{{bundle.authData.username}}`{% endraw %}
+
+Alternately, you can use an output field from your test API call in the Connection Label if you know the name of the field you wish to use that your API sends to Zapier. Otherwise, skip adding the connection label first, and instead click _Connect an Account_ under step 2. Then click _Test Connected Account_ and check the _Response_ tab for a field that includes the data your app should use in the connection label. Finally, enter that field key in the following text instead of `field`, and add it to your _Connection Label_ field:
+
+{% raw %}`{{bundle.inputData.username}}`{% endraw %}
 
 You can include any field your authentication test API call returns in the connection label, though the best fields to use are usernames, account numbers, email addresses, or other identifiable but not fully private data. Never use passwords, API keys, or other critical, private info in connection labels.
 

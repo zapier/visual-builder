@@ -36,12 +36,13 @@ If your API requires any custom details in the API call, click the _Show Options
 
 If you need more customization, you can write custom JavaScript code to call your API and parse the output data. To do that, click the _Switch to Code Mode_ toggle. The first time you click the toggle, Zapier will convert the data from your API call form to JavaScript. If you switch back to form mode, Zapier will save your custom code but will not use it in the API call. Additionally, if you switch back to code mode again later, Zapier will not add any changes from the API call form to your code.
 
-![Zapier Basic Auth connection label](https://cdn.zapier.com/storage/photos/7b04cb3a81e8dcb4f0508aec0e69cf2d.png)
+![Zapier Basic Auth connection label](https://cdn.zapier.com/storage/photos/196e9987836a34e4528a0b8ebd9dbd25.png)
 
 Finally, add a connection label to your Zapier integration. Zapier always includes the app's name in each account label. You can additionally include:
 
 - Plain text that will be included after your app's full name
-- Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.authData.field}}`{% endraw %} variables, replacing `field` for your API output field name.
+- The username that users enter in the Zapier authentication form when adding your app—enter {% raw %}`{{bundle.authData.username}}`{% endraw %} to include that
+- Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name.
 
 ### Test Authentication
 

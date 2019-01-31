@@ -58,4 +58,47 @@ Zapier stores all fields returned by authentication API test call. Computed fiel
 
 If your app API calls in triggers or actions require account details or other info that users shouldn't have to enter manually, include a computed field in your app's authentication input fields. For the _Key_, use the exact same field name as the one your API returns. Zapier then will match the API test call's output to the field you included, so you can reference it from the input bundle with the following text, replacing `field` with your field key:
 
-{% raw %}`{{bundle.authData.field}}`{% endraw %}
+{% raw %}`{{bundle.inputData.field}}`{% endraw %}
+
+<a id="bundle"></a>
+## Zapier Data Bundles
+
+Zapier stores data from users' authentication and input forms for API calls in the `bundle` object. You can reference that data in your integration using {% raw %}`{{bundle.bundleName.field}}`{% endraw %} text in API requests and connection labels, replacing `bundleName` with the bundle name and `field` with the input field key or API response field key you need.
+
+Zapier integrations include the following bundles:
+
+### authData
+
+Referenced with: {% raw %}`{{bundle.authData.field}}`{% endraw %}
+
+Includes data users enter into the authentication input form, including the `username` field for [Basic Auth](https://zapier.github.io/visual-builder/docs/basic) and any other field added to the authentication input form with other authentication methods.
+
+### inputData
+
+Referenced with: {% raw %}`{{bundle.inputData.field}}`{% endraw %}
+
+In authentication fields and connection labels, `inputData` contains the output fields returned from the test API call, typically used to add a label to new integration connections.
+
+In Trigger and Action steps, `inputData` contains the data from input forms that users enter themselves which Zapier passes to the app with that Trigger or Action's API call, with {% raw %}`{{curlies}}`{% endraw %} mapped fields from previous Zap steps rendered with their raw data.
+
+If you want the input field data with the original {% raw %}`{{curlies}}`{% endraw %} and not the text from previous steps, use {% raw %}`{{bundle.inputDataRaw.field}}`{% endraw %} instead.
+
+### rawRequest and cleanedRequest
+
+> Note: Only used with the `getAccessToken` data from OAuth v2 authentication
+
+Referenced with: {% raw %}`{{bundle.rawRequest}}`{% endraw %} or {% raw %}`{{bundle.cleanedRequest.field}}`{% endraw %}
+
+Includes the raw or cleaned info, respectively, from the user's browser request that triggers the `getAccessToken` call from OAuth v2 authentication. Can reference individual fields with `cleanedRequest`.
+
+### targetURL
+
+Referenced with: {% raw %}`{{bundle.targetURL}}`{% endraw %}
+
+In triggers using REST hooks, this returns the URL a site should send data to, such as `https://hooks.zapier.com/1234/abcd`.
+
+### subscribeData
+
+Referenced with: {% raw %}`{{bundle.subscribeData}}`{% endraw %}
+
+In triggers using REST hooks, this includes the data from the `performSubscribe` function which is used if you need to send a `DELETE` request to your server to stop sending webhook data to Zapier

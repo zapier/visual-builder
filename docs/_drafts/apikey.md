@@ -16,6 +16,7 @@ API Key authentication works similarly to Zapier's [Basic Auth](https://zapier.g
 
 Use API key authentication if your API primarily uses an API key to identify accounts, especially with apps for weather, maps, content verification, file conversion, and other data tools that require a key for access to the service but do not contain user-specific content. Alternately, since API key authentication allows you to create a custom input form, you can use it to customize username and password-based logins that don't fit Zapier's default Basic auth scheme.
 
+<a id="add"></a>
 ## How to Add API Key Auth to a Zapier Integration
 
 ![Add API Key Auth to Zapier Integration](https://cdn.zapier.com/storage/photos/b364e321d1a02fc607d9d360679d6b64.png)
@@ -29,6 +30,7 @@ You then need to:
 - Add a connection label to identify each added account
 - Test the authentication to ensure it works and to obtain a testing login that can be used in testing subsequent Zap steps as you add them
 
+<a id="form"></a>
 ### Add an API Key Input Form
 
 ![Add fields to API key auth Zapier](https://cdn.zapier.com/storage/photos/0ecfa173843efc628fe1407a9346e0ea.png)
