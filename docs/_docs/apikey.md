@@ -64,3 +64,12 @@ Add your field's key as before, with the same key your API uses to reference tha
 Once you've added your input fields, Zapier lists each input field with its label, key, type, and required status on your authentication settings. Click the field to edit it, or click the gear icon and select _Delete_ to remove a field.
 
 When you've added the needed forms, click _Continue_ to add a test API call and continue setting up your app's authentication.
+
+<a id="request"></a>
+### Add a Test API Request
+
+![Zapier test request API Key authentication](https://cdn.zapier.com/storage/photos/3130a3ad4c5b211de33886d4eff2abc0.png)
+
+Zapier then 
+
+Also add a Connection Label. 

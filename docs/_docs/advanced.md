@@ -1,6 +1,6 @@
 ---
 title: Advanced Features
-order: 9
+order: 13
 layout: post-toc
 redirect_from: /docs/
 ---

@@ -1,6 +1,6 @@
 ---
 title: Actions
-order: 7
+order: 10
 layout: post-toc
 redirect_from: /docs/
 ---
