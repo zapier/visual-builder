@@ -85,6 +85,11 @@ In Trigger and Action steps, `inputData` contains the data from input forms that
 
 If you want the input field data with the original {% raw %}`{{curlies}}`{% endraw %} and not the text from previous steps, use {% raw %}`{{bundle.inputDataRaw.field}}`{% endraw %} instead.
 
+Commonly used inputData fields include:
+
+- Zapier Redirect URI: {% raw %}`{{bundle.inputData.redirect_uri}}`{% endraw %}
+- Authentication Code: {% raw %}`{{bundle.inputData.code}}`{% endraw %}
+
 ### rawRequest and cleanedRequest
 
 > Note: Only used with the `getAccessToken` data from OAuth v2 authentication
@@ -104,3 +109,12 @@ In triggers using REST hooks, this returns the URL a site should send data to, s
 Referenced with: {% raw %}`{{bundle.subscribeData}}`{% endraw %}
 
 In triggers using REST hooks, this includes the data from the `performSubscribe` function which is used if you need to send a `DELETE` request to your server to stop sending webhook data to Zapier
+
+### process.env
+
+Referenced with: {% raw %}`{{process.env.field}}`{% endraw %}
+
+Commonly used process.env fields include:
+
+- Client Secret: {% raw %}`{{process.env.CLIENT_SECRET}}`{% endraw %}
+- Client ID: {% raw %}`{{process.env.CLIENT_ID}}`{% endraw %}

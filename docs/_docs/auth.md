@@ -157,6 +157,17 @@ The standard HTTP 401 `Unauthorized` or HTTP 403 `Forbidden` error is commonly r
 
 Try authenticating your app user account with Zapier again. Click _Connect an Account_, add credentials for an active account on the app, then try the test again.
 
+### 400
+
+![400 error Zapier authentication](https://cdn.zapier.com/storage/photos/91579ed613b77fb803ff52fb900b093b.png)
+
+The standard HTTP 400 `Bad Request` error is often returned when:
+
+- OAuth v2 Client ID and/or Secret are incorrect or expired
+- Some other part of your request, including the token request, are malformed
+
+Check the full error message from the error or Zapier's testing logs to see if it lists why the call failed, then correct that part of your authentication flow. Then double-check that each part of your authentication flow is entered correctly, including the request headers and body on each part of your authentication flow.
+
 ### Error Parsing Response
 
 ![Error Parsing Response in Zapier Basic Auth](https://cdn.zapier.com/storage/photos/deebd9e07497a209479a66e7f1d465b0.png)
@@ -169,3 +180,23 @@ The _Error Parsing Response_ error is commonly returned when:
 Double-check the test API URL is entered correctly. If a standard, non-API endpoint URL is entered in the test field, the site will return its raw HTML page to Zapier and will result in this error. If you do change the URL, click _Save & Continue_ then test your connection again.
 
 If your API call is correct and returning data in a format Zapier does not expect, you will need to switch to code mode and add custom parsing for your API response. Under the _Test_ API call in the top of your app's Authentication settings, click _Switch to Code Mode_, then add custom JavaScript code to parse your API response.
+
+### Authentication Failed Task Timed Out
+
+![Zapier Authentication Timed Out](https://cdn.zapier.com/storage/photos/2bc7541d4859785d23a64dc5caceec22.png)
+
+The _Authentication Failed_ error, often including _Task Timed Out_, is commonly returned when:
+
+- API request doesn't return a response to Zapier
+- API request response does not return within 30 seconds
+- API request is formatted incorrectly and the server does not respond with an error code
+
+This error often shows up when authenticating a test account, as in the above screenshot. Check your Zapier test logs to see if it shows which URL timed out, then check to ensure you've entered the correct URL in all of your app authentication settings. Finally, check the API provider to see if their site or API are temporarily down.
+
+If the request seems to be successful but the task still times out, your API call may be taking too long to respond, or could be returning more data than Zapier can parse within the time limit. Try to use a testing API call in authentication that returns as little data as possible, such as a `/me` call that returns user account data. Or, if your API supports pagination and/or filtering, enable that and have the API return only the most recent result. Then test again to ensure the call works successfully.
+
+### 500
+
+![500 error when adding account in Zapier](https://cdn.zapier.com/storage/photos/22eb6cbc2c965dc196a3646511deeb7d.png)
+
+The HTTP 500 error is the default, unformatted error that may be returned without specifying what went wrong or why. If you encounter this error, check the API endpoint URL that gave the error, and make sure your API call is configured correctly with the expected URL params, HTTP headers, and Request Body.

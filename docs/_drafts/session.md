@@ -5,3 +5,4 @@ layout: post-toc
 redirect_from: /docs/
 
 
+- Add all of the required fields; Zapier doesn't include any by default
