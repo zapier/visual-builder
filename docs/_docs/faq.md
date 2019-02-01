@@ -5,10 +5,10 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Frequently Asked Questions
+# Frequently Asked Questions
 
 <a id="code"></a>
-### How Does Code Mode Work?
+## How Does Code Mode Work?
 
 ![Zapier visual builder code mode](https://cdn.zapier.com/storage/photos/5abf045cf0b8f3cce37d05d51071d6e9.png)
 _Each API call pane in Zapier visual builder includes a code mode toggle_
@@ -34,14 +34,14 @@ If you wish to switch back to the form mode, click the _Switch to Form Mode_ but
 
 You may switch back to code mode again—though this time, Zapier will show the last saved version of your code, and will not copy any changes from your API call form to the code.
 
-### Is my Zapier Integration Using the Form or Code Mode Settings?
+## Is my Zapier Integration Using the Form or Code Mode Settings?
 
 Zapier uses the currently visible option when running each part of your integration. If the form mode is visible for an API call in an integration's authentication, trigger, or action settings, that Zapier integration is using the data from form mode. If the code mode is visible for an API call, Zapier is using the code instead to turn that part of the integration.
 
 To check which mode and settings Zapier is using for each API call, open that part of your Zapier integration and visually check to see if the form or code mode is visible.
 
 <a id="cli"></a>
-### Why Are Options Grayed Out For my CLI-built Integration?
+## Why Are Options Grayed Out For my CLI-built Integration?
 
 ![Zapier CLI integration in visual builder](https://cdn.zapier.com/storage/photos/c631ca2cd91ab43b0bc4d22f641eb4d6.png)
 
