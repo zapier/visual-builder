@@ -1,6 +1,6 @@
 ---
 title: Testing (coming soon)
-order: 8
+order: 12
 layout: post
 redirect_from: /docs/
 ---
