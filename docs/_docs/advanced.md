@@ -60,7 +60,7 @@ Zapier stores all fields returned by authentication API test call and auth proce
 
 If your app API calls in triggers or actions require account details or other info that users shouldn't have to enter manually, include a computed field in your app's authentication input fields. For the _Key_, use the exact same field name as the one your API returns. Zapier then will match the API test call's output to the field you included, so you can reference it from the input bundle with the following text, replacing `field` with your field key:
 
-{% raw %}`{{bundle.inputData.field}}`{% endraw %}
+{% raw %}`{{bundle.authData.field}}`{% endraw %}
 
 <a id="bundle"></a>
 ## Zapier Data Bundles
