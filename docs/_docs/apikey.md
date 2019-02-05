@@ -66,7 +66,7 @@ When you've added the needed forms, click _Continue_ to add a test API call and 
 
 Zapier then needs a way to test the API key and other input field data users enter, and ensure it enables a successful API call. For that, in step two, add an API call to your API that requires no configuration, typically a `/user` or `/me` call. Add the URL for the API call, and set the call type.
 
-Zapier automatically includes the API key and any additional input fields you added to your input form in the URL Params. If your API needs that ddata as headers instead, click _Show Options_ and add the details there instead.
+Zapier automatically includes the API key and any additional input fields you added to your input form in the URL Params. If your API needs that data as headers instead, click _Show Options_ and add the details there instead.
 
 ![Zapier code mode API Key auth](https://cdn.zapier.com/storage/photos/a9a100a074dd9b0a9605464d21158268.png)
 
