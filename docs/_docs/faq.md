@@ -100,3 +100,15 @@ We can now retest the request and see that it's successful. Note the response is
 
 ![](https://cdn.zapier.com/storage/photos/33098c9f9c1584295e074c1dc8a40e72.png)
 
+<a id="cleanup"></a>
+## How to Clean Up Test Authentication Accounts
+
+![Example account with multiple test accounts](https://cdn.zapier.com/storage/photos/7fe9f9155dafbcc5d9b461720d664d4d.png)
+
+While building your integration, testing authentication, and customizing your app's connection label, you may quickly end up with a list of broken or old app authentications. You can clean those up and remove older accounts from your core Zapier account.
+
+![Remove authed accounts](https://cdn.zapier.com/storage/photos/c7fe45e90f7c4c00f6ffd938d417cdd0.png)
+
+Open your [Zapier _Connected Accounts_](https://zapier.com/app/settings/authorizations) page, and press `CMD`+`F` or `Ctrl`+`F` then search for your app's name. Click _Disconnect_ then confirm to remove any account, and repeat for each subsequent testing account you added to clean up your authentication list.
+
+Then refresh your integration page in visual builder, and you'll only see the authentications you left running.
