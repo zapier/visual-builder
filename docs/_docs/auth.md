@@ -85,6 +85,10 @@ Alternately, you can use an output field from your test API call in the Connecti
 
 {% raw %}`{{bundle.inputData.username}}`{% endraw %}
 
+If you need to use a nested field from your API call results, reference it as `field.nestedfield`. For example, if your test API response includes a `name` field nested under `details`, you would reference it as:
+
+{% raw %}`{{bundle.inputData.details.name}}`{% endraw %}
+
 You can include any field your authentication test API call returns in the connection label, though the best fields to use are usernames, account numbers, email addresses, or other identifiable but not fully private data. Never use passwords, API keys, or other critical, private info in connection labels.
 
 <a id="test"></a>
