@@ -111,6 +111,8 @@ By default, Zapier will pass the client ID, client secret, authorization code, r
 
 If your API supports automated token refresh, add your API's Refresh Token Request in the following field, and check the _Automatically Refresh Token_ box. This will help Zapier stay connected to your users' accounts and enable Zaps to run in the background without interrupting users as long as possible.
 
+Zapier will automatically include the access token in subsequent API requests, but if you need to manually add it, the access token is stored in the authData bundle and can be referenced with {% raw %}`{{bundle.authData.access_token}}`{% endraw %} or {% raw %}`{{bundle.authData.accessToken}}`{% endraw %}, depending on how your API's response references the access token.
+
 <a id="test"></a>
 ### Add a Test API Call
 

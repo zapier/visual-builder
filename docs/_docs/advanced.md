@@ -73,7 +73,17 @@ Zapier integrations include the following bundles:
 
 Referenced with: {% raw %}`{{bundle.authData.field}}`{% endraw %}
 
-Includes data users enter into the authentication input form, including the `username` field for [Basic Auth](https://zapier.github.io/visual-builder/docs/basic) and any other field added to the authentication input form with other authentication methods.
+Includes data users enter into the authentication input form, including the `username` field for [Basic Auth](https://zapier.github.io/visual-builder/docs/basic) and any other field added to the authentication input form with other authentication methods. Additionally, with OAuth v2, Session Auth, and Digest Auth, `authData` includes all data returned by the Token Exchange Endpoint url, referenced with the following, replacing `field` with the field name from your API response:
+
+{% raw %}`{{bundle.authData.field}}`{% endraw %}
+
+For example, the Access Token value will often accessed via {% raw %}`{{bundle.authData.access_token}}`{% endraw %} or {% raw %}`{{bundle.authData.accessToken}}`{% endraw %}
+
+Commonly used authData fields include:
+
+- Username: {% raw %}`{{bundle.authData.username}}`{% endraw %}
+- Password: {% raw %}`{{bundle.authData.password}}`{% endraw %}
+- Access Token: {% raw %}`{{bundle.authData.access_token}}`{% endraw %} or {% raw %}`{{bundle.authData.accessToken}}`{% endraw %}
 
 ### inputData
 
