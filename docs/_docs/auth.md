@@ -91,6 +91,22 @@ If you need to use a nested field from your API call results, reference it as `f
 
 You can include any field your authentication test API call returns in the connection label, though the best fields to use are usernames, account numbers, email addresses, or other identifiable but not fully private data. Never use passwords, API keys, or other critical, private info in connection labels.
 
+### How to Customize Connection Label with Code
+
+![Zapier connection label with code](https://cdn.zapier.com/storage/photos/e9bf3fdaabe078e43b38a402106c1456.png)
+
+You can customize your connection label further with JavaScript code, if needed. As before, Zapier will always include your app's name and integration version number first, followed by any text returned by your connection label code.
+
+Custom code for connection labels are best used for:
+
+- Using code to manipulate data from an auth or test call before using it in a connection label, such as to format a number or date
+- Logging additional data to the authentication log
+- Making a new API call to access data to use in the connection label
+
+Click the _Edit Code_ button to switch to code mode. If the code mode is visible, Zapier will only use the code to create your connection label, and will ignore any existing text in the connection label field. If you wish to switch back to the regular field, click the _Delete Code_ button to delete your custom connection label code and revert to using the text entered int he connection label field.
+
+Use JavaScript to customize your connection label, and include data from authData or inputData bundles as normal. Additionally, you can add custom data to Zapier's console log with the `z.console.log` function to assist testing and monitoring your app authentication.
+
 <a id="test"></a>
 ## How to Test Authentication
 
