@@ -135,6 +135,8 @@ Finally add a connection label to help users identify each account that they add
 - Any input field from your authentication form—enter {% raw %}`{{bundle.authData.field}}`{% endraw %}, replacing `field` with your input form field key
 - Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name
 
+Learn more in our [Connection Label documentation](https://zapier.github.io/visual-builder/docs/auth#label).
+
 Click _Save & Continue_ when finished to save your authentication settings.
 
 Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://zapier.github.io/visual-builder/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.

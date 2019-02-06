@@ -46,6 +46,8 @@ Finally, add a connection label to your Zapier integration. Zapier always includ
 - The username that users enter in the Zapier authentication form when adding your app—enter {% raw %}`{{bundle.authData.username}}`{% endraw %} to include that
 - Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name.
 
+Learn more in our [Connection Label documentation](https://zapier.github.io/visual-builder/docs/auth#label).
+
 Click _Save & Continue_ when finished to save your authentication settings.
 
-Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://zapier.github.io/visual-builder/docs/auth#test) for more deatils, common errors you may encounter, and how to resolve those.
+Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://zapier.github.io/visual-builder/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.
