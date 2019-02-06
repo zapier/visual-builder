@@ -65,7 +65,7 @@ If your app API calls in triggers or actions require account details or other in
 <a id="bundle"></a>
 ## Zapier Data Bundles
 
-Zapier stores data from users' authentication and input forms for API calls in the `bundle` object. You can reference that data in your integration using {% raw %}`{{bundle.bundleName.field}}`{% endraw %} text in API requests and connection labels, replacing `bundleName` with the bundle name and `field` with the input field key or API response field key you need.
+Zapier stores data from users' authentication and input forms for API calls in the `bundle` object. You can reference that data in your integration using {% raw %}`{{bundle.bundleName.field}}`{% endraw %} text in API requests and connection labels, replacing `bundleName` with the bundle name and `field` with the input field key or API response field key you need. You can also reference bundles in custom code if you switch to code mode, using the same name but without the curly brackets, for example `return bundle.bundleName.field;` to have JavaScript code return a specific field.
 
 If an API response includes a nested field, you can reference it as `field.nestedfield`, for example {% raw %}`{{bundle.inputData.data.name}}`{% endraw %} to reference a `name` nested field inside the `data` field.
 
