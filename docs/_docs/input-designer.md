@@ -73,6 +73,7 @@ If you check the _Alters Dynamic Fields_ option on a field, Zapier will automati
 <a id="dropdown"></a>
 #### Dropdown
 
+<a id="static"></a>
 **Static Dropdown**
 
 ![Zapier form field dropdown][image-4]
@@ -85,6 +86,7 @@ That opens two options: the default _Static_ as pictured above, or _Dynamic_. To
 
 Enter the fields as used in your API, as Zapier will pass the exact value users select to your app. In the Zap editor, though, Zapier will capitalize each item in your dropdown menu, and will add spaces instead of any underscores, so an option like `first_name` would show in the menu as `First Name`.
 
+<a id="keyvalue"></a>
 **Static Dropdown with Key Value Pairs**
 
 ![Zapier dropdown with key value pairs](https://cdn.zapier.com/storage/photos/949f2aff9847ac14199f4884d0f4b861.png)
@@ -108,6 +110,7 @@ For example, if our API expected a value of `1` or `2`, but `1` actually means `
 `  }`
 `]`
 
+<a id="dynamic"></a>
 **Dynamic Dropdown**
 
 ![Zapier Add Dynamic Dropdown Field][image-5]
