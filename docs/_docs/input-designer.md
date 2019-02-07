@@ -73,6 +73,8 @@ If you check the _Alters Dynamic Fields_ option on a field, Zapier will automati
 <a id="dropdown"></a>
 #### Dropdown
 
+**Static Dropdown**
+
 ![Zapier form field dropdown][image-4]
 
 Need to offer users pre-set options to choose from in a field? Make sure your field type is set as `String`, then check the _Dropdown_ box.
@@ -82,6 +84,31 @@ That opens two options: the default _Static_ as pictured above, or _Dynamic_. To
 `["one", "two","three"]`
 
 Enter the fields as used in your API, as Zapier will pass the exact value users select to your app. In the Zap editor, though, Zapier will capitalize each item in your dropdown menu, and will add spaces instead of any underscores, so an option like `first_name` would show in the menu as `First Name`.
+
+**Static Dropdown with Key Value Pairs**
+
+![Zapier dropdown with key value pairs](https://cdn.zapier.com/storage/photos/949f2aff9847ac14199f4884d0f4b861.png)
+
+If your API requires different values for the field than the text you want to show to users inside the dropdown menu in Zapier, you can make a key value pair that includes the value to send to your API, the sample value to show users (typically the same as the value), and a user-friendly label.
+
+To do that, add each menu item inside curly brackets, with the sample, value, and label comma seperated, with the item listed first and the value listed second, both wrapped in quotes. Seperate each menu item with commas, and wrap the whole set in square brackets.
+
+For example, if our API expected a value of `1` or `2`, but `1` actually means `pork` and `2` actually means `fish`, you could use the following code to add a dropdown menu that would look like the one above:
+
+`[`
+`  {`
+`    "sample": "1",`
+`    "value": "1",`
+`    "label": "Pork"`
+`  },`
+`  {`
+`    "sample": "2",`
+`    "value": "2",`
+`    "label": "Fish"`
+`  }`
+`]`
+
+**Dynamic Dropdown**
 
 ![Zapier Add Dynamic Dropdown Field][image-5]
 
