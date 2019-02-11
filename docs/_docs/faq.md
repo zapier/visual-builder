@@ -63,9 +63,9 @@ _Coming Soon_: In an upcoming version of Zapier's visual builder, you will be ab
 <a id="array"></a>
 ## I get a trigger error saying that an array is expected. How do I fix it?
 
-When you configure a polling trigger the Zapier platform expects to get a bare array of the trigger's items, sorted in reverse chronological order. But, very often, APIs will return a result _object_ that contains the array of items the trigger needs.  
+When you configure a polling trigger, the Zapier platform expects to get a bare array of the trigger's items, sorted in reverse chronological order. But very often, APIs will return a result _object_ that contains the array of items the trigger needs.
 
-Let's look at an example.  Building a "New Channel" trigger with Slack's API we might start with a request that looks like this:
+Let's look at an example. For a "New Channel" trigger with Slack's API, we might start with a request that looks like this:
 
 ![](https://cdn.zapier.com/storage/photos/1f84a3519ad4e78c3567cdbff8a4c1d3.png)
 
@@ -90,11 +90,11 @@ Digging into the API response we can see that what was returned was an _object_ 
             ....
 ```
 
-We can see that what we need to return is that array of channels.  To do that we need to switch over to "Code Mode" in our request.  That will allow us to provide a Javascript function to handle our request.  There we can make any needed changes to the structure or content of the result before we return data to the Zapier platform. Notice line 18:
+We can see that what we need to return is that array of channels. To do that we need to switch over to "Code Mode" in our request. That lets us provide a JavaScript function to handle our request. There we can make any needed changes to the structure or content of the result before we return data to the Zapier platform. Notice line 18:
 
 ![](https://cdn.zapier.com/storage/photos/e1d09e9fdf952ef5f5b031bd705e5802.png)
 
-> Remember that "Form Mode" vs "Code Mode" is a mutually exclusive toggle.  If you switch back to Form Mode your code will be ignored!
+> Remember that "Form Mode" vs "Code Mode" is a mutually exclusive toggle. If you switch back to Form Mode your code will be ignored!
 
 We can now retest the request and see that it's successful. Note the response is a bare array:
 

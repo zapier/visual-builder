@@ -39,23 +39,23 @@ Then add the input fields from the _Input Designer_ tab. Select from _Input Fiel
 
 _Each field type includes its own settings—and you can preview the finished input form on the right_
 
-For our example GitHub integration, we’ll use 3 input fields, for repo, title, and body. Add the first two as you did in the Trigger setup, with the default `string` field type and the `repo` or `title` keys respectively. Then, for the issue body, select a _Text_ field type so users can enter longer text.
+For our example GitHub integration, we need 4 input fields: `repo` to add the repository's name, `username` to add the repository's owner, `title` to list your issue title, and `body` to add details about the issue. Add the first three as you did in the Trigger setup, with the default `string` field type and the `repo`, `username`, or `title` keys respectively. Then, for the issue body, select a _Text_ field type so users can enter longer text and use the `body` key.
 
 ### 3. Configure Your API
 
-![Zapier visual builder input API](https://cdn.zapier.com/storage/photos/e4745b6f1000f45a8cdaf19b2b3ea032.png)
+![Zapier visual builder input API](https://cdn.zapier.com/storage/photos/5148dc2b2d7417e17114617df6a0ad9b.png)
 
 _Add the URL where Zapier will send data to your app_
 
-Now, select the _API Configuration_ tab in Zapier visual builder to tell Zapier how to send the data to the API. Select the `POST` API call, then enter GitHub’s issue API endpoint with the {% raw %}`{{bundle.inputData.repo}}`{% endraw %} as with the trigger:
+Now, select the _API Configuration_ tab in Zapier visual builder to tell Zapier how to send the data to the API. Select the `POST` API call, then enter GitHub’s issue API endpoint with the {% raw %}`{{bundle.inputData.fields}}`{% endraw %} fields as with the trigger:
 
-{% raw %}`https://api.github.com/repos/{{bundle.inputData.repo}}/issues`{% endraw %}
+{% raw %}`https://api.github.com/repos/{{bundle.inputData.username}}/{{bundle.inputData.repo}}/issues`{% endraw %}
 
-Zapier will automatically include the additional input fields in your API request body. Click the *Show Options* button to see the mapped fields and customize them if needed—though the defaults should work for most integrations.
+Zapier will automatically include the username and repo from the input fields in your API request body. Click the *Show Options* button to see the mapped fields and customize them if needed—though Zapier should include the issue title and body by default.
 
 ### 4. Test Your Action
 
-![Zapier visual builder input test](https://cdn.zapier.com/storage/photos/08da97b61a7f3cdbdd5335ba5a03f906.png)
+![Zapier visual builder input test](https://cdn.zapier.com/storage/photos/e5e053ab3550a339428042d9f9af13bf.png)
 
 _Test your action by sending data to it as users will in their Zaps_
 
