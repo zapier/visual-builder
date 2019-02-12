@@ -57,7 +57,7 @@ To add a polling trigger, select _Polling_ at the top of the settings page, then
 
 Otherwise, Zapier will automatically send any other input field data in the request body with the API call.
 
-If you plan to use this trigger to power dropdown menus in other Zap steps (such as to find users, projects, folders, and other app data often used to create new items), and if your API call can paginate data, check the _Support Paging_ box.
+If you plan to use this trigger to power dropdown menus in other Zap steps (such as to find users, projects, folders, and other app data often used to create new items), and if your API call can paginate data, check the _Support Paging_ box (see [more details on pagination](#pagination) below).
 
 If your API requires any additional data, you can add them from the _Show Options_ button. Or, if needed, click the _Switch to Code Mode_ to write a custom API call in node.js powered JavaScript code. The first time you switch to Code Mode, Zapier will translate the settings in the form to code so you can start with the basics already configured. If you switch back to form mode, though, Zapier will not transfer any changes from the code mode to the form.
 
@@ -112,3 +112,38 @@ If your app no longer supports a trigger, or you wish to fully rebuild one, you 
 You cannot restore deleted triggers, so make sure you select the correct triggers for deletion.
 
 > **Note**: Only remove triggers from pre-release integrations, or from new versions that will later be rolled out to users. Never remove a trigger from a live, public integration version.
+
+<a id="pagination"></a>
+## How to Use Pagination
+
+Zapier triggers by default fetch new or recently updated data to start Zaps, and only need to find the most recently added item. Triggers can also be embedded in Zapier action drop-down menus, though, and there they need to find all possible items to populate the menu.
+
+Instead of a single item, these triggers' API calls for dynamic menus will often find dozens or hundreds of items. Many APIs let you split the results into pages, much like pages of search results or blog entries. The first API call will return the first set of results—often 20 to 100. If you want additional entries, you can make a new API call requesting page 2 and get the next set of results, iterating through the pages until the API has sent every possible option.
+
+![Zapier drop-down](https://cdn.zapier.com/storage/photos/05b63c557de501cb4764f29747b733ec.png)
+_Example drop-down menu in the Zap editor, with an option to load more choices via pagination_
+
+To enable pagination, check the _Support Paging_ checkbox in the API settings when building a Zapier trigger. That enables Zapier's `bundle.meta.page` value which tracks which page Zapier has loaded, along with a _Check Ap‌p & reload to bring in new choices_ option in the user-facing Zapier editor's dropdown menus.
+
+![Include pagination value in Zapier API call](https://cdn.zapier.com/storage/photos/0c73268e2e0d62e1bbe7d3d4f552fcda.png)
+_In Zapier visual editor, include the bundle.meta.page value to request the correct page of results_
+
+You then need to include that `bundle.meta.page` in your API call to let Zapier dynamically fetch the correct page, as Zapier doesn't include it automatically. First check the _Support Paging_ box. Then click your API endpoint's _Show Options_ button, and add a new URL Param for your API's paging option (or optionally add it to your HTTP Headers if your API expects the paging value there). Use the page request field name from your API on the left, and `{{bundle.meta.page}}` on the right to have Zapier pull in the correct page value.
+
+![Zapier pagination code mode](https://cdn.zapier.com/storage/photos/36f2051b7fdf684870492a39aab535c8.png)
+_Use custom code to _
+
+Zapier's `bundle.meta.page` value uses zero-based numbering. The first time Zapier fetches data from your API, it uses a page value of `0`, followed by `1` the second time, and so on. If your API expects the first API call to request page `1`, with `2` for the second page and so on, you'll need to customize your API call in Zapier's code editor.
+
+The easiest way to do that is to first set your API call in the form mode, then click the _Switch to Code Mode_ toggle. Zapier will convert your form values to code, and if your API works correctly aside from pagination, the defaults in code mode will work. All you need to do is edit your pagination code. If you need non-zero-based numbering, the following code for your pagination header should work (substituting the correct term your API uses for pagination):
+
+`'page': bundle.meta.page + 1,`
+
+![Zapier max entries loaded](https://cdn.zapier.com/storage/photos/4808c60c860e71f82578cedf0e20ce11.png)
+
+To test your paginating trigger, first build a Zapier Action that uses this trigger in a dynamic dropdown. Then make a new Zap in the user-facing Zap editor that uses your action with the dropdown. Click the dropdown, scroll to the end, and click the _Check App & bring in more choices_ button. Repeat until it loads the last options, which will show a result similar to the one above.
+
+![Check headers](https://cdn.zapier.com/storage/photos/8675a69add537f2e7d5ed950724fc15f.png)
+_In the Zapier trigger test tool's HTTP logs, you can see the headers and params that Zapier sends to your app_
+
+If you see a _Sorry, no more choices_ option when there should be more options available from your account, go back and check your trigger settings to ensure Zapier is passing the correct details to your app. Test the trigger, and check the HTTP tap for details about the request Zapier sent your app. Zapier should show a `page=0` value (or the correct term for pages in your API) under the Request Params header by default, or a page=1` if you're customizing the page request to start at 1.
