@@ -128,7 +128,7 @@ To enable pagination, check the _Support Paging_ checkbox in the API settings wh
 ![Include pagination value in Zapier API call](https://cdn.zapier.com/storage/photos/0c73268e2e0d62e1bbe7d3d4f552fcda.png)
 _In Zapier visual editor, include the bundle.meta.page value to request the correct page of results_
 
-You then need to include that `bundle.meta.page` in your API call to let Zapier dynamically fetch the correct page, as Zapier doesn't include it automatically. First check the _Support Paging_ box. Then click your API endpoint's _Show Options_ button, and add a new URL Param for your API's paging option (or optionally add it to your HTTP Headers if your API expects the paging value there). Use the page request field name from your API on the left, and `{{bundle.meta.page}}` on the right to have Zapier pull in the correct page value.
+You then need to include that `bundle.meta.page` in your API call to let Zapier dynamically fetch the correct page, as Zapier doesn't include it automatically. First check the _Support Paging_ box. Then click your API endpoint's _Show Options_ button, and add a new URL Param for your API's paging option (or optionally add it to your HTTP Headers if your API expects the paging value there). Use the page request field name from your API on the left, and {% raw %}{{bundle.meta.page}}{% endraw %} on the right to have Zapier pull in the correct page value.
 
 ![Zapier pagination code mode](https://cdn.zapier.com/storage/photos/36f2051b7fdf684870492a39aab535c8.png)
 _Use custom code to _
