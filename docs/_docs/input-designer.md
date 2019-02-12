@@ -113,9 +113,41 @@ For example, if our API expected a value of `1` or `2`, but `1` actually means `
 <a id="dynamic"></a>
 **Dynamic Dropdown**
 
-![Zapier Add Dynamic Dropdown Field][image-5]
+If users need to select data from their account in your app—such as a project, folder, team member, or other user-specific detail—then you will want to use a dynamic dropdown. That will show a dropdown menu that has Zapier first fetch data from your API and display it in the menu, with a friendly name for the item and the raw data from your API.
 
-To add a dynamic dropdown field, you first need to build a trigger in your integration that can fetch the data needed in that menu from your API, such as project or folder names. Then, select the _Dynamic_ option after checking the _Dropdown_ box, and choose the trigger from which Zapier should fetch the data. Finally, enter the field name from your trigger, with the exact field ID of the trigger output field that you want Zapier to show, and add a user-friendly label to the field.
+Zapier uses triggers to fetch the values for dynamic dropdown menus. The best way to make a dropdown is to make a dedicated trigger specifically for the dropdown data.
+
+***Build a Trigger to Fetch Dynamic Dropdown Data***
+
+![Zapier hidden trigger setting](https://cdn.zapier.com/storage/photos/da0b142705534296dd1d2113c35b4f64.png)
+
+First make a trigger as normal, with a key, name, and noun, though feel free to leave the description free as this trigger won't be seen by users. In the _Visibility Options_ field, select `Hidden` to hide this trigger from your app's trigger list in Zapier.
+
+Skip the _Input Designer_ tab as the dynamic dropdown does not need any input data.
+
+![Zapier hidden trigger API setting](https://cdn.zapier.com/storage/photos/4a64a727bc4301337acc72bc33edbad6.png)
+
+Then select the *API Configuration* tab, and add the API call where Zapier can fetch the data from your API. In standard Zapier triggers, you would use an API call that fetches new or newly updated items. Here, though, use an API call that pulls in a list of the data that you need for your dynamic dropdown.
+
+![Zapier hidden trigger API options](https://cdn.zapier.com/storage/photos/f9edb67b0c9be0378fd4ec1e9e4f3e79.png)
+
+Many API calls will need additional configuration to pull in data in the order that makes most sense in your menu. You may want to sort options in the order they were added or updated, and could want to have the API fetch more items at once than the default. Set these from the _Show Options_ menu.
+
+Additionally, most dynamic menus should let users load additional data if your API supports pagination. The first API call might pull in 20 items for example; if they request additional items, Zapier would call the API again and request the second page for the next 20 items.
+
+To add that, check the _Support Paging_ box, then in your API call include your API's pagination key and the {% raw %}`{{bundle.meta.page}}`{% endraw %} value to pull in a page value. Zapier will call page `0` first, then page `1` when users request additional entries, using zero-based numbering. You can customize the pagination from the _Code Mode_ button as well. Check our _[Pagination Triggers guide](http://zapier.github.io/visual-builder/docs/triggers#pagination)_ for more details.
+
+![Set output fields from dynamic dropdown](https://cdn.zapier.com/storage/photos/10eec1daf419738bee3dd8c9526dd443.png)
+
+Finally, you need to define the fields from your trigger that you need to use in the action input field. Test your trigger, then find the output fields needed, and add them to the _Output Fields_ list at the end of your settings page. Include at least a field with the data that Zapier needs to send to your API in the action, along with a field that includes a human friendly name for the data in that field.
+
+***Add an Input Field with Dynamic Fields***
+
+![Select Trigger for Dynamic Fields](https://cdn.zapier.com/storage/photos/10eec1daf419738bee3dd8c9526dd443.png)
+
+Then, to use that data, add a new input field to your integration, set the label, key, and other details as normal, then check the _Dropdown_ box and select the _Dynamic_ toggle. Choose the trigger with the data needed for this menu in the _Dropdown Source_ option.
+
+Select the field with the data your API needs for this action in the _Field Name_ menu, and the field with a human-friendly name for the data in the _Field Label_ menu. In the preview, your field will show as a dropdown menu, though you will need to use your action in a Zap to test the menu and pull in real data.
 
 Whenever someone uses this input field in a Zap and selects this dynamic dropdown field, Zapier will poll your API for the data from that trigger, parse the entries from that field name, and show them in a user friendly dropdown menu.
 
