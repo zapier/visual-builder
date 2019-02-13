@@ -36,6 +36,8 @@ Upload your app's logo. Make sure your logo is a square, transparent PNG file wi
 
 Do not include your app's name in the logomark, as it will not be legible at smaller sizes.
 
+Zapier will use your logo full-size in the Zapier App Directory to promote the integration, and will automatically re-size it to use inside the Zap editor and in other parts of the Zapier app.
+
 ### Answer a Few Questions About Your App
 
 ![Zapier integration questions](https://cdn.zapier.com/storage/photos/a8fd66dc5452ec2e13a7d264201d4921.png)
