@@ -1,6 +1,6 @@
 ---
 title: Triggers
-order: 9
+order: 10
 layout: post-toc
 redirect_from: /docs/
 ---
