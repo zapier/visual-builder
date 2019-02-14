@@ -89,6 +89,8 @@ As a final step, you need to define the most important output fields to help use
 
 Then click _Generate Output Field Definitions_, and Zapier will build a table of your fields under _Output Fields_. Add a human friendly name for each field and select the field type. Click _Save Output & Finish_ to finish the final part of your trigger.
 
+_[Learn more about how Zapier uses sample data and output fields](http://zapier.github.io/visual-builder/docs/faq#output)_.
+
 You can now make a new Zap using your trigger to test out the trigger live inside Zapier.
 
 ## How to Reorder Triggers in a Zapier Integration

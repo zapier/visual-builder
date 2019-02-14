@@ -88,6 +88,8 @@ In the _Sample_ box, add a JSON formatted example of the output data from your A
 
 Then click _Generate Output Field Definitions_ and Zapier will list a table of the fields with the keys on the left and the field type on the right. Select the correct field type (including the default String field or Text, integer, number, boolean, datetime, file, and password field options), and add a human-friendly field name in the center column.
 
+_[Learn more about how Zapier uses sample data and output fields](http://zapier.github.io/visual-builder/docs/faq#output)_.
+
 <a id="code"></a>
 ## How to Use Custom Code in Zapier Actions
 
