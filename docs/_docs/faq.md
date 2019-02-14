@@ -23,6 +23,10 @@ If your API calls need more customization, however, or your API response is in a
 
 The first time you switch to code mode, Zapier copies everything entered in the API request form, including any custom options added, and converts them to JavaScript code. It then changes the UI to code mode where you can add code for your API call.
 
+In code mode, you can write JavaScript code, using Zapier's default code as a base or writing custom code. Use the `z.object` for Zapier specific features, including `z.console` to write to the console log, `z.JSON` to parse JSON, `z.errors` to take action on errors, and more. Check [Zapier's CLI Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for details.
+
+Additionally, use Zapier bundles to access auth data, data from user input forms, request data, and more. Learn more in our [Zapier bundle docs](https://zapier.github.io/visual-builder/docs/advanced#bundle).
+
 Do note that changes are not saved automatically. Once you have added the code you want, click _Save & Continue_ to add the changes to your integration.
 
 ![Zapier code mode switch to form mode](https://cdn.zapier.com/storage/photos/ea2eb690bf92b55fab0bbad290107a97.png)
