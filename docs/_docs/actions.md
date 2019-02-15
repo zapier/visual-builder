@@ -57,9 +57,13 @@ Add action fields for each item your app needs to create or find this item in yo
 
 ![Zapier action API configuration](https://cdn.zapier.com/storage/photos/09bf074db0b6e8e02c049e2fed3983a9.png)
 
-The last part of building a Zapier action is the most crucial: tell Zapier how to send the data to your API. By default, Zapier will include a `POST` call for create actions, and a `GET` call for search actions. Additionally, Zapier will include each of your input form fields in the _Request Body_ automatically.
+The last part of building a Zapier action is the most crucial: tell Zapier how to send the data to your API.
 
-For most actions, select the correct API call if your app expects something other than the default, then paste the URL for your API call in the box under _API Endpoint_. Zapier includes each input field in your request body by default.
+Zapier uses a `POST` call for create actions by default, sending a single item to your API endpoint. Zapier then expects a response with an object containing a single item, to be evaluated by [isPlainObject](https://lodash.com/docs#isPlainObject) then parsed into individual fields for use in subsequent Zap steps.
+
+Zapier uses a `GET` call for search actions by default, and sends the data from the input form to your API endpoint. Zapier expects an array response with 0 or more items—and if more than 1 item is returned, Zapier shows the best match first, and parses it into individual fields for use in subsequent Zap steps.
+
+For most actions, select the correct API call if your app expects something other than the default, then paste the URL for your API call in the box under _API Endpoint_. Zapier will include each of your input form fields in the _Request Body_ automatically.
 
 If your API call expects input data in the core URL, you can reference any input field's key with the following text, replacing `key` with your field key:
 

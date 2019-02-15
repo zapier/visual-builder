@@ -49,7 +49,11 @@ Once your form is complete—or if you don't need to include an input form—cli
 
 ![Zapier Polling Trigger Settings](https://cdn.zapier.com/storage/photos/af53c9298cb9baf32abb17eb9e51a0dc.png)
 
-The last part of adding a trigger is setting is API configuration. Zapier selects _Polling_ by default, where Zapier will send a `GET` request to an API endpoint URL to request new data—and in live Zaps, Zapier automatically deduplicates and sorts for the newest data from the API. Live Zaps automatically poll the URL for new data every 5 to 15 minutes, depending on the user's Zapier plan.
+The last part of adding a trigger is setting is API configuration.
+
+Zapier uses either a Polling API call to check periodically for new or updated data, or a REST hook with a subscription URL where Zapier can subscribe to receive new or updated data autoamtically. With both, Zapier expects to receive an array with 0 or more objects that will be passed to Zapier's [deduper](https://zapier.com/developer/documentation/v2/deduplication/)—and it will return any items that haven't been received before, and use them to run the subsequent steps in the user's Zap.
+
+Zapier selects a _Polling_ trigger by default, where Zapier will send a `GET` request to an API endpoint URL to request new data—and in live Zaps, Zapier automatically deduplicates and sorts for the newest data from the API. Live Zaps automatically poll the URL for new data every 5 to 15 minutes, depending on the user's Zapier plan.
 
 To add a polling trigger, select _Polling_ at the top of the settings page, then enter your API URL in the _API Endpoint_ field. If your API URL requires specific data in the URL, enter the following text in the URL where your API expects that data, replacing `key` for the input field key with the relevant data from the input form you created before:
 
