@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Authentication — OAuth v2
+# Authentication — OAuth v2
 
 OAuth v2 authentication is the easiest authentication scheme for users, as it matches the login process they expect from most modern apps. In Zapier integrations with OAuth v2, the user part of authentication typically takes place in full on the app's own site, helping users easily connect accounts without sharing account credentials or looking up API keys.
 
@@ -13,9 +13,7 @@ OAuth v2 authentication is the easiest authentication scheme for users, as it ma
 
 When a user adds an app account to Zapier with OAuth v2, they will first see a familar window from that app showing either a login screen or an account selector if they're already logged in (and the app will send Zapier a request token that will be exchanged for an access token once the user approves access). They can then enter their account credentials confidently since they're entering them on that app's own site—and often, users will not need to enter credentials since they're already logged in. Once they authorize Zapier access, the app will return an access token that Zapier can use to authenticate future API calls.
 
-> **Note**: Zapier uses the same authentication flow as [Twitter](https://developer.twitter.com/en/docs/basics/authentication/overview) and [Trello](https://developers.trello.com/page/authorization)'s OAuth v2 implementation.
-
-Use OAuth v2 authentication with your Zapier integration by default if your API support OAuth authentication.
+> **Which OAuth 2 Flow Type Does Zapier Support?:** Zapier implements the "Authorization Code" [grant type](https://tools.ietf.org/html/rfc6749#section-1.3.1) when you choose OAuth 2.  If your OAuth 2 implementation supports refresh tokens you may optionally configure a "Refresh Token" [request](tools.ietf.org/html/rfc6749#section-1.5).  If you require a different OAuth 2 grant type, have a look at one one of the other Zapier authentication types.
 
 <a id="add"></a>
 ## How to Add OAuth v2 to a Zapier Integration
@@ -37,7 +35,7 @@ You will then need the following to add OAuth authentication:
 - A Connection Label to uniquely identify users' accounts
 
 <a id="form"></a>
-### Add an OAuth Input Form (optional)
+## Add an OAuth Input Form (optional)
 
 > **Note**: Most apps with OAuth v2 authentication do not need an input form, so unless your API requires data from the user before contacting the authorization URL, or requires URL details to create the authorization URL, you should likely not include an input form.
 
@@ -65,7 +63,7 @@ Add the fields in the order users would expect to see them. You cannot reorder f
 Once completed, click _Continue_ to save your form and setup OAuth authentication.
 
 <a id="redirect"></a>
-### Add Zapier Redirect URL to Your App
+## Add Zapier Redirect URL to Your App
 
 ![Zapier Redirect URI](https://cdn.zapier.com/storage/photos/0e981d8a8f61a0da112bfe83a526cec8.png)
 
@@ -76,7 +74,7 @@ If you ever need to reference Zapier's redirect URL inside your Zapier integrati
 {% raw %}`{{bundle.inputData.redirect_uri}}`{% endraw %}
 
 <a id="credentials"></a>
-### Add Application Credentials to Zapier
+## Add Application Credentials to Zapier
 
 ![Add application credentials to Zapier](https://cdn.zapier.com/storage/photos/528a6aa1c1be8204876f30f1e6276f82.png)
 
@@ -90,7 +88,7 @@ Zapier will automatically include the Client ID and Secret in authentication API
 - Client ID: {% raw %}`{{process.env.CLIENT_ID}}`{% endraw %}
 
 <a id="authorization"></a>
-### Add OAuth Endpoint Configuration
+## Add OAuth Endpoint Configuration
 
 ![Add Authorization URL to Zapier](https://cdn.zapier.com/storage/photos/6c41fec63315bd3770c5875799201b43.png)
 
@@ -101,7 +99,7 @@ First, add your application's Authorization URL, where Zapier will redirect user
 Optionally, if you wish to limit Zapier's scope to let it only access specific data from your app, you can additionally add OAuth scope in the following field with a comma or space separated list.
 
 <a id="access"></a>
-### Add Access Token Request and Refresh Token Request URLs
+## Add Access Token Request and Refresh Token Request URLs
 
 ![Access Token Zapier](https://cdn.zapier.com/storage/photos/386f1392718dea32025edf72ca21fae0.png)
 
@@ -114,7 +112,7 @@ If your API supports automated token refresh, add your API's Refresh Token Reque
 Zapier will automatically include the access token in subsequent API requests, but if you need to manually add it, the access token is stored in the authData bundle and can be referenced with {% raw %}`{{bundle.authData.access_token}}`{% endraw %} or {% raw %}`{{bundle.authData.accessToken}}`{% endraw %}, depending on how your API's response references the access token.
 
 <a id="test"></a>
-### Add a Test API Call
+## Add a Test API Call
 
 ![Test API Call Zapier OAuth](https://cdn.zapier.com/storage/photos/f31d8d06adfbf15a9da2e98ad7690021.png)
 
@@ -127,7 +125,7 @@ For that, add a URL endpoint to the _Test_ field that does not require configura
 Or, if you need a specialized API call or response parsing on this or other API call steps, click the _Switch to Code Mode_ toggle. The first time you click this, Zapier will convert the data in the form to JavaScript code that you can customize or replace. You can switch back to form mode, though note that Zapier will not convert your code back to the form mode, nor will it update any subsequent changes in the form mode to your code.
 
 <a id="label"></a>
-### Add a Connection Label
+## Add a Connection Label
 
 Finally add a connection label to help users identify each account that they add from your app to Zapier. Zapier includes your app's name in the connection label by default, followed by the version number, then any text you include in the connection label. You can include:
 

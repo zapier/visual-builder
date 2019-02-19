@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Authentication — API Key Auth
+# Authentication — API Key Auth
 
 API Key authentication lets apps verify users account with an API key that is passed along with every API call. In a Zapier integration using API Key authentication, Zapier includes the API key—optionally along with any other data your API needs—every time a Zap step runs.
 
@@ -31,7 +31,7 @@ You then need to:
 - Test the authentication to ensure it works and to obtain a testing login that can be used in testing subsequent Zap steps as you add them
 
 <a id="form"></a>
-### Add an API Key Input Form
+## Add an API Key Input Form
 
 ![Add fields to API key auth Zapier](https://cdn.zapier.com/storage/photos/0ecfa173843efc628fe1407a9346e0ea.png)
 
@@ -60,7 +60,7 @@ Once you've added your input fields, Zapier lists each input field with its labe
 When you've added the needed forms, click _Continue_ to add a test API call and continue setting up your app's authentication.
 
 <a id="request"></a>
-### Add a Test API Request
+## Add a Test API Request
 
 ![Zapier test request API Key authentication](https://cdn.zapier.com/storage/photos/3130a3ad4c5b211de33886d4eff2abc0.png)
 
@@ -71,6 +71,9 @@ Zapier automatically includes the API key and any additional input fields you ad
 ![Zapier code mode API Key auth](https://cdn.zapier.com/storage/photos/a9a100a074dd9b0a9605464d21158268.png)
 
 If you need a custom API call, you can switch to code mode and write custom JavaScript code to handle your test API call and the response parsing, if needed. Click the _Switch to Code Mode_ toggle to enable it. The first time you click the toggle, Zapier will convert your API call to code. If you switch back to Form mode, though, Zapier will not convert your code changes to the form mode, nor will any subsequent changes in form mode be added to your code.
+
+<a id="label"></a>
+## Configuring a Connection Label
 
 ![Zapier API Key auth connection label](https://cdn.zapier.com/storage/photos/f09f02450623750b70b67d0d7afa9e1c.png)
 

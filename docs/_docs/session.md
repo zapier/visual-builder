@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Authentication — Session Auth
+# Authentication — Session Auth
 
 Session authentication shares elements of Basic authentication—where Zapier requests users' username and password then uses them to authenticate each API call—and OAuth v2—where Zapier redirects users to the app's site to allow access then exchanges credentials for a token it uses to authenticate subsequent API calls. Session auth replies on a token, but has Zapier gather username, password, and other login details to use in an API call that then sends the auth token to Zapier. It works much like cookie-based authentication in your browser, only here the cookie is an auth token stored by Zapier.
 
@@ -47,7 +47,7 @@ Be sure to add one fields for every piece of data users need to enter to authent
 Save each field after adding it, then click _Continue_ when every field your API needs has been added.
 
 <a id="access"></a>
-### Add an Token Exchange Request
+## Add an Token Exchange Request
 
 ![Zapier Session token exchange](https://cdn.zapier.com/storage/photos/b3c2c104aceb7e83965708f26ef47da8.png)
 
@@ -58,7 +58,7 @@ Add the token exchange request URL in the field, select the correct HTTP call, a
 Click _Save & Continue_ once finished to store your API call settings.
 
 <a id="test"></a>
-### Add a Test API Call
+## Add a Test API Call
 
 ![Session auth test API request](https://cdn.zapier.com/storage/photos/1eadc273b3bef2c1ab584f4412acd39a.png)
 
@@ -69,7 +69,7 @@ Add the endpoint URL to the _Test_ field, setting the correct HTTP call. Click _
 As Session Auth doesn't include a defined standard for how access tokens are referenced in the response API and included in subsequent API calls, Zapier doesn't include the access token by default. Add it yourself—here, and in subsequent Trigger and Action step API calls—in your API call settings. Click _Show Options_, then add the access token to your API call's URL Params or HTTP Headers as needed. The Access Token will be in the `bundle.authData`, and typically be referenced as {% raw %}`{{bundle.authData.access_token}}`{% endraw %}, {% raw %}`{{bundle.authData.sessionToken}}`{% endraw %}, or a similar field depending on what how your API response lists the token.
 
 <a id="label"></a>
-### Add a Connection Label
+## Add a Connection Label
 
 ![Example Session auth connection label](https://cdn.zapier.com/storage/photos/541510fff1e01b358f898b33f0ced5c2.png)
 
