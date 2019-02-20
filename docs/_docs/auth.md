@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Authentication
+# Authentication
 
 Every Zapier step starts with App authentication. Users select an app they wish to use in the step, then authenticate their account with that app to allow Zapier to access their data.
 

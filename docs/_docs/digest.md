@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Authentication — Digest Auth
+# Authentication — Digest Auth
 
 Digest Auth in Zapier follows the [RFC 7616](https://tools.ietf.org/html/rfc7616) standard. It includes an authentication form where users enter their username and password, optionally along with any additional data your API requires for authentication. Zapier then makes an unauthenticated API call, gets the nonce from your server, and uses it to encrypt and pass the authentication data to your server with each API call.
 
@@ -27,7 +27,7 @@ You will then need the following to add Digest Auth to your integration:
 - A Connection Label to help users identify each account they authenticate
 
 <a id="form"></a>
-### Add a Digest Auth Input Form
+## Add a Digest Auth Input Form
 
 ![Zapier Digest Auth Input Form](https://cdn.zapier.com/storage/photos/cb1a3407e4e02e89bf0e020882d49331.png)
 
@@ -46,7 +46,7 @@ Add one field for each item your API needs for digest auth in addition to the us
 Save each field after adding it, then click _Continue_ when every field your API needs has been added.
 
 <a id="test"></a>
-### Add a Test API Call
+## Add a Test API Call
 
 ![Digest Auth Test API Call](https://cdn.zapier.com/storage/photos/e0828377cca5952950344dffaebdc8fe.png)
 
@@ -55,7 +55,7 @@ Digest Auth doesn't require any special API calls for authentication, so the onl
 Enter an API endpoint that doesn't require additional detail or configuration, such as a `/user` or `/me` call if available. Set the correct HTTP call. Zapier will include the default Digest authentication settings, but if your API needs additional detail or configuration, click the _Show Options_ button on the right to add custom URL params or HTTP headers. Optionally, click the _Switch to Code Mode_ toggle to write custom JavaScript code to handle your app's authentication and response bundle parsing.
 
 <a id="label"></a>
-### Add a Connection Label
+## Add a Connection Label
 
 ![Zapier API Key auth connection label](https://cdn.zapier.com/storage/photos/f09f02450623750b70b67d0d7afa9e1c.png)
 
