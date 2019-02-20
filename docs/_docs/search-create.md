@@ -13,7 +13,7 @@ Zaps start with a trigger, a Zapier step that watches for new data from an API a
 
 Action steps can find and/or create items in apps. The most common actions—shown at the top of each Zap action step—are _Create_ actions, which as their name implies make new items from the data users enter. Then there are _Search_ actions, which can find data in apps and optionally create new items if the search returns no results.
 
-Creates add new data; Searches find existing data, and fill in gaps if needed.
+Creates add new data; Searches find existing data, and fill in gaps if needed. Creates return a single object to Zapier; Searches return an array of objects.
 
 Most Zapier integrations should at a minimum include create actions to let users add items to their app automatically. Anything people can build in your app could be made automatically with create action.That’s what most Zaps do for people. They add new projects, tasks, contacts, invoices, leads, deals, files, photos, and much more to apps whenever they’re needed. Create actions can also update existing items—something often paired with a Search to locate the item needing updates first.
 
