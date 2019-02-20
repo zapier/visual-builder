@@ -65,19 +65,19 @@ You _can_ manage the other details of your CLI integration from the UI, however,
 _Coming Soon_: In an upcoming version of Zapier's visual builder, you will be able to export a CLI version of your visual builder project. This will be a one-time export that converts your visual builder integration to a CLI format that you can edit and maintain on your local development machine. You can then create and push new versions of your integration via Zapier CLI, and can manage the details from the visual builder UI or the CLI. Once you enable CLI, though, you will not be able to edit or add authentication, trigger, or action details in the visual builder UI.
 
 <a id="array"></a>
-## I get a trigger error saying that an array is expected. How do I fix it?
+## I Got an "An array is Expected" error. How do I Fix That?
 
-When you configure a polling trigger, the Zapier platform expects to get a bare array of the trigger's items, sorted in reverse chronological order. But very often, APIs will return a result _object_ that contains the array of items the trigger needs.
+With you add a polling trigger or search action to a Zap, the Zapier platform expects to get a bare array of the new or found items, sorted in reverse chronological order. APIs will instead return a result _object_ that contains the array of items the trigger needs.
 
-Let's look at an example. For a "New Channel" trigger with Slack's API, we might start with a request that looks like this:
+For example, for a "New Channel" trigger with Slack's API, we might start with a `http://slack.com/api/channels.list` request:
 
 ![](https://cdn.zapier.com/storage/photos/1f84a3519ad4e78c3567cdbff8a4c1d3.png)
 
-When we test it we get this message:
+Test it, though, and Zapier will show an error message like the one below:
 
-![](https://cdn.zapier.com/storage/photos/0b652f00538c655111e444a0c4d35ab0.png)
+![](https://cdn.zapier.com/storage/photos/55f500a240d571c5d81be4a28fff109b.png)
 
-Digging into the API response we can see that what was returned was an _object_ that contains the array of items we need, not the array itself:
+Dig into the API response, and you'll see that what was returned was an _object_ that contains the array of items we need, not the array itself:
 
 ```
 {
@@ -94,13 +94,15 @@ Digging into the API response we can see that what was returned was an _object_ 
             ....
 ```
 
-We can see that what we need to return is that array of channels. To do that we need to switch over to "Code Mode" in our request. That lets us provide a JavaScript function to handle our request. There we can make any needed changes to the structure or content of the result before we return data to the Zapier platform. Notice line 18:
+What we need to return to Zapier is that array of channels. To do that we need to switch to "Code Mode" in our request. That lets us provide a JavaScript function to handle our request, where we can make needed changes to the structure or content of the result before we return data to the Zapier platform.
+
+For this request, use `return results.channels` in line 18, instead of the default `return results`, to have Zapier return the array of results from `channels`.
 
 ![](https://cdn.zapier.com/storage/photos/e1d09e9fdf952ef5f5b031bd705e5802.png)
 
-> Remember that "Form Mode" vs "Code Mode" is a mutually exclusive toggle. If you switch back to Form Mode your code will be ignored!
+> Remember: "Code Mode" is a toggle; if you switch back to Form Mode your code will be ignored! [Learn more](#code).
 
-We can now retest the request and see that it's successful. Note the response is a bare array:
+Now, retest the request and it should run successfully. Note the response this time is a bare array:
 
 ![](https://cdn.zapier.com/storage/photos/33098c9f9c1584295e074c1dc8a40e72.png)
 
