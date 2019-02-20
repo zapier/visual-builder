@@ -64,6 +64,16 @@ You _can_ manage the other details of your CLI integration from the UI, however,
 
 _Coming Soon_: In an upcoming version of Zapier's visual builder, you will be able to export a CLI version of your visual builder project. This will be a one-time export that converts your visual builder integration to a CLI format that you can edit and maintain on your local development machine. You can then create and push new versions of your integration via Zapier CLI, and can manage the details from the visual builder UI or the CLI. Once you enable CLI, though, you will not be able to edit or add authentication, trigger, or action details in the visual builder UI.
 
+<a id="response"></a>
+## What Response Type Does Zapier Expect?
+
+With every API call, including authentication and auth testing calls, triggers, searches, and create actions, Zapier expects to receive response data from the API. If your API call does not return a response, Zapier will show a timeout error.
+
+Zapier additionally expects different data for different API calls:
+
+- **Object** *for Authentication, Auth testing, and Create Actions*. Zapier expects to receive a single JSON formatted object with the correct details, including specific fields for Authentication calls depending on the auth scheme. Zapier will parse the individual fields and, with Create Actions, let users include their data in subsequent Zap steps.
+- **Array** *for Triggers and Search Actions*. Zapier expects to receive a JSON formatted array with the results in reverse chronological order. Even if the trigger or search only returns a single item, it should be formatted as an array. Zapier will then parse the results and return the most relevant result for searches, and return all new items from Triggers that pass Zapier's deduper.
+
 <a id="array"></a>
 ## I Got an "An array is Expected" error. How do I Fix That?
 
