@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## What You Need to Build a Zapier Integration
+# What You Need to Build a Zapier Integration
 
 ![Zapier Integration Details](https://cdn.zapier.com/storage/photos/5dbd9083f415c68c2280633561f9658a.png)
 
@@ -18,19 +18,19 @@ Start a new integration by opening Zapier visual builder at [zapier.com/app/deve
 Here are guidelines for each detail needed:
 
 <a id="name"></a>
-### Name
+## Name
 
 Add your app's real name, without any additional description, adjectives, or tagline. Use the same capitalization and spacing as your app uses in its branding and website. Do not include trademark or copyright symbols.
 
 <a id="description"></a>
-### Description
+## Description
 
 Include a description in up to 140 characters of your app's core features and use-case, for example "Trello is team collaboration tool to organize tasks on a kanban board and keep projects on track." Do not include overstated language, such as that your app is most popular or best. Additionally, do not mention Zapier. Focus instead on why someone would use your app.
 
 Use proper English, complete sentences, and punctuation. Do not include links or formatting.
 
 <a id="logo"></a>
-### Logo
+## Logo
 
 Upload your app's logo. Make sure your logo is a square, transparent PNG file with dimensions of at least 256x256px (use a larger image if available). If your logo uses a solid background, round the corners 3% of the width and make their background transparent.
 
@@ -38,7 +38,7 @@ Do not include your app's name in the logomark, as it will not be legible at sma
 
 Zapier will use your logo full-size in the Zapier App Directory to promote the integration, and will automatically re-size it to use inside the Zap editor and in other parts of the Zapier app.
 
-### Answer a Few Questions About Your App
+## Answer Questions About Your App
 
 ![Zapier integration questions](https://cdn.zapier.com/storage/photos/a8fd66dc5452ec2e13a7d264201d4921.png)
 

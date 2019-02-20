@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Actions
+# Actions
 
 ![Zapier Action Visual Builder](https://cdn.zapier.com/storage/photos/f4fba922b339ce68376e38b751bc79f1.png)
 
@@ -19,9 +19,9 @@ Zapier does not allow action steps to delete or remove data, to prevent data los
 
 > **Note**: Actions are displayed in the order they are added to Zapier integrations, so be sure to add your app's most important actions first.
 
-## How to Add a New Action to a Zapier Integration
+# How to Add a New Action to a Zapier Integration
 
-### 1. Configure Action Settings
+## 1. Configure Action Settings
 
 ![Zapier visual builder action settings](https://cdn.zapier.com/storage/photos/6774970e27535cea5db5f58bee6fa1b8.png)
 
@@ -41,7 +41,7 @@ Then add the core details to your action, including:
 
 Once the action settings are added, click _Save and Continue_ to add the new action and save your settings. You can edit the settings any time later with the exception of the create or search option.
 
-### 2. Build Action Input Form
+## 2. Build Action Input Form
 
 ![Zapier input designer](https://cdn.zapier.com/storage/photos/31dfcf36c01b0ee0db946a6a46c3de8c.png)
 
@@ -53,7 +53,7 @@ Add action fields for each item your app needs to create or find this item in yo
 
 > **Tip**: Check our detailed [Zapier input designer](https://zapier.github.io/visual-builder/docs/input-designer) guide for details on each option in the input designer, along with each field type you can add to your action's form.
 
-### 3. Enter API Configuration
+## 3. Enter API Configuration
 
 ![Zapier action API configuration](https://cdn.zapier.com/storage/photos/09bf074db0b6e8e02c049e2fed3983a9.png)
 

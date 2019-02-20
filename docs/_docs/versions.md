@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Manage Versions of Your Zapier Integration
+# Manage Versions of Your Zapier Integration
 
 Your Zapier integration should be quite nice when first launched—minimal, perhaps, but with the basics covered. The app authentication will let users connect to your API, and the triggers and actions should get data to and from your API.
 

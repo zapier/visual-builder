@@ -14,7 +14,7 @@ _Example API key auth screen for users inside Zapier_
 
 API Key authentication works similarly to Zapier's [Basic Auth](https://zapier.github.io/visual-builder/docs/basic) in that Zapier passes the credentials with every API call. Here, though, you need to build the [input form](https://zapier.github.io/visual-builder/docs/input-designer) where users add their API key and any other optional information your API requires, such as their account name, site URL, and other identifying data. You can additionally include help text under each field to direct users to where they can retrieve their API key.
 
-Use API key authentication if your API primarily uses an API key to identify accounts, especially with apps for weather, maps, content verification, file conversion, and other data tools that require a key for access to the service but do not contain user-specific content. Alternately, since API key authentication allows you to create a custom input form, you can use it to customize username and password-based logins that don't fit Zapier's default Basic auth scheme.
+> **When to use API key authentiocation:** Use API key authentication if your API primarily uses an API key to identify accounts, especially with apps for weather, maps, content verification, file conversion, and other data tools that require a key for access to the service but do not contain user-specific content. Alternately, since API key authentication allows you to create a custom input form, you can use it to customize username and password-based logins that don't fit Zapier's default Basic auth scheme.
 
 <a id="add"></a>
 ## How to Add API Key Auth to a Zapier Integration
@@ -73,7 +73,7 @@ Zapier automatically includes the API key and any additional input fields you ad
 If you need a custom API call, you can switch to code mode and write custom JavaScript code to handle your test API call and the response parsing, if needed. Click the _Switch to Code Mode_ toggle to enable it. The first time you click the toggle, Zapier will convert your API call to code. If you switch back to Form mode, though, Zapier will not convert your code changes to the form mode, nor will any subsequent changes in form mode be added to your code.
 
 <a id="label"></a>
-## Configuring a Connection Label
+## Configure a Connection Label
 
 ![Zapier API Key auth connection label](https://cdn.zapier.com/storage/photos/f09f02450623750b70b67d0d7afa9e1c.png)
 

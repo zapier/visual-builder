@@ -13,6 +13,8 @@ Digest Auth in Zapier follows the [RFC 7616](https://tools.ietf.org/html/rfc7616
 
 When users add a new app account with Digest Auth to Zapier, they'll see an input form. Zapier then uses that data with each API request to authenticate the user.
 
+> **When to use Digest Auth**: Use Digest Auth if your application uses the [RFC 7616](https://tools.ietf.org/html/rfc7616) authentication standard, where users enter their username and password where they can be passed encrypted to your API with the nonce key your app sends to Zapier on the first API call.
+
 <a id="add"></a>
 ## How to Add Digest Auth to a Zapier Integration
 

@@ -13,11 +13,11 @@ Input Designer is built for the latter. Where every other step in building a Zap
 
 Both Triggers and Actions can have an input form—but input forms are required in actions, as they always need a way for users to send data to your app to find, update, or create something new. Input Designer works the same in both.
 
-## How to Use Zapier Input Designer
+# How to Use Zapier Input Designer
 
 Input Designer works similarly to other form builder tools such as Wufoo or Google Forms, only here you’re building a form that lives inside your Zapier integration. Add fields to your form for each bit of data your app needs from users. Zapier uses `string` short text fields by default or you can choose from nine other field types to gather the data your app needs. Configure the field settings, then reorder them to match the logical order users would add data in your app.
 
-### Add Fields
+## Add Fields
 
 ![Zapier Input Designer][image-1]
 
@@ -40,11 +40,9 @@ To add a field, click the _Add_ button and select the field type. Enter the fiel
 
 Set each option and preview how your field looks inside a Zap on the right. When finished, click _Save_ then repeat the process to add each field your trigger or action step needs.
 
-### Set Field Options
+## Set Field Options
 
-
-
-#### Required
+### Required
 
 ![Zapier Required Field][image-2]
 
@@ -54,7 +52,7 @@ If your trigger or action step requires any data, check the _Required_ box on th
 
 Be sure to include a description on required fields to let users know exactly what type of data they should add to this field so the integration will work as expected. Also, never mark fields as required if the integration could work without them.
 
-#### Allows Multiples
+### Allows Multiples
 
 ![Zapier Field Allows Multiples][image-3]
 
@@ -62,7 +60,7 @@ Have a field where users could add multiple entries in the same field? For examp
 
 That adds a `+` button on the far right side of your field inside Zaps; users can click that to add another entry to the field. Zapier’s platform then delivers each entry in a comma separated list to your API.
 
-#### Alters Dynamic Fields
+### Alters Dynamic Fields
 
 If you have dynamic fields in your integration, where Zapier runs code to decide whether to show a field or what to show in a field, you can use other input fields to modify those dynamic fields.
 
@@ -71,7 +69,7 @@ Say you have a field that is only shown depending on the value of a previous fie
 If you check the _Alters Dynamic Fields_ option on a field, Zapier will automatically recompute any dynamic fields in your Zapier integration anytime this field is changed. Do not check the _Alters Dynamic Fields_ box unless the field is needed for your integrations’ dynamic fields.
 
 <a id="dropdown"></a>
-#### Dropdown
+### Dropdown
 
 <a id="static"></a>
 **Static Dropdown**
@@ -153,7 +151,7 @@ Whenever someone uses this input field in a Zap and selects this dynamic dropdow
 
 Do note that users can always choose to enter a custom value as the final option in dropdown fields, to map data from other Zap steps into this field.
 
-### Reorder Fields
+## Reorder Fields
 
 ![Reorder Input Fields Zapier][image-6]
 _Change the order of input fields with the arrows, and preview the completed form on the right_
@@ -162,7 +160,7 @@ Add a field that should be at the top or bottom of your form? You can reorder in
 
 It’s worth thinking through your form field order to make your integration as easy to use as possible. Put the most important, required fields first, with less important, optional fields near the bottom. Put related fields (such as first and last name) near each other. If your app includes a similar input form to create new items, you could order fields in Zapier similar to those in your app to increase ease of use.
 
-### Remove Fields
+## Remove Fields
 
 ![Delete Input Fields][image-7]
 _Delete any fields that aren’t needed in your integration_

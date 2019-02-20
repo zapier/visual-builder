@@ -14,10 +14,10 @@ _Example Basic Auth screen for users inside Zapier_
 
 When you add Basic Auth to your integration, Zapier adds a pre-built form that requests a username and password whenever users authenticate with your API. Zapier then makes a test call to verify the credentials, and stores them to use with every subsequent API call Zapier makes to your app on behalf of the user. 
 
-> **When to use Basic Auth:** Use Basic Auth if your API only requires a username and password,  needs no special configuration, and specifically if your API leverages ["HTTP Basic Authentication"](https://en.wikipedia.org/wiki/Basic_access_authentication). If you need further customization of your login flow or need additional data from users, [API key authentication](https://zapier.github.io/visual-builder/docs/apikey) works the same as Basic auth but includes a customizable form where you can 
+> **When to use Basic Auth:** Use Basic Auth if your API only requires a username and password, needs no special configuration, and specifically if your API leverages "[HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)". If you need further customization of your login flow or need additional data from users, [API key authentication](https://zapier.github.io/visual-builder/docs/apikey) works the same as Basic auth but includes a customizable form where you can request additional authentication data from users.
 
 <a id="add"></a>
-## How to Configure Basic Auth to a Zapier Integration
+## How to Add Basic Auth to a Zapier Integration
 
 ![Add Basic Auth to Zapier integration](https://cdn.zapier.com/storage/photos/d5f4146ecea9123de570743234478dfa.png)
 
@@ -30,7 +30,7 @@ Zapier automatically adds a form where users will enter their username and passw
 All you need to add is a test API call where Zapier can verify that the credentials work, and optionally a connection label to help users identify the account.
 
 <a id="test_request"></a>
-## Configuring a Test Request
+## Configure a Test Request
 
 For the test API call, enter an API endpoint under the _Test_ header where Zapier can test users' credentials for your app, and set the correct call method (typically `GET`). Use an API endpoint that does not require any additional details or configuration, such as `/me` or `/user` to simply check the app authentication and retrieve details about the user.
 
@@ -43,7 +43,7 @@ If your API requires any custom details in the API call, click the _Show Options
 If you need more customization, you can write custom JavaScript code to call your API and parse the output data. To do that, click the _Switch to Code Mode_ toggle. The first time you click the toggle, Zapier will convert the data from your API call form to JavaScript. If you switch back to form mode, Zapier will save your custom code but will not use it in the API call. Additionally, if you switch back to code mode again later, Zapier will not add any changes from the API call form to your code.
 
 <a id="label"></a>
-## Configuring a Connection Label
+## Configure a Connection Label
 
 ![Zapier Basic Auth connection label](https://cdn.zapier.com/storage/photos/196e9987836a34e4528a0b8ebd9dbd25.png)
 

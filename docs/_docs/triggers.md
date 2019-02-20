@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Triggers
+# Triggers
 
 ![Zapier Trigger Visual Builder](https://cdn.zapier.com/storage/photos/2d499138890f7237dffe728fbe9340bc.png)
 
@@ -17,9 +17,9 @@ As triggers only watch for new data and typically need to send no or little data
 
 > **Note**: Triggers are displayed in the order they are added to Zapier integrations, so be sure to add your app’s most important triggers first.
 
-## How to Add a New Trigger to a Zapier Integration
+# How to Add a New Trigger to a Zapier Integration
 
-### 1. Configure Trigger Settings
+## 1. Configure Trigger Settings
 
 ![Zapier trigger settings](https://cdn.zapier.com/storage/photos/260a97ab4957746a75987dcb21f8aa1d.png)
 
@@ -35,7 +35,7 @@ Add each of the following to your trigger:
 
 Once the settings are added, click _Save and Continue_ to add the new trigger and save your settings. You can edit the settings any time later with the exception of the create or search option.
 
-### 2. Build Trigger Input Form (optional)
+## 2. Build Trigger Input Form (optional)
 
 ![Zapier Trigger input form](https://cdn.zapier.com/storage/photos/724d126862b876b7deccb5b798b86997.png)
 
@@ -45,7 +45,7 @@ In the second tab of the visual builder's trigger settings, add input fields for
 
 Once your form is complete—or if you don't need to include an input form—click the _API Configuration_ settings tab to set how Zapier will get data from your app and test the trigger.
 
-### 3. Enter API Configuration
+## 3. Enter API Configuration
 
 ![Zapier Polling Trigger Settings](https://cdn.zapier.com/storage/photos/af53c9298cb9baf32abb17eb9e51a0dc.png)
 

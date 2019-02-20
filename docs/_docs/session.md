@@ -13,10 +13,10 @@ Session authentication shares elements of Basic authentication—where Zapier re
 
 When a user adds an app account to Zapier with Session auth, they first fill out an input form with any authentication credentials that app's API requires. Zapier then sends a request to the API's token exchange endpoint with those credentials, and the API responds with an authentication token. Zapier stores that authentication token and uses it with every subsequent API call.
 
-Use Session authentication with your Zapier integration if your API is designed for session, cookie, or token-based authentication. You can also use Session auth if your API uses a variant of OAuth that does not include an OAuth Authorization URL where users would otherwise login to your app and approve access to their accounts.
+> **When to use Session authentication:** Use Session authentication with your Zapier integration if your API is designed for session, cookie, or token-based authentication. You can also use Session auth if your API uses a variant of OAuth that does not include an OAuth Authorization URL where users would otherwise login to your app and approve access to their accounts.
 
 <a id="add"></a>
-## How to Add Session Auth to a Zapier Integration
+# How to Add Session Auth to a Zapier Integration
 
 ![Add Session Auth to Zapier integration](https://cdn.zapier.com/storage/photos/79ae883b7a164a0747d273f708f16c57.png)
 
@@ -30,7 +30,7 @@ You will then need the following to set up Session Auth:
 - A Connection Label to uniquely identify users' accounts
 
 <a id="form"></a>
-### Add a Session Auth Input Form
+## Add a Session Auth Input Form
 
 The first thing to add for Session auth is an _input form_. Much like [Zapier's input designer](https://zapier.github.io/visual-builder/docs/input-designer) for triggers and actions, this lets you design a simple form for users to enter their username, password, API key, domain, or any other data your API requires for authentication.
 

@@ -13,7 +13,8 @@ OAuth v2 authentication is the easiest authentication scheme for users, as it ma
 
 When a user adds an app account to Zapier with OAuth v2, they will first see a familar window from that app showing either a login screen or an account selector if they're already logged in (and the app will send Zapier a request token that will be exchanged for an access token once the user approves access). They can then enter their account credentials confidently since they're entering them on that app's own site—and often, users will not need to enter credentials since they're already logged in. Once they authorize Zapier access, the app will return an access token that Zapier can use to authenticate future API calls.
 
-> **Which OAuth 2 Flow Type Does Zapier Support?:** Zapier implements the "Authorization Code" [grant type](https://tools.ietf.org/html/rfc6749#section-1.3.1) when you choose OAuth 2.  If your OAuth 2 implementation supports refresh tokens you may optionally configure a "Refresh Token" [request](tools.ietf.org/html/rfc6749#section-1.5).  If you require a different OAuth 2 grant type, have a look at one one of the other Zapier authentication types.
+> **Which OAuth 2 Flow Type Does Zapier Support?:** Zapier implements the "Authorization Code" [grant type](https://tools.ietf.org/html/rfc6749#section-1.3.1) when you choose OAuth 2. If your OAuth 2 implementation supports refresh tokens you may optionally configure a "Refresh Token" [request](tools.ietf.org/html/rfc6749#section-1.5). If you require a different OAuth 2 grant type, have a look at one one of the other Zapier authentication types.
+> **Does Zapier Support OAuth v1?** Not with visual builder. If your integration requires OAuth v1 authentication, use [Zapier CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) to build your integration instead.
 
 <a id="add"></a>
 ## How to Add OAuth v2 to a Zapier Integration
