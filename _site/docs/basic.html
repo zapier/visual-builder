@@ -90,7 +90,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+      <a href="/visual-builder/docs/start" class="sidebar__list-link ">Getting Started</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -102,11 +102,27 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
+      <a href="/visual-builder/docs/session" class="sidebar__list-link ">— Session Auth</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+      <a href="/visual-builder/docs/apikey" class="sidebar__list-link ">— API Key Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/oauth" class="sidebar__list-link ">— OAuth v2</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/digest" class="sidebar__list-link ">— Digest Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -114,7 +130,11 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing (coming soon)</a>
+      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -126,11 +146,15 @@
     </li>
   
     <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+    </li>
+  
+    <li class="sidebar__list-item">
       <a href="/visual-builder/docs/glossary" class="sidebar__list-link ">Glossary</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+      <a href="/visual-builder/docs/vs" class="sidebar__list-link ">Visual Builder vs CLI</a>
     </li>
   
 </ul>
@@ -141,14 +165,14 @@
     <aside class="toc">
       <h3>Contents</h3>
       <ul>
-  <li><a href="#authentication--basic-auth">Authentication — Basic Auth</a></li>
   <li><a href="#how-to-add-basic-auth-to-a-zapier-integration">How to Add Basic Auth to a Zapier Integration</a></li>
-  <li><a href="#common-basic-auth-error-messages">Common Basic Auth Error Messages</a></li>
+  <li><a href="#configure-a-test-request">Configure a Test Request</a></li>
+  <li><a href="#configure-a-connection-label">Configure a Connection Label</a></li>
 </ul>
 
     </aside>
     <main class="container">
-      <section class="content"><h2 id="authentication--basic-auth">Authentication — Basic Auth</h2>
+      <section class="content"><h1 id="authentication--basic-auth">Authentication — Basic Auth</h1>
 
 <p>Basic Authentication lets you connect APIs to Zapier that authenticate users with a username and password. In a Zapier integration with Basic Auth, Zapier includes the name and password of the user in the API request bundle every time Zapier polls an API endpoint for new data or posts new data to an API endpoint.</p>
 
@@ -157,8 +181,11 @@
 
 <p>When you add Basic Auth to your integration, Zapier adds a pre-built form that requests a username and password whenever users authenticate with your API. Zapier then makes a test call to verify the credentials, and stores them to use with every subsequent API call Zapier makes to your app on behalf of the user.</p>
 
-<p>Use Basic Auth if your API only requires a username and password, and needs no special configuration.</p>
+<blockquote>
+  <p><strong>When to use Basic Auth:</strong> Use Basic Auth if your API only requires a username and password, needs no special configuration, and specifically if your API leverages “<a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a>”. If you need further customization of your login flow or need additional data from users, <a href="https://zapier.github.io/visual-builder/docs/apikey">API key authentication</a> works the same as Basic auth but includes a customizable form where you can request additional authentication data from users.</p>
+</blockquote>
 
+<p><a id="add"></a></p>
 <h2 id="how-to-add-basic-auth-to-a-zapier-integration">How to Add Basic Auth to a Zapier Integration</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/d5f4146ecea9123de570743234478dfa.png" alt="Add Basic Auth to Zapier integration" /></p>
@@ -167,7 +194,12 @@
 
 <p><img src="https://cdn.zapier.com/storage/photos/f29b99f3c22fa166852086d76e484774.png" alt="Basic Auth settings" /></p>
 
-<p>Zapier automatically adds a form where users will enter their username and password, so you don’t need to configure anything for core basic auth. All you need to add is a test API call where Zapier can verify that the credentials work, and optionally a connection label to help users identify the account.</p>
+<p>Zapier automatically adds a form where users will enter their username and password, so you don’t need to configure anything for core basic auth.</p>
+
+<p>All you need to add is a test API call where Zapier can verify that the credentials work, and optionally a connection label to help users identify the account.</p>
+
+<p><a id="test_request"></a></p>
+<h2 id="configure-a-test-request">Configure a Test Request</h2>
 
 <p>For the test API call, enter an API endpoint under the <em>Test</em> header where Zapier can test users’ credentials for your app, and set the correct call method (typically <code class="highlighter-rouge">GET</code>). Use an API endpoint that does not require any additional details or configuration, such as <code class="highlighter-rouge">/me</code> or <code class="highlighter-rouge">/user</code> to simply check the app authentication and retrieve details about the user.</p>
 
@@ -179,92 +211,24 @@
 
 <p>If you need more customization, you can write custom JavaScript code to call your API and parse the output data. To do that, click the <em>Switch to Code Mode</em> toggle. The first time you click the toggle, Zapier will convert the data from your API call form to JavaScript. If you switch back to form mode, Zapier will save your custom code but will not use it in the API call. Additionally, if you switch back to code mode again later, Zapier will not add any changes from the API call form to your code.</p>
 
-<p><img src="https://cdn.zapier.com/storage/photos/7b04cb3a81e8dcb4f0508aec0e69cf2d.png" alt="Zapier Basic Auth connection label" /></p>
+<p><a id="label"></a></p>
+<h2 id="configure-a-connection-label">Configure a Connection Label</h2>
+
+<p><img src="https://cdn.zapier.com/storage/photos/196e9987836a34e4528a0b8ebd9dbd25.png" alt="Zapier Basic Auth connection label" /></p>
 
 <p>Finally, add a connection label to your Zapier integration. Zapier always includes the app’s name in each account label. You can additionally include:</p>
 
 <ul>
   <li>Plain text that will be included after your app’s full name</li>
-  <li>Output fields from your app’s authentication test API call, referenced with <code class="highlighter-rouge">{{bundle.authData.field}}</code> variables, replacing <code class="highlighter-rouge">field</code> for your API output field name.</li>
+  <li>The username that users enter in the Zapier authentication form when adding your app—enter <code class="highlighter-rouge">{{bundle.authData.username}}</code> to include that</li>
+  <li>Output fields from your app’s authentication test API call, referenced with <code class="highlighter-rouge">{{bundle.inputData.field}}</code> variables, replacing <code class="highlighter-rouge">field</code> for your API output field name.</li>
 </ul>
 
-<h3 id="test-authentication">Test Authentication</h3>
+<p>Learn more in our <a href="https://zapier.github.io/visual-builder/docs/auth#label">Connection Label documentation</a>.</p>
 
-<p><img src="https://cdn.zapier.com/storage/photos/37a59dae4fe33ffc4894b1df23e7be83.png" alt="Test Zapier authentication" /></p>
+<p>Click <em>Save &amp; Continue</em> when finished to save your authentication settings.</p>
 
-<p>Once you’ve added the core details of how Zapier can authenticate users and test the connection, you need to try it out to set the final options. Click the <em>Connect an Account</em> button to add your account with this app to Zapier.</p>
-
-<p>Zapier will open a popup window like one your users will see when authenticating your app with Zapier. Enter your account info or API key, or authenticate through your app’s site, using real account details for a personal or testing account.</p>
-
-<blockquote>
-  <p><strong>Tip</strong>: The account you add here will be the one you use to test any triggers and actions you add to Zapier in visual builder. It can also be used in live Zaps in Zapier, if you wish. These account details are not tied to your app definition, though, and if you add a collaborator to your Zapier integration, they will need to connect their own account for testing.</p>
-</blockquote>
-
-<p>Once you’ve added your account, you’ll see it with a connection label under the setup box. Then click <em>Test Connected Account</em> to have Zapier run your testing API call and ensure your app connection works.</p>
-
-<p><img src="https://cdn.zapier.com/storage/photos/d5cf1a5cbc5a8389ad3272d01ef71c06.png" alt="Example Zapier authentication test response" /></p>
-
-<p>If everything works as expected, Zapier will receive response data from the API call and display it in the <em>Response</em> tab. You can look through the JSON-formatted fields from the response and use any of the field names in your account <a href="#label">connection label</a>. You can also look at the <em>Bundle</em> tab to see the data Zapier used in the API request, and the <em>HTTP</em> tab to see the full request and response details.</p>
-
-<p><img src="https://cdn.zapier.com/storage/photos/3337e520ebab7b09de282e598ea70cfd.png" alt="Example Zapier authentication error" /></p>
-
-<p>If something didn’t work, Zapier will show the error message in the <em>Response</em> tab, with the full response content in the <em>HTTP</em> tab if you need more detail. Update your authentication settings accordingly, click the <em>Save &amp; Continue</em> button, then try testing your connected account again—and repeat until your authentication works and tests correctly.</p>
-
-<p>With that, your app authentication should be finished, and your integration ready to add triggers and actions.</p>
-
-<p><a id="error"></a></p>
-
-<h2 id="common-basic-auth-error-messages">Common Basic Auth Error Messages</h2>
-
-<p><img src="https://cdn.zapier.com/storage/photos/88b058e13a0321efdbdab3e0a046dfa5.png" alt="404 error in Zapier basic auth" /></p>
-
-<p>If Zapier cannot successfully make the test API call to verify users’ credentials, you may see an error message in the Test section of your Zapier integration. Zapier shows a simplified error message in the <em>Response</em> tab by default, along with a red x and a <em>Request Failed</em> message in the top right.</p>
-
-<p><img src="https://cdn.zapier.com/storage/photos/2511421236621c8c5ea7c160f2a2ca7e.png" alt="Zapier Error Response Content" /></p>
-
-<p>You can find the original API response with the full error message in the <em>HTTP</em> tab under <em>Response Content</em>.</p>
-
-<p>The most common errors include:</p>
-
-<h3 id="404">404</h3>
-
-<p><img src="https://cdn.zapier.com/storage/photos/88b058e13a0321efdbdab3e0a046dfa5.png" alt="404 error in Zapier basic auth" /></p>
-
-<p>The standard HTTP 404 <code class="highlighter-rouge">Not Found</code> error is commonly returned when:</p>
-
-<ul>
-  <li>Test API endpoint URL is incorrect</li>
-  <li>Test API call method is incorrect</li>
-</ul>
-
-<p>If you encounter this error, double-check both the API endpoint URL and the call method (typically <code class="highlighter-rouge">GET</code>). Ensure both are set to what your API expects, then click the <em>Save &amp; Continue</em> button, and click the <em>Test Connected Account</em> button again.</p>
-
-<h3 id="401">401</h3>
-
-<p><img src="https://cdn.zapier.com/storage/photos/d13a9b1ff308b520ae4b29461cc754d6.png" alt="401 error in Zapier basic auth" /></p>
-
-<p>The standard HTTP 401 <code class="highlighter-rouge">Unauthorized</code> error is commonly returned when:</p>
-
-<ul>
-  <li>User account credentials are incorrect, expired, or revoked</li>
-</ul>
-
-<p>Try authenticating your app user account with Zapier again. Click <em>Connect an Account</em>, add credentials for an active account on the app, then try the test again.</p>
-
-<h3 id="error-parsing-response">Error Parsing Response</h3>
-
-<p><img src="https://cdn.zapier.com/storage/photos/deebd9e07497a209479a66e7f1d465b0.png" alt="Error Parsing Response in Zapier Basic Auth" /></p>
-
-<p>The <em>Error Parsing Response</em> error is commonly returned when:</p>
-
-<ul>
-  <li>API returns non-standard and especially non-JSON output</li>
-  <li>Test API endpoint URL is incorrect</li>
-</ul>
-
-<p>Double-check the test API URL is entered correctly. If a standard, non-API endpoint URL is entered in the test field, the site will return its raw HTML page to Zapier and will result in this error. If you do change the URL, click <em>Save &amp; Continue</em> then test your connection again.</p>
-
-<p>If your API call is correct and returning data in a format Zapier does not expect, you will need to switch to code mode and add custom parsing for your API response. Under the <em>Test</em> API call in the top of your app’s Authentication settings, click <em>Switch to Code Mode</em>, then add custom JavaScript code to parse your API response.</p>
+<p>Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our <a href="https://zapier.github.io/visual-builder/docs/auth#test">Authentication Testing docs</a> for more details, common errors you may encounter, and how to resolve those.</p>
 </section>
       <footer class="prev-next">
 
@@ -272,7 +236,7 @@
 
 <hr>
 <a class="button blue" href="/visual-builder/docs/auth">Previous: Authentication</a>
-<a class="button blue" href="/visual-builder/docs/triggers">Next: Triggers</a></footer>
+<a class="button blue" href="/visual-builder/docs/session">Next: — Session Auth</a></footer>
     </main>
     <script>
 (function() {

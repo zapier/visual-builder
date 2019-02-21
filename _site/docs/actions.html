@@ -90,7 +90,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+      <a href="/visual-builder/docs/start" class="sidebar__list-link ">Getting Started</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -102,11 +102,27 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
+      <a href="/visual-builder/docs/session" class="sidebar__list-link ">— Session Auth</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+      <a href="/visual-builder/docs/apikey" class="sidebar__list-link ">— API Key Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/oauth" class="sidebar__list-link ">— OAuth v2</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/digest" class="sidebar__list-link ">— Digest Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -114,7 +130,11 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing (coming soon)</a>
+      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -126,11 +146,15 @@
     </li>
   
     <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+    </li>
+  
+    <li class="sidebar__list-item">
       <a href="/visual-builder/docs/glossary" class="sidebar__list-link ">Glossary</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+      <a href="/visual-builder/docs/vs" class="sidebar__list-link ">Visual Builder vs CLI</a>
     </li>
   
 </ul>
@@ -141,8 +165,9 @@
     <aside class="toc">
       <h3>Contents</h3>
       <ul>
-  <li><a href="#actions">Actions</a></li>
-  <li><a href="#how-to-add-a-new-action-to-a-zapier-integration">How to Add a New Action to a Zapier Integration</a></li>
+  <li><a href="#1-configure-action-settings">1. Configure Action Settings</a></li>
+  <li><a href="#2-build-action-input-form">2. Build Action Input Form</a></li>
+  <li><a href="#3-enter-api-configuration">3. Enter API Configuration</a></li>
   <li><a href="#how-to-use-custom-code-in-zapier-actions">How to Use Custom Code in Zapier Actions</a></li>
   <li><a href="#how-to-add-a-search-action">How to Add a Search Action</a></li>
   <li><a href="#how-to-reorder-actions-in-a-zapier-integration">How to Reorder Actions in a Zapier Integration</a></li>
@@ -151,7 +176,7 @@
 
     </aside>
     <main class="container">
-      <section class="content"><h2 id="actions">Actions</h2>
+      <section class="content"><h1 id="actions">Actions</h1>
 
 <p><img src="https://cdn.zapier.com/storage/photos/f4fba922b339ce68376e38b751bc79f1.png" alt="Zapier Action Visual Builder" /></p>
 
@@ -167,9 +192,9 @@
   <p><strong>Note</strong>: Actions are displayed in the order they are added to Zapier integrations, so be sure to add your app’s most important actions first.</p>
 </blockquote>
 
-<h2 id="how-to-add-a-new-action-to-a-zapier-integration">How to Add a New Action to a Zapier Integration</h2>
+<h1 id="how-to-add-a-new-action-to-a-zapier-integration">How to Add a New Action to a Zapier Integration</h1>
 
-<h3 id="1-configure-action-settings">1. Configure Action Settings</h3>
+<h2 id="1-configure-action-settings">1. Configure Action Settings</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/6774970e27535cea5db5f58bee6fa1b8.png" alt="Zapier visual builder action settings" /></p>
 
@@ -193,7 +218,7 @@
 
 <p>Once the action settings are added, click <em>Save and Continue</em> to add the new action and save your settings. You can edit the settings any time later with the exception of the create or search option.</p>
 
-<h3 id="2-build-action-input-form">2. Build Action Input Form</h3>
+<h2 id="2-build-action-input-form">2. Build Action Input Form</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/31dfcf36c01b0ee0db946a6a46c3de8c.png" alt="Zapier input designer" /></p>
 
@@ -207,13 +232,17 @@
   <p><strong>Tip</strong>: Check our detailed <a href="https://zapier.github.io/visual-builder/docs/input-designer">Zapier input designer</a> guide for details on each option in the input designer, along with each field type you can add to your action’s form.</p>
 </blockquote>
 
-<h3 id="3-enter-api-configuration">3. Enter API Configuration</h3>
+<h2 id="3-enter-api-configuration">3. Enter API Configuration</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/09bf074db0b6e8e02c049e2fed3983a9.png" alt="Zapier action API configuration" /></p>
 
-<p>The last part of building a Zapier action is the most crucial: tell Zapier how to send the data to your API. By default, Zapier will include a <code class="highlighter-rouge">POST</code> call for create actions, and a <code class="highlighter-rouge">GET</code> call for search actions. Additionally, Zapier will include each of your input form fields in the <em>Request Body</em> automatically.</p>
+<p>The last part of building a Zapier action is the most crucial: tell Zapier how to send the data to your API.</p>
 
-<p>For most actions, select the correct API call if your app expects something other than the default, then paste the URL for your API call in the box under <em>API Endpoint</em>. Zapier includes each input field in your request body by default.</p>
+<p>Zapier uses a <code class="highlighter-rouge">POST</code> call for create actions by default, sending a single item to your API endpoint. Zapier then expects a response with an object containing a single item, to be evaluated by <a href="https://lodash.com/docs#isPlainObject">isPlainObject</a> then parsed into individual fields for use in subsequent Zap steps.</p>
+
+<p>Zapier uses a <code class="highlighter-rouge">GET</code> call for search actions by default, and sends the data from the input form to your API endpoint. Zapier expects an array response with 0 or more items—and if more than 1 item is returned, Zapier shows the best match first, and parses it into individual fields for use in subsequent Zap steps.</p>
+
+<p>For most actions, select the correct API call if your app expects something other than the default, then paste the URL for your API call in the box under <em>API Endpoint</em>. Zapier will include each of your input form fields in the <em>Request Body</em> automatically.</p>
 
 <p>If your API call expects input data in the core URL, you can reference any input field’s key with the following text, replacing <code class="highlighter-rouge">key</code> with your field key:</p>
 
@@ -243,6 +272,8 @@
 <p>In the <em>Sample</em> box, add a JSON formatted example of the output data from your API with the most commonly used output fields. Include the field key on the left, and sample data for that field on the right, using sample, demo data that can be used publicly.</p>
 
 <p>Then click <em>Generate Output Field Definitions</em> and Zapier will list a table of the fields with the keys on the left and the field type on the right. Select the correct field type (including the default String field or Text, integer, number, boolean, datetime, file, and password field options), and add a human-friendly field name in the center column.</p>
+
+<p><em><a href="http://zapier.github.io/visual-builder/docs/faq#output">Learn more about how Zapier uses sample data and output fields</a></em>.</p>
 
 <p><a id="code"></a></p>
 <h2 id="how-to-use-custom-code-in-zapier-actions">How to Use Custom Code in Zapier Actions</h2>
@@ -297,8 +328,8 @@
 
 
 <hr>
-<a class="button blue" href="/visual-builder/docs/search-create">Previous: Searches and Creates</a>
-<a class="button blue" href="/visual-builder/docs/testing">Next: Testing (coming soon)</a></footer>
+<a class="button blue" href="/visual-builder/docs/triggers">Previous: Triggers</a>
+<a class="button blue" href="/visual-builder/docs/search-create">Next: Searches and Creates</a></footer>
     </main>
     <script>
 (function() {

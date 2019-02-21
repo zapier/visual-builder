@@ -90,7 +90,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link  sidebar__list-link--is-selected ">Input Designer</a>
+      <a href="/visual-builder/docs/start" class="sidebar__list-link ">Getting Started</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -102,11 +102,27 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
+      <a href="/visual-builder/docs/session" class="sidebar__list-link ">— Session Auth</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+      <a href="/visual-builder/docs/apikey" class="sidebar__list-link ">— API Key Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/oauth" class="sidebar__list-link ">— OAuth v2</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/digest" class="sidebar__list-link ">— Digest Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link  sidebar__list-link--is-selected ">Input Designer</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -114,7 +130,11 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing (coming soon)</a>
+      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -126,11 +146,15 @@
     </li>
   
     <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+    </li>
+  
+    <li class="sidebar__list-item">
       <a href="/visual-builder/docs/glossary" class="sidebar__list-link ">Glossary</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+      <a href="/visual-builder/docs/vs" class="sidebar__list-link ">Visual Builder vs CLI</a>
     </li>
   
 </ul>
@@ -142,7 +166,10 @@
       <h3>Contents</h3>
       <ul>
   <li><a href="#zapier-input-designer">Zapier Input Designer</a></li>
-  <li><a href="#how-to-use-zapier-input-designer">How to Use Zapier Input Designer</a></li>
+  <li><a href="#add-fields">Add Fields</a></li>
+  <li><a href="#set-field-options">Set Field Options</a></li>
+  <li><a href="#reorder-fields">Reorder Fields</a></li>
+  <li><a href="#remove-fields">Remove Fields</a></li>
   <li><a href="#zapier-input-field-types">Zapier Input Field Types</a></li>
   <li><a href="#how-to-add-a-line-item-group">How to Add a Line Item Group</a></li>
   <li><a href="#how-to-add-dynamic-fields">How to Add Dynamic Fields</a></li>
@@ -158,11 +185,11 @@
 
 <p>Both Triggers and Actions can have an input form—but input forms are required in actions, as they always need a way for users to send data to your app to find, update, or create something new. Input Designer works the same in both.</p>
 
-<h2 id="how-to-use-zapier-input-designer">How to Use Zapier Input Designer</h2>
+<h1 id="how-to-use-zapier-input-designer">How to Use Zapier Input Designer</h1>
 
 <p>Input Designer works similarly to other form builder tools such as Wufoo or Google Forms, only here you’re building a form that lives inside your Zapier integration. Add fields to your form for each bit of data your app needs from users. Zapier uses <code class="highlighter-rouge">string</code> short text fields by default or you can choose from nine other field types to gather the data your app needs. Configure the field settings, then reorder them to match the logical order users would add data in your app.</p>
 
-<h3 id="add-fields">Add Fields</h3>
+<h2 id="add-fields">Add Fields</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/31dfcf36c01b0ee0db946a6a46c3de8c.png" alt="Zapier Input Designer" /></p>
 
@@ -189,9 +216,9 @@
 
 <p>Set each option and preview how your field looks inside a Zap on the right. When finished, click <em>Save</em> then repeat the process to add each field your trigger or action step needs.</p>
 
-<h3 id="set-field-options">Set Field Options</h3>
+<h2 id="set-field-options">Set Field Options</h2>
 
-<h4 id="required">Required</h4>
+<h3 id="required">Required</h3>
 
 <p><img src="https://cdn.zapier.com/storage/photos/aba4afb45bd9dbd5ec8c5e4a4137636d.png" alt="Zapier Required Field" /></p>
 
@@ -201,7 +228,7 @@
 
 <p>Be sure to include a description on required fields to let users know exactly what type of data they should add to this field so the integration will work as expected. Also, never mark fields as required if the integration could work without them.</p>
 
-<h4 id="allows-multiples">Allows Multiples</h4>
+<h3 id="allows-multiples">Allows Multiples</h3>
 
 <p><img src="https://cdn.zapier.com/storage/photos/842d24708f402853e08ce6fbc06d650c.png" alt="Zapier Field Allows Multiples" /></p>
 
@@ -209,7 +236,7 @@
 
 <p>That adds a <code class="highlighter-rouge">+</code> button on the far right side of your field inside Zaps; users can click that to add another entry to the field. Zapier’s platform then delivers each entry in a comma separated list to your API.</p>
 
-<h4 id="alters-dynamic-fields">Alters Dynamic Fields</h4>
+<h3 id="alters-dynamic-fields">Alters Dynamic Fields</h3>
 
 <p>If you have dynamic fields in your integration, where Zapier runs code to decide whether to show a field or what to show in a field, you can use other input fields to modify those dynamic fields.</p>
 
@@ -218,7 +245,10 @@
 <p>If you check the <em>Alters Dynamic Fields</em> option on a field, Zapier will automatically recompute any dynamic fields in your Zapier integration anytime this field is changed. Do not check the <em>Alters Dynamic Fields</em> box unless the field is needed for your integrations’ dynamic fields.</p>
 
 <p><a id="dropdown"></a></p>
-<h4 id="dropdown">Dropdown</h4>
+<h3 id="dropdown">Dropdown</h3>
+
+<p><a id="static"></a>
+<strong>Static Dropdown</strong></p>
 
 <p><img src="https://cdn.zapier.com/storage/photos/0cf01c1dd6923b09cbb2cff97f0d6906.png" alt="Zapier form field dropdown" /></p>
 
@@ -230,15 +260,74 @@
 
 <p>Enter the fields as used in your API, as Zapier will pass the exact value users select to your app. In the Zap editor, though, Zapier will capitalize each item in your dropdown menu, and will add spaces instead of any underscores, so an option like <code class="highlighter-rouge">first_name</code> would show in the menu as <code class="highlighter-rouge">First Name</code>.</p>
 
-<p><img src="https://cdn.zapier.com/storage/photos/f70686a8b053b541388da667e602f5b5.png" alt="Zapier Add Dynamic Dropdown Field" /></p>
+<p><a id="keyvalue"></a>
+<strong>Static Dropdown with Key Value Pairs</strong></p>
 
-<p>To add a dynamic dropdown field, you first need to build a trigger in your integration that can fetch the data needed in that menu from your API, such as project or folder names. Then, select the <em>Dynamic</em> option after checking the <em>Dropdown</em> box, and choose the trigger from which Zapier should fetch the data. Finally, enter the field name from your trigger, with the exact field ID of the trigger output field that you want Zapier to show, and add a user-friendly label to the field.</p>
+<p><img src="https://cdn.zapier.com/storage/photos/949f2aff9847ac14199f4884d0f4b861.png" alt="Zapier dropdown with key value pairs" /></p>
+
+<p>If your API requires different values for the field than the text you want to show to users inside the dropdown menu in Zapier, you can make a key value pair that includes the value to send to your API, the sample value to show users (typically the same as the value), and a user-friendly label.</p>
+
+<p>To do that, add each menu item inside curly brackets, with the sample, value, and label comma seperated, with the item listed first and the value listed second, both wrapped in quotes. Seperate each menu item with commas, and wrap the whole set in square brackets.</p>
+
+<p>For example, if our API expected a value of <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">2</code>, but <code class="highlighter-rouge">1</code> actually means <code class="highlighter-rouge">pork</code> and <code class="highlighter-rouge">2</code> actually means <code class="highlighter-rouge">fish</code>, you could use the following code to add a dropdown menu that would look like the one above:</p>
+
+<p><code class="highlighter-rouge">[</code>
+`  {<code class="highlighter-rouge">
+</code>    “sample”: “1”,<code class="highlighter-rouge">
+</code>    “value”: “1”,<code class="highlighter-rouge">
+</code>    “label”: “Pork”<code class="highlighter-rouge">
+</code>  },<code class="highlighter-rouge">
+</code>  {<code class="highlighter-rouge">
+</code>    “sample”: “2”,<code class="highlighter-rouge">
+</code>    “value”: “2”,<code class="highlighter-rouge">
+</code>    “label”: “Fish”<code class="highlighter-rouge">
+</code>  }<code class="highlighter-rouge">
+</code>]`</p>
+
+<p><a id="dynamic"></a>
+<strong>Dynamic Dropdown</strong></p>
+
+<p>If users need to select data from their account in your app—such as a project, folder, team member, or other user-specific detail—then you will want to use a dynamic dropdown. That will show a dropdown menu that has Zapier first fetch data from your API and display it in the menu, with a friendly name for the item and the raw data from your API.</p>
+
+<p>Zapier uses triggers to fetch the values for dynamic dropdown menus. The best way to make a dropdown is to make a dedicated trigger specifically for the dropdown data.</p>
+
+<p><strong><em>Build a Trigger to Fetch Dynamic Dropdown Data</em></strong></p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/da0b142705534296dd1d2113c35b4f64.png" alt="Zapier hidden trigger setting" /></p>
+
+<p>First make a trigger as normal, with a key, name, and noun, though feel free to leave the description free as this trigger won’t be seen by users. In the <em>Visibility Options</em> field, select <code class="highlighter-rouge">Hidden</code> to hide this trigger from your app’s trigger list in Zapier.</p>
+
+<p>Skip the <em>Input Designer</em> tab as the dynamic dropdown does not need any input data.</p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/4a64a727bc4301337acc72bc33edbad6.png" alt="Zapier hidden trigger API setting" /></p>
+
+<p>Then select the <em>API Configuration</em> tab, and add the API call where Zapier can fetch the data from your API. In standard Zapier triggers, you would use an API call that fetches new or newly updated items. Here, though, use an API call that pulls in a list of the data that you need for your dynamic dropdown.</p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/f9edb67b0c9be0378fd4ec1e9e4f3e79.png" alt="Zapier hidden trigger API options" /></p>
+
+<p>Many API calls will need additional configuration to pull in data in the order that makes most sense in your menu. You may want to sort options in the order they were added or updated, and could want to have the API fetch more items at once than the default. Set these from the <em>Show Options</em> menu.</p>
+
+<p>Additionally, most dynamic menus should let users load additional data if your API supports pagination. The first API call might pull in 20 items for example; if they request additional items, Zapier would call the API again and request the second page for the next 20 items.</p>
+
+<p>To add that, check the <em>Support Paging</em> box, then in your API call include your API’s pagination key and the <code class="highlighter-rouge">{{bundle.meta.page}}</code> value to pull in a page value. Zapier will call page <code class="highlighter-rouge">0</code> first, then page <code class="highlighter-rouge">1</code> when users request additional entries, using zero-based numbering. You can customize the pagination from the <em>Code Mode</em> button as well. Check our <em><a href="http://zapier.github.io/visual-builder/docs/triggers#pagination">Pagination Triggers guide</a></em> for more details.</p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/10eec1daf419738bee3dd8c9526dd443.png" alt="Set output fields from dynamic dropdown" /></p>
+
+<p>Finally, you need to define the fields from your trigger that you need to use in the action input field. Test your trigger, then find the output fields needed, and add them to the <em>Output Fields</em> list at the end of your settings page. Include at least a field with the data that Zapier needs to send to your API in the action, along with a field that includes a human friendly name for the data in that field.</p>
+
+<p><strong><em>Add an Input Field with Dynamic Fields</em></strong></p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/10eec1daf419738bee3dd8c9526dd443.png" alt="Select Trigger for Dynamic Fields" /></p>
+
+<p>Then, to use that data, add a new input field to your integration, set the label, key, and other details as normal, then check the <em>Dropdown</em> box and select the <em>Dynamic</em> toggle. Choose the trigger with the data needed for this menu in the <em>Dropdown Source</em> option.</p>
+
+<p>Select the field with the data your API needs for this action in the <em>Field Name</em> menu, and the field with a human-friendly name for the data in the <em>Field Label</em> menu. In the preview, your field will show as a dropdown menu, though you will need to use your action in a Zap to test the menu and pull in real data.</p>
 
 <p>Whenever someone uses this input field in a Zap and selects this dynamic dropdown field, Zapier will poll your API for the data from that trigger, parse the entries from that field name, and show them in a user friendly dropdown menu.</p>
 
 <p>Do note that users can always choose to enter a custom value as the final option in dropdown fields, to map data from other Zap steps into this field.</p>
 
-<h3 id="reorder-fields">Reorder Fields</h3>
+<h2 id="reorder-fields">Reorder Fields</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/2e73521bfc2f99ff43e12b444226421b.gif" alt="Reorder Input Fields Zapier" />
 <em>Change the order of input fields with the arrows, and preview the completed form on the right</em></p>
@@ -247,7 +336,7 @@
 
 <p>It’s worth thinking through your form field order to make your integration as easy to use as possible. Put the most important, required fields first, with less important, optional fields near the bottom. Put related fields (such as first and last name) near each other. If your app includes a similar input form to create new items, you could order fields in Zapier similar to those in your app to increase ease of use.</p>
 
-<h3 id="remove-fields">Remove Fields</h3>
+<h2 id="remove-fields">Remove Fields</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/f065e57e78c2c57c65827a611a3a3fb1.gif" alt="Delete Input Fields" />
 <em>Delete any fields that aren’t needed in your integration</em></p>
@@ -370,8 +459,8 @@
 
 
 <hr>
-<a class="button blue" href="/visual-builder/docs/intro">Previous: Intro</a>
-<a class="button blue" href="/visual-builder/docs/auth">Next: Authentication</a></footer>
+<a class="button blue" href="/visual-builder/docs/digest">Previous: — Digest Auth</a>
+<a class="button blue" href="/visual-builder/docs/triggers">Next: Triggers</a></footer>
     </main>
     <script>
 (function() {

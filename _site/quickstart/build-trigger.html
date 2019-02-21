@@ -90,7 +90,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+      <a href="/visual-builder/docs/start" class="sidebar__list-link ">Getting Started</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -102,11 +102,27 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
+      <a href="/visual-builder/docs/session" class="sidebar__list-link ">— Session Auth</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+      <a href="/visual-builder/docs/apikey" class="sidebar__list-link ">— API Key Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/oauth" class="sidebar__list-link ">— OAuth v2</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/digest" class="sidebar__list-link ">— Digest Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -114,7 +130,11 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing (coming soon)</a>
+      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -126,11 +146,15 @@
     </li>
   
     <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+    </li>
+  
+    <li class="sidebar__list-item">
       <a href="/visual-builder/docs/glossary" class="sidebar__list-link ">Glossary</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+      <a href="/visual-builder/docs/vs" class="sidebar__list-link ">Visual Builder vs CLI</a>
     </li>
   
 </ul>
@@ -138,22 +162,34 @@
   </nav>
 </div>
 
-    <main class="container">
-      <section class="content"><h2 id="build-your-integration">Build Your Integration</h2>
+    <aside class="toc">
+      <h3>Contents</h3>
+      <ul>
+  <li><a href="#poll-for-new-data-with-a-trigger">Poll for New Data With a Trigger</a></li>
+  <li><a href="#1-configure-trigger-settings">1. Configure Trigger Settings</a></li>
+  <li><a href="#2-design-an-input-field-form">2. Design an Input Field Form</a></li>
+  <li><a href="#3-configure-your-api">3. Configure Your API</a></li>
+  <li><a href="#4-test-your-trigger">4. Test Your Trigger</a></li>
+  <li><a href="#5-add-sample-data">5. Add Sample Data</a></li>
+</ul>
 
-<h3 id="poll-for-new-data-with-a-trigger">Poll for New Data With a Trigger</h3>
+    </aside>
+    <main class="container">
+      <section class="content"><h1 id="build-your-integration">Build Your Integration</h1>
+
+<h2 id="poll-for-new-data-with-a-trigger">Poll for New Data With a Trigger</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/449ad30ba51567045b9d1e9105d9fe90.gif" alt="Zapier Trigger Demo Animation" /></p>
 
 <p><em>In the Zap editor, users can set triggers to watch for the precise data they want</em></p>
 
-<p>Zapier triggers get new data from your API, parse out individual data fields, and let users include that data in subsequent Zap action steps. Triggers can run every time something new is added to an API endpoint or pushed to Zapier via a Webhook, or they can use filters to watch for specific items.</p>
+<p>Zapier triggers get new data from your API, parse individual data fields, and let users include that data in subsequent Zap action steps. Triggers can run every time something new is added to an API endpoint or pushed to Zapier via a Webhook, or they can use filters to watch for specific items.</p>
 
-<p>To add a trigger to your integration, Zapier visual builder will first have you add details in a form. You will then build a form to request data from users if your trigger needs filtering—or you can skip that if you want it to run every time something new is added to your app. Finally, you’ll set your API settings with a <code class="highlighter-rouge">GET</code> HTTP verb or REST Hook to let Zapier receive data from your API.</p>
+<p>To add a trigger to your integration, Zapier visual builder will first have you add details in a form. You will then build an input form to request data from users if your trigger needs filtering—or you can skip that if you want Zapier to run your Trigger every time something new is added to your app. Finally, set your API settings with a <code class="highlighter-rouge">GET</code> HTTP verb or REST Hook to let Zapier receive data from your API.</p>
 
 <p>Let’s have our example GitHub integration poll for new GitHub issues in a specified repo, and triggers Zaps if it finds new issues. We’ll use a <code class="highlighter-rouge">GET</code> HTTP call, which is called a polling trigger. Zapier will call this every few minutes for each Zap and check for new data.</p>
 
-<h3 id="1-configure-trigger-settings">1. Configure Trigger Settings</h3>
+<h2 id="1-configure-trigger-settings">1. Configure Trigger Settings</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/2d499138890f7237dffe728fbe9340bc.png" alt="Zapier Visual Builder Trigger Settings" /></p>
 
@@ -165,52 +201,56 @@
   <li><strong>Key</strong> used internally to reference the trigger</li>
   <li><strong>Name</strong> that users see for the trigger</li>
   <li><strong>Noun</strong> to describe what object this trigger provides</li>
-  <li><strong>Description</strong> to explain the trigger to users.</li>
+  <li><strong>Description</strong> to explain the trigger to users</li>
 </ul>
 
-<p>Add those details the GitHub new issue trigger, then save and continue.</p>
+<p>Add those details to your GitHub new issue trigger, then save and continue.</p>
 
-<h3 id="2-design-an-input-field-form">2. Design an Input Field Form</h3>
+<h2 id="2-design-an-input-field-form">2. Design an Input Field Form</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/4b86f77745df337a7e6924de9a385081.png" alt="Zapier Visual Builder input field details" /></p>
 
 <p><em>Need to gather data from users for your trigger? Add input form fields to your integration to do so.</em></p>
 
-<p>We want to be able to filter GitHub issues by repository and issue type, which means this trigger needs input fields.</p>
+<p>We want to filter GitHub issues by repository and issue type, which means this trigger needs input fields.</p>
 
-<p>Add a <em>User Input Field</em> in the <em>Input Designer</em> tab to start. Start by adding a field for users to add the repository they want to watch for issues. Enter a label, key, and help text for the repo field—and set it as required.</p>
+<p>Add a <em>User Input Field</em> in the <em>Input Designer</em> tab first, where users can add the repository they want to watch for issues. Enter a label, key, and help text for the repo field—and set it as required.</p>
 
-<p>Zapier can dynamically fetch the repositories from GitHub so users can select their repo from a list. To make this example integration simple, though, we’ll use a <code class="highlighter-rouge">string</code> field type where the user can type the repo name into Zapier instead.</p>
+<p>To make this example integration simple, use a <code class="highlighter-rouge">string</code> field type where the user can type the repo name into Zapier instead (then for a challenge later, you could try making a dynamic trigger that has Zapier fetch the users’ repositories and show them in a list).</p>
+
+<blockquote>
+  <p>Learn more about Input forms in our detailed <a href="https://zapier.github.io/visual-builder/docs/input-designer">input designer docs</a>.</p>
+</blockquote>
 
 <p><img src="https://cdn.zapier.com/storage/photos/eb918bd6754a7f2056d74a03d5d46a52.png" alt="Zapier Visual Builder dropdown" /></p>
 
 <p><em>You can also build a dropdown menu with dynamic or static options</em></p>
 
-<p>We need two input fields: a <em>Repo</em> field for users to select the repo to watch for issues, and a <em>Filter</em> field to choose which type of issues to trigger the Zap. Repeat those steps to add the Filter, and this time check the <em>Dropdown</em> box and the <em>Static</em> option. Enter the following in the code box to build your menu, then save your field:</p>
+<p>Your GitHub integration needs two additional input fields: a <em>Username</em> field for users to enter the username of the owner of that repository, and a <em>Filter</em> field to choose which type of issues to trigger the Zap. Repeat the steps to add the username field then the Filter field, and with the Filter check the <em>Dropdown</em> box and the <em>Static</em> option. Enter the following in the code box to build your menu, then save your field:</p>
 
 <p><code class="highlighter-rouge">["assigned","created","mentioned","subscribed","all"]</code></p>
 
-<h3 id="3-configure-your-api">3. Configure Your API</h3>
+<h2 id="3-configure-your-api">3. Configure Your API</h2>
 
-<p><img src="https://cdn.zapier.com/storage/photos/53bca43cc9ae2167a5889240aa89cc2d.png" alt="Zapier visual builder API configuration" /></p>
+<p><img src="https://cdn.zapier.com/storage/photos/33cb494cf4aa6ef43df03246d8c9812d.png" alt="Zapier visual builder API configuration" /></p>
 
 <p><em>Add the URL where Zapier can request data from your app, and Zapier will configure the rest automatically</em></p>
 
 <p>Now, add the GitHub API call. Select the <em>API Configuration</em> tab in Zapier visual builder, choose the <em>Polling</em> option, then enter GitHub’s issue API endpoint in the field:</p>
 
-<p><code class="highlighter-rouge">https://api.github.com/repos/{{bundle.inputData.repo}}/issues</code></p>
+<p><code class="highlighter-rouge">https://api.github.com/repos/{{bundle.inputData.username}}/{{bundle.inputData.repo}}/issues</code></p>
 
-<p>Zapier dynamically replaces the <code class="highlighter-rouge">{{bundle.inputData.repo}}</code> field with the text users enter in our <em>Repo</em> input field.</p>
+<p>Zapier dynamically replaces the <code class="highlighter-rouge">{{bundle.inputData.fieldname}}</code> fields with the text users enter their respective fields. Here, we have Zapier sending the request to GitHub’s <code class="highlighter-rouge">/repos/username/repository/issues</code> endpoint.</p>
 
-<p>Zapier then automatically passes along every other field along with the authentication details automatically in the <code class="highlighter-rouge">GET</code> call.</p>
+<p>Zapier then automatically passes along every other field along with the authentication details in the <code class="highlighter-rouge">GET</code> call.</p>
 
-<h3 id="4-test-your-trigger">4. Test Your Trigger</h3>
+<h2 id="4-test-your-trigger">4. Test Your Trigger</h2>
 
-<p><img src="https://cdn.zapier.com/storage/photos/c42c9e43621e4bcc1f1016d7dcbf84a7.png" alt="Zapier visual builder test trigger" /></p>
+<p><img src="https://cdn.zapier.com/storage/photos/ba49443ef2a1222468f1e0f658779762.png" alt="Zapier visual builder test trigger" /></p>
 
 <p><em>The test step ensures your trigger works as expected</em></p>
 
-<p>Now test your trigger. Click the <em>Test your API Request</em> step, and you should see the GitHub account you added in the Authentication step ready to use (if not, connect your account first here). Underneath, the <em>Configure Test Data</em> section includes form fields to test your trigger. Enter a real GitHub repository name, and optionally a filter, then click <em>Test Your Request</em>.</p>
+<p>Now test your trigger. Click the <em>Test your API Request</em> step to see the GitHub account you added in the Authentication step ready to use (if not, connect your account first here). Underneath, the <em>Configure Test Data</em> section includes form fields to test your trigger. Enter a real GitHub repository name, the username of the owner of that repository, and optionally a filter, then click <em>Test Your Request</em>.</p>
 
 <p><img src="https://cdn.zapier.com/storage/photos/9cf94d89de973edd4b6b3e50971e8375.png" alt="Example Zapier Response" /></p>
 
@@ -218,7 +258,7 @@
 
 <p>Zapier will find a recent issue from your repo and show the raw JSON output in the <em>Response</em> tab. You can see the field names GitHub sends with this API request, along with example data from your GitHub account.</p>
 
-<h3 id="5-add-sample-data">5. Add Sample Data</h3>
+<h2 id="5-add-sample-data">5. Add Sample Data</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/db32cf4e7da4ea55c81bb9f2317473ae.png" alt="Zapier Output Fields" /></p>
 
@@ -240,16 +280,12 @@
 <p>Save your completed trigger, and you can now use your new Zapier GitHub integration to watch for new issues in a Zap.</p>
 </section>
       <footer class="prev-next">
-      	
 
 
 
 <hr>
 <a class="button blue" href="/visual-builder/quickstart/auth">Previous: Handle Authentication</a>
-<a class="button blue" href="/visual-builder/quickstart/build-action">Next: Add an Action</a>
-      	<hr>
-      	<p><em>Have any feedback or questions? <a href="https://github.com/zapier/visual-builder/issues/new/choose" target="_blank">Let us know</a>.</em></p>
-	</footer>
+<a class="button blue" href="/visual-builder/quickstart/build-action">Next: Add an Action</a></footer>
     </main>
     <script>
 (function() {

@@ -639,8 +639,7 @@ th {
     width: 264px;
     z-index: 9999; }
   .sidebar__nav {
-    padding: 90px 0;
-    overflow-y: scroll; }
+    padding: 90px 0; }
   .sidebar__footer {
     background: #ffffff;
     border-top: 1px solid #dadfe2;

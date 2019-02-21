@@ -90,7 +90,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+      <a href="/visual-builder/docs/start" class="sidebar__list-link ">Getting Started</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -102,11 +102,27 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/triggers" class="sidebar__list-link  sidebar__list-link--is-selected ">Triggers</a>
+      <a href="/visual-builder/docs/session" class="sidebar__list-link ">— Session Auth</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+      <a href="/visual-builder/docs/apikey" class="sidebar__list-link ">— API Key Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/oauth" class="sidebar__list-link ">— OAuth v2</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/digest" class="sidebar__list-link ">— Digest Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/triggers" class="sidebar__list-link  sidebar__list-link--is-selected ">Triggers</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -114,7 +130,11 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing (coming soon)</a>
+      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -126,11 +146,15 @@
     </li>
   
     <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+    </li>
+  
+    <li class="sidebar__list-item">
       <a href="/visual-builder/docs/glossary" class="sidebar__list-link ">Glossary</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+      <a href="/visual-builder/docs/vs" class="sidebar__list-link ">Visual Builder vs CLI</a>
     </li>
   
 </ul>
@@ -141,15 +165,17 @@
     <aside class="toc">
       <h3>Contents</h3>
       <ul>
-  <li><a href="#triggers">Triggers</a></li>
-  <li><a href="#how-to-add-a-new-trigger-to-a-zapier-integration">How to Add a New Trigger to a Zapier Integration</a></li>
+  <li><a href="#1-configure-trigger-settings">1. Configure Trigger Settings</a></li>
+  <li><a href="#2-build-trigger-input-form-optional">2. Build Trigger Input Form (optional)</a></li>
+  <li><a href="#3-enter-api-configuration">3. Enter API Configuration</a></li>
   <li><a href="#how-to-reorder-triggers-in-a-zapier-integration">How to Reorder Triggers in a Zapier Integration</a></li>
   <li><a href="#how-to-remove-triggers-from-a-zapier-integration">How to Remove Triggers From a Zapier Integration</a></li>
+  <li><a href="#how-to-use-pagination">How to Use Pagination</a></li>
 </ul>
 
     </aside>
     <main class="container">
-      <section class="content"><h2 id="triggers">Triggers</h2>
+      <section class="content"><h1 id="triggers">Triggers</h1>
 
 <p><img src="https://cdn.zapier.com/storage/photos/2d499138890f7237dffe728fbe9340bc.png" alt="Zapier Trigger Visual Builder" /></p>
 
@@ -163,9 +189,9 @@
   <p><strong>Note</strong>: Triggers are displayed in the order they are added to Zapier integrations, so be sure to add your app’s most important triggers first.</p>
 </blockquote>
 
-<h2 id="how-to-add-a-new-trigger-to-a-zapier-integration">How to Add a New Trigger to a Zapier Integration</h2>
+<h1 id="how-to-add-a-new-trigger-to-a-zapier-integration">How to Add a New Trigger to a Zapier Integration</h1>
 
-<h3 id="1-configure-trigger-settings">1. Configure Trigger Settings</h3>
+<h2 id="1-configure-trigger-settings">1. Configure Trigger Settings</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/260a97ab4957746a75987dcb21f8aa1d.png" alt="Zapier trigger settings" /></p>
 
@@ -183,7 +209,7 @@
 
 <p>Once the settings are added, click <em>Save and Continue</em> to add the new trigger and save your settings. You can edit the settings any time later with the exception of the create or search option.</p>
 
-<h3 id="2-build-trigger-input-form-optional">2. Build Trigger Input Form (optional)</h3>
+<h2 id="2-build-trigger-input-form-optional">2. Build Trigger Input Form (optional)</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/724d126862b876b7deccb5b798b86997.png" alt="Zapier Trigger input form" /></p>
 
@@ -193,11 +219,15 @@
 
 <p>Once your form is complete—or if you don’t need to include an input form—click the <em>API Configuration</em> settings tab to set how Zapier will get data from your app and test the trigger.</p>
 
-<h3 id="3-enter-api-configuration">3. Enter API Configuration</h3>
+<h2 id="3-enter-api-configuration">3. Enter API Configuration</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/af53c9298cb9baf32abb17eb9e51a0dc.png" alt="Zapier Polling Trigger Settings" /></p>
 
-<p>The last part of adding a trigger is setting is API configuration. Zapier selects <em>Polling</em> by default, where Zapier will send a <code class="highlighter-rouge">GET</code> request to an API endpoint URL to request new data—and in live Zaps, Zapier automatically deduplicates and sorts for the newest data from the API. Live Zaps automatically poll the URL for new data every 5 to 15 minutes, depending on the user’s Zapier plan.</p>
+<p>The last part of adding a trigger is setting is API configuration.</p>
+
+<p>Zapier uses either a Polling API call to check periodically for new or updated data, or a REST hook with a subscription URL where Zapier can subscribe to receive new or updated data autoamtically. With both, Zapier expects to receive an array with 0 or more objects that will be passed to Zapier’s <a href="https://zapier.com/developer/documentation/v2/deduplication/">deduper</a>—and it will return any items that haven’t been received before, and use them to run the subsequent steps in the user’s Zap.</p>
+
+<p>Zapier selects a <em>Polling</em> trigger by default, where Zapier will send a <code class="highlighter-rouge">GET</code> request to an API endpoint URL to request new data—and in live Zaps, Zapier automatically deduplicates and sorts for the newest data from the API. Live Zaps automatically poll the URL for new data every 5 to 15 minutes, depending on the user’s Zapier plan.</p>
 
 <p>To add a polling trigger, select <em>Polling</em> at the top of the settings page, then enter your API URL in the <em>API Endpoint</em> field. If your API URL requires specific data in the URL, enter the following text in the URL where your API expects that data, replacing <code class="highlighter-rouge">key</code> for the input field key with the relevant data from the input form you created before:</p>
 
@@ -205,7 +235,7 @@
 
 <p>Otherwise, Zapier will automatically send any other input field data in the request body with the API call.</p>
 
-<p>If you plan to use this trigger to power dropdown menus in other Zap steps (such as to find users, projects, folders, and other app data often used to create new items), and if your API call can paginate data, check the <em>Support Paging</em> box.</p>
+<p>If you plan to use this trigger to power dropdown menus in other Zap steps (such as to find users, projects, folders, and other app data often used to create new items), and if your API call can paginate data, check the <em>Support Paging</em> box (see <a href="#pagination">more details on pagination</a> below).</p>
 
 <p>If your API requires any additional data, you can add them from the <em>Show Options</em> button. Or, if needed, click the <em>Switch to Code Mode</em> to write a custom API call in node.js powered JavaScript code. The first time you switch to Code Mode, Zapier will translate the settings in the form to code so you can start with the basics already configured. If you switch back to form mode, though, Zapier will not transfer any changes from the code mode to the form.</p>
 
@@ -237,6 +267,8 @@
 
 <p>Then click <em>Generate Output Field Definitions</em>, and Zapier will build a table of your fields under <em>Output Fields</em>. Add a human friendly name for each field and select the field type. Click <em>Save Output &amp; Finish</em> to finish the final part of your trigger.</p>
 
+<p><em><a href="http://zapier.github.io/visual-builder/docs/faq#output">Learn more about how Zapier uses sample data and output fields</a></em>.</p>
+
 <p>You can now make a new Zap using your trigger to test out the trigger live inside Zapier.</p>
 
 <h2 id="how-to-reorder-triggers-in-a-zapier-integration">How to Reorder Triggers in a Zapier Integration</h2>
@@ -262,14 +294,49 @@
 <blockquote>
   <p><strong>Note</strong>: Only remove triggers from pre-release integrations, or from new versions that will later be rolled out to users. Never remove a trigger from a live, public integration version.</p>
 </blockquote>
+
+<p><a id="pagination"></a></p>
+<h2 id="how-to-use-pagination">How to Use Pagination</h2>
+
+<p>Zapier triggers by default fetch new or recently updated data to start Zaps, and only need to find the most recently added item. Triggers can also be embedded in Zapier action drop-down menus, though, and there they need to find all possible items to populate the menu.</p>
+
+<p>Instead of a single item, these triggers’ API calls for dynamic menus will often find dozens or hundreds of items. Many APIs let you split the results into pages, much like pages of search results or blog entries. The first API call will return the first set of results—often 20 to 100. If you want additional entries, you can make a new API call requesting page 2 and get the next set of results, iterating through the pages until the API has sent every possible option.</p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/05b63c557de501cb4764f29747b733ec.png" alt="Zapier drop-down" />
+<em>Example drop-down menu in the Zap editor, with an option to load more choices via pagination</em></p>
+
+<p>To enable pagination, check the <em>Support Paging</em> checkbox in the API settings when building a Zapier trigger. That enables Zapier’s <code class="highlighter-rouge">bundle.meta.page</code> value which tracks which page Zapier has loaded, along with a <em>Check Ap‌p &amp; reload to bring in new choices</em> option in the user-facing Zapier editor’s dropdown menus.</p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/0c73268e2e0d62e1bbe7d3d4f552fcda.png" alt="Include pagination value in Zapier API call" />
+<em>In Zapier visual editor, include the bundle.meta.page value to request the correct page of results</em></p>
+
+<p>You then need to include that <code class="highlighter-rouge">bundle.meta.page</code> in your API call to let Zapier dynamically fetch the correct page, as Zapier doesn’t include it automatically. First check the <em>Support Paging</em> box. Then click your API endpoint’s <em>Show Options</em> button, and add a new URL Param for your API’s paging option (or optionally add it to your HTTP Headers if your API expects the paging value there). Use the page request field name from your API on the left, and <code class="highlighter-rouge">{{bundle.meta.page}}</code> on the right to have Zapier pull in the correct page value.</p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/36f2051b7fdf684870492a39aab535c8.png" alt="Zapier pagination code mode" />
+_Use custom code to _</p>
+
+<p>Zapier’s <code class="highlighter-rouge">bundle.meta.page</code> value uses zero-based numbering. The first time Zapier fetches data from your API, it uses a page value of <code class="highlighter-rouge">0</code>, followed by <code class="highlighter-rouge">1</code> the second time, and so on. If your API expects the first API call to request page <code class="highlighter-rouge">1</code>, with <code class="highlighter-rouge">2</code> for the second page and so on, you’ll need to customize your API call in Zapier’s code editor.</p>
+
+<p>The easiest way to do that is to first set your API call in the form mode, then click the <em>Switch to Code Mode</em> toggle. Zapier will convert your form values to code, and if your API works correctly aside from pagination, the defaults in code mode will work. All you need to do is edit your pagination code. If you need non-zero-based numbering, the following code for your pagination header should work (substituting the correct term your API uses for pagination):</p>
+
+<p><code class="highlighter-rouge">'page': bundle.meta.page + 1,</code></p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/4808c60c860e71f82578cedf0e20ce11.png" alt="Zapier max entries loaded" /></p>
+
+<p>To test your paginating trigger, first build a Zapier Action that uses this trigger in a dynamic dropdown. Then make a new Zap in the user-facing Zap editor that uses your action with the dropdown. Click the dropdown, scroll to the end, and click the <em>Check App &amp; bring in more choices</em> button. Repeat until it loads the last options, which will show a result similar to the one above.</p>
+
+<p><img src="https://cdn.zapier.com/storage/photos/8675a69add537f2e7d5ed950724fc15f.png" alt="Check headers" />
+<em>In the Zapier trigger test tool’s HTTP logs, you can see the headers and params that Zapier sends to your app</em></p>
+
+<p>If you see a <em>Sorry, no more choices</em> option when there should be more options available from your account, go back and check your trigger settings to ensure Zapier is passing the correct details to your app. Test the trigger, and check the HTTP tap for details about the request Zapier sent your app. Zapier should show a <code class="highlighter-rouge">page=0</code> value (or the correct term for pages in your API) under the Request Params header by default, or a page=1` if you’re customizing the page request to start at 1.</p>
 </section>
       <footer class="prev-next">
 
 
 
 <hr>
-<a class="button blue" href="/visual-builder/docs/basic">Previous: — Basic Auth</a>
-<a class="button blue" href="/visual-builder/docs/search-create">Next: Searches and Creates</a></footer>
+<a class="button blue" href="/visual-builder/docs/input-designer">Previous: Input Designer</a>
+<a class="button blue" href="/visual-builder/docs/actions">Next: Actions</a></footer>
     </main>
     <script>
 (function() {

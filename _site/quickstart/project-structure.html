@@ -90,7 +90,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+      <a href="/visual-builder/docs/start" class="sidebar__list-link ">Getting Started</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -102,11 +102,27 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
+      <a href="/visual-builder/docs/session" class="sidebar__list-link ">— Session Auth</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+      <a href="/visual-builder/docs/apikey" class="sidebar__list-link ">— API Key Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/oauth" class="sidebar__list-link ">— OAuth v2</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/digest" class="sidebar__list-link ">— Digest Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -114,7 +130,11 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing (coming soon)</a>
+      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -126,11 +146,15 @@
     </li>
   
     <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+    </li>
+  
+    <li class="sidebar__list-item">
       <a href="/visual-builder/docs/glossary" class="sidebar__list-link ">Glossary</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+      <a href="/visual-builder/docs/vs" class="sidebar__list-link ">Visual Builder vs CLI</a>
     </li>
   
 </ul>
@@ -138,10 +162,17 @@
   </nav>
 </div>
 
-    <main class="container">
-      <section class="content"><h2 id="build-your-integration">Build Your Integration</h2>
+    <aside class="toc">
+      <h3>Contents</h3>
+      <ul>
+  <li><a href="#project-structure">Project Structure</a></li>
+</ul>
 
-<h3 id="project-structure">Project Structure</h3>
+    </aside>
+    <main class="container">
+      <section class="content"><h1 id="build-your-integration">Build Your Integration</h1>
+
+<h2 id="project-structure">Project Structure</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/2316a669768c5c2ee9f4b1e84c70d1d0.png" alt="Zapier visual builder new integration" /></p>
 
@@ -150,36 +181,34 @@
 <p><a href="https://zapier.com/app/developer/" target="_blank">Zapier visual builder</a> includes everything needed to build a new Zapier integration. The left sidebar outlines the core project structure. Each part of your integration definition for the Zapier platform is in the <em>Build</em> tabs:</p>
 
 <ul>
-  <li><em>Authentication</em> sets how users authenticate with your API, using basic, API key, or OAuth2 authentication.</li>
-  <li><em>Triggers</em> control how Zapier gets data from your API into a Zap, with <code class="highlighter-rouge">GET</code> HTTP actions or webhooks.</li>
+  <li><em>Authentication</em> sets how users authenticate with your API, using basic, API key, digest, session, or OAuth2 authentication.</li>
+  <li><em>Triggers</em> control how Zapier gets data from your API into a Zap, with <code class="highlighter-rouge">GET</code> HTTP calls or webhooks.</li>
   <li><em>Actions</em> control how Zapier sends data to your API, including:
     <ul>
-      <li><em>Create Actions</em>  control how Zapier sends data from a Zap to your API, with <code class="highlighter-rouge">POST</code> or <code class="highlighter-rouge">PUT</code> HTTP actions to create or update items.</li>
-      <li><em>Search Actions</em>  allow users to perform lookups through your API using <code class="highlighter-rouge">GET</code> actions within a Zap.</li>
+      <li><em>Create Actions</em>  to send new data from a Zap to your API, with <code class="highlighter-rouge">POST</code> or <code class="highlighter-rouge">PUT</code> HTTP calls to create or update items.</li>
+      <li><em>Search Actions</em>  to perform lookups through your API using <code class="highlighter-rouge">GET</code> calls.</li>
     </ul>
   </li>
-  <li><em>Advanced</em> manages environment variables to store secret data your integration needs to communicate with your API, including  API keys or client secrets.</li>
+  <li><em>Advanced</em> manages environment variables to store secret data your integration needs to communicate with your API, including API keys or client secrets.</li>
 </ul>
 
-<p>Your task is to define the core details of your API, and build input forms so users can enter the data that Zapier will send to your API. The Zapier platform then automatically handles the authentication flow, deduplication, and keeps track of which things have already been processed.</p>
+<p>To build an integration, you need to define the core details of your API and build input forms so users can enter the data that Zapier will send to your API. The Zapier platform then automatically handles the authentication flow, deduplication, and keeps track of which things have already been processed.</p>
 
-<p>This is where you need to think through your integration. What outputs from your app would make good Zapier triggers, and what inputs would your app need to create items in Zapier actions? For an email service, say, a <em>New Email</em> would need a recipient email address, subject, and message body. A GitHub issue would need an issue name, body, and repository name. List each detail needed to build items in your app, as you’ll need to build a form to gather that data while creating your Zapier integration.</p>
+<p>This is where you need to think through your integration. What outputs from your app would make good Zapier triggers, and what inputs would your app need to create items in Zapier actions? For an email service, say, a <em>New Email</em> would need a recipient email address, subject, and message body.</p>
+
+<p>For our example integration, we want to make GitHub issues, so would need an issue name, body, and repository name. List each detail needed to build items in your app, as you’ll need to build a form to gather that data while creating your Zapier integration.</p>
 
 <p>Back in the Zapier visual builder, there are a few more tools under the <em>Manage</em> tab to maintain your Zapier integration with stats, logs, bugs, feature requests, and versions.</p>
 
 <p>First, though, you need to build that integration. Let’s start with authentication.</p>
 </section>
       <footer class="prev-next">
-      	
 
 
 
 <hr>
 <a class="button blue" href="/visual-builder/quickstart/create-integration">Previous: Create a New Integration</a>
-<a class="button blue" href="/visual-builder/quickstart/auth">Next: Handle Authentication</a>
-      	<hr>
-      	<p><em>Have any feedback or questions? <a href="https://github.com/zapier/visual-builder/issues/new/choose" target="_blank">Let us know</a>.</em></p>
-	</footer>
+<a class="button blue" href="/visual-builder/quickstart/auth">Next: Handle Authentication</a></footer>
     </main>
     <script>
 (function() {

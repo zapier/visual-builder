@@ -90,7 +90,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+      <a href="/visual-builder/docs/start" class="sidebar__list-link ">Getting Started</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -102,11 +102,27 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
+      <a href="/visual-builder/docs/session" class="sidebar__list-link ">— Session Auth</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+      <a href="/visual-builder/docs/apikey" class="sidebar__list-link ">— API Key Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/oauth" class="sidebar__list-link ">— OAuth v2</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/digest" class="sidebar__list-link ">— Digest Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -114,7 +130,11 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing (coming soon)</a>
+      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -126,11 +146,15 @@
     </li>
   
     <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+    </li>
+  
+    <li class="sidebar__list-item">
       <a href="/visual-builder/docs/glossary" class="sidebar__list-link ">Glossary</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+      <a href="/visual-builder/docs/vs" class="sidebar__list-link ">Visual Builder vs CLI</a>
     </li>
   
 </ul>
@@ -138,22 +162,35 @@
   </nav>
 </div>
 
-    <main class="container">
-      <section class="content"><h2 id="build-your-integration">Build Your Integration</h2>
+    <aside class="toc">
+      <h3>Contents</h3>
+      <ul>
+  <li><a href="#add-new-data-with-an-action">Add New Data With an Action</a></li>
+  <li><a href="#1-configure-action-settings">1. Configure Action Settings</a></li>
+  <li><a href="#2-design-an-action-input-field-form">2. Design an Action Input Field Form</a></li>
+  <li><a href="#3-configure-your-api">3. Configure Your API</a></li>
+  <li><a href="#4-test-your-action">4. Test Your Action</a></li>
+  <li><a href="#5-define-your-action-output-fields">5. Define Your Action Output Fields</a></li>
+  <li><a href="#your-action-in-action">Your Action in Action</a></li>
+</ul>
 
-<h3 id="add-new-data-with-an-action">Add New Data With an Action</h3>
+    </aside>
+    <main class="container">
+      <section class="content"><h1 id="build-your-integration">Build Your Integration</h1>
+
+<h2 id="add-new-data-with-an-action">Add New Data With an Action</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/e216b6e1eaa49626bd18e3ca72b2a513.gif" alt="Zapier Action Demo Animation" /></p>
 
 <p><em>The input form in Zapier actions let users map fields from trigger and previous action steps to your app</em></p>
 
-<p>Zapier actions push or put new data into your API from input fields that users set in their Zaps. Zapier includes <em>search</em> actions to find data in an API, and <em>create</em> actions to add new items via API calls.</p>
+<p>Zapier actions push or put new data into your API from input fields that users set in their Zaps. Zapier includes <em>search</em> actions to find data in an app, and <em>create</em> actions to add new items via API calls.</p>
 
-<p>Adding an action to your Zapier integration works much like building a trigger. Only here, Zapier will <code class="highlighter-rouge">POST</code> or <code class="highlighter-rouge">PUT</code> the data users enter in the input fields to your API—and <em>every</em> trigger needs an input form to gather data and send to your app.</p>
+<p>Adding an action to your Zapier integration works much like building a trigger. Only here with create actions, Zapier will <code class="highlighter-rouge">POST</code> or <code class="highlighter-rouge">PUT</code> the data users enter in the input fields to your API—and <em>every</em> trigger needs an input form to gather data and send to your app.</p>
 
 <p>Let’s add an <em>Action</em> to our example GitHub integration so Zapier can send data to GitHub. This tells the Zapier platform how to create the Zap Editor form where users can configure their Zaps and map data to and from the API, then tells it how to make calls to the API endpoint.</p>
 
-<h3 id="1-configure-action-settings">1. Configure Action Settings</h3>
+<h2 id="1-configure-action-settings">1. Configure Action Settings</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/f4fba922b339ce68376e38b751bc79f1.png" alt="Zapier visual builder action settings" /></p>
 
@@ -161,7 +198,7 @@
 
 <p>Enter your new action settings, as with your trigger. Select a <em>Create</em> action since this action will create new issues, then include a key, name, noun, and description for an issue.</p>
 
-<h3 id="2-design-an-action-input-field-form">2. Design an Action Input Field Form</h3>
+<h2 id="2-design-an-action-input-field-form">2. Design an Action Input Field Form</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/c19752672adf0b5a3809a7defa3faa0d.png" alt="Zapier Visual Builder action input fields" /></p>
 
@@ -173,29 +210,33 @@
 
 <p><em>Each field type includes its own settings—and you can preview the finished input form on the right</em></p>
 
-<p>For our example GitHub integration, we’ll use 3 input fields, for repo, title, and body. Add the first two as you did in the Trigger setup, with the default <code class="highlighter-rouge">string</code> field type and the <code class="highlighter-rouge">repo</code> or <code class="highlighter-rouge">title</code> keys respectively. Then, for the issue body, select a <em>Text</em> field type so users can enter longer text.</p>
+<p>For our example GitHub integration, we need 4 input fields: <code class="highlighter-rouge">repo</code> to add the repository’s name, <code class="highlighter-rouge">username</code> to add the repository’s owner, <code class="highlighter-rouge">title</code> to list your issue title, and <code class="highlighter-rouge">body</code> to add details about the issue. Add the first three as you did in the Trigger setup, with the default <code class="highlighter-rouge">string</code> field type and the <code class="highlighter-rouge">repo</code>, <code class="highlighter-rouge">username</code>, or <code class="highlighter-rouge">title</code> keys respectively. Then, for the issue body, select a <em>Text</em> field type so users can enter longer text and use the <code class="highlighter-rouge">body</code> key.</p>
 
-<h3 id="3-configure-your-api">3. Configure Your API</h3>
+<blockquote>
+  <p>Learn more about Input forms in our detailed <a href="https://zapier.github.io/visual-builder/docs/input-designer">input designer docs</a>.</p>
+</blockquote>
 
-<p><img src="https://cdn.zapier.com/storage/photos/e4745b6f1000f45a8cdaf19b2b3ea032.png" alt="Zapier visual builder input API" /></p>
+<h2 id="3-configure-your-api">3. Configure Your API</h2>
+
+<p><img src="https://cdn.zapier.com/storage/photos/5148dc2b2d7417e17114617df6a0ad9b.png" alt="Zapier visual builder input API" /></p>
 
 <p><em>Add the URL where Zapier will send data to your app</em></p>
 
-<p>Now, select the <em>API Configuration</em> tab in Zapier visual builder to tell Zapier how to send the data to the API. Select the <code class="highlighter-rouge">POST</code> API call, then enter GitHub’s issue API endpoint with the <code class="highlighter-rouge">{{bundle.inputData.repo}}</code> as with the trigger:</p>
+<p>Now, select the <em>API Configuration</em> tab in Zapier visual builder to tell Zapier how to send the data to the API. Select the <code class="highlighter-rouge">POST</code> API call, then enter GitHub’s issue API endpoint with the <code class="highlighter-rouge">{{bundle.inputData.fields}}</code> fields as with the trigger:</p>
 
-<p><code class="highlighter-rouge">https://api.github.com/repos/{{bundle.inputData.repo}}/issues</code></p>
+<p><code class="highlighter-rouge">https://api.github.com/repos/{{bundle.inputData.username}}/{{bundle.inputData.repo}}/issues</code></p>
 
-<p>Zapier will automatically include the additional input fields in your API request body. Click the <em>Show Options</em> button to see the mapped fields and customize them if needed—though the defaults should work for most integrations.</p>
+<p>Zapier will automatically include the username and repo from the input fields in your API request body. Click the <em>Show Options</em> button to see the mapped fields and customize them if needed—though Zapier should include the issue title and body by default.</p>
 
-<h3 id="4-test-your-action">4. Test Your Action</h3>
+<h2 id="4-test-your-action">4. Test Your Action</h2>
 
-<p><img src="https://cdn.zapier.com/storage/photos/08da97b61a7f3cdbdd5335ba5a03f906.png" alt="Zapier visual builder input test" /></p>
+<p><img src="https://cdn.zapier.com/storage/photos/e5e053ab3550a339428042d9f9af13bf.png" alt="Zapier visual builder input test" /></p>
 
 <p><em>Test your action by sending data to it as users will in their Zaps</em></p>
 
 <p>Then test the API request. As with the trigger, add sample data  in the <em>Configure Test Data</em> form, using a real GitHub repo along with example text and body for your issue. Click <em>Test Your Result</em>, and Zapier will try creating an issue with your test data.</p>
 
-<h3 id="5-define-your-action-output-fields">5. Define Your Action Output Fields</h3>
+<h2 id="5-define-your-action-output-fields">5. Define Your Action Output Fields</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/ae070045d9e23b162f1b0a0a1507b029.png" alt="Zapier visual builder output fields" /></p>
 
@@ -205,23 +246,19 @@
 
 <p>Save your action, and you now have a complete Zapier integration with authentication, a trigger, and an action!</p>
 
-<h3 id="your-action-in-action">Your Action in Action</h3>
+<h2 id="your-action-in-action">Your Action in Action</h2>
 
 <p><img src="https://cdn.zapier.com/storage/photos/e0442350236db38688da231caafdab5f.gif" alt="Mapping Fields in Zapier" /></p>
 
 <p>Your GitHub Action’s fields let you type in text or map data from previous steps in your Zap so Zapier can copy it into the app. Most input fields include a <code class="highlighter-rouge">+</code> button on the right where users can select data from previous steps to use in that field. Then, when the Zap runs, Zapier copies the new data from the Zap’s trigger and previous steps, and uses it to make the new item in your app—a new GitHub issue in this case.</p>
 </section>
       <footer class="prev-next">
-      	
 
 
 
 <hr>
 <a class="button blue" href="/visual-builder/quickstart/build-trigger">Previous: Add a Trigger</a>
-<a class="button blue" href="/visual-builder/quickstart/test-complete">Next: Test Your Integration</a>
-      	<hr>
-      	<p><em>Have any feedback or questions? <a href="https://github.com/zapier/visual-builder/issues/new/choose" target="_blank">Let us know</a>.</em></p>
-	</footer>
+<a class="button blue" href="/visual-builder/quickstart/test-complete">Next: Test Your Integration</a></footer>
     </main>
     <script>
 (function() {

@@ -90,7 +90,7 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+      <a href="/visual-builder/docs/start" class="sidebar__list-link ">Getting Started</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -102,11 +102,27 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
+      <a href="/visual-builder/docs/session" class="sidebar__list-link ">— Session Auth</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+      <a href="/visual-builder/docs/apikey" class="sidebar__list-link ">— API Key Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/oauth" class="sidebar__list-link ">— OAuth v2</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/digest" class="sidebar__list-link ">— Digest Auth</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/input-designer" class="sidebar__list-link ">Input Designer</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/triggers" class="sidebar__list-link ">Triggers</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -114,7 +130,11 @@
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing (coming soon)</a>
+      <a href="/visual-builder/docs/search-create" class="sidebar__list-link ">Searches and Creates</a>
+    </li>
+  
+    <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/testing" class="sidebar__list-link ">Testing</a>
     </li>
   
     <li class="sidebar__list-item">
@@ -126,11 +146,15 @@
     </li>
   
     <li class="sidebar__list-item">
+      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+    </li>
+  
+    <li class="sidebar__list-item">
       <a href="/visual-builder/docs/glossary" class="sidebar__list-link ">Glossary</a>
     </li>
   
     <li class="sidebar__list-item">
-      <a href="/visual-builder/docs/faq" class="sidebar__list-link ">FAQs</a>
+      <a href="/visual-builder/docs/vs" class="sidebar__list-link ">Visual Builder vs CLI</a>
     </li>
   
 </ul>
@@ -143,6 +167,7 @@
       <ul>
   <li><a href="#environment-variables">Environment Variables</a></li>
   <li><a href="#computed-fields">Computed Fields</a></li>
+  <li><a href="#zapier-data-bundles">Zapier Data Bundles</a></li>
 </ul>
 
     </aside>
@@ -190,14 +215,107 @@
 <p><a id="computed"></a></p>
 <h2 id="computed-fields">Computed Fields</h2>
 
-<p><em>Coming Soon</em></p>
+<p><img src="https://cdn.zapier.com/storage/photos/b82edea722597f88f5c0d21a46d6c847.png" alt="Zapier Computed Fields" /></p>
+
+<p>When adding an input field in your integration’s authentication, Zapier includes a <em>Field Type</em> option with two field options: <em>Field</em> and <em>Computed Field</em>. The former is a standard input field much like those in the trigger and action <a href="https://zapier.github.io/visual-builder/docs/input-designer">input designer</a>, where users enter info needed for authentication.</p>
+
+<blockquote>
+  <p><strong>Note:</strong> Only use computed fields with session and OAuth v2 authentication.</p>
+</blockquote>
+
+<p>Computed Fields, on the other hand, store values obtained from an integration’s API test call, so they can be referenced in your integration’s subsequent API calls.</p>
+
+<p>Say your app includes a subdomain that can be fetched with an API call using the API key—and your other API calls require the subdomain be used in requests. You would add a computed field that references that value from your server’s response, much like the way you reference fields in connected accounts.</p>
+
+<p>Zapier stores all fields returned by authentication API test call and auth process. Computed fields, however, are marked as <em>required</em> internally, so if the auth process does not return the field referenced in your computed field, Zapier will show an error. For example, if using OAuth v.2 authentication, the <code class="highlighter-rouge">getAccessToken</code> request must return any computed fields included in your app’s authentication input form.</p>
+
+<p>If your app API calls in triggers or actions require account details or other info that users shouldn’t have to enter manually, include a computed field in your app’s authentication input fields. For the <em>Key</em>, use the exact same field name as the one your API returns. Zapier then will match the API test call’s output to the field you included, so you can reference it from the input bundle with the following text, replacing <code class="highlighter-rouge">field</code> with your field key:</p>
+
+<p><code class="highlighter-rouge">{{bundle.authData.field}}</code></p>
+
+<p><a id="bundle"></a></p>
+<h2 id="zapier-data-bundles">Zapier Data Bundles</h2>
+
+<p>Zapier stores data from users’ authentication and input forms for API calls in the <code class="highlighter-rouge">bundle</code> object. You can reference that data in your integration using <code class="highlighter-rouge">{{bundle.bundleName.field}}</code> text in API requests and connection labels, replacing <code class="highlighter-rouge">bundleName</code> with the bundle name and <code class="highlighter-rouge">field</code> with the input field key or API response field key you need. You can also reference bundles in custom code if you switch to code mode, using the same name but without the curly brackets, for example <code class="highlighter-rouge">return bundle.bundleName.field;</code> to have JavaScript code return a specific field.</p>
+
+<p>If an API response includes a nested field, you can reference it as <code class="highlighter-rouge">field.nestedfield</code>, for example <code class="highlighter-rouge">{{bundle.inputData.data.name}}</code> to reference a <code class="highlighter-rouge">name</code> nested field inside the <code class="highlighter-rouge">data</code> field.</p>
+
+<p>Zapier integrations include the following bundles:</p>
+
+<h3 id="authdata">authData</h3>
+
+<p>Referenced with: <code class="highlighter-rouge">{{bundle.authData.field}}</code></p>
+
+<p>Includes data users enter into the authentication input form, including the <code class="highlighter-rouge">username</code> field for <a href="https://zapier.github.io/visual-builder/docs/basic">Basic Auth</a> and any other field added to the authentication input form with other authentication methods. Additionally, with OAuth v2, Session Auth, and Digest Auth, <code class="highlighter-rouge">authData</code> includes all data returned by the Token Exchange Endpoint url, referenced with the following, replacing <code class="highlighter-rouge">field</code> with the field name from your API response:</p>
+
+<p><code class="highlighter-rouge">{{bundle.authData.field}}</code></p>
+
+<p>For example, the Access Token value will often accessed via <code class="highlighter-rouge">{{bundle.authData.access_token}}</code> or <code class="highlighter-rouge">{{bundle.authData.accessToken}}</code></p>
+
+<p>Commonly used authData fields include:</p>
+
+<ul>
+  <li>Username: <code class="highlighter-rouge">{{bundle.authData.username}}</code></li>
+  <li>Password: <code class="highlighter-rouge">{{bundle.authData.password}}</code></li>
+  <li>Access Token: <code class="highlighter-rouge">{{bundle.authData.access_token}}</code> or <code class="highlighter-rouge">{{bundle.authData.accessToken}}</code></li>
+</ul>
+
+<h3 id="inputdata">inputData</h3>
+
+<p>Referenced with: <code class="highlighter-rouge">{{bundle.inputData.field}}</code></p>
+
+<p>In authentication fields and connection labels, <code class="highlighter-rouge">inputData</code> contains the output fields returned from the test API call, typically used to add a label to new integration connections.</p>
+
+<p>In Trigger and Action steps, <code class="highlighter-rouge">inputData</code> contains the data from input forms that users enter themselves which Zapier passes to the app with that Trigger or Action’s API call, with <code class="highlighter-rouge">{{curlies}}</code> mapped fields from previous Zap steps rendered with their raw data.</p>
+
+<p>If you want the input field data with the original <code class="highlighter-rouge">{{curlies}}</code> and not the text from previous steps, use <code class="highlighter-rouge">{{bundle.inputDataRaw.field}}</code> instead.</p>
+
+<p>Commonly used inputData fields include:</p>
+
+<ul>
+  <li>Zapier Redirect URI: <code class="highlighter-rouge">{{bundle.inputData.redirect_uri}}</code></li>
+  <li>Authentication Code: <code class="highlighter-rouge">{{bundle.inputData.code}}</code></li>
+</ul>
+
+<h3 id="rawrequest-and-cleanedrequest">rawRequest and cleanedRequest</h3>
+
+<blockquote>
+  <p>Note: Only used with the <code class="highlighter-rouge">getAccessToken</code> data from OAuth v2 authentication</p>
+</blockquote>
+
+<p>Referenced with: <code class="highlighter-rouge">{{bundle.rawRequest}}</code> or <code class="highlighter-rouge">{{bundle.cleanedRequest.field}}</code></p>
+
+<p>Includes the raw or cleaned info, respectively, from the user’s browser request that triggers the <code class="highlighter-rouge">getAccessToken</code> call from OAuth v2 authentication. Can reference individual fields with <code class="highlighter-rouge">cleanedRequest</code>.</p>
+
+<h3 id="targeturl">targetURL</h3>
+
+<p>Referenced with: <code class="highlighter-rouge">{{bundle.targetURL}}</code></p>
+
+<p>In triggers using REST hooks, this returns the URL a site should send data to, such as <code class="highlighter-rouge">https://hooks.zapier.com/1234/abcd</code>.</p>
+
+<h3 id="subscribedata">subscribeData</h3>
+
+<p>Referenced with: <code class="highlighter-rouge">{{bundle.subscribeData}}</code></p>
+
+<p>In triggers using REST hooks, this includes the data from the <code class="highlighter-rouge">performSubscribe</code> function which is used if you need to send a <code class="highlighter-rouge">DELETE</code> request to your server to stop sending webhook data to Zapier</p>
+
+<h3 id="processenv">process.env</h3>
+
+<p>Referenced with: <code class="highlighter-rouge">{{process.env.field}}</code></p>
+
+<p>Commonly used process.env fields include:</p>
+
+<ul>
+  <li>Client Secret: <code class="highlighter-rouge">{{process.env.CLIENT_SECRET}}</code></li>
+  <li>Client ID: <code class="highlighter-rouge">{{process.env.CLIENT_ID}}</code></li>
+</ul>
 </section>
       <footer class="prev-next">
 
 
 
 <hr>
-<a class="button blue" href="/visual-builder/docs/testing">Previous: Testing (coming soon)</a>
+<a class="button blue" href="/visual-builder/docs/testing">Previous: Testing</a>
 <a class="button blue" href="/visual-builder/docs/versions">Next: Versions</a></footer>
     </main>
     <script>
