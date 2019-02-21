@@ -1,11 +1,11 @@
 ---
 title: Create a New Integration
 order: 3
-layout: post
+layout: post-toc
 redirect_from: /quick-start/
 ---
 
-## Create a New Integration
+# Create a New Integration
 
 ![Zapier visual builder add integration](https://cdn.zapier.com/storage/photos/8e5c58e33571cecab478d5c7930128d5.png)
 

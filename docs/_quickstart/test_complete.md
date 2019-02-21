@@ -1,11 +1,11 @@
 ---
 title: Test Your Integration
 order: 8
-layout: post
+layout: post-toc
 redirect_from: /quick-start/
 ---
 
-## Test Your Integration
+# Test Your Integration
 
 ![Testing Zapier Integration](https://cdn.zapier.com/storage/photos/bcad0a485f61f4acccf36cb19a0261ec.gif)
 

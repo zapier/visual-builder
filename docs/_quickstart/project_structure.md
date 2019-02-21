@@ -1,13 +1,13 @@
 ---
 title: Project Structure
 order: 4
-layout: post
+layout: post-toc
 redirect_from: /quick-start/
 ---
 
-## Build Your Integration
+# Build Your Integration
 
-### Project Structure
+## Project Structure
 
 ![Zapier visual builder new integration](https://cdn.zapier.com/storage/photos/2316a669768c5c2ee9f4b1e84c70d1d0.png)
 

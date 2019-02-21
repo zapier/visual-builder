@@ -1,13 +1,13 @@
 ---
 title: Add a Trigger
 order: 6
-layout: post
+layout: post-toc
 redirect_from: /quick-start/
 ---
 
-## Build Your Integration
+# Build Your Integration
 
-### Poll for New Data With a Trigger
+## Poll for New Data With a Trigger
 
 ![Zapier Trigger Demo Animation](https://cdn.zapier.com/storage/photos/449ad30ba51567045b9d1e9105d9fe90.gif)
 
@@ -19,7 +19,7 @@ To add a trigger to your integration, Zapier visual builder will first have you 
 
 Let's have our example GitHub integration poll for new GitHub issues in a specified repo, and triggers Zaps if it finds new issues. We’ll use a `GET` HTTP call, which is called a polling trigger. Zapier will call this every few minutes for each Zap and check for new data.
 
-### 1. Configure Trigger Settings
+## 1. Configure Trigger Settings
 
 ![Zapier Visual Builder Trigger Settings](https://cdn.zapier.com/storage/photos/2d499138890f7237dffe728fbe9340bc.png)
 
@@ -34,7 +34,7 @@ Add a new Trigger, then add Trigger settings. Each trigger includes a:
 
 Add those details to your GitHub new issue trigger, then save and continue.
 
-### 2. Design an Input Field Form
+## 2. Design an Input Field Form
 
 ![Zapier Visual Builder input field details](https://cdn.zapier.com/storage/photos/4b86f77745df337a7e6924de9a385081.png)
 
@@ -56,7 +56,7 @@ Your GitHub integration needs two additional input fields: a _Username_ field fo
 
 `["assigned","created","mentioned","subscribed","all"]`
 
-### 3. Configure Your API
+## 3. Configure Your API
 
 ![Zapier visual builder API configuration](https://cdn.zapier.com/storage/photos/33cb494cf4aa6ef43df03246d8c9812d.png)
 
@@ -70,7 +70,7 @@ Zapier dynamically replaces the {% raw %}`{{bundle.inputData.fieldname}}`{% endr
 
 Zapier then automatically passes along every other field along with the authentication details in the `GET` call.
 
-### 4. Test Your Trigger
+## 4. Test Your Trigger
 
 ![Zapier visual builder test trigger](https://cdn.zapier.com/storage/photos/ba49443ef2a1222468f1e0f658779762.png)
 
@@ -84,7 +84,7 @@ _See the data that your API call returns to Zapier_
 
 Zapier will find a recent issue from your repo and show the raw JSON output in the _Response_ tab. You can see the field names GitHub sends with this API request, along with example data from your GitHub account.
 
-### 5. Add Sample Data
+## 5. Add Sample Data
 
 ![Zapier Output Fields](https://cdn.zapier.com/storage/photos/db32cf4e7da4ea55c81bb9f2317473ae.png)
 

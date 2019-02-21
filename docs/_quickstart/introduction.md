@@ -1,11 +1,11 @@
 ---
 title: Intro
 order: 1
-layout: post
+layout: post-toc
 redirect_from: /quick-start/
 ---
 
-## Welcome to Zapier Zapier Visual Builder
+# Welcome to Zapier Visual Builder
 
 [Zapier](https://zapier.com/){:target="_blank"} is an app automation platform where over 2 million people connect apps into customized workflows—what we call Zaps. A Zapier integration can connect your app's API to the Zapier platform and let it integrate with 1,300+ other popular apps to watch for new or updated data, find existing data, or create and update data.
 

@@ -1,13 +1,13 @@
 ---
 title: Add an Action
 order: 7
-layout: post
+layout: post-toc
 redirect_from: /quick-start/
 ---
 
-## Build Your Integration
+# Build Your Integration
 
-### Add New Data With an Action
+## Add New Data With an Action
 
 ![Zapier Action Demo Animation](https://cdn.zapier.com/storage/photos/e216b6e1eaa49626bd18e3ca72b2a513.gif)
 
@@ -19,7 +19,7 @@ Adding an action to your Zapier integration works much like building a trigger. 
 
 Let’s add an _Action_ to our example GitHub integration so Zapier can send data to GitHub. This tells the Zapier platform how to create the Zap Editor form where users can configure their Zaps and map data to and from the API, then tells it how to make calls to the API endpoint.
 
-### 1. Configure Action Settings
+## 1. Configure Action Settings
 
 ![Zapier visual builder action settings](https://cdn.zapier.com/storage/photos/f4fba922b339ce68376e38b751bc79f1.png)
 
@@ -27,7 +27,7 @@ _Start by entering the core settings for this action_
 
 Enter your new action settings, as with your trigger. Select a _Create_ action since this action will create new issues, then include a key, name, noun, and description for an issue.
 
-### 2. Design an Action Input Field Form
+## 2. Design an Action Input Field Form
 
 ![Zapier Visual Builder action input fields](https://cdn.zapier.com/storage/photos/c19752672adf0b5a3809a7defa3faa0d.png)
 
@@ -43,7 +43,7 @@ For our example GitHub integration, we need 4 input fields: `repo` to add the re
 
 > Learn more about Input forms in our detailed [input designer docs](https://zapier.github.io/visual-builder/docs/input-designer).
 
-### 3. Configure Your API
+## 3. Configure Your API
 
 ![Zapier visual builder input API](https://cdn.zapier.com/storage/photos/5148dc2b2d7417e17114617df6a0ad9b.png)
 
@@ -55,7 +55,7 @@ Now, select the _API Configuration_ tab in Zapier visual builder to tell Zapier 
 
 Zapier will automatically include the username and repo from the input fields in your API request body. Click the *Show Options* button to see the mapped fields and customize them if needed—though Zapier should include the issue title and body by default.
 
-### 4. Test Your Action
+## 4. Test Your Action
 
 ![Zapier visual builder input test](https://cdn.zapier.com/storage/photos/e5e053ab3550a339428042d9f9af13bf.png)
 
@@ -63,7 +63,7 @@ _Test your action by sending data to it as users will in their Zaps_
 
 Then test the API request. As with the trigger, add sample data  in the *Configure Test Data* form, using a real GitHub repo along with example text and body for your issue. Click *Test Your Result*, and Zapier will try creating an issue with your test data.
 
-### 5. Define Your Action Output Fields
+## 5. Define Your Action Output Fields
 
 ![Zapier visual builder output fields](https://cdn.zapier.com/storage/photos/ae070045d9e23b162f1b0a0a1507b029.png)
 
@@ -73,7 +73,7 @@ Finally define sample data and output fields, as in the trigger setup, including
 
 Save your action, and you now have a complete Zapier integration with authentication, a trigger, and an action!
 
-### Your Action in Action
+## Your Action in Action
 
 ![Mapping Fields in Zapier](https://cdn.zapier.com/storage/photos/e0442350236db38688da231caafdab5f.gif)
 

@@ -1,19 +1,19 @@
 ---
 title: What You Need
 order: 2
-layout: post
+layout: post-toc
 redirect_from: /quick-start/
 ---
 
-## What You Need to Build a Zapier Integration
+# What You Need to Build a Zapier Integration
 
 Ready to build your sample GitHub Zapier integration? Here’s what you need:
 
-### A Zapier Account
+## A Zapier Account
 
 If you haven’t used Zapier before, create a free [Zapier](https://zapier.com/){:target="_blank"} account. You could also set up this [example GitHub Zap](https://zapier.com/apps/github/integrations/email/10313/get-emails-with-new-github-issues){:target="_blank"} that will email you with new GitHub issues, to see how the new integration you’ll set up will work for end users.
 
-### A GitHub Account
+## A GitHub Account
 
 You also need a [GitHub](https://github.com/){:target="_blank"} account with at least one repo and issue. Since this tutorial will walk you through building an example GitHub integration, you need a GitHub account to test the integration. Have your GitHub username and password handy to set up your GitHub Zapier integration, along with the name of the repo you will use with the integration.
 
