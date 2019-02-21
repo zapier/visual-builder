@@ -13,9 +13,9 @@ redirect_from: /quick-start/
 
 _The input form in Zapier actions let users map fields from trigger and previous action steps to your app_
 
-Zapier actions push or put new data into your API from input fields that users set in their Zaps. Zapier includes *search* actions to find data in an API, and *create* actions to add new items via API calls.
+Zapier actions push or put new data into your API from input fields that users set in their Zaps. Zapier includes *search* actions to find data in an app, and *create* actions to add new items via API calls.
 
-Adding an action to your Zapier integration works much like building a trigger. Only here, Zapier will `POST` or `PUT` the data users enter in the input fields to your API—and *every* trigger needs an input form to gather data and send to your app.
+Adding an action to your Zapier integration works much like building a trigger. Only here with create actions, Zapier will `POST` or `PUT` the data users enter in the input fields to your API—and *every* trigger needs an input form to gather data and send to your app.
 
 Let’s add an _Action_ to our example GitHub integration so Zapier can send data to GitHub. This tells the Zapier platform how to create the Zap Editor form where users can configure their Zaps and map data to and from the API, then tells it how to make calls to the API endpoint.
 
@@ -40,6 +40,8 @@ Then add the input fields from the _Input Designer_ tab. Select from _Input Fiel
 _Each field type includes its own settings—and you can preview the finished input form on the right_
 
 For our example GitHub integration, we need 4 input fields: `repo` to add the repository's name, `username` to add the repository's owner, `title` to list your issue title, and `body` to add details about the issue. Add the first three as you did in the Trigger setup, with the default `string` field type and the `repo`, `username`, or `title` keys respectively. Then, for the issue body, select a _Text_ field type so users can enter longer text and use the `body` key.
+
+> Learn more about Input forms in our detailed [input designer docs](https://zapier.github.io/visual-builder/docs/input-designer).
 
 ### 3. Configure Your API
 

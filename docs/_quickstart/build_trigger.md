@@ -13,9 +13,9 @@ redirect_from: /quick-start/
 
 _In the Zap editor, users can set triggers to watch for the precise data they want_
 
-Zapier triggers get new data from your API, parse out individual data fields, and let users include that data in subsequent Zap action steps. Triggers can run every time something new is added to an API endpoint or pushed to Zapier via a Webhook, or they can use filters to watch for specific items.
+Zapier triggers get new data from your API, parse individual data fields, and let users include that data in subsequent Zap action steps. Triggers can run every time something new is added to an API endpoint or pushed to Zapier via a Webhook, or they can use filters to watch for specific items.
 
-To add a trigger to your integration, Zapier visual builder will first have you add details in a form. You will then build a form to request data from users if your trigger needs filtering—or you can skip that if you want it to run every time something new is added to your app. Finally, you'll set your API settings with a `GET` HTTP verb or REST Hook to let Zapier receive data from your API.
+To add a trigger to your integration, Zapier visual builder will first have you add details in a form. You will then build an input form to request data from users if your trigger needs filtering—or you can skip that if you want Zapier to run your Trigger every time something new is added to your app. Finally, set your API settings with a `GET` HTTP verb or REST Hook to let Zapier receive data from your API.
 
 Let's have our example GitHub integration poll for new GitHub issues in a specified repo, and triggers Zaps if it finds new issues. We’ll use a `GET` HTTP call, which is called a polling trigger. Zapier will call this every few minutes for each Zap and check for new data.
 
@@ -30,9 +30,9 @@ Add a new Trigger, then add Trigger settings. Each trigger includes a:
 - **Key** used internally to reference the trigger
 - **Name** that users see for the trigger
 - **Noun** to describe what object this trigger provides
-- **Description** to explain the trigger to users.
+- **Description** to explain the trigger to users
 
-Add those details the GitHub new issue trigger, then save and continue.
+Add those details to your GitHub new issue trigger, then save and continue.
 
 ### 2. Design an Input Field Form
 
@@ -40,17 +40,19 @@ Add those details the GitHub new issue trigger, then save and continue.
 
 _Need to gather data from users for your trigger? Add input form fields to your integration to do so._
 
-We want to be able to filter GitHub issues by repository and issue type, which means this trigger needs input fields.
+We want to filter GitHub issues by repository and issue type, which means this trigger needs input fields.
 
-Add a _User Input Field_ in the _Input Designer_ tab to start. Start by adding a field for users to add the repository they want to watch for issues. Enter a label, key, and help text for the repo field—and set it as required.
+Add a _User Input Field_ in the _Input Designer_ tab first, where users can add the repository they want to watch for issues. Enter a label, key, and help text for the repo field—and set it as required.
 
 To make this example integration simple, use a `string` field type where the user can type the repo name into Zapier instead (then for a challenge later, you could try making a dynamic trigger that has Zapier fetch the users' repositories and show them in a list).
+
+> Learn more about Input forms in our detailed [input designer docs](https://zapier.github.io/visual-builder/docs/input-designer).
 
 ![Zapier Visual Builder dropdown](https://cdn.zapier.com/storage/photos/eb918bd6754a7f2056d74a03d5d46a52.png)
 
 _You can also build a dropdown menu with dynamic or static options_
 
-We need three input fields: a _Repo_ field for users to select the repo to watch for issues, a _Username_ field for users to enter the username of the owner of that repository, and a _Filter_ field to choose which type of issues to trigger the Zap. Repeat those steps to add the Filter, and this time check the _Dropdown_ box and the _Static_ option. Enter the following in the code box to build your menu, then save your field:
+Your GitHub integration needs two additional input fields: a _Username_ field for users to enter the username of the owner of that repository, and a _Filter_ field to choose which type of issues to trigger the Zap. Repeat the steps to add the username field then the Filter field, and with the Filter check the _Dropdown_ box and the _Static_ option. Enter the following in the code box to build your menu, then save your field:
 
 `["assigned","created","mentioned","subscribed","all"]`
 
@@ -66,7 +68,7 @@ Now, add the GitHub API call. Select the _API Configuration_ tab in Zapier visua
 
 Zapier dynamically replaces the {% raw %}`{{bundle.inputData.fieldname}}`{% endraw %} fields with the text users enter their respective fields. Here, we have Zapier sending the request to GitHub's `/repos/username/repository/issues` endpoint.
 
-Zapier then automatically passes along every other field along with the authentication details automatically in the `GET` call.
+Zapier then automatically passes along every other field along with the authentication details in the `GET` call.
 
 ### 4. Test Your Trigger
 
@@ -74,7 +76,7 @@ Zapier then automatically passes along every other field along with the authenti
 
 _The test step ensures your trigger works as expected_
 
-Now test your trigger. Click the *Test your API Request* step, and you should see the GitHub account you added in the Authentication step ready to use (if not, connect your account first here). Underneath, the _Configure Test Data_ section includes form fields to test your trigger. Enter a real GitHub repository name, the username of the owner of that repository, and optionally a filter, then click *Test Your Request*.
+Now test your trigger. Click the *Test your API Request* step to see the GitHub account you added in the Authentication step ready to use (if not, connect your account first here). Underneath, the _Configure Test Data_ section includes form fields to test your trigger. Enter a real GitHub repository name, the username of the owner of that repository, and optionally a filter, then click *Test Your Request*.
 
 ![Example Zapier Response](https://cdn.zapier.com/storage/photos/9cf94d89de973edd4b6b3e50971e8375.png)
 
