@@ -116,6 +116,15 @@ Now, retest the request and it should run successfully. Note the response this t
 
 ![](https://cdn.zapier.com/storage/photos/33098c9f9c1584295e074c1dc8a40e72.png)
 
+<a id="censored"></a>
+## Why Does Zapier Show `censored` Fields in Request and Response Data?
+
+![Example censored fields in Zapier](https://cdn.zapier.com/storage/photos/9356f3af9c0a844a652868d877e22486.png)
+
+When testing Authentication, Triggers, or Actions in Zapier visual builder, you can see the raw data Zapier sends to your API call and receives from it in the _Bundle_ and _HTTP_ tabs of the testing pane. Some of those values may not be shown; instead, you'll see a value like `:censored:6:82a3be9927:` as in the screenshot above.
+
+Zapier automatically censors sensitive values at runtime, including all input fields marked as `password` and all authentication fields that will include sensitive, private data including username and password fields from Basic and Digest auth, API keys from API key auth, access and refresh tokens from Session and OAuth v2 authentication. These values are stored in the `Auth` bundle and used in API calls, but are replaced in Zapier's logs with a `censored` value.
+
 <a id="cleanup"></a>
 ## How to Clean Up Test Authentication Accounts?
 
