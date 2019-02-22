@@ -6,8 +6,8 @@ markdown: kramdown
 baseurl: "/visual-builder"
 
 plugins:
-  - jekyll-redirect-from
-  - jekyll-sitemap
+- jekyll-redirect-from
+- jekyll-sitemap
 
 # Sass Settings
 sass:
