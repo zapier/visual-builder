@@ -244,8 +244,8 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll (~> 3.7.0)
-  jekyll-paginate (~> 1.1.0)
   jekyll-redirect-from (~> 0.14.0)
+  jekyll-sitemap (~> 1.2.0)
   tzinfo-data
 
 BUNDLED WITH
