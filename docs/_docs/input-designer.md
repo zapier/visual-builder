@@ -135,6 +135,8 @@ Additionally, most dynamic menus should let users load additional data if your A
 
 To add that, check the _Support Paging_ box, then in your API call include your API's pagination key and the {% raw %}`{{bundle.meta.page}}`{% endraw %} value to pull in a page value. Zapier will call page `0` first, then page `1` when users request additional entries, using zero-based numbering. You can customize the pagination from the _Code Mode_ button as well. Check our _[Pagination Triggers guide](http://zapier.github.io/visual-builder/docs/triggers#pagination)_ for more details.
 
+> **Ordering Your Dropdown Menu Items**: Zapier will show the data in the dropdown menu in the order your API sends it to Zapier. If your API sends the data in alphabetical order, or numerical order, it will show as such in your drop-down menu. If your API call supports sorting, be sure to include the sorting parameter in your API call that would return data in the order you want it to show in your drop-down.
+
 ![Set output fields from dynamic dropdown](https://cdn.zapier.com/storage/photos/10eec1daf419738bee3dd8c9526dd443.png)
 
 Finally, you need to define the fields from your trigger that you need to use in the action input field. Test your trigger, then find the output fields needed, and add them to the _Output Fields_ list at the end of your settings page. Include at least a field with the data that Zapier needs to send to your API in the action, along with a field that includes a human friendly name for the data in that field.
