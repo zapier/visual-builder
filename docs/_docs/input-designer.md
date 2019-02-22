@@ -135,6 +135,7 @@ Additionally, most dynamic menus should let users load additional data if your A
 
 To add that, check the _Support Paging_ box, then in your API call include your API's pagination key and the {% raw %}`{{bundle.meta.page}}`{% endraw %} value to pull in a page value. Zapier will call page `0` first, then page `1` when users request additional entries, using zero-based numbering. You can customize the pagination from the _Code Mode_ button as well. Check our _[Pagination Triggers guide](http://zapier.github.io/visual-builder/docs/triggers#pagination)_ for more details.
 
+<a id="order"></a>
 > **Ordering Your Dropdown Menu Items**: Zapier will show the data in the dropdown menu in the order your API sends it to Zapier. If your API sends the data in alphabetical order, or numerical order, it will show as such in your drop-down menu. If your API call supports sorting, be sure to include the sorting parameter in your API call that would return data in the order you want it to show in your drop-down.
 
 ![Set output fields from dynamic dropdown](https://cdn.zapier.com/storage/photos/10eec1daf419738bee3dd8c9526dd443.png)
@@ -152,6 +153,17 @@ Select the field with the data your API needs for this action in the _Field Name
 Whenever someone uses this input field in a Zap and selects this dynamic dropdown field, Zapier will poll your API for the data from that trigger, parse the entries from that field name, and show them in a user friendly dropdown menu.
 
 Do note that users can always choose to enter a custom value as the final option in dropdown fields, to map data from other Zap steps into this field.
+
+<a id="dropdown-search"></a>
+***Add Search to a Dynamic Field (Optional)***
+
+![Zapier Dynamic Dropdown Search](https://cdn.zapier.com/storage/photos/6e358b96fa8e28d43e3f50d9cb945d01.png)
+
+Dynamic Dropdown menus can also include an additional _Add a Search Step_ button beside the dropdown menu. This lets users dynamically select the correct item from a dynamic field based on input from previous Zap steps.
+
+You first need a [Search Trigger](https://zapier.github.io/visual-builder/docs/triggers) that can find the items used by this drop-down menu. Then check the _Search_ box under your dropdown menu, choose that trigger, and enter the ID of the field from that trigger that Zapier needs to pass with this API call (which should include the same data as the _Field Name_ you selected before for the dynamic menu).
+
+When users click the _Search_ button, Zapier will add a new Search step to their Zap before this action step. They can enter the details to search for the item they need, then Zapier will automatically map the correct output value from that search to this dynamic field.
 
 ## Reorder Fields
 
