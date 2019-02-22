@@ -17,6 +17,14 @@ As triggers only watch for new data and typically need to send no or little data
 
 > **Note**: Triggers are displayed in the order they are added to Zapier integrations, so be sure to add your app’s most important triggers first.
 
+## Trigger Types
+
+Zapier only includes one _Trigger_ step, but your app may use triggers in multiple ways. Most Zapier triggers run when new items are added to an app, database, project, or file. Some apps also include update triggers that run whenever an item is updated in the app, which is useful to help users keep data up-to-date across apps using Zapier.
+
+To make a standard trigger, use an API endpoint that lists new items in an array sorted in reverse chronological order. These are typically the most common API endpoints to read data from a platform. If your API lists items in a different order by default but allows for sorting, include an order or sorting field in your API call.
+
+To make an update trigger, use an API endpoint that lists all items, both new and updated, or alternately an endpoint that lists only updated items. Again, this should return an reverse chronological order array. Be sure to include details in your trigger description that lets users know which updates will run this trigger.
+
 # How to Add a New Trigger to a Zapier Integration
 
 ## 1. Configure Trigger Settings
@@ -51,7 +59,9 @@ Once your form is complete—or if you don't need to include an input form—cli
 
 The last part of adding a trigger is setting is API configuration.
 
-Zapier uses either a Polling API call to check periodically for new or updated data, or a REST hook with a subscription URL where Zapier can subscribe to receive new or updated data autoamtically. With both, Zapier expects to receive an array with 0 or more objects that will be passed to Zapier's [deduper](https://zapier.com/developer/documentation/v2/deduplication/)—and it will return any items that haven't been received before, and use them to run the subsequent steps in the user's Zap.
+Zapier uses either a Polling API call to check periodically for new or updated data, or a REST hook with a subscription URL where Zapier can subscribe to receive new or updated data automatically. With both, Zapier expects to receive an array with 0 or more objects that will be passed to Zapier's [deduper](https://zapier.com/developer/documentation/v2/deduplication/)—and it will return any items that haven't been received before, and use them to run the subsequent steps in the user's Zap.
+
+### Polling Trigger
 
 Zapier selects a _Polling_ trigger by default, where Zapier will send a `GET` request to an API endpoint URL to request new data—and in live Zaps, Zapier automatically deduplicates and sorts for the newest data from the API. Live Zaps automatically poll the URL for new data every 5 to 15 minutes, depending on the user's Zapier plan.
 
@@ -66,6 +76,8 @@ If you plan to use this trigger to power dropdown menus in other Zap steps (such
 If your API requires any additional data, you can add them from the _Show Options_ button. Or, if needed, click the _Switch to Code Mode_ to write a custom API call in node.js powered JavaScript code. The first time you switch to Code Mode, Zapier will translate the settings in the form to code so you can start with the basics already configured. If you switch back to form mode, though, Zapier will not transfer any changes from the code mode to the form.
 
 Once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
+
+### Rest Hook Trigger
 
 ![Zapier Rest Hook Settings](https://cdn.zapier.com/storage/photos/de85ffb1cc01a16b4b0e753dd7c0745c.png)
 
