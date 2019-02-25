@@ -23,7 +23,7 @@ Zapier only includes one _Trigger_ step, but your app may use triggers in multip
 
 To make a standard trigger, use an API endpoint that lists new items in an array sorted in reverse chronological order. These are typically the most common API endpoints to read data from a platform. If your API lists items in a different order by default but allows for sorting, include an order or sorting field in your API call.
 
-To make an update trigger, use an API endpoint that lists all items, both new and updated, or alternately an endpoint that lists only updated items. Again, this should return an reverse chronological order array. Be sure to include details in your trigger description that lets users know which updates will run this trigger.
+To make an update trigger, use an API endpoint that lists all items, both new and updated, or alternately an endpoint that lists only updated items. Zapier needs a composite `id` field that changes whenever the item is updated (ideally `z.hash('md5', item.id + item.updated_at)`), so subsequent updates aren't be filtered out by Zapier's deduper. Again, this should return an reverse chronological order array. Be sure to include details in your trigger description that lets users know which updates will run this trigger.
 
 # How to Add a New Trigger to a Zapier Integration
 
