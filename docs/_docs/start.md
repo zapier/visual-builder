@@ -11,9 +11,9 @@ redirect_from: /docs/
 
 Every new Zapier integration starts with details about the app. Zapier integrates with 1,300+ apps, and counting. That makes it crucial to help people find your app among all the others on the platform. With a clear description and logo, and placement in the category that best represents your app, your users will be able to easily find your app and new users will likely discover your app as they search for tools that fit their needs.
 
-To make a new Zapier integration:
+To make a new integreation in Zapier Platform UI:
 
-1. Open Zapier visual builder at [zapier.com/app/developer](https://zapier.com/app/developer/)
+1. Open Zapier's visual builder at [zapier.com/app/developer](https://zapier.com/app/developer/)
 2. Fill in the details about your app
 3. Add your API's [authentication](https://zapier.github.io/visual-builder/docs/auth), [triggers](https://zapier.github.io/visual-builder/docs/triggers), and [actions](https://zapier.github.io/visual-builder/docs/actions)
 
@@ -60,4 +60,4 @@ Save your integration, then you're ready to [add your API authentication details
 
 Need to update your app's description or branding? You can do that anytime from your Zapier integration settings.
 
-Open your integration in Zapier visual editor, and click the gear icon beside your app name in the top left to update anything about your app, including your app's name. Do note that the changes will show up in existing Zaps that use your integration, so it's best to update branding in full [new versions of your integration](https://zapier.github.io/visual-builder/docs/versions) to launch alongside new features.
+Open your integration in Zapier Platform's visual editor, and click the gear icon beside your app name in the top left to update anything about your app, including your app's name. Do note that the changes will show up in existing Zaps that use your integration, so it's best to update branding in full [new versions of your integration](https://zapier.github.io/visual-builder/docs/versions) to launch alongside new features.
