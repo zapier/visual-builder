@@ -19,13 +19,13 @@ Visual builder and CLI both let you accomplish the same goals and build equally 
 
 ![Zapier Visual Builder](https://cdn.zapier.com/storage/photos/26cc01881a504fa51d81dea890fde1e5.png)
 
-**Best for:** Building new integrations quickly with a team with a range of development experience
+**Best for:** Building new integrations quickly in a team with a range of development experience
 
 Zapier's visual builder is the easiest way to build new integrations. With a general understanding of API authentication and calls, you can build a full Zapier integration without any coding. Visual builder sets many of the defaults for you automatically. All you need to do is add details about your trigger and action steps, build input forms for users to enter data, and set the API call details to send that data to your app.
 
 Visual builder additionally includes a code mode toggle on every API call, where you can write custom JavaScript code for your API call and response data parsing. Coming soon, you will also be able to convert a visual builder integration to a Zapier CLI app for an easy way to start new integrations then customize them in your local development environment, if you want.
 
-Choose visual builder for your integration if you're new to Zapier integration development, want an easy way to build a new integration, or have a team with non-engineers working together on the integration who would find the CLI more difficult to use. 
+Choose visual builder for your integration if you're new to Zapier integration development, want an easy way to build a new integration, or have a team with non-engineers working together on the integration who would find the CLI more difficult to use.
 
 *→ Build a [new Zapier Visual Builder integration](https://zapier.com/app/developer/app/new), check our [Visual Builder Quick Start Guide](https://zapier.github.io/visual-builder/quickstart/introduction) to build a sample integration, then get more info in [Zapier's visual builder documentation](https://zapier.github.io/visual-builder/docs/intro).*
 
@@ -33,7 +33,7 @@ Choose visual builder for your integration if you're new to Zapier integration d
 
 ![Zapier CLI](https://cdn.zapier.com/storage/photos/27d28a5fdd0c878d7558b4abd4f106ec.png)
 
-**Best for:** Building customized integrations on an engineering team
+**Best for:** Building customized integrations in an engineering team
 
 Zapier's CLI is the most powerful way to build Zapier integrations, using the same tools your engineering team relies on to build and maintain your app. List your app details in a JSON file, then use standard Node.JS JavaScript to build your API calls, parse response bundles, and log error messages and details to Zapier. Manage versions of your integrations using GIT version control, if you want. Then push new versions of your integrations to Zapier's server from Terminal.
 
