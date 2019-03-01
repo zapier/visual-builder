@@ -29,6 +29,8 @@ Zapier integrations can use three types of fields:
 
 Most Zapier integrations rely on input fields. Integrations only need dynamic fields if users would need to select data from your app in the form, and would only need line items if users commonly add multiple lines of similar details to your app.
 
+![Example Input Editor](https://cdn.zapier.com/storage/photos/637ad915851e73847e1bdacdd5fea09d.png)
+
 To add a field, click the _Add_ button and select the field type. Enter the field details, including:
 
 - **Label**: A user friendly name for the field, such as `First Name`.

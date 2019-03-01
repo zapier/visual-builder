@@ -36,7 +36,7 @@ Add those details to your GitHub new issue trigger, then save and continue.
 
 ## 2. Design an Input Field Form
 
-![Zapier Visual Builder input field details](https://cdn.zapier.com/storage/photos/4b86f77745df337a7e6924de9a385081.png)
+![Zapier Visual Builder input field details](https://cdn.zapier.com/storage/photos/62de2ece0a20ecb837f7dc540194bca2.png)
 
 _Need to gather data from users for your trigger? Add input form fields to your integration to do so._
 
@@ -48,7 +48,7 @@ To make this example integration simple, use a `string` field type where the use
 
 > Learn more about Input forms in our detailed [input designer docs](https://zapier.github.io/visual-builder/docs/input-designer).
 
-![Zapier Visual Builder dropdown](https://cdn.zapier.com/storage/photos/eb918bd6754a7f2056d74a03d5d46a52.png)
+![Zapier Visual Builder dropdown](https://cdn.zapier.com/storage/photos/992bbec7742b65a3b48df6c981e58610.png)
 
 _You can also build a dropdown menu with dynamic or static options_
 

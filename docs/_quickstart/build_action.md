@@ -29,7 +29,7 @@ Enter your new action settings, as with your trigger. Select a _Create_ action s
 
 ## 2. Design an Action Input Field Form
 
-![Zapier Visual Builder action input fields](https://cdn.zapier.com/storage/photos/c19752672adf0b5a3809a7defa3faa0d.png)
+![Zapier Visual Builder action input fields](https://cdn.zapier.com/storage/photos/637ad915851e73847e1bdacdd5fea09d.png)
 
 _Add a new field for every piece of data users need to send to your app for this action_
 
