@@ -13,7 +13,11 @@ Zapier Platform UI is the easiest way to build new integrations in a web app. Ad
 
 Zapier CLI is the most advanced way to build integrations in your local development environment. Based on Node.js, Zapier CLI is a terminal-based app that helps you scaffold new integrations. Once you've coded your app details, authentication, triggers, and actions into the Zapier app package, you can push your Zapier integration to Zapier's server, manage new versions, and invite collaborators all from the command line. It's a powerful way for engineers to build Zapier integrations in their standard development workflow.
 
-Zapier Platform UI and CLI both let you accomplish the same goals and build equally powerful Zapier integrations. The best one for your integration depends on your work style and integration needs.
+![Zapier Platform UI and CLI comparison table](https://cdn.zapier.com/storage/photos/f79f4f8387cd0291d9bf9b0a74c82088.png)
+
+Zapier Platform UI and CLI both include the same core authentication, trigger, action and most testing features. The CLI additionally lets you add advanced features including resources, middleware, files, hydration, and NPM modules, along with options to write custom test suites. The UI gives you an easier way to build integrations with a form-based editor and WYSIWYG preview of your integration in Zapier, with the option to export projects coming soon.
+
+You can accomplish the same goals and build equally powerful Zapier integrations with both Zapier Platform UI and CLI. The best one for your integration depends on your work style and integration needs.
 
 ## Zapier Platform UI
 
