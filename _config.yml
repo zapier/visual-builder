@@ -23,6 +23,9 @@ collections:
   docs:
     output: true
     permalink: /:collection/:name
+  news:
+    output: true
+    permalink: /:collection/:name
 
 defaults:
   - scope:
@@ -35,3 +38,8 @@ defaults:
       type: "docs"
     values:
       layout: default      
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: default  
