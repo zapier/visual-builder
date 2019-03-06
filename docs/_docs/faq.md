@@ -27,6 +27,8 @@ In code mode, you can write JavaScript code, using Zapier's default code as a ba
 
 Additionally, use Zapier bundles to access auth data, data from user input forms, request data, and more. Learn more in our [Zapier bundle docs](https://zapier.github.io/visual-builder/docs/advanced#bundle).
 
+> **Note**: Code Mode does not load any default libraries. If you need to load NPM modules, use [Zapier Platform CLI](https://zapier.github.io/zapier-platform-cli/) instead.
+
 Do note that changes are not saved automatically. Once you have added the code you want, click _Save & Continue_ to add the changes to your integration.
 
 ![Zapier code mode switch to form mode](https://cdn.zapier.com/storage/photos/ea2eb690bf92b55fab0bbad290107a97.png)
