@@ -275,22 +275,41 @@ Then add input fields for each item to include in your line item group. Click _A
 
 Need to remove or reorder line item input fields? Open your Line Item Group field, and each input field has a gear icon beside it to edit or delete the field. You can’t move fields up or down, but you could delete fields then re-add them at the end of the list to get achieve the field order your integration needs.
 
-## How to Add Dynamic Fields
+## How to Add Dynamic and Custom Fields
 
 ![Add Zapier Dynamic Field][image-21]
 
-Dynamic Fields let Zapier run code to decide whether to show a field, and can dynamically set what to show in the field as well. First, make sure you’ve included at least one input field that has _Alters Dynamic Fields_ checked. Then, from the _Input Designer_, add a new field and choose _Dynamic Field_.
+Dynamic Fields let Zapier run code to decide whether to show a field based on input, or to fetch fields from an API. The code can dynamically set what to show in the field as well.
 
-There, you can write Node.js code that evaluates data from previous fields (referenced with `bundle.inputData.field_key` where `field_key` is replaced with the actual key of the field that Zapier is evaluating) and includes logic and details on another field to show depending on the value of the former.
+Dynamic fields are useful to show fields that are only needed depending on a previous input. For example, a CRM could have certain fields that are only shown depending on the lead type being added.
 
-> Learn more about how to add custom fields in code with [Zapier’s Field Schema][6]{:target="_blank"}
+Custom fields are used to show user-defined fields from apps that must be fetched from the app when users build Zaps to let them use those fields. These are especially useful with project management apps, CRM apps, databases, and any other app where users can add custom, user-defined fields.
+
+### Add Dynamic Fields
+
+To add a dynamic field, first add at least one input field that has _Alters Dynamic Fields_ checked. This is the field that Zapier will use to decide if the dynamic field should be shown.
+
+Then add the new dynamic field. From the _Input Designer_, add a new field and choose _Dynamic Field_.
+
+There you can write Node.js code that evaluates data from previous fields (referenced with `bundle.inputData.field_key` where `field_key` is replaced with the actual key of the field that Zapier is evaluating) and includes logic and details on another field to show depending on the value of the former.
+
+You can then include this field in your API call using the key set in the code.
+
+### Add Custom Field
+
+To add a custom field, open your integration's _Input Designer_, add a new, field and choose _Dynamic Field_.
+
+In the code box, add custom code to make an API call and fetch the fields from your app. Use Zapier's `z.request` to make the API call; see our [Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for more details. Then have your code return the field key and names to Zapier, to display in the user's Zap.
+
+Zapier will not run your `z.request` call inside the Input Designer, so your custom fields will not show up in the preview. To preview the custom field, create a Zap in your Zapier account and be sure to use it with an account from your app that uses custom fields.
+
+To use the custom fields in your API call, simply include `body: bundle.inputData` to include every input field, including pre-defined and custom fields, in the body of the API call. Alternately, use the `bundle.inputData` along with individual listings of your pre-defined fields.
 
 [1]:	https://zapier.com/blog/beginner-ultimate-guide-markdown/
 [2]:	https://zapier.com/help/modifying-dates-and-times/
 [3]:	https://zapier.com/blog/beginner-ultimate-guide-markdown/
 [4]:	https://zapier.com/blog/formatter-line-item-automation/
 [5]:	https://zapier.com/help/line-items/
-[6]:	https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema
 
 [image-1]:	https://cdn.zapier.com/storage/photos/31dfcf36c01b0ee0db946a6a46c3de8c.png
 [image-2]:	https://cdn.zapier.com/storage/photos/aba4afb45bd9dbd5ec8c5e4a4137636d.png
