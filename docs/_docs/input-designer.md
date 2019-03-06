@@ -303,7 +303,7 @@ In the code box, add custom code to make an API call and fetch the fields from y
 
 Zapier will not run your `z.request` call inside the Input Designer, so your custom fields will not show up in the preview. To preview the custom field, create a Zap in your Zapier account and be sure to use it with an account from your app that uses custom fields.
 
-To use the custom fields in your API call, simply include `body: bundle.inputData` to include every input field, including pre-defined and custom fields, in the body of the API call. Alternately, use the `bundle.inputData` along with individual listings of your pre-defined fields.
+To use the custom fields in your API call, you must switch to _Code Mode_ and make a custom API call that includes `body: bundle.inputData` to send every input field, including pre-defined and custom fields, in the body of the API call. Alternately, use the `bundle.inputData` in code mode along with individual listings of your pre-defined fields.
 
 [1]:	https://zapier.com/blog/beginner-ultimate-guide-markdown/
 [2]:	https://zapier.com/help/modifying-dates-and-times/
