@@ -2,9 +2,9 @@
 layout: default
 ---
 
-![Zapier Platform]({{ site.baseurl }}/assets/images/visual-builder-header.svg)
+<img src="{{ site.baseurl }}/assets/images/visual-builder-header.svg" alt="Zapier Platform" style="max-width:600px;margin:auto;display:block;">
 
-Build a Zapier integration for your API with the Zapier Platform, with two interfaces to build integrations and connect your app to the 1,300+ leading business apps that integrate with Zapier.
+Develop the best [Zapier](https://zapier.com/) integration for your app with Zapier's Platform UI and CLI
 
 ## Zapier Platform UI
 
