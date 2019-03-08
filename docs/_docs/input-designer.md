@@ -277,17 +277,17 @@ Need to remove or reorder line item input fields? Open your Line Item Group fiel
 
 ## How to Add Dynamic and Custom Fields
 
-![Add Zapier Dynamic Field][image-21]
+![Add Zapier Dynamic Field](https://cdn.zapier.com/storage/photos/e7f596e28e8e9646df8880b38e68d371.png)
 
-Dynamic Fields let Zapier run code to decide whether to show a field based on input, or to fetch fields from an API. The code can dynamically set what to show in the field as well.
+Dynamic Fields let Zapier build custom fields from an API call, and run code that shows fields based on other input field data. Dynamic and custom fields are used to show user-defined fields from apps that must be fetched from the app when users build Zaps to let them use those fields. These are especially useful with project management apps, CRM apps, databases, and any other app where users can add custom, user-defined fields.
 
-Dynamic fields are useful to show fields that are only needed depending on a previous input. For example, a CRM could have certain fields that are only shown depending on the lead type being added.
+To add a custom field, open your integration's _Input Designer_, add a new, field and choose _Dynamic Field_.
 
-Custom fields are used to show user-defined fields from apps that must be fetched from the app when users build Zaps to let them use those fields. These are especially useful with project management apps, CRM apps, databases, and any other app where users can add custom, user-defined fields.
+In the code box, add custom code to make an API call and fetch the fields from your app. Use Zapier's `z.request` to make the API call; see our [Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for more details. Then have your code return the field key and names to Zapier in an array, to display in the user's Zap.
 
-### Add Dynamic Fields
+### Add Dynamic Field Based on Previous Input Field Data
 
-To add a dynamic field, first add at least one input field that has _Alters Dynamic Fields_ checked. This is the field that Zapier will use to decide if the dynamic field should be shown.
+To add a dynamic field that includes data from another input field or is only shown based on specific criteria, first add at least one input field that has _Alters Dynamic Fields_ checked. This is the field that Zapier will use to decide if the dynamic field should be shown.
 
 Then add the new dynamic field. From the _Input Designer_, add a new field and choose _Dynamic Field_.
 
@@ -295,15 +295,22 @@ There you can write JavaScript code that evaluates data from previous fields (re
 
 You can then include this field in your API call using the key set in the code.
 
-### Add Custom Field
+## How to Include Dynamic Fields in API Calls
 
-To add a custom field, open your integration's _Input Designer_, add a new, field and choose _Dynamic Field_.
+To use the custom fields in your API call, you must switch to _Code Mode_ and make a custom API call that includes `body: { ...bundle.inputData }` to send every input field, including pre-defined and custom fields, in the body of the API call. Alternately, use the `bundle.inputData` in code mode along with individual listings of your pre-defined fields.
 
-In the code box, add custom code to make an API call and fetch the fields from your app. Use Zapier's `z.request` to make the API call; see our [Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for more details. Then have your code return the field key and names to Zapier, to display in the user's Zap.
+<a id="test-dynamic"></a>
+## How to Test Dynamic Fields
 
-Zapier will not run your `z.request` call inside the Input Designer, so your custom fields will not show up in the preview. To preview the custom field, create a Zap in your Zapier account and be sure to use it with an account from your app that uses custom fields.
+When you add a dynamic field, it will not show in the Zap step preview on the right side of your input designer. That is expected, as Zapier will not run `z.request` call inside the Input Designer, so your custom fields will not show up in the preview.
 
-To use the custom fields in your API call, you must switch to _Code Mode_ and make a custom API call that includes `body: bundle.inputData` to send every input field, including pre-defined and custom fields, in the body of the API call. Alternately, use the `bundle.inputData` in code mode along with individual listings of your pre-defined fields.
+![Dynamic field inside Zapier](https://cdn.zapier.com/storage/photos/d9a14810cf192033bc85c1ad18a35c09.png)
+
+To test a dynamic field, [create a new Zap](https://zapier.com/app/editor/) and use the trigger or action that includes your dynamic step. You will then see the dynamic fields load inside your Zap as expected.
+
+![See Zapier dynamic field data from Monitoring tab](https://cdn.zapier.com/storage/photos/45ec3a1bdbd0256d9b17d798621f7efa.png)
+
+You can then see details about the dynamic field in the _Monitoring_ tab in your integration's Zapier Platform UI details editor. Click the _Moitoring_ tab, then look through the API call details to find the details about the API call that fetched the dynamic fields.
 
 [1]:	https://zapier.com/blog/beginner-ultimate-guide-markdown/
 [2]:	https://zapier.com/help/modifying-dates-and-times/

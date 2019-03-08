@@ -7,6 +7,23 @@ redirect_from: /docs/
 
 # Frequently Asked Questions
 
+<a id="save"></a>
+## Does Zapier Auto-Save Integrations?
+
+_No_. Always remember to save your work when building integrations. Zapier asks you to save and continue in several spots while building integrations, so be sure to save at each point:
+
+![Save auth and API calls](https://cdn.zapier.com/storage/photos/a0bfc995ebb8c292c4329ee9c4e4b485.png)
+
+When adding authentication and API calls for triggers or actions, there are _Save & Continue_ buttons between each step. Click each one when you are finished adding details to your API call form or code mode editor.
+
+![Save triggers and actions](https://cdn.zapier.com/storage/photos/dba285167f1d4557023803dcb5d54dc8.png)
+
+When adding a new trigger or action, there is a _Save_ button after the Zap step details. Click that to save your new trigger or action step, before adding the input form and API configuration.
+
+![Save input fields](https://cdn.zapier.com/storage/photos/6684ecfcfab99cb4573d1ba2b23b4966.png)
+
+When adding a new field to an authentication, trigger, or action step's input field, click _Save_ after adding the field details.
+
 <a id="code"></a>
 ## How Does Code Mode Work?
 
