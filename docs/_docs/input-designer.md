@@ -291,7 +291,7 @@ To add a dynamic field, first add at least one input field that has _Alters Dyna
 
 Then add the new dynamic field. From the _Input Designer_, add a new field and choose _Dynamic Field_.
 
-There you can write Node.js code that evaluates data from previous fields (referenced with `bundle.inputData.field_key` where `field_key` is replaced with the actual key of the field that Zapier is evaluating) and includes logic and details on another field to show depending on the value of the former.
+There you can write JavaScript code that evaluates data from previous fields (referenced with `bundle.inputData.field_key` where `field_key` is replaced with the actual key of the field that Zapier is evaluating) and includes logic and details on another field to show depending on the value of the former.
 
 You can then include this field in your API call using the key set in the code.
 

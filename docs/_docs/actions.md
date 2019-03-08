@@ -99,7 +99,7 @@ _[Learn more about how Zapier uses sample data and output fields](http://zapier.
 
 ![Zapier visual builder code mode](https://cdn.zapier.com/storage/photos/0e52a1110b0f6cd37afd4c005e97dfa0.png)
 
-The default API settings form is the best option for most actions with default settings. If your action needs customized API calls, scripting to manipulate input field data, or other unique features, you can add custom Node.js powered JavaScript code for your API request.
+The default API settings form is the best option for most actions with default settings. If your action needs customized API calls, scripting to manipulate input field data, or other unique features, you can add custom JavaScript code for your API request.
 
 To use custom code, click the _Switch to Code Mode_ button. Zapier will translate your default API call settings into JavaScript code the first time you switch to code mode for an easy way to start. If you switch back to form mode, though, Zapier will not transfer your code settings back to the form.
 

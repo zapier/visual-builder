@@ -11,7 +11,7 @@ Zapier Platform includes two ways to build new integrations: our UI with an onli
 
 Zapier Platform UI is the easiest way to build new integrations in a web app. Add your app details, authentication settings, triggers, and actions in an online form, with help text and documentation links to help anytime you get stuck. You can test each part of your integration inside the visual builder, switch to code mode for advanced calls and response parsing, check logs and API response details, and rapidly iterate to build a complete new Zapier integration. It's an easy way for anyone with API experience to build Zapier integrations.
 
-Zapier CLI is the most advanced way to build integrations in your local development environment. Based on Node.js, Zapier CLI is a terminal-based app that helps you scaffold new integrations. Once you've coded your app details, authentication, triggers, and actions into the Zapier app package, you can push your Zapier integration to Zapier's server, manage new versions, and invite collaborators all from the command line. It's a powerful way for engineers to build Zapier integrations in their standard development workflow.
+Zapier CLI is the most advanced way to build integrations in your local development environment. Zapier CLI is a terminal-based app that helps you scaffold new integrations then code them in JavaScript using your local development environment and code editor. Once you've coded your app details, authentication, triggers, and actions into the Zapier app package, you can push your Zapier integration to Zapier's server, manage new versions, and invite collaborators all from the command line. It's a powerful way for engineers to build Zapier integrations in their standard development workflow.
 
 ![Zapier Platform UI and CLI comparison table](https://cdn.zapier.com/storage/photos/f79f4f8387cd0291d9bf9b0a74c82088.png)
 
@@ -39,9 +39,9 @@ Choose Zapier Platform UI for your integration if you're new to Zapier integrati
 
 **Best for:** Building customized integrations in an engineering team
 
-Zapier's CLI is the most powerful way to build Zapier integrations, using the same tools your engineering team relies on to build and maintain your app. List your app details in a JSON file, then use standard Node.JS JavaScript to build your API calls, parse response bundles, and log error messages and details to Zapier. Manage versions of your integrations using GIT version control, if you want. Then push new versions of your integrations to Zapier's server from Terminal.
+Zapier's CLI is the most powerful way to build Zapier integrations, using the same tools your engineering team relies on to build and maintain your app. List your app details in a JSON file, then use standard JavaScript to build your API calls, parse response bundles, and log error messages and details to Zapier. Manage versions of your integrations using GIT version control, if you want. Then push new versions of your integrations to Zapier's server from Terminal.
 
-Zapier CLI lets you build advanced integrations faster than visual builder since every part of your integration is custom built by default. You can use npm modules as you would in any other Node.JS app, test your integration locally, view detailed HTTP logs, and get started quickly with scaffold and demo apps.
+Zapier CLI lets you build advanced integrations faster than visual builder since every part of your integration is custom built by default. You can use NPM modules as you would in other JavaScript apps, test your integration locally, view detailed HTTP logs, and get started quickly with scaffold and demo apps.
 
 Choose CLI if your API needs custom coding for most API calls or you find writing integrations in code easier than using a web app, and if your integration will maintained by an engineering team. Zapier CLI is more difficult to use for non-engineers, but will likely be more efficient for an engineering team to use than visual builder. And soon, you won't have to choose: You can start with visual builder, then switch to CLI later if you want.
 

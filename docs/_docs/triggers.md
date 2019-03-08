@@ -73,7 +73,7 @@ Otherwise, Zapier will automatically send any other input field data in the requ
 
 If you plan to use this trigger to power dropdown menus in other Zap steps (such as to find users, projects, folders, and other app data often used to create new items), and if your API call can paginate data, check the _Support Paging_ box (see [more details on pagination](#pagination) below).
 
-If your API requires any additional data, you can add them from the _Show Options_ button. Or, if needed, click the _Switch to Code Mode_ to write a custom API call in node.js powered JavaScript code. The first time you switch to Code Mode, Zapier will translate the settings in the form to code so you can start with the basics already configured. If you switch back to form mode, though, Zapier will not transfer any changes from the code mode to the form.
+If your API requires any additional data, you can add them from the _Show Options_ button. Or, if needed, click the _Switch to Code Mode_ to write a custom API call in JavaScript code. The first time you switch to Code Mode, Zapier will translate the settings in the form to code so you can start with the basics already configured. If you switch back to form mode, though, Zapier will not transfer any changes from the code mode to the form.
 
 Once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
 
