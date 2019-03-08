@@ -7,53 +7,57 @@ redirect_from: /docs/
 
 # Authentication
 
-Every Zapier step starts with App authentication. Users select an app they wish to use, then authenticate their account with that app to let Zapier access their data.
+Every Zap step starts with App authentication. Users select an app they wish to use, then authenticate their account with that app so Zapier can access their data.
 
-Authentication enables Zapier access to an individual account in an app. Users connect one specific app account to Zapier, then Zapier can watch it for new or updated data, search for existing data, and create or update new data in that individual account on the app. Zapier may access the account until the authorization expires, is revoked, or credentials are changed, and may automatically refresh OAuth 2-powered authentications if enabled in the integration.
+Authentication allows Zapier access to an individual account in an app. Users connect one specific app account to Zapier, then Zapier can watch it for new or updated data, search for existing data, and create or update new data in that individual account on the app. Zapier may access the account until the authorization expires, is revoked, or credentials are changed, and may automatically refresh OAuth 2-powered authentications if enabled in the integration.
 
-Once users authenticate their account on an app through Zapier, they can use any of that app's Zap steps without authenticating again. Users may also authenticate an app again to a new account on that app if they wish to use multiple accounts from an app with Zapier, typically to manage multiple projects or to use both work and personal accounts in workflows.
+Once users authenticate their account on an app through Zapier, they can use any of that app's Zap steps without authenticating again. Users may also authenticate an app again if they wish to use additional accounts from an app with Zapier, typically to manage multiple projects or to use both work and personal accounts in workflows.
 
-When building a Zapier integration, you define how the Zapier platform connects to your app to authenticates users, and add an API call where Zapier can test the account authentication. Then connect an account to Zapier to test the app authentication and any subsequent Zap Triggers and Actions you add to the integration.
+When building a Zapier integration, you define how the Zapier platform connects to your app to authenticates users, and add an API call where Zapier can test the account authentication. You can then test that API call yourself and connect an account to Zapier, which you can then use to test any subsequent Zap Triggers and Actions you add to the integration.
 
 <a id="schemes"></a>
 ## Zapier Supported Authentication Schemes
 
 ![Zapier Authentication](https://cdn.zapier.com/storage/photos/5f1a0e1fc0eb5635bdf1a2983f31a9ba.png)
 
-All Zapier integrations that can access or add private data for users require authentication. The only apps don't require authentication include data feeds (such as news or weather updates) or utilities (such as file format conversion tools or public search engines). If you're building an integration for any app that stores private data and requires and account to use it, your integration will require authentication.
+All Zapier integrations that can access or add private data for users require authentication. The only apps don't require authentication include data feeds (such as news or weather updates) or utilities (such as file format conversion tools or public search engines). If you're building an integration for any app that stores private data and requires an account to use , your integration will require authentication.
 
-Add authentication to your integration first before adding triggers or actions. To add authentication, click the _Authentication_ tab in the left sidebar of Zapier's visual builder, then select the authentication scheme your app uses. Zapier supports the following five authentication schemes, each with their own settings:
+Add authentication to your integration before adding triggers or actions. To do so, click the _Authentication_ tab in the left sidebar of Zapier's visual builder, then select the authentication scheme your app uses. Zapier supports the following five authentication schemes, each with their own settings:
 
 ### [Basic Auth](https://zapier.github.io/visual-builder/docs/basic)
 _As documented by [RFC 7616](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)_
 
-The simplest authentication method, Basic authentication requires nearly zero setup when building a Zapier integration. Zapier includes a pre-built login form that requests users' username and password, then passes them with each API call to authenticate the user. This authentication method is only recommended if it's the only option to authenticate with your app, as it requires Zapier to store users' credentials.
+Basic authentication lets users connect their accounts to Zapier with a username and password through a pre-built form that Zapier then passes with each API call to authenticate the user. You only have to add a test API call to confirm the username and password are valid.
+
+Only use Basic Auth if it's the only way to authenticate your API calls, as it requires Zapier to store users' credentials.
 
 _→ [Add Basic Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/basic)_
 
 ### [Session Auth](https://zapier.github.io/visual-builder/docs/session)
 
-Session authentication works somewhat like a hybrid between Basic Auth and OAuth. Here again, users enter their username and password or other app credentials, with optional custom fields if an API needs them for authentication. Include a token exchange URL where Zapier exchanges the credentials for an authentication token, which Zapier will use to authenticate every API call.
+Session authentication lets users enter their username and password or other app credentials, with optional custom fields if needed for authentication. Zapier then makes an API call to a token exchange URL where Zapier exchanges the credentials for an authentication token, which Zapier will use to authenticate every subsequent API call.
 
 _→ [Add Session Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/session)_
 
 ### [API Key](https://zapier.github.io/visual-builder/docs/api)
 
-API key authentication works the same as Basic Auth, only here users enter a custom API key from your app instead of their account credentials. Users will need to locate an API key from your app, then enter it in the Zapier authentication form. Zapier will then pass the API to authenticate each API call.
+API key authentication lets users enter a custom API key from your app, and can optionally request additional info such as a domain. Users will need to locate an API key from your app, then enter it in the Zapier authentication form. Zapier will then pass the API key, along with any additional authentication details needed, to authenticate each API call.
 
 _→ [Add API Key Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/api)_
 
 ### [OAuth v2](https://zapier.github.io/visual-builder/docs/oauth)
 _Same authentication flow as [Twitter](https://developer.twitter.com/en/docs/basics/authentication/overview) and [Trello](https://developers.trello.com/page/authorization)'s OAuth v2 implementation_
 
-OAuth authentication is the authentication scheme to use when possible, as it matches users expectations for app authentication today. When users connect an app account that supports OAuth, Zapier shows a popup window from that app where users enter their user details on the app's site and authorize Zapier to access their data. The app sends a request token before the user authenticates, which Zapier then exchanges for an access token after they authenticate.
+OAuth v2 authentication lets users sign into app accounts and allow Zapier access via a popup window from that app. The app sends a request token before the user authenticates, which Zapier then exchanges for an access token after they authenticate.
+
+Use OAuth v2 whenever possible, as it matches users expectations for modern app authentication.
 
 _→ [Add OAuth v2 Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/oauth)_
 
 ### [Digest Auth](https://zapier.github.io/visual-builder/docs/digest)
 _As documented by [RFC 7616](https://tools.ietf.org/html/rfc7616)_
 
-Digest authentication is similar to Basic Auth, though more customizable and where Zapier handles the nonce and quality of protection details automatically. Digest Auth first requires you to add an input field to gather authentication details from users. Then with every API call, Zapier first contacts your app's server to request the nonce key before passing the authentication details and any other API call data to your app.
+Digest authentication lets users enter their username, password, and other required details for authentication in a Zapier-powered form. Then with every API call, Zapier first runs an API call to request the nonce key, before running the trigger or action's API call that passes the encrypted authentication details and any other API call data to your app. Zapier handles the nonce and quality of protection details automatically.
 
 _→ [Add Digest Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/digest)_
 
