@@ -11,8 +11,6 @@ _Zane Lyon \| March 12, 2019_
 
 ![Zapier Platform UI](https://cdn.zapier.com/storage/photos/5eb1c7c2281da6c2fa5de7b89e3293e0.png)
 
-![Zapier Platform UI](https://cdn.zapier.com/storage/photos/5eb1c7c2281da6c2fa5de7b89e3293e0.png)
-
 We’re excited to introduce [Zapier Platform UI](https://zapier.com/app/developer/), a new edition of our web-based tool to integrate your API with Zapier. It's the easiest way to build a new Zapier integration, a ground-up rewrite with several key improvements:
 
 - Be productive right away, even if you're new to Zapier, with an intuitive visual builder that feels familiar to other API tools. 
