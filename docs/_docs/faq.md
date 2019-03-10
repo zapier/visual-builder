@@ -190,3 +190,89 @@ For example, if you use GitHub's API to watch for new issues, the API calls the 
 Output Fields are equally important for both triggers and actions, as the output data from both may be used in subsequent Zap steps.
 
 To add output fields, list the original field name from your API response in the left column, and a human friendly name for the field in the right column of your Zapier trigger or action's API configuration. Zapier will then substitute those names for those output field titles in your users' Zaps as in the screenshot above.
+
+<a id="resthooktesting"></a>
+## How Do I Define Rest Hooks and Use the Embedded Tester With Them?
+
+Rest Hooks are a great way to implement Zapier Triggers.  They allow you to _push_ new data as soon as it's available in your product.  You'll also only connect when there _is_ new data, and avoid polling altogether.
+
+Rest Hooks are just webhooks plus an API endpoint for consumers to programatically subscribe and unsubscribe for updates.  They are very powerful, but a bit more complex and involve a little more setup than polling triggers.  By testing your rest hook configuration in the visual builder you can save time. You'll shake out configuration issues before testing in the Zap editor, which will test the entire orchestrated transaction.  
+
+In the Zapier Platform we try to make setup easier by allowing you to test each individual request in isolation.  In the test component of the visual builder, don't create a real webhook listener.  We mock out some data, and you'll need to provide some of of your own mock data to evaluate whether your code is working the way you expect.    
+
+Let's go through each of the requests required to create a working Rest Hook configuration, and how to test it in the visual builder.
+
+
+**Subscribe**  
+
+This request is telling your API to send certain events related to this user's account to Zapier.  This is where the Zapier callback URL gets set.   
+
+Here's an example using Gitlab's API. Note that you'll need to make sure the parameters here match what your API expects.  In this case `url` is the field name that Gitlab expects to contain the webhook callback URL.
+
+![](https://zappy.zapier.com/CF1A11AF-949A-4C74-AFCD-37F4F4C5B362.png)
+
+To skip ahead and test this in the visual builder, we hit Save API Request & Continue.  Then go to Step 2 "Test Your API Request".  Because there are multiple requests that we will be testing here, start by selecting the Subscribe request we just configured.
+
+![](https://zappy.zapier.com/377B6AFF-F01B-4EFE-8BBB-A298F3B8E0BD.png)
+
+Now to test if your subscribe end point is working as expected, enter test values for any user input required, and select Test Your Request.  (Make sure you've successfully created a connected account)
+
+![](https://zappy.zapier.com/E6F0BDD1-AC84-45A1-876D-E6398E689472.png)
+
+> Note that right now you may need to switch your Subscribe request to _code mode_ in order for the embedded tester to function properly.  We have a bug at the moment where we fail to swap `bundle.targetUrl` for a placeholder URL when using Form Mode.
+
+Wait for the request to return, and review what your API returned.  Note in particular the unique id of the subscription.  We'll need that value in a minute in order to test the unsubscribe request once we set that up.  Also notice that what was sent to your API was a dummy webhook URL.  At this point we haven't spun up a real webhook listener.  This test will just validate that we're able to create a subscription in your API.  
+
+> If your API checks that a webhook URL is live and valid during the subscription process this test step may not be all that valuable and you might proceed direcly to testing by creating a live Zap. 
+
+![](https://zappy.zapier.com/3CA0123E-524B-4494-BF2A-04255874AA12.png)
+
+It's a great idea to go and verify in your system to verify that the subscription was set up properly.
+
+
+**Unsubscribe**  
+
+Unsubscribe is a request to your API to turn off sending webhook events for the Zap that calls it.  This will be called whenever the Zap is turned off.  
+
+To configure and test the unsubscribe request we'll repeat what we did setting up and testing Subscribe.
+
+When we connect with your API to unsubscribe the webhook, we'll need to tell it what the unique ID is of that subscription.  When this happens in a Zap, the platform saves the id that was returned during the Subscribe request, and you can reference it in your unsubscribe request, on the `bundle.subscribeData` object.  
+
+![](https://zappy.zapier.com/EF2923B4-B361-45A6-983C-BA2A57DC5623.png)
+
+To use the test component to validate that this request is configured properly, skip down again to step 2, and select the Unsubscribe request. 
+
+> Note that right now you may need to switch your Subscribe request to _code mode_ in order for the embedded tester to function properly.  We have a bug at the moment where we fail to swap `{{bundle.xxx}}` references for your test data.
+
+
+![](https://zappy.zapier.com/0C4A809D-F332-4502-A664-73274FC318B5.png)
+
+In test configuration you'll need to switch to 'raw mode'.  Raw mode lets you take more control over your test parameters than 'pretty mode'. 
+
+Once in raw mode, find the `subscribeData` field.  In this object, create an entry for the id of your web hook subscription. When used in a real Zap, this variable will be populated automatically based on the data that your Subscribe endpoint returns. 
+
+![](https://zappy.zapier.com/6B3B4C9D-4AC7-4CE9-B06D-100E36D9BA50.png)
+
+With that configured, click "Test Your Request".  You should now be able to confirm that the subscription is removed in your system, by reviewing the response message in the UI here, and by direct inspection in your system. 
+
+**Perform List**
+
+A frequent question we get is "I'm building a rest hook - why do I need to define a polling endpoint?".  You define a "Perform List" to get actual data from your API to use as samples, to help the user set up Zaps with your trigger.  Zap setup is the only place this request will be called, but it's really important.  Having the user's data in the editor is critical for their success in getting a Zap configured and data mapped accurately.  If you don't define a PerformList, then the user needs to go into your app and do something to generate a new event while the Zap editor waits for data - it's not an optimal experience.  
+
+This request works just like setting up and testing a polling trigger, and testing it with the embedded tester is straightforward. 
+
+**Perform**
+
+Each time your API sends a web hook message to the Zap, the Zapier Platform will call the Javascript function you define in the Perform input.   Use this if you need to manipulate the data in the payload prior to passing your result to subsequent Zap steps.  Just return the appropriate object from `bundle.cleanedRequest` if you just want to pass along your webhooks payload without changing anything. You may need to put the response inside an array. We expect that the perform function returns a bare array of objects.  
+
+When using the embedded test tool, we aren't testing with a real webhook.  To test your perform function, you'll need to grab some sample data that your webhook will send to your trigger.  Go to the embedded test component,  select the "Incoming Webhook Message" in the request selector and switch to "Raw Mode" in the embedded test tool.  
+
+![](https://zappy.zapier.com/062388C5-FBA5-45CE-A5C3-D3F90B27A72E.png)
+
+Look for the `cleanedRequest` field.  Find the `body` field inside the `cleanedRequest` field.  This represents the body of the message your webhook service will send.  Be sure to fill in any inputData that's required as well.  Paste your sample data there and click "Test Your Request".  This will pass run your perform function passing it your sample data.  You'll be able to see the result returned and any errors thrown.  Add `z.console.log()` statements and you'll see those in the "Console" tab.  
+
+Here's an example of a configured test of our perform function.  Our webhook, when actually running, will send an HTTP message with a JSON object called `object_properties`, so in order to test we simulate that here.
+
+![](https://zappy.zapier.com/B68B9114-E9F5-4D81-A9E6-26CC26827AFB.png)
+
+Once you're happy with how all this is testing in the embedded tester, the next step is to go make a real Zap with your new Trigger and see how it works in the real world.  Be sure to check the logs in the Monitoring component to get feedback from your Zap testing.
