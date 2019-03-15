@@ -11,9 +11,7 @@ _Zane Lyon \| March 12, 2019_
 
 ![Zapier Platform UI](https://cdn.zapier.com/storage/photos/5eb1c7c2281da6c2fa5de7b89e3293e0.png)
 
-![Zapier Platform UI](https://cdn.zapier.com/storage/photos/5eb1c7c2281da6c2fa5de7b89e3293e0.png)
-
-We’re excited to introduce [Zapier Platform UI](https://zapier.com/app/developer/), a new edition of our web-based tool to integrate your API with Zapier. It's the easiest way to build a new Zapier integration, a ground-up rewrite with several key improvements:
+We’re excited to introduce an update to our Platform UI which includes a new edition of our [visual builder](https://zapier.com/app/developer/), a web-based tool to integrate your API with Zapier. It's the easiest way to build a new Zapier integration, a ground-up rewrite with several key improvements:
 
 - Be productive right away, even if you're new to Zapier, with an intuitive visual builder that feels familiar to other API tools. 
 - Interactively test and preview your work without leaving the tool.
@@ -27,9 +25,9 @@ And that's just the beginning! We’ve got a lot of great stuff coming throughou
 - A project exporter so you can switch over to the CLI any time.
 - Better documentation and learning tools.
 
-This is a brand new tool and as such, we’re bound to have a few hiccups. We want to hear about them and fix them fast, along with adding new features over the coming months. Something unclear or confusing? [We want to hear about that too](mailto:partners@zapier.com)! 
+This is a brand new tool and as such, we’re bound to have a few hiccups. We want to hear about them and fix them fast, along with adding new features over the coming months. Be sure to check out our list of [known issues](https://zapier.github.io/visual-builder/docs/knownissues). Something unclear or confusing? [We want to hear about that too](mailto:partners@zapier.com)! 
 
-## Get Started With Zapier Platform UI
+## Get Started With The Zapier Platform
 
 Here's how to get started:
 
