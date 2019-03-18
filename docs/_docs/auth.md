@@ -43,7 +43,7 @@ _→ [Add Session Auth to your Zapier Integration](https://zapier.github.io/visu
 
 API key authentication lets users enter a custom API key from your app, and can optionally request additional info such as a domain. Users will need to locate an API key from your app, then enter it in the Zapier authentication form. Zapier will then pass the API key, along with any additional authentication details needed, to authenticate each API call.
 
-_→ [Add API Key Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/api)_
+_→ [Add API Key Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/apikey)_
 
 ### [OAuth v2](https://zapier.github.io/visual-builder/docs/oauth)
 _Same authentication flow as [Twitter](https://developer.twitter.com/en/docs/basics/authentication/overview) and [Trello](https://developers.trello.com/page/authorization)'s OAuth v2 implementation_
