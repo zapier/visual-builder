@@ -11,8 +11,8 @@ Develop the best [Zapier](https://zapier.com/) integration for your app with Zap
 Zapier Platform UI is the easiest way to build new Zapier integrations in an online visual builder without any coding.
 
 - Try Zapier Platform UI: [zapier.com/app/developer](https://zapier.com/app/developer/)
-- Build a basic integration with the [Platform UI Quick Start tutorial](https://zapier.github.io/visual-builder/quickstart/introduction)
-- Learn more in [Zapier's Platform UI Documentation](https://zapier.github.io/visual-builder/docs/intro)
+- Build a basic integration with the [Platform UI Quick Start tutorial](https://platform.zapier.com/quickstart/introduction)
+- Learn more in [Zapier's Platform UI Documentation](https://platform.zapier.com/docs/intro)
 
 ## Zapier Platform CLI
 
