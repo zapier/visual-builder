@@ -3,7 +3,7 @@ title: Zapier Platform UI Documentation
 description: "Zapier Platform UI"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: kramdown
-baseurl: "/visual-builder"
+baseurl: ""
 
 plugins:
 - jekyll-redirect-from
