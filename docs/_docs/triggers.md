@@ -13,7 +13,7 @@ Every Zap starts with a trigger, powered by either a webhook subscription that w
 
 Triggers are how your app's users can start automated workflows whenever they add or update something in your app. New emails, messages, blog posts, subscribers, form entries, commits, and much more are the initial data that underpin every Zap.
 
-As triggers only watch for new data and typically need to send no or little data to the app, they're often quicker to setup than Zapier action steps. Zapier can watch for any new or updated item through your API—or optionally, you can include [input fields](https://zapier.github.io/visual-builder/docs/input-designer) for users to enter filters, tags, and other details to filter through new data and watch for the items they want.
+As triggers only watch for new data and typically need to send no or little data to the app, they're often quicker to setup than Zapier action steps. Zapier can watch for any new or updated item through your API—or optionally, you can include [input fields](https://platform.zapier.com/docs/input-designer) for users to enter filters, tags, and other details to filter through new data and watch for the items they want.
 
 > **Note**: Triggers are displayed in the order they are added to Zapier integrations, so be sure to add your app’s most important triggers first.
 
@@ -49,7 +49,7 @@ Once the settings are added, click _Save and Continue_ to add the new trigger an
 
 Most triggers need no user configuration. When something new is added to an app, the API pushes the details to Zapier to start the Zap, with no details needed. If your API supports filtering or requires specific details about the project, folder, or other location details for the data, you may need to add an input form where users can add the necessary details.
 
-In the second tab of the visual builder's trigger settings, add input fields for each data item you need from users for the trigger. Check our [Input Designer Guide](https://zapier.github.io/visual-builder/docs/input-designer) for complete details on how to create an input form and each of the field types and options available.
+In the second tab of the visual builder's trigger settings, add input fields for each data item you need from users for the trigger. Check our [Input Designer Guide](https://platform.zapier.com/docs/input-designer) for complete details on how to create an input form and each of the field types and options available.
 
 Once your form is complete—or if you don't need to include an input form—click the _API Configuration_ settings tab to set how Zapier will get data from your app and test the trigger.
 

@@ -25,13 +25,13 @@ And that's just the beginning! We’ve got a lot of great stuff coming throughou
 - A project exporter so you can switch over to the CLI any time.
 - Better documentation and learning tools.
 
-This is a brand new tool and as such, we’re bound to have a few hiccups. We want to hear about them and fix them fast, along with adding new features over the coming months. Be sure to check out our list of [known issues](https://zapier.github.io/visual-builder/docs/knownissues). Something unclear or confusing? [We want to hear about that too](mailto:partners@zapier.com)! 
+This is a brand new tool and as such, we’re bound to have a few hiccups. We want to hear about them and fix them fast, along with adding new features over the coming months. Be sure to check out our list of [known issues](https://platform.zapier.com/docs/knownissues). Something unclear or confusing? [We want to hear about that too](mailto:partners@zapier.com)! 
 
 ## Get Started With The Zapier Platform
 
 Here's how to get started:
 
 - **Try it!** [Get started]( https://zapier.com/app/developer/) and build a new integration in the visual builder.
-- **Documentation**: Go through our [quick start guide](https://zapier.github.io/visual-builder/quickstart/introduction) to learn how to build a sample integration in the Platform UI, then check our [new documentation](https://zapier.github.io/visual-builder/docs/intro) to discover more features.
+- **Documentation**: Go through our [quick start guide](https://platform.zapier.com/quickstart/introduction) to learn how to build a sample integration in the Platform UI, then check our [new documentation](https://platform.zapier.com/docs/intro) to discover more features.
 - **Slack**: Join [Zapier's Platform Slack group](https://zapier-platform-slack.herokuapp.com) to chat with our team and other developers.
 - **Email us**: Have more questions? [Send the Zapier support team an email](mailto:partners@zapier.com) to get help building your integration.

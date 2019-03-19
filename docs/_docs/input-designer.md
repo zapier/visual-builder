@@ -163,7 +163,7 @@ Do note that users can always choose to enter a custom value as the final option
 
 Dynamic Dropdown menus can also include an additional _Add a Search Step_ button beside the dropdown menu. This lets users dynamically select the correct item from a dynamic field based on input from previous Zap steps.
 
-You first need a [Search Trigger](https://zapier.github.io/visual-builder/docs/triggers) that can find the items used by this drop-down menu. Then check the _Search_ box under your dropdown menu, choose that trigger, and enter the ID of the field from that trigger that Zapier needs to pass with this API call (which should include the same data as the _Field Name_ you selected before for the dynamic menu).
+You first need a [Search Trigger](https://platform.zapier.com/docs/triggers) that can find the items used by this drop-down menu. Then check the _Search_ box under your dropdown menu, choose that trigger, and enter the ID of the field from that trigger that Zapier needs to pass with this API call (which should include the same data as the _Field Name_ you selected before for the dynamic menu).
 
 When users click the _Search_ button, Zapier will add a new Search step to their Zap before this action step. They can enter the details to search for the item they need, then Zapier will automatically map the correct output value from that search to this dynamic field.
 

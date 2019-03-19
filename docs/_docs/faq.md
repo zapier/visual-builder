@@ -42,7 +42,7 @@ The first time you switch to code mode, Zapier copies everything entered in the 
 
 In code mode, you can write JavaScript code, using Zapier's default code as a base or writing custom code. Use the `z.object` for Zapier specific features, including `z.console` to write to the console log, `z.JSON` to parse JSON, `z.errors` to take action on errors, and more. Check [Zapier's CLI Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for details.
 
-Additionally, use Zapier bundles to access auth data, data from user input forms, request data, and more. Learn more in our [Zapier bundle docs](https://zapier.github.io/visual-builder/docs/advanced#bundle).
+Additionally, use Zapier bundles to access auth data, data from user input forms, request data, and more. Learn more in our [Zapier bundle docs](https://platform.zapier.com/docs/advanced#bundle).
 
 > **Note**: Code Mode does not load any default libraries. If you need to load NPM modules, use [Zapier Platform CLI](https://zapier.github.io/zapier-platform-cli/) instead.
 

@@ -48,7 +48,7 @@ If you need to change a key and its value, first delete the old key, then add a 
 
 ![Zapier Computed Fields](https://cdn.zapier.com/storage/photos/b82edea722597f88f5c0d21a46d6c847.png)
 
-When adding an input field in your integration's authentication, Zapier includes a _Field Type_ option with two field options: _Field_ and _Computed Field_. The former is a standard input field much like those in the trigger and action [input designer](https://zapier.github.io/visual-builder/docs/input-designer), where users enter info needed for authentication.
+When adding an input field in your integration's authentication, Zapier includes a _Field Type_ option with two field options: _Field_ and _Computed Field_. The former is a standard input field much like those in the trigger and action [input designer](https://platform.zapier.com/docs/input-designer), where users enter info needed for authentication.
 
 > **Note:** Only use computed fields with session and OAuth v2 authentication.
 
@@ -75,7 +75,7 @@ Zapier integrations include the following bundles:
 
 Referenced with: {% raw %}`{{bundle.authData.field}}`{% endraw %}
 
-Includes data users enter into the authentication input form, including the `username` field for [Basic Auth](https://zapier.github.io/visual-builder/docs/basic) and any other field added to the authentication input form with other authentication methods. Additionally, with OAuth v2, Session Auth, and Digest Auth, `authData` includes all data returned by the Token Exchange Endpoint url, referenced with the following, replacing `field` with the field name from your API response:
+Includes data users enter into the authentication input form, including the `username` field for [Basic Auth](https://platform.zapier.com/docs/basic) and any other field added to the authentication input form with other authentication methods. Additionally, with OAuth v2, Session Auth, and Digest Auth, `authData` includes all data returned by the Token Exchange Endpoint url, referenced with the following, replacing `field` with the field name from your API response:
 
 {% raw %}`{{bundle.authData.field}}`{% endraw %}
 

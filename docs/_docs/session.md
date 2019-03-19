@@ -32,7 +32,7 @@ You will then need the following to set up Session Auth:
 <a id="form"></a>
 ## Add a Session Auth Input Form
 
-The first thing to add for Session auth is an _input form_. Much like [Zapier's input designer](https://zapier.github.io/visual-builder/docs/input-designer) for triggers and actions, this lets you design a simple form for users to enter their username, password, API key, domain, or any other data your API requires for authentication.
+The first thing to add for Session auth is an _input form_. Much like [Zapier's input designer](https://platform.zapier.com/docs/input-designer) for triggers and actions, this lets you design a simple form for users to enter their username, password, API key, domain, or any other data your API requires for authentication.
 
 In Step 1's _Configure your Fields_ section, click _Add Fields_ to add a new field to your input form. There, add the following details:
 
@@ -79,8 +79,8 @@ Finally add a connection label to uniquely identify each account users add from 
 - Any input field from your authentication form, or from your Token Exchange API call—enter {% raw %}`{{bundle.authData.field}}`{% endraw %}, replacing `field` with the input form field key or Token Exchange API call field
 - Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name
 
-Learn more in our [Connection Label documentation](https://zapier.github.io/visual-builder/docs/auth#label).
+Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 
 Click _Save & Continue_ when finished to save your authentication settings.
 
-Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app, exchange user credentials for an access or session token, and use your test API call. Check our [Authentication Testing docs](https://zapier.github.io/visual-builder/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.
+Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app, exchange user credentials for an access or session token, and use your test API call. Check our [Authentication Testing docs](https://platform.zapier.com/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.

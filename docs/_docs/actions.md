@@ -11,7 +11,7 @@ redirect_from: /docs/
 
 All Zaps start with a trigger that watches for new or updated data. They get the ball rolling. Everything a Zap does with that data, though, is done by actions.
 
-Zapier actions push or put new data into apps through API calls that pass data from user customized [input fields](https://zapier.github.io/visual-builder/docs/input-designer). 
+Zapier actions push or put new data into apps through API calls that pass data from user customized [input fields](https://platform.zapier.com/docs/input-designer). 
 
 Action steps in Zaps can create new items in an app or update existing items with a *create* action, or find existing items in an app with *search* actions (which can optionally be paired with create actions to add a new item if the search does not return a result). Every action additionally returns output fields detailing what was created—and that data can be used in subsequent steps to build detailed workflows.
 
@@ -27,7 +27,7 @@ Zapier does not allow action steps to delete or remove data, to prevent data los
 
 To add a new action step to a Zapier integration, open the _Actions_ page in Zapier visual builder from the sidebar on the left, and select _Add Action_. Start by selecting your action type. New actions are _Create_ type by default, and will add new data to your app. If your action should lookup existing items instead, select _Search_—then jump to the [Search](#search) section below for details on setting up a search action.
 
-Check our [Searches and Creates guide](https://zapier.github.io/visual-builder/docs/search-create) for more detail on the difference between create and search actions.
+Check our [Searches and Creates guide](https://platform.zapier.com/docs/search-create) for more detail on the difference between create and search actions.
 
 > **Note**: You cannot change an action type once you click _Save and Continue_ on a new action. If you need to change the action type, delete the action and recreate it.
 
@@ -51,7 +51,7 @@ Before building your action's input form, list each data item your app needs to 
 
 Add action fields for each item your app needs to create or find this item in your app. Add the fields in the order they're listed in your app, if possible, to make the Zapier integration easier for your users to use.
 
-> **Tip**: Check our detailed [Zapier input designer](https://zapier.github.io/visual-builder/docs/input-designer) guide for details on each option in the input designer, along with each field type you can add to your action's form.
+> **Tip**: Check our detailed [Zapier input designer](https://platform.zapier.com/docs/input-designer) guide for details on each option in the input designer, along with each field type you can add to your action's form.
 
 ## 3. Enter API Configuration
 
@@ -116,7 +116,7 @@ If you wish to do so, first add a relevant create action to your Zap. If your ac
 
 Then, in your new search action's settings, check the _Pair an existing create action_ box, and select the relevant action from the _Create Action_ menu. Additionally, add a new label that Zapier will show on this step if users choose to have the action create new items as well.
 
-The remainder of your action setup is much like building a Zapier trigger. You will need to add an [Input Form](https://zapier.github.io/visual-builder/docs/input-designer) to gather data for the search. Most search actions only include a single input field, sometimes along with a drop-down menu to select filter data.
+The remainder of your action setup is much like building a Zapier trigger. You will need to add an [Input Form](https://platform.zapier.com/docs/input-designer) to gather data for the search. Most search actions only include a single input field, sometimes along with a drop-down menu to select filter data.
 
 Finally, in the API configuration, add your API endpoint where Zapier will by default pass the search query in a `GET` call, then test the request and define output fields as with other actions.
 
@@ -140,4 +140,4 @@ You can, however, change actions' visibility at any time. Edit the action, then 
 
 You can remove an action at any time from Zapier visual builder's _Actions_ page. Click _Actions_ in the left sidebar, then click the gear beside any action you wish to remove. Select _Delete_, then confirm to remove the action fully.
 
-If you remove an action from a live Zapier integration, this will break existing Zaps. As such, before removing an action, always [create a new major version](https://zapier.github.io/visual-builder/docs/versions) of your integration, remove the action from the new version, then migrate users to the new version as when adding any other breaking changes to an integration.
+If you remove an action from a live Zapier integration, this will break existing Zaps. As such, before removing an action, always [create a new major version](https://platform.zapier.com/docs/versions) of your integration, remove the action from the new version, then migrate users to the new version as when adding any other breaking changes to an integration.

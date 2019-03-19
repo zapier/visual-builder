@@ -14,7 +14,7 @@ _Example Basic Auth screen for users inside Zapier_
 
 When you add Basic Auth to your integration, Zapier adds a pre-built form that requests a username and password whenever users authenticate with your API. Zapier then makes a test call to verify the credentials, and stores them to use with every subsequent API call Zapier makes to your app on behalf of the user. 
 
-> **When to use Basic Auth:** Use Basic Auth if your API only requires a username and password, needs no special configuration, and specifically if your API leverages "[HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)". If you need further customization of your login flow or need additional data from users, [API key authentication](https://zapier.github.io/visual-builder/docs/apikey) works the same as Basic auth but includes a customizable form where you can request additional authentication data from users.
+> **When to use Basic Auth:** Use Basic Auth if your API only requires a username and password, needs no special configuration, and specifically if your API leverages "[HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)". If you need further customization of your login flow or need additional data from users, [API key authentication](https://platform.zapier.com/docs/apikey) works the same as Basic auth but includes a customizable form where you can request additional authentication data from users.
 
 <a id="add"></a>
 ## How to Add Basic Auth to a Zapier Integration
@@ -53,8 +53,8 @@ Finally, add a connection label to your Zapier integration. Zapier always includ
 - The username that users enter in the Zapier authentication form when adding your app—enter {% raw %}`{{bundle.authData.username}}`{% endraw %} to include that
 - Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name.
 
-Learn more in our [Connection Label documentation](https://zapier.github.io/visual-builder/docs/auth#label).
+Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 
 Click _Save & Continue_ when finished to save your authentication settings.
 
-Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://zapier.github.io/visual-builder/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.
+Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://platform.zapier.com/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.

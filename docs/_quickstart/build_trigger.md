@@ -46,7 +46,7 @@ Add a _User Input Field_ in the _Input Designer_ tab first, where users can add 
 
 To make this example integration simple, use a `string` field type where the user can type the repo name into Zapier instead (then for a challenge later, you could try making a dynamic trigger that has Zapier fetch the users' repositories and show them in a list).
 
-> Learn more about Input forms in our detailed [input designer docs](https://zapier.github.io/visual-builder/docs/input-designer).
+> Learn more about Input forms in our detailed [input designer docs](https://platform.zapier.com/docs/input-designer).
 
 ![Zapier Visual Builder dropdown](https://cdn.zapier.com/storage/photos/992bbec7742b65a3b48df6c981e58610.png)
 

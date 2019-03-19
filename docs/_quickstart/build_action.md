@@ -41,7 +41,7 @@ _Each field type includes its own settings—and you can preview the finished in
 
 For our example GitHub integration, we need 4 input fields: `repo` to add the repository's name, `username` to add the repository's owner, `title` to list your issue title, and `body` to add details about the issue. Add the first three as you did in the Trigger setup, with the default `string` field type and the `repo`, `username`, or `title` keys respectively. Then, for the issue body, select a _Text_ field type so users can enter longer text and use the `body` key.
 
-> Learn more about Input forms in our detailed [input designer docs](https://zapier.github.io/visual-builder/docs/input-designer).
+> Learn more about Input forms in our detailed [input designer docs](https://platform.zapier.com/docs/input-designer).
 
 ## 3. Configure Your API
 

@@ -31,7 +31,7 @@ The visual builder additionally includes a code mode toggle on every API call, w
 
 Choose Zapier Platform UI for your integration if you're new to Zapier integration development, want an easy way to build a new integration, or have a team with non-engineers working together on the integration who would find the CLI more difficult to use.
 
-*→ Build a [new Zapier Platform UI integration](https://zapier.com/app/developer/app/new), check our [Quick Start Guide](https://zapier.github.io/visual-builder/quickstart/introduction) to build a sample integration, then get more info in [Zapier's Platform UI documentation](https://zapier.github.io/visual-builder/docs/intro).*
+*→ Build a [new Zapier Platform UI integration](https://zapier.com/app/developer/app/new), check our [Quick Start Guide](https://platform.zapier.com/quickstart/introduction) to build a sample integration, then get more info in [Zapier's Platform UI documentation](https://platform.zapier.com/docs/intro).*
 
 ## Zapier Platform CLI (Command Line Interface)
 

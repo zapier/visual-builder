@@ -49,4 +49,4 @@ You build that form in Zapier Input Designer when creating Zapier actions (and t
 
 Repeat that for every trigger and action your Zapier integration needs. Then test your integration—and get 10 or more others to help you test it—and you can release your Zapier integration to the world.
 
-Let's build that integration. Get a quick walkthrough of how with [Zapier's Platform UI quick start guide](https://zapier.github.io/visual-builder/quickstart/introduction), or continue to get detailed documentation on every Zapier visual builder feature.
+Let's build that integration. Get a quick walkthrough of how with [Zapier's Platform UI quick start guide](https://platform.zapier.com/quickstart/introduction), or continue to get detailed documentation on every Zapier visual builder feature.

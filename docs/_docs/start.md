@@ -15,7 +15,7 @@ To make a new integreation in Zapier Platform UI:
 
 1. Open Zapier's visual builder at [zapier.com/app/developer](https://zapier.com/app/developer/)
 2. Fill in the details about your app
-3. Add your API's [authentication](https://zapier.github.io/visual-builder/docs/auth), [triggers](https://zapier.github.io/visual-builder/docs/triggers), and [actions](https://zapier.github.io/visual-builder/docs/actions)
+3. Add your API's [authentication](https://platform.zapier.com/docs/auth), [triggers](https://platform.zapier.com/docs/triggers), and [actions](https://platform.zapier.com/docs/actions)
 
 If needed, you can come back anytime and update your app's name, logo, description, or category later.
 
@@ -52,7 +52,7 @@ Then, Zapier asks a few questions about your integration:
 - **Role**: Select your relationship to this app. Most public app integrations are built by their internal development teams, but if you want to build an integration for an app you're not affiliated with, you can still build a private integration.
 - **Category**: Choose the category that fits your app best. Always select the most appropriate, specific category for the features your app supports today. If your app covers multiple categories (for example, if it has both project management tools and social media management tools), choose the category that fits your app's primary use-case and selling point.
 
-Save your integration, then you're ready to [add your API authentication details](https://zapier.github.io/visual-builder/docs/auth) and start building your Zapier integration.
+Save your integration, then you're ready to [add your API authentication details](https://platform.zapier.com/docs/auth) and start building your Zapier integration.
 
 ## Edit Your Zapier Integration Info
 
@@ -60,4 +60,4 @@ Save your integration, then you're ready to [add your API authentication details
 
 Need to update your app's description or branding? You can do that anytime from your Zapier integration settings.
 
-Open your integration in Zapier Platform's visual editor, and click the gear icon beside your app name in the top left to update anything about your app, including your app's name. Do note that the changes will show up in existing Zaps that use your integration, so it's best to update branding in full [new versions of your integration](https://zapier.github.io/visual-builder/docs/versions) to launch alongside new features.
+Open your integration in Zapier Platform's visual editor, and click the gear icon beside your app name in the top left to update anything about your app, including your app's name. Do note that the changes will show up in existing Zaps that use your integration, so it's best to update branding in full [new versions of your integration](https://platform.zapier.com/docs/versions) to launch alongside new features.

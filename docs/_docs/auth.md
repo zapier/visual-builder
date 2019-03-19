@@ -24,42 +24,42 @@ All Zapier integrations that can access or add private data for users require au
 
 Add authentication to your integration before adding triggers or actions. To do so, click the _Authentication_ tab in the left sidebar of Zapier's visual builder, then select the authentication scheme your app uses. Zapier supports the following five authentication schemes, each with their own settings:
 
-### [Basic Auth](https://zapier.github.io/visual-builder/docs/basic)
+### [Basic Auth](https://platform.zapier.com/docs/basic)
 _As documented by [RFC 7616](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)_
 
 Basic authentication lets users connect their accounts to Zapier with a username and password through a pre-built form that Zapier then passes with each API call to authenticate the user. You only have to add a test API call to confirm the username and password are valid.
 
 Only use Basic Auth if it's the only way to authenticate your API calls, as it requires Zapier to store users' credentials.
 
-_→ [Add Basic Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/basic)_
+_→ [Add Basic Auth to your Zapier Integration](https://platform.zapier.com/docs/basic)_
 
-### [Session Auth](https://zapier.github.io/visual-builder/docs/session)
+### [Session Auth](https://platform.zapier.com/docs/session)
 
 Session authentication lets users enter their username and password or other app credentials, with optional custom fields if needed for authentication. Zapier then makes an API call to a token exchange URL where Zapier exchanges the credentials for an authentication token, which Zapier will use to authenticate every subsequent API call.
 
-_→ [Add Session Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/session)_
+_→ [Add Session Auth to your Zapier Integration](https://platform.zapier.com/docs/session)_
 
-### [API Key](https://zapier.github.io/visual-builder/docs/api)
+### [API Key](https://platform.zapier.com/docs/api)
 
 API key authentication lets users enter a custom API key from your app, and can optionally request additional info such as a domain. Users will need to locate an API key from your app, then enter it in the Zapier authentication form. Zapier will then pass the API key, along with any additional authentication details needed, to authenticate each API call.
 
-_→ [Add API Key Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/apikey)_
+_→ [Add API Key Auth to your Zapier Integration](https://platform.zapier.com/docs/apikey)_
 
-### [OAuth v2](https://zapier.github.io/visual-builder/docs/oauth)
+### [OAuth v2](https://platform.zapier.com/docs/oauth)
 _Same authentication flow as [Twitter](https://developer.twitter.com/en/docs/basics/authentication/overview) and [Trello](https://developers.trello.com/page/authorization)'s OAuth v2 implementation_
 
 OAuth v2 authentication lets users sign into app accounts and allow Zapier access via a popup window from that app. The app sends a request token before the user authenticates, which Zapier then exchanges for an access token after they authenticate.
 
 Use OAuth v2 whenever possible, as it matches users expectations for modern app authentication.
 
-_→ [Add OAuth v2 Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/oauth)_
+_→ [Add OAuth v2 Auth to your Zapier Integration](https://platform.zapier.com/docs/oauth)_
 
-### [Digest Auth](https://zapier.github.io/visual-builder/docs/digest)
+### [Digest Auth](https://platform.zapier.com/docs/digest)
 _As documented by [RFC 7616](https://tools.ietf.org/html/rfc7616)_
 
 Digest authentication lets users enter their username, password, and other required details for authentication in a Zapier-powered form. Then with every API call, Zapier first runs an API call to request the nonce key, before running the trigger or action's API call that passes the encrypted authentication details and any other API call data to your app. Zapier handles the nonce and quality of protection details automatically.
 
-_→ [Add Digest Auth to your Zapier Integration](https://zapier.github.io/visual-builder/docs/digest)_
+_→ [Add Digest Auth to your Zapier Integration](https://platform.zapier.com/docs/digest)_
 
 > Limitation: Currently, only the MD5 algorithm is supported; MD5-sess and SHA are not implemented. In addition, server nonces are not reused, so for every `z.request` call, Zapier will sends an additional request first to get the server nonce.
 
@@ -146,7 +146,7 @@ To remove a Zapier integration's authentication scheme, open the _Authentication
 
 Then add your app’s new authentication scheme to the Zapier integration instead.
 
-> **Note:** Never remove authentication from an existing, live integration. If an integration’s authentication scheme needs changed, clone a new major version and add the new authentication. Then migrate users to the new version, and deprecate the original version with breaking changes. [Learn more](https://zapier.github.io/visual-builder/docs/versions){:target="_blank"}
+> **Note:** Never remove authentication from an existing, live integration. If an integration’s authentication scheme needs changed, clone a new major version and add the new authentication. Then migrate users to the new version, and deprecate the original version with breaking changes. [Learn more](https://platform.zapier.com/docs/versions){:target="_blank"}
 
 <a id="error"></a>
 ## Common Authentication Error Messages

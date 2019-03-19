@@ -46,7 +46,7 @@ If your API's OAuth authentication needs additional details from users before it
 
 To add input fields, click the _Add Fields_ button, then select the type of field you need.
 
-Zapier includes two types of fields: standard fields, which work much like other form fields with Zapier's [input form](https://zapier.github.io/visual-builder/docs/input-designer) in Triggers and actions, and computed fields silently store data received from your app's authentication API calls. If you need to store data received from your server—such as team account names, domains, or subdomains—that are available in the API authentication calls and then needed for subsequent calls, select _Computed Field_. Then add the field key, using the same field name as your API's response—and leave the remaining fields blank. Zapier will automatically store this field's data when its received from the API call. Learn more in our [Computed Fields docs](https://zapier.github.io/visual-builder/docs/advanced#computed).
+Zapier includes two types of fields: standard fields, which work much like other form fields with Zapier's [input form](https://platform.zapier.com/docs/input-designer) in Triggers and actions, and computed fields silently store data received from your app's authentication API calls. If you need to store data received from your server—such as team account names, domains, or subdomains—that are available in the API authentication calls and then needed for subsequent calls, select _Computed Field_. Then add the field key, using the same field name as your API's response—and leave the remaining fields blank. Zapier will automatically store this field's data when its received from the API call. Learn more in our [Computed Fields docs](https://platform.zapier.com/docs/advanced#computed).
 
 For input fields, select the default _Field_ type, then add:
 
@@ -134,8 +134,8 @@ Finally add a connection label to help users identify each account that they add
 - Any input field from your authentication form—enter {% raw %}`{{bundle.authData.field}}`{% endraw %}, replacing `field` with your input form field key
 - Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name
 
-Learn more in our [Connection Label documentation](https://zapier.github.io/visual-builder/docs/auth#label).
+Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 
 Click _Save & Continue_ when finished to save your authentication settings.
 
-Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://zapier.github.io/visual-builder/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.
+Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://platform.zapier.com/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.

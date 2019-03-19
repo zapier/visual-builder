@@ -12,7 +12,7 @@ API Key authentication lets apps verify users account with an API key that is pa
 ![Zapier API key auth example](https://cdn.zapier.com/storage/photos/19467b7d1852276b766b373373fd069c.png)
 _Example API key auth screen for users inside Zapier_
 
-API Key authentication works similarly to Zapier's [Basic Auth](https://zapier.github.io/visual-builder/docs/basic) in that Zapier passes the credentials with every API call. Here, though, you need to build the [input form](https://zapier.github.io/visual-builder/docs/input-designer) where users add their API key and any other optional information your API requires, such as their account name, site URL, and other identifying data. You can additionally include help text under each field to direct users to where they can retrieve their API key.
+API Key authentication works similarly to Zapier's [Basic Auth](https://platform.zapier.com/docs/basic) in that Zapier passes the credentials with every API call. Here, though, you need to build the [input form](https://platform.zapier.com/docs/input-designer) where users add their API key and any other optional information your API requires, such as their account name, site URL, and other identifying data. You can additionally include help text under each field to direct users to where they can retrieve their API key.
 
 > **When to use API key authentiocation:** Use API key authentication if your API primarily uses an API key to identify accounts, especially with apps for weather, maps, content verification, file conversion, and other data tools that require a key for access to the service but do not contain user-specific content. Alternately, since API key authentication allows you to create a custom input form, you can use it to customize username and password-based logins that don't fit Zapier's default Basic auth scheme.
 
@@ -83,8 +83,8 @@ Finally add a connection label to help users identify each account that they add
 - Any input field from your authentication form—enter {% raw %}`{{bundle.authData.field}}`{% endraw %}, replacing `field` with your input form field key
 - Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name
 
-Learn more in our [Connection Label documentation](https://zapier.github.io/visual-builder/docs/auth#label).
+Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 
 Click _Save & Continue_ when finished to save your authentication settings.
 
-Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://zapier.github.io/visual-builder/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.
+Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://platform.zapier.com/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.

@@ -68,7 +68,7 @@ From there, the steps differ slightly depending on your authentication scheme, b
 
 The first step in adding authentication may not need any additional details with Basic, API key, and Digest auth, depending on your app's settings. Zapier automatically adds a form to request username and password with Basic Auth, and includes no settings to edit.
 
-With Digest and API Key authentication, Zapier again automatically adds a form where users can enter their username and password with Digest or API key with API key authentication. Here, though, you can additionally add input fields to request additional data, such as other account details or more commonly an app URL with self-hosted apps such as databases and CMSs. Check our [Input Designer](https://zapier.github.io/visual-builder/docs/input-designer) docs for details on adding input form fields—only here, you can only choose from _string_ and _password_ field types.
+With Digest and API Key authentication, Zapier again automatically adds a form where users can enter their username and password with Digest or API key with API key authentication. Here, though, you can additionally add input fields to request additional data, such as other account details or more commonly an app URL with self-hosted apps such as databases and CMSs. Check our [Input Designer](https://platform.zapier.com/docs/input-designer) docs for details on adding input form fields—only here, you can only choose from _string_ and _password_ field types.
 
 **Session Auth**
 
@@ -165,4 +165,4 @@ You cannot change an integration’s authentication scheme, but you can remove a
 
 Repeat the original steps to add your app’s new authentication scheme to the Zapier integration.
 
-> **Note:** Never remove authentication from an existing, live integration. If an integration’s authentication scheme needs changed, clone a new major version and add the new authentication. Then migrate users to the new version, and deprecate the original version with breaking changes. [Learn more](https://zapier.github.io/visual-builder/docs/versions){:target="_blank"}
+> **Note:** Never remove authentication from an existing, live integration. If an integration’s authentication scheme needs changed, clone a new major version and add the new authentication. Then migrate users to the new version, and deprecate the original version with breaking changes. [Learn more](https://platform.zapier.com/docs/versions){:target="_blank"}

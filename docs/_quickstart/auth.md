@@ -25,7 +25,7 @@ _Zapier supports a wide range of authentication schemes—select the best one fo
 
 We'll use basic auth in this sample GitHub integration to keep things simple. Click the _Authenticstion_ tab in Zapier visual builder, then select _Basic Auth_ from the menu. Zapier will create a form with input fields to collect the username and password automatically.
 
-> _If you want to use [OAuth](https://zapier.github.io/visual-builder/docs/oauth){:target="_blank"} or another authentication scheme, check our [auth docs](https://zapier.github.io/visual-builder/docs/auth) for more details and use them instead of the steps below._
+> _If you want to use [OAuth](https://platform.zapier.com/docs/oauth){:target="_blank"} or another authentication scheme, check our [auth docs](https://platform.zapier.com/docs/auth) for more details and use them instead of the steps below._
 
 ## 2. Add Authentication Details
 
@@ -39,7 +39,7 @@ With Basic authentication, you only specify an API endpoint to test the user’s
 
 _Add a connection label, and users' accounts in Zapier will be personalized to easily distinguish between multiple accounts._
 
-You can also add details to the account. Whenever a new account is authenticated with Zapier, Zapier adds a _Connection Label_ so users can identify accounts and add multiple accounts if desired. Customize this label with output fields from the API call (learn more in our [connection label docs](https://zapier.github.io/visual-builder/docs/auth#how-to-add-a-connection-label-to-authenticated-accounts)).
+You can also add details to the account. Whenever a new account is authenticated with Zapier, Zapier adds a _Connection Label_ so users can identify accounts and add multiple accounts if desired. Customize this label with output fields from the API call (learn more in our [connection label docs](https://platform.zapier.com/docs/auth#how-to-add-a-connection-label-to-authenticated-accounts)).
 
 For GitHub, add {% raw %}`{{bundle.authData.username}}`{% endraw %} to the _Connection Label_ to include users’ GitHub username along with the app name that Zapier automatically includes.
 
