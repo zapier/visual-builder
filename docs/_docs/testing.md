@@ -1,7 +1,7 @@
 ---
 title: Testing
 order: 13
-layout: post
+layout: post-toc
 redirect_from: /docs/
 ---
 
@@ -34,6 +34,8 @@ While building your integration, it's often best to use a new account specifical
 Once you've tested authentication, trigger and action steps are easy to test inside Zapier visual builder. Set up the trigger or action settings and API calls, then as the last step the familiar _Test Your API Response_ box appears. It will show any accounts you added to your integration previously while during authentication testing.
 
 For all action steps, along with triggers that include [input forms](https://platform.zapier.com/docs/input-designer), first fill in details for each of the fields in the _Configure Test Data_ form. Add data that will successfully work in this API call, similar to what you would use in a live Zap.
+
+Enter individual values in each field to add single objects. If you include commas in the field data, Zapier will turn that field into an array in your API call. Click the _Raw_ button to preview the JSON formatted data from your test data that Zapier will send with the API call.
 
 Then click _Test Your Request_ to run the trigger or action step. Zapier will notify you if it run successfully and show the JSON results which you can explore as in the Authentication testing.
 
