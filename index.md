@@ -30,3 +30,9 @@ Maintain existing Zapier integrations built with Zapier's original web builder:
 - [Web Builder Documentation](https://zapier.com/developer/documentation/v2/reference/)
 - [Web Builder Scripting](https://zapier.com/developer/documentation/v2/scripting/)
 - [Example Web Builder Apps](https://zapier.com/developer/documentation/v2/example-apps/)
+
+## Join the Community
+
+Learn from the Zapier team and other Zapier platform developers in our communities!
+
+- Join [Zapier Platform's Slack group](https://join.slack.com/t/zapier-platform/shared_invite/enQtNTg1MjM5NjMzNTI3LWVhZjk3NjFlNWFiMTBmMDExMzI5NDZiZmFiOTJjYmI3NmY2MzEwZDUxNzQ3MTliMTM5N2M3NGM2MmQ2Y2VkODE)
