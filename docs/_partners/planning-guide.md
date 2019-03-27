@@ -1,9 +1,109 @@
 ---
-title: How Does Zapier Work?
+title: How to Build a Zapier Integration
 order: 1
 layout: post-toc
 redirect_from: /docs/
 ---
+
+## How to Build a Zapier Integration
+
+No app can do everything on its own. The best apps instead focused on their core features, then integrations let them work alongside dozens of other great apps to do the rest. That brings every app’s strong points together—and is what the Zapier platform enables.
+
+A Zapier integration connects your app to 1,300+ of the best business and productivity apps, and puts it in front of millions of Zapier users when they need new apps.
+
+Here are the core things to keep in mind to build a great Zapier integration.
+
+## How to Brand Your Zapier Integration
+
+![Zapier App Directory](https://cdn.zapier.com/storage/photos/49f490f3f9e7e612d9da70627b626fc7.png)
+_The Zapier App Directory is the best way to find new apps to add to your workflows_
+
+Your customers already recognize your app name and logo, and they’ll look for it inside Zapier. New customers who are looking for a new tool may also first discover your app through Zapier. That makes a consistent branding experience a core part of a successful Zapier integration.
+
+The search for new apps and integrations starts at the [Zapier App Directory](https://zapier.com/apps/). Apps are ranked by popularity and category, with a search box to filter through the list.
+
+![Zapier app directory pages](https://cdn.zapier.com/storage/photos/448439d942fa0c522b0ac25ee3e5cacd.png)
+_App Directory listings help users discover new ways to connect apps_
+
+Click on an app—or search for an app’s integrations—to see its Zapier’s app profile page. Your app’s branding plays the strongest role here as the first place many users will see your app on Zapier. They can explore details about your app and its integrations, or select another popular app to see details about how the two work together.
+
+App profile pages include Zap Templates, predefined and curated examples of popular integration use cases with pre-mapped fields that users can set up in a few clicks.
+
+![Zapier Explore Tab](https://cdn.zapier.com/storage/photos/26bf54b3d6882df8df6be38a84b4fc3a.png)
+
+Inside Zapier’s account dashboard, the _Explore_ tab shows Zap Templates and Zapier content for apps users have connected to their accounts.
+
+![Zap editor app selector](https://cdn.zapier.com/storage/photos/91688ba735515ecdaed48f6f06e7e9b6.png)
+
+Then, inside the core Zapier app, users will again see your app name and logo in the Zap editor, where they can select the apps they want to connect in a Zap.
+
+When you create a Zapier integration, you’ll be asked to add your app’s name, logo, description, category, along with your brand colors when the integration is launched publicly. Follow these guidelines to effectively brand your app on Zapier:
+
+### App Name
+
+Use the actual, unique name of your app with the same capitalization as your company uses in your core branding.
+
+Do not add adjectives or phrases to your app name, and only include your company name if the company and app name are always used together in your branding. Do not include the word _app_ unless you always include that in your app’s branding.
+
+**Example**:
+
+- `Evernote`, not `Evernote Note Taking App` or `EverNote`
+- `Google Sheets`, not `Sheets` or `Google Spreadsheets`
+
+### App Logo
+
+Zapier requires a square, transparent PNG formatted logo at least 256x256px in size (please use a bigger version if you have one available). The logo should have a transparent background; if your app has a solid, square background, round the corners 3% of the width.
+
+Do not include the app name in the logo as it will not be legible at small sizes.
+
+### App Description Copy
+
+Write a short description (up to 140 characters) of your app’s core features and use case. Include your app’s name in the description, then explain what makes your app different and the reason one should use it. Use proper English and full sentences.
+
+Do not use flowery or overstated language, and do not mention Zapier or other apps in the description. Do not simply state your app’s category.
+
+**Example**:
+
+- `Trello is a team collaboration tool to organize anything on a kanban board.`, not `Trello is the best project management tool.`
+- `Dropbox lets you store files online, sync them to all your devices, and share them easily.`, not `A file storage app.`
+
+### Category
+
+Select the category that best fits your apps’ core features and use case. If your app includes features from multiple categories, choose the category that best describes your app’s primary use case today.
+
+Categories may be updated in the future, so do not select a category that your app does not fit into today but that you anticipate it will fit in with future updates. Additionally, do not select a category that applies only to a secondary feature in your app, nor a narrow category that does not cover your app’s broader focus.
+
+**Example**:
+
+- _Gmail_ is primarily an app to send and receive email messages, so it fits best in the `email` category alongside services like _Microsoft Office 365_, not in the `email newsletters` category with _Mailchimp_.
+- _Slack_ is primarily a team communication tool for chat, so it fits best in the `team chat` category alongside apps like _Discord_ and _ChatWork_, not in the `video calls` category even though it does include a video call tool as a secondary feature.
+- _Google Contacts_ is primarily an address book that fits best with other `contacts` apps, while _HubSpot CRM_ can manage contacts but also includes deals and contact tracking which makes it a better fit for the `CRM` category.
+
+### Colors
+
+![Zapier primary colors in App Directory](https://cdn.zapier.com/storage/photos/d78c5f1c6ee7eb8ac9ae4501e9e103eb.png)
+
+When you release your Zapier integration to the public, Zapier asks for two additional brand details: Your app’s primary and secondary colors.
+
+The Primary color is the main color used in your app’s logo or branding. The secondary color is a complementary color from your CTAs or as an accent to your primary color.
+
+Do not use pure white (`#FFFFFF`) for either color, as overlaid text would be unreadable. If your logo is black and white, use the next most common color from your branding.
+
+Zapier uses the primary color as the background color in your app’s Zapier App Directory listing, and may additionally use it and the secondary color in the Zapier app dashboard, Zapier blog marketing materials, and other parts of Zapier’s app and content that promote your app’s integrations.
+
+## How to Design a Successful Zapier Integration
+
+
+
+### Auth
+Triggers
+Actions
+Searches
+
+
+
+
+
 
 ## How Does Zapier Work?
 
