@@ -1,11 +1,11 @@
 ---
-title: How to Add Zapier Integrations to Your App and Marketing
-order: 3
+title: How to Include Zapier in Your App and Website
+order: 4
 layout: post-toc
 redirect_from: /docs/
 ---
 
-## How to Add Zapier Integrations to Your App and Marketing
+## How to Include Zapier in Your App and Website
 
 ## Introduction
 

@@ -52,15 +52,13 @@ When adding an input field in your integration's authentication, Zapier includes
 
 > **Note:** Only use computed fields with session and OAuth v2 authentication.
 
-Computed Fields, on the other hand, store values obtained from an integration's API test call, so they can be referenced in your integration's subsequent API calls.
+Computed Fields, on the other hand, store values obtained from an integration's API test call, so they can be referenced in your integration's subsequent API calls. Use the same field key as the name your API uses for this field. Zapier then will match the API test call's output to your computed field, make sure the response includes that field, and will show an error if that field is not included. You can then reference the field in any subsequent API call from your integration from the input bundle with the following text, replacing `field` with your field key:
+
+{% raw %}`{{bundle.authData.field}}`{% endraw %}
 
 Say your app includes a subdomain that can be fetched with an API call using the API key—and your other API calls require the subdomain be used in requests. You would add a computed field that references that value from your server's response, much like the way you reference fields in connected accounts.
 
-Zapier stores all fields returned by authentication API test call and auth process. Computed fields, however, are marked as _required_ internally, so if the auth process does not return the field referenced in your computed field, Zapier will show an error. For example, if using OAuth v.2 authentication, the `getAccessToken` request must return any computed fields included in your app's authentication input form.
-
-If your app API calls in triggers or actions require account details or other info that users shouldn't have to enter manually, include a computed field in your app's authentication input fields. For the _Key_, use the exact same field name as the one your API returns. Zapier then will match the API test call's output to the field you included, so you can reference it from the input bundle with the following text, replacing `field` with your field key:
-
-{% raw %}`{{bundle.authData.field}}`{% endraw %}
+Zapier stores all fields returned by authentication API test call and auth process. Computed fields are marked as _required_ so Zapier watches specifically for those fields in the response data. If the auth process does not return fields marked as computed fields, Zapier will show an error. For example, if using OAuth v.2 authentication, Zapier will store all fields returned by the `getAccessToken` request, and will show an error if the response doesn't include an access token along with any fields you marked as computed fields.
 
 <a id="bundle"></a>
 ## Zapier Data Bundles

@@ -46,7 +46,9 @@ If your API's OAuth authentication needs additional details from users before it
 
 To add input fields, click the _Add Fields_ button, then select the type of field you need.
 
-Zapier includes two types of fields: standard fields, which work much like other form fields with Zapier's [input form](https://platform.zapier.com/docs/input-designer) in Triggers and actions, and computed fields silently store data received from your app's authentication API calls. If you need to store data received from your server—such as team account names, domains, or subdomains—that are available in the API authentication calls and then needed for subsequent calls, select _Computed Field_. Then add the field key, using the same field name as your API's response—and leave the remaining fields blank. Zapier will automatically store this field's data when its received from the API call. Learn more in our [Computed Fields docs](https://platform.zapier.com/docs/advanced#computed).
+Zapier includes two types of fields: standard fields, which work much like other form fields with Zapier's [input form](https://platform.zapier.com/docs/input-designer) in Triggers and actions, and computed fields which make sure specific fields are returned by your app's authentication API call response.
+
+If you need to verify data is received from the auth API response—such as team account names, domains, or subdomains—select _Computed Field_. Then add the field key, using the same field name as your API's response—and leave the remaining fields blank. Zapier will then make sure this field is included in the response data, and you can reference it in subsequent API calls. Zapier will show an error if a field marked as computed is not inlcuded in the response data. Learn more in our [Computed Fields docs](https://platform.zapier.com/docs/advanced#computed).
 
 For input fields, select the default _Field_ type, then add:
 

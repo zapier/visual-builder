@@ -44,6 +44,8 @@ In Step 1's _Configure your Fields_ section, click _Add Fields_ to add a new fie
 
 Be sure to add one fields for every piece of data users need to enter to authenticate their account with your API, as by default with Session auth, Zapier does not include any input fields.
 
+If you need to use data received from the auth API response—such as team account names, domains, or subdomains—you can also optionall add a _Computed Field_. Add the field key, using the same field name as your API's response—and leave the remaining fields blank, and Zapier will then make sure this field is included in the response data, and you can reference it in subsequent API calls. Zapier will show an error if a field marked as computed is not inlcuded in the response data. Learn more in our [Computed Fields docs](https://platform.zapier.com/docs/advanced#computed).
+
 Save each field after adding it, then click _Continue_ when every field your API needs has been added.
 
 <a id="access"></a>

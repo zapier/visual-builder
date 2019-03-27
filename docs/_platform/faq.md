@@ -5,4 +5,5 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Tips and FAQs
+## Zapier Partnership Tips and FAQs
+
