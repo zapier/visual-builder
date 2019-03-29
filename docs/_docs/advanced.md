@@ -60,6 +60,12 @@ Say your app includes a subdomain that can be fetched with an API call using the
 
 Zapier stores all fields returned by authentication API test call and auth process. Computed fields are marked as _required_ so Zapier watches specifically for those fields in the response data. If the auth process does not return fields marked as computed fields, Zapier will show an error. For example, if using OAuth v.2 authentication, Zapier will store all fields returned by the `getAccessToken` request, and will show an error if the response doesn't include an access token along with any fields you marked as computed fields.
 
+### How to Use a Field From the Test API Call as a Computed Field?
+
+Zapier stores every field from the core API authentication calls in OAuth v2 and Session auth, but does not store the responses from the test API call. If you need to use the data from a test API call later in your Zapier integration, you need to instead have Zapier call that API along with your Token Exchange Endpoint or Authorization URL call.
+
+To do that, use the _Code Mode_ option and have Zpaier call both the URL needed for the authorization step along with your test API call. You can then include computed fields for data returned from either API call.
+
 <a id="bundle"></a>
 ## Zapier Data Bundles
 
