@@ -64,7 +64,7 @@ Zapier stores all fields returned by authentication API test call and auth proce
 
 Zapier stores every field from the core API authentication calls in OAuth v2 and Session auth, but does not store the responses from the test API call. If you need to use the data from a test API call later in your Zapier integration, you need to instead have Zapier call that API along with your Token Exchange Endpoint or Authorization URL call.
 
-To do that, use the _Code Mode_ option and have Zpaier call both the URL needed for the authorization step along with your test API call. You can then include computed fields for data returned from either API call.
+To do that, use the _Code Mode_ option and add custom code to have Zapier call both the URL needed for the authorization step and with your test API call. You can then include computed fields for data returned from either API call and reference them in later steps.
 
 <a id="bundle"></a>
 ## Zapier Data Bundles
