@@ -26,7 +26,7 @@ collections:
   news:
     output: true
     permalink: /:collection/:name
-  cli_tutorials
+  cli_tutorials:
     output: true
     permalink: /:collection/:name
 
