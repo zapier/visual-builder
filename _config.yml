@@ -26,6 +26,9 @@ collections:
   news:
     output: true
     permalink: /:collection/:name
+  cli_tutorials
+    output: true
+    permalink: /:collection/:name
 
 defaults:
   - scope:
@@ -43,3 +46,8 @@ defaults:
       type: "news"
     values:
       layout: default  
+  - scope:
+      path: ""
+      type: "cli_tutorials"
+    values:
+      layout: default
