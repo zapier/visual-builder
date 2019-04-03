@@ -72,8 +72,6 @@ The next function to implement is the `unsubscribeHook` function which will be c
 
 * `[bundle.subscribeData.id](http://bundle.subscribedata.id/)` is required — this is the ID of the hook in question. You could assign it to `hookID` variable or similar.
 
-~~You must send the request as a DELETE.~~
-
 It would look something like this:
 
 ```
