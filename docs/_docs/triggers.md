@@ -85,6 +85,7 @@ Alternately, if your app supports [REST Hooks](http://resthooks.org/)—or webho
 
 With a REST Hook trigger, you need to add a Subscribe and Unsubscribe URL, along with a Perform List URL where Zapier should check for recent items. Zapier requires the response to include an array of items, which Zapier will then deduplicate and use to trigger the Zap to run.
 
+<a id="perform"></a>
 ![Rest Hook Perform](https://cdn.zapier.com/storage/photos/5c6c154be13fbcad2a5dc8cb786f2dea.png)
 
 Finally, you can customize the code to evaluate the data your app's webhooks pass to Zapier. By default, Zapier includes `return [bundle.cleanedRequest];` to return the object from your previous step. If your data needs transformed or includes multiple objects, add custom code to parse the response data from the Perform List URL call in `bundle.cleanedRequest` and turn it into an array of objects Zapier can use in deduplication, such as [this example code](https://gist.github.com/maguay/7109e9f885304794852d1dd400dc4887).
