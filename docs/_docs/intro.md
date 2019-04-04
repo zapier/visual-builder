@@ -49,4 +49,22 @@ You build that form in Zapier Input Designer when creating Zapier actions (and t
 
 Repeat that for every trigger and action your Zapier integration needs. Then test your integration—and get 10 or more others to help you test it—and you can release your Zapier integration to the world.
 
-Let's build that integration. Get a quick walkthrough of how with [Zapier's Platform UI quick start guide](https://platform.zapier.com/quickstart/introduction), or continue to get detailed documentation on every Zapier visual builder feature.
+## How Does Zapier Work?
+
+All new Zapier integrations are built using Zapier Platform v3, the latest version of our development platform. You can build an integration using Zapier's Platform CLI, a command line interface to build integrations in JavaScript code from your local development environment. Or, you could build integrations using Zapier Platform UI, an online visual builder to create integrations in a form layout.
+
+Both interfaces use the same Zapier Platform and function the same internally. In general, Zapier integrations include definitions of API calls for triggers that watch for new and updated data, searches that request specific data, and create actions that send new data to an API. Zapier bundles your app definition along with any input data received from users in life Zaps, prepares API requests, includes authentication details, and makes the API call. Zapier then parses the API response for individual fields and deduplicates the results from Trigger and Search steps that expect an array of results.
+
+Zapier will then take action depending on the step. For triggers, if the item is new, Zapier then runs the remaining Zap steps. For searches, if an item exists, Zapier will perform resource hydration, parse its details and run subsequent steps in the Zap; if it does not exist, Zapier may stop the Zap or run a create action to add that item, depending on user selection in the Zap setup. For actions, Zapier will return the results after creating the item, and either run subsequent steps in the Zap if the Zap includes additional steps, or stop the Zap and log this run of the Zap as successful.
+
+Here's a diagram example of how this works with a trigger step; search and create steps work similarly with their differing final steps as outlined above:
+
+![Zapier Platform Diagram](https://cdn.zapier.com/storage/photos/54fe2e91170f3337ed8648ec29e97aaf.png)
+
+Trigger steps's internal workflow differs if triggered with a rest hook as well.
+
+See [Zapier's Platform CLI documentation](https://zapier.github.io/zapier-platform-cli/#getting-started) for more detail on how Zapier integrations work.
+
+***
+
+Now that you know how Zapier works, let's build your Zapier integration. Get a quick walkthrough of how with [Zapier's Platform UI quick start guide](https://platform.zapier.com/quickstart/introduction), or continue to get detailed documentation on every Zapier visual builder feature.
