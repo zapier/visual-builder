@@ -124,7 +124,7 @@ followed by:
 ```
 module.exports = {
   // Other data about the Trigger
-  perform: getPayload
+  perform: parsePayload
 };
 ```
 
