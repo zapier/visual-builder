@@ -29,7 +29,7 @@ collections:
   cli_tutorials:
     output: true
     permalink: /:collection/:name
-legacy:
+  legacy:
     output: true
     permalink: /:collection/:name
 
