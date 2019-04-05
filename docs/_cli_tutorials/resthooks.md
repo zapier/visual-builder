@@ -70,7 +70,7 @@ This function will then run every time the Zap is turned on.
 
 The next function to implement is the `unsubscribeHook` function which will be called when a Zap is turned off. This will notify your servers so you can delete the URL you've been storing and stop sending payloads to it. This takes the following parameters:
 
-* `[bundle.subscribeData.id](http://bundle.subscribedata.id/)` is required — this is the ID of the hook in question. You could assign it to `hookID` variable or similar.
+* `bundle.subscribeData.id` is required — this is the ID of the hook in question. You could assign it to a `hookID` variable or similar.
 
 It would look something like this:
 
@@ -124,7 +124,7 @@ followed by:
 ```
 module.exports = {
   // Other data about the Trigger
-  perform: getPayload
+  perform: parsePayload
 };
 ```
 
