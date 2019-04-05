@@ -59,7 +59,7 @@ At this point, we have the authentication setup and are ready to make our first 
 
 The trigger we are going to build will watch Bitbucket for new repositories being added to a user's account. Generally, the first trigger you add to an App should be for an API endpoint that requires authentication and is guaranteed to always return some data. This allows Zapier to verify that the authentication credentials a user provides are valid (we make an actual API call to check).
 
-From your App, click the "Add your first test trigger" button. 
+From your App, click the "Add your first test trigger" button.
 
 ![Create trigger button](https://cdn.zapier.com/storage/photos/e63bd6a12406ef571f227e3af4c8030b.png)
 
@@ -155,7 +155,7 @@ The default field is all that is needed for Pivotal Tracker, so click next to go
 
 ![Example of auth mapping](https://cdn.zapier.com/storage/photos/2a653262320b7342993fdb7d0d2b65fc.png)
 
-This mapping, combined with our choice of headers in Step 1, tells Zapier to take whatever value a user provides in the api_key authentication field and include it as the X-TrackerToken HTTP header. Requests we make will automatically have the header included! 
+This mapping, combined with our choice of headers in Step 1, tells Zapier to take whatever value a user provides in the api_key authentication field and include it as the X-TrackerToken HTTP header. Requests we make will automatically have the header included!
 
 *Note: To find out more about the &#123;&#123;api_key&#125;&#125;, check out our [variable syntax docs](https://platform.zapier.com/legacy/docs#variable-syntax/).*
 
@@ -165,7 +165,7 @@ At this point, we have the authentication setup and are ready to make our test t
 
 In order to verify the API keys users provide, we need to build a test trigger. The test trigger is simply an API call to an endpoint that requires authentication and is guaranteed to always return some data. This allows Zapier to verify that an API key a user provides is valid. For Pivotal Tracker, we'll use the /me endpoint as the test call.
 
-From your App, click the "Add your first test trigger" button. 
+From your App, click the "Add your first test trigger" button.
 
 ![Create trigger button](https://cdn.zapier.com/storage/photos/e63bd6a12406ef571f227e3af4c8030b.png)
 
@@ -301,7 +301,7 @@ To get your redirect URI, don't forget to set up your authentication settings, i
 
 ![https://cdn.zapier.com/storage/photos/b33516a2c469757a0240f82fd68edc6b.png](https://cdn.zapier.com/storage/photos/b33516a2c469757a0240f82fd68edc6b.png)
 
-And at the very end of that walkthrough, you will be able to input the information given to you from Formstack for your specific developer app: 
+And at the very end of that walkthrough, you will be able to input the information given to you from Formstack for your specific developer app:
 
 ![https://cdn.zapier.com/storage/photos/cb2f685b45250306c6ea1884f50a5251.png](https://cdn.zapier.com/storage/photos/cb2f685b45250306c6ea1884f50a5251.png)
 
@@ -336,8 +336,8 @@ Now it's time for the main attraction! This is what this example is building up 
 
 Here are the pieces we'll need in this step:
 
-* The subscribe URL which looks something like `https://www.formstack.com/api/v2/form/{% templatetag openvariable %}form_id{% templatetag closevariable %}/webhook.json`
-* The **un**subscribe URL which looks something like `https://www.formstack.com/api/v2/webhook/{% templatetag openvariable %}webhook_id{% templatetag closevariable %}.json`
+* The subscribe URL which looks something like `{% raw %}https://www.formstack.com/api/v2/form/{% templatetag openvariable %}form_id{% templatetag closevariable %}/webhook.json{% endraw %}`
+* The **un**subscribe URL which looks something like `{% raw %}https://www.formstack.com/api/v2/webhook/{% templatetag openvariable %}webhook_id{% templatetag closevariable %}.json{% endraw %}`
 
 First thing is first, we'll we'll need to set those subscription URLs up at the app level, you should see a button to manage your trigger settings.
 
@@ -363,7 +363,7 @@ There are a few things going on, but the two most important are "Key" and "Dynam
 * For the Dynamic Dropdown, there are three parts separated by a `.`:
   * `trigger_key` which references which trigger by key you'd like to us.
   * `field_id` which key from each object is the one we're interested (in this case it is the form_**id** we want).
-  * `field_name` which key from object is the nice human readable version (in this case it is just **name**). 
+  * `field_name` which key from object is the nice human readable version (in this case it is just **name**).
 
 Both `field_id` and `field_name` are plucked from the JSON response that we get, for example, in this screenshot for the editor:
 
@@ -385,11 +385,12 @@ The three methods we'll need to use are:
 
 * `pre_subscribe` - ensure the request to subscribe matches what Formstack expects.
 * `post_subscribe` - ensure Zapier can store the data to identify the webhook.
-* `pre_unsubscribe` - ensure Zapier can unsubscribe from the identified webhook. 
+* `pre_unsubscribe` - ensure Zapier can unsubscribe from the identified webhook.
 
 Again, we are going to reference the Formstack documentation for [creating](https://developers.formstack.com/docs/form-id-webhook-post) and [removing](https://developers.formstack.com/docs/webhook-id-delete) webhooks to understand the format needed for both `pre_` calls. Check out the code snippet below for a better understanding:
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 var Zap = {
     pre_subscribe: function(bundle) {
         bundle.request.method = 'POST';
@@ -413,7 +414,8 @@ var Zap = {
         return bundle.request;
     },
 };
-```
+{% endraw %}
+{% endhighlight %}
 
 Now, you are ready to hop back to the [Editor](https://zapier.com/app/dashboard) and test the trigger properly! If you check out the "Test this Step" section and click the continue button, you should see a spinner that appears as we perform the **subscribe** step:
 
@@ -483,7 +485,7 @@ The first thing to do is describe how the API authenticates, you can click the *
 
 ![https://cdn.zapier.com/storage/photos/b33516a2c469757a0240f82fd68edc6b.png](https://cdn.zapier.com/storage/photos/b33516a2c469757a0240f82fd68edc6b.png)
 
-If your browse the [Mad Mimi developer docs](https://madmimi.com/developer) you'll notice they place their authentication bits in the querystring of a URL like so: `?username={% templatetag openvariable %}username{% templatetag closevariable %}&api_key={% templatetag openvariable %}api_key{% templatetag closevariable %}`. Luckily Zapier supports **API Key Querystring** authentication natively!
+If your browse the [Mad Mimi developer docs](https://madmimi.com/developer) you'll notice they place their authentication bits in the querystring of a URL like so: `{% raw %}?username={% templatetag openvariable %}username{% templatetag closevariable %}&api_key={% templatetag openvariable %}api_key{% templatetag closevariable %}{% endraw %}`. Luckily Zapier supports **API Key Querystring** authentication natively!
 
 ![https://cdn.zapier.com/storage/photos/344629ea9b18ae7c6b347ad5b6d6abe2.png](https://cdn.zapier.com/storage/photos/344629ea9b18ae7c6b347ad5b6d6abe2.png)
 
@@ -505,12 +507,14 @@ Finally, you'll need to define the mapping: that is where we take the user provi
 
 In case it the above screenshot is hard to read or you need some copy pasta, here are the values in the raw for the auth mapping:
 
-```javascript
-{
+{% highlight javascript %}
+{% raw %}
+
     "username": "{% templatetag openvariable %}username{% templatetag closevariable %}",
     "api_key": "{% templatetag openvariable %}api_key{% templatetag closevariable %}"
 }
-```
+{% endraw %}
+{% endhighlight %}
 
 ### Your First Trigger
 
@@ -556,21 +560,24 @@ The input, code and output that works for this example is this:
 
 #### Input
 
-```xml
+{% highlight xml %}
+{% raw %}
 <?xml version="1.0" encoding="UTF-8"?>
 <lists>
   <list subscriber_count="0" display_name="" name="My Test List" id="933748"/>
 </lists>
-```
+{% endraw %}
+{% endhighlight %}
 
 #### Code
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 Zap = {
 	audience_list_post_poll: function(bundle) {
         // use the provided dom methods with a familiar jquery interface
         var xmlElements = $($.parseXML(bundle.response.content)).find('list');
-        // return a list of objects that are json serializable 
+        // return a list of objects that are json serializable
         return _.map(xmlElements, function(listElement) {
             listElement = $(listElement);
             // pull off each attribute manually, place into object
@@ -583,11 +590,13 @@ Zap = {
         });
 	},
 };
-```
+{% endraw %}
+{% endhighlight %}
 
 #### Output
 
-```json
+{% highlight json %}
+{% raw %}
 [
     {
         "name": "My Test List",
@@ -596,7 +605,8 @@ Zap = {
         "subscriber_count": "0"
     }
 ]
-```
+{% endraw %}
+{% endhighlight %}
 
 If you want to check out more examples for `post_poll` methods check out our [scripting documentation](https://platform.zapier.com/legacy/scripting/#trigger-post-poll-examples).
 
@@ -630,7 +640,7 @@ Now your action fields should look something like this:
 
 ![https://cdn.zapier.com/storage/photos/7ed43b565a4281a860ecb65a36a23602.png](https://cdn.zapier.com/storage/photos/7ed43b565a4281a860ecb65a36a23602.png)
 
-The last step is letting us know where we should `POST` the data to! The URL should look something like `http://api.madmimi.com/audience_lists/{% templatetag openvariable %}audience_list{% templatetag closevariable %}/add`. Note, the `audience_list` variable in the URL: that is referencing the dynamic dropdown action field. In the interface, the URL should be be placed in this location:
+The last step is letting us know where we should `POST` the data to! The URL should look something like `{% raw %} http://api.madmimi.com/audience_lists/{% templatetag openvariable %}audience_list{% templatetag closevariable %}/add{% endraw %}`. Note, the `audience_list` variable in the URL: that is referencing the dynamic dropdown action field. In the interface, the URL should be be placed in this location:
 
 ![https://cdn.zapier.com/storage/photos/cee53c671f37b6c9dd4dfb5c7282f78a.png](https://cdn.zapier.com/storage/photos/cee53c671f37b6c9dd4dfb5c7282f78a.png)
 
@@ -638,13 +648,16 @@ And that's it for the action definition, next up we need to convert our default 
 
 #### Default Input
 
-```text
+{% highlight text %}
+{% raw %}
 {"email":"hello@world.com"}
-```
+{% endraw %}
+{% endhighlight %}
 
 #### Code
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 Zap = {
     // place other methods from earlier code here!
 
@@ -654,13 +667,16 @@ Zap = {
         return bundle.request;
     }
 };
-```
+{% endraw %}
+{% endhighlight %}
 
 #### Corrected Output
 
-```text
+{% highlight text %}
+{% raw %}
 email=hello%40world.com
-```
+{% endraw %}
+{% endhighlight %}
 
 Alrighty, that wraps up all the work we need to do to make this action work. You are welcome to expand action fields out past `email` by including `first_name`, `last_name`, `country`, `state`, etc. However, we're going to leave this example as simple as possible!
 
@@ -718,7 +734,7 @@ For this example, we will skip this step. If we later wanted to add actions or t
 
 ### Setting up a trigger
 
-The trigger we are going to add for Hubspot will use webhooks to listen for new contacts. From your App, click the "Add your first test trigger" button. 
+The trigger we are going to add for Hubspot will use webhooks to listen for new contacts. From your App, click the "Add your first test trigger" button.
 
 ![Create trigger button](https://cdn.zapier.com/storage/photos/e63bd6a12406ef571f227e3af4c8030b.png)
 
@@ -758,7 +774,7 @@ Continue down to Step 5 and click the "Insert Fields" button. You will get a dro
 
 ![Step 5 of Zap Editor](https://cdn.zapier.com/storage/photos/75bf01664f562862d470f7cde489a840.png)
 
-Now is also a good time to point out the value in renaming the fields when we pasted in the sample while building our trigger. Zapier turned the nested key `{properties: {firstname: {value: "joe@example.com"}}}` into "Properties Firstname Value". We can go back and edit our trigger to rename that field to just be "Contact First Name". 
+Now is also a good time to point out the value in renaming the fields when we pasted in the sample while building our trigger. Zapier turned the nested key `{properties: {firstname: {value: "joe@example.com"}}}` into "Properties Firstname Value". We can go back and edit our trigger to rename that field to just be "Contact First Name".
 
 If you like, you can continue to fill out the Zap. On Step 6, when you click the test button, you will likely get a popup that says Zapier could not find any samples. All you need to do make Hubspot send a webhook by enrolling a contact into the workflow you setup. We'll catch the webhook and display it as a sample result. Once you get that, you can be sure your trigger is configured properly.
 
@@ -831,7 +847,7 @@ In order to verify the authentication users provide, we need to build a test tri
 
 **NOTE:** Usually there’s a `/me` or `/user` endpoint you can use, in most APIs.
 
-From your App, click the "Add Your First Test Trigger" button. 
+From your App, click the "Add Your First Test Trigger" button.
 
 ![Create trigger button](https://cdn.zapier.com/storage/photos/a66e947b1745ae4b850fe6c9bcd9c0ad.png)
 
@@ -861,7 +877,8 @@ Click the “Edit Code” button.
 
 According to SimplyBook’s documentation, the authentication needs to be a `POST` request to `https://user-api.simplybook.me/login`, with a JSON body, like:
 
-```json
+{% highlight json %}
+{% raw %}
 {
   "jsonrpc": "2.0",
   "method": "getUserToken",
@@ -872,11 +889,13 @@ According to SimplyBook’s documentation, the authentication needs to be a `POS
   ],
   "id": 1
 }
-```
+{% endraw %}
+{% endhighlight %}
 
 That means we should make Scripting look like:
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 'use strict';
 
 var Zap = {
@@ -913,12 +932,12 @@ var Zap = {
         // Fire off the key exchange request.
         token_response = z.request(token_request_payload);
         parsed_response = z.JSON.parse(token_response.content);
-        
+
         // Handle errors (ideally we'd look in the response status_code)
         if (parsed_response.error) {
             throw new HaltedException('Error: ' + parsed_response.error.message);
         }
-        
+
         // Extract the `user_token` from the returned JSON.
         if (parsed_response.result) {
             user_token = parsed_response.result;
@@ -932,7 +951,7 @@ var Zap = {
 
     // Modify the request details before checking auth
     auth_test_pre_poll: function(bundle) {
-        
+
         // Build Request Body
         var request_data = {
             jsonrpc: '2.0',
@@ -940,12 +959,12 @@ var Zap = {
             params: [],
             id: 1
         };
-        
+
         bundle.request.data = z.JSON.stringify(request_data);
 
         return bundle.request;
     },
-    
+
     // Check if there's an invalid session
     auth_test_post_poll: function(bundle) {
         var parsed_response = z.JSON.parse(bundle.response.content);
@@ -958,7 +977,8 @@ var Zap = {
         return parsed_response.result;
     }
 };
-```
+{% endraw %}
+{% endhighlight %}
 
 Don’t forget to Save (top right button)!
 
@@ -1004,7 +1024,8 @@ Here’s what we’ll need in Step 3:
 
 Click “Save & Next”. In this last step we’ll add a sample object. This won’t usually be shown to the user in the UI, unless they skip the test step:
 
-```json
+{% highlight json %}
+{% raw %}
 {
     "id": "1",
     "record_date": "2016-05-10 20:25:01",
@@ -1024,7 +1045,8 @@ Click “Save & Next”. In this last step we’ll add a sample object. This won
     "comment": "",
     "code": "test"
 }
-``` 
+{% endraw %}
+{% endhighlight %}
 
 Feel free to mark special fields as important and create better labels (we’ll automatically figure that out if you don’t set anything)
 
@@ -1036,7 +1058,8 @@ Now we just need to use Scripting to customise (add `pre_poll` and `post_poll` f
 
 Basically Scripting should become this:
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 'use strict';
 
 var Zap = {
@@ -1073,12 +1096,12 @@ var Zap = {
         // Fire off the key exchange request.
         token_response = z.request(token_request_payload);
         parsed_response = z.JSON.parse(token_response.content);
-        
+
         // Handle errors (ideally we'd look in the response status_code)
         if (parsed_response.error) {
             throw new HaltedException('Error: ' + parsed_response.error.message);
         }
-        
+
         // Extract the `user_token` from the returned JSON.
         if (parsed_response.result) {
             user_token = parsed_response.result;
@@ -1089,7 +1112,7 @@ var Zap = {
         // Now we get the user_token!
         return { 'user_token': user_token };
     },
-    
+
     // Add custom headers to a bundle
     add_custom_headers: function(bundle) {
         bundle.request.method = 'POST';
@@ -1107,7 +1130,7 @@ var Zap = {
     // Modify the request details before checking auth
     auth_test_pre_poll: function(bundle) {
         bundle = this.add_custom_headers(bundle);
-        
+
         // Build Request Body
         var request_data = {
             jsonrpc: '2.0',
@@ -1115,12 +1138,12 @@ var Zap = {
             params: [],
             id: 1
         };
-        
+
         bundle.request.data = z.JSON.stringify(request_data);
 
         return bundle.request;
     },
-    
+
     // Check if there's an invalid session
     auth_test_post_poll: function(bundle) {
         var parsed_response = z.JSON.parse(bundle.response.content);
@@ -1132,11 +1155,11 @@ var Zap = {
 
         return parsed_response.result;
     },
-    
+
     // Modify the request details before getting bookings
     new_booking_pre_poll: function(bundle) {
         bundle = this.add_custom_headers(bundle);
-        
+
         // Build Request Body
         var request_data = {
             jsonrpc: '2.0',
@@ -1144,12 +1167,12 @@ var Zap = {
             params: [],
             id: 1
         };
-        
+
         bundle.request.data = z.JSON.stringify(request_data);
 
         return bundle.request;
     },
-    
+
     // Check if there's an invalid session
     new_booking_post_poll: function(bundle) {
         var parsed_response = z.JSON.parse(bundle.response.content);
@@ -1162,7 +1185,8 @@ var Zap = {
         return parsed_response.result;
     }
 };
-```
+{% endraw %}
+{% endhighlight %}
 
 At this point, we have a visible trigger that we are ready to test.
 
@@ -1287,24 +1311,27 @@ For Step 3 we only need to set the `https://user-api.simplybook.me/admin` as the
 
 In the last step, the API only returns the client ID, so that’s what we’ll add:
 
-```json
+{% highlight json %}
+{% raw %}
 {
     "id": 1
 }
-```
+{% endraw %}
+{% endhighlight %}
 
 ![Step 4 of Create Client action](https://cdn.zapier.com/storage/photos/ef67befa4d96adf6acea08c9eb419fd1.png)
 
 This API requires us to do some changes in the Scripting (your API might not), so we’ll add the following methods:
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 var Zap = {
     // other methods...
 
     // Modify the request details before creating a client
     create_client_pre_write: function(bundle) {
         bundle = this.add_custom_headers(bundle);
-        
+
         // Build Request Body
         var request_data = {
             jsonrpc: '2.0',
@@ -1312,12 +1339,12 @@ var Zap = {
             params: [bundle.action_fields],
             id: 1
         };
-        
+
         bundle.request.data = z.JSON.stringify(request_data);
 
         return bundle.request;
     },
-    
+
     // Check if there's an invalid session
     create_client_post_write: function(bundle) {
         var parsed_response = z.JSON.parse(bundle.response.content);
@@ -1326,7 +1353,7 @@ var Zap = {
         if (parsed_response && parsed_response.error) {
             throw new InvalidSessionException();
         }
-        
+
         var result = {
             id: parsed_response.result.message
         };
@@ -1334,7 +1361,8 @@ var Zap = {
         return result;
     }
 };
-```
+{% endraw %}
+{% endhighlight %}
 
 We’re now ready to test the action! Zap away!
 
@@ -1374,26 +1402,29 @@ Here’s how Step 4 should look. We’re using the same `https://user-api.simply
 
 For the final step, we add the sample JSON for a single object:
 
-```json
+{% highlight json %}
+{% raw %}
 {
     "name": "Test Client",
     "phone": "+1111-111-1111",
     "email": "test@example.com"
 }
-```
+{% endraw %}
+{% endhighlight %}
 
 ![Step 5 of Find Client search](https://cdn.zapier.com/storage/photos/112b114fae7a9d4d178ee7b4200ff293.png)
 
 This API requires us to do some changes in the Scripting (your API might not), so we’ll add the following methods:
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 var Zap = {
     // other methods...
 
     // Modify the request details before finding a client
     find_client_pre_search: function(bundle) {
         bundle = this.add_custom_headers(bundle);
-        
+
         // Build Request Body
         var request_data = {
             jsonrpc: '2.0',
@@ -1401,12 +1432,12 @@ var Zap = {
             params: [bundle.search_fields.query],
             id: 1
         };
-        
+
         bundle.request.data = z.JSON.stringify(request_data);
 
         return bundle.request;
     },
-    
+
     // Check if there's an invalid session
     find_client_post_search: function(bundle) {
         var parsed_response = z.JSON.parse(bundle.response.content);
@@ -1418,14 +1449,14 @@ var Zap = {
 
         return parsed_response.result;
     },
-    
+
     // Modify the request details before fetching a client
     find_client_pre_read_resource: function(bundle) {
         bundle = this.add_custom_headers(bundle);
-        
+
         // NOTE: This API doesn't really have a "GET" endpoint,
         // so we search for email and hope for the best.
-        
+
         // Build Request Body
         var request_data = {
             jsonrpc: '2.0',
@@ -1433,12 +1464,12 @@ var Zap = {
             params: [bundle.read_fields.email],
             id: 1
         };
-        
+
         bundle.request.data = z.JSON.stringify(request_data);
 
         return bundle.request;
     },
-    
+
     // Check if there's an invalid session
     find_client_post_read_resource: function(bundle) {
         var parsed_response = z.JSON.parse(bundle.response.content);
@@ -1447,9 +1478,9 @@ var Zap = {
         if (parsed_response && parsed_response.error) {
             throw new InvalidSessionException();
         }
-        
+
         var result = [];
-        
+
         // Only return the object
         if (parsed_response.result && parsed_response.result.length > 0) {
             result = parsed_response.result[0];
@@ -1458,7 +1489,8 @@ var Zap = {
         return result;
     }
 };
-```
+{% endraw %}
+{% endhighlight %}
 
 Now we have a working Create Client action and Find Client search!
 

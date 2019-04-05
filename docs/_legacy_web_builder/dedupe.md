@@ -18,7 +18,8 @@ An unfortunate artifact of [polling]({{base_url}}polling/) for new data is that 
 
 For example, say your endpoint returns a list of to-dos:
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 [
   {
     "id": 7,
@@ -35,15 +36,17 @@ For example, say your endpoint returns a list of to-dos:
     "complete": false
   }
 ]
-```
+{% endraw %}
+{% endhighlight %}
 
-Every time a new Zap is created or turned on, we make a call to your API to populate our deduplication mechanism. We will cache and store each `id` field in our database. 
+Every time a new Zap is created or turned on, we make a call to your API to populate our deduplication mechanism. We will cache and store each `id` field in our database.
 
 After this, we will poll at an interval (based on customer's plan) looking for changes against this cached list of `id`s.
 
 Now let's say we created a new to-do:
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 [
   {
     "id": 8,
@@ -67,7 +70,8 @@ Now let's say we created a new to-do:
     "complete": false
   }
 ]
-```
+{% endraw %}
+{% endhighlight %}
 
 Only the first to-do with `id` equal to `8` will be seen as a new item. That particular JSON object will then be passed through to the action in the user's Zap. The others will be ignored since we already have seen their ids.
 
@@ -81,7 +85,8 @@ What if the items your API returns do not have an `id` field? Or how would you g
 
 Let's assume your to-do API has an endpoint to return to-dos sorted by `updatedAt` in descending direction. This is how you would use the scripting post poll trigger method:
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 var Zap = {
   TRIGGER_KEY_post_poll: function(bundle) {
     var items = z.JSON.parse(bundle.response.content);
@@ -92,7 +97,8 @@ var Zap = {
     return items;
   }
 }
-```
+{% endraw %}
+{% endhighlight %}
 
 Notice how we preserve the original value before setting `id` to a new combined value that is unique for every update of a to-do.
 

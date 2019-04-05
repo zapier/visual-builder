@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## How to Build a Zapier Integration
+# How to Build a Zapier Integration
 
 No app can do everything on its own. The best apps are instead focused on their core features, then rely on integrations with dozens of other great apps to do the rest. That is what the Zapier platform enables. It brings the best of every app together.
 
@@ -113,6 +113,3 @@ Beyond the surface of how your app's listing appears in Zapier, the even more cr
 Triggers
 Actions
 Searches
-
-
-

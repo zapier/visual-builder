@@ -1,6 +1,6 @@
 ---
 title: How to Maintain a Zapier Integration
-order: 3
+order: 2
 layout: post-toc
 redirect_from: /docs/
 ---
@@ -43,7 +43,7 @@ If you want others on your team to receive the issue notifications, or would lik
 
 ## How to Make a New Version of Your Integration
 
-The Zapier platform makes it easy to 
+The Zapier platform makes it easy to
 
 
 
@@ -65,9 +65,9 @@ Contact us at [partners@zapier.com](mailto:partners@zapier.com) with your intent
 
 Your team will [build](https://zapier.com/developer/documentation/v2/lifecycle-development/) a completely new version of the integration following our [App Development Guide](https://zapier.com/developer/documentation/v2/app-dev-guide/), [accumulate test users](https://zapier.com/developer/documentation/v2/lifecycle-activation/#2-have-at-least-10-unique-zapier-users-currently-using-your-app-and-1-live-zap-for-each-of-the-visible-triggers-actions-and-searches), [submit the integration for review](https://zapier.com/developer/documentation/v2/lifecycle-activation/#3-submit-your-app-for-public-activation) like a normal app, and address any feedback we provide. A review is required for all replacement apps to ensure there are no issues.
 
-> **Note:** You will need to accumulate enough test users on your new integration before you can request for review. Please expect some time between when you submit for review and when the new integration is made “Public”, as the speed of the review depends on how closely your integration matches our style guide and the responsiveness of your team to our feedback. 
+> **Note:** You will need to accumulate enough test users on your new integration before you can request for review. Please expect some time between when you submit for review and when the new integration is made “Public”, as the speed of the review depends on how closely your integration matches our style guide and the responsiveness of your team to our feedback.
 
-When the review process is complete, we'll "hide" the older version of your integration, and deploy the newer version, so it becomes the default version that's used for creating new Zaps. 
+When the review process is complete, we'll "hide" the older version of your integration, and deploy the newer version, so it becomes the default version that's used for creating new Zaps.
 
 If the existing API endpoints in the old integration are **still working and available**, it is set back to “Invite-only” for Web Builder integration and “Pending” for CLI integration. Existing users’ Zaps will continue to work "as is", but no users will be able to create new Zaps with the old version. Any Zaps using the old integration will show a “Legacy” label to prompt users to update their Zaps to use the new one.
 

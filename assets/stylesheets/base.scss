@@ -4,6 +4,7 @@ $baseurl: "{{ site.baseurl }}";
 
 // Vendor
 @import "vendor/normalize";
+@import "vendor/syntax-highlighting";
 
 // Core
 @import "core/variables";
