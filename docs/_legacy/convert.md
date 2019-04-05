@@ -1,17 +1,15 @@
 ---
 title: How to Convert a Legacy Web Builder Integration to Zapier Platform UI or CLI
-order: 2
+order: 1
 layout: post-toc
 redirect_from: /legacy/
 ---
 
 # How to Convert a Legacy Web Builder Integration to Zapier Platform UI or CLI
 
-The Zapier Platform 
+The original Zapier Platform included a Web Builder to build Zapier integrations in your browser. In the years since then, Zapier has moved on to our newer Platform v3 which includes both a CLI to build integrations in your local coding environment, and a UI with a visual builder to build new integrations in your browser.
 
-## What is the Web Builder-to-CLI converter tool?
-
-In 2017 Zapier introduced a new version of our developer platform and a new tool to connect your API to Zapier.  We call it the Zapier Command Line Interface (“CLI”).  Existing Web Builder apps can't run on the new platform directly nor take advantage of its new features.  The Web Builder to CLI converter tool is a feature of the CLI that will generate a new version of your existing Zapier app that will run on the CLI platform.
+If you have an existing Zapier integration built with our now-legacy Web Builder, here's how to convert it to the newest version of the Zapier Platform and maintain it using Zapier Platform CLI.
 
 ## Why should I convert my Zapier app to the CLI?
 
