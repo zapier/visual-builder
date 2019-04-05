@@ -1,6 +1,6 @@
 ---
 title: How to Convert a Legacy Web Builder Integration to Zapier Platform UI or CLI
-order: 2
+order: 1
 layout: post-toc
 redirect_from: /legacy/
 ---

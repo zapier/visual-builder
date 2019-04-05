@@ -29,9 +29,6 @@ collections:
   cli_tutorials:
     output: true
     permalink: /:collection/:name
-legacy:
-    output: true
-    permalink: /:collection/:name
 
 
 defaults:
@@ -53,10 +50,5 @@ defaults:
   - scope:
       path: ""
       type: "cli_tutorials"
-    values:
-      layout: default
-  - scope:
-      path: ""
-      type: "legacy"
     values:
       layout: default

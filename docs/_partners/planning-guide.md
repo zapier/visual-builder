@@ -103,6 +103,10 @@ Zapier uses the primary color as the background color in your app’s Zapier App
 
 ## How to Design a Successful Zapier Integration
 
+Beyond the surface of how your app's listing appears in Zapier, the even more crucial factor is how your integration works. Effective Zapier integrations
+
+### What to Include in a Zapier Integration?
+
 
 
 ### Auth
