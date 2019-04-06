@@ -187,7 +187,7 @@ If you haven't added custom scripting to your Web Builder app, then the CLI proj
 * A library called legacy-scripting-runner that is introduced into your project modules that handles executing the code in scripting.js.
 * For operations that you've customized with scripting, you'll see some code in those triggers/actions/searches that configures and calls the legacy script runner.  If you wrote this code for the CLI, you'd write it directly in the perform method and skip all the references to legacy scripting runner
 
-{% highlight text %}
+{% highlight javascript %}
 {% raw %}
 const getList = (z, bundle) => {
   const scripting = require('../scripting');
@@ -214,7 +214,7 @@ const getList = (z, bundle) => {
 
 Rewriting to be more “native CLI” like, it would become something like:
 
-{% highlight text %}
+{% highlight javascript %}
 {% raw %}
 const getList = (z, bundle) => {
   const responsePromise = z.request({
