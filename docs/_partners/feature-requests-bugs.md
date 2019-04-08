@@ -49,9 +49,7 @@ The Zapier platform makes it easy to
 
 ## How to Replace Your Zapier Integration
 
-
-
-If you have an integration that's usable by other people (either as [invite-only or public](https://zapier.com/developer/documentation/v2/lifecycle-development/#app-management-and-status)), there are limitations on the types of changes that you can make in your integration, in order to avoid breaking the Zaps that your users have created on it.
+If you have an integration that's usable by other people (either as invite only or pbulic), there are limitations on the types of changes that you can make in your integration, in order to avoid breaking the Zaps that your users have created on it.
 
 Sometimes, there are occasions when you need to make a "major change" to an integration - either switching things to use a newer version of the endpoints/API (and thus, changing the structure of the data that's used), changing the authentication type (like switching to OAuth v2 tokens), or rewriting a Web-Builder integration using our [CLI Platform](https://zapier.github.io/zapier-platform-cli/cli.html).
 
