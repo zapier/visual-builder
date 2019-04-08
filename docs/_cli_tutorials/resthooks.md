@@ -1,6 +1,6 @@
 ---
 title: How to Use REST Hooks in Zapier CLI
-order: 1
+order: 2
 layout: post-toc
 redirect_from: /cli-tutorials/
 ---
@@ -43,7 +43,7 @@ const subscribeHook = (z, bundle) => {
     something_else: true
     // etc
   };
-  
+
   const options = {
     url: 'your endpoint url',
     method: 'POST',
@@ -78,12 +78,12 @@ It would look something like this:
 const unsubscribeHook = (z, bundle) => {
   // bundle.subscribeData contains the parsed response from the subscribeHook function.
   const hookId = bundle.subscribeData.id
-  
+
   const options = {
     url: `your endpoint url/${hookId}`,
     method: 'DELETE',
   }
-  
+
   return z.request(options)
     .then((response => z.JSON.parse(response.content));
 };
@@ -172,6 +172,6 @@ This should be a function that calls an endpoint you control with a payload of d
 
 This should be a function that processes the inbound webhook request. No `HTTP` request has to made here. As seen in our example app [here](https://github.com/zapier/zapier-platform-example-app-rest-hooks/blob/master/triggers/recipe.js#L41-L54), this can simply take the data from `bundle``.``cleanedRequest` and build a new object that is returned within an array. It's important to return this object within an array as specified [here](https://github.com/zapier/zapier-platform-cli#return-types).
 
-### `performList` 
+### `performList`
 
 Testing the trigger of a REST hook app will only call `performList`, not `perform`. `performList` ideally should make a `HTTP` request to an endpoint that can return data the user can use to set up the Zap. As exampled [here](https://github.com/zapier/zapier-platform-example-app-rest-hooks/blob/master/triggers/recipe.js#L56-L67). This is required for public apps to ensure the best UX for the end-user. Situations where a user is “waiting” for a hook to return sample data generally result in confusion and a bad UX.

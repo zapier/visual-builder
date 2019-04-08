@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-## Zapier Intro
+# Zapier Intro
 
 Your app can't do everything. It shouldn't. Despite every new feature request, the best thing is a clear focus on what makes your app unique.
 

@@ -29,6 +29,12 @@ collections:
   cli_tutorials:
     output: true
     permalink: /:collection/:name
+  legacy_web_builder:
+    output: true
+    permalink: /:collection/:name
+  partners:
+    output: true
+    permalink: /:collection/:name
 
 defaults:
   - scope:
@@ -40,14 +46,24 @@ defaults:
       path: ""
       type: "docs"
     values:
-      layout: default      
+      layout: default
   - scope:
       path: ""
       type: "news"
     values:
-      layout: default  
+      layout: default
   - scope:
       path: ""
       type: "cli_tutorials"
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "legacy_web_builder"
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "partners"
     values:
       layout: default

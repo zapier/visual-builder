@@ -63,9 +63,11 @@ You can find your app id by going to the web UI and selecting your Web Builder a
 
 From the terminal run
 
-```
+{% highlight text %}
+{% raw %}
 zapier convert 1234 your-new-cli-app-dir
-```
+{% endraw %}
+{% endhighlight %}
 
 where “1234” is the web builder app id you located in step 2, and “your-new-cli-app-dir” is the local directory that the generated code will be placed.
 
@@ -77,7 +79,8 @@ At this point it's just code in your local environment.  **Your Web Builder app 
 
 When you open up your new project folder you'll see a collection of new files and directories similar to:
 
-```
+{% highlight text %}
+{% raw %}
 your-app
 ├── creates
     └── issue.js
@@ -95,7 +98,8 @@ your-app
 ├── authentication.js
 ├── index.js
 └── package.json
-```
+{% endraw %}
+{% endhighlight %}
 
 Some key files and directories to note:
 
@@ -183,7 +187,8 @@ If you haven't added custom scripting to your Web Builder app, then the CLI proj
 * A library called legacy-scripting-runner that is introduced into your project modules that handles executing the code in scripting.js.
 * For operations that you've customized with scripting, you'll see some code in those triggers/actions/searches that configures and calls the legacy script runner.  If you wrote this code for the CLI, you'd write it directly in the perform method and skip all the references to legacy scripting runner
 
-```
+{% highlight javascript %}
+{% raw %}
 const getList = (z, bundle) => {
   const scripting = require('../scripting');
   const legacyScriptingRunner = require('zapier-platform-legacy-scripting-runner')(scripting);
@@ -204,11 +209,13 @@ const getList = (z, bundle) => {
     return legacyScriptingRunner.runEvent(postPollEvent, z, bundle);
   });
 };
-```
+{% endraw %}
+{% endhighlight %}
 
 Rewriting to be more “native CLI” like, it would become something like:
 
-```
+{% highlight javascript %}
+{% raw %}
 const getList = (z, bundle) => {
   const responsePromise = z.request({
       method: 'GET',
@@ -219,7 +226,8 @@ const getList = (z, bundle) => {
     return JSON.parse(response.content);
   });
 };
-```
+{% endraw %}
+{% endhighlight %}
 
 ## Common issues and how to fix them
 

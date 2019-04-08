@@ -1,6 +1,6 @@
 ---
 title: How to Use Dynamic Dropdowns in Zapier CLI
-order: 2
+order: 3
 layout: post-toc
 redirect_from: /cli-tutorials/
 ---
@@ -13,7 +13,7 @@ redirect_from: /cli-tutorials/
 
 API endpoints sometimes require clients to specify a parent object in order to create or access the child resources, for instance, specifying a spreadsheet ID in order to retrieve its worksheets. Since people don't speak in auto-incremented ID's, Zapier offers a simple way for users to select that parent object using human readable handles.
 
-Zapier does that with a dropdown that is populated by making a live API call to fetch a list of parent objects. We call these special dropdowns "dynamic dropdowns." 
+Zapier does that with a dropdown that is populated by making a live API call to fetch a list of parent objects. We call these special dropdowns "dynamic dropdowns."
 
 ![screenshot of dynamic dropdown in Zap Editor](https://cdn.zapier.com/storage/photos/dd31fa761e0cf9d0abc9b50438f95210.png)  
 

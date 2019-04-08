@@ -1,11 +1,11 @@
 ---
 title: How to Include Zapier in Your App and Website
-order: 4
+order: 3
 layout: post-toc
 redirect_from: /docs/
 ---
 
-## How to Include Zapier in Your App and Website
+# How to Include Zapier in Your App and Website
 
 ## Introduction
 
@@ -187,7 +187,7 @@ Keep these guidelines in mind:
 - **Use present tense and active voice** as in the Zap title.
 - **1 paragraph, 2-4 sentences** is enough for most Zap Template descriptions.
 - **Don’t use Zapier-specific terminology** including Zap, Zap Template, trigger, action, or terms that Zapier doesn’t support, such as sync. Instead, use generic words, such as `integration` or `automation`, that are universally understood.
-- **Use same terms as the integrations themselves**. If an app calls the results of a form an “entry” don’t call it a “submission,” or if an email app uses "tags," don’t refer to "folders." 
+- **Use same terms as the integrations themselves**. If an app calls the results of a form an “entry” don’t call it a “submission,” or if an email app uses "tags," don’t refer to "folders."
 - **Include tips at the end**. If your Zap Template requires extra setup for filters or other steps, or if it doesn't cover all use cases users may expect, include a sentence at the end to clarify. Start the tip with `Note:`, and format the entire note in italics with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) formatting. For example: `*Note: Add the tag you want to the Zap's [Filter](https://zapier.com/learn/getting-started-guide/filters/) step.*`
 
 > **Note**: Always write unique descriptions for each Zap Template—we will reject Zap Templates that use the same descriptions but only replace app names.
@@ -338,7 +338,7 @@ With an empty `<div id="zapierhere"></div>` in your Component's template, your C
       constructor(el: ElementRef) {
         this.el = el.nativeElement
       }
-    
+
       ngAfterViewInit() {
         this.zapierScript = document.createElement('script')
         this.zapierScript.type = 'text/javascript'
