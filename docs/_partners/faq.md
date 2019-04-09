@@ -83,7 +83,7 @@ There are two solutions:
 * Leave the field as "optional", and use custom code in your API call to set a value if left blank.
 * Please [contact us](mailto:partners@zapier.com) and we'll try to find the best approach.
 
-## Do not remove this trigger/action/search! Be sure its key matches a trigger/action/search in the new app if you did not remove it.
+### Do not remove this trigger/action/search! Be sure its key matches a trigger/action/search in the new app if you did not remove it.
 
 The Triggers, Actions, and Searches are identified by their **key**, so if you remove it, or change its  **key**, this message appears.
 

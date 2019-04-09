@@ -450,7 +450,7 @@ Preferred use of the tokens is via an HTTP Authorization Header.
 > `{% raw %}curl -H "Authorization: Bearer {token}" "https://api.zapier.com/v1/zaps"{% endraw %}`
 
 
-## Errors
+### Errors
 Zapier uses HTTP response codes to indicate the success or failure of an API request.
 
 Code | Status | Explanation
@@ -469,15 +469,15 @@ All errors will be JSON object with a String array of errors:
 {% endraw %}
 ```
 
-## Resources
+### Resources
 
-### Zaps
+#### Zaps
 
 | URL | Protected By     | Required Scopes |
 | :-------------: | :-------------: | :---: |
 | **api.zapier.com/v1/zaps**      | Access Token       | `zap`
 
-### Notes
+#### Notes
 
 1. The zaps returned are narrowed/filtered by your Zapier app. For example, if you are Trello you'll only be returned a user's Zap that contain Trello in one of the steps of the Zap.
 
