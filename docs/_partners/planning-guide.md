@@ -233,3 +233,31 @@ Searches may enable more advanced actions, where users can find an item then use
 
 ## Output Data
 
+Each Zap step must return data to Zapier to use in subsequent steps. By default, the output data is the direct response from your API—but in some cases, you may need to customize the response data to make it work well with Zapier. Here are general principles for output data from your Zap steps:
+
+**Separate data where possible**, to make it as widely usable as possible in subsequent Zap steps. Names should be split into separate first/last or given/surname pairs, along optionally with a full name field. Addresses should be separated into their individual components.
+
+**Format Date-time values in [ISO 8901](http://www.cl.cam.ac.uk/~mgk25/iso-time.html#date) standard including time zone offset**, even for UTC times. Avoid UNIX or Epoch timestamps. Dates may be modified with [Moment.js](http://momentjs.com) in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
+
+- `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
+- `2018-12-01T12:32:01-0800`
+- `2018-12-01T12:32:01-08:00`
+- `2018-12-13` (for date-only values)
+
+**Optionally include an additional human-friendly date** especially for scheduling or calendar app integrations where the date is important for users.
+
+**Set boolean values as `true` or `false`**. Do not use `1` and `0` for boolean values.
+
+**Include the value name and ID in lists and dropdown menus** to help users know which item to choose.
+
+**Consider removing non-necessary fields that may seem confusing to users** in your API call's custom code.
+
+### Actions
+
+**Return data about the item that was created**, not just a `success` message. Action responses should include IDs, details about the new item including a link if possible, and any other useful data about the record.
+
+**Return `4xx` errors for unsuccessful actions**. If your API returns a `2xx` error, add custom code to your API call to replace it with a correct error.
+
+### Searches
+
+**Never raise an error for no Search results.** If the search does not find results, it should return an empty list instead. Your API call should never return a `404` for searches without results. If your API shows an error, use custom code in your API call to return an empty list instead of the error.
