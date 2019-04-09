@@ -19,7 +19,7 @@ Keep these guidelines in mind as you maintain your Zapier integration:
 
 The easiest thing to change is your app's name, description, logo, and category. You can update those anytime for any Zapier integration in the [Zapier Platform site](https://zapier.com/app/developer). Select your app integration, click the gear icon near its name, then update the app details as needed.
 
-If you built your app using Zapier Platform CLI, you can also update the app name and description from the integration bundle's `package.json` file.
+If you built your app using Zapier Platform CLI, you can also update the app name and description from the integration bundle's `package.json` file. You will still need to use the [Zapier Platform site](https://zapier.com/app/developer) to update your app icon and category.
 
 You may update app branding whenever needed without re-submitting your app to Zapier for approval. However, do always follow [Zapier's branding guidelines](https://platform.zapier.com/partners/planning-guide) whenever updating app branding.
 
@@ -43,17 +43,23 @@ If you want others on your team to receive the issue notifications, or would lik
 
 ## How to Make a New Version of Your Integration
 
-The Zapier platform makes it easy to
+Sometimes you may want to add something new to your integration. You may need to fix bugs in your integration, or add additional details to resolve user issues. You might want to add additional triggers, actions, or searches to your integration as uses request them. Or, over time, you may need to change your app's authentication and API calls.
 
+The Zapier platform makes it easy to build new versions of your integration when needed. You can create new create new versions for minor or major changes as needed.
 
+Non-breaking changes, or changes to an integration that do not effect the way it works, may be added at any time. You may change your app's branding, update the name and description of triggers, actions, and input fields to your integration at any time.
+
+Breaking or major changes, such as switching to a new API endpoint, changing authentication type, or rewriting an integration, require a new version and approval from our team.
+
+Non-breaking changes are still best to build in a new integration version so you can test the features and roll them out to a smaller subset of your Zapier integration users. Once you've made sure the new features work well, you can roll them out to all of your users.
+
+Breaking changes require a new major version of your integration. That requires users to re-create their Zaps with the new version of your integration. You can test the new version privately, as when you first built your Zapier integration. Once it's ready for wider use, you can promote the new integration version and depreciate the older version. Zapier will then mark Zaps using the older integration as _Legacy_, and will show the new version instead of the original integration when users make new Zaps.
+
+_→ Find how to manage versions in [Zapier Platform UI](https://platform.zapier.com/docs/versions) and [CLI](https://zapier.github.io/zapier-platform-cli/#deploying-an-app-version)
 
 ## How to Replace Your Zapier Integration
 
-If you have an integration that's usable by other people (either as invite only or pbulic), there are limitations on the types of changes that you can make in your integration, in order to avoid breaking the Zaps that your users have created on it.
-
-Sometimes, there are occasions when you need to make a "major change" to an integration - either switching things to use a newer version of the endpoints/API (and thus, changing the structure of the data that's used), changing the authentication type (like switching to OAuth v2 tokens), or rewriting a Web-Builder integration using our [CLI Platform](https://zapier.github.io/zapier-platform-cli/cli.html).
-
-In these cases, here’s our 4-step approach to replacing your integration with a new one:
+If you have an integration that's usable by other people (either as invite only or public), you will additionally need to follow our our 4-step approach to replacing your integration with a new one:
 
 ### 1. Reach out to our Partnerships Team
 
@@ -61,13 +67,13 @@ Contact us at [partners@zapier.com](mailto:partners@zapier.com) with your intent
 
 ### 2. Build the Replacement Integration for a "Hide and Replace"
 
-Your team will [build](https://zapier.com/developer/documentation/v2/lifecycle-development/) a completely new version of the integration following our [App Development Guide](https://zapier.com/developer/documentation/v2/app-dev-guide/), [accumulate test users](https://zapier.com/developer/documentation/v2/lifecycle-activation/#2-have-at-least-10-unique-zapier-users-currently-using-your-app-and-1-live-zap-for-each-of-the-visible-triggers-actions-and-searches), [submit the integration for review](https://zapier.com/developer/documentation/v2/lifecycle-activation/#3-submit-your-app-for-public-activation) like a normal app, and address any feedback we provide. A review is required for all replacement apps to ensure there are no issues.
+Your team will build a completely new version of the integration with the same triggers, actions, and searches as your original integration if at all possible. You will need to have 10 test users for the new version of your integration with at least 1 live Zap for each trigger, action, and search, just as with a new integration. Then, you will need to re-submit your integration for approval as with a new integration.
 
 > **Note:** You will need to accumulate enough test users on your new integration before you can request for review. Please expect some time between when you submit for review and when the new integration is made “Public”, as the speed of the review depends on how closely your integration matches our style guide and the responsiveness of your team to our feedback.
 
 When the review process is complete, we'll "hide" the older version of your integration, and deploy the newer version, so it becomes the default version that's used for creating new Zaps.
 
-If the existing API endpoints in the old integration are **still working and available**, it is set back to “Invite-only” for Web Builder integration and “Pending” for CLI integration. Existing users’ Zaps will continue to work "as is", but no users will be able to create new Zaps with the old version. Any Zaps using the old integration will show a “Legacy” label to prompt users to update their Zaps to use the new one.
+If the existing API endpoints in the old integration are **still working and available**, they are set as “Pending.” Existing users’ Zaps will continue to work "as is", but no users will be able to create new Zaps with the old version. Any Zaps using the old integration will show a “Legacy” label to prompt users to update their Zaps to use the new one.
 
 If the existing API endpoints will be **deprecated/terminated**, or an **older authentication type is no longer usable**, after we deploy the new version of the integration, existing users’ Zaps will only continue to work as long as the original endpoints are available.
 
