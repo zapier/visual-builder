@@ -11,7 +11,7 @@ redirect_from: /cli-tutorials/
 
 When you make a new integration in Zapier CLI, you can add the app's name, description, and homepage to the `package.json` file. The rest of your app's branding needs to be added in Zapier's online Platform UI.
 
-Focus first on building your integration. When you've added your app's core details, authentication, triggers, and actions, push your integration to Zapier with a `zapier push` command.
+Focus first on building your integration. When you've added your app's core details, authentication, triggers, and actions, push your integration to Zapier with a `zapier push` command. Zapier will use the name you added in the CLI integration settings, along with a placeholder icon for your app.
 
 Then, before launching your integration, add your app's branding via Zapier's Platform UI at [zapier.com/app/developer](https://zapier.com/app/developer). There you will see every Zapier integration you've built. The top _Integrations_ section includes every app you've added via Zapier's Platform UI or CLI. Look for the integration you built with Zapier CLI and click its name.
 
