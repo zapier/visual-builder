@@ -4,7 +4,7 @@ layout: default
 
 <img src="{{ site.baseurl }}/assets/images/visual-builder-header.svg" alt="Zapier Platform" style="max-width:600px;margin:auto;display:block;">
 
-Develop the best [Zapier](https://zapier.com/) integration for your app with Zapier's Platform UI and CLI
+Develop the best [Zapier](https://zapier.com/) integration for your app with Zapier's Platform UI and CLI.
 
 ## Zapier Platform UI
 
@@ -27,9 +27,9 @@ Zapier Platform CLI is the most advanced way to build integrations in your local
 
 Maintain existing Zapier integrations built with Zapier's original web builder:
 
-- [Web Builder Documentation](https://zapier.com/developer/documentation/v2/reference/)
-- [Web Builder Scripting](https://zapier.com/developer/documentation/v2/scripting/)
-- [Example Web Builder Apps](https://zapier.com/developer/documentation/v2/example-apps/)
+- [Web Builder Documentation](https://platform.zapier.com/legacy_web_builder/docs)
+- [Web Builder Scripting](https://platform.zapier.com/legacy_web_builder/scripting)
+- [Example Web Builder Apps](https://platform.zapier.com/legacy_web_builder/example-apps)
 
 ## Join the Community
 

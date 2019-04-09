@@ -103,13 +103,43 @@ Zapier uses the primary color as the background color in your app’s Zapier App
 
 ## How to Design a Successful Zapier Integration
 
-Beyond the surface of how your app's listing appears in Zapier, the even more crucial factor is how your integration works. Effective Zapier integrations
+It starts with a Google search, perhaps, or a peek at Zapier's App Directory to find a new integration. Then the user makes a new Zap, either manually or from a Zap Template, and chooses your app. They they connect their account with your app, set up the trigger or action they need for this workflow, and tell Zapier what data to copy from other apps to your app or vise versa.
 
-### What to Include in a Zapier Integration?
+That's where your Zapier integration is used, and here, the most important thing is how it works. Effective Zapier integrations both include correct branding and deliver the triggers, actions, searches, and fields that users expect.
+
+Each time, users expect consistent messaging and with the items they'd expect to be able to automate from your app. Here are the core considerations to keep in mind to deliver a consistent integration experience.
+
+### Authentication
+
+![Example OAuth v2 Authentication Screen](https://cdn.zapier.com/storage/photos/6f14340218bd51f4047afcdfc71fd9b6.png)
+
+Authentication connects users' accounts on your app to Zapier. This part of the Zapier experience should be as smooth as possible for users. We recommend using OAuth v2 authentication if possible to simplify account connection and minimize set up time.
+
+With OAuth v2, when users select to connect their account on your app with Zapier, they'll see a familiar popup window from your app to select their account or log in, then verify the connection. This fits the flow most modern apps use for integration authentication.
+
+The second best option is API Key authentication. Users should be able to obtain their API key from your app without human intervention. Zapier will not allow your integration to be publicly released if your service requires users to email or call your team in order to receive an API Key or access to your API.
+
+Basic authentication, while acceptable, is the least appropriate authentication type to use for a third party service like Zapier, as users must type their account credentials directly into Zapier's UI.
+
+Here are additional considerations when adding authentication to your integration:
+
+**Include Help Text**: If your authentication requires users to enter a domain name, API key, or other information that could be confusing, always include help text for those authentication input fields. Add links to your app in the help text with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/).
+
+**Link to API Key (with API Key Authentication)**: If your authentication requires an API key, include a direct URL where users can obtain their API key from your app. If there is no direct link, include as clear of directions as possible to help users find the API key.
+
+**Use a Dedicated Endpoint for Testing**: Your Authentication Test API call should ping an endpoint such as `/me` or `/user` that tests if the authentication was successful but does not require additional input. This call should return a `2xx` error for invalid authentication. Do not use an API call that returns a `4xx` error for missing input data aside from authentication.
+
+**Customize Your Connection Label**: Zapier includes the app name, integration version, and a number to help identify each connected account, so users can add multiple accounts of one app to Zapier. When building your integration's authentication, be sure to customize your connection label to include a username, email address, or other data aside from passwords and API keys entered during authentication or returned by your test trigger. Learn how in Zapier's [Platform UI](https://zapier.github.io/visual-builder/docs/auth#how-to-add-a-connection-label-to-authenticated-accounts) and [Platform CLI](https://zapier.github.io/zapier-platform-cli/#authentication) docs.
+
+### Triggers
 
 
 
-### Auth
-Triggers
-Actions
-Searches
+https://platform.zapier.com/docs/input-designer#dropdown
+
+
+### Actions
+
+### Searches
+
+
