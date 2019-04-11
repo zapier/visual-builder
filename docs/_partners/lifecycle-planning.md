@@ -33,6 +33,6 @@ Start out by reading through our [Zapier Integration Planning guide](https://pla
 
 Each type of app has its own special considerations on Zapier. Form apps, for example, need to return values from multiple choice questions, while CRMs need to manage a wide variety of related data. Check our category-specific guides to learn from these best practices before building your app's Zapier integration.
 
-- [Add a Form or Survey App to Zapier](https://platform.zapier.com/partners/planning-guide#form)
-- [Add a CRM or Contacts App to Zapier](https://platform.zapier.com/partners/planning-guide#crm)
-- [Add a Project Management App to Zapier](https://platform.zapier.com/partners/planning-guide#pm)
+- [Add a Form or Survey App to Zapier](https://platform.zapier.com/partners/integration-examples#form)
+- [Add a CRM or Contacts App to Zapier](https://platform.zapier.com/partners/integration-examples#crm)
+- [Add a Project Management App to Zapier](https://platform.zapier.com/partners/integration-examples#pm)
