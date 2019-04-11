@@ -1,6 +1,6 @@
 ---
 title: How to Maintain a Zapier Integration
-order: 7
+order: 3
 layout: post-toc
 redirect_from: /docs/
 ---
@@ -55,7 +55,7 @@ Non-breaking changes are still best to build in a new integration version so you
 
 Breaking changes require a new major version of your integration. That requires users to re-create their Zaps with the new version of your integration. You can test the new version privately, as when you first built your Zapier integration. Once it's ready for wider use, you can promote the new integration version and depreciate the older version. Zapier will then mark Zaps using the older integration as _Legacy_, and will show the new version instead of the original integration when users make new Zaps.
 
-_→ Find how to manage versions in [Zapier Platform UI](https://platform.zapier.com/docs/versions) and [CLI](https://zapier.github.io/zapier-platform-cli/#deploying-an-app-version)
+_→ Find how to manage versions in [Zapier Platform UI](https://platform.zapier.com/docs/versions) and [CLI](https://zapier.github.io/zapier-platform-cli/#deploying-an-app-version)_
 
 ## How to Replace Your Zapier Integration
 

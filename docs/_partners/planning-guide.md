@@ -1,6 +1,6 @@
 ---
 title: How to Design a Zapier Integration
-order: 6
+order: 2
 layout: post-toc
 redirect_from: /docs/
 ---

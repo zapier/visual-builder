@@ -1,6 +1,6 @@
 ---
 title: How to Document and Support Your Zapier Integration
-order: 9
+order: 5
 layout: post-toc
 redirect_from: /docs/
 ---

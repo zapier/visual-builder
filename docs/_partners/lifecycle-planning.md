@@ -1,5 +1,5 @@
 ---
-title: 1. Plan a Zapier Integration
+title: How to Build a Zapier Integration
 order: 1
 layout: post-toc
 redirect_from: /docs/
@@ -29,10 +29,14 @@ Start out by reading through our [Zapier Integration Planning guide](https://pla
 - [How to Design Successful Zapier Actions](https://platform.zapier.com/partners/planning-guide#actions)
 - [How to Design Successful Zapier Searches](https://platform.zapier.com/partners/planning-guide#searches)
 
-## Learn From Popular Zapier Integration Categories
+### Learn From Popular Zapier Integration Categories
 
 Each type of app has its own special considerations on Zapier. Form apps, for example, need to return values from multiple choice questions, while CRMs need to manage a wide variety of related data. Check our category-specific guides to learn from these best practices before building your app's Zapier integration.
 
 - [Add a Form or Survey App to Zapier](https://platform.zapier.com/partners/integration-examples#form)
 - [Add a CRM or Contacts App to Zapier](https://platform.zapier.com/partners/integration-examples#crm)
 - [Add a Project Management App to Zapier](https://platform.zapier.com/partners/integration-examples#pm)
+
+# Build Your Zapier Integration
+
+
