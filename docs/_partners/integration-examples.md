@@ -1,6 +1,6 @@
 ---
 title: Integration Examples
-order: 2
+order: 8
 layout: post-toc
 redirect_from: /docs/
 ---

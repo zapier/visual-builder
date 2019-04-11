@@ -131,14 +131,14 @@ As your product evolves, your integration should, too. An up-to-date, bug-free i
 
 # Zapier Partner Program FAQs
 
-> [What is the Zapier Partner Program?](#what-is-the-zapier-partner-program)
-> [I'm already a Zapier partner. How do I know what level I'm in?](#im-already-a-zapier-partner-how-do-i-know-what-level-im-in)
-> [How do I become a part of the Zapier Partner Program?](#how-do-i-become-a-part-of-the-zapier-partner-program)
-> [How are the program's levels calculated? How often can I change levels in the program? Can I move down levels?](#how-are-the-programs-levels-calculated-how-often-can-i-change-levels-in-the-program-can-i-move-down-levels)
-> [How is my integration's number of active users calculated? How can I increase it?](#how-is-my-integrations-number-of-active-users-calculated-how-can-i-increase-it)
-> [How is my integration's health score calculated? How can I improve it?](#how-is-my-integrations-health-score-calculated-how-can-i-improve-it)
-> [How can I access my integration and see my Partner Program metrics outside of your monthly emails?](#how-can-i-access-my-integration-and-see-my-partner-program-metrics-outside-of-your-monthly-emails)
-> [Is my level in the Partner Program visible to others?](#is-my-level-in-the-partner-program-visible-to-others)
+> - [What is the Zapier Partner Program?](#what-is-the-zapier-partner-program)
+> - [I'm already a Zapier partner. How do I know what level I'm in?](#im-already-a-zapier-partner-how-do-i-know-what-level-im-in)
+> - [How do I become a part of the Zapier Partner Program?](#how-do-i-become-a-part-of-the-zapier-partner-program)
+> - [How are the program's levels calculated? How often can I change levels in the program? Can I move down levels?](#how-are-the-programs-levels-calculated-how-often-can-i-change-levels-in-the-program-can-i-move-down-levels)
+> - [How is my integration's number of active users calculated? How can I increase it?](#how-is-my-integrations-number-of-active-users-calculated-how-can-i-increase-it)
+> - [How is my integration's health score calculated? How can I improve it?](#how-is-my-integrations-health-score-calculated-how-can-i-improve-it)
+> - [How can I access my integration and see my Partner Program metrics outside of your monthly emails?](#how-can-i-access-my-integration-and-see-my-partner-program-metrics-outside-of-your-monthly-emails)
+> - [Is my level in the Partner Program visible to others?](#is-my-level-in-the-partner-program-visible-to-others)
 
 ## What is the Zapier Partner Program?
 
