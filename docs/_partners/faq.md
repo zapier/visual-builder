@@ -1,6 +1,6 @@
 ---
 title: Zapier Integration Tips and FAQs
-order: 5
+order: 10
 layout: post-toc
 redirect_from: /docs/
 ---

@@ -1,6 +1,6 @@
 ---
 title: How to Include Zapier in Your App and Website
-order: 3
+order: 8
 layout: post-toc
 redirect_from: /docs/
 ---

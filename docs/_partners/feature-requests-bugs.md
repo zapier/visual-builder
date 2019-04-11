@@ -1,6 +1,6 @@
 ---
 title: How to Maintain a Zapier Integration
-order: 2
+order: 7
 layout: post-toc
 redirect_from: /docs/
 ---
