@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-# 1. Plan Your Zapier Integration
+## 1. Plan Your Zapier Integration
 
 No app can do everything on its own. The best apps are instead focused on their core features, then rely on integrations with dozens of other great apps to do the rest. That is what the Zapier platform enables. It brings the best of every app together.
 
@@ -37,7 +37,7 @@ Each type of app has its own special considerations on Zapier. Form apps, for ex
 - [Add a CRM or Contacts App to Zapier](https://platform.zapier.com/partners/integration-examples#crm)
 - [Add a Project Management App to Zapier](https://platform.zapier.com/partners/integration-examples#pm)
 
-# 2. Build Your Integration
+## 2. Build Your Integration
 
 Building a Zapier integration means keeping one eye on the technical bits and one eye on the user experience.
 
@@ -77,6 +77,8 @@ As you work on your integration, start getting feedback from testers, and eventu
 
 Find out more in our _[How to Maintain Your Zapier Integration](https://platform.zapier.com/partners/feature-requests-bugs)_ guide.
 
+## 3. Enable Early Access
+
 Now that you're finished developing your Zapier integration, you're eligible to give your users early access to your integration! Plus, your product will get a dedicated page and be listed in [Zapier's App Directory](https://zapier.com/apps) with an "Early Access" tag to let prospective users try out your integration before it's officially launched. Just take these steps:
 
 ### **1. Ensure your integration follows the Zapier Integration Development Guide**
@@ -107,7 +109,7 @@ Now you get a page in [Zapier's App Directory](https://zapier.com/apps/categorie
 
 > **Note:**  You won't yet be able to create Zap Templates at this time, as that capability is enabled once your integration reaches the public/beta step.
 
-# 4. How to Launch Your Zapier Integration
+## 4. Launch Your Zapier Integration
 
 We may invite your company to officially launch your Zapier integration and join the [Zapier Integration Partner Program](https://zapier.com/platform/partner-program). Once you launch, you will automatically join the free **Zapier Integration Partner Program** and can access the program's [many co-marketing benefits](https://zapier.com/platform/partner-program) including:
 
@@ -206,7 +208,7 @@ Here's some inspiration from some of our most successful partners:
 
 Make sure to check out [Zapier's brand guidelines](https://zapier.com/brand/) as you're planning!
 
-# 5. Get Zapier Integration Support
+## 5. Get Zapier Integration Support
 
 ![](https://cdn.zapier.com/storage/photos/352d5dea5b77da6d6e0c930c67d90be4.png)
 
