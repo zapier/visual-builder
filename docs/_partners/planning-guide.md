@@ -238,7 +238,7 @@ Each Zap step must return data to Zapier to use in subsequent steps. By default,
 **Separate data where possible**, to make it as widely usable as possible in subsequent Zap steps. Names should be split into separate first/last or given/surname pairs, along optionally with a full name field. Addresses should be separated into their individual components.
 
 <a id="date"></a>
-**Format Date-time values in [ISO 8601](http://www.cl.cam.ac.uk/~mgk25/iso-time.html#date) standard including time zone offset**, even for UTC times. Avoid UNIX or Epoch timestamps. Dates may be modified with [Moment.js](http://momentjs.com) in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
+**Format Date-time values in [ISO 8601](http://www.cl.cam.ac.uk/~mgk25/iso-time.html#date) standard including time zone offset**, even for UTC times. Avoid UNIX or Epoch timestamps. Date responses may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
 
 - `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
 - `2018-12-01T12:32:01-0800`
