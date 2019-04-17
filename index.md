@@ -27,9 +27,9 @@ Zapier Platform CLI is the most advanced way to build integrations in your local
 
 Maintain existing Zapier integrations built with Zapier's original web builder:
 
-- [Web Builder Documentation](https://platform.zapier.com/legacy_web_builder/docs)
-- [Web Builder Scripting](https://platform.zapier.com/legacy_web_builder/scripting)
-- [Example Web Builder Apps](https://platform.zapier.com/legacy_web_builder/example-apps)
+- [Web Builder Documentation](https://platform.zapier.com/legacy/docs)
+- [Web Builder Scripting](https://platform.zapier.com/legacy/scripting)
+- [Example Web Builder Apps](https://platform.zapier.com/legacy/example-apps)
 
 ## Join the Community
 

@@ -25,7 +25,7 @@ Scripting works by giving you places to add your own code to the request-respons
 
 ![Edit Code button](https://cdn.zapier.com/storage/photos/832a4038e1e1608158f0bcf383338598.png)
 
-Inside the editor, you will create the root module `Zap`. By default it is a blank JavaScript object. You add to it by defining one or more of the [available methods](https://platform.zapier.com/legacy/scripting/#available-methods). Each method accepts a single variable called `bundle`, which is a JSON serializable object. The content of the bundle varies depending on the method you are implementing. The output of your method must alshttps://platform.zapier.com/legacy/o be a serializable object.
+Inside the editor, you will create the root module `Zap`. By default it is a blank JavaScript object. You add to it by defining one or more of the [available methods](https://platform.zapier.com/legacy/scripting/#available-methods). Each method accepts a single variable called `bundle`, which is a JSON serializable object. The content of the bundle varies depending on the method you are implementing. The output of your method must also be a serializable object.
 
 Below is an example of implementing a method to be a pass-through:
 

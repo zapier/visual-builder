@@ -32,7 +32,7 @@ collections:
   cli_tutorials:
     output: true
     permalink: /:collection/:name
-  legacy_web_builder:
+  legacy:
     output: true
     permalink: /:collection/:name
   partners:
@@ -67,7 +67,7 @@ defaults:
       layout: default
   - scope:
       path: ""
-      type: "legacy_web_builder"
+      type: "legacy"
     values:
       layout: default
   - scope:
