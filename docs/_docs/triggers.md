@@ -154,7 +154,7 @@ _In Zapier visual editor, include the bundle.meta.page value to request the corr
 You then need to include that `bundle.meta.page` in your API call to let Zapier dynamically fetch the correct page, as Zapier doesn't include it automatically. First check the _Support Paging_ box. Then click your API endpoint's _Show Options_ button, and add a new URL Param for your API's paging option (or optionally add it to your HTTP Headers if your API expects the paging value there). Use the page request field name from your API on the left, and {% raw %}`{{bundle.meta.page}}`{% endraw %} on the right to have Zapier pull in the correct page value.
 
 ![Zapier pagination code mode](https://cdn.zapier.com/storage/photos/36f2051b7fdf684870492a39aab535c8.png)
-_Use custom code to _
+_Zapier's code mode lets you customize the API calls and bundle response parsing_
 
 Zapier's `bundle.meta.page` value uses zero-based numbering. The first time Zapier fetches data from your API, it uses a page value of `0`, followed by `1` the second time, and so on. If your API expects the first API call to request page `1`, with `2` for the second page and so on, you'll need to customize your API call in Zapier's code editor.
 
