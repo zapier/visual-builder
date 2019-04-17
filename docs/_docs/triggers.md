@@ -92,6 +92,10 @@ Finally, you can customize the code to evaluate the data your app's webhooks pas
 
 Then, as with polling triggers, once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
 
+_→ Learn more about [how Zapier REST Hooks work](https://platform.zapier.com/docs/faq#how-do-i-define-rest-hooks-and-use-the-embedded-tester-with-them) in our FAQ_
+
+### Test Trigger API Calls
+
 ![Test Zapier Trigger](https://cdn.zapier.com/storage/photos/120d65ddd8baed9d781c358b66078851.png)
 
 Once you've finished adding your polling or rest hook trigger settings, it's time to make sure everything you've built so far works and fetches the correct data from Zapier. In the _Test Your API Request_ section, you should see the app account you added when testing your authentication. If not, add an app account first.
