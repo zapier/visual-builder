@@ -7,11 +7,11 @@ redirect_from: /legacy/
 
 # Zapier Legacy Web Builder Scripting
 
-> **Caution**: Do not use this documentation with new integrations built in Zapier's Platform CLI or UI visual builder. For new integrations, use [Zapier's new visual builder](https://platform.zapier.com/docs/intro) or the [Zapier Command Line Interface](https://zapier.github.io/zapier-platform-cli/) to build an integration in code.
+> **Caution**: Do not use this documentation with new integrations built in Zapier's Platform CLI or UI visual builder. For new integrations, use [Zapier's new visual builder](https://platform.zapier.com/docs/intro) or the [Zapier Command Line Interface](https://platform.zapier.io/cli_docs/docs) to build an integration in code.
 >
 > If you have an existing integration built with Zapier's legacy web builder, or have migrated a legacy web builder integration to the new Zapier Platform UI, use this doc to edit and maintain your existing scripts.
 
-Zapier's Web Builder scripting functionality allows you to manipulate the requests and responses that are exchanged between your app's API and Zapier Legacy Web Builder Integrations.
+Zapier's Legacy Web Builder scripting lets you to manipulate the requests and responses that are exchanged between your app's API and Zapier Legacy Web Builder Integrations. You can use this scripting inside existing integrations in Zapier's Legacy Web Builder, or in the _Scripting.js_ section of your integration's Advanced settings in the newer Zapier Platform UI if your integration has been imported to the newer visual builder.
 
 You can modify HTTP requests just before they are sent and can parse responses before Zapier does anything with them. This enables you to do things like:
 
@@ -21,9 +21,13 @@ You can modify HTTP requests just before they are sent and can parse responses b
 *   Turn XML or other serialization formats into properly formatted JSON primitives.
 *   Create completely new keys on JSON objects for user consumption (like turning 1000 into $10.00).
 
-Scripting works by giving you places to add your own code to the request-response cycle. To add a method, click the edit code button on your App's developer dashboard:
+Scripting works by giving you places to add your own code to the request-response cycle. To add a method to an integration in Zapier's Legacy Web Builder, click the edit code button on your App's developer dashboard:
 
 ![Edit Code button](https://cdn.zapier.com/storage/photos/832a4038e1e1608158f0bcf383338598.png)
+
+Alternately, if you've already imported your integration to the new Zapier Platform UI, click the _Advanced_ tab, select _Legacy Web Builder_, and add your custom code to the editor there:
+
+![Platform UI code editor](https://cdn.zapier.com/storage/photos/75e6b3290b00eaa8a83f39f10902dab6.png)
 
 Inside the editor, you will create the root module `Zap`. By default it is a blank JavaScript object. You add to it by defining one or more of the [available methods](https://platform.zapier.com/legacy/scripting/#available-methods). Each method accepts a single variable called `bundle`, which is a JSON serializable object. The content of the bundle varies depending on the method you are implementing. The output of your method must also be a serializable object.
 
