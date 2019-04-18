@@ -1,6 +1,6 @@
 ---
 title: Legacy Web Builder Example Integrations
-order: 5
+order: 6
 layout: post-toc
 redirect_from: /legacy/
 ---

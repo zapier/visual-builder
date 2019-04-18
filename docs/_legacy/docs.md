@@ -1,6 +1,6 @@
 ---
 title: Legacy Web Builder Docs
-order: 2
+order: 3
 layout: post-toc
 redirect_from: /legacy/
 ---

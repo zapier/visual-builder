@@ -1,6 +1,6 @@
 ---
 title: Zapier Deduplication
-order: 3
+order: 4
 layout: post-toc
 redirect_from: /legacy/
 ---
