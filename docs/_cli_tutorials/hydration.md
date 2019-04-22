@@ -1,6 +1,6 @@
 ---
 title: How to Use Hydration in Zapier CLI
-order: 3
+order: 5
 layout: post-toc
 redirect_from: /cli-tutorials/
 ---
