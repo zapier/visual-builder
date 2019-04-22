@@ -133,7 +133,9 @@ My Zap has fired! Here's a look:
 
 ![](https://zappy.zapier.com/3EDC0260-0465-42D3-99D2-95674C4CA388.png)
 
-When the Trigger runs, it detects a new file, prompting the `fileMeta` function to be executed. This is a key difference between `z.dehydrate` and `z.dehydrateFile` – as soon as the Trigger ran, we hydrated the request for `z.dehydrate`; however, we won't call `z.dehydrate` until the moment it is needed. A short while later, ngrok receives three new requests:
+When the Trigger runs, it detects a new file, prompting the `fileMeta` function to be executed. This is a key difference between `z.dehydrate` and `z.dehydrateFile` – as soon as the Trigger ran, we hydrated the request for `fileMeta`; however, we won't hydrate the stored `downloadFile` until the moment it is needed. This is why I added the "Delay For" step previously - to highlight that we won't hydrate dehydrated information until needed.
+
+A short while later, ngrok receives three new requests:
 
 ![](https://zappy.zapier.com/28C6F8FD-677C-4EA0-837B-E4FBBD36C776.png)
 
