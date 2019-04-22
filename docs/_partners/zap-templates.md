@@ -9,7 +9,7 @@ redirect_from: /docs/
 
 Zapier empowers apps to do together what they can’t on their own. With a bit of inspiration and creativity, your users can pull dozens of apps together into unique workflows to get more done with your app in far less time.
 
-Zap Templates are readymade integrations or Zaps with the apps and core fields pre-selected. In a few clicks, they help people discover a use case, connect apps, and turn on the Zap. Zap Templates are the fastest way for your users to automate workflows.
+Zap Templates are readymade integrations or Zaps with the apps and core fields pre-selected, for publicly available Zapier integrations. In a few clicks, they help people discover a use case, connect apps, and turn on the Zap. Zap Templates are the fastest way for your users to automate workflows.
 
 <script type="text/javascript" src="https://zapier.com/apps/embed/widget.js?guided_zaps=192,111,162,1495,883"></script>
 
@@ -21,7 +21,7 @@ They’re also a great way to promote your app, as your Zap Templates are featur
 
 Zap Templates can also be featured inside your site and content to help your users start using Zapier integrations. The more Zap Templates you create and the more users they have, the more likely they are to be featured. This helps your Zapier integration gain popularity and rise the ranks of the [Zapier Partner Program](https://zapier.com/platform/partner-program).
 
-Before launching your Zapier integration, you need to build at least 10 Zap Templates in the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) to help people start using your integration.
+You can create Zap Templates for any public Zapier integration, or for any integration that has applied for public activation. Once you apply for public activation for your integration, you will need to build at least 10 Zap Templates in the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) to help people start using your integration.
 
 > Expected time to create a Zap Template: 10 minutes.
 
@@ -45,7 +45,7 @@ For help as you build, you can follow this video or the written instructions bel
 
 Open Zapier’s [Zap Template creator](https://zapier.com/developer/zap-templates/create) at [zapier.com/developer/zap-templates/create](https://zapier.com/developer/zap-templates/create), or click the _Create Zap Template_ button in your [Zap Template dashboard](https://zapier.com/developer/zap-templates/). Select the trigger app, as you would when making a Zap for yourself. Select a popular app from the grid, or search for the app you need from the dropdown menu.
 
-> **Tip:** You can select any app publicly available on Zapier or any beta apps you’ve built or have been invited to use—though Zapier will only publish Zap Templates for public integrations.
+> **Tip:** You can only build and publish Zap Templates with Zapier integrations that are publicly available or that have applied to be launched publicly.
 
 ![Zap Template select trigger](https://cdn.zapier.com/storage/photos/ea3a3fb79b79782138180c0ce46e7ba5.png)
 
@@ -70,6 +70,8 @@ In the final trigger option, Zapier shows sample data from the app. You can clic
 ![Zap Template add action app](https://cdn.zapier.com/storage/photos/f23d74b8ceb233c51cf0b2c138473cdd.png)
 
 Now add the action step to your Zap. Select the action app, either from the popular apps list or from the search menu.
+
+> **Tip:** You can use Zapier integrations that are publicly available or that have applied to be launched publicly.
 
 ![Zap Template select action step](https://cdn.zapier.com/storage/photos/8dc73de8622e7fdde9e1da7286b96fd3.png)
 
@@ -203,7 +205,11 @@ Optionally, you can let your team help test Zap Templates as well. When saving y
 <a id="submit-your-zap-templates"></a>
 ### 5. Submit Zap Template for Review
 
-Finally, when your Zap Template is ready for public release, select the `For review` option on your Zap Template Visibility menu, and click _Save_ again. That submits the Zap Template to our team to review the Zap Template and ensure it works as expected and meets our standards. We'll then contact you, typically within a couple of weeks, after reviewing your Zap Template(s). If your Zap Templates pass the tests, we will mark them as public to automatically have them show up on your app's App Directory page, inside select partners' apps and sites, and in Zapier's onboarding experience.
+Finally, when your Zap Template is ready for public release, select the `For review` option on your Zap Template Visibility menu, and click _Save_ again. That submits the Zap Template to our team to review the Zap Template and ensure it works as expected and meets our standards.
+
+> **Note**: Zapier will only approve Zap Templates that include either public integrations or integrations that have applied for public release.
+
+We'll then contact you, typically within a couple of weeks, after reviewing your Zap Template(s). If your Zap Templates pass the tests, we will mark them as public to automatically have them show up on your app's App Directory page, inside select partners' apps and sites, and in Zapier's onboarding experience.
 
 Then make some more Zap Templates. Every Zapier integration must have at least 10 Zap Templates, and the more you make, the easier it will be to start using your Zapier integration. Open the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) again and create any more Zap Templates you want.
 
