@@ -103,11 +103,16 @@ Read our [App Review Tips](https://platform.zapier.com/partners/faq) to help you
 
 ![](https://zappy.zapier.com/6193B587-6437-47E8-B0C1-47ABB4B05291.png)
 
+<a id="early"></a>
 ### Welcome to Early Access!
 
 Now you get a page in [Zapier's App Directory](https://zapier.com/apps/categories/early-access) and your users can click it to gain early access to your integration.
 
-> **Note:**  You won't yet be able to create Zap Templates at this time, as that capability is enabled once your integration reaches the public/beta step.
+> **Note:** You won't yet be able to create Zap Templates at this time. That capability is enabled once your integration receives a [beta tag](#beta).
+
+### What's the Next Step?
+
+As your integration continues to accumulate users, our team will watch the growth of your integration. We will contact you when we're ready to [extend an invitation](#wait) for you to receive a beta tag and officially launch.
 
 ## 4. Launch Your Zapier Integration
 
@@ -119,10 +124,12 @@ We may invite your company to officially launch your Zapier integration and join
 
 Here are the steps to take to officially launch and join the program:
 
+<a id="wait"></a>
 ### **1. Wait for an Invite from the Zapier Team**
 
 While your integration is in the Early Access stage, we'll monitor how it's performing. If your integration has high usage, our team will get in touch to invite you to start the official launch process. You *must* receive an invite from our team before you can start the rest of this process.
 
+<a id="beta"></a>
 ### **2. Get a Beta Tag**
 
 _Estimated time to complete: 2 weeks_
