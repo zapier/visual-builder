@@ -2,7 +2,7 @@
 title: How to Design a Zapier Integration
 order: 2
 layout: post-toc
-redirect_from: /docs/
+redirect_from: /partners/
 ---
 
 # How to Design a Zapier Integration

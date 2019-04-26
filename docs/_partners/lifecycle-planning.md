@@ -2,7 +2,7 @@
 title: How to Build a Zapier Integration
 order: 1
 layout: post-toc
-redirect_from: /docs/
+redirect_from: /partners/
 ---
 
 ## 1. Plan Your Zapier Integration

@@ -2,7 +2,7 @@
 title: Integration Examples
 order: 8
 layout: post-toc
-redirect_from: /docs/
+redirect_from: /partners/
 ---
 
 # Integration Design Examples
