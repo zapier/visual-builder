@@ -2,7 +2,7 @@
 title: Zapier Platform UI vs CLI
 order: 18
 layout: post-toc
-redirect_from: /docs/intro
+redirect_from: /docs/
 ---
 
 ## Zapier Platform UI vs CLI: Which Should I Choose?
