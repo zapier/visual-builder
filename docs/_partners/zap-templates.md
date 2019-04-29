@@ -45,7 +45,7 @@ For help as you build, you can follow this video or the written instructions bel
 
 Open Zapier’s [Zap Template creator](https://zapier.com/developer/zap-templates/create) at [zapier.com/developer/zap-templates/create](https://zapier.com/developer/zap-templates/create), or click the _Create Zap Template_ button in your [Zap Template dashboard](https://zapier.com/developer/zap-templates/). Select the trigger app, as you would when making a Zap for yourself. Select a popular app from the grid, or search for the app you need from the dropdown menu.
 
-> **Tip:** You can only build and publish Zap Templates with Zapier integrations that are publicly available or that have applied to be launched publicly.
+> **Tip:** The ability to build and publish Zap Templates is only available if your Zapier integration has a [beta tag](https://platform.zapier.com/partners/lifecycle-planning/#beta) or has [officially launched](https://platform.zapier.com/partners/lifecycle-planning#4-launch-your-zapier-integration) and become a part of the Zapier Integration Partner Program.
 
 ![Zap Template select trigger](https://cdn.zapier.com/storage/photos/ea3a3fb79b79782138180c0ce46e7ba5.png)
 
