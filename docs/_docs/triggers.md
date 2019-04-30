@@ -122,9 +122,9 @@ You can now make a new Zap using your trigger to test out the trigger live insid
 
 ![Triggers in Zapier](https://cdn.zapier.com/storage/photos/316fc36427a242269ec9118a06f0347a.png)
 
-When users select your app as the trigger step in a Zap, they'll see the triggers marked as _Important_ by default, with every other integration hidden under the _show less common options_ menu. Zapier displays triggers in the order they were added to your Zapier integration—so the first trigger you added and marked as important will show up at the top of the list.
+When users select your app as the trigger step in a Zap, they'll see the triggers marked as _Important_ by default, with every other integration hidden under the _show less common options_ menu.
 
-There is no way to reorder triggers in Zapier visual builder at the moment. It's best to plan your integration before you add triggers, and add the triggers your users will likely use the most first so they'll show at the top of the list. Alternately, you could delete triggers and re-add them in the order you want, if needed.
+Triggers are originally listed in the order you add them to your integration. As people use your integration, Zapier will show your integration's most popular triggers first, automatically reordering them based on popularity. You cannot set a trigger to always be in a specific order in your integration's trigger list.
 
 ![Trigger visibility](https://cdn.zapier.com/storage/photos/478830f781668c2f9c6131de63954f1c.png)
 

@@ -130,9 +130,9 @@ When users use the search action in a Zap, Zapier will show your core search act
 
 Whenever a user selects your app's integration in a Zapier action step, they'll see every create and search action in your integration. Zapier shows create actions that are marked as _Important_ first, followed by search actions marked as _Important_. If users click the _show less common options_ link, they'll then see the remaining actions that weren't marked as important, if any.
 
-Actions are listed under Create and Search headers in the order they were added to your Zapier integration. You can see their original order in the sidebar of Zapier visual builder, or under the _Actions_ page. At the moment, you cannot rearrange actions in an existing Zapier integration with visual builder. Instead, if you need to reorder actions, you would need to remove and re-add actions in the order you want.
+Actions are originally listed in the order you add them to your integration. As people use your integration, Zapier will show your integration's most popular actions first, automatically reordering them based on popularity.
 
-You can, however, change actions' visibility at any time. Edit the action, then in the last option on the _Settings_ page, choose _Important_ to have the action show by default, _None_ to hide it behind the _show less common options_ toggle, or _Hidden_ to make this action not usable inside Zapier.
+You change actions' visibility at any time, if you don't want an action to show first. Edit the action, then in the last option on the _Settings_ page, choose _Important_ to have the action show by default, _None_ to hide it behind the _show less common options_ toggle, or _Hidden_ to make this action not usable inside Zapier.
 
 ## How to Remove an Existing Action
 
