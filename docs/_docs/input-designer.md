@@ -277,7 +277,7 @@ Need to remove or reorder line item input fields? Open your Line Item Group fiel
 
 ## How to Add Dynamic and Custom Fields
 
-![Add Zapier Dynamic Field](https://cdn.zapier.com/storage/photos/e7f596e28e8e9646df8880b38e68d371.png)
+![Add Zapier Dynamic Field](https://cdn.zapier.com/storage/photos/948e0f043198674b6d7730dc457ff4ea.png)
 
 Dynamic Fields let Zapier build custom fields from an API call, and run code that shows fields based on other input field data. Dynamic and custom fields are used to show user-defined fields from apps that must be fetched from the app when users build Zaps to let them use those fields. These are especially useful with project management apps, CRM apps, databases, and any other app where users can add custom, user-defined fields.
 
