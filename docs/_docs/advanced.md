@@ -56,7 +56,7 @@ Computed Fields, on the other hand, store values obtained from an integration's 
 
 {% raw %}`{{bundle.authData.field}}`{% endraw %}
 
-Zapier stores all fields returned by authentication API test call and auth process. Computed fields are marked as _required_ so Zapier watches specifically for those fields in the response data. If the auth process does not return fields marked as computed fields, Zapier will show an error. For example, if using OAuth v.2 authentication, Zapier will store all fields returned by the `getAccessToken` request, and will show an error if the response doesn't include an access token along with any fields you marked as computed fields.
+Zapier stores all fields returned by authentication API test call and auth process. Computed fields are marked as _required_ so Zapier watches specifically for those fields in the response data. If the auth process does not return fields marked as computed fields, Zapier will show an error. For example, if using OAuth v.2 authentication, Zapier will store all fields returned by the `getAccessToken` request, and will show an error if the response doesn't include an access token along with any fields you marked as computed fields. You could use a computed field, then, to reference a field that the `getAccessToken` call returns if you need to use it in subsequent API calls.
 
 ### How to Use a Field From the Test API Call as a Computed Field?
 
