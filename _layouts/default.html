@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-  <body class="split-layout">
-    {% include side-nav.html %}
-    <main class="container">
-      <section class="content">{{ content }}</section>
+  <body>
+    {% include header.html %}
+    <main class="split-layout">
+      {% include side-nav.html %}
+      <div class="container">
+        <section class="content">{{ content }}</section>
+      </div>
     </main>
-    {% include javascript.html %}
+  {% include javascript.html %}
   </body>
 </html>

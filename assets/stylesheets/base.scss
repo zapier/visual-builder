@@ -18,5 +18,6 @@ $baseurl: "{{ site.baseurl }}";
 @import "elements/tables";
 
 // Components
+@import "components/header";
 @import "components/sidebar";
 @import "components/toc";

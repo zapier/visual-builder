@@ -2,14 +2,6 @@
 {% assign current_section = split_url[1] %}
 
 <div class="sidebar">
-  <div class="sidebar__header">
-    <a href="{{ site.baseurl }}/" class="sidebar__logo">
-      <div class="sidebar__icon"></div> Zapier Platform UI
-    </a>
-    <button class="menu-toggle js-menu-toggle" aria-controls="menu" aria-expanded="false">
-      <div class="menu-toggle__icon" alt="Menu icon">
-    </button>
-  </div>
   <nav id="menu" class="sidebar__nav">
     {% include side-nav-item.html title="Quick Start" items=site.quickstart section_id="quickstart" current_section=current_section %}
     {% include side-nav-item.html title="Documentation" items=site.docs section_id="docs" current_section=current_section %}

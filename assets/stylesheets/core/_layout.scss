@@ -11,6 +11,7 @@
   overflow: auto;
   min-width: 100vw;
   min-height: 100vh;
+  padding-top: 69px;
 }
 
 .container {
@@ -32,6 +33,7 @@ img {
 @media (max-width: 769px) {
   .split-layout {
     display: block;
+    padding-top: 56px;
   }
 
   .container {

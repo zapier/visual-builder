@@ -3,6 +3,7 @@
   border-left: 1px solid $adamantium;
   min-width: 300px;
   padding: 60px 30px;
+  overflow: auto;
 
   ul {
     font-size: 14px;
@@ -27,5 +28,9 @@
   .toc {
     padding: 20px;
     border-bottom: 1px solid $adamantium;
+
+    ul {
+      margin-bottom: 0;
+    }
   }
 }
