@@ -45,7 +45,7 @@ If you want others on your team to receive the issue notifications, or would lik
 
 Sometimes you may want to add something new to your integration. You may need to fix bugs in your integration, or add additional details to resolve user issues. You might want to add additional triggers, actions, or searches to your integration as uses request them. Or, over time, you may need to change your app's authentication and API calls.
 
-The Zapier platform makes it easy to build new versions of your integration when needed. You can create new create new versions for minor or major changes as needed.
+The Zapier platform makes it easy to build new versions of your integration when needed. You can create new versions for minor or major changes as needed.
 
 Non-breaking changes, or changes to an integration that do not effect the way it works, may be added at any time. You may change your app's branding, update the name and description of triggers, actions, and input fields to your integration at any time.
 
