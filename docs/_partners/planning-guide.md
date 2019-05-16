@@ -1,11 +1,11 @@
 ---
-title: How to Design a Zapier Integration
+title: Zapier Integration Branding and Design Guidelines
 order: 2
 layout: post-toc
 redirect_from: /partners/
 ---
 
-# How to Design a Zapier Integration
+# Zapier Integration Branding and Design Guidelines
 
 No app can do everything on its own. The best apps are instead focused on their core features, then rely on integrations with dozens of other great apps to do the rest. That is what the Zapier platform enables. It brings the best of every app together.
 
