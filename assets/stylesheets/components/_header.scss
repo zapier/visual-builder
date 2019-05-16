@@ -31,11 +31,26 @@
   a {
     color: rgb(218, 223, 226);
     transition: color 0.2s ease-in-out 0s;
+    position: relative;
 
     &:hover {
       color: #fff;
       text-decoration: none;
-      font-weight: 600;
+      text-shadow: -0.03ex 0 0 #ffffff, 0.03ex 0 0 #ffffff;
+    }
+  }
+
+  .platform-header__selected {
+    text-shadow: -0.03ex 0 0 #ffffff, 0.03ex 0 0 #ffffff;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background-color: #ffffff;
     }
   }
 }
