@@ -2,8 +2,9 @@
 layout: default
 ---
 
-<img src="{{ site.baseurl }}/assets/images/visual-builder-header.svg" alt="Zapier Platform" style="max-width:600px;margin:auto;display:block;">
+![Zapier Platform]({{ site.baseurl }}/assets/images/visual-builder-header.svg)
 
+# Zapier Platform Docs
 Develop the best [Zapier](https://zapier.com/) integration for your app with Zapier's Platform UI and CLI.
 
 ## Zapier Platform UI
