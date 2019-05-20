@@ -21,7 +21,7 @@ Your initial Triggers, Actions, and Searches should focus on the main things use
 
 ## Test Early With Real Users
 
-Hopefully, you have a bunch of keen users waiting to get their hands on your integration. Send them your app’s invite link to give them early access. Zapier requires at least 10 unique, active users of your integration to submit it for review. That help give us confidence that your integration is useful and working well for a bunch of users. 
+Hopefully, you have a bunch of keen users waiting to get their hands on your integration. That help give us confidence that your integration is useful and working well for a bunch of users. 
 
 ## Check Your App Integration Style
 
