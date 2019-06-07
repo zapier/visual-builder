@@ -1,7 +1,7 @@
 ---
 title: — Basic Auth
 order: 4
-layout: post-toc
+layout: docs
 redirect_from: /docs/
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Advanced Features
 order: 14
-layout: post-toc
+layout: docs
 redirect_from: /docs/
 ---
 

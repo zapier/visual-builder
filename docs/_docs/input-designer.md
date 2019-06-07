@@ -1,7 +1,7 @@
 ---
 title: Input Designer
 order: 9
-layout: post-toc
+layout: docs
 redirect_from: /docs/
 ---
 

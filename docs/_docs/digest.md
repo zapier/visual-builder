@@ -1,7 +1,7 @@
 ---
 title: — Digest Auth
 order: 8
-layout: post-toc
+layout: docs
 redirect_from: /docs/
 ---
 

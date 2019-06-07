@@ -1,7 +1,7 @@
 ---
 title: — API Key Auth
 order: 6
-layout: post-toc
+layout: docs
 redirect_from: /docs/
 ---
 

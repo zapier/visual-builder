@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 order: 2
-layout: post-toc
+layout: docs
 redirect_from: /docs/
 ---
 

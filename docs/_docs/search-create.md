@@ -1,7 +1,7 @@
 ---
 title: Searches and Creates
 order: 12
-layout: post-toc
+layout: docs
 redirect_from: /docs/
 ---
 

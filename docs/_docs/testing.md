@@ -1,7 +1,7 @@
 ---
 title: Testing
 order: 13
-layout: post-toc
+layout: docs
 redirect_from: /docs/
 ---
 

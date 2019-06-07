@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+  <body>
+    {% include header.html %}
+    <main class="split-layout">
+      {% include side-nav.html %}
+        <aside class="toc">
+          <h3>DOCS - Contents</h3>
+          {% include toc.html html=content %}
+        </aside>
+      <div class="container">
+        <section class="content">{{ content }}</section>
+        <footer class="prev-next">{% include prev-next.html %}</footer>
+              <hr>
+          <p><em>Have any feedback or questions? <a href="https://github.com/zapier/visual-builder/issues/new/choose" target="_blank">Let us know</a>.</em></p>
+          <div><script>
+    			(function() {
+      			var cx = '006212384688293188622:ae9ahilsbti';
+      			var gcse = document.createElement('script');
+      			gcse.type = 'text/javascript';
+      			gcse.async = true;
+      			gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      			var s = document.getElementsByTagName('script')[0];
+      			s.parentNode.insertBefore(gcse, s);
+    			})();
+  		      </script><gcse:search></gcse:search></div>
+        </div>
+    </main>
+    {% include javascript.html %}
+    {% include javascript-docs-tracking.html %}
+  </body>
+</html>
