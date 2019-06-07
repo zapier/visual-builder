@@ -15,7 +15,7 @@ The Zapier CLI (Command Line Interface) is a toolset you install and run on your
 
 We created the visual builder to be the easiest way for everyone to get started building their Zapier integration.  The CLI is, on the other hand, the most powerful tool for professional developers and teams.  Some of the advantages:
 
-- Access to all [features](/../vs) of the Zapier Platform
+- Access to all [features](/docs/vs) of the Zapier Platform
 - Ability to better optimize your code.  Move shared logic into modules.  Leverage middleware to centralize request & response processing.
 - Easier team collaboration.  You'll be able to check all the code for your Zapier integration into your team's source control repo.
 - Set up automated regression tests, to catch errors each time you push a change.
