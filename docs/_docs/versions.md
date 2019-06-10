@@ -1,7 +1,7 @@
 ---
 title: Versions
 order: 15
-layout: docs
+layout: post-toc
 redirect_from: /docs/
 ---
 

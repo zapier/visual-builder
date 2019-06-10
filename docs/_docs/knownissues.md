@@ -1,7 +1,7 @@
 ---
 title: Known Issues & Top Tips
 order: 19
-layout: docs
+layout: post-toc
 redirect_from: /docs/
 ---
 

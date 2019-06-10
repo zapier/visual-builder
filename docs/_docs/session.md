@@ -1,7 +1,7 @@
 ---
 title: — Session Auth
 order: 5
-layout: docs
+layout: post-toc
 redirect_from: /docs/
 ---
 

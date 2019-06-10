@@ -1,7 +1,7 @@
 ---
 title: Glossary
 order: 17
-layout: docs-post
+layout: post
 redirect_from: /docs/
 ---
 

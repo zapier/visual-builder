@@ -1,7 +1,7 @@
 ---
 title: FAQs
 order: 16
-layout: docs
+layout: post-toc
 redirect_from: /docs/
 ---
 

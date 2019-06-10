@@ -1,13 +1,5 @@
 <script>
   (function() {
-    function sendToGa() {
-      window.dataLayer = window.dataLayer || []; // Provide empty array to push into to avoid errors in development
-      window.dataLayer.push({
-        event: 'page-view',
-        eventLabel: 'page-view',
-      });
-    }
-
     function sendToBE() {
       fetch('https://zapier.com/api/v3/events', {
         method: 'POST',
@@ -21,8 +13,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      sendToGa();
-      sendToBE();
+      // sendToBE(); - Uncomment this when the BE is ready
     });
   })();
 </script>

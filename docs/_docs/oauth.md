@@ -1,7 +1,7 @@
 ---
 title: — OAuth v2
 order: 7
-layout: docs
+layout: post-toc
 redirect_from: /docs/
 ---
 

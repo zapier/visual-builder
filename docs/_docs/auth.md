@@ -1,7 +1,7 @@
 ---
 title: Authentication
 order: 3
-layout: docs
+layout: post-toc
 redirect_from: /docs/
 ---
 
