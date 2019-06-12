@@ -108,7 +108,7 @@ Custom code for connection labels are best used for:
 - Logging additional data to the authentication log
 - Making a new API call to access data to use in the connection label
 
-Click the _Edit Code_ button to switch to code mode. If the code mode is visible, Zapier will only use the code to create your connection label, and will ignore any existing text in the connection label field. If you wish to switch back to the regular field, click the _Delete Code_ button to delete your custom connection label code and revert to using the text entered int he connection label field.
+Click the _Edit Code_ button to switch to code mode. If the code mode is visible, Zapier will only use the code to create your connection label, and will ignore any existing text in the connection label field. If you wish to switch back to the regular field, click the _Delete Code_ button to delete your custom connection label code and revert to using the text entered in the connection label field.
 
 Use JavaScript to customize your connection label, and include data from authData or inputData bundles as normal. Additionally, you can add custom data to Zapier's console log with the `z.console.log` function to assist testing and monitoring your app authentication.
 
