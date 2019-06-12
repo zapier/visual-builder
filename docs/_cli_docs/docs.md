@@ -399,6 +399,46 @@ zapier deprecate 1.0.0 2017-01-01
 
 ## Converting an Existing App
 
+**Exporting Your Visual Builder Integration**
+
+Create a new directory for your Zapier project and from the command line `cd` into it.  Then run:
+
+
+```bash
+zapier convert {your integration id} . -version={integration version you want to convert}
+```
+
+Your integration ID can be found in the browser location bar:
+
+![](https://zappy.zapier.com/4452B664-3C68-4762-A85A-4AF75DAB0E62.png)
+
+Similarly, your version can be found there, and elsewhere throughout the UI:
+
+![](https://zappy.zapier.com/ECE260EE-8B9D-46B7-B6AD-6BEA5078EEDF.png)
+
+Using this example to create our project in the current directory our command would be:
+
+```bash
+zapier convert 10318 . --version=1.0.1
+```
+
+A couple of important things to know before deploying:
+
+- When you push the CLI project to the server it will create a _new version_ of your integration.  If you haven't gotten familiar with how versions work you might take a moment and learn about those [here](/../versions).
+- Take a look at the version number in your `package.json` file.  When you created your project with the `convert` tool we automatically incremented the version you converted.  You can change this to a different version number depending on your needs, but make sure  a version with that number doesn't already exist in your integration. Run `zapier versions` from your project directory to see what's already been created.
+- You will not be able to edit your new CLI-built version from the UI.  You can still use the options under the "Manage" section.  Your earlier versions, created within the UI, are still there and can still be edited and used.  If you decide that the CLI tool is not for you, you can go back and continue where you left off in the UI.
+
+When you're ready to deploy your CLI version run:
+
+```bash
+zapier push
+``` 
+
+When that completes you'll be able to see the new version in the UI in the Versions section, and will be able to make Zaps with your new CLI-built version!
+
+
+**Legacy Web Builder Integrations**
+
 If you have an existing Zapier [legacy Web Builder app](https://zapier.com/developer/builder/), you can use it as a template to kickstart your local application.
 
 ```bash
@@ -413,7 +453,6 @@ Your CLI app will be created and you can continue working on it.
 
 > Note - there is no way to convert a CLI app to a Web Builder app and we do not plan on implementing this.
 
-Coming soon, you will also be able to convert new integrations built in Zapier Platform UI to CLI.
 
 ## Authentication
 
