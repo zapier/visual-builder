@@ -53,7 +53,7 @@ Now you'll want to install all of the dependencies to make this repo run.
 bundle install
 ```
 
-You should not have all of the packages installed and are ready to get up an running!
+You should now have all of the packages installed and are ready to get up an running!
 
 ```
 bundle exec jekyll serve
