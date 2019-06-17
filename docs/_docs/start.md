@@ -36,7 +36,7 @@ Use proper English, complete sentences, and punctuation. Do not include links or
 <a id="logo"></a>
 ## Logo
 
-Upload your app's logo. Make sure your logo is a square, transparent PNG file with dimensions of at least 256x256px (use a larger image if available). If your logo uses a solid background, round the corners 3% of the width and make their background transparent.
+Upload your app's logo. Make sure your logo is a square, transparent PNG file with dimensions of at least 256x256px (use a larger image if available, but do not exceed 2048x2048px). If your logo uses a solid background, round the corners 3% of the width and make their background transparent.
 
 Do not include your app's name in the logomark, as it will not be legible at smaller sizes.
 
