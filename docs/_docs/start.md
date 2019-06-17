@@ -11,7 +11,7 @@ redirect_from: /docs/
 
 Every new Zapier integration starts with details about the app. Zapier integrates with 1,300+ apps, and counting. That makes it crucial to help people find your app among all the others on the platform. With a clear description and logo, and placement in the category that best represents your app, your users will be able to easily find your app and new users will likely discover your app as they search for tools that fit their needs.
 
-To make a new integreation in Zapier Platform UI:
+To make a new integration in Zapier Platform UI:
 
 1. Open Zapier's visual builder at [zapier.com/app/developer](https://zapier.com/app/developer/)
 2. Fill in the details about your app
