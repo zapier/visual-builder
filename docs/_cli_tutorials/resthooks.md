@@ -162,11 +162,11 @@ module.exports = {
 
 ### `subscribeHook`
 
-This should be a function that sends a payload of data to an endpoint you control. You need to grab the `target_url` parameter and store it securely somewhere as you will need this URL to send data back and trigger the Zap. You can see an example of this [here](https://github.com/zapier/zapier-platform-example-app-rest-hooks/blob/master/triggers/recipe.js#L1-L22).
+This should be a function that sends a payload of data to an endpoint you control. You need to grab the `targetUrl` parameter and store it securely somewhere as you will need this URL to send data back and trigger the Zap. You can see an example of this [here](https://github.com/zapier/zapier-platform-example-app-rest-hooks/blob/master/triggers/recipe.js#L1-L22).
 
 ### `unsubscribeHook`
 
-This should be a function that calls an endpoint you control with a payload of data, including the `target_url` parameter. You need to deactivate or delete the URL from your storage completely as the Zap associated will no longer trigger when requests are made to it. You can see an example of this [here](https://github.com/zapier/zapier-platform-example-app-rest-hooks/blob/master/triggers/recipe.js#L24-L39).
+This should be a function that calls an endpoint you control with a payload of data, including the `targetUrl` parameter. You need to deactivate or delete the URL from your storage completely as the Zap associated will no longer trigger when requests are made to it. You can see an example of this [here](https://github.com/zapier/zapier-platform-example-app-rest-hooks/blob/master/triggers/recipe.js#L24-L39).
 
 ### `perform`
 
