@@ -140,14 +140,28 @@
   }
 }
 
-@media (max-width: 769px) {
-  .search {
+@media (min-width: 770px) {
+  .sidebar .search {
     display: none;
   }
+}
 
+@media (max-width: 769px) {
   .platform-header {
     height: 56px;
     padding: 0 20px;
+
+    .search { display: none; }
+  }
+
+  .search {
+    width: 100%;
+    padding: 0 12px 0 20px;
+    margin-bottom: 20px;
+
+    .gsc-input-box {
+      border: 1px solid $adamantium;
+    }
   }
 
   .platform-header__links {
