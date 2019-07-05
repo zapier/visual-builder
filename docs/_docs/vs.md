@@ -1,6 +1,6 @@
 ---
 title: Zapier Platform UI vs CLI
-order: 18
+order: 19
 layout: post-toc
 redirect_from: /docs/
 ---
@@ -31,7 +31,7 @@ The visual builder additionally includes a code mode toggle on every API call, w
 
 Choose Zapier Platform UI for your integration if you're new to Zapier integration development, want an easy way to build a new integration, or have a team with non-engineers working together on the integration who would find the CLI more difficult to use.
 
-*→ Build a [new Zapier Platform UI integration](https://zapier.com/app/developer/app/new), check our [Quick Start Guide](https://platform.zapier.com/quickstart/introduction) to build a sample integration, then get more info in [Zapier's Platform UI documentation](https://platform.zapier.com/docs/intro).*
+_→ Build a [new Zapier Platform UI integration](https://zapier.com/app/developer/app/new), check our [Quick Start Guide](https://platform.zapier.com/quickstart/introduction) to build a sample integration, then get more info in [Zapier's Platform UI documentation](https://platform.zapier.com/docs/intro)._
 
 ## Zapier Platform CLI (Command Line Interface)
 
@@ -45,7 +45,7 @@ Zapier CLI lets you build advanced integrations faster than visual builder since
 
 Choose CLI if your API needs custom coding for most API calls or you find writing integrations in code easier than using a web app, and if your integration will maintained by an engineering team. Zapier CLI is more difficult to use for non-engineers, but will likely be more efficient for an engineering team to use than visual builder. And soon, you won't have to choose: You can start with visual builder, then switch to CLI later if you want.
 
-*‌→ Install Zapier Platform CLI with `npm install -g zapier-platform-cli`, check our [CLI Quick Start Guide](https://zapier.com/developer/start/introduction) to build a demo integration, then learn more in [Zapier's CLI documentation](https://zapier.github.io/zapier-platform-cli/).*
+_‌→ Install Zapier Platform CLI with `npm install -g zapier-platform-cli`, check our [CLI Quick Start Guide](https://zapier.com/developer/start/introduction) to build a demo integration, then learn more in [Zapier's CLI documentation](https://zapier.github.io/zapier-platform-cli/)._
 
 ## Coming Soon for Zapier Platform UI's visual builder
 

@@ -1,5 +1,5 @@
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 26px;
   color: $blackwidow;
@@ -14,7 +14,10 @@ a {
   }
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 600;
   margin-top: 0;
 }
@@ -33,7 +36,7 @@ h1 {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 24px;
   line-height: 30px;
   margin: 20px 0;
 }
