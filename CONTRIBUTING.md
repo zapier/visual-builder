@@ -23,12 +23,15 @@ Want to submit a fix? Great! We're thrilled that you are interested in helping o
 
 ### How to submit a pull request
 
-1. Make a local branch for your feature based off of the default branch, `staging` (e.g. `git branch update-homepage`).
+1. Fork the repo by clicking on the little fork icon on the the top right. That will make a copy of the repo into your account under the same name.
+1. Clone the project from your account, not from Zapier's.
+1. In your repo, make a new local branch for your feature based off  the default branch, `master` (e.g. `git branch update-homepage`).
 1. Switch to that new branch (e.g. `git checkout update-homepage`)
-1. Make your changes on your branch.
+1. Make any changes on your branch.
 1. Test it out locally by running `bundle exec jekyll serve` and visiting [http://127.0.0.1:4000](http://127.0.0.1:4000) in your favorite browser.
 1. Push your branch to your repo (e.g. `git push origin update-homepage`)
-1. Submit a pull request against `staging` branch. Be sure to include information around what you are solving, include any relevant screenshots and reference any issues this resolves.
+1. Open github and go to Zapier's repository. It will prompt a message asking if you want to make a Pull Request
+1. Submit a pull request against `master` branch. Be sure to include information around what you are solving, include any relevant screenshots and reference any issues this resolves.
 
 
 The team will get a notification that you submitted a pull request, but feel free to ping us in #design in Slack to take a look!
