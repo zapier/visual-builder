@@ -7,12 +7,14 @@ redirect_from: /docs/
 
 # Automated App Development Checks
 
-In accordance with our [app development guide](https://zapier.com/developer/documentation/v2/app-dev-guide/), we run your app through a set of automated checks to ensure it's giving our users the best possible experience. Violations come in two flavors:
+In accordance with our [app development guide](https://platform.zapier.com/partners/planning-guide), we run your app through a set of automated checks to ensure it's giving our users the best possible experience. Violations come in two flavors:
 
 - **Errors** will block deployment of your app until they're fixed. These include missing data (that renders an app invalid), style concerns, or security issues
 - **Warnings** won't block deployment, but are good things to consider. We've done our best to make these only show up when appropriate, but they may be safe to ignore if your app doesn't use the feature described.
 
 When the checks are run, we'll give a brief blurb summarizing the issue (with an issue `id`) along with a link to this page. This will act as a full reference explaining each error and giving examples for each.
+
+---
 
 <a name="ZDE001"></a>
 
@@ -44,6 +46,8 @@ See `https://google.com`
 
 If you see this error, you should look through both the description for the trigger/search/action and the help text for any fields that might have bad links.
 
+---
+
 <a name="ZDE002"></a>
 
 ## ZDE002 - Has Redundant Help Text
@@ -68,6 +72,8 @@ Help text is optional and meant to provide non-obvious information or links for 
 }
 ```
 
+---
+
 <a name="ZDE003"></a>
 
 ## ZDE003 - OAuth URL Must Be HTTPS
@@ -85,6 +91,8 @@ http://slack.com/oauth/authorize
 ```text
 https://slack.com/oauth/authorize
 ```
+
+---
 
 <a name="ZDE004"></a>
 
@@ -108,6 +116,8 @@ Google Translate is a service that enables Zapier users to translate text from o
 Google Translate translates text from one language into another.
 ```
 
+---
+
 <a name="ZDE005"></a>
 
 ## ZDE005 - Needs a Titlecased Label
@@ -130,13 +140,17 @@ We use the `titlecase` library ([Github](https://github.com/ppannuto/python-titl
 
 ![](https://zappy.zapier.com/DFFBA05A-440B-44B1-8D19-90AE51FADCA1.gif)
 
-https://repl.it/@xavdid/titlecase-test
+Try it: [https://repl.it/@xavdid/titlecase-test](https://repl.it/@xavdid/titlecase-test)
+
+---
 
 <a name="ZDE006"></a>
 
 ## ZDE006 - Consists Only of a Single Static Webhook
 
 [Static Webhooks](https://zapier.com/developer/documentation/v2/static-webhooks/), while convenient to build, leave a lot to be desired from our side. For this reason, Zapier doesn't allow apps that are a single static hook. To fix this, add more Triggers and Actions.
+
+---
 
 <a name="ZDE007"></a>
 
@@ -182,6 +196,10 @@ The accompanying polling url would look something like `https://site.com/contact
 
 Typically you could return the first object from the `results` array as part of a poll (and hydrate the `friends`), but since the hook has no friend information, you should always remove it. A good way to do this is a `processContact` function that you map all results (of either type) through that reduces each object to the lowest common denominator.
 
+---
+
+---
+
 <a name="ZDE008"></a>
 
 ## ZDE008 - A Trigger Must Be Designated as a Test Call
@@ -205,6 +223,10 @@ https://slack.com/api/auth.test
 For **v2** apps, you denote a test trigger. There's more information [here](https://zapier.com/developer/documentation/v2/test-triggers/).
 
 For **CLI** apps, you add a test url or function to your authentication, details [here](https://github.com/zapier/zapier-platform-cli#authentication).
+
+---
+
+---
 
 <a name="ZDE009"></a>
 
@@ -242,11 +264,15 @@ return results.map(function(contact) {
 }
 ```
 
+---
+
 <a name="ZDE010"></a>
 
 ## ZDE010 - Requires at Least One Search Field
 
 When making a search step, it's important to have a field to search on! Common examples for searching for a user are by name, email, and username. See [here](https://zapier.com/developer/documentation/v2/reference/#search-fields) for more information.
+
+---
 
 <a name="ZDE011"></a>
 
@@ -266,6 +292,8 @@ Your app's logo is used all over the site in square containers. To ensure it's n
 300px by 300px
 ```
 
+---
+
 <a name="ZDE012"></a>
 
 ## ZDE012 - Logo Image Must Be Larger Than 256px
@@ -283,6 +311,8 @@ Your app's logo is used all over the site in various sizes. To ensure it looks g
 ```text
 300px by 300px
 ```
+
+---
 
 <a name="ZDE013"></a>
 
@@ -302,11 +332,15 @@ mylogo.jpg
 mylogo.png
 ```
 
+---
+
 <a name="ZDE014"></a>
 
 ## ZDE014 - Unable to Process Image
 
 For whatever reason, your image was unable to be processed. Try a different file or contact [support](https://zapier.com/app/contact-us) for more information.
+
+---
 
 <a name="ZDE015"></a>
 
@@ -314,11 +348,15 @@ For whatever reason, your image was unable to be processed. Try a different file
 
 Zapier provides a few constructs for connecting multiple steps in a Zap (such as [dynamic dropdowns](https://zapier.com/developer/documentation/v2/dynamic-dropdowns/) and [search connectors](https://zapier.com/developer/documentation/v2/reference/#search-connector)). If these are used, it's important that the target step exists and is of the correct type.
 
+---
+
 <a name="ZDE016"></a>
 
 ## ZDE016 - Asks for API Key in Action Instead of in Auth
 
 Some apps incorrectly have `api_key` or similar as an an action field in an action instead of centrally used in auth. This is worse because action fields typically aren't treated with the same level of security as auth fields are (eg: scrubbed from logs) and aren't action specific. Additionally, the ability to test the validity of auth doesn't exist for action fields, so anything auth related should be put into an auth field instead.
+
+---
 
 <a name="ZDE017"></a>
 
@@ -345,11 +383,15 @@ By design, to get the `Add a Search Step` button, an action needs both a search 
 }
 ```
 
+---
+
 <a name="ZDE018"></a>
 
 ## ZDE018 - Has been moved
 
 See [ZDE004](https://zapier.com/developer/documentation/v2/app-checks-reference/#ZDE004) instead.
+
+---
 
 <a name="ZDE019"></a>
 
@@ -359,17 +401,23 @@ When users are setting up a Trigger, they need sample data to be returned in ord
 
 It's very important that the structure of an object from the actual trigger and in the sample data are identical. [Learn how to properly set up Trigger sample results](https://zapier.com/developer/documentation/v2/trigger-sample-results/).
 
+---
+
 <a name="ZDE020"></a>
 
 ## ZDE020 - Search Requires a URL
 
 When making a search step, it's important to have a URL to send a search request too. This URL is needed to fetch a search request or search resource to present to the user.
 
+---
+
 <a name="ZDE021"></a>
 
 ## ZDE021 - URL for Triggers|Searches|Actions should be HTTPS
 
 For privacy, consistency, and security purposes, we require all your authentication and app URLs to be on HTTPS, the 'S' at the end of HTTPS stands for 'Secure'. This means all communications between the browser and website are encrypted.
+
+---
 
 <a name="ZDE022"></a>
 
@@ -378,6 +426,8 @@ For privacy, consistency, and security purposes, we require all your authenticat
 So we can correctly categorize your App on Zapier, please choose the category that fits best.
 
 You can specify a category for your app by clicking the "Edit Title, Image or Description" button on your App's Development/Build tab. You'll see the category option after you update the Intended audience dropdown to "Public".
+
+---
 
 <a name="ZDW001"></a>
 
@@ -401,6 +451,8 @@ We use templates to communicate with the user what sorts of objects they're deal
     "noun": "Contact"
 }
 ```
+
+---
 
 <a name="ZDW002"></a>
 
@@ -426,6 +478,8 @@ Help text is meant to be a short blurb that gives the user clear instructions ab
 }
 ```
 
+---
+
 <a name="ZDW003"></a>
 
 ## ZDW003 - Consider Using Z.JSON.Parse() Instead of JSON.Parse()
@@ -444,6 +498,8 @@ var result = JSON.parse(bundle.response.content)
 var result = z.JSON.parse(bundle.response.content)
 ```
 
+---
+
 <a name="ZDW004"></a>
 
 ## ZDW004 - There Should Be No More Than X Important Triggers|Searches|Actions in an App
@@ -452,11 +508,15 @@ In order to highlight your most popular steps and give the user a clear recommen
 
 These can be adjusted in the settings for each individual step, either via checkbox (V2 Platform) or via the `important` property (CLI)
 
+---
+
 <a name="ZDW005"></a>
 
 ## ZDW005 - Contains a REST Hook Trigger, but The "(Un)Subscribe URL" Is Missing
 
 For convenience, there's a central `subscribe_url` for REST hooks. It's not required, but is helpful! See [these docs](https://zapier.com/developer/documentation/v2/rest-hooks/) for more information.
+
+---
 
 <a name="ZDW006"></a>
 
@@ -478,11 +538,15 @@ http://site.com/messages/subscribe
 https://site.com/messages/subscribe
 ```
 
+---
+
 <a name="ZDW007"></a>
 
 ## ZDW007 - Is Using a Static Webhook
 
 As static webhooks are a little more complicated to set up correct, we discourage their use. We no longer support adding new static webhook triggers to a public app, please use an alternative trigger type.
+
+---
 
 <a name="ZDW008"></a>
 
@@ -491,6 +555,8 @@ As static webhooks are a little more complicated to set up correct, we discourag
 URLs can have variables in them (such as {% raw %}`https://{{subdomain}}.typeform.com`{% endraw %}). If those variables are optional and not supplied by the user, the url will be invalid and the step will never work.
 
 If you want add optional parameters to the url, do this by modifying the `bundle.request.params` object via scripting. For example, for a trigger with key `task`, define a method `task_pre_poll`. See the [documentation](/developer/documentation/v2/scripting/#key_pre_poll) and [examples](https://zapier.com/developer/documentation/v2/scripting/#trigger-pre-poll-examples) for more details.
+
+---
 
 <a name="ZDW009"></a>
 
@@ -510,6 +576,8 @@ API key is found on the "Integrations" page in settings
 Go to the [API Details](https://my.site.com/manage/api-details)
 screen from your Website Dashboard to find your API Key.
 ```
+
+---
 
 <a name="ZDW010"></a>
 
@@ -564,11 +632,15 @@ To **fix** this, see examples at the following links:
 - CLI: https://github.com/zapier/zapier-platform-cli#basic
 - Web Builder: https://zapier.com/developer/documentation/v2/app-dev-guide/#connection-label
 
+---
+
 <a name="ZDW011"></a>
 
 ## ZDW011 - Search Should Have a Resource URL
 
 [Resource URL](https://zapier.com/developer/documentation/v2/searches/#resource-url) is used to fetch the full details of a Search result or (in the case of a Search or Action when no results are found) Create result. This is helpful because most searches only return a subset of a result's fields. It also ensures that regardless of it having found or created, the same data is returned.
+
+---
 
 <a name="ZDW012"></a>
 
@@ -581,6 +653,8 @@ Read more about implementing dynamic dropdowns below:
 - CLI: https://github.com/zapier/zapier-platform-cli#dynamic-dropdowns
 - Web Builder: https://zapier.com/developer/documentation/v2/dynamic-dropdowns/
 
+---
+
 <a name="ZDW013"></a>
 
 ## ZDW013 - There Should Be At Least X Important Triggers|Searches|Actions in an App
@@ -589,11 +663,15 @@ In order to highlight your most popular steps and give the user a clear recommen
 
 These can be adjusted in the settings for each individual step, either via checkbox (V2 Platform) or via the `important` property (CLI)
 
+---
+
 <a name="ZDE500"></a>
 
 ## ZDE500 - Upgrading the platform version on a public app is not allowed right now.
 
 Please reach out to [partners@zapier.com](mailto:partners@zapier.com) to get your new version of your app deployed. Unfortuntely, partners are not able to deploy a new platform version public app at this time.
+
+---
 
 <a name="ZDE501"></a>
 
@@ -604,11 +682,15 @@ Adding a new required field within an existing trigger/action/search or authenti
 1. If the new required field is within a trigger/action/search, you can hide the old/existing trigger/action/search and create a new one with the required field added. All exisitng Zaps will continue to function with the older/hidden item, but new Zaps will use the new trigger/action/search with the required field.
 2. Define the new field without using the ""required"" flag, and then use scripting for the trigger/action/search to specify a default value, before sending requests to your API endpoint.
 
+---
+
 <a name="ZDE502"></a>
 
 ## ZDE502 - You cannot change the auth type
 
 Changing the auth type of your app will break all existing user's Zaps. Please visit this doc for the available options: https://zapier.com/developer/documentation/v2/migrating-your-zapier-integration/
+
+---
 
 <a name="ZDE503"></a>
 
@@ -630,11 +712,15 @@ To mark a trigger as hidden - add <code>hidden: true</code> parameter to the tri
 }
 ```
 
+---
+
 <a name="ZDE504"></a>
 
 ## ZDE504 - You cannot change an existing trigger's data source
 
 Changing the data source of a trigger breaks live Zaps. Instead, you'll want to hide this trigger and create a new trigger with the updated data source. All existing Zaps will continue to function as is, but new Zaps will use the new trigger with the updated data source.
+
+---
 
 <a name="ZDE505"></a>
 
@@ -642,11 +728,15 @@ Changing the data source of a trigger breaks live Zaps. Instead, you'll want to 
 
 You cannot remove action that have live Zaps. You'll need to hide the action instead so it is no longer available to use in new Zaps.
 
+---
+
 <a name="ZDE506"></a>
 
 ## ZDE506 - Do not remove this search!
 
 You cannot remove search that have live Zaps. You'll need to hide the search instead so it is no longer available to use in new Zaps.
+
+---
 
 <a name="ZDW500"></a>
 
