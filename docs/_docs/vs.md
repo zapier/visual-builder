@@ -47,8 +47,8 @@ Choose CLI if your API needs custom coding for most API calls or you find writin
 
 _‌→ Install Zapier Platform CLI with `npm install -g zapier-platform-cli`, check our [CLI Quick Start Guide](https://zapier.com/developer/start/introduction) to build a demo integration, then learn more in [Zapier's CLI documentation](https://zapier.github.io/zapier-platform-cli/)._
 
-## Coming Soon for Zapier Platform UI's visual builder
+## Switching from the UI to the CLI
 
-Zapier Platform UI is a new way to build Zapier integrations—and we have a lot planned for it. Today, you can build full integrations and ship them from the visual builder. Coming soon, it will also let you monitor feature requests for your integration. You will also soon be able to scaffold new integrations in the UI, then convert the integration to Zapier CLI and continue your integration development there.
+**It's easy to start your project in the UI and then switch to the CLI later!**  If you're having trouble deciding which tool is the best fit for your project, start in the UI and then "export" your project when you find you need the advanced features of the CLI.  
 
-If you've built a Zapier in the past with our legacy web builder, this April you'll be able to convert your existing integration to a visual builder integration to maintain your integration in the new editor and add new features.
+See the [section on exporting your project](/docs/export) to try it out!
