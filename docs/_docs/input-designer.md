@@ -229,12 +229,6 @@ DateTime fields let users enter dates and times, using their human readable valu
 
 > Learn more about how users can [modify dates and times in Zapier][2]{:target="_blank"}.
 
-### File
-
-![Zapier File Field][image-14]
-
-File fields let users select a file object from a previous Zap step or enter a public URL to a file, where Zapier will then send the file to your API.
-
 ### Password
 
 ![Zapier Password Field][image-15]
