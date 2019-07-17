@@ -23,7 +23,7 @@ pre {
 
 .language-text { color: #d0d0d0; }
 
-.highlight pre { background-color: #354147; }
+.highlight pre { background-color: #354147; overflow: auto; }
 .highlight .hll { background-color: #354147; }
 .highlight .c { color: #999999; font-style: italic; } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2; } /* Error */
