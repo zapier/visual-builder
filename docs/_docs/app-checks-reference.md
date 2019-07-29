@@ -96,9 +96,9 @@ https://slack.com/oauth/authorize
 
 <a name="ZDE004"></a>
 
-## ZDE004 - Cannot Contain "Zapier", "Sync", or is Too Long
+## ZDE004 - Invalid Description
 
-Your app's description is a place to talk about your app, not ours! Even if we really like your service, per our [App Development guide](https://zapier.com/developer/documentation/v2/app-dev-guide/#copy) you're not allowed to say `Zapier` in your app's description.
+Your app's description is a place to talk about your app, not ours! The description should start with `App Name is a` and go on to talk about the purpose of your service. Even if we really like your service, per our [App Development guide](https://platform.zapier.com/partners/planning-guide#app-description-copy) you're not allowed to say `Zapier` in your app's description.
 
 Additionally, it's discouraged that you talk about how this integration will `sync` anything, as the space is supposed to be about your service itself instead of the Zapier integration in particular.
 
@@ -107,13 +107,13 @@ Lastly, this section should be short and sweet. A brief description (roughly twe
 &#10008; an example of an **incorrect** setup:
 
 ```text
-Google Translate is a service that enables Zapier users to translate text from one language into another.
+Google Translate enables Zapier users to translate text from one language into another.
 ```
 
 &#10004; an example of a **correct** implementation:
 
 ```text
-Google Translate translates text from one language into another.
+Google Translate is a service that translates text from one language into another.
 ```
 
 ---
