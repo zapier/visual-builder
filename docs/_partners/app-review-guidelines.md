@@ -7,7 +7,7 @@ redirect_from:
 
 # App Review Guidelines
 
-### **Introduction**
+## **Introduction**
 
 We are excited you are creating an integration for the [Zapier Platform](https://zapier.com/platform) and are here to help you understand our platform and guidelines in order to build your app for success. With thousands of Partners and apps, the goal for the Zapier Platform is to provide a clear and simple user experience for our mutual users to set up Zaps as easily and quickly as possible. We can accomplish this by maintaining a level of quality and consistency across all public apps in our integration library through app reviews.
 
@@ -23,9 +23,8 @@ Some important points to note :
 * We support diverse views being represented on the Zapier Platform, as long as your app is respectful to users with differing opinions and the quality of the user experience is up to par. Apps with content or behavior the app reviewer deems inappropriate, discriminatory, or ‘over the line’ will be rejected.
 * Those attempting to cheat the system (for example, by trying to game the review process, steal user data, or manipulate test users) could be removed from the Developer Platform and will have have their app removed from Zapier.
 * You are responsible for making sure everything in your app complies with these guidelines, so please review them carefully before submitting your app for review.
-* Once your app is launched, you are responsible for [maintaining the integration](https://platform.zapier.com/partners/feature-requests-bugs) which includes fixing bugs, improving existing features, and adding new features. You are also enrolled in the [Zapier Partner Program](https://zapier.com/platform/partner-program) and are eligible for a variety of benefits.
 
-### **Before You Submit**
+## **Before You Submit**
 
 Before submitting your Zapier integration, it’s important to become familiar with the criteria Zapier uses to review all apps requesting to go public. Following the below criteria doesn’t guarantee approval, but making sure you can check every item on the list is a great start. 
 
@@ -39,9 +38,8 @@ Make sure you:
 * Enable backend services so they’re live and accessible during review.
 * Include detailed explanations of non-obvious features in the App Review notes, including supporting documentation where appropriate. If we cannot understand aspects of your app during the review, we may reject it.
 * Focus on ease of use. If you haven’t yet, please read [How Zapier Works](https://zapier.com/help/how-zapier-works/) and set up a few Zaps to get a sense of the user experience.
-* For more information, check [Zapier’s guide to building a Zapier integration](https://platform.zapier.com/partners/planning-guide) for the core guidelines to follow when building and branding your Zapier integration, as well as our [App Development Guide](https://zapier.com/developer/documentation/v2/app-dev-guide/), which we use to provide feedback for your app during reviews.
 
-### **1. General**
+## **1. General**
 
 1.1 **Familiarity with Zapier**
 If you haven’t used Zapier before, [sign up](https://zapier.com/sign-up/) for a free account and try a few popular integrations before building your integration. This will help you understand how Zapier works, how your users will set up Zaps, and how your integration can best fit into Zap workflows.
@@ -72,21 +70,21 @@ The App Review Team verifies each trigger, action, and search in the integration
 * Provide a demo video or detailed documentation to the Zapier team if testing any features requires an environment that is difficult to replicate or requires specific hardware.
 * Supply any other necessary credentials/resources and configure the test account so it’s ready to test. For example,  providing dummy payment data if your app requires making payments, or configuring your plugin/embed on a test site to send us. Do not give super admin access or enable any features or settings on the test account that are only available to internal employees, and not available to users.
 
-1.6 **Ensure Your Integration is Complete and Platform Consistent (Completeness and Platform Consistency)**
+1.6 **Completeness and Platform Consistency**
 Submit your integration for review only when it is complete and ready to be published. Make sure it is thoroughly tested for edge cases, and does not have any bugs when submitting. Both your product and integration need to work consistently without errors. See the following guideline regarding “Repeated Submission” for more information. We will not allow incomplete or error-ridden app integrations to become public.
 
-1.7 **Avoid Repeated Submissions (Repeated Submission)**
+1.7 **Repeated Submission**
 Submitting multiple integrations that are essentially the same ties up the App Review process and risks the rejection of all the integrations. Please be thoughtful and consider combining your apps into one where it makes sense. Also, please do not flood the App Review team with multiple, consecutive submissions of the same integration while going through the review process. Violating this policy will result in slower review times for your app or further penalties.
 
-1.8 **Avoid Misleading or Malicious Functionality (Misleading or Malicious Functionality)**
+1.8 **Misleading or Malicious Functionality**
 Your app must perform as advertised and should not give users the impression the app is something it is not. If your app appears to promise certain features and functionalities, it needs to deliver. Do not create a Zapier integration that can be used to spam, phish, or send unsolicited messages to users. If you attempt to cheat the system (for example, by trying to trick the review process, steal user data, or fake real users) your apps will be removed from Zapier and you could be expelled from submitting any apps in the future. False information and features, including inaccurate data or joke functionalities, such as fake phone calls or SMS are prohibited.
 
-1.9 **Avoid Objectionable Content - or something about our inclusivity? (Objectionable Content)**
+1.9 **Objectionable Content**
 Apps should not include content that is discriminatory, defamatory, offensive, mean-spirited, or insensitive with regards to gender, religion, sexual orientation, age, race, national/ethnic origin, or other targeted groups.
 
-### **2. MEta**
+## **2. Meta**
 
-2.1 **App** **Ownership**
+2.1 **App Ownership**
 The Zapier team needs to ensure the account owning the app has proper access to associated platform and API, either by working for, being associated with, or being contracted by the company whose app is in review. This is so we can reach out with questions or support issues during the review and after the app is public. If it’s not obvious to us the owning account is associated with your app’s company (largely by email domain), we will request proof via an email from a matching domain as the platform or confirmation from someone at the company.
 
 Here are some further scenarios of what apps are permitted on the Zapier platform by app status, ownership, and intention:
@@ -129,7 +127,7 @@ Whether your app is built with the [Platform UI or CLI](https://platform.zapier.
 2.8 **Language**
 We do not have native support for language other than English on the Zapier Platform. The description of your app, trigger/action/search names, field names, output field labels, help texts, and error messages must be in English. The data returned from your API and passed back to Zapier can be in the native language of your product.
 
-### **3. Authentication**
+## **3. Authentication**
 
 3.1 **Connecting Accounts**
 Make connecting new accounts on Zapier easy for users. [OAuth v2](https://platform.zapier.com/docs/oauth) is the preferred authentication scheme.
@@ -146,7 +144,7 @@ When authenticating with invalid credentials, make sure a user-friendly error me
 3.4 **HTTPS Endpoints**
 For security purposes, all API endpoints used by in app must use HTTPS versus HTTP. We also require the authentication or login portal to the platform to be hosted on HTTPS.
 
-### **4. Triggers**
+## **4. Triggers**
 
 4.1 **Maximum Number of Triggers**
 The first launch of your app should include no more than **three important triggers**, and** five total triggers **representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers) before you start building out triggers. Iterate and add more triggers over time with user feedback once the app is public.
@@ -191,7 +189,7 @@ Additionally, each trigger must have:
     * Put required trigger input fields at the top of the form with optional fields towards the bottom by importance.
 
 4.4 **Static Webhooks**
-Triggers using static webhooks are not allowed in public Zapier apps. Users can replicate this functionality on Zapier via our built in [Webhooks app](https://zapier.com/apps/webhook/integrations). Please consider including authentication and using REST hooks to provide users with a more streamlined experience.
+Triggers using [static webhooks](https://platform.zapier.com/legacy/docs#static-webhooks) are not allowed in public Zapier apps. Users can replicate this functionality on Zapier via our built in [Webhooks app](https://zapier.com/apps/webhook/integrations). Please consider including authentication and using REST hooks to provide users with a more streamlined experience.
 
 4.5 **Polling Triggers**
 Live Zaps with [polling triggers](https://platform.zapier.com/docs/triggers#polling-trigger) automatically poll the request URL for new data every 5 to 15 minutes, depending on the user’s [Zapier plan](https://zapier.com/pricing).
@@ -271,7 +269,7 @@ Don't offer a generic 'Updated <object name>' trigger, as these are often too ge
 4.11 **Error Messages**
 Users should never receive a successful response if there was an error in the request. All error messages should be user-friendly and avoid technical jargon. Be as specific as possible to what caused the error.
 
-### **5. Actions**
+## **5. Actions**
 
 5.1 **Maximum Number of Actions**
 The first launch of your app should include no more than **three important actions**, and** five total actions** representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your actions. You can iterate and add more actions over time with user feedback.
@@ -377,7 +375,7 @@ The ‘Test this Step’ step on actions sends a real request on behalf of the c
 5.7 **Create or Update**
 If your app must have a ‘Create-or-Update’ functionality, implement a ‘Find-or-Create Search’ with an ‘Update’ action versus a ‘Search’ with a ‘Create-or-Update’ action or a standalone ‘Create-or-Update’ action.
 
-### **6. Searches**
+## **6. Searches**
 
 6.1 **Maximum Number of Searches**
 The first launch of your app should include no more than **three important searches**, and** five total searches** representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your searches. You can iterate and add more searches over time with user feedback.
@@ -474,7 +472,7 @@ Each search requires [sample data](https://platform.zapier.com/docs/faq#output) 
 * a field is represented by an ID.
 * in general, it is not instantly clear what the field or value represents.
 
-### **7. Error Handling**
+## **7. Error Handling**
 
 APIs are not always available. Users do not always provide valid data for requests. Build a defensive and resilient app. Plan for 4xx and 5xx responses. Without proper handling, errors can have incomprehensible messages, technical error codes, or worse, go uncaught.
 
@@ -496,7 +494,7 @@ Use `HaltedError` in situations where a required pre-condition is not met. For i
 * For apps requiring manual refresh of authorization on a regular basis, Zapier provides `ExpiredAuthError`, so the current operation is interrupted, the Zap is turned off (to prevent additional calls with expired credentials), and a predefined email is sent out informing the user to refresh the credentials.
 * For apps using OAuth2 + refresh requests or Session Auth, use `RefreshAuthError`. This signals Zapier to refresh the credentials and retry the failed operation.
 
-### **8. Code**
+## **8. Code**
 
 8.1 **Environment Variables**
 Do not hard code credentials such as API Keys, Client IDs, Client Secrets, etc. into your app. Use [environment variables](https://platform.zapier.com/docs/advanced#environment-variables)instead. 
@@ -504,17 +502,17 @@ Do not hard code credentials such as API Keys, Client IDs, Client Secrets, etc. 
 8.2 **Structure**
 If you are using the [Zapier CLI](https://platform.zapier.com/cli_docs/docs) to build the integration, ensure files are logically broken out into respective directories and the code is easy to follow. We suggest putting triggers, actions, and searches each in their own directories.
 
-### **After You Submit**
+## **After You Submit**
 
 Once you’ve submitted your app for public activation, you’re in the review process! Here are some things to keep in mind:
 
-* ****Timing****: A member of the App Review team will examine your app as soon as possible. However, if your app is complex or presents new issues, it may require greater scrutiny and consideration. And remember if your app is repeatedly rejected for the same guideline violation or you’ve attempted to manipulate the App Review process, review of your app will take longer to complete.
-* ****Status Updates****: A member of the App Review team will be in touch as soon as possible to provide you feedback regarding your integration. In order to proceed to the next step of the Public Activation, you will need to respond back to our feedback.
-* ****Early Access****: Get listed on Zapier’s website and give users early access to your integration. We do our best to try and launch your integration into Early Access as quickly as possible. Learn more [here](https://platform.zapier.com/partners/lifecycle-planning#3-enable-early-access).
-* ****Full Launch****: We keep an eye on your integration and may invite you to work with us on an official launch campaign to spread the word further. Learn more [here](https://platform.zapier.com/partners/lifecycle-planning#4-launch-your-zapier-integration).
+* **Timing**: A member of the App Review team will examine your app as soon as possible. However, if your app is complex or presents new issues, it may require greater scrutiny and consideration. And remember if your app is repeatedly rejected for the same guideline violation or you’ve attempted to manipulate the App Review process, review of your app will take longer to complete.
+* **Status Updates**: A member of the App Review team will be in touch as soon as possible to provide you feedback regarding your integration. In order to proceed to the next step of the Public Activation, you will need to respond back to our feedback.
+* **Early Access**: Get listed on Zapier’s website and give users early access to your integration. We do our best to try and launch your integration into Early Access as quickly as possible. Learn more [here](https://platform.zapier.com/partners/lifecycle-planning#3-enable-early-access).
+* **Full Launch**: We keep an eye on your integration and may invite you to work with us on an official launch campaign to spread the word further. Learn more [here](https://platform.zapier.com/partners/lifecycle-planning#4-launch-your-zapier-integration).
 
 We're excited to have you as a Partner on Zapier! If you have any questions or concerns about our app review guidelines, [email us](mailto:partners@zapier.com).
 
 
 
-Version 1.0 updated on August 1, 2019
+Version 1.0 updated on August 12, 2019
