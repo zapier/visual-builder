@@ -255,7 +255,7 @@ Users should never receive a successful response if there was an error in the re
 ## 5. Actions
 
 ### 5.1 Maximum Number of Actions
-The first launch of your app should include no more than **three important actions**, and** five total actions** representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your actions. You can iterate and add more actions over time with user feedback.
+The first launch of your app should include no more than **three important actions**, and **five total actions** representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your actions. You can iterate and add more actions over time with user feedback.
 
 #### 5.1.1 Important Actions
 * As mentioned above, we allow apps to set a maximum of three actions as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic[display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer actions, generally you should set them all as ‘Important’. Important actions are displayed first to users in the Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
@@ -342,13 +342,16 @@ The ‘Test this Step’ step on actions sends a real request on behalf of the c
 * a field is represented by an ID.
 * in general, it is not instantly clear what the field or value represents.
 
-### 5.7 Create or Update
+### 5.7 Create or Update Functionality
 If your app must have a ‘Create-or-Update’ functionality, implement a ‘Find-or-Create Search’ with an ‘Update’ action versus a ‘Search’ with a ‘Create-or-Update’ action or a standalone ‘Create-or-Update’ action.
+
+### 5.8 Delete Actions
+Delete actions makes it easy for users to accidentally delete data they didn’t intend to remove. Instead, offer less permanent actions such as options to deactivate, unsubscribe, or tag a user in a certain way (where users could then easily delete those items from inside your product).
 
 ## 6. Searches
 
 ### 6.1 Maximum Number of Searches
-The first launch of your app should include no more than **three important searches**, and** five total searches** representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your searches. You can iterate and add more searches over time with user feedback.
+The first launch of your app should include no more than **three important searches**, and **five total searches** representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your searches. You can iterate and add more searches over time with user feedback.
 
 #### 6.1.1 Important Searches
 * As mentioned above, we allow apps to set a maximum of three searches as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic[display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or less searches, generally you should set them all as ‘Important’. Important searches are displayed first to users in thee Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
