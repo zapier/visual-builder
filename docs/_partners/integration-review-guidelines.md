@@ -469,4 +469,4 @@ We're excited to have you as a Partner on Zapier! If you have any questions or c
 
 
 
-Version 1.0 updated on August 13, 201
+Version 1.0 updated on August 13, 2019
