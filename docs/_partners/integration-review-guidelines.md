@@ -198,7 +198,7 @@ Live Zaps with [polling triggers](https://platform.zapier.com/docs/triggers#poll
 * Ensure the data returned from the polling URL follows the Polling Trigger guidelines above.
 * Data returned from the polling URL should exactly match the data returned in the hook payload. Be particularly wary field keys from the polling URL and in the hook payload match in spelling and casing.
 
-### 4.7 [Response Content](https://zapier.com/developer/documentation/v2/integration-dev-guide/#trigger-response-content)
+### 4.7 Response Content
 
 #### 4.7.1 Names
 * Many actions in Zapier require names to be split into two fields - first/last or given/surname. This conflicts with some naming schemes around the world, but without a separated name field, your trigger may not be compatible with certain integrations. Always provide separated name fields, though feel free to return the full name as well if the response already includes this.
@@ -350,7 +350,7 @@ Avoid delete actions which make it easy for users to accidentally delete data th
 The first launch of your integration should include no more than **three important searches**, and **five total searches** representing the top use cases of your integration. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your searches. You can iterate and add more searches over time with user feedback.
 
 #### 6.1.1 Important Searches
-* As mentioned above, we allow integrations to set a maximum of three searches as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic[display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or less searches, generally you should set them all as ‘Important’. Important searches are displayed first to users in thee Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
+* As mentioned above, we allow integrations to set a maximum of three searches as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or less searches, generally you should set them all as ‘Important’. Important searches are displayed first to users in thee Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
 
 ### 6.2 Find or Create
 Search actions can optionally create items if nothing is found in the search. If your integration has a ‘Create-or-Update’ action, please implement a ‘Find-or-Create Search’ with an ‘Update’ action versus a ‘Search’ with a ‘Create-or-Update’ action or a standalone ‘Create-or-Update’ action.
