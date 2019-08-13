@@ -13,9 +13,9 @@ We are excited you are creating an integration for the [Zapier Platform](https:/
 
 Following the guidelines will ensure you can confidently build your app to get through the review process quickly and smoothly. If the Zapier Platform guidelines are not suitable for your app or business, that’s okay and you are more than welcome to use your integration as an invite-only app. 
 
-Below you will find our latest guidelines arranged into clear, multiple sections: General, Meta, Authentication, Triggers, Actions, Searches, Error Handling, and Code.
+Below you will find our latest guidelines arranged into clear, multiple sections: [General](https://platform.zapier.com/partners/app-review-guidelines#1-general), [Meta](https://platform.zapier.com/partners/app-review-guidelines#2-meta), [Authentication](https://platform.zapier.com/partners/app-review-guidelines#3-authentication), [Triggers](https://platform.zapier.com/partners/app-review-guidelines#4-triggers), [Actions](https://platform.zapier.com/partners/app-review-guidelines#5-actions), [Searches](https://platform.zapier.com/partners/app-review-guidelines#6-searches), [Error Handling](https://platform.zapier.com/partners/app-review-guidelines#7-error-handling), and [Code](https://platform.zapier.com/partners/app-review-guidelines#8-code).
 
-Some important points to note :
+Some important points to note:
 
 * The Zapier Platform is always changing and improving to keep up with the needs of our customers. Consequently, this is a living document. When new apps raise new questions and new trends in support issues arise, additions or updates to these guidelines will be made. Your apps should change and improve as well in order to maintain a healthy Partner rating.
 
