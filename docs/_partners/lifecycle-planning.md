@@ -136,13 +136,13 @@ Here are the steps to take to officially launch and join the program:
 While your integration is in the Early Access stage, we'll monitor how it's performing. When your integration reaches 50 users, our team will get in touch to invite you to start the official launch process. You must receive an invite from our team before you can start the rest of this process.
 
 <a id="beta"></a>
-### **2. Pass a Final App Review and Get a Beta Tag**
+### **2. Pass a Final Review and Get a Beta Tag**
 
 _Estimated time to complete: 2 weeks_
 
 _Who to involve: Your development team_
 
-Once you've been invited by the Zapier team, we will conduct a comprehensive review of your integration using our [App Review Guidelines](https://platform.zapier.com/partners/app-review-guidelines) and provide feedback. You'll need to make the requested changes via our deploy process (clone, make changes, deploy and replace). If everything looks good, we'll pass your app to our UX team for a second round of feedback, this time focusing less on the technical aspects and more on the user experience of your integration.
+Once you've been invited by the Zapier team, we will conduct a comprehensive review of your integration using our [Integration Review Guidelines](https://platform.zapier.com/partners/integration-review-guidelines) and provide feedback. You'll need to make the requested changes via our deploy process (clone, make changes, deploy and replace). If everything looks good, we'll pass your app to our UX team for a second round of feedback, this time focusing less on the technical aspects and more on the user experience of your integration.
 
 Now, a "Beta" tag will appear above your product's logo on Zapier during this time. During this time, we will continue to keep an eye on usage and support feedback to check that customers are having a good experience with your integration.
 
