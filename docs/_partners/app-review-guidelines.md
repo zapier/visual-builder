@@ -51,12 +51,10 @@ Your initial triggers, actions, and searches should focus on the main use cases 
 Test your integration early and often, both internally and externally during the build stage. This will help you catch bugs and identify any usability issues early on that you otherwise will be asked to address during the review process, which may extend the time to launch.
 
 #### 1.3.1 Internal Testing
-
-    * Create test Zaps in your developer account with each of the triggers, actions, and searches in your integration, and run them, so each have some successful Tasks in the Task History. This lets you experience firsthand the Zap setup process our mutual users will go through, and lets you validate the Triggers, Actions, and Searches look and work as intended. We may ask you to share your test Zaps with us when you submit your app for review.
+* Create test Zaps in your developer account with each of the triggers, actions, and searches in your integration, and run them, so each have some successful Tasks in the Task History. This lets you experience firsthand the Zap setup process our mutual users will go through, and lets you validate the Triggers, Actions, and Searches look and work as intended. We may ask you to share your test Zaps with us when you submit your app for review.
 
 #### 1.3.2 External Testing with Real Users
-
-    * Share your app’s [invite link](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations) before you request a review to give users access to the integration and to gather early feedback. Seeing unique and active users of your app gives us confidence the integration is useful and successfully working for many users.
+* Share your app’s [invite link](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations) before you request a review to give users access to the integration and to gather early feedback. Seeing unique and active users of your app gives us confidence the integration is useful and successfully working for many users.
 
 ### 1.4 Consistency in Style
 Users should be familiar with the Zapier app’s terminology and features, as they should be consistent with the terminology and features seen in your app’s own UI. We strive to give users a consistent experience throughout Zapier, so your app should also be consistent with the style used in other popular Zapier integrations. Be sure to follow [Zapier’s Branding and Design Guidelines](https://platform.zapier.com/partners/planning-guide#how-to-brand-your-zapier-integration) to ensure your app suits the Zapier ecosystem well.
@@ -106,8 +104,7 @@ Here are some further scenarios of what apps are prohibited from the Zapier Plat
 Ensure all information provided in the Activation form is accurate and up-to-date. This helps us reach out to the appropriate contacts when questions or support issues arise. 
 
 #### 2.2.1 Homepage URL
-
-    * The Homepage URL submitted via the Activation form should be the homepage URL of the application's marketing site.
+* The Homepage URL submitted via the Activation form should be the homepage URL of the application's marketing site.
 
 ### 2.3 Replacement App
 The app should not already have an equivalent that is Public in our App Directory. If you’re replacing an existing integration, check out the guide for [Replacing Your Zapier Integration](https://zapier.com/developer/documentation/v2/replacing-your-zapier-integration/).
@@ -150,8 +147,7 @@ For security purposes, all API endpoints used by in app must use HTTPS versus HT
 The first launch of your app should include no more than **three important triggers**, and **five total triggers** representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers) before you start building out triggers. Iterate and add more triggers over time with user feedback once the app is public.
 
 #### 4.1.1 Important Triggers
-
-    * As mentioned above, we allow apps to set a maximum of three triggers as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/triggers#how-to-add-a-new-trigger-to-a-zapier-integration) in the Visual Builder or the basic[display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer triggers, generally you should set them all as ‘Important’. Important triggers are displayed first to users in the Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
+* As mentioned above, we allow apps to set a maximum of three triggers as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/triggers#how-to-add-a-new-trigger-to-a-zapier-integration) in the Visual Builder or the basic[display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer triggers, generally you should set them all as ‘Important’. Important triggers are displayed first to users in the Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
 
 ### 4.2 Copy
 Any copy associated with a trigger should match the copy, text, and terminology used in your product’s UI. This includes the trigger’s name, description, input fields, help text, output fields, etc. For instance, since Dropbox calls directories "folders" in their product UI, the respective trigger in [their Zapier app](https://zapier.com/apps/dropbox/integrations#triggers-and-actions) refers to "folders" instead of "directories". If your API uses different terminology than your product’s UI, match the UI as users are most familiar with this - not the API.
@@ -167,26 +163,22 @@ Additionally, each trigger must have:
 [Trigger input fields](http:), if they exist, should be named appropriately and include help text if their purpose is ambiguous.
 
 #### 4.3.1 ID Fields
-
-    * Users should never be expected to type in an ID as this is error prone. Your app should not have any trigger fields labeled ‘<Object Name> ID’, such as ‘Customer ID’. Instead, use Zapier’s [dropdown](https://platform.zapier.com/docs/input-designer) functionality to provide users with a user-friendly list of options.
+* Users should never be expected to type in an ID as this is error prone. Your app should not have any trigger fields labeled ‘<Object Name> ID’, such as ‘Customer ID’. Instead, use Zapier’s [dropdown](https://platform.zapier.com/docs/input-designer) functionality to provide users with a user-friendly list of options.
 
 #### 4.3.2 Help Text
-
-    * Don't be redundant with help text, and only include it if you have something different to say from the field name such as  the expected format of the value or additional instructions. Redundant help text teaches users not to read any help text at all, so important information can be missed.
+* Don't be redundant with help text, and only include it if you have something different to say from the field name such as  the expected format of the value or additional instructions. Redundant help text teaches users not to read any help text at all, so important information can be missed.
 
 #### 4.3.3 Optional Trigger Fields
 
-    * If a trigger field is optional, confirm the request does not throw an error in a null case where the users does not select an option.
+* If a trigger field is optional, confirm the request does not throw an error in a null case where the users does not select an option.
 
 #### 4.3.4 Field Types
+* Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note the Zap Editor does not validate the data to ensure users added the correct item for that field type. 
 
-    * Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note the Zap Editor does not validate the data to ensure users added the correct item for that field type. 
-
-    * If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
+* If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
 
 #### 4.3.5 Ordering
-
-    * Put required trigger input fields at the top of the form with optional fields towards the bottom by importance.
+* Put required trigger input fields at the top of the form with optional fields towards the bottom by importance.
 
 ### 4.4 Static Webhooks
 Triggers using [static webhooks](https://platform.zapier.com/legacy/docs#static-webhooks) are not allowed in public Zapier apps. Users can replicate this functionality on Zapier via our built in [Webhooks app](https://zapier.com/apps/webhook/integrations). Please consider including authentication and using REST hooks to provide users with a more streamlined experience.
@@ -203,50 +195,41 @@ Live Zaps with [polling triggers](https://platform.zapier.com/docs/triggers#poll
 [REST hook-based triggers](https://platform.zapier.com/docs/triggers#rest-hook-trigger) are Zapier’s preferred implementation of triggers, since they fire immediately after the triggering action is performed. Here’s a [post](https://zapier.com/engineering/introducing-resthooksorg/) further describing why we and our mutual users prefer REST hook triggers over polling triggers.
 
 #### 4.6.1 Multiple Subscriptions
-
-    * Hook based triggers must allow multiple subscriptions without overwriting subscriptions. You can test this by setting up 2 Zaps with the same trigger, turning them On, and confirming  both Zaps fire successfully when the triggering action is performed.
+* Hook based triggers must allow multiple subscriptions without overwriting subscriptions. You can test this by setting up 2 Zaps with the same trigger, turning them On, and confirming  both Zaps fire successfully when the triggering action is performed.
 
 #### 4.6.2 Polling URL
-
-    * Each REST hook trigger must also have a polling URL defined. This allows users to easily pull in sample resources to set up their Zaps without leaving the Zap Editor. Without a corresponding polling URL, users would have to navigate off of the Zap Editor to the product to create or update a resource each time they setup a Zap.
-
-    * Ensure the data returned from the polling URL follows the Polling Trigger guidelines above.
-    * Data returned from the polling URL should exactly match the data returned in the hook payload. Be particularly wary field keys from the polling URL and in the hook payload match in spelling and casing.
+* Each REST hook trigger must also have a polling URL defined. This allows users to easily pull in sample resources to set up their Zaps without leaving the Zap Editor. Without a corresponding polling URL, users would have to navigate off of the Zap Editor to the product to create or update a resource each time they setup a Zap.
+* Ensure the data returned from the polling URL follows the Polling Trigger guidelines above.
+* Data returned from the polling URL should exactly match the data returned in the hook payload. Be particularly wary field keys from the polling URL and in the hook payload match in spelling and casing.
 
 ### 4.7 [Response Content](https://zapier.com/developer/documentation/v2/app-dev-guide/#trigger-response-content)
 
 #### 4.7.1 Names
-
-    * Many actions in Zapier require names to be split into two fields - first/last or given/surname. This conflicts with some naming schemes around the world, but without a separated name field, your trigger may not be compatible with certain apps. Always provide separated name fields, though feel free to return the full name as well if the response already includes this.
+* Many actions in Zapier require names to be split into two fields - first/last or given/surname. This conflicts with some naming schemes around the world, but without a separated name field, your trigger may not be compatible with certain apps. Always provide separated name fields, though feel free to return the full name as well if the response already includes this.
 
 #### 4.7.2 Addresses
-
-    * Likewise with names, many actions in Zapier require address components in separate fields (street, street2, city, state, zip), instead of requiring the complete address in a single field. Always provide separated address fields, though feel free to return the complete address as well if the response already includes this.
+* Likewise with names, many actions in Zapier require address components in separate fields (street, street2, city, state, zip), instead of requiring the complete address in a single field. Always provide separated address fields, though feel free to return the complete address as well if the response already includes this.
 
 #### 4.7.3 Date-times
+* Date-time values are required to be in [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it's UTC). This includes date-time values returned from the polling URL, in the hook payload, and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
 
-    * Date-time values are required to be in [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it's UTC). This includes date-time values returned from the polling URL, in the hook payload, and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
-
-        * `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
-        * `2018-12-01T12:32:01-0800`
-        * `2018-12-01T12:32:01-08:00`
-        * `2018-12-13` (for date-only values)
+    * `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
+    * `2018-12-01T12:32:01-0800`
+    * `2018-12-01T12:32:01-08:00`
+    * `2018-12-13` (for date-only values)
 
 #### 4.7.4 Booleans
-
-    * Set boolean values as `true` or `false`. Do not use `1` and `0` or alternative representations for boolean values.
+* Set boolean values as `true` or `false`. Do not use `1` and `0` or alternative representations for boolean values.
 
 #### 4.7.5 Important Data
-
-    * The response data should include important keys in the most usable format. For example, it helps to return both the ID and pretty name of objects, any contact information, and links to the resource (ex: New Card in Trello, link to card).
+* The response data should include important keys in the most usable format. For example, it helps to return both the ID and pretty name of objects, any contact information, and links to the resource (ex: New Card in Trello, link to card).
 
 #### 4.7.6 Unnecessary/Excess Data
-
-    * Remove unnecessary fields that may seem confusing or add noise to users’ Zap setup process. For example, if the response content includes information about the request itself and the input fields provided, please remove those fields from the returned response.
+* Remove unnecessary fields that may seem confusing or add noise to users’ Zap setup process. For example, if the response content includes information about the request itself and the input fields provided, please remove those fields from the returned response.
 
 #### 4.7.7 Dropdown Fields
 
-    * Return both the name and ID of the selected dropdown option to be used in subsequent steps of a Zap. 
+* Return both the name and ID of the selected dropdown option to be used in subsequent steps of a Zap. 
 
 ### 4.8 Sample Data
 Each trigger requires [sample data](https://platform.zapier.com/docs/faq#output) for instances where no result is returned during Zap setup. This could be because the API is temporarily down, or because the user has no existing data in their account to return. The sample data must:
@@ -275,8 +258,7 @@ Users should never receive a successful response if there was an error in the re
 The first launch of your app should include no more than **three important actions**, and** five total actions** representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your actions. You can iterate and add more actions over time with user feedback.
 
 #### 5.1.1 Important Actions
-
-    * As mentioned above, we allow apps to set a maximum of three actions as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic[display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer actions, generally you should set them all as ‘Important’. Important actions are displayed first to users in the Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
+* As mentioned above, we allow apps to set a maximum of three actions as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic[display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer actions, generally you should set them all as ‘Important’. Important actions are displayed first to users in the Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
 
 ### 5.2 Copy
 The copy for actions should match your product’s UI. This includes the action’s name, description, input fields, help text, etc. For instance, since Dropbox calls directories "folders" in their product UI, the Zapier app should refer to "folders" in the respective action. If the API uses different terminology than your product’s UI, match the UI - not the API.
@@ -292,69 +274,58 @@ Additionally, each action must have:
 All action steps *must* include [input fields](https://platform.zapier.com/docs/actions#2-build-action-input-form) to gather the data needed to create, update, or perform the intended action.
 
 #### 5.3.1 ID Fields
-
-    * Users should never be expected to manually type or map an internal ID to an action field. Your app should not have input fields labeled ‘XXX ID’. Generally, trigger and action steps of other apps do not return internal IDs for your specific platform to be used in an action field from your Zapier integration. Use Zapier’s [dynamic dropdown](https://platform.zapier.com/cli_tutorials/dynamic-dropdowns) and [Search Connector](https://platform.zapier.com/legacy/docs#search-connector)/[search-powered field](https://platform.zapier.com/cli_docs/docs#search-powered-fields) functionalities to provide users with an easier way to select or search for the appropriate resource by a more readily-available value such as ‘name’, ‘email address’, ‘title’, etc.
+* Users should never be expected to manually type or map an internal ID to an action field. Your app should not have input fields labeled ‘XXX ID’. Generally, trigger and action steps of other apps do not return internal IDs for your specific platform to be used in an action field from your Zapier integration. Use Zapier’s [dynamic dropdown](https://platform.zapier.com/cli_tutorials/dynamic-dropdowns) and [Search Connector](https://platform.zapier.com/legacy/docs#search-connector)/[search-powered field](https://platform.zapier.com/cli_docs/docs#search-powered-fields) functionalities to provide users with an easier way to select or search for the appropriate resource by a more readily-available value such as ‘name’, ‘email address’, ‘title’, etc.
 
 #### 5.3.2 Ordering
-
-    * Order action fields logically. If you are unsure, look at how the respective fields are ordered in your platform and mimic that since users will be familiar with that ordering. 
-    * Required action fields should generally be listed first at the top of the Zap Editor.
-    * Place all optional, lesser-used fields towards the bottom.
-    * Group related fields together. For example, first name and last name fields, as well as individual address component fields should be ordered consecutively. Do NOT use [line-item groups](https://platform.zapier.com/docs/input-designer#how-to-add-a-line-item-group) or the [‘children’](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) field schema key to visually group fields; these are solely intended for line-item functionality.
+* Order action fields logically. If you are unsure, look at how the respective fields are ordered in your platform and mimic that since users will be familiar with that ordering. 
+* Required action fields should generally be listed first at the top of the Zap Editor.
+* Place all optional, lesser-used fields towards the bottom.
+* Group related fields together. For example, first name and last name fields, as well as individual address component fields should be ordered consecutively. Do NOT use [line-item groups](https://platform.zapier.com/docs/input-designer#how-to-add-a-line-item-group) or the [‘children’](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) field schema key to visually group fields; these are solely intended for line-item functionality.
 
 #### 5.3.3 Required Fields
-
-    * If a field doesn't have to be required, don't make it! Parallel the required fields from your app as closely as possible. For example, if 'Email Address' is not required to create a lead in the platform, do not make the 'Email Address' field required in the Zapier editor. If the API specifies a non-important field as required, hard-code a default value so the field is not empty if one is not provided by the user.
-
-    * If the action step has a case where one field OR another field is required, set both fields as optional, add help text to both fields stating that one or the other is required, and throw a user-friendly error message if neither field is filled.
+* If a field doesn't have to be required, don't make it! Parallel the required fields from your app as closely as possible. For example, if 'Email Address' is not required to create a lead in the platform, do not make the 'Email Address' field required in the Zapier editor. If the API specifies a non-important field as required, hard-code a default value so the field is not empty if one is not provided by the user.
+* If the action step has a case where one field OR another field is required, set both fields as optional, add help text to both fields stating that one or the other is required, and throw a user-friendly error message if neither field is filled.
 
 #### 5.3.4 Help Text
-
-    * Don't be redundant with help text, and only include it if you have something different to say from the field name such as the expected format of the value or additional instructions. For example, help text for an 'Email Address' field stating 'Contact's email address' is not necessary. Redundant help text teaches users not to read any help text at all, so important information can be missed. You may use [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) formatting in help text.
+* Don't be redundant with help text, and only include it if you have something different to say from the field name such as the expected format of the value or additional instructions. For example, help text for an 'Email Address' field stating 'Contact's email address' is not necessary. Redundant help text teaches users not to read any help text at all, so important information can be missed. You may use [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) formatting in help text.
 
 #### 5.3.5 Default Values
+* Set [default values](https://platform.zapier.com/docs/input-designer#add-fields) for input fields sparsely, but when:
 
-    * Set [default values](https://platform.zapier.com/docs/input-designer#add-fields) for input fields sparsely, but when:
-
-        * the API specifies an unimportant field as required, set a default value in case one is not provided by the user.
-        * the a field in the platform is set to or shows a default value, set the same default value for the action field in the Zapier integration.
+* the API specifies an unimportant field as required, set a default value in case one is not provided by the user.
+* the a field in the platform is set to or shows a default value, set the same default value for the action field in the Zapier integration.
 
 #### 5.3.6 Field Types
+* Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note Zapier does not validate the data to ensure users added the correct item for that field type.
 
-    * Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note Zapier does not validate the data to ensure users added the correct item for that field type.
-
-    * If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
+* If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
 
 ### 5.4 [Response Content](https://zapier.com/developer/documentation/v2/app-dev-guide/#action-response-content)
 Return information about the resource that was created, updated, or affected by the action, and not just a 'success' message. At a minimum, return an ID, the name or title of the resource (when pertinent), and a link to the newly created, updated, or affected resource in the platform (if available). Additionally, return any other useful data about the resource users may need in subsequent actions of a multi-step Zap.
 
 #### 5.4.1 Date-times
+* Date-time values are required to be in standard [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it's UTC). This includes date-time values returned from the polling URL, in the hook payload, and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
 
-    * Date-time values are required to be in standard [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it's UTC). This includes date-time values returned from the polling URL, in the hook payload, and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
-
-        * `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
-        * `2018-12-01T12:32:01-0800`
-        * `2018-12-01T12:32:01-08:00`
-        * `2018-12-13` (for date-only values)
+    * `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
+    * `2018-12-01T12:32:01-0800`
+    * `2018-12-01T12:32:01-08:00`
+    * `2018-12-13` (for date-only values)
 
 #### 5.4.2 Booleans
-
-    * Set boolean values as `true` or `false`. Do not use `1` and `0` or alternative representations for boolean values.
+* Set boolean values as `true` or `false`. Do not use `1` and `0` or alternative representations for boolean values.
 
 #### 5.4.3 Important Data
+* The response data should include important fields in the most usable format. For example, it helps to return both the ID and pretty name of resources, any important information about the resource such as contact information, and a link to the resource in the platform (ex: New Card in Trello, link to card).
 
-    * The response data should include important fields in the most usable format. For example, it helps to return both the ID and pretty name of resources, any important information about the resource such as contact information, and a link to the resource in the platform (ex: New Card in Trello, link to card).
-
-    * Returning a link of the newly created/updated/affected resource in the action’s response data helps users link to the resource in subsequent steps of a multi-step Zap and confirms the new resource was created. This is also helpful for our support team when debugging issues.
+* Returning a link of the newly created/updated/affected resource in the action’s response data helps users link to the resource in subsequent steps of a multi-step Zap and confirms the new resource was created. This is also helpful for our support team when debugging issues.
 
 #### 5.4.4 Unnecessary/Excess Data
-
-    * Remove non-necessary fields that may seem confusing or add unnecessary noise to users’ Zap setup process from your API call’s custom code. For example, if the response content includes information about the request itself and the input fields provided, please remove those fields from the returned response.
+* Remove non-necessary fields that may seem confusing or add unnecessary noise to users’ Zap setup process from your API call’s custom code. For example, if the response content includes information about the request itself and the input fields provided, please remove those fields from the returned response.
 
 #### 5.4.5 Dropdown Fields
-    * The response data should include important keys in the most usable format. For example, it helps to return both the ID and pretty name of objects, any contact information, and links to the resource (ex: Find Card in Trello, link to card).
+* The response data should include important keys in the most usable format. For example, it helps to return both the ID and pretty name of objects, any contact information, and links to the resource (ex: Find Card in Trello, link to card).
 
-    * Return both the name and ID of the selected dropdown option to be used in subsequent steps of the Zap. 
+* Return both the name and ID of the selected dropdown option to be used in subsequent steps of the Zap. 
 
 ### 5.5 Sample Data
 The ‘Test this Step’ step on actions sends a real request on behalf of the connected account. Therefore, each action requires [sample data](https://platform.zapier.com/docs/faq#output) for instances when the user does not wish to actually run the action in their account to finish setting up the Zap. The sample data must:
@@ -380,8 +351,7 @@ If your app must have a ‘Create-or-Update’ functionality, implement a ‘Fin
 The first launch of your app should include no more than **three important searches**, and** five total searches** representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your searches. You can iterate and add more searches over time with user feedback.
 
 #### 6.1.1 Important Searches
-
-    * As mentioned above, we allow apps to set a maximum of three searches as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic[display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or less searches, generally you should set them all as ‘Important’. Important searches are displayed first to users in thee Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
+* As mentioned above, we allow apps to set a maximum of three searches as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic[display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or less searches, generally you should set them all as ‘Important’. Important searches are displayed first to users in thee Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
 
 ### 6.2 Find or Create
 Search actions can optionally create items if nothing is found in the search. If your app has a ‘Create-or-Update’ action, please implement a ‘Find-or-Create Search’ with an ‘Update’ action versus a ‘Search’ with a ‘Create-or-Update’ action or a standalone ‘Create-or-Update’ action.
@@ -400,61 +370,49 @@ Additionally, each search must have:
 [Search fields](https://platform.zapier.com/docs/actions#2-build-action-input-form) should be named appropriately and include help text if their purpose is ambiguous.
 
 #### 6.4.1 ID Fields
-
-    * Users should never be expected to manually type or map an internal ID to a search field. Your app should not have search fields labeled ‘XXX ID’. Generally, trigger and action steps of other apps do not return internal IDs for your specific platform to be used in an action field from your Zapier integration. And if the user *is* using a trigger from your Zapier integration, the trigger should return all necessary information about the resource without the Zap needing a search step to retrieve additional, necessary information. Instead, provide search field options for more general information such as ‘name’, ‘email address’, ‘phone number’, ‘title’, etc. that is more readily-available from all triggers.
+* Users should never be expected to manually type or map an internal ID to a search field. Your app should not have search fields labeled ‘XXX ID’. Generally, trigger and action steps of other apps do not return internal IDs for your specific platform to be used in an action field from your Zapier integration. And if the user *is* using a trigger from your Zapier integration, the trigger should return all necessary information about the resource without the Zap needing a search step to retrieve additional, necessary information. Instead, provide search field options for more general information such as ‘name’, ‘email address’, ‘phone number’, ‘title’, etc. that is more readily-available from all triggers.
 
 #### 6.4.2 Help Text
-
-    * Don't be redundant with help text, and only include it if you have something different to say from the field name such as the expected format of the value or additional instructions. Redundant help text teaches users not to read any help text at all, so important information can be missed.
+* Don't be redundant with help text, and only include it if you have something different to say from the field name such as the expected format of the value or additional instructions. Redundant help text teaches users not to read any help text at all, so important information can be missed.
 
 #### 6.4.3 Optional Search Fields
-
-    * If a search field is optional, confirm the request does not throw an error in a null case where the users does not select an option.
+* If a search field is optional, confirm the request does not throw an error in a null case where the users does not select an option.
 
 #### 6.4.4 Field Types
-
 * Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note Zapier does not validate the data to ensure users added the correct item for that field type. 
-
-    * If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
+* If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
 
 #### 6.4.5 Ordering
-
-    * Put required search fields at the top of the form with optional fields towards the bottom by importance.
+* Put required search fields at the top of the form with optional fields towards the bottom by importance.
 
 ### 6.5 Response Content
 While create actions return a single object to Zapier; searches must return an array of objects. Each search must follow these guideline:
 
 #### 6.5.1 No Result
-
-    * Do not raise an error if there are no search results to return. If your API returns a 404 for search misses, use custom code to return an empty list.
+* Do not raise an error if there are no search results to return. If your API returns a 404 for search misses, use custom code to return an empty list.
 
 #### 6.5.2 Names
-
-    * Many actions in Zapier require names to be split into two fields - first/last or given/surname. This conflicts with some naming schemes around the world, but without a separated name field, your trigger may not be compatible with certain apps. Always provide separated name fields, though feel free to return the full name as well if the response already includes this.
+* Many actions in Zapier require names to be split into two fields - first/last or given/surname. This conflicts with some naming schemes around the world, but without a separated name field, your trigger may not be compatible with certain apps. Always provide separated name fields, though feel free to return the full name as well if the response already includes this.
 
 #### 6.5.3 Addresses
-
-    * Likewise with names, most actions in Zapier require address components in separate fields (street, street2, city, state, zip), instead of requiring the complete address in a single field. Always provide separated address fields, though feel free to return the complete address as well if the response already includes this.
+* Likewise with names, most actions in Zapier require address components in separate fields (street, street2, city, state, zip), instead of requiring the complete address in a single field. Always provide separated address fields, though feel free to return the complete address as well if the response already includes this.
 
 #### 6.5.4 Date-times
+* Date-time values are required to be in [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it's UTC). This includes date-time values returned from the polling URL, in the hook payload, and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
 
-    * Date-time values are required to be in [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it's UTC). This includes date-time values returned from the polling URL, in the hook payload, and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
-
-        * `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
-        * `2018-12-01T12:32:01-0800`
-        * `2018-12-01T12:32:01-08:00`
-        * `2018-12-13` (for date-only values)
+    * `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
+    * `2018-12-01T12:32:01-0800`
+    * `2018-12-01T12:32:01-08:00`
+    * `2018-12-13` (for date-only values)
 
 #### 6.5.5 Booleans
-
-    * Set boolean values as `true` or `false`. Do not use `1` and `0` or alternative representations for boolean values.
+* Set boolean values as `true` or `false`. Do not use `1` and `0` or alternative representations for boolean values.
 
 #### 6.5.6 Important Data
-    * The response data should include important fields in the most usable format. For example, it helps to return both the ID and pretty name of resources, any important information about the resource such as contact information, and a link to the resource in the platform (ex: New Card in Trello, link to card).
+* The response data should include important fields in the most usable format. For example, it helps to return both the ID and pretty name of resources, any important information about the resource such as contact information, and a link to the resource in the platform (ex: New Card in Trello, link to card).
 
 #### 6.5.7 Unnecessary/Excess Data
-
-    * Remove unnecessary fields that may seem confusing or add noise to users’ Zap setup process from your API call’s custom code. For example, if the response content includes information about the request itself and the input fields provided, please remove those fields from the returned response.
+* Remove unnecessary fields that may seem confusing or add noise to users’ Zap setup process from your API call’s custom code. For example, if the response content includes information about the request itself and the input fields provided, please remove those fields from the returned response.
 
 ### 6.6 Sample Data
 Each search requires [sample data](https://platform.zapier.com/docs/faq#output) for instances where no result is returned during Zap setup. This could be because the API is temporarily down, or because no result is returned for the specific search the user tests. The sample data must:
@@ -472,7 +430,6 @@ Each search requires [sample data](https://platform.zapier.com/docs/faq#output) 
 * in general, it is not instantly clear what the field or value represents.
 
 ## 7. Error Handling
-
 APIs are not always available. Users do not always provide valid data for requests. Build a defensive and resilient app. Plan for 4xx and 5xx responses. Without proper handling, errors can have incomprehensible messages, technical error codes, or worse, go uncaught.
 
 ### 7.1 General Errors
@@ -489,7 +446,6 @@ Use `HaltedError` in situations where a required pre-condition is not met. For i
 * Note, unlike general errors, a Zap will never by turned off when this error is thrown even if it is raised more often than not.
 
 ### 7.3 Stale Authentication Credentials
-
 * For apps requiring manual refresh of authorization on a regular basis, Zapier provides `ExpiredAuthError`, so the current operation is interrupted, the Zap is turned off (to prevent additional calls with expired credentials), and a predefined email is sent out informing the user to refresh the credentials.
 * For apps using OAuth2 + refresh requests or Session Auth, use `RefreshAuthError`. This signals Zapier to refresh the credentials and retry the failed operation.
 
