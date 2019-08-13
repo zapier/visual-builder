@@ -147,7 +147,7 @@ For security purposes, all API endpoints used by in app must use HTTPS versus HT
 ## 4. Triggers
 
 ### 4.1 Maximum Number of Triggers
-The first launch of your app should include no more than **three important triggers**, and** five total triggers **representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers) before you start building out triggers. Iterate and add more triggers over time with user feedback once the app is public.
+The first launch of your app should include no more than **three important triggers**, and **five total triggers** representing the top use cases of your app. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers) before you start building out triggers. Iterate and add more triggers over time with user feedback once the app is public.
 
 #### 4.1.1 Important Triggers
 
