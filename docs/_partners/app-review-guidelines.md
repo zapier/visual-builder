@@ -346,7 +346,7 @@ The ‘Test this Step’ step on actions sends a real request on behalf of the c
 If your app must have a ‘Create-or-Update’ functionality, implement a ‘Find-or-Create Search’ with an ‘Update’ action versus a ‘Search’ with a ‘Create-or-Update’ action or a standalone ‘Create-or-Update’ action.
 
 ### 5.8 Delete Actions
-Delete actions makes it easy for users to accidentally delete data they didn’t intend to remove. Instead, offer less permanent actions such as options to deactivate, unsubscribe, or tag a user in a certain way (where users could then easily delete those items from inside your product).
+Avoid delete actions which make it easy for users to accidentally delete data they didn’t intend to remove. Instead, offer less permanent actions such as options to deactivate, unsubscribe, or tag a user in a certain way (where users could then easily delete those items from inside your product).
 
 ## 6. Searches
 
