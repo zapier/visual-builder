@@ -2,7 +2,7 @@
 title: Zapier Integration Review Guidelines
 order: 9
 layout: post-toc
-redirect_from:
+redirect_from: /partners/app-review-guidelines
 ---
 
 # Zapier Integration Review Guidelines
@@ -469,4 +469,4 @@ We're excited to have you as a Partner on Zapier! If you have any questions or c
 
 
 
-Version 1.0 updated on August 13, 2019
+Version 1.0.0 updated on August 13, 2019
