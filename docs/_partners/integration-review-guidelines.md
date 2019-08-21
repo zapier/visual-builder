@@ -2,7 +2,7 @@
 title: Zapier Integration Review Guidelines
 order: 9
 layout: post-toc
-redirect_from:
+redirect_from: /partners/app-review-guidelines
 ---
 
 # Zapier Integration Review Guidelines
