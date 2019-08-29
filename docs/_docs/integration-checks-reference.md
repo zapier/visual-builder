@@ -7,15 +7,22 @@ redirect_from: /docs/
 
 # Integration Checks Reference
 
-In accordance with our [app development guide](https://platform.zapier.com/partners/planning-guide), we run your app through a set of automated checks to ensure it's giving our users the best possible experience. To help better address a check in communication, each check is given a unique ID, consisting of a capital letter and three digits, such as `D001`. The initial capitial letter indicates the area the check examines. These areas include:
+In accordance with our [app development guide](https://platform.zapier.com/partners/planning-guide), we run your app through a set of automated checks to ensure it's giving our users the best possible experience. To help better address a check in communication, each check is given a unique ID, consisting of a capital letter and three digits, such as `D001`.
 
-- **D**efinition Checks: examine the definition of the integration, including auth and trigger/search/action configurations. Some could block you from saving/pushing if the violation results in a broken trigger/search/action.
-- **M**arketing Checks: verify public-facing information, such as integration title, description, and logo. Integrations follow these rules for Zapier users to see a consistent style among texts and logos across all public integrations. These checks are more likely to block you from going public.
-- Connected **A**ccount Checks: examine the connected accounts that are linked to your integration.
-- **S**tats Checks: examine usage stats, such as the number of users your integration has. They're more likely to block you from going public.
-- **U**ser Checks: verify things in the developer's (your) account, such as Terms of Service acceptance.
+You don't need to know the implication of the initial capitial letter. But if you're curious, they are:
+
+Area | Description
+--- | ---
+[**D**]efinition | Definition of the integration, including auth and trigger/search/action configurations. Some of these checks could block you from saving/pushing if the violation results in a broken trigger/search/action.
+[**M**]arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
+Connected [**A**]ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
+[**S**]tats | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.
+[**U**]ser | Things in the developer's (your) account, such as Terms of Service acceptance.
+[**L**]ifecycle | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).
 
 When the checks are run, we'll give a brief blurb summarizing the violation (with a check ID) along with a link to this page. This will act as a full reference explaining each error and giving examples for each.
+
+{% raw %}
 
 ---
 
@@ -560,4 +567,4 @@ integration should have a live Zap that demonstrates it works.
 You must agree to the Developer Terms of Service in order to proceed. Go to
 [Developer Home](https://zapier.com/app/developer) to agree.
 
-Completed task in 3579.65 ms
+{% endraw %}
