@@ -13,7 +13,7 @@ A Zapier integration connects your app to 1,300+ of the best business and produc
 
 If you haven't yet, please read [How Zapier Works](https://zapier.com/help/how-zapier-works/) and set up a few Zaps to get a sense of the user experience.
 
-Then, before you start building, think through how your Zapier integration will work, and plan out what triggers and actions to build. 
+Then, before you start building, think through how your Zapier integration will work, and plan out what triggers and actions to build.
 
 Building on the Zapier platform is different from other platforms. Instead of defining an entire app's end-to-end user experience, you're creating discrete triggers and actions .
 
@@ -61,7 +61,7 @@ After you're done building, you will want to invite users to try your integratio
 
 As you're getting close to finishing development, you’ll want others to try out your app using Zapier. You can invite co-workers or your users to provide feedback. Invitees must have a Zapier account, which they can create for free during the invite process.
 
-You can invite people directly to your integration from Zapire's Platform UI, whether you built it in the Platform UI or CLI. Open Zapier's developer platform at [zapier.com/app/developer](https://zapier.com/app/developer), select your app, then click the *Visibility* tab on the left. There, you can enter contacts' email addresses to invite them to your integration, or can copy a public invite link to share privately with those who you want to test.
+You can invite people directly to your integration from Zapire's Platform UI, whether you built it in the Platform UI or CLI. Open Zapier's developer platform at [zapier.com/app/developer](https://zapier.com/app/developer), select your app, then click the _Visibility_ tab on the left. There, you can enter contacts' email addresses to invite them to your integration, or can copy a public invite link to share privately with those who you want to test.
 
 ![Invite screen](https://cdn.zapier.com/storage/photos/d7e6f91a029c9ae740f70e475c97081d.png)
 
@@ -89,7 +89,7 @@ Your Zapier integration should not have more than 5 of each (trigger, action, or
 
 ### **2. Have at least 1 live Zap for each of your integration's visible Triggers, Actions, and Searches**
 
-Clone your integration and place it into invite-only mode. Doing so provides you a link to share this instance of your Zapier integration with prospective users. To see your number of users per Trigger, Action, and Search, check under the "Visibility" header in your dashboard.
+Clone your integration and place it into invite-only mode. Doing so provides you a link to share this instance of your Zapier integration with prospective users.
 
 The intention of this step is to ensure any show-stopping bugs are worked out and verify existing user demand. Towards this end, your users should be non-QA emails and external or outside of your company.
 
@@ -110,6 +110,7 @@ New visual builder:
 ![](https://zappy.zapier.com/6193B587-6437-47E8-B0C1-47ABB4B05291.png)
 
 <a id="early"></a>
+
 ### Welcome to Early Access!
 
 Now you get a page in [Zapier's App Directory](https://zapier.com/apps/categories/early-access) and your users can click it to gain early access to your integration.
@@ -124,18 +125,20 @@ As your integration continues to accumulate users, our team will watch the growt
 
 We may invite your company to officially launch your Zapier integration and join the [Zapier Integration Partner Program](https://zapier.com/platform/partner-program). Once you launch, you will automatically join the free **Zapier Integration Partner Program** and can access the program's [many co-marketing benefits](https://zapier.com/platform/partner-program) including:
 
-+ A [dedicated blog post](https://cdn.zapier.com/storage/photos/208bc1f088e3f2153b4631b6896f8cfe.png), [email](https://cdn.zapier.com/storage/photos/c7f8293e9d9cbc5b64051ae6ecca1b8c.png), and social media campaign about the launch of your integration
-+ [Get leads](https://cdn.zapier.com/storage/photos/961169e674f45d11ff50e2c0510ff200.png) from your page in [Zapier's App Directory](https://zapier.com/apps)
-+ Exposure within Zapier's product and on the sites of Zapier's 1,300+ integration partners
+- A [dedicated blog post](https://cdn.zapier.com/storage/photos/208bc1f088e3f2153b4631b6896f8cfe.png), [email](https://cdn.zapier.com/storage/photos/c7f8293e9d9cbc5b64051ae6ecca1b8c.png), and social media campaign about the launch of your integration
+- [Get leads](https://cdn.zapier.com/storage/photos/961169e674f45d11ff50e2c0510ff200.png) from your page in [Zapier's App Directory](https://zapier.com/apps)
+- Exposure within Zapier's product and on the sites of Zapier's 1,300+ integration partners
 
 Here are the steps to take to officially launch and join the program:
 
 <a id="wait"></a>
+
 ### **1. Reach 50 Users to Receive an Invite from the Zapier Team**
 
 While your integration is in the Early Access stage, we'll monitor how it's performing. When your integration reaches 50 users, our team will get in touch to invite you to start the official launch process. You must receive an invite from our team before you can start the rest of this process.
 
 <a id="beta"></a>
+
 ### **2. Pass a Final Review and Get a Beta Tag**
 
 _Estimated time to complete: 2 weeks_
@@ -186,7 +189,7 @@ The Partner API: Embed in a customized way to fit the style of your product
 
 Our [Partner API](https://platform.zapier.com/partners/zap-templates#embed-zapier-into-your-app-with-zapier-partner-api) gives you total control over the look and feel of the Zapier experience inside your app.
 
-Here is an example of how our partner Unbounce implemented the Partner API inside their product: 
+Here is an example of how our partner Unbounce implemented the Partner API inside their product:
 
 ![](https://cdn.zapier.com/storage/photos/9e769e34030c2bbcf2fb80b827d69c22.png)
 
@@ -227,7 +230,7 @@ Make sure to check out [Zapier's brand guidelines](https://zapier.com/brand/) as
 
 Once you've launched your Zapier integration, you're enrolled in the [Zapier Partner Program](https://zapier.com/platform/partner-program) and are eligible for a variety of benefits. Congrats! You'll receive monthly emails from us about how your integration is doing, plus updates on where you stand and what benefits you're eligible for.
 
-+ Have questions about how the Zapier Partner Program works? [Check out our FAQ page](https://platform.zapier.com/partners/partner-faq#zapier-partner-program-faqs).
-+ Curious about how to increase usage and move up levels in the program? Here are some [tips on getting more users](https://platform.zapier.com/partners/partner-faq), according to top Zapier partners.
+- Have questions about how the Zapier Partner Program works? [Check out our FAQ page](https://platform.zapier.com/partners/partner-faq#zapier-partner-program-faqs).
+- Curious about how to increase usage and move up levels in the program? Here are some [tips on getting more users](https://platform.zapier.com/partners/partner-faq), according to top Zapier partners.
 
 _Have any other questions about the Partner Program? Please [email us](mailto:partners@zapier.com)._
