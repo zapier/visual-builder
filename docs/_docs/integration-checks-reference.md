@@ -560,6 +560,16 @@ integration should have a live Zap that demonstrates it works.
 
 ---
 
+<a name="T001"></a><a name="T00001"></a>
+
+## T001 - One Successful Task for Each Trigger/Search/Action
+
+To ensure you have tested every visible trigger/search/action, there should be at
+least one successful task in at least one of the app admin's task
+histories for each visible trigger/search/action.
+
+---
+
 <a name="U001"></a><a name="U00001"></a>
 
 ## U001 - Developer Terms of Service
