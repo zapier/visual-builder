@@ -17,7 +17,7 @@ Area | Description
 [**M**]arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
 Connected [**A**]ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
 [**S**]tats | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.
-[**T**]ask history | Data in your task history, produced by live Zaps.
+[**T**]ask History | Data in your task history, produced by live Zaps. These are more likely to block you from going public.
 [**U**]ser | Things in the developer's (your) account, such as Terms of Service acceptance.
 [**L**]ifecycle | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).
 
