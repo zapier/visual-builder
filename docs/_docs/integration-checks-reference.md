@@ -17,6 +17,7 @@ Area | Description
 [**M**]arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
 Connected [**A**]ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
 [**S**]tats | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.
+[**T**]ask history | Data in your task history, produced by live Zaps.
 [**U**]ser | Things in the developer's (your) account, such as Terms of Service acceptance.
 [**L**]ifecycle | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).
 
@@ -545,9 +546,10 @@ this [tool](http://www.picresize.com/).
 
 <a name="S001"></a><a name="S00001"></a>
 
-## S001 - 10 Live Zaps
+## S001 - 10 Users with a live Zap
 
-To verify user demand, there should be at least 10 live Zaps using your integration.
+To verify user demand, there should be at least 10 users who have a live Zap using
+this integration. "Live" means at least one successful task in recent history.
 
 ---
 
@@ -557,6 +559,16 @@ To verify user demand, there should be at least 10 live Zaps using your integrat
 
 To ensure any show-stopping bugs are worked out, every trigger/search/action of your
 integration should have a live Zap that demonstrates it works.
+
+---
+
+<a name="T001"></a><a name="T00001"></a>
+
+## T001 - One Successful Task for Each Trigger/Search/Action
+
+To ensure you have tested every visible trigger/search/action, there should be at
+least one successful task in at least one of the app admin's task
+histories for each visible trigger/search/action.
 
 ---
 
