@@ -557,8 +557,8 @@ this integration. "Live" means at least one successful task in recent history.
 
 ## S002 - One Live Zap for Each Trigger/Search/Action
 
-To ensure any show-stopping bugs are worked out, every trigger/search/action of your
-integration should have a live Zap that demonstrates it works.
+To ensure any show-stopping bugs are worked out, every visible trigger/search/action
+of your integration should have a live Zap that demonstrates it works.
 
 ---
 
