@@ -538,7 +538,7 @@ to select your role.
 ## M004 - Invalid Logo
 
 Your app's logo will be used all over the site in square containers and in various
-sizes. To ensure it looks good at all sizes, it must be a sqaure PNG image, at least
+sizes. To ensure it looks good at all sizes, it must be a square PNG image, at least
 256px by 256px in size. To resize an image or convert an image to PNG, you can use
 this [tool](http://www.picresize.com/).
 
