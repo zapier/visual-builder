@@ -93,7 +93,7 @@ If you need to use a nested field from your API call results, reference it as `f
 
 {% raw %}`{{bundle.inputData.details.name}}`{% endraw %}
 
-You can include any field your authentication test API call returns in the connection label, though the best fields to use are usernames, account numbers, email addresses, or other identifiable but not fully private data. Never use passwords, API keys, or other critical, private info in connection labels.
+You can include any field your authentication test API call returns in the connection label, though the best fields to use are usernames, domain names (if your app is self-hosted), account numbers, email addresses, or other identifiable but not fully private data. Never use passwords, API keys, or other critical, private info in connection labels.
 
 <a id="connection-code"></a>
 ### How to Customize Connection Label with Code
