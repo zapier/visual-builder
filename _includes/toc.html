@@ -1,6 +1,6 @@
 {% capture tocWorkspace %}
     {% comment %}
-        Version 1.0.7
+        Version 1.0.8
           https://github.com/allejo/jekyll-toc
 
         "...like all things liquid - where there's a will, and ~36 hours to spare, there's usually a/some way" ~jaybe
@@ -52,7 +52,7 @@
             {% assign minHeader = headerLevel %}
         {% endif %}
 
-        {% assign indentAmount = headerLevel | minus: minHeader | add: 1 %}
+        {% assign indentAmount = headerLevel | minus: minHeader %}
         {% assign _workspace = node | split: '</h' %}
 
         {% assign _idWorkspace = _workspace[0] | split: 'id="' %}
