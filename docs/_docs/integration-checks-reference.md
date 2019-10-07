@@ -278,13 +278,17 @@ examples for searching for a user are by name, email, and username.
 
 <a name="D010"></a><a name="D00010"></a>
 
-## D010 - Missing "ID" Field in Sample Data
+## D010 - Missing "ID" Field in Static Sample Data
 
 For polling triggers, the deduper uses the `id` field to decide if it's seen an
 object before. It can be any sort of string, but it's important that it's unique.
 If your object is returned with a differently named `id` field (such as
 `contact_id`), write code to rename it. Hooks are not deduped, so they're not
 required to have an `id`.
+
+This check is similiar to `T002`. But unlike `T002`, this one validates the static
+samples in your integration definition instead of the live polling results in the
+task history.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -567,8 +571,41 @@ of your integration should have a live Zap that demonstrates it works.
 ## T001 - One Successful Task for Each Trigger/Search/Action
 
 To ensure you have tested every visible trigger/search/action, there should be at
-least one successful task in at least one of the app admin's task
-histories for each visible trigger/search/action.
+least one successful task in at least one of the integration admin's task histories
+for each visible trigger/search/action.
+
+---
+
+<a name="T002"></a><a name="T00002"></a>
+
+## T002 - Missing "ID" Field in Live Polling Results
+
+For polling triggers, the deduper uses the `id` field to decide if it's seen an
+object before. It can be any sort of string, but it's important that it's unique.
+If your object is returned with a differently named `id` field (such as
+`contact_id`), write code to rename it.
+
+This check is similiar to `D010`. But unlike `D010`, this one validates the live
+polling results in the task history instead of the static samples in your
+integration definition.
+
+✘ an example of an **incorrect** implementation:
+
+```json
+{
+  "contact_id": 4,
+  "contact_name": "David"
+}
+```
+
+✔ an example of a **correct** implementation:
+
+```json
+{
+  "id": 4,
+  "contact_name": "David"
+}
+```
 
 ---
 
