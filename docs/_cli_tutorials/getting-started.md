@@ -296,7 +296,7 @@ Looking good locally! Let's move on.
 
 So far, everything we have done has been local, on your machine. It's been fun, but we want our app on Zapier.com so we can use it with the thousands of other integrations! To do so, we need to take our working local app and push it to Zapier.
 
-Let's push a version of your app! You can can have many versions of an app, which simplifies making breaking changes and testing in the future. For now, we just need a single version pushed.
+Let's push a version of your app! You can have many versions of an app, which simplifies making breaking changes and testing in the future. For now, we just need a single version pushed.
 
 > If this is your first time pushing your app version - we will ask you to provide a name so we can register your app - this is a one time thing!
 
