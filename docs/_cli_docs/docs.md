@@ -424,7 +424,7 @@ zapier convert 10318 . --version=1.0.1
 
 A couple of important things to know before deploying:
 
-- When you push the CLI project to the server it will create a _new version_ of your integration.  If you haven't gotten familiar with how versions work you might take a moment and learn about those [here](/../versions).
+- When you push the CLI project to the server it will create a _new version_ of your integration.  If you aren't yet familiar with how versions work you might take a moment and learn about those [here](/versions).
 - Take a look at the version number in your `package.json` file.  When you created your project with the `convert` tool we automatically incremented the version you converted.  You can change this to a different version number depending on your needs, but make sure  a version with that number doesn't already exist in your integration. Run `zapier versions` from your project directory to see what's already been created.
 - You will not be able to edit your new CLI-built version from the UI.  You can still use the options under the "Manage" section.  Your earlier versions, created within the UI, are still there and can still be edited and used.  If you decide that the CLI tool is not for you, you can go back and continue where you left off in the UI.
 
