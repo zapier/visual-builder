@@ -439,7 +439,7 @@ When that completes you'll be able to see the new version in the UI in the Versi
 
 **Legacy Web Builder Integrations**
 
-If you have an existing Zapier [legacy Web Builder app](https://zapier.com/developer/builder/), you can use it as a template to kickstart your local application.
+If you have an existing Zapier [legacy Web Builder app](https://platform.zapier.com/legacy/docs), you can use it as a template to kickstart your local application.
 
 ```bash
 # Convert an existing Web Builder app to a CLI app in the my-app directory
