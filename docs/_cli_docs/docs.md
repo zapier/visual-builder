@@ -424,7 +424,7 @@ zapier convert 10318 . --version=1.0.1
 
 A couple of important things to know before deploying:
 
-- When you push the CLI project to the server it will create a _new version_ of your integration.  If you haven't gotten familiar with how versions work you might take a moment and learn about those [here](/../versions).
+- When you push the CLI project to the server it will create a _new version_ of your integration.  If you aren't yet familiar with how versions work you might take a moment and learn about those [here](../docs/versions).
 - Take a look at the version number in your `package.json` file.  When you created your project with the `convert` tool we automatically incremented the version you converted.  You can change this to a different version number depending on your needs, but make sure  a version with that number doesn't already exist in your integration. Run `zapier versions` from your project directory to see what's already been created.
 - You will not be able to edit your new CLI-built version from the UI.  You can still use the options under the "Manage" section.  Your earlier versions, created within the UI, are still there and can still be edited and used.  If you decide that the CLI tool is not for you, you can go back and continue where you left off in the UI.
 
@@ -439,7 +439,7 @@ When that completes you'll be able to see the new version in the UI in the Versi
 
 **Legacy Web Builder Integrations**
 
-If you have an existing Zapier [legacy Web Builder app](https://zapier.com/developer/builder/), you can use it as a template to kickstart your local application.
+If you have an existing Zapier [legacy Web Builder app](https://platform.zapier.com/legacy/docs), you can use it as a template to kickstart your local application.
 
 ```bash
 # Convert an existing Web Builder app to a CLI app in the my-app directory
@@ -1588,7 +1588,7 @@ We provide several methods off of the `z` object, which is provided as the first
 
 ### `z.errors`
 
-`z.errors` is a collection error classes that you can throw in your code, like `throw new z.errors.HaltedError('...')`.
+`z.errors` is a collection of error classes that you can throw in your code, like `throw new z.errors.HaltedError('...')`.
 
 The available errors are:
 
@@ -1775,7 +1775,7 @@ Alternatively, we provide some extra tooling to work with an `.env` (or `.enviro
 MY_SECRET_VALUE=1234
 ```
 
-> `.env` is the new recommended name for the environment file since v5.1.0. The old name `.environment` is depreated but will continue to work for backward compatibility.
+> `.env` is the new recommended name for the environment file since v5.1.0. The old name `.environment` is deprecated but will continue to work for backward compatibility.
 
 And then in your `test/basic.js` file:
 
@@ -2615,7 +2615,7 @@ During the `zapier build` or `zapier push` step - we'll copy all your code to `/
 
 > Note: If your package isn't being pushed correctly (IE: you get "Error: Cannot find module 'whatever'" in production), try adding the `--disable-dependency-detection` flag to `zapier push`.
 
-> Note 2: You can also try adding a "includeInBuild" array property (with paths to include, which will be evaluated to RegExp, with a case insensitive flag) to your `.zapierapprc` file, to make it look like:
+> Note 2: You can also try adding an "includeInBuild" array property (with paths to include, which will be evaluated to RegExp, with a case insensitive flag) to your `.zapierapprc` file, to make it look like:
 
 ```json
 {
@@ -2634,7 +2634,7 @@ During the `zapier build` or `zapier push` step - we'll copy all your code to `/
 
 ## Building Native Packages with Docker
 
-Unfortunately if you are developing on a macOS or Windows box you won't be able to build native libraries locally. If you try and push locally build native modules, you'll get runtime errors during usage. However, you can use Docker and Docker Compose to do this in a pinch. Make sure you have all the necessary Docker programs installed and follow along.
+Unfortunately if you are developing on a macOS or Windows box you won't be able to build native libraries locally. If you try to push locally build native modules, you'll get runtime errors during usage. However, you can use Docker and Docker Compose to do this in a pinch. Make sure you have all the necessary Docker programs installed and follow along.
 
 First, create your `Dockerfile`:
 
