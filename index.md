@@ -5,6 +5,7 @@ layout: default
 ![Zapier Platform]({{ site.baseurl }}/assets/images/visual-builder-header.svg)
 
 # Zapier Platform Docs
+
 Develop the best [Zapier](https://zapier.com/) integration for your app with Zapier's Platform UI and CLI.
 
 ## Zapier Platform UI
@@ -36,4 +37,4 @@ Maintain existing Zapier integrations built with Zapier's original web builder:
 
 Learn from the Zapier team and other Zapier platform developers in our communities!
 
-- Join [Zapier Platform's Slack group](https://join.slack.com/t/zapier-platform/shared_invite/enQtNTg1MjM5NjMzNTI3LWVhZjk3NjFlNWFiMTBmMDExMzI5NDZiZmFiOTJjYmI3NmY2MzEwZDUxNzQ3MTliMTM5N2M3NGM2MmQ2Y2VkODE)
+- Join [Zapier Platform's Slack group]({{ site.slack_invite_url }})
