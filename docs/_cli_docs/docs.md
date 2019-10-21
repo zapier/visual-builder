@@ -7,21 +7,6 @@ redirect_from: /cli-docs/
 
 <!-- GENERATED! ONLY EDIT `README-source.md` -->
 
-<h1 align="center">
-  <a href="https://zapier.com"><img src="https://raw.githubusercontent.com/zapier/zapier-platform/master/packages/cli/goodies/zapier-logomark.png" alt="Zapier" width="200"></a>
-  <br>
-  Zapier Platform CLI
-  <br>
-  <br>
-</h1>
-
-<p align="center">
-  <!-- this isn't live yet? or won't be until I push -->
-  <!-- <a href="https://travis-ci.org/zapier/zapier-platform-cli"><img src="https://img.shields.io/travis/zapier/zapier-platform-cli/master.svg" alt="Travis"></a> -->
-  <a href="https://www.npmjs.com/package/zapier-platform-cli"><img src="https://img.shields.io/npm/v/zapier-platform-cli.svg" alt="npm version"></a>
-  <!--possible downloads badge too, once that's good-->
-</p>
-
 Zapier is a platform for creating integrations and workflows. This CLI is your gateway to creating custom applications on the Zapier platform.
 
 [These docs are available here](https://zapier.github.io/zapier-platform/), the [CLI docs are available here](https://zapier.github.io/zapier-platform/cli), and you can [view all the schema definitions here](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md).
