@@ -1,3 +1,10 @@
+---
+title: Zapier Platform CLI Docs
+order: 1
+layout: post-toc
+redirect_from: /cli-docs/
+---
+
 <!-- GENERATED! ONLY EDIT `README-source.md` -->
 
 <h1 align="center">
