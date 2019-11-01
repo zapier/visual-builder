@@ -469,6 +469,31 @@ checkbox (Platform UI) or via the `important` property (Platform CLI).
 
 ---
 
+<a name="D021"></a><a name="D00021"></a>
+
+## D021 - Trigger Description Requirements
+
+Trigger descriptions must start with `Triggers when ` and end with a `.`.
+
+
+✘ examples of an **incorrect** implementation:
+
+```
+Whenever there's a new contact, this goes?
+```
+
+```
+Triggers whenever there's a new contact.
+```
+
+✔ examples of a **correct** implementation:
+
+```
+Triggers when there's a new contact.
+```
+
+---
+
 <a name="L001"></a><a name="L00001"></a>
 
 ## L001 - Version Is Deprecated
@@ -545,6 +570,16 @@ Your app's logo will be used all over the site in square containers and in vario
 sizes. To ensure it looks good at all sizes, it must be a square PNG image, at least
 256px by 256px in size. To resize an image or convert an image to PNG, you can use
 this [tool](http://www.picresize.com/).
+
+---
+
+<a name="M005"></a><a name="M00005"></a>
+
+## M005 - Developer Email Domain Matches App Domain
+
+To ensure that this integration is being submitted by the app owner we require that
+one of the developers listed on the project have an email address with the same
+domain as your app's homepage URL.
 
 ---
 
