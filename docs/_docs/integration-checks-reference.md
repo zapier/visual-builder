@@ -494,6 +494,16 @@ Triggers when there's a new contact.
 
 ---
 
+<a name="D022"></a><a name="D00022"></a>
+
+## D022 - Creates Should Try to Have Static Input Fields
+
+When making Zap Templates, it's helpful to have input fields that are common
+for all users. Without any, it's hard to create templates. If possible,
+add some static input fields that all users will be able to use.
+
+---
+
 <a name="L001"></a><a name="L00001"></a>
 
 ## L001 - Version Is Deprecated
@@ -579,7 +589,17 @@ this [tool](http://www.picresize.com/).
 
 To ensure that this integration is being submitted by the app owner we require that
 one of the developers listed on the project have an email address with the same
-domain as your app's homepage URL.
+domain as your app's homepage URL (which must also be present). You can add the homepage
+URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`.
+
+---
+
+<a name="M006"></a><a name="M00006"></a>
+
+## M006 - Homepage URL Must Be Present
+
+Each app must have a homepage URL. You can add the homepage
+URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`.
 
 ---
 
@@ -640,6 +660,44 @@ integration definition.
   "id": 4,
   "contact_name": "David"
 }
+```
+
+---
+
+<a name="T003"></a><a name="T00003"></a>
+
+## T003 - ISO-8601 Date/Time Format in Task History
+
+To ensure Zapier can correctly parse dates and times, you should always use ISO-8601
+format to represent dates or times. Timezone info should also be present if it
+contains time.
+
+✘ examples of an **incorrect** implementation:
+
+```
+01 Aug 2019
+```
+
+```
+01 Aug 2019 06:50:30
+```
+
+```
+2019-08-01T06:50:30
+```
+
+✔ examples of a **correct** implementation:
+
+```
+2019-08-01
+```
+
+```
+2019-08-01T06:50:30-0500
+```
+
+```
+2019-09-15T09:59:59Z
 ```
 
 ---
