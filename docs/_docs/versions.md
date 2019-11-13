@@ -55,26 +55,26 @@ Once you’ve added all the changes needed to your integration, you can start ro
 
 If you made a patch version with only minor, non-breaking changes, you can migrate existing users and Zaps to your new integration version. Select the _Migrate_ option on your new integration version, then choose which older version of your integration to move users from—and the new version to move them to. Finally, choose what percentage of users to migrate. Typically, Zapier recommends moving a small percentage of your users—perhaps 10 or 20%—to the new integration to make sure everything is working as expected. Once everything seem fine, you can migrate the remainder of your users to the new integration.
 
-Major versions of integrations—especially if authentication or API calls were changed and other breaking changes were added—will require users to re-create their Zaps with the new version of your integration. In that case, you won’t be able to migrate existing users but instead will need to promote the new version and depreciate the old one so new users and Zaps will be made with the new integration.
+Major versions of integrations—especially if authentication or API calls were changed and other breaking changes were added—will require users to re-create their Zaps with the new version of your integration. In that case, you won’t be able to migrate existing users but instead will need to promote the new version and deprecate the old one so new users and Zaps will be made with the new integration.
 
 ## Promote a New Version of Your Integration
 
 You can also Promote your new integration version to make it the default version that Zapier shows to users when creating new Zaps. Select the _Promote_ button in your version settings to mark an integration as the new default version.
 
-## Depreciate an Older Version of Your Integration
+## Deprecate an Older Version of Your Integration
 
-![Depreciate Zapier integration version](https://cdn.zapier.com/storage/photos/dd6acdd75278ecd733a5f3945ea641a2.png)
+![Deprecate Zapier integration version](https://cdn.zapier.com/storage/photos/dd6acdd75278ecd733a5f3945ea641a2.png)
 
-If you did introduce breaking changes to your integration and want existing users to switch to the new version, you can depreciate the old version. That will let your older integration and Zaps that use it continue to run—but they will include a `(Legacy)` tag in the Zapier editor to prompt users to re-build the Zap with the new integration. Additionally, when adding a new Zap step, Zapier will no longer recommend the older, depreciated version of your integration.
+If you did introduce breaking changes to your integration and want existing users to switch to the new version, you can deprecate the old version. That will let your older integration and Zaps that use it continue to run—but they will include a `(Legacy)` tag in the Zapier editor to prompt users to re-build the Zap with the new integration. Additionally, when adding a new Zap step, Zapier will no longer recommend the older, deprecated version of your integration.
 
-To depreciate a version, select _Depreciate_ in the Versions menu, then select a date to depreciate the integration in the calendar drop-down. Choose a date between two weeks and a year from today, then click the _Depreciate_ button to confirm.
+To deprecate a version, select _Deprecate_ in the Versions menu, then select a date to deprecate the integration in the calendar drop-down. Choose a date between two weeks and a year from today, then click the _Deprecate_ button to confirm.
 
-Zapier will then show a yellow exclamation mark beside that version in your integration’s versions menu, showing the date it will be depreciated if you hover over it. You’ll also be able to see your user count as it goes down, switching from the old integration version to the new.
+Zapier will then show a yellow exclamation mark beside that version in your integration’s versions menu, showing the date it will be deprecated if you hover over it. You’ll also be able to see your user count as it goes down, switching from the old integration version to the new.
 
 ## Delete Older Versions of Your Integration
 
 ![Delete Zapier integration version](https://cdn.zapier.com/storage/photos/86bf4dbabd06b989d7717f95e8479fba.png)
 
-Once you’ve depreciated an integration version and it has no existing users, you can delete that version to clean up your Zapier integration.
+Once you’ve deprecated an integration version and it has no existing users, you can delete that version to clean up your Zapier integration.
 
-Click the _Delete_ button in your version’s gear menu, select _Really?_ when asked to confirm, and Zapier will remove that version of your integration. And since Zapier will only delete depreciated versions with no users, you never have to worry about accidentally removing a version with features you need.
+Click the _Delete_ button in your version’s gear menu, select _Really?_ when asked to confirm, and Zapier will remove that version of your integration. And since Zapier will only delete deprecated versions with no users, you never have to worry about accidentally removing a version with features you need.
