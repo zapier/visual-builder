@@ -112,9 +112,9 @@ Referenced with: {% raw %}`{{bundle.rawRequest}}`{% endraw %} or {% raw %}`{{bun
 
 Includes the raw or cleaned info, respectively, from the user's browser request that triggers the `getAccessToken` call from OAuth v2 authentication. Can reference individual fields with `cleanedRequest`.
 
-### targetURL
+### targetUrl
 
-Referenced with: {% raw %}`{{bundle.targetURL}}`{% endraw %}
+Referenced with: {% raw %}`{{bundle.targetUrl}}`{% endraw %}
 
 In triggers using REST hooks, this returns the URL a site should send data to, such as `https://hooks.zapier.com/1234/abcd`.
 
