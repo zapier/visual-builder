@@ -103,7 +103,7 @@ Zapier uses the primary color as the background color in your app’s Zapier App
 
 ## How to Design Successful Zapier Integrations
 
-It starts with a Google search, perhaps, or a peek at Zapier's App Directory to find a new integration. Then the user makes a new Zap, either manually or from a Zap Template, and chooses your app. They they connect their account with your app, set up the trigger or action they need for this workflow, and tell Zapier what data to copy from other apps to your app or vise versa.
+It starts with a Google search, perhaps, or a peek at Zapier's App Directory to find a new integration. Then the user makes a new Zap, either manually or from a Zap Template, and chooses your app. Then they connect their account with your app, set up the trigger or action they need for this workflow, and tell Zapier what data to copy from other apps to your app or vise versa.
 
 That's where your Zapier integration is used, and here, the most important thing is how it works. Effective Zapier integrations both include correct branding and deliver the triggers, actions, searches, and fields that users expect.
 
@@ -180,7 +180,7 @@ For example, imagine a "New Payments" trigger in an invoice app. Most users care
 
 Or imagine a “New Email” trigger in an email app. Users may want to watch for specific email messages, so include a trigger field to filter which emails trigger the Zap.
 
-**Include workflow scenarios**, where some action inside your app triggers a Zap. In an email or chat app, a “New Starred Email” trigger lets users do something in your app to triggers a Zap. This helps users build automated workflows that start with an action on their part.
+**Include workflow scenarios**, where some action inside your app triggers a Zap. In an email or chat app, a “New Starred Email” trigger lets users do something in your app to trigger a Zap. This helps users build automated workflows that start with an action on their part.
 
 ![Update filter in Zapier](https://cdn.zapier.com/storage/photos/4763f54f5baef4f65afd8cf25186696b.png)
 
@@ -203,15 +203,15 @@ _Actions add, update, or find items based on data from previous Zap steps_
 
 Actions let Zapier create or update items in your app, or find existing items with a _[Search](#searches)_ action. After a Zap's trigger has found new data, Zapier runs the Zap's subsequent action steps to add or update items with that data.
 
-Triggers are focused on data has been added in your app. Actions are focused on adding data to your app. Most actions create or update a single item, each with multiple details from input fields.
+Triggers are focused on data that has been added in your app. Actions are focused on adding data to your app. Most actions create or update a single item, each with multiple details from input fields.
 
-**Focus on popular use cases**. Think about what users would want to automatically create in your app, and build actions for those specific items. Think about everything they would need to create in a workflow—would they need to create folders along with new files? Would they need to add a customer for a new order? That will help you find other actions that may need added.
+**Focus on popular use cases**. Think about what users would want to automatically create in your app, and build actions for those specific items. Think about everything they would need to create in a workflow—would they need to create folders along with new files? Would they need to add a customer for a new order? That will help you find other actions that may need to be added.
 
 **Do not add Delete actions**. Deleting data automatically can let users accidentally delete data they didn't intend to delete. Instead, offer less permanent actions such as options to deactivate, unsubscribe, or tag a user in a certain way (where users could then easily delete those items from inside your app).
 
 **Only add Update actions for clear use cases**. Updating items with detailed fields such as contact details are easy, as users can simply add the updated data via Zapier. Updating a longer, single item such as a note or document is harder or impossible to implement, and thus should not be used in a Zapier integration. Update actions should be separate from create actions.
 
-**Actions may create multiple items if needed**, using the same data, though you will likely need to customize the API call code to create both items at once. Only do this for linked items, such as if an app stores customers and customer addresses separately.  If the multiple objects that need to be created are top-level, complex objects in your app, they should be separate actions within Zapier. You can then link the two with a drop-down menu in the action to select the paired item, add a search action for users to find the specific item they need, and then let them match the items with the [_Use a Custom Value_ option](https://zapier.com/help/using-custom-values-dropdown/) in Zapier.
+**Actions may create multiple items if needed**, using the same data, though you will likely need to customize the API call code to create multiple items at once. Only do this for linked items, such as if an app stores customers and customer addresses separately.  If the multiple items that need to be created are top-level, complex items in your app, they should be separate actions within Zapier. You can then link the two with a drop-down menu in the action to select the paired item, add a search action for users to find the specific item they need, and then let them match the items with the [_Use a Custom Value_ option](https://zapier.com/help/using-custom-values-dropdown/) in Zapier.
 
 ## Searches
 
