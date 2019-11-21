@@ -545,7 +545,8 @@ anything, as the space is supposed to be about your service itself instead of th
 Zapier integration in particular.
 
 Lastly, this section should be short and sweet. A brief description (roughly
-tweet-sized) is best.
+tweet-sized) is best. Specifically, we're looking for 1 - 3 sentences or at least
+40 characters.
 
 ✘ an example of an **incorrect** setup:
 
@@ -600,6 +601,18 @@ URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings
 
 Each app must have a homepage URL. You can add the homepage
 URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`.
+
+---
+
+<a name="M007"></a><a name="M00007"></a>
+
+## M007 - Public Integration Already Exists
+
+We only allow one public integration in our app directory for a given app. If a
+public integration with the same title already exists, we probably won't approve
+your submission to go public. If you're the owner of the existing public
+integration, you may want to create a version and promote that instead of submitting
+a new integration.
 
 ---
 
@@ -698,6 +711,33 @@ contains time.
 
 ```
 2019-09-15T09:59:59Z
+```
+
+---
+
+<a name="T004"></a><a name="T00004"></a>
+
+## T004 - Static Sample Contains a Subset of Keys from Live Result
+
+Static samples provide Zapier users and partners a way to preview and map the fields
+without actually making a request to your API. For a better UX, it's important that
+static samples truthfully reflect the live results pulled from your API.
+
+This check requires the static sample you write in your integration's code to
+contain a subset of keys from the latest live result.
+
+✘ an example of an **incorrect** implementation:
+
+```
+static: {"id": 1, "email": "john@example.com"}
+live: {"id": 2, "name": "Alice"}
+```
+
+✔ an example of a **correct** implementation:
+
+```
+static: {"id": 1, "name": "John"}
+live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ```
 
 ---
