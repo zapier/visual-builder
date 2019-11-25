@@ -39,6 +39,9 @@ collections:
   partners:
     output: true
     permalink: /:collection/:name
+  partner_case_studies:
+    output: true
+    permalink: /:collection/:name
 
 defaults:
   - scope:
@@ -74,5 +77,10 @@ defaults:
   - scope:
       path: ''
       type: 'partners'
+    values:
+      layout: default
+  - scope:
+      path: ''
+      type: 'partner_case_studies'
     values:
       layout: default
