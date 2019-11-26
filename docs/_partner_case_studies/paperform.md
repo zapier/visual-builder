@@ -1,6 +1,6 @@
 ---
 title: Paperform
-order: 1
+order: 6
 layout: post
 redirect_from: /_partner_case_studies/
 ---
