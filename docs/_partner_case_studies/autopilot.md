@@ -1,3 +1,11 @@
+---
+title: Autopilot
+order: 2
+layout: post
+redirect_from: /_partner_case_studies/
+---
+
+
 # Autopilot
 
 ![](https://cdn.zapier.com/storage/photos/076d555dc326f4be4b6d34d75623fc9d.png)
