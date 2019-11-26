@@ -49,7 +49,7 @@ Not only does Close regularly upgrade the integration; after every improvement, 
 
 On top of that, Zapier emails its users about the updated integration, which encourages even more people to try Close and Zapier.
 
-|||{% include "blocks/image.html" with url="https://cdn.zapier.com/storage/photos/378d363efff141b01e74781127fbbdd7.png" caption="" link="" classes="center" alt="Zapier email" %}|||
+![Zapier email featuring Close](https://cdn.zapier.com/storage/photos/378d363efff141b01e74781127fbbdd7.png)
 
 This promotional process has worked well for Close: “The number of people using the Zapier and Close integration has consistently increased 5 to 6 percent month-over-month,” Eric says.
 
