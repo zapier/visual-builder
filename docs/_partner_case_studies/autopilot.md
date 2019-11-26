@@ -63,4 +63,4 @@ Whether customers have used Zapier before or not, promoting Zapier encourages th
 
 “We are all about marketers who are thinking beyond acquisition,” Anne says. “Other departments use Autopilot — like sales or success teams, for example. Zapier integrates with tools that many different departments use."
 
-*Explore how you could succeed with Zapier like Paperform—get in touch with us at [partners@zapier.com](mailto:partners@zapier.com).*
+*Explore how you could succeed with Zapier like Autopilot—get in touch with us at [partners@zapier.com](mailto:partners@zapier.com).*
