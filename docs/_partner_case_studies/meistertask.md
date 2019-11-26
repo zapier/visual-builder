@@ -5,6 +5,8 @@ layout: post
 redirect_from: /_partner_case_studies/
 ---
 
+# MeisterTask
+
 ![MeisterTask's integration library powered by Zapier](https://cdn.zapier.com/storage/photos/2be838f7ca6a9f8ddd691c7bc587dab8.png)
 
 "Not only does Zapier add real value to our users, but it also helps us to reach new audiences through joint marketing campaigns." - Raphaela Brandner, [Meister](https://www.meisterlabs.com/) Partner Manager
