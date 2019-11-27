@@ -29,13 +29,13 @@ Since the release of its [Partner API](https://platform.zapier.com/partners/zap-
 
 MeisterTask isn't new to marketing web-based apps—its flagship product MindMeister is over a decade old—but when it entered a new software category, it needed to reach a new audience. Zapier's App Directory and [co-marketing campaigns](https://zapier.com/platform/partner-program) addressed this need.
 
-“From a marketing perspective, our partnership with Zapier is one of the most fruitful and rewarding ones," says Raphaela Brandner, a Partner Manager. "Being recommended on Zapier’s blog and website creates a lot of positive brand-awareness for us. We’ve found that users who come to us via Zapier convert 3.5 times better than other users.”
+"From a marketing perspective, our partnership with Zapier is one of the most fruitful and rewarding ones," says Raphaela Brandner, a Partner Manager. "Being recommended on Zapier’s blog and website creates a lot of positive brand-awareness for us. We’ve found that users who come to us via Zapier convert 3.5 times better than other users."
 
 ### Increased ability to address sales prospects' needs
 
-As a collaborative task management tool, MeisterTask customers rely on their product to pull all-important project information into one spot. To do so, each new potential customer comes in with their needed integration as a priority and sales reps say they regularly get these during the evaluation stage.
+As a collaborative task management tool, MeisterTask customers rely on their product to pull all important project information into one spot. To do so, each new potential customer comes in with their needed niche integration as a priority. As a result, sales reps regularly field integration questions during the evaluation stage.
 
-“There’s no way we could build native integrations with all of these platforms ourselves, but luckily, we don’t have to. When such a question comes up, my standard reply is simply, ‘Chances are, you can set this up with Zapier,'" says Oliver Huebler, VP of Sales.
+"There’s no way we could build native integrations with all of these platforms ourselves, but luckily, we don’t have to. When such a question comes up, my standard reply is simply, 'Chances are, you can set this up with Zapier,'" says Oliver Huebler, VP of Sales.
 
 ![Zapier alongside MeisterTask native integrations](https://cdn.zapier.com/storage/photos/64e5ce958653e64d099b32d93dbb172f.png)
 
