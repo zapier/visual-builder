@@ -2,7 +2,7 @@
 title: Autopilot
 order: 2
 layout: post
-redirect_from: /_partner_case_studies/
+redirect_from: /partner_case_studies/
 ---
 
 # Autopilot
