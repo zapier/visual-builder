@@ -28,7 +28,7 @@ Since the release of its [Partner API](https://platform.zapier.com/partners/zap-
 
 ### Higher retention rates for users with a Zap
 
-Less than a year after Paperform's public launch, McPherson and his co-founder, Diony McPherson, prioritized developer time to embedding Zapier in their product.
+Less than a year after Paperform's public launch, Dean McPherson and his co-founder, Diony McPherson, prioritized developer time to embedding Zapier in their product.
 
 "Integrations are an integral—no pun intended—part of our business," McPherson says. And for Paperform, the importance of integrations carries over to their customers' businesses. "We find customers who connect to Zapier are closely aligned to our product, and therefore more likely to subscribe, be happy with Paperform, stay for a long time, and integrate Paperform with more and more of their systems."
 
@@ -37,7 +37,7 @@ https://cdn.zapier.com/storage/photos/e67ad23649b84d887e91ca5b4676d3dd.png)
 
 ### Higher lifetime value (LTV) for users with a Zap
 
-With users retention up, so too follows the revenue generated from users of Paperform Zaps.
+With user retention up, so too follows the revenue generated from users of Paperform Zaps.
 
 "By being less likely to churn, a user who is connected to Zapier will statistically stay around longer, and as a result, pay more," McPherson says. "A user who is connected to Zapier will statistically stay around longer, and as a result, pay more."
 
@@ -45,7 +45,7 @@ With users retention up, so too follows the revenue generated from users of Pape
 
 ### Reduced developer time on integrations
 
-It's hard to imagine a product like Paperform without a large library of integrations—forms are a horizontal product with countless use cases.
+It's hard to imagine a tool like Paperform without a large library of integrations—forms are a horizontal product with countless use cases.
 
 "Zapier has enabled us to bring our service to market without getting buried in the technical details of managing hundreds of direct integrations," McPherson says.
 
