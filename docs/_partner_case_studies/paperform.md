@@ -2,7 +2,7 @@
 title: Paperform
 order: 6
 layout: post
-redirect_from: /_partner_case_studies/
+redirect_from: /partner_case_studies/
 ---
 
 # Paperform
