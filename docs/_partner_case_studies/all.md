@@ -2,7 +2,7 @@
 title: All
 order: 1
 layout: post
-redirect_from: /partner_case_studies/
+redirect_from: /partner_success_stories/
 ---
 
 # Partner Case Studies
@@ -17,8 +17,8 @@ Partners from startup to big tech have Zapier at the center of their integration
 
 *- Tyler Huggins, Head of Growth at Acuity Scheduling*
 
-Read more from [Typeform](https://platform.zapier.com/partner_case_studies/typeform), 
-[Clearbit](https://platform.zapier.com/partner_case_studies/clearbit), and [Autopilot](https://platform.zapier.com/partner_case_studies/autopilot)
+Read more from [Typeform](https://platform.zapier.com/partner_success_stories/typeform), 
+[Clearbit](https://platform.zapier.com/partner_success_stories/clearbit), and [Autopilot](https://platform.zapier.com/partner_success_stories/autopilot)
 
 ## Increase revenue
 
@@ -26,7 +26,7 @@ Read more from [Typeform](https://platform.zapier.com/partner_case_studies/typef
 
 *- Zoelle Egner, Director of Enterprise at Airtable*
 
-Read more from [Autopilot](https://platform.zapier.com/partner_case_studies/autopilot) and [Paperform](https://platform.zapier.com/partner_case_studies/paperform) 
+Read more from [Autopilot](https://platform.zapier.com/partner_success_stories/autopilot) and [Paperform](https://platform.zapier.com/partner_success_stories/paperform) 
 
 ## Grow leads
 
@@ -34,7 +34,7 @@ Read more from [Autopilot](https://platform.zapier.com/partner_case_studies/auto
 
 *- Hillary Pitts, Product Marketing Manager at FullContact*
 
-Read more from [MeisterTask](https://platform.zapier.com/partner_case_studies/meistertask) and [Close](https://platform.zapier.com/partner_case_studies/close), and [Paperform](https://platform.zapier.com/partner_case_studies/paperform)
+Read more from [MeisterTask](https://platform.zapier.com/partner_success_stories/meistertask), [Close](https://platform.zapier.com/partner_success_stories/close), and [Paperform](https://platform.zapier.com/partner_success_stories/paperform)
 
 ## Integration strategy
 
@@ -42,4 +42,4 @@ Read more from [MeisterTask](https://platform.zapier.com/partner_case_studies/me
 
 *- Jeremy Clarke, Founder at WebMerge*
 
-Read more from [Paperform](https://platform.zapier.com/partner_case_studies/paperform) and [MeisterTask](https://platform.zapier.com/partner_case_studies/meistertask)
+Read more from [Paperform](https://platform.zapier.com/partner_success_stories/paperform) and [MeisterTask](https://platform.zapier.com/partner_success_stories/meistertask)
