@@ -2,7 +2,7 @@
 title: Clearbit
 order: 3
 layout: post
-redirect_from: /partner_case_studies/
+redirect_from: /partner_success_stories/
 ---
 
 # Clearbit
