@@ -2,7 +2,7 @@
 title: Typeform
 order: 7
 layout: post
-redirect_from: /partner_case_studies/
+redirect_from: /partner_success_stories/
 ---
 
 # Typeform
