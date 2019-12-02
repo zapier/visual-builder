@@ -39,7 +39,7 @@ collections:
   partners:
     output: true
     permalink: /:collection/:name
-  partner_case_studies:
+  partner_success_stories:
     output: true
     permalink: /:collection/:name
 
@@ -81,6 +81,6 @@ defaults:
       layout: default
   - scope:
       path: ''
-      type: 'partner_case_studies'
+      type: 'partner_success_stories'
     values:
       layout: default
