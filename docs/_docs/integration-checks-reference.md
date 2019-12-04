@@ -504,6 +504,47 @@ add some static input fields that all users will be able to use.
 
 ---
 
+<a name="D023"></a><a name="D00023"></a>
+
+## D023 - ISO-8601 Date/Time Format in Static Sample
+
+To ensure Zapier can correctly parse dates and times, you should always use ISO-8601
+format to represent dates or times. Timezone info should also be present if it
+contains time.
+
+Unlike `T003`, this check validates the fields in static samples instead of task
+history.
+
+✘ examples of an **incorrect** implementation:
+
+```
+01 Aug 2019
+```
+
+```
+01 Aug 2019 06:50:30
+```
+
+```
+2019-08-01T06:50:30
+```
+
+✔ examples of a **correct** implementation:
+
+```
+2019-08-01
+```
+
+```
+2019-08-01T06:50:30-0500
+```
+
+```
+2019-09-15T09:59:59Z
+```
+
+---
+
 <a name="L001"></a><a name="L00001"></a>
 
 ## L001 - Version Is Deprecated
@@ -578,9 +619,14 @@ to select your role.
 ## M004 - Invalid Logo
 
 Your app's logo will be used all over the site in square containers and in various
-sizes. To ensure it looks good at all sizes, it must be a square PNG image, at least
-256px by 256px in size. To resize an image or convert an image to PNG, you can use
-this [tool](http://www.picresize.com/).
+sizes. To ensure it looks good at all sizes, the logo image must be:
+
+* a square PNG image
+* at least 256px by 256px in size
+* in RGBA mode so it can have a transparent background
+
+To resize an image or convert an image to PNG, you can use this
+[tool](http://www.picresize.com/).
 
 ---
 
@@ -685,6 +731,9 @@ To ensure Zapier can correctly parse dates and times, you should always use ISO-
 format to represent dates or times. Timezone info should also be present if it
 contains time.
 
+Unlike `D023`, this check validates the data in task history instead of static
+samples.
+
 ✘ examples of an **incorrect** implementation:
 
 ```
@@ -738,6 +787,40 @@ live: {"id": 2, "name": "Alice"}
 ```
 static: {"id": 1, "name": "John"}
 live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
+```
+
+---
+
+<a name="T005"></a><a name="T00005"></a>
+
+## T005 - Live Trigger Result Respects Output Field Definition
+
+This check takes the latest task from Task History and verifies if the trigger
+result conforms to the output fields you define for your integration. The specific
+checks are:
+
+* all fields in the trigger result are defined in the ouput fields
+* "required" fields must be in the trigger result
+* field values in the trigger result match their field type
+
+✘ an example of an **incorrect** implementation:
+
+```
+live result: {"id": "1"}
+output fields: [
+    {"key":  "id", "type": "integer"},
+    {"key": "email", "type": "string", "required": true}
+]
+```
+
+✔ an example of a **correct** implementation:
+
+```
+live result: {"id": 1, "email": "john@example.com"}
+output fields: [
+    {"key":  "id", "type": "integer"},
+    {"key": "email", "type": "string", "required": true}
+]
 ```
 
 ---
