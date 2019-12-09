@@ -796,10 +796,9 @@ live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ## T005 - Live Trigger Result Respects Output Field Definition
 
 This check takes the latest task from Task History and verifies if the trigger
-result conforms to the output fields you define for your integration. The specific
-checks are:
+result conforms to the output fields if you define them for your integration. The
+specific checks are:
 
-* all fields in the trigger result are defined in the ouput fields
 * "required" fields must be in the trigger result
 * field values in the trigger result match their field type
 
