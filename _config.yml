@@ -42,6 +42,9 @@ collections:
   partner_success_stories:
     output: true
     permalink: /:collection/:name
+  partner_api:
+    output: true
+    permalink: /:collection/:name
 
 defaults:
   - scope:
@@ -82,5 +85,10 @@ defaults:
   - scope:
       path: ''
       type: 'partner_success_stories'
+    values:
+      layout: default
+  - scope:
+      path: ''
+      type: 'partner_api'
     values:
       layout: default
