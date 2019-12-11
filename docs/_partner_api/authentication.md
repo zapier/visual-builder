@@ -1,6 +1,6 @@
 ---
 title: Authentication
-order: 3
+order: 4
 layout: post
 redirect_from: /partner_api/
 ---
