@@ -1,6 +1,6 @@
 ---
 title: Best Practices
-order: 6
+order: 7
 layout: post
 redirect_from: /partner_api/
 ---
@@ -30,4 +30,3 @@ If you'd like to provide a label for the value (e.g. a Board's name) you can do 
 `https://zapier.com/app/editor/template/2405?steps__1__params__board=12345&steps__1__meta__parammap__board=My+Board`
 
 ![](https://cdn.zapier.com/storage/photos/86b71a90bc69e5b13024c08f1da4b812.png)
-

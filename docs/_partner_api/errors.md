@@ -1,6 +1,6 @@
 ---
 title: Errors
-order: 4
+order: 5
 layout: post
 redirect_from: /partner_api/
 ---

@@ -1,6 +1,6 @@
 ---
 title: Endpoints
-order: 5
+order: 6
 layout: post-toc
 redirect_from: /partner_api/
 ---
@@ -15,9 +15,9 @@ redirect_from: /partner_api/
 
 > **Notes**
 >
-> * Your own app will not be returned.
-> * Zapier built-in apps will not be returned.
-> * Order of the result is by app popularity.
+> - Your own app will not be returned.
+> - Zapier built-in apps will not be returned.
+> - Order of the result is by app popularity.
 
 **Arguments**
 
@@ -48,7 +48,6 @@ curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&per_page=5"
 > Refer to the [App object](#app) reference for all the available fields.
 
 ```json
-
 {
   "prev_url": "https://api.zapier.com/v1/apps?per_page=2&page=1",
   "page": 2,
@@ -107,16 +106,13 @@ curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&per_page=5"
   "total": 1193,
   "pages": 597
 }
-
 ```
-
 
 ## GET /v1/zap-templates
 
 |                 URL                 | Protected By |
 | :---------------------------------: | :----------: |
 | **api.zapier.com/v1/zap-templates** |  Client ID   |
-
 
 **Arguments**
 
@@ -197,7 +193,6 @@ curl -L "https://api.zapier.com/v1/zap-templates?client_id=${client_id}&apps=mai
     "id": 10127
   }
 ]
-
 ```
 
 **Paging through results using limit and offset**
@@ -219,7 +214,6 @@ Lookup a user's Zap templates that they've added (published or draft). **Note: W
 |                  URL                   |      Protected By       | Required Scopes |
 | :------------------------------------: | :---------------------: | :-------------: |
 | **api.zapier.com/v1/zap-templates/me** | Client ID, Access Token |   `templates`   |
-
 
 **Arguments**
 
@@ -307,7 +301,6 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zap-templa
     "id": 10127
   }
 ]
-
 ```
 
 **Paging through results using limit and offset**
@@ -328,6 +321,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zap-templa
 | **api.zapier.com/v1/zaps** | Access Token |      `zap`      |
 
 > **Note**
+>
 > 1. The zaps returned are narrowed/filtered by your Zapier app. For example, if you are Trello you'll only be returned a user's Zap that contain Trello in one of the steps of the Zap.
 >
 > 2. If your app is built with the [Zapier CLI](https://github.com/zapier/zapier-platform-cli) the Zaps returned are for **any** version of your app.
@@ -336,9 +330,9 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zap-templa
 
 Available parameters to the Zaps resource:
 
-| parameter                 | requirement | notes                                                                                                                                      |
-| ------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **params__{KEY}={VALUE}** | Optional    | Return Zaps that have a specific key/value set in the params (settings) of the Zap. **Note the `app` parameter must be included as well.** |
+| parameter                   | requirement | notes                                                                                                                                      |
+| --------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **params\_\_{KEY}={VALUE}** | Optional    | Return Zaps that have a specific key/value set in the params (settings) of the Zap. **Note the `app` parameter must be included as well.** |
 
 **Example Requests**
 
@@ -457,9 +451,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
     }
   ]
 }
-
 ```
-
 
 # Data Objects
 
@@ -501,9 +493,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
     }
   ]
 }
-
 ```
-
 
 ## Zap
 
@@ -515,7 +505,6 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
 | **steps**       | Array<Zap Step> | An array steps in the Zap. See [Zap Step](#zap-step). |
 | **title**       | String          | The name of the Zap, if any, otherwise `null`.        |
 | **url**         | String          | An absolute url to the Zap (to edit).                 |
-
 
 ```json
 {
@@ -536,7 +525,6 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
 | **type_of** | String | One of `'read'`, `'write'`, `'filter'`, `'search'`, or `'search_or_write'` |
 | **app**     | App    | The app for the step. See [App object](#app).                              |
 
-
 ```json
 {
   "app": {
@@ -544,7 +532,6 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
   },
   "type_of": "read"
 }
-
 ```
 
 ## Zap Template
@@ -560,7 +547,6 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
 | **title**             | String     | The name of the Zap template.                                                                                                 |
 | **status**            | String     | The status of the Zap template (choices: `draft`, `published`).                                                               |
 | **url**               | String     | An absolute url to the Zapbook Zap template Page.                                                                             |
-
 
 ```json
 {
@@ -578,6 +564,4 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
   "title": "Subscribe new Facebook Lead Ad leads to a MailChimp list",
   "url": "https://zapier.com/apps/inside-sales-box/integrations/zoho-crm/12084/add-new-leads-created-in-inside-sales-box-to-zoho-crm"
 }
-
 ```
-
