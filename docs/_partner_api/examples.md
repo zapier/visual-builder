@@ -7,7 +7,7 @@ redirect_from: /partner_api/
 
 # Examples
 
-### See it in Action: How Unbounce Uses the API
+## Featured: How Unbounce Uses the API
 
 The API allows for so much flexibility that it can be challenging to picture the end result. Here's how lead generation app, Unbounce, built Zapier integrations into the Unbounce UI. The end result? A seamless integration experience for their users who can now connect their new Unbounce leads to hundreds of apps right from their Unbounce dashboard.
 
@@ -23,7 +23,7 @@ Then, once that Zap is set up and turned on, it's right there in Unbounce, where
 
 ![](https://cdn.zapier.com/storage/photos/05fec8dfe5a382bcfbcfe44c6139f14e.png)
 
-### Other Examples
+## Other Examples
 
 - **Facebook** lets you search for and configure a Zap from within the Lead Ad Campaign Manager.
 
@@ -33,7 +33,17 @@ Then, once that Zap is set up and turned on, it's right there in Unbounce, where
 
 ![](https://cdn.zapier.com/storage/photos/e02db0c000ed037b3385b813b3f1303c.gif)
 
+
+- **MeisterTask** provides an intuitive, styled interface to search for any MeisterTask Zap Template.
+
+![](https://cdn.zapier.com/storage/photos/570103e337edbe2b20b62ffba9f5dd7c.gif)
+
+- **Typeform** uses Zapier to extend their integrations directory automatically, with Zapier as a fallback if no direct integrations are available.
+
+![](https://cdn.zapier.com/storage/photos/bcec803a9b13f20e1a6453f17dee1314.gif#_ga=2.228121565.1797870667.1575912186-681011286.1567692739)
+
 - **Trello** leverages the Partner API to let the user manage their Zapier experience from their [dashboard within Trello.](http://blog.trello.com/zapier-power-up-for-trello)
+
 
 -----
 
