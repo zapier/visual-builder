@@ -5,6 +5,8 @@ layout: post
 redirect_from: /partner_api/
 ---
 
+# Authentication
+
 There are two ways to authenticate with the Partner API.
 
 1. Your application's `client_id` which you will receive once you are approved for access to the API
@@ -14,14 +16,16 @@ Which authentication method you should use depends on which endpoint(s) you are 
 
 > Note: while we do generate a `client_secret`, the type of grant we use (`implicit`) doesn't need it so it's not something we provide.
 
-### Access Token
+## Access Token
 
 For resources that require a valid access token you can use the [OAuth2 protocol](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2). At the moment, we only permit the [`implicit`](https://tools.ietf.org/html/rfc6749#section-4.2) grant type. Should your use case require a different grant type [send us your request](mailto:partners@zapier.com). There's also a [suggested workaround on how to work with an implicit oauth flow below](#workaround-for-implicit-only).
 
-#### Procuring a Token
+### Procuring a Token
 Construct the following URL, and redirect the user to authorize your application:
 
-> https://zapier.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}
+```
+https://zapier.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}
+```
 
 |      Parameter      | Requirement | Explanation                                                                                                                                                                                                         |
 | :-----------------: | :---------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -32,31 +36,36 @@ Construct the following URL, and redirect the user to authorize your application
 | **approval_prompt** |  Optional   | One of `auto` or `force`. Use `auto` if the second authorization (before expiration of previous token) should not prompt the user to re-authorize. Use `force` if the user should authorize your application again. |
 |      **state**      |  Optional   | A unique string to help your application guard against XSRF.                                                                                                                                                        |
 
-##### Example Prompt
+#### Example Prompt
 
 ![Example OAuth2 Authorization Prompt](https://cdn.zapier.com/storage/photos/d926ea5ba6ca80c184a45cf3f5e420fb.png)
 
-#### Receiving the Token, or Error
+### Receiving the Token, or Error
 
 If the user cancels, or approves the authorization the user will be redirected to your `redirect_uri` with the following example urls:
 
 **Approved**
-> http://your.redirect.url/#access_token=iuqhw8egojqenduvybtoken_type=Bearer&expires_in=36000&scope=zap
+```
+http://your.redirect.url/#access_token=iuqhw8egojqenduvybtoken_type=Bearer&expires_in=36000&scope=zap
+```
 
 **Cancelled**
-> http://your.redirect.url/?error=access_denied
-
+```
+http://your.redirect.url/?error=access_denied
+```
 
 Your application should use JavaScript to parse the hash parameter and use the token as needed. The **access token will not expire**. If ever invalid, however, provide the user with the authorize flow once more. In the `implicit` grant type, there are no refresh tokens. You can use a hidden iframe with `approval_prompt=auto`, or ask the user to authorize once more, to receive new tokens.
 
 
-#### Using the token:
+### Using the token:
 Preferred use of the tokens is via an HTTP Authorization Header.
 
-> curl -H "Authorization: Bearer {token}" "https://api.zapier.com/v1/zaps"
+```bash
+curl -H "Authorization: Bearer {token}" "https://api.zapier.com/v1/zaps"
+```
 
 
-#### Workaround for Implicit Only
+### Workaround for Implicit Only
 
 While we consider and implement other OAuth flows. The following is a suggested workaround for working with the implicit OAuth flow. The following is a sequence diagram that we'll use to explain the workaround:
 

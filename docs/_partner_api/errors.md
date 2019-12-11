@@ -5,6 +5,8 @@ layout: post
 redirect_from: /partner_api/
 ---
 
+# Errors
+
 Zapier uses HTTP response codes to indicate the success or failure of an API request.
 
 | Code    | Status         | Explanation                                                     |
