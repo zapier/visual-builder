@@ -549,17 +549,24 @@ history.
 
 ## L001 - Version Is Deprecated
 
+You can't promote a deprecated version.
+
 ---
 
 <a name="L002"></a><a name="L00002"></a>
 
 ## L002 - Integration Is Pending
 
+This could happen if you're repeatedly submitting an integration that is already
+pending for review.
+
 ---
 
 <a name="L003"></a><a name="L00003"></a>
 
 ## L003 - Version Is Already Production
+
+This could happen if you're promoting a version that is already production.
 
 ---
 
@@ -677,6 +684,16 @@ this integration. "Live" means at least one successful task in recent history.
 
 To ensure any show-stopping bugs are worked out, every visible trigger/search/action
 of your integration should have a live Zap that demonstrates it works.
+
+---
+
+<a name="S003"></a><a name="S00003"></a>
+
+## S003 - Live Version Count Limit
+
+You can't have more than 5 (former and current) production versions with users that
+have active Zaps using it. To continue, you should migrate users over to a new
+version so you can delete the unwanted versions.
 
 ---
 
