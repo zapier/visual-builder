@@ -841,6 +841,33 @@ output fields: [
 
 ---
 
+<a name="T006"></a><a name="T00006"></a>
+
+## T006 - Polling Sample Contains a Subset of Keys from Live Result
+
+For hook triggers, we require you to provide a Perform List URL so that users can
+pull a live sample in the Zap Editor. This is called a Polling Sample. To ensure
+users don't map a missing field in the Zap Editor, this check compares the latest
+task history with the selected polling sample in the corresponding Zap. For it to
+pass, the selected polling sample must contain a subset of keys of the latest live
+result in Task History.
+
+✘ an example of an **incorrect** implementation:
+
+```
+polling sample: {"id": 1, "email": "john@example.com"}
+live: {"id": 2, "name": "Alice"}
+```
+
+✔ an example of a **correct** implementation:
+
+```
+polling sample: {"id": 1, "name": "John"}
+live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
+```
+
+---
+
 <a name="U001"></a><a name="U00001"></a>
 
 ## U001 - Developer Terms of Service
