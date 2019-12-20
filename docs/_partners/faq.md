@@ -139,4 +139,4 @@ If you have issues with your Zaps and core Zapier account, reach out to [contact
 
 ### Find a Zapier Integration Partner
 
-We're excited to help you with your Zapier app, but we can't build it for you. If you'd like someone to take over the technical reins, check our [a list of third-party Zapier developers and consultants](https://zapier.com/help/integration-developers-partners/) to find someone to help develop a Zapier integration for your app.
+We're excited to help you with your Zapier app, but we can't build it for you. If you'd like someone to take over the technical reins, check our [a list of third-party Zapier developers and consultants](/partners/trusted-developers) to find someone to help develop a Zapier integration for your app.
