@@ -7,19 +7,20 @@ redirect_from: /docs/
 
 # Integration Checks Reference
 
-In accordance with our [app development guide](https://platform.zapier.com/partners/planning-guide), we run your app through a set of automated checks to ensure it's giving our users the best possible experience. To help better address a check in communication, each check is given a unique ID, consisting of a capital letter and three digits, such as `D001`.
+We run your integration through a set of automated checks to ensure it's working property and giving our users the best possible experience. To help better address a check in communication, each check is given a unique ID, consisting of a capital letter and three digits, such as `D001`.
 
 You don't need to know the implication of the initial capitial letter. But if you're curious, they are:
 
 Area | Description
 --- | ---
-[**D**]efinition | Definition of the integration, including auth and trigger/search/action configurations. Some of these checks could block you from saving/pushing if the violation results in a broken trigger/search/action.
-[**M**]arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
-Connected [**A**]ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
-[**S**]tats | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.
-[**T**]ask History | Data in your task history, produced by live Zaps. These are more likely to block you from going public.
-[**U**]ser | Things in the developer's (your) account, such as Terms of Service acceptance.
-[**L**]ifecycle | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).
+<b><u>D</u></b>efinition | Definition of the integration, including auth and trigger/search/action configurations. Some of these checks could block you from saving/pushing if the violation results in a broken trigger/search/action.
+<b><u>M</u></b>arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
+Connected <b><u>A</u></b>ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
+<b><u>S</u></b>tats | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.
+<b><u>T</u></b>ask History | Data in your task history, produced by live Zaps. These are more likely to block you from going public.
+<b><u>U</u></b>ser | Things in the developer's (your) account, such as Terms of Service acceptance.
+<b><u>L</u></b>ifecycle | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).
+<b><u>Z</u></b>ap | Things related to Zaps, such as the trigger samples you pulled into the Zap editor.
 
 When the checks are run, we'll give a brief blurb summarizing the violation (with a check ID) along with a link to this page. This will act as a full reference explaining each error and giving examples for each.
 
@@ -846,8 +847,8 @@ output fields: [
 ## T006 - Polling Sample Contains a Subset of Keys from Live Result
 
 For hook triggers, we require you to provide a Perform List URL so that users can
-pull a live sample in the Zap Editor. This is called a Polling Sample. To ensure
-users don't map a missing field in the Zap Editor, this check compares the latest
+pull a live sample in the Zap editor. This is called a Polling Sample. To ensure
+users don't map a missing field in the Zap editor, this check compares the latest
 task history with the selected polling sample in the corresponding Zap. For it to
 pass, the selected polling sample must contain a subset of keys of the latest live
 result in Task History.
@@ -874,5 +875,41 @@ live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 
 You must agree to the Developer Terms of Service in order to proceed. Go to
 [Developer Home](https://zapier.com/app/developer) to agree.
+
+---
+
+<a name="Z001"></a><a name="Z00001"></a>
+
+## Z001 - Polling Sample Respects Output Field Definition
+
+For hook triggers, we require you to provide a Perform List URL so that users can
+pull a live sample in the Zap editor. This is called a Polling Sample.
+
+This check takes the latest polling sample from one of the integration admins' Zaps
+and verifies if the sample conforms to the output fields if you defined them for
+your integration. The specific checks are:
+
+* "required" fields must be in the polling sample
+* field values in the trigger result match their field type
+
+✘ an example of an **incorrect** implementation:
+
+```
+polling sample: {"id": "1"}
+output fields: [
+    {"key":  "id", "type": "integer"},
+    {"key": "email", "type": "string", "required": true}
+]
+```
+
+✔ an example of a **correct** implementation:
+
+```
+polling sample: {"id": 1, "email": "john@example.com"}
+output fields: [
+    {"key":  "id", "type": "integer"},
+    {"key": "email", "type": "string", "required": true}
+]
+```
 
 {% endraw %}
