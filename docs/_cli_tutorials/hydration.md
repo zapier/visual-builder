@@ -75,7 +75,7 @@ Back in Terminal, you also need to install and start up the Express app.
 
 ![](https://zappy.zapier.com/E494B908-65CE-4E54-B296-D745BAE5B983.png)
 
-Finally, I've started up ngrok to forward traffic to my computer. You could actually host the Express server if you want, but I'm going with ngrok for ease of use:
+Finally, I've started up ngrok to forward traffic to my computer on the port the Express app is running on (`ngrok http 3000`). You could actually host the Express server if you want, but I'm going with ngrok for ease of use:
 
 ![](https://zappy.zapier.com/ABCEB99C-E530-454E-9C7E-4EB6BBF943EB.png)
 
