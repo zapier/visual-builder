@@ -264,7 +264,7 @@ See `https://google.com`
 ```
 
 If you see this error, you should look through both the description for the
-trigger/search/action and the help text for any fields that might have bad links.
+trigger/action/search and the help text for any fields that might have bad links.
 
 ---
 
@@ -340,11 +340,11 @@ user. If the label and help text are the same, they are considered redundant.
 
 <a name="D012"></a><a name="D00012"></a>
 
-## D012 - Sample Data Is Required
+## D012 - Static Sample Is Required
 
 When a user sets up a trigger, they need sample data to be returned in order to have
 fields available to map in the subsequent steps. If testing the trigger returns no
-live results, we use sample data as a fallback.
+live results, we use static sample data as a fallback.
 
 It's very important that the structure of an object from the actual trigger and in
 the sample data are identical. Otherwise, users could map fields that don't exist
@@ -393,7 +393,7 @@ can instead point to a dummy trigger that always returns an empty array.
 
 <a name="D015"></a><a name="D00015"></a>
 
-## D015 - Search-Or-Create Connects to a Non-Existing Search/Action
+## D015 - Search-Or-Create Connects to a Non-Existing Action/Search
 
 The search or create key you specify in `searchOrCreates` must reference to an
 existing search or action. Otherwise, it won't work.
@@ -424,7 +424,7 @@ integration, please use an alternative trigger type, such as REST Hook or Pollin
 
 ## D018 - Titlecased Label
 
-In order to have a consistent style across trigger/search/action labels, they're
+In order to have a consistent style across trigger/action/search labels, they're
 required to be presented in title case. If you fail this check, a passing version of
 your label will be shown.
 
@@ -542,6 +542,38 @@ history.
 
 ```
 2019-09-15T09:59:59Z
+```
+
+---
+
+<a name="D024"></a><a name="D00024"></a>
+
+## D024 - Static Sample Respects Output Field Definition
+
+If you define output fields for a trigger/action/search, they should be consistent
+with the static sample data. The specific checks are:
+
+* "required" fields must be in the sample
+* field values in the sample match their field type
+
+✘ an example of an **incorrect** implementation:
+
+```
+static sample: {"id": "1"}
+output fields: [
+    {"key":  "id", "type": "integer"},
+    {"key": "email", "type": "string", "required": true}
+]
+```
+
+✔ an example of a **correct** implementation:
+
+```
+static sample: {"id": 1, "email": "john@example.com"}
+output fields: [
+    {"key":  "id", "type": "integer"},
+    {"key": "email", "type": "string", "required": true}
+]
 ```
 
 ---
