@@ -23,7 +23,7 @@ Whenever someone uses your integration in a Zap, they'll first select your app, 
 
 _Zapier supports a wide range of authentication schemes—select the best one for your app_
 
-We'll use basic auth in this sample GitHub integration to keep things simple. Click the _Authenticstion_ tab in Zapier visual builder, then select _Basic Auth_ from the menu. Zapier will create a form with input fields to collect the username and password automatically.
+We'll use basic auth in this sample GitHub integration to keep things simple. Click the _Authentication_ tab in Zapier visual builder, then select _Basic Auth_ from the menu. Zapier will create a form with input fields to collect the username and password automatically.
 
 > _If you want to use [OAuth](https://platform.zapier.com/docs/oauth){:target="_blank"} or another authentication scheme, check our [auth docs](https://platform.zapier.com/docs/auth) for more details and use them instead of the steps below._
 
