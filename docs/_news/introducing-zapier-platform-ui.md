@@ -33,5 +33,5 @@ Here's how to get started:
 
 - **Try it!** [Get started]( https://zapier.com/app/developer/) and build a new integration in the visual builder.
 - **Documentation**: Go through our [quick start guide](https://platform.zapier.com/quickstart/introduction) to learn how to build a sample integration in the Platform UI, then check our [new documentation](https://platform.zapier.com/docs/intro) to discover more features.
-- **Slack**: Join [Zapier's Platform Slack group](https://zapier-platform-slack.herokuapp.com) to chat with our team and other developers.
+- **Slack**: Join [Zapier's Platform Slack group](https://zapier-platform.slack.com/join/shared_invite/enQtNTg1MjM5NjMzNTI3LTUyYWJjM2E1NTQ3NjViMGY0MzQ1NWJiMDJmNjcyNTJjMWRlOTg4MTNjOWEwNDFlNGExODU5OTgzNWM3MzZlMjk) to chat with our team and other developers.
 - **Email us**: Have more questions? [Send the Zapier support team an email](mailto:partners@zapier.com) to get help building your integration.
