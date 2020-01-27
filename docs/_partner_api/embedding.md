@@ -7,7 +7,7 @@ redirect_from: /partner_api/
 
 # Embedding Zapier in your Product
 
-There are two ways to embed Zapier in your proct: the [embed widget](#widget) or the Partner API (using an [iframe](#iframe)).
+There are two ways to embed Zapier in your product the [embed widget](#widget) or the Partner API (using an [iframe](#iframe)).
 
 
 ## widget.js
@@ -26,7 +26,7 @@ Learn more about embedding with the widget.js and creating your own widget [here
 
 1. Lookup Zap templates for your app using the [Zap templates endpoint](/partner_api/endpoints#get_v1zaptemplates)
 2. Display the Zap templates to the user (see [Examples page](/partner_api/examples) for inspiration)
-3. Upon the user clicking to crease a Zap based on the Zap template, use the `create_url` (see [Zap template object](/partner_api/endpoints#zap-template) definition) as the `src` attribute in an iframe injected in your page. Note that Zapier blocks embeds if they are not registered with us. Learn more in the [Security section](#security) on this page.
+3. Upon the user clicking to create a Zap based on the Zap template, use the `create_url` (see [Zap template object](/partner_api/endpoints#zap-template) definition) as the `src` attribute in an iframe injected in your page. Note that Zapier blocks embeds if they are not registered with us. Learn more in the [Security section](#security) on this page.
 4. Your product can listen to `postMessages` sent by the iframe out to any listener when a user turns on the Zap (message: `zap:unpause`,)
 5. The above can be repeated for Zaps returned from the [Zap endpoint](/partner_api/endpoints#get_v1zaps), instead of the `create_url` use the Zap's `url` (see [Zap object](/partner_api/endpoints#zap) definition) in the iframe's `src` attribute.
 
