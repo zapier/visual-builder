@@ -33,7 +33,7 @@ _Step 2: Run the `convert` command to create a CLI version of your project local
 
 Create a new directory for your Zapier project and from the command line `cd` into it. Then run:
 
-`zapier convert {your integration id} . -version={integration version you want to convert}`
+`zapier convert {your integration id} . --version={integration version you want to convert}`
 
 Your integration ID can be found in the browser location bar:
 

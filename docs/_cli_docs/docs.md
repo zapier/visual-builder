@@ -1308,7 +1308,7 @@ You can return additional fields in these responses, on top of the expected `acc
 
 If you want Zapier to validate that these additional fields exist, you need to use Computed Fields. If you define computed fields in your integration, Zapier will check to make sure those fields exist when it runs the authentication test API call.
 
-Computed fields work like any other field, though with `computed: true` property, and `required: false` as user can not enter computed fields themselves. Reference computed fields in API calls as `{{bundle.authData.field}}`, replacing `field` with that field's name from your test API call response.
+Computed fields work like any other field, though with `computed: true` property, and `required: false` as user can not enter computed fields themselves. Reference computed fields in API calls as `{% raw %}{{bundle.authData.field}}{% endraw %}`, replacing `field` with that field's name from your test API call response.
 
 You can see examples of computed fields in the [OAuth2](#oauth2) or [Session Auth](#session) example sections.
 
@@ -1366,7 +1366,7 @@ Custom/Dynamic Output Fields are defined in the same way as [Custom/Dynamic Inpu
 
 ### Nested & Children (Line Item) Fields
 
-To define an Output Field for a nested field use `{{parent}}__{{key}}`. For children (line item) fields use `{{parent}}[]{{key}}`.
+To define an Output Field for a nested field use `{% raw %}{{parent}}__{{key}}{% endraw %}`. For children (line item) fields use `{% raw %}{{parent}}[]{{key}}{% endraw %}`.
 
 ```js
 const recipeOutputFields = (z, bundle) => {
@@ -1531,16 +1531,16 @@ This object holds the user's auth details and the data for the API requests.
 
 ### `bundle.inputDataRaw`
 
-`bundle.inputDataRaw` is kind of like `inputData`, but before rendering `{{curlies}}`:
+`bundle.inputDataRaw` is kind of like `inputData`, but before rendering `{% raw %}{{curlies}}{% endraw %}`:
 
 ```js
 {
-  createdBy: 'his name is {{123__chef_name}}'
-  style: 'he cooks {{456__style}}'
+  createdBy: 'his name is {% raw %}{{123__chef_name}}{% endraw %}'
+  style: 'he cooks {% raw %}{{456__style}}{% endraw %}'
 }
 ```
 
-> "curlies" are data mapped in from previous steps. They take the form `{{NODE_ID__key_name}}`. You'll usually want to use `bundle.inputData` instead.
+> "curlies" are data mapped in from previous steps. They take the form `{% raw %}{{NODE_ID__key_name}}{% endraw %}`. You'll usually want to use `bundle.inputData` instead.
 
 ### `bundle.meta`
 
@@ -1757,7 +1757,7 @@ For simple HTTP requests that do not require special pre or post processing, you
 
 This features:
 
-1. Lazy `{{curly}}` replacement.
+1. Lazy `{% raw %}{{curly}}{% endraw %}` replacement.
 2. JSON and form body de-serialization.
 3. Automatic non-2xx error raising.
 
@@ -1786,13 +1786,13 @@ const App = {
 
 ```
 
-In the URL above, `{{bundle.authData.subdomain}}` is automatically replaced with the live value from the bundle. If the call returns a non 2xx return code, an error is automatically raised. The response body is automatically parsed as JSON and returned.
+In the URL above, `{% raw %}{{bundle.authData.subdomain}}{% endraw %}` is automatically replaced with the live value from the bundle. If the call returns a non 2xx return code, an error is automatically raised. The response body is automatically parsed as JSON and returned.
 
 An error will be raised if the response is not valid JSON, so _do not use shorthand HTTP requests with non-JSON responses_.
 
 ### Manual HTTP Requests
 
-When you need to do custom processing of the response, or need to process non-JSON responses, you can make manual HTTP requests. This approach does not perform any magic - no status code checking, no automatic JSON parsing. Use this method when you need more control. Manual requests do perform lazy `{{curly}}` replacement.
+When you need to do custom processing of the response, or need to process non-JSON responses, you can make manual HTTP requests. This approach does not perform any magic - no status code checking, no automatic JSON parsing. Use this method when you need more control. Manual requests do perform lazy `{% raw %}{{curly}}{% endraw %}` replacement.
 
 To make a manual HTTP request, use the `request` method of the `z` object:
 
@@ -2635,9 +2635,9 @@ If you don't upgrade before the cutoff date, there's a chance that AWS will thro
 
 ### When to use placeholders or curlies?
 
-You will see both [template literal placeholders](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Expression_interpolation) `${var}` and (double) "curlies" `{{var}}` used in examples.
+You will see both [template literal placeholders](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Expression_interpolation) `${var}` and (double) "curlies" `{% raw %}{{var}}{% endraw %}` used in examples.
 
-In general, use `${var}` within functions and use `{{var}}` anywhere else.
+In general, use `${var}` within functions and use `{% raw %}{{var}}{% endraw %}` anywhere else.
 
 Placeholders get evaluated as soon as the line of code is evaluated. This means that if you use `${process.env.VAR}` in a trigger configuration, `zapier push` will substitute it with your local environment's value for `VAR` when it builds your app and the value set via `zapier env` will not be used.
 

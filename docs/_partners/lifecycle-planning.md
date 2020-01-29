@@ -41,7 +41,7 @@ Each type of app has its own special considerations on Zapier. Form apps, for ex
 
 Building a Zapier integration means keeping one eye on the technical bits and one eye on the user experience.
 
-Some of the best Zapier integrations are built when pairing an engineer and a product manager together. But anyone can build a Zapier integration, as long as you follow the guidelines in our [integration design guide](https://platform.zapier.com/partners/planning-guide) and [developer docs](https://platform.zapier.com/docs/intro).
+Some of the best Zapier integrations are built when pairing an engineer and a product manager together. But anyone can build a Zapier integration, as long as you follow the guidelines in our [integration design guide](https://platform.zapier.com/partners/planning-guide) and [developer docs](https://platform.zapier.com/quickstart/introduction).
 
 There are two ways to build Zapier integrations on Zapier's Platform:our UI-based visual builder or CLI. The visual builder lets you create a Zapier integration in your browser without code—then can customize the integration with code if needed. The CLI, instead, lets you build integrations in your local development environment, collaborate with version control and CI tools, and push new versions of your integration from the command line. Both run on the same Zapier platform, so choose the tool that fits your workflow the best.
 

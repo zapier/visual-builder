@@ -7,7 +7,7 @@ redirect_from: /legacy/
 
 # Zapier Legacy Web Builder Scripting
 
-> **Caution**: Do not use this documentation with new integrations built in Zapier's Platform CLI or UI visual builder. For new integrations, use [Zapier's new visual builder](https://platform.zapier.com/docs/intro) or the [Zapier Command Line Interface](https://platform.zapier.io/cli_docs/docs) to build an integration in code.
+> **Caution**: Do not use this documentation with new integrations built in Zapier's Platform CLI or UI visual builder. For new integrations, use [Zapier's new visual builder](https://platform.zapier.com/quickstart/introduction) or the [Zapier Command Line Interface](https://platform.zapier.io/cli_docs/docs) to build an integration in code.
 >
 > If you have an existing integration built with Zapier's legacy web builder, or have migrated a legacy web builder integration to the new Zapier Platform UI, use this doc to edit and maintain your existing scripts.
 
@@ -15,11 +15,11 @@ Zapier's Legacy Web Builder scripting lets you to manipulate the requests and re
 
 You can modify HTTP requests just before they are sent and can parse responses before Zapier does anything with them. This enables you to do things like:
 
-*   Set unique HTTP Headers
-*   Modify the request URL based on user's input criteria.
-*   Construct unique URL query strings like filters.
-*   Turn XML or other serialization formats into properly formatted JSON primitives.
-*   Create completely new keys on JSON objects for user consumption (like turning 1000 into $10.00).
+- Set unique HTTP Headers
+- Modify the request URL based on user's input criteria.
+- Construct unique URL query strings like filters.
+- Turn XML or other serialization formats into properly formatted JSON primitives.
+- Create completely new keys on JSON objects for user consumption (like turning 1000 into \$10.00).
 
 Scripting works by giving you places to add your own code to the request-response cycle. To add a method to an integration in Zapier's Legacy Web Builder, click the edit code button on your App's developer dashboard:
 
@@ -36,10 +36,10 @@ Below is an example of implementing a method to be a pass-through:
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  my_trigger_pre_poll: function(bundle) {
-    // your code to modify bundle.request before sent
-    return bundle.request;
-  }
+my_trigger_pre_poll: function(bundle) {
+// your code to modify bundle.request before sent
+return bundle.request;
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -60,24 +60,25 @@ There are a variety of methods for manipulating requests Zapier makes to your AP
 
 ### Trigger Methods
 
-Many of the trigger methods follow a naming pattern of key + method name, where key is the key given to the trigger when you created it. Below, we use the convention of `KEY` as the placeholder for the trigger's  actual key. For example, if you define a trigger with the key "my_trigger" and you want to implement the pre_poll method, you would write a method called `my_trigger_pre_poll`.
+Many of the trigger methods follow a naming pattern of key + method name, where key is the key given to the trigger when you created it. Below, we use the convention of `KEY` as the placeholder for the trigger's actual key. For example, if you define a trigger with the key "my_trigger" and you want to implement the pre_poll method, you would write a method called `my_trigger_pre_poll`.
 
 ### Polling
 
 #### `KEY_pre_poll`
+
 Runs before the request to the polling URL, can modify the request before it is sent.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_pre_poll: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "GET"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
+KEY_pre_poll: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "GET"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
       bundle.url_raw: <string>
       bundle.auth_fields: <object>
@@ -95,7 +96,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -105,17 +107,18 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 #### `KEY_post_poll`
+
 Runs after we receive a response from the polling URL. Can parse the response to format the data that enters Zapier or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_post_poll: function(bundle) {
-    /*
-    Argument:
-      bundle.response.status_code: <integer>
-      bundle.response.headers: <object>
-      bundle.response.content: <str>
+KEY_post_poll: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
       bundle.request: <original object from KEY_pre_poll bundle>
 
@@ -131,7 +134,8 @@ var Zap = {
       ]
     */
     return [];
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -139,19 +143,20 @@ var Zap = {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 #### `KEY_poll`
+
 Runs in place of pre_poll and post_poll. You get a bundle and are expected to make the request and return a list of results or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will **not** throw for status codes like 4xx and 5xx automatically!
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_poll: function(bundle) {
-    /*
-    Arguments:
-      bundle.request.method: <string> # "GET"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
+KEY_poll: function(bundle) {
+/\*
+Arguments:
+bundle.request.method: <string> # "GET"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
       bundle.url_raw: <string>
       bundle.auth_fields: <object>
@@ -169,7 +174,8 @@ var Zap = {
       ]
     */
     return []; // or callback(null, [])
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -181,18 +187,19 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 ### Static and REST Hooks
 
 #### `KEY_catch_hook`
+
 Runs when we receive a static or subscription hook from your API. Can parse the response to format the data that enters Zapier.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_catch_hook: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <str> # 'GET', 'POST', 'PATCH', 'PUT', 'DELETE'
-      bundle.request.headers: <object>
-      bundle.request.querystring: <str> # parse with $.param(bundle.request.querystring)
-      bundle.request.content: <str>
+KEY_catch_hook: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <str> # 'GET', 'POST', 'PATCH', 'PUT', 'DELETE'
+bundle.request.headers: <object>
+bundle.request.querystring: <str> # parse with \$.param(bundle.request.querystring)
+bundle.request.content: <str>
 
       bundle.cleaned_request: <object> or <array> # our best guess at parsing
                                                   # and combining the request
@@ -211,7 +218,8 @@ var Zap = {
       <object>
     */
     return []; // or {}
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -221,20 +229,21 @@ var Zap = {
 ### REST Hooks and Notification REST Hooks
 
 #### `pre_subscribe`
+
 Runs before we subscribe.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  pre_subscribe: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "POST"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
-      bundle.request.data: <string>
+pre_subscribe: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "POST"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
+bundle.request.data: <string>
 
       bundle.auth_fields: <object>
       bundle.trigger_fields: <object> # the data from trigger fields
@@ -252,7 +261,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -262,17 +272,18 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 #### `post_subscribe`
+
 Runs after we subscribe. It is exclusively for storing results that are needed later for pre_unsubscribe.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  post_subscribe: function(bundle) {
-    /*
-    Argument:
-      bundle.response.status_code: <integer>
-      bundle.response.headers: <object>
-      bundle.response.content: <str>
+post_subscribe: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
       bundle.request: <original object from pre_subscribe bundle>
 
@@ -289,7 +300,8 @@ var Zap = {
 
     */
     return ""; // or {}, or []
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -297,20 +309,21 @@ var Zap = {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 #### `pre_unsubscribe`
+
 Runs before we unsubscribe.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  pre_unsubscribe: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "POST"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
-      bundle.request.data: <string>
+pre_unsubscribe: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "POST"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
+bundle.request.data: <string>
 
       bundle.target_url: <string> # our unique Zapier url for this subscription
       bundle.subscribe_data <json> # any data you returned from post_subscribe
@@ -329,7 +342,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -341,18 +355,19 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 ### Notification REST Hooks
 
 #### `KEY_pre_hook`
+
 Runs before the consuming call.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_pre_hook: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string>
-      bundle.request.headers: <object>
-      bundle.request.querystring: <string> # parse using $.param(bundle.request.querystring)
-      bundle.request.content: <string>
+KEY_pre_hook: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string>
+bundle.request.headers: <object>
+bundle.request.querystring: <string> # parse using \$.param(bundle.request.querystring)
+bundle.request.content: <string>
 
       bundle.auth_fields: <object>
       bundle.trigger_fields: <object> # the fields provided by the user during setup
@@ -368,7 +383,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -378,17 +394,18 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 #### `KEY_post_hook`
+
 Runs after we receive a response from the consuming call. Can parse the response to format the data that enters Zapier or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_post_hook: function(bundle) {
-    /*
-    Argument:
-      bundle.response.status_code: <integer>
-      bundle.response.headers: <object>
-      bundle.response.content: <str>
+KEY_post_hook: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
       bundle.request: <original object from KEY_pre_hook bundle>
 
@@ -403,7 +420,8 @@ var Zap = {
       ]
     */
     return [];
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -413,6 +431,7 @@ var Zap = {
 ### Available to all triggers
 
 #### `KEY_pre_custom_trigger_fields`
+
 Runs before the request to the custom field URL (if provided).
 
 > Note: Although this method does not end with `result_fields` like there are for [actions](#key_pre_custom_action_fields) and [searches](#key_pre_custom_search_fields) it does in fact define custom fields and labels for the **result** (sample) of the trigger and not for its **Edit Template** step in the Zap Editor. See [Trigger Result Fields (Custom)](https://platform.zapier.com/legacy/trigger-fields-custom/).
@@ -420,14 +439,14 @@ Runs before the request to the custom field URL (if provided).
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_pre_custom_trigger_fields: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "GET"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
+KEY_pre_custom_trigger_fields: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "GET"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
       bundle.url_raw: <string>
       bundle.auth_fields: <object>
@@ -444,7 +463,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -454,6 +474,7 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 #### `KEY_post_custom_trigger_fields`
+
 Runs after the response for custom fields is received. Can parse the response to format the data that enters Zapier or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically.
 
 > Note: Although this method does not end with `result_fields` like there are for [actions](#key_pre_custom_action_fields) and [searches](#key_pre_custom_search_fields) it does in fact define custom fields and labels for the **result** (sample) of the trigger and not for its **Edit Template** step in the Zap Editor. See [Trigger Result Fields (Custom)](https://platform.zapier.com/legacy/trigger-fields-custom/).
@@ -461,12 +482,12 @@ Runs after the response for custom fields is received. Can parse the response to
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_post_custom_trigger_fields: function(bundle) {
-    /*
-    Argument:
-      bundle.response.status_code: <integer>
-      bundle.response.headers: <object>
-      bundle.response.content: <str>
+KEY_post_custom_trigger_fields: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
       bundle.request: <original object from KEY_pre_hook bundle>
 
@@ -484,7 +505,8 @@ var Zap = {
       ]
     */
     return [];
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -496,21 +518,22 @@ var Zap = {
 Action methods follow a naming pattern of key + method name, where key is the key given to the action when you created it. Below, we use the convention of `KEY` as the placeholder for the action's actual key. For example, if you define an action with the key "my_action" and you want to implement the pre_write method, you would write a method called `my_action_pre_write`.
 
 ### `KEY_pre_write`
+
 Runs before the request to the action URL, can modify the request before it is sent.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_pre_write: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "POST"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
-      bundle.request.data: <string>
-      bundle.request.files: <object>
+KEY_pre_write: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "POST"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
+bundle.request.data: <string>
+bundle.request.files: <object>
 
       bundle.url_raw: <string>
       bundle.auth_fields: <object>
@@ -529,7 +552,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -538,19 +562,19 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
-
 ### `KEY_post_write`
-Runs after we receive a response from the action endpoint, can modify the response or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically. *Note:* If the action occurs as part of a search-or-create Zap, the output of this method is *not* exactly what the user sees. In that case, the action will be followed up with a request to fetch the written record, and we will present the user with the output from that follow-up request. If you need to modify the returned data in that scenario, use `_post_read_resource`.
+
+Runs after we receive a response from the action endpoint, can modify the response or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically. _Note:_ If the action occurs as part of a search-or-create Zap, the output of this method is _not_ exactly what the user sees. In that case, the action will be followed up with a request to fetch the written record, and we will present the user with the output from that follow-up request. If you need to modify the returned data in that scenario, use `_post_read_resource`.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_post_write: function(bundle) {
-    /*
-    Argument:
-      bundle.response.status_code: <integer>
-      bundle.response.headers: <object>
-      bundle.response.content: <str>
+KEY_post_write: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
       bundle.request: <original object from KEY_pre_write bundle>
 
@@ -565,7 +589,8 @@ var Zap = {
 
     return <object>;
     */
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -573,14 +598,15 @@ var Zap = {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_write`
-Runs in place of pre_write and post_write. You get a bundle and are expected to make the request and return the appropriate response or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will **not** throw for status codes like 4xx and 5xx automatically! *Note:* If the action occurs as part of a search-or-create Zap, the output of this method is *not* exactly what the user sees. In that case, the action will be followed up with a request to fetch the written record, and we will present the user with the output from that follow-up request. If you need to modify the returned data in that scenario, use `_post_read_resource`.
+
+Runs in place of pre_write and post_write. You get a bundle and are expected to make the request and return the appropriate response or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will **not** throw for status codes like 4xx and 5xx automatically! _Note:_ If the action occurs as part of a search-or-create Zap, the output of this method is _not_ exactly what the user sees. In that case, the action will be followed up with a request to fetch the written record, and we will present the user with the output from that follow-up request. If you need to modify the returned data in that scenario, use `_post_read_resource`.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_write: function(bundle, [callback]) {
-    /*
-    Arguments:
+KEY_write: function(bundle, [callback]) {
+/\*
+Arguments:
 
       bundle.request.method: <string> # "POST"
       bundle.request.url: <string>
@@ -608,7 +634,8 @@ var Zap = {
     // your code to modify bundle.request before sent
     var response = z.request(bundle.request);
     return z.JSON.parse(response.content);
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -618,19 +645,20 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_pre_custom_action_fields`
+
 Runs before the request to the custom field URL (if provided).
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_pre_custom_action_fields: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "GET"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
+KEY_pre_custom_action_fields: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "GET"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
       bundle.url_raw: <string>
       bundle.auth_fields: <object>
@@ -647,7 +675,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -657,17 +686,18 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_post_custom_action_fields`
+
 Runs after the response for custom fields is received. Can parse the response to format the data that enters Zapier or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_post_custom_action_fields: function(bundle) {
-    /*
-    Argument:
-      bundle.response.status_code: <integer>
-      bundle.response.headers: <object>
-      bundle.response.content: <str>
+KEY_post_custom_action_fields: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
       bundle.request: <original object from KEY_pre_custom_action_fields bundle>
 
@@ -685,7 +715,8 @@ var Zap = {
       ]
     */
     return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -693,25 +724,26 @@ var Zap = {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_custom_action_fields`
-Allows you to completely take over the handling of retrieving and processing field metadata for custom action fields.  Pre- and Post- methods will not be called if you've implemented this method.  This method will be passed a bundle and must return an array of custom field metadata.  If a request to an endpoint fails, you will need to throw an exception - the platform will not do it automatically.
+
+Allows you to completely take over the handling of retrieving and processing field metadata for custom action fields. Pre- and Post- methods will not be called if you've implemented this method. This method will be passed a bundle and must return an array of custom field metadata. If a request to an endpoint fails, you will need to throw an exception - the platform will not do it automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {KEY_custom_action_fields: function(bundle) {
-    /*    
-    Argument:      
-        bundle.request.method: <string> # GET
-        bundle.request.url: <string> # ""
-        bundle.request.auth: <array>
-        bundle.request.headers: <object>
-        bundle.request.params: <object>
+/\*
+Argument:
+bundle.request.method: <string> # GET
+bundle.request.url: <string> # ""
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
         bundle.url_raw: <string> # ""
         bundle.auth_fields: <object>
         bundle.action_fields: <object> # the raw action fields (if applicable)
-        bundle.zap: <object> # info about the zap    
+        bundle.zap: <object> # info about the zap
 
-    The response should be JSON serializable:      
+    The response should be JSON serializable:
         [
 
             # "type": "unicode",
@@ -724,10 +756,11 @@ var Zap = {KEY_custom_action_fields: function(bundle) {
             } // can also be a flat array if raw is the label
             {'type': <str>, 'key': <str>}
 
-         ]   
+         ]
        */
        return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
     }
+
 }
 {% endraw %}
 {% endhighlight %}
@@ -737,34 +770,36 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_custom_action_result_fields`
-Allows you to completely take over the handling of retrieving and processing field metadata for custom fields when users are working with *results* of your action in the Zap editor.  Pre- and Post- methods will not be called if you've implemented this method.  This method will be passed a bundle and must return an array of custom field metadata.  If a request to an endpoint fails, you will need to throw an exception - the platform will not do it automatically.
+
+Allows you to completely take over the handling of retrieving and processing field metadata for custom fields when users are working with _results_ of your action in the Zap editor. Pre- and Post- methods will not be called if you've implemented this method. This method will be passed a bundle and must return an array of custom field metadata. If a request to an endpoint fails, you will need to throw an exception - the platform will not do it automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {KEY_custom_action_result_fields: function(bundle) {
-    /*    
-    Argument:      
-        bundle.response.status_code: <integer>      
-        bundle.response.headers: <object>      
-        bundle.response.content: <str>      
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
-        bundle.request: <original object from KEY_pre_custom_action_fields bundle>      
+        bundle.request: <original object from KEY_pre_custom_action_fields bundle>
 
-        bundle.url_raw: <string>      
-        bundle.auth_fields: <object>      
+        bundle.url_raw: <string>
+        bundle.auth_fields: <object>
         bundle.action_fields: <object> # the raw action fields (if applicable)
-        bundle.zap: <object> # info about the zap    
+        bundle.zap: <object> # info about the zap
 
-    The response should be JSON serializable:      
-        [        
-            # `type` can be unicode, int, bool        
-            # `key` should be unique, and will be the "key" in "key: value" in the response content        
-            # `label` is also available       
-            {'type': <str>, 'key': <str>, 'label': <str>}      
-        ]    
+    The response should be JSON serializable:
+        [
+            # `type` can be unicode, int, bool
+            # `key` should be unique, and will be the "key" in "key: value" in the response content
+            # `label` is also available
+            {'type': <str>, 'key': <str>, 'label': <str>}
+        ]
        */
        return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
     }
+
 }
 {% endraw %}
 {% endhighlight %}
@@ -772,24 +807,25 @@ var Zap = {KEY_custom_action_result_fields: function(bundle) {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_pre_custom_action_result_fields`
+
 Runs before the request to the custom response fields URL (if provided).
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_pre_custom_action_result_fields: function(bundle) {
-    /*    
-    Argument:      
-        bundle.request.method: <string> # "GET"
-        bundle.request.url: <string>
-        bundle.request.auth: <array>
-        bundle.request.headers: <object>
-        bundle.request.params: <object>
+KEY_pre_custom_action_result_fields: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "GET"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
-        bundle.url_raw: <string>      
-        bundle.auth_fields: <object>      
-        bundle.action_fields: <object> # the raw action fields (if applicable)      
-        bundle.zap: <object> # info about the zap (details below)    
+        bundle.url_raw: <string>
+        bundle.auth_fields: <object>
+        bundle.action_fields: <object> # the raw action fields (if applicable)
+        bundle.zap: <object> # info about the zap (details below)
 
     The response should be bundle.request or a similar object
     */
@@ -801,7 +837,8 @@ var Zap = {
         params: bundle.request.params,
         data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -811,34 +848,36 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_post_custom_action_result_fields`
+
 Runs after the response for custom response fields is received. Can parse the response to format the data that enters Zapier or throw an exception [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-    KEY_post_custom_action_result_fields: function(bundle) {
-    /*    
-    Argument:      
-        bundle.response.status_code: <integer>      
-        bundle.response.headers: <object>      
-        bundle.response.content: <str>      
+KEY_post_custom_action_result_fields: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
-        bundle.request: <original object from KEY_pre_custom_action_fields bundle>      
+        bundle.request: <original object from KEY_pre_custom_action_fields bundle>
 
-        bundle.url_raw: <string>      
-        bundle.auth_fields: <object>            
-        bundle.action_fields: <object> # the raw action fields (if applicable)      
-        bundle.zap: <object> # info about the zap    
-    The response should be JSON serializable:      
-        [        
-            # `type` can be unicode, int, bool        
-            # `key` should be unique, and will be the "key" in "key: value" in the response content        
-            # `label` is also available        
-            {'type': <str>, 'key': <str>, 'label': <str>}      
-        ]    
+        bundle.url_raw: <string>
+        bundle.auth_fields: <object>
+        bundle.action_fields: <object> # the raw action fields (if applicable)
+        bundle.zap: <object> # info about the zap
+    The response should be JSON serializable:
+        [
+            # `type` can be unicode, int, bool
+            # `key` should be unique, and will be the "key" in "key: value" in the response content
+            # `label` is also available
+            {'type': <str>, 'key': <str>, 'label': <str>}
+        ]
     */
         return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
     }
+
 }
 {% endraw %}
 {% endhighlight %}
@@ -848,19 +887,20 @@ var Zap = {
 Search methods follow a naming pattern of key + method name, where key is the key given to the search when you created it. Below, we use the convention of `KEY` as the placeholder for the search's actual key. For example, if you define an search with the key "my_search" and you want to implement the pre_search method, you would write a method called `my_search_pre_search`.
 
 ### `KEY_pre_search`
+
 Runs before the request to the search URL, can modify the request before it is sent.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_pre_search: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "GET"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
+KEY_pre_search: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "GET"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
       bundle.url_raw: <string>
       bundle.auth_fields: <object>
@@ -877,7 +917,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -887,19 +928,20 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_post_search`
-Runs after we receive a response from the search endpoint, can modify the response or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically. *Note:* The output of the method is *not* exactly what the user sees. We follow searches up with requests for the individual resources and present the user with the output from those follow-up requests. If you wish to modify the number (or ordering) of the search results, use `_post_search`. If you wish to modify the data the user sees, use `_post_read_resource`. One other thing to be aware of is that searches must return an *array* of objects, so if your search endpoint returns a single object, you can use this method to wrap your object in an array.
+
+Runs after we receive a response from the search endpoint, can modify the response or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically. _Note:_ The output of the method is _not_ exactly what the user sees. We follow searches up with requests for the individual resources and present the user with the output from those follow-up requests. If you wish to modify the number (or ordering) of the search results, use `_post_search`. If you wish to modify the data the user sees, use `_post_read_resource`. One other thing to be aware of is that searches must return an _array_ of objects, so if your search endpoint returns a single object, you can use this method to wrap your object in an array.
 
 > Note we'll only use the first object in the array for now, so if you can add optional fields to help narrow the search down, it's a great idea.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_post_search: function(bundle) {
-    /*
-    Argument:
-      bundle.response.status_code: <integer>
-      bundle.response.headers: <object>
-      bundle.response.content: <str>
+KEY_post_search: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
       bundle.request: <original object from KEY_pre_search bundle>
 
@@ -918,7 +960,8 @@ var Zap = {
     return [ { ... } ];  // return a single match
     /* --- or --- */
     return [ { ... }, { ... }, ... ]; // several matches, with "best match" first
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -926,6 +969,7 @@ var Zap = {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_search`
+
 Runs in place of pre_search and post_search. You get a bundle and are expected to make the request and return the appropriate response or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will **not** throw for status codes like 4xx and 5xx automatically! Note: The output of the method is not exactly what the user sees. We follow searches up with requests for the individual resources and present the user with the output from those follow-up requests. If you wish to modify the number (or ordering) of the search results, you can do that inside `_search`. If you wish to modify the data the user sees, use `_post_read_resource`.
 
 > Note we'll only use the first object in the array for now, so if you can add optional fields to help narrow the search down, it's a great idea.
@@ -933,9 +977,9 @@ Runs in place of pre_search and post_search. You get a bundle and are expected t
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_search: function(bundle, [callback]) {
-    /*
-    Arguments:
+KEY_search: function(bundle, [callback]) {
+/\*
+Arguments:
 
       bundle.request.method: <string> # "GET"
       bundle.request.url: <string>
@@ -957,7 +1001,8 @@ var Zap = {
     */
 
     return {...}; // or callback(null, {...})
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -967,19 +1012,20 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_pre_custom_search_fields`
+
 Runs before the request to the custom field URL (if provided).
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_pre_custom_search_fields: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "GET"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
+KEY_pre_custom_search_fields: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "GET"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
       bundle.url_raw: <string>
       bundle.auth_fields: <object>
@@ -997,7 +1043,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -1007,17 +1054,18 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_post_custom_search_fields`
+
 Runs after the response for custom fields is received. Can parse the response to format the data that enters Zapier or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_post_custom_search_fields: function(bundle) {
-    /*
-    Argument:
-      bundle.response.status_code: <integer>
-      bundle.response.headers: <object>
-      bundle.response.content: <str>
+KEY_post_custom_search_fields: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
       bundle.request: <original object from KEY_pre_custom_search_fields bundle>
 
@@ -1034,7 +1082,8 @@ var Zap = {
       ]
     */
     return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -1042,31 +1091,33 @@ var Zap = {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_custom_search_fields`
-Allows you to completely take over the handling of retrieving and processing field metadata for custom search action fields.  Pre- and Post- methods will not be called if you've implemented this method.  This method will be passed a bundle and must return an array of custom field metadata.  If a request to an endpoint fails, you will need to throw an exception - the platform will not do it automatically.
+
+Allows you to completely take over the handling of retrieving and processing field metadata for custom search action fields. Pre- and Post- methods will not be called if you've implemented this method. This method will be passed a bundle and must return an array of custom field metadata. If a request to an endpoint fails, you will need to throw an exception - the platform will not do it automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {KEY_custom_search_fields: function(bundle)
-  {
-    /*    
-    Argument:      
-      bundle.request.method: <string> # "GET"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
+{
+/\*
+Argument:
+bundle.request.method: <string> # "GET"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
-      bundle.auth_fields: <object>      
-      bundle.zap: <object> # info about the zap    
-    The response should be JSON serializable:      
-    [        
-      # `type` can be unicode, int, bool        
-      # `key` should be unique, and will be the "key" in "key: value" in the POST        
-      # `help_text` and `label` are also available        
-      {'type': <str>, 'key': <str>}      
-    ]    
+      bundle.auth_fields: <object>
+      bundle.zap: <object> # info about the zap
+    The response should be JSON serializable:
+    [
+      # `type` can be unicode, int, bool
+      # `key` should be unique, and will be the "key" in "key: value" in the POST
+      # `help_text` and `label` are also available
+      {'type': <str>, 'key': <str>}
+    ]
     */
-  return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
+
+return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
 }
 }
 {% endraw %}
@@ -1077,17 +1128,18 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_custom_search_result_fields`
-Allows you to completely take over the handling of retrieving and processing field metadata for custom fields when users are working with *results* of your search action in the Zap editor.  Pre- and Post- methods will not be called if you've implemented this method.  This method will be passed a bundle and must return an array of custom field metadata.  If a request to an endpoint fails, you will need to throw an exception - the platform will not do it automatically.
+
+Allows you to completely take over the handling of retrieving and processing field metadata for custom fields when users are working with _results_ of your search action in the Zap editor. Pre- and Post- methods will not be called if you've implemented this method. This method will be passed a bundle and must return an array of custom field metadata. If a request to an endpoint fails, you will need to throw an exception - the platform will not do it automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-    KEY_custom_search_result_fields: function(bundle) {
-        /*
-        Argument:
-            bundle.response.status_code: <integer>
-            bundle.response.headers: <object>
-            bundle.response.content: <str>
+KEY_custom_search_result_fields: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
             bundle.request: <original object from KEY_pre_custom_search_fields bundle>
 
@@ -1105,6 +1157,7 @@ var Zap = {
         */
         return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
     }
+
 }
 {% endraw %}
 {% endhighlight %}
@@ -1112,24 +1165,25 @@ var Zap = {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_pre_custom_search_result_fields`
+
 Runs before the request to the custom search result field URL (if provided)
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-    KEY_pre_custom_search_result_fields: function(bundle) {
-    /*    
-    Argument:      
-        bundle.request.method: <string> # "GET"
-        bundle.request.url: <string>
-        bundle.request.auth: <array>
-        bundle.request.headers: <object>
-        bundle.request.params: <object>
+KEY_pre_custom_search_result_fields: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "GET"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
-        bundle.url_raw: <string>      
-        bundle.auth_fields: <object>      
-        bundle.search_fields: <object> # the raw search fields (if applicable)      
-        bundle.zap: <object> # info about the zap (details below)    
+        bundle.url_raw: <string>
+        bundle.auth_fields: <object>
+        bundle.search_fields: <object> # the raw search fields (if applicable)
+        bundle.zap: <object> # info about the zap (details below)
 
     The response should be bundle.request or a similar object
     */
@@ -1142,6 +1196,7 @@ var Zap = {
             data: bundle.request.data
         }; // or return bundle.request;
     }
+
 }
 {% endraw %}
 {% endhighlight %}
@@ -1151,34 +1206,36 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_post_custom_result_search_fields`
+
 Runs after the response for custom search result fields is received. Can parse the response to format the data that enters Zapier or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-    KEY_post_custom_search_result_fields: function(bundle) {
-    /*    
-    Argument:      
-        bundle.response.status_code: <integer>      
-        bundle.response.headers: <object>      
-        bundle.response.content: <str>      
+KEY_post_custom_search_result_fields: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
-        bundle.request: <original object from KEY_pre_custom_search_fields bundle>      
+        bundle.request: <original object from KEY_pre_custom_search_fields bundle>
 
-        bundle.url_raw: <string>      
-        bundle.auth_fields: <object>      
-        bundle.zap: <object> # info about the zap    
-    The response should be JSON serializable:      
-           [        
-               # `type` can be unicode, int, bool        
-               # `key` should be unique, and will be the "key" in "key: value" in the response content        
+        bundle.url_raw: <string>
+        bundle.auth_fields: <object>
+        bundle.zap: <object> # info about the zap
+    The response should be JSON serializable:
+           [
+               # `type` can be unicode, int, bool
+               # `key` should be unique, and will be the "key" in "key: value" in the response content
                # `label` should be provided
                # `important` is optional
                {'type': <str>, 'key': <str>, 'label': <str>, 'important': <str>}
-           ]     
+           ]
     */
         return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
     }
+
 }
 {% endraw %}
 {% endhighlight %}
@@ -1186,19 +1243,20 @@ var Zap = {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_pre_read_resource`
+
 Runs before we do the request to read an individual resource. Use to modify the request before it is sent.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_pre_read_resource: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "GET"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.params: <object>
+KEY_pre_read_resource: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "GET"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.params: <object>
 
       bundle.url_raw: <string>
       bundle.auth_fields: <object>
@@ -1216,7 +1274,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -1226,17 +1285,18 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_post_read_resource`
+
 Runs after we do the request to read an individual resource. Use to modify the data returned or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx after the method runs automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_post_read_resource: function(bundle) {
-    /*
-    Argument:
-      bundle.response.status_code: <integer>
-      bundle.response.headers: <object>
-      bundle.response.content: <str>
+KEY_post_read_resource: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
       bundle.request: <original object from KEY_pre_read_resource bundle>
 
@@ -1253,7 +1313,8 @@ var Zap = {
     return <object>;
     */
     return {...};
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -1261,14 +1322,15 @@ var Zap = {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `KEY_read_resource`
+
 Runs in place of pre_read_resource and post_read_resource. You get a bundle and are expected to make the request and return the appropriate response or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will **not** throw for status codes like 4xx and 5xx automatically!
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  KEY_read_resource: function(bundle, [callback]) {
-    /*
-    Arguments:
+KEY_read_resource: function(bundle, [callback]) {
+/\*
+Arguments:
 
       bundle.request.method: <string> # "GET"
       bundle.request.url: <string>
@@ -1289,7 +1351,8 @@ var Zap = {
       The response should be an object representing the resource. Can also use the available exceptions to vary errors.
     */
     return {...}; // or callback(null, {...})
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -1301,6 +1364,7 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 ## Authentication Methods
 
 ### `pre_oauthv2_token`
+
 Modify the request we'd send to the access token endpoint.
 
 > Be aware that for legacy reasons the request does not follow [RFC6749](https://tools.ietf.org/html/rfc6749#section-4.1.3) and passes the parameters via the query string. If you define `pre_oauthv2_token` then it is up to you correct this if needed. Without the method, we will retry the request conform standards if the API returns an error on the first attempt.
@@ -1308,14 +1372,14 @@ Modify the request we'd send to the access token endpoint.
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  pre_oauthv2_token: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "POST"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object> # {"Accept": "application/json", "Content-Length": 0}
-      bundle.request.params: <object> client_id, client_secret, redirect_uri, grant_type:authorization_code, code
+pre_oauthv2_token: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "POST"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object> # {"Accept": "application/json", "Content-Length": 0}
+bundle.request.params: <object> client_id, client_secret, redirect_uri, grant_type:authorization_code, code
 
       bundle.load: <object> # identical to bundle.request.params
       bundle.oauth_data: <object> # obj that contains your client_id, client_secret, etc...
@@ -1335,7 +1399,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -1345,17 +1410,18 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `post_oauthv2_token`
+
 Modify the response from the access token endpoint or throw an [exception](https://platform.zapier.com/legacy/scripting/#available-exceptions). We will throw for status codes 4xx and 5xx **before** the method runs automatically.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  post_oauthv2_token: function(bundle) {
-    /*
-    Argument:
-      bundle.response.status_code: <integer>
-      bundle.response.headers: <object>
-      bundle.response.content: <str>
+post_oauthv2_token: function(bundle) {
+/\*
+Argument:
+bundle.response.status_code: <integer>
+bundle.response.headers: <object>
+bundle.response.content: <str>
 
       bundle.oauth_data: <object> # client id/secret and oauth related URLs
       bundle.auth_fields: <object>
@@ -1364,27 +1430,29 @@ var Zap = {
     // and refresh_token in the Extra Requested Fields setup,
     // you may return them here as well.
     return z.JSON.parse(bundle.response.content);
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
 
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
-### ` pre_oauthv2_refresh`
+### `pre_oauthv2_refresh`
+
 Modify the request we'd send to the refresh token endpoint. Only use if you have set the auth type for your App to be OAuth V2 with Refresh.
 
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  pre_oauthv2_refresh: function(bundle) {
-    /*
-    Argument:
-      bundle.request.method: <string> # "POST"
-      bundle.request.url: <string>
-      bundle.request.auth: <array>
-      bundle.request.headers: <object>
-      bundle.request.data: <object> # client_id, client_secret, refresh_token, grant_type
+pre_oauthv2_refresh: function(bundle) {
+/\*
+Argument:
+bundle.request.method: <string> # "POST"
+bundle.request.url: <string>
+bundle.request.auth: <array>
+bundle.request.headers: <object>
+bundle.request.data: <object> # client_id, client_secret, refresh_token, grant_type
 
       bundle.load: <object> # same as bundle.request.data
       bundle.auth_fields: <object>
@@ -1405,7 +1473,8 @@ var Zap = {
       params: bundle.request.params,
       data: bundle.request.data
     }; // or return bundle.request;
-  }
+
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -1415,25 +1484,27 @@ See [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-reque
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `get_session_info`
+
 Zapier exposes a `get_session_info()` function for APIs that require any form of session-based authorization. Feel free to use the following skeleton function to inspire your session authorization:
 
- > Zapier will only invoke this function on an as-needed basis. It will be called when your API returns a 401 or when you raise an `InvalidSessionException` in your `KEY_post_poll` or `KEY_post_write` functions. We will retry the request if the function returns new session info successfully.
+> Zapier will only invoke this function on an as-needed basis. It will be called when your API returns a 401 or when you raise an `InvalidSessionException` in your `KEY_post_poll` or `KEY_post_write` functions. We will retry the request if the function returns new session info successfully.
 
 {% highlight javascript %}
 {% raw %}
 Zap = {
-  get_session_info: function(bundle) {
-    /*
-    Argument:
-      bundle.auth_fields: <object>      
-      bundle.zap: <object> # info about the zap
-    */
+get_session_info: function(bundle) {
+/_
+Argument:
+bundle.auth_fields: <object>
+bundle.zap: <object> # info about the zap
+_/
 
     // Make z.request calls as needed.
 
     // Returned object will be mixed into bundle.auth_fields in future calls.
     return {'api_key': api_key};
-  }
+
+}
 };
 {% endraw %}
 {% endhighlight %}
@@ -1441,6 +1512,7 @@ Zap = {
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [CLI](https://zapier.com/developer/documentation/v2/getting-started-cli/) and [visual builder](https://zapier.com/developer/documentation/v2/visual-builder-getting-started/).
 
 ### `get_connection_label`
+
 Zapier exposes a `get_connection_label()` function for APIs that need customization on their Connection Label:
 
 > Zapier will only invoke this function after the authentication is tested (when a new account is connected, and when the "test" button is pressed).
@@ -1448,31 +1520,32 @@ Zapier exposes a `get_connection_label()` function for APIs that need customizat
 {% highlight javascript %}
 {% raw %}
 Zap = {
-  get_connection_label: function(bundle) {
-    /*
-    Argument:
-      bundle.test_result: <object> # results from the test trigger, if it returned an object
-      bundle.auth_fields: <object>
-      bundle.zap: <object> # info about the zap
-    */
+get_connection_label: function(bundle) {
+/_
+Argument:
+bundle.test_result: <object> # results from the test trigger, if it returned an object
+bundle.auth_fields: <object>
+bundle.zap: <object> # info about the zap
+_/
 
-   // Make z.request calls as needed.
+// Make z.request calls as needed.
 
     // Returned string will be used as a Connection Label.
     // Please note it should be short and easily identifiable
     return 'contact@zapier.com';
-  }
+
+}
 };
 {% endraw %}
 {% endhighlight %}
 
-> **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [visual builder](https://platform.zapier.com/docs/intro) or the [Zapier CLI](https://zapier.github.io/zapier-platform-cli/).
+> **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Zapier [visual builder](https://platform.zapier.com/quickstart/introduction) or the [Zapier CLI](https://zapier.github.io/zapier-platform-cli/).
 
 ## Built-in Functions and Tools
 
 ### Available Libraries
 
-Our scripting engine uses JavaScript. As you'd expect, it provides the standard JavaScript interfaces (JSON, Math, Date and more) as well as `$` for jQuery (1.8.3),  `_` for Underscore (1.4.4), and `moment` for Moment.js (2.0.0 with timezone), `crypto`, and `async` (0.2.9). Plus, it has some handy Zapier specific tools on the `z` object!
+Our scripting engine uses JavaScript. As you'd expect, it provides the standard JavaScript interfaces (JSON, Math, Date and more) as well as `$` for jQuery (1.8.3), `_` for Underscore (1.4.4), and `moment` for Moment.js (2.0.0 with timezone), `crypto`, and `async` (0.2.9). Plus, it has some handy Zapier specific tools on the `z` object!
 
 > **Note:** Do not use Underscore's collection methods (`_.each()`, `_.map()`...) on objects. This [will break](https://github.com/jashkenas/underscore/issues/2407#issuecomment-169541016) if the object has a `length` property. Use `Object.keys(obj, fn)` instead.
 
@@ -1496,9 +1569,7 @@ The `z.request` function allows you to make external calls. It performs in a syn
   - `auth <Array> | <Object>`: If `auth` is an `Array`, it will be transforrmed to `{'user':auth[0], 'pass':auth[1]}` to match the package's [HTTP Authentication](https://www.npmjs.com/package/request#http-authentication). If your Zapier app is configured to use Basic Auth then `bundle.request.auth` will be array with 2 elements for the username and password. If it uses Digest Auth then the third element will be `false`. In this case, when `auth[2]` is set, we will set `auth.sendImmediately` to `auth[2]` and also default `jar` to `true` since most digest servers require cookies.
   - `params <Object>`: Will become `qs` unless that already exists.
   - `data <string>` Will become `body` unless that already exists. While `bundle.request.data` will always be a `String`, be aware that `body` also accepts a `Buffer`, `ReadStream` or - if `json` is set to `true` - any JSON-serializable object.
-- `callback Function ([error], response)`: Will be called on completion, with:
-	- `error <Error>`: Any error, when applicable.
-	- `response <Object>`: See *Response*.
+- `callback Function ([error], response)`: Will be called on completion, with: - `error <Error>`: Any error, when applicable. - `response <Object>`: See _Response_.
 
 #### Response
 
@@ -1519,14 +1590,14 @@ Let's call [http://httpbin.org/get?hello=world](http://httpbin.org/get?hello=wor
 {% highlight javascript %}
 {% raw %}
 var request = {
-  'method': 'GET',
-  'url': 'http://httpbin.org/get',
-  'params': {
-    'hello': 'world'
-  },
-  'headers': {
-    'Accept': 'application/json'
-  },
+'method': 'GET',
+'url': 'http://httpbin.org/get',
+'params': {
+'hello': 'world'
+},
+'headers': {
+'Accept': 'application/json'
+},
 };
 
 // Synchronous
@@ -1538,15 +1609,15 @@ console.log('Content: ' + response.content);
 // Asynchronous
 z.request(request, function(err, response){
 
-  if (err) {
-	 // you can always throw it, we'll catch it, but it
-	 // is better to throw a user-friendly ErrorException
-    throw err;
-  }
+if (err) {
+// you can always throw it, we'll catch it, but it
+// is better to throw a user-friendly ErrorException
+throw err;
+}
 
-  console.log('Status: ' + response.status_code);
-  console.log('Headers: ' + JSON.stringify(response.headers));
-  console.log('Content: ' + response.content);
+console.log('Status: ' + response.status_code);
+console.log('Headers: ' + JSON.stringify(response.headers));
+console.log('Content: ' + response.content);
 });
 {% endraw %}
 {% endhighlight %}
@@ -1562,9 +1633,9 @@ The `z.JSON.parse` function acts a lot like the native `JSON.parse`, but adds so
 {% highlight javascript %}
 {% raw %}
 var response = z.request({
-  method: 'GET',
-  url: 'https://api.someservice.com/me',
-  auth: [bundle.auth_fields.api_key, '']
+method: 'GET',
+url: 'https://api.someservice.com/me',
+auth: [bundle.auth_fields.api_key, '']
 });
 var str = response.content;
 var obj = z.JSON.parse(str);
@@ -1617,11 +1688,11 @@ Hydration is the opposite of dehydration. It is the consumption of a pointer tha
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-    get_contact: function(bundle) {
-        /*
-        Argument:
-            bundle.auth_fields: <object>
-            bundle.zap: <object> # info about the zap
+get_contact: function(bundle) {
+/\*
+Argument:
+bundle.auth_fields: <object>
+bundle.zap: <object> # info about the zap
 
             Anything else you might need, like bundle.request.headers, will need to be passed in when you call z.dehydrate()
         */
@@ -1640,6 +1711,7 @@ var Zap = {
             return deal;
         });
     }
+
 };
 {% endraw %}
 {% endhighlight %}
@@ -1674,27 +1746,27 @@ var url = 'https://example.com/test.txt';
 var filePointer = z.dehydrateFile(url);
 
 var filePointer = z.dehydrateFile(
-  url,
+url,
 
-  // you can configure the request using the same options
-  // as z.request, but this makes you responsible for authorization
-  // and we will not refresh tokens or sessions before hydrating
-  {
-    method: 'post',
-    params: {
-      custom: 'param'
-    },
-    headers: {
-      'X-Download-Key': 'abcdef1234567890'
-    }
-   },
+// you can configure the request using the same options
+// as z.request, but this makes you responsible for authorization
+// and we will not refresh tokens or sessions before hydrating
+{
+method: 'post',
+params: {
+custom: 'param'
+},
+headers: {
+'X-Download-Key': 'abcdef1234567890'
+}
+},
 
-  // you can configure the content filename and length
-  // if you leave it out we'll try to determine it for you
-  {
-    name: 'mytextfile.txt',
-    length: 123
-  }
+// you can configure the content filename and length
+// if you leave it out we'll try to determine it for you
+{
+name: 'mytextfile.txt',
+length: 123
+}
 );
 {% endraw %}
 {% endhighlight %}
@@ -1705,7 +1777,6 @@ var filePointer = z.dehydrateFile(
 
 The scripting portion of hydration in actions is incomplete - right now your API will need to adhere to our multipart pattern as described in our [files reference documentation](https://platform.zapier.com/legacy/files/#actions-via-multipart).
 
-
 ## Bundle Details
 
 ### Prepared request via `bundle.request`
@@ -1714,14 +1785,11 @@ All `pre` and methods like `KEY_write` receive a prepared request via `bundle.re
 
 - `url <string>`: Configured Polling, Action or Search Endpoint URL. Any variables will be resolved.
 - `method <string>`: Will be `GET` in most cases, but `POST` for actions (`_write`), `pre_subscribe` and `pre_unsubscribe`.
-- `auth <Array>`: Will only be set if the app's Auth Type is *Basic* or *Digest Auth*. The first 2 elements are the username and password. *Digest Auth* has a third element which is always `false`.
-- `headers <Object>`: If the Auth Type is *API Key (Headers)* or when it is *OAuth V2*, *OAuth V2 (w/refresh)* or *Session Auth* and you have selected *Header* or *Both* for *Access Token Placement*, then this object will have the required/mapped headers. In addition, we always set `Content-Type: application/json; charset=utf-8` and `Accept: application/json` since `data` defaults to JSON and we prefer to get that back as well.
-- `params <Object>`: Will be mapped into the querystring. If the Auth Type is *API Key (Query String)* or when it is *OAuth V2*, *OAuth V2 (w/refresh)* or *Session Auth* and you have selected *Querystring* or *Both* for *Access Token Placement*, then this object will have the required/mapped parameters. If you need to convert this to an actual querystring, use `$.param(bundle.request.params)`. Be aware that we do not automatically set params for your *Trigger Fields*!
-- `data <string>`: Will form the body of the request. This will be set to a JSON string for `pre_subscribe`, `pre_unsubscribe` and actions (`_write`) that have one or more fields with *Send to Action Endpoint URL in JSON body* enabled. To parse a JSON string back to an object use `z.JSON.parse(bundle.request.data)`. To stringify an object use `JSON.stringify(your_object)`.
-- `files <Object>`: For actions (`_write`) that have file-type *Action Fields* this will be an object with the field keys as keys while the values are an `Array` of:
-	- `[0] <string>` Filename or `null`.
-	- `[1] <string>` URL to a zapier.com endpoint that will stream the file.
-	- `[2] <string>` Mimetype or `null`.
+- `auth <Array>`: Will only be set if the app's Auth Type is _Basic_ or _Digest Auth_. The first 2 elements are the username and password. _Digest Auth_ has a third element which is always `false`.
+- `headers <Object>`: If the Auth Type is _API Key (Headers)_ or when it is _OAuth V2_, _OAuth V2 (w/refresh)_ or _Session Auth_ and you have selected _Header_ or _Both_ for _Access Token Placement_, then this object will have the required/mapped headers. In addition, we always set `Content-Type: application/json; charset=utf-8` and `Accept: application/json` since `data` defaults to JSON and we prefer to get that back as well.
+- `params <Object>`: Will be mapped into the querystring. If the Auth Type is _API Key (Query String)_ or when it is _OAuth V2_, _OAuth V2 (w/refresh)_ or _Session Auth_ and you have selected _Querystring_ or _Both_ for _Access Token Placement_, then this object will have the required/mapped parameters. If you need to convert this to an actual querystring, use `$.param(bundle.request.params)`. Be aware that we do not automatically set params for your _Trigger Fields_!
+- `data <string>`: Will form the body of the request. This will be set to a JSON string for `pre_subscribe`, `pre_unsubscribe` and actions (`_write`) that have one or more fields with _Send to Action Endpoint URL in JSON body_ enabled. To parse a JSON string back to an object use `z.JSON.parse(bundle.request.data)`. To stringify an object use `JSON.stringify(your_object)`.
+- `files <Object>`: For actions (`_write`) that have file-type _Action Fields_ this will be an object with the field keys as keys while the values are an `Array` of: - `[0] <string>` Filename or `null`. - `[1] <string>` URL to a zapier.com endpoint that will stream the file. - `[2] <string>` Mimetype or `null`.
 
 For Static and REST Hooks, `KEY_catch_hook` also receives `bundle.request`, but as this is an incoming request it has a different structure. It does not have an `url` or `auth` property, `params <Object>` is `querstring <string>` and `data` is called `content`.
 
@@ -1736,8 +1804,8 @@ The `bundle.auth_fields` is a javascript object that matches the authentication 
 {% highlight json %}
 {% raw %}
 {
-  "api_key": "fc5e038d38a57032085441e7fe7010b0",
-  "subdomain": "example"
+"api_key": "fc5e038d38a57032085441e7fe7010b0",
+"subdomain": "example"
 }
 {% endraw %}
 {% endhighlight %}
@@ -1749,8 +1817,8 @@ Both `bundle.trigger_fields` and `bundle.action_fields` are javascript objects t
 {% highlight json %}
 {% raw %}
 {
-  "list_id": "1234",
-  "name": "Joe Blow"
+"list_id": "1234",
+"name": "Joe Blow"
 }
 {% endraw %}
 {% endhighlight %}
@@ -1764,8 +1832,8 @@ Both `bundle.trigger_fields_raw` or `bundle.action_fields_raw` are javascript ob
 {% highlight json %}
 {% raw %}
 {
-  "list_id": "1234",
-  "name": "{% templatetag openvariable %}first_name{% templatetag closevariable %} {% templatetag openvariable %}last_name{% templatetag closevariable %}"
+"list_id": "1234",
+"name": "{% templatetag openvariable %}first_name{% templatetag closevariable %} {% templatetag openvariable %}last_name{% templatetag closevariable %}"
 }
 {% endraw %}
 {% endhighlight %}
@@ -1787,12 +1855,12 @@ The `bundle.zap` object contains extra information about the zap (FYI: you may n
 {% highlight json %}
 {% raw %}
 {
-  "name": "My Fancy Zap Title",
-  "live": false,
-  "link": "https://zapier.com/app/editor/12345",
-  "user": {
-    "timezone": "America/Denver",
-  },
+"name": "My Fancy Zap Title",
+"live": false,
+"link": "https://zapier.com/app/editor/12345",
+"user": {
+"timezone": "America/Denver",
+},
 }
 {% endraw %}
 {% endhighlight %}
@@ -1802,12 +1870,12 @@ You can access the information like this:
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  any_old_pre_poll: function(bundle) {
-    var zap = bundle.zap;
-    var message = 'The Zap title is ' + zap.name'!';
-    // message == "The Zap title is My Fancy Zap Title!"
-    return bundle.request;
-  }
+any_old_pre_poll: function(bundle) {
+var zap = bundle.zap;
+var message = 'The Zap title is ' + zap.name'!';
+// message == "The Zap title is My Fancy Zap Title!"
+return bundle.request;
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -1819,23 +1887,23 @@ The `bundle.meta` object contains some runtime information about the Zap which y
 {% highlight javascript %}
 {% raw %}
 {
-  "frontend": true, // if true, it's being done through the Zap editor/setup
-  "prefill": false, // if true, this poll is running as a prefill (dynamic dropdown)
-              // for another poll
-  "filter": false, // if true, this poll will be filtered afterwards
-  "hydrate": true, // if true, the results from this poll will be hydrated
-  "limit": 5, // how many items you should limit the API call to for
-              // performance reasons. a value of -1 means not limited
-  "test_poll": false, // if true, means this API call came from the user
-                      // testing their account in the UI
-  "standard_poll": true, // opposite of bundle.meta.test_poll
-  "first_poll": false, // if true, means this API call is our initial check for
-                     // items in the API when the Zap is turned on
-  "page": 0 // which page of API results you should return, useful for
-            // paging backwards for dynamic dropdowns. It is 0-indexed
-            // (add 1 via JS if your paging scheme is 1-indexed)
-            // note this is only available for dynamic dropdowns,
-            // when bundle.meta.frontend === true
+"frontend": true, // if true, it's being done through the Zap editor/setup
+"prefill": false, // if true, this poll is running as a prefill (dynamic dropdown)
+// for another poll
+"filter": false, // if true, this poll will be filtered afterwards
+"hydrate": true, // if true, the results from this poll will be hydrated
+"limit": 5, // how many items you should limit the API call to for
+// performance reasons. a value of -1 means not limited
+"test_poll": false, // if true, means this API call came from the user
+// testing their account in the UI
+"standard_poll": true, // opposite of bundle.meta.test_poll
+"first_poll": false, // if true, means this API call is our initial check for
+// items in the API when the Zap is turned on
+"page": 0 // which page of API results you should return, useful for
+// paging backwards for dynamic dropdowns. It is 0-indexed
+// (add 1 via JS if your paging scheme is 1-indexed)
+// note this is only available for dynamic dropdowns,
+// when bundle.meta.frontend === true
 }
 {% endraw %}
 {% endhighlight %}
@@ -1847,18 +1915,18 @@ You can access the information for limited pagination features like this:
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  any_old_pre_poll: function(bundle) {
-    // adds ?page=0 to URL querystring
-    bundle.request.params.page = bundle.meta.page
-    return bundle.request;
-  }
+any_old_pre_poll: function(bundle) {
+// adds ?page=0 to URL querystring
+bundle.request.params.page = bundle.meta.page
+return bundle.request;
+}
 }
 {% endraw %}
 {% endhighlight %}
 
 ## Available Exceptions
 
-> **Note**: This guide is for Zapier's legacy web builder. For new integrations, use Zapier [Platform UI or CLI](https://platform.zapier.com/docs/intro), which expects [standard HTTP errors](https://zapier.github.io/visual-builder/docs/auth#common-authentication-error-messages) to be thrown.
+> **Note**: This guide is for Zapier's legacy web builder. For new integrations, use Zapier [Platform UI or CLI](https://platform.zapier.com/quickstart/introduction), which expects [standard HTTP errors](https://zapier.github.io/visual-builder/docs/auth#common-authentication-error-messages) to be thrown.
 
 In scripting, you have several exception classes at your disposal. Most are used for communicating errors to the user, but a couple do some more interesting bits. See the specifics of each class to find out more.
 
@@ -1907,64 +1975,64 @@ For session-based APIs only, stale authorization credentials can be refreshed by
 "use strict";
 
 var Zap = {
-  // STRAIGHT PASS THROUGH
-  // same as not providing the method at all
-  // for illustration purposes only
-  simple_pre_poll: function(bundle) {
-    return bundle.request;
-  },
+// STRAIGHT PASS THROUGH
+// same as not providing the method at all
+// for illustration purposes only
+simple_pre_poll: function(bundle) {
+return bundle.request;
+},
 
-  // CHANGE REQUEST METHOD
-  // for endpoints that don't like the default GET
-  simple_pre_poll: function(bundle) {
-    bundle.request.method = 'POST';
-    return bundle.request;
-  },
+// CHANGE REQUEST METHOD
+// for endpoints that don't like the default GET
+simple_pre_poll: function(bundle) {
+bundle.request.method = 'POST';
+return bundle.request;
+},
 
-  // PLACE A HEADER BASED ON USER INPUT
-  // a trigger field that should be added as a header but
-  // if there isn't one, default to "None"
-  some_header_pre_poll: function(bundle) {
-    var request = bundle.request;
-    request.headers["X-Project-ID"] = bundle.trigger_fields.project_id || "None";
-    return request;
-  },
+// PLACE A HEADER BASED ON USER INPUT
+// a trigger field that should be added as a header but
+// if there isn't one, default to "None"
+some_header_pre_poll: function(bundle) {
+var request = bundle.request;
+request.headers["X-Project-ID"] = bundle.trigger_fields.project_id || "None";
+return request;
+},
 
-  // SUBSTITUTE HUMAN FRIENDLY CHOICES
-  // if you add a trigger field with human friendly choices:
-  //     Yesterday,Today,Tomorrow
-  // but the querystring should be:
-  //     &when=-1, &when=0, or &when=1
-  event_pre_poll: function(bundle) {
-    var request = bundle.request;
-    switch (bundle.trigger_fields.when) {
-      case "Yesterday":
-        request.params.when = -1;
-        break;
-      case "Today":
-        request.params.when = 0;
-        break;
-      default:
-        request.params.when = 1;
-    }
-    return request;
-  },
+// SUBSTITUTE HUMAN FRIENDLY CHOICES
+// if you add a trigger field with human friendly choices:
+// Yesterday,Today,Tomorrow
+// but the querystring should be:
+// &when=-1, &when=0, or &when=1
+event_pre_poll: function(bundle) {
+var request = bundle.request;
+switch (bundle.trigger_fields.when) {
+case "Yesterday":
+request.params.when = -1;
+break;
+case "Today":
+request.params.when = 0;
+break;
+default:
+request.params.when = 1;
+}
+return request;
+},
 
-  // BUILD THE URL YOURSELF
-  // this does exactly what we do when transforming the URL
-  // from bundle.url_raw to bundle.request.url
-  // utilizes underscores template system (preloaded with proper syntax)
-  room_pre_poll: function(bundle) {
-    var request = bundle.request;
-    // bundle.url_raw is 'http://{{account_name}}.campfirenow.com/room/{{room_id}}/speak.json'
-    // bundle.auth_fields is {account_name: 'myaccount', api_key: '1234567890'}
-    request.url = _.template(bundle.url_raw)(bundle.auth_fields);
-    // request.url is 'http://myaccount.campfirenow.com/room/{{room_id}}/speak.json'
-    // bundle.auth_fields is {room_id: 12345, message: 'Hello world!'}
-    request.url = _.template(request.url)(bundle.trigger_fields);
-    // request.url is 'http://myaccount.campfirenow.com/room/12345/speak.json'
-    return request;
-  }
+// BUILD THE URL YOURSELF
+// this does exactly what we do when transforming the URL
+// from bundle.url*raw to bundle.request.url
+// utilizes underscores template system (preloaded with proper syntax)
+room_pre_poll: function(bundle) {
+var request = bundle.request;
+// bundle.url_raw is 'http://{{account_name}}.campfirenow.com/room/{{room_id}}/speak.json'
+// bundle.auth_fields is {account_name: 'myaccount', api_key: '1234567890'}
+request.url = *.template(bundle.url*raw)(bundle.auth_fields);
+// request.url is 'http://myaccount.campfirenow.com/room/{{room_id}}/speak.json'
+// bundle.auth_fields is {room_id: 12345, message: 'Hello world!'}
+request.url = *.template(request.url)(bundle.trigger_fields);
+// request.url is 'http://myaccount.campfirenow.com/room/12345/speak.json'
+return request;
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -1978,61 +2046,61 @@ var Zap = {
 "use strict";
 
 var Zap = {
-  // STRAIGHT PASS THROUGH OF JSON
-  // same as not providing the method at all
-  // for illustration purposes only
-  straight_post_poll: function(bundle) {
-    // bundle.response.content is '[{"id":1234,"title":"Hello!"}, ... ]'
-    return z.JSON.parse(bundle.response.content);
-  },
+// STRAIGHT PASS THROUGH OF JSON
+// same as not providing the method at all
+// for illustration purposes only
+straight_post_poll: function(bundle) {
+// bundle.response.content is '[{"id":1234,"title":"Hello!"}, ... ]'
+return z.JSON.parse(bundle.response.content);
+},
 
-  // WRAP IN ARRAY
-  // for APIs that return a single object
-  straight_post_poll: function(bundle) {
-    // bundle.response.content is '{"id":1234,"title":"Hello!"}'
-    return [z.JSON.parse(bundle.response.content)];
-  },
+// WRAP IN ARRAY
+// for APIs that return a single object
+straight_post_poll: function(bundle) {
+// bundle.response.content is '{"id":1234,"title":"Hello!"}'
+return [z.JSON.parse(bundle.response.content)];
+},
 
-  // CENTS INTO DOLLARS
-  // take a key in cents and offer it up as a dollar formatted string
-  sale_post_poll: function(bundle) {
-    // bundle.response.content is '[{"id":1234,"cents":925}, ... ]'
-    var results = z.JSON.parse(bundle.response.content);
-    _.each(results, function(result) {
-      result.dollars = "$" + (Math.floor(result.cents / 100)) + "." + (result.cents % 100);
+// CENTS INTO DOLLARS
+// take a key in cents and offer it up as a dollar formatted string
+sale*post_poll: function(bundle) {
+// bundle.response.content is '[{"id":1234,"cents":925}, ... ]'
+var results = z.JSON.parse(bundle.response.content);
+*.each(results, function(result) {
+result.dollars = "$" + (Math.floor(result.cents / 100)) + "." + (result.cents % 100);
     })
     // results is '[{"id":1234,"cents":925,"dollars":"$9.25"}, ... ]'
-    return results;
-  },
+return results;
+},
 
-  // XML INTO JSON
-  // given an string of xml data, turn that into JSON:
-  //   <messages type="array">
-  //     <message>
-  //       <id type="integer">2</id>
-  //       <title>Anyone home?</title>
-  //       <body>I can't seem to see anything!</body>
-  //     </message>
-  //     <message>
-  //       <id type="integer">1</id>
-  //       <title>Hello there world!</title>
-  //       <body>I am just tickled to see you!</body>
-  //     </message>
-  //   </messages>
-  my_xml_doc_post_poll: function(bundle) {
-    // bundle.response.content is xml string from API, $ is preloaded jQuery
-    var xml = $($.parseXML(bundle.response.content)).find('message');
-    // build javascript primitives: array of objects
-    var results = _.map(xml, function(element){
-      return {
-        id: $(element).find('id').text(),
+// XML INTO JSON
+// given an string of xml data, turn that into JSON:
+// <messages type="array">
+// <message>
+// <id type="integer">2</id>
+// <title>Anyone home?</title>
+// <body>I can't seem to see anything!</body>
+// </message>
+// <message>
+// <id type="integer">1</id>
+// <title>Hello there world!</title>
+// <body>I am just tickled to see you!</body>
+// </message>
+// </messages>
+my*xml_doc_post_poll: function(bundle) {
+// bundle.response.content is xml string from API, $ is preloaded jQuery
+    var xml = $(\$.parseXML(bundle.response.content)).find('message');
+// build javascript primitives: array of objects
+var results = *.map(xml, function(element){
+return {
+id: $(element).find('id').text(),
         title: $(element).find('title').text(),
-        body: $(element).find('body').text()
-      };
-    });
-    // results is '[{"id":"2","title":"Anyone home?","body":"I can't seem to see anything!"}, ... ]'
-    return results;
-  }
+body: \$(element).find('body').text()
+};
+});
+// results is '[{"id":"2","title":"Anyone home?","body":"I can't seem to see anything!"}, ... ]'
+return results;
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -2046,47 +2114,49 @@ var Zap = {
 "use strict";
 
 var Zap = {
-  // STRAIGHT PASS THROUGH OF CLEANED_REQUEST
-  // same as not providing the method at all
-  // for illustration purposes only
-  straight_catch_hook: function(bundle) {
-    // bundle.cleaned_request is usually an object or array
-    return bundle.cleaned_request;
-  },
+// STRAIGHT PASS THROUGH OF CLEANED_REQUEST
+// same as not providing the method at all
+// for illustration purposes only
+straight_catch_hook: function(bundle) {
+// bundle.cleaned_request is usually an object or array
+return bundle.cleaned_request;
+},
 
-  // PLACE QUERY STRING AS MAIN OBJECT
-  // in this example our hook is just a GET with a query string
-  // there is no request content or body, maybe a url like this:
-  //   GET https://zapier.com//hooks/catch/123/n/456789/?name=bryan&age=27
-  simple_get_catch_hook: function(bundle) {
-    // bundle.cleaned_request includes the query string already parsed
-    // but you could parse it yourself from bundle.request.querystring:
-    var example = $.param(bundle.request.querystring);
+// PLACE QUERY STRING AS MAIN OBJECT
+// in this example our hook is just a GET with a query string
+// there is no request content or body, maybe a url like this:
+// GET https://zapier.com//hooks/catch/123/n/456789/?name=bryan&age=27
+simple_get_catch_hook: function(bundle) {
+// bundle.cleaned_request includes the query string already parsed
+// but you could parse it yourself from bundle.request.querystring:
+var example = \$.param(bundle.request.querystring);
 
     // but let's just return the cleaned_request version:
     return bundle.cleaned_request.querystring; // {"name":"bryan","age":27}
-  },
 
-  // MOVE LIST ON SUBKEY TO MAIN OBJECT
-  // if a json POST contains a list on a root object's key "data"
-  // we can move the list to the parent to trigger for each item
-  // the content/body might look like:
-  //   {"data":[{"name":"bryan","age":27},{"name":"mike","age":23}]}
-  myjson_catch_hook: function(bundle) {
-    // bundle.cleaned_request includes the json already parsed
-    // but you could parse it yourself from bundle.request.content:
-    var example = z.JSON.parse(bundle.request.content).data;
+},
+
+// MOVE LIST ON SUBKEY TO MAIN OBJECT
+// if a json POST contains a list on a root object's key "data"
+// we can move the list to the parent to trigger for each item
+// the content/body might look like:
+// {"data":[{"name":"bryan","age":27},{"name":"mike","age":23}]}
+myjson_catch_hook: function(bundle) {
+// bundle.cleaned_request includes the json already parsed
+// but you could parse it yourself from bundle.request.content:
+var example = z.JSON.parse(bundle.request.content).data;
 
     // but let's just return the cleaned_request version:
     return bundle.cleaned_request.data; // the array
-  }
 
-  // FILTER OUT CERTAIN STATIC WEBHOOKS
-  // if your hooks are noisy, then you may want to filter based on
-  // some static value, or even user provided trigger fields
-  filter_out_catch_hook: function(bundle) {
-    // manually create json from the posted string
-    var json = z.JSON.parse(bundle.request.content);
+}
+
+// FILTER OUT CERTAIN STATIC WEBHOOKS
+// if your hooks are noisy, then you may want to filter based on
+// some static value, or even user provided trigger fields
+filter_out_catch_hook: function(bundle) {
+// manually create json from the posted string
+var json = z.JSON.parse(bundle.request.content);
 
     // filter out hooks that aren't the event type we care about
     if (json.event_type != 'new_comment') {
@@ -2100,7 +2170,8 @@ var Zap = {
 
     // else
     return json;
-  },
+
+},
 }
 {% endraw %}
 {% endhighlight %}
@@ -2114,65 +2185,65 @@ var Zap = {
 "use strict";
 
 var Zap = {
-  // STRAIGHT PASS THROUGH
-  // same as not providing the method at all
-  // for illustration purposes only
-  pass_through_pre_write: function(bundle) {
-    return bundle.request;
-  },
+// STRAIGHT PASS THROUGH
+// same as not providing the method at all
+// for illustration purposes only
+pass_through_pre_write: function(bundle) {
+return bundle.request;
+},
 
-  // WRAP FIELDS IN TOP-LEVEL ARRAY UNDER DATA KEY
-  wrap_in_array_pre_write: function(bundle) {
-    bundle.request.data = JSON.stringify({data: [bundle.action_fields]})
-    return bundle.request;
-  },
+// WRAP FIELDS IN TOP-LEVEL ARRAY UNDER DATA KEY
+wrap_in_array_pre_write: function(bundle) {
+bundle.request.data = JSON.stringify({data: [bundle.action_fields]})
+return bundle.request;
+},
 
-  // DO NOT UNFLATTEN __
-  // by default we will turn fields like {custom__c: 12}
-  // into {custom: {c: 12}}, but this can avoid this by
-  // using the "full" action fields, like this
-  dont_unwrap_pre_write: function(bundle) {
-    bundle.request.data = JSON.stringify(bundle.action_fields_full);
-    return bundle.request;
-  },
+// DO NOT UNFLATTEN **
+// by default we will turn fields like {custom**c: 12}
+// into {custom: {c: 12}}, but this can avoid this by
+// using the "full" action fields, like this
+dont_unwrap_pre_write: function(bundle) {
+bundle.request.data = JSON.stringify(bundle.action_fields_full);
+return bundle.request;
+},
 
-  // LIMIT STRING LENGTH
-  // a field called message cannot be longer than 256 characters
-  message_pre_write: function(bundle) {
-    var outbound = z.JSON.parse(bundle.request.data);
-    outbound.message = outbound.message.substring(0, 256);
-    bundle.request.data = JSON.stringify(outbound);
-    return bundle.request;
-  },
+// LIMIT STRING LENGTH
+// a field called message cannot be longer than 256 characters
+message_pre_write: function(bundle) {
+var outbound = z.JSON.parse(bundle.request.data);
+outbound.message = outbound.message.substring(0, 256);
+bundle.request.data = JSON.stringify(outbound);
+return bundle.request;
+},
 
-  // GENERATE XML FOR POSTING
-  // you'll have access to your action fields
-  // we'd normally POST as JSON, but this shows how to do XML
-  xml_doc_pre_write: function(bundle) {
-    // root el is ignored in .html()
-    var xml = $("<XMLDocument><message/></XMLDocument>");
+// GENERATE XML FOR POSTING
+// you'll have access to your action fields
+// we'd normally POST as JSON, but this shows how to do XML
+xml_doc_pre_write: function(bundle) {
+// root el is ignored in .html()
+var xml = $("<XMLDocument><message/></XMLDocument>");
     // bundle.action_fields is {title: "Anyone home?", body: "I can't seem to see anything!"}
     Object.keys(bundle.action_fields).forEach(function(key){
-      $(xml.find("message")).append($("<" + key + " />").text(bundle.action_fields[key]));
-    })
-    // '<message><title>Anyone home?</title><body>I can't seem to see anything!</body></message>'
-    bundle.request.data = xml.html();
-    // set the headers
-    bundle.request.headers['Content-Type'] = "application/xml; charset=utf-8";
-    bundle.request.headers['Accept'] = "application/xml";
-    return bundle.request;
-  },
+      $(xml.find("message")).append(\$("<" + key + " />").text(bundle.action_fields[key]));
+})
+// '<message><title>Anyone home?</title><body>I can't seem to see anything!</body></message>'
+bundle.request.data = xml.html();
+// set the headers
+bundle.request.headers['Content-Type'] = "application/xml; charset=utf-8";
+bundle.request.headers['Accept'] = "application/xml";
+return bundle.request;
+},
 
-  // FORM ENCODE INSTEAD OF JSON
-  // sometimes you don't want to JSON encode, so this example shows how
-  // to form encode POST data instead (just like a form submission)
-  my_form_pre_write: function(bundle) {
-    // build a querystring from the object with all fields
-    bundle.request.data = $.param(bundle.action_fields_full);
-    // correct the content type header
-    bundle.request.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-    return bundle.request;
-  }
+// FORM ENCODE INSTEAD OF JSON
+// sometimes you don't want to JSON encode, so this example shows how
+// to form encode POST data instead (just like a form submission)
+my_form_pre_write: function(bundle) {
+// build a querystring from the object with all fields
+bundle.request.data = \$.param(bundle.action_fields_full);
+// correct the content type header
+bundle.request.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+return bundle.request;
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -2187,8 +2258,8 @@ Sometimes, a search endpoint will return a successful response despite the searc
 {% raw %}
 // let's say the response content looks like this:
 // {
-//   "search_results": {},
-//   "time": "2018-04-01T01:02:03.456-00:00"
+// "search_results": {},
+// "time": "2018-04-01T01:02:03.456-00:00"
 // }
 // by default, our system will interpret this as a successful search
 // and return the "search_results" and "time" keys -- what we really
@@ -2196,10 +2267,10 @@ Sometimes, a search endpoint will return a successful response despite the searc
 // this example is an empty object, because there was no search match)
 
 var Zap = {
-  my_search_key_post_search: function(bundle) {
-    var response = z.JSON.parse(bundle.response.content);
-    return response.search_results;
-  }
+my_search_key_post_search: function(bundle) {
+var response = z.JSON.parse(bundle.response.content);
+return response.search_results;
+}
 }
 {% endraw %}
 {% endhighlight %}
@@ -2211,30 +2282,30 @@ var Zap = {
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-    pre_subscribe: function(bundle) {
-        bundle.request.method = 'POST';
-        bundle.request.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-        bundle.request.data = $.param({
-            url: bundle.target_url,
-            list_id: bundle.trigger_fields.list_id, // from trigger field
-            append_data: 1
-        });
-        return bundle.request;
-    },
-    post_subscribe: function(bundle) {
-        // must return a json serializable object for use in pre_unsubscribe
-        var data = z.JSON.parse(bundle.response.content);
-        // we need this in order to build the {% templatetag openvariable %}webhook_id{% templatetag closevariable %}
-        // in the rest hook unsubscribe url
-        return {webhook_id: data.id};
-    },
-    pre_unsubscribe: function(bundle) {
-        bundle.request.method = 'DELETE';
-        // bundle.subscribe_data is from return data in post_subscribe method
-        bundle.request.url = 'https://example.com/x.php?id=' + bundle.subscribe_data.webhook_id;
-        bundle.request.data = null;
-        return bundle.request;
-    },
+pre_subscribe: function(bundle) {
+bundle.request.method = 'POST';
+bundle.request.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+bundle.request.data = \$.param({
+url: bundle.target_url,
+list_id: bundle.trigger_fields.list_id, // from trigger field
+append_data: 1
+});
+return bundle.request;
+},
+post_subscribe: function(bundle) {
+// must return a json serializable object for use in pre_unsubscribe
+var data = z.JSON.parse(bundle.response.content);
+// we need this in order to build the {% templatetag openvariable %}webhook_id{% templatetag closevariable %}
+// in the rest hook unsubscribe url
+return {webhook_id: data.id};
+},
+pre_unsubscribe: function(bundle) {
+bundle.request.method = 'DELETE';
+// bundle.subscribe_data is from return data in post_subscribe method
+bundle.request.url = 'https://example.com/x.php?id=' + bundle.subscribe_data.webhook_id;
+bundle.request.data = null;
+return bundle.request;
+},
 };
 {% endraw %}
 {% endhighlight %}
@@ -2245,14 +2316,14 @@ var Zap = {
 {% raw %}
 var Zap = {
 
-  pre_subscribe: function (bundle) {
-    if (Object.keys(bundle.trigger_fields).length) {
-      var data = z.JSON.parse(bundle.request.data);
-      var dataWithFields = Object.assign({}, data, bundle.trigger_fields);
-      bundle.request.data = JSON.stringify(dataWithFields);
-    }
-    return bundle.request;
-  }
+pre_subscribe: function (bundle) {
+if (Object.keys(bundle.trigger_fields).length) {
+var data = z.JSON.parse(bundle.request.data);
+var dataWithFields = Object.assign({}, data, bundle.trigger_fields);
+bundle.request.data = JSON.stringify(dataWithFields);
+}
+return bundle.request;
+}
 
 };
 {% endraw %}
@@ -2265,10 +2336,10 @@ var Zap = {
 {% highlight javascript %}
 {% raw %}
 var Zap = {
-  get_session_info: function(bundle) {
-    var api_key,
-        api_key_request_payload,
-        api_key_response;
+get_session_info: function(bundle) {
+var api_key,
+api_key_request_payload,
+api_key_response;
 
     // Assemble the meta data for our key swap request
     api_key_request_payload = {
@@ -2292,9 +2363,10 @@ var Zap = {
     // on your API's requirements.
     // This will be mixed into bundle.auth_fields in future calls.
     return {'api_key': api_key};
-  },
 
-  new_contact_post_poll: function(bundle) {
+},
+
+new_contact_post_poll: function(bundle) {
 
     // We will catch bundle.response.status_code === 401
     // If your API doesn't conform to this standard, you can handle it yourself:
@@ -2303,7 +2375,8 @@ var Zap = {
     }
 
     return z.JSON.parse(bundle.response.content);
-  }
+
+}
 };
 {% endraw %}
 {% endhighlight %}
@@ -2340,15 +2413,15 @@ To mitigate the possibility of an error after `console.log(...)`, you should ret
 {% highlight javascript %}
 {% raw %}
 Zap = {
-  TRIGGERKEY_pre_poll: function(bundle) {
-    console.log('my error');
-    return bundle.request; // expected return format for pre poll functions
-  }
+TRIGGERKEY_pre_poll: function(bundle) {
+console.log('my error');
+return bundle.request; // expected return format for pre poll functions
+}
 
-  TRIGGERKEY_post_poll: function(bundle) {
-    console.log('my error');
-    return []; // expected return format for post poll functions
-  }
+TRIGGERKEY_post_poll: function(bundle) {
+console.log('my error');
+return []; // expected return format for post poll functions
+}
 }
 {% endraw %}
 {% endhighlight %}

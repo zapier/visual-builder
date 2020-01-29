@@ -13,7 +13,7 @@ If you have an existing integration that was built with Zapier's older Web Build
 
 Here is our full archived documentation for the original Zapier Web Builder to help maintain existing integrations.
 
-> **Note**: If you're building a new Zapier integration, use the new [Zapier Platform](https://platform.zapier.com/docs/intro) instead.
+> **Note**: If you're building a new Zapier integration, use the new [Zapier Platform](https://platform.zapier.com/quickstart/introduction) instead.
 
 ### App Integrations
 
@@ -21,13 +21,13 @@ A Developer App (App for short) is an implementation of your app's API—what we
 
 A Zapier Integration is composed of four main parts:
 
-* [Authentication](#authentication) (usually) which lets us know what credentials we need to ask users for and where to include them in the requests we make to your API.
-* [Triggers](#triggers), which read data **from** your API.
-* [Actions](#actions), which send data **to** your API.
-* [Searches](#searches), which find specific records **in** your API.
-* Code written in [scripting](#scripting) that lets you handle any mismatches between what Zapier needs and what your API generates.
+- [Authentication](#authentication) (usually) which lets us know what credentials we need to ask users for and where to include them in the requests we make to your API.
+- [Triggers](#triggers), which read data **from** your API.
+- [Actions](#actions), which send data **to** your API.
+- [Searches](#searches), which find specific records **in** your API.
+- Code written in [scripting](#scripting) that lets you handle any mismatches between what Zapier needs and what your API generates.
 
-***
+---
 
 ## Authentication
 
@@ -43,21 +43,21 @@ This is also the scheme you want to use if your API relies on Basic Auth, but wi
 
 1. Customize the Authentication Fields:
 
-	![](https://cdn.zapier.com/storage/photos/7453d104c8a4586c30b21f91cbfd0bd6.png)
+   ![](https://cdn.zapier.com/storage/photos/7453d104c8a4586c30b21f91cbfd0bd6.png)
 
 2. [Map](#authentication-mappings/#basic-auth) the fields to a `username` and `password` property:
 
-	![](https://cdn.zapier.com/storage/photos/96d976f520638bb82a83ed15690bce87.png)
+   ![](https://cdn.zapier.com/storage/photos/96d976f520638bb82a83ed15690bce87.png)
 
 3. The user will be asked to provide values:
 
-	![](https://cdn.zapier.com/storage/photos/d7d8a3cb2332a2fccaebff4f4bf7f5b6.png)
-	
+   ![](https://cdn.zapier.com/storage/photos/d7d8a3cb2332a2fccaebff4f4bf7f5b6.png)
+
 4. We will prepare all requests to the API with an header like:
 
-	```html
-	Authorization: Basic WkFQSUVSIExPVkVTIFlPVTpYT1hP
-	```
+   ```html
+   Authorization: Basic WkFQSUVSIExPVkVTIFlPVTpYT1hP
+   ```
 
 See also [Authentication Mappings](#authentication-mappings/#basic-auth) and [Basic Auth via CLI](https://zapier.github.io/zapier-platform-cli/#basic).
 
@@ -67,7 +67,7 @@ Digest Auth, as [documented by RFC7616](https://tools.ietf.org/html/rfc7616#sect
 
 Users will provide Zapier their username and password, and we will handle all the [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) and quality of protection details automatically.
 
-The setup and user experience is identical to *Basic Auth*.
+The setup and user experience is identical to _Basic Auth_.
 
 See also: [Digest Auth via CLI](https://zapier.github.io/zapier-platform-cli/#digest)
 
@@ -75,25 +75,25 @@ See also: [Digest Auth via CLI](https://zapier.github.io/zapier-platform-cli/#di
 
 Typically, you'll provide your users with an API Key inside your app somewhere. Many times these are provided on the user's settings or accounts page. These keys can be given to Zapier by the user so that we may make authenticated requests to access that user's information on their behalf.
 
-1. Select either *API Key (Headers)* or *API Key (Query String)*, depending on how the API expects to receive the keys.
+1. Select either _API Key (Headers)_ or _API Key (Query String)_, depending on how the API expects to receive the keys.
 
 2. Customize the Authentication Fields:
 
-	![](https://cdn.zapier.com/storage/photos/7453d104c8a4586c30b21f91cbfd0bd6.png)
-	
+   ![](https://cdn.zapier.com/storage/photos/7453d104c8a4586c30b21f91cbfd0bd6.png)
+
 3. [Map](#authentication-mappings/#api-key-query-string) the fields to the headers or query string parameters the API expects:
 
-	![](https://cdn.zapier.com/storage/photos/e872817ff0986e3948802ee9c62514f4.png)
-	
+   ![](https://cdn.zapier.com/storage/photos/e872817ff0986e3948802ee9c62514f4.png)
+
 4. The user will be asked to provide values:
 
-	![](https://cdn.zapier.com/storage/photos/d7d8a3cb2332a2fccaebff4f4bf7f5b6.png)
-	
+   ![](https://cdn.zapier.com/storage/photos/d7d8a3cb2332a2fccaebff4f4bf7f5b6.png)
+
 5. We will prepare all requests to the API with an header like:
 
-	```html
-	X-Secret: WkFQSUVSIExPVkVTIFlPVTpYT1hP
-	```
+   ```html
+   X-Secret: WkFQSUVSIExPVkVTIFlPVTpYT1hP
+   ```
 
 See also [Authentication Mappings](#authentication-mappings/#api-key-query-string) and [API Key auth via CLI](https://zapier.github.io/zapier-platform-cli/#custom).
 
@@ -103,31 +103,31 @@ This type can be used for almost any authentication where user provided credenti
 
 1. Customize the Authentication Fields:
 
-	![](https://cdn.zapier.com/storage/photos/81c1870ffb905d182f4b366b5b5c21fc.png)
+   ![](https://cdn.zapier.com/storage/photos/81c1870ffb905d182f4b366b5b5c21fc.png)
 
 2. Write a [`get_session_info()`](#scripting/#get_session_info) method that handles the exchange of the authentication fields for the session token and returns an object like:
 
-	```javascript
-	{
-	  user_token: "WkFQSUVSIExPVkVTIFlPVTpYT1hP"
-	}
-	```
+   ```javascript
+   {
+     user_token: "WkFQSUVSIExPVkVTIFlPVTpYT1hP";
+   }
+   ```
 
 3. [Map](#authentication-mappings/#session-auth) the fields and/or the properties returned by [`get_session_info()`](#scripting/#get_session_info) to parameters the API expects, and select if it expects them as headers or query string parameters:
 
-	![](https://cdn.zapier.com/storage/photos/90e28d2ac63d469c879c5e1a63621d6a.png)
-	
+   ![](https://cdn.zapier.com/storage/photos/90e28d2ac63d469c879c5e1a63621d6a.png)
+
 4. The user will be asked to provide values:
 
-	![](https://cdn.zapier.com/storage/photos/265d27fa64e33b5e75af87a7d90a3893.png)
+   ![](https://cdn.zapier.com/storage/photos/265d27fa64e33b5e75af87a7d90a3893.png)
 
 5. We will call [`get_session_info()`](#scripting/#get_session_info) the first time or when we receive a 401 HTTP status or [`InvalidSessionException`](#scripting/#updating-session-credentials) is thrown.
 
 6. We will prepare all requests to the API with an header like:
 
-	```html
-	X-Token: WkFQSUVSIExPVkVTIFlPVTpYT1hP
-	```
+   ```html
+   X-Token: WkFQSUVSIExPVkVTIFlPVTpYT1hP
+   ```
 
 See also [`get_session_info()`](#scripting/#get_session_info), [Authentication Mapping](#authentication-mappings/#session-auth) and [Session auth via CLI](https://zapier.github.io/zapier-platform-cli/#session).
 
@@ -141,13 +141,13 @@ That said, because OAuth v1 has been a popular authentication mechanism, we have
 
 ### Initial Setup:
 
-First, you'll need to select *OAuth v1* as your Authentication Type. In most cases you can continue with the default Authentication Fields. The final step is to configure OAuth V1:
+First, you'll need to select _OAuth v1_ as your Authentication Type. In most cases you can continue with the default Authentication Fields. The final step is to configure OAuth V1:
 
 ![OAuth parameters](https://cdn.zapier.com/storage/photos/4620d15bd155dfca914ac41899284519.png)
 
 **Capture extra data from token response**
- 
-If your app returns extra data through the token response (user id for example) you can grab those extra parameters using the **Extra Requested Fields** option. 
+
+If your app returns extra data through the token response (user id for example) you can grab those extra parameters using the **Extra Requested Fields** option.
 
 ### How we authenticate with your OAuth service
 
@@ -159,33 +159,33 @@ We attempt a 3 legged OAuth 1 process that has 3 high level steps:
 
 ### 1. Requesting Temporary Credentials From Your App:
 
-When a user goes to add a new account for your app, we make a request behind-the-scenes to ask your app for a request token and secret. Your app should  respond back with a valid `oauth_token` and `oauth_token_secret`. Additionally, our request contains an `oauth_callback` URL that your app will use in a later step.
+When a user goes to add a new account for your app, we make a request behind-the-scenes to ask your app for a request token and secret. Your app should respond back with a valid `oauth_token` and `oauth_token_secret`. Additionally, our request contains an `oauth_callback` URL that your app will use in a later step.
 
 The signed POST request to your application's `request_token_url` will look like this:
 
 ```
 POST https://example.com/api/1.0/oauth/request_token
-Authorization: OAuth 
-oauth_nonce="ZAPIER-GENERATED-NONCE", 
-oauth_callback="ZAPIER-OAUTH-CALLBACK", 
-oauth_signature_method="HMAC-SHA1", 
-oauth_timestamp="ZAPIER-GENERATED-TIMESTAMP", 
-oauth_consumer_key="<Your consumer key>", 
-oauth_signature="ZAPIER-GENERATED-SIGNATURE", 
+Authorization: OAuth
+oauth_nonce="ZAPIER-GENERATED-NONCE",
+oauth_callback="ZAPIER-OAUTH-CALLBACK",
+oauth_signature_method="HMAC-SHA1",
+oauth_timestamp="ZAPIER-GENERATED-TIMESTAMP",
+oauth_consumer_key="<Your consumer key>",
+oauth_signature="ZAPIER-GENERATED-SIGNATURE",
 oauth_version="1.0"
 
 ```
 
 Your app should validate the request and return with the temporary response token, like so:
 
-
 ```
 oauth_token_secret=TEMP-OAUTH-TOKEN-SECRET&oauth_token=TEMP-OAUTH-TOKEN&oauth_callback_confirmed=true
 
 ```
+
 ### 2. Redirecting the User to Your App:
 
-With token in hand, we redirect the user to the `authorization_url` you provided, so that they can grant access to Zapier.  
+With token in hand, we redirect the user to the `authorization_url` you provided, so that they can grant access to Zapier.
 
 ![User grants access](https://cdn.zapier.com/storage/photos/ad57fd3749261016bd595066837cb392.png)
 
@@ -213,7 +213,7 @@ POST https://example.com/api/1.0/oauth/access_token \
         oauth_token=<oauth_token_secret>
 ```
 
-Your service should then provide an access_token and access_token_secret, along with any extra parameters that you may have included in the optional *Capture extra data from token response* step. 
+Your service should then provide an access_token and access_token_secret, along with any extra parameters that you may have included in the optional _Capture extra data from token response_ step.
 
 While we ask for a JSON response, the response can be JSON, XML or query string encoded. For example, any of the below are valid responses:
 
@@ -256,7 +256,6 @@ var Zap = {
 }
 ```
 
-
 ### Example:
 
 We highly recommend looking at each of [Bitbucket's](https://confluence.atlassian.com/display/BITBUCKET/oauth+Endpoint), [Twitter's](https://dev.twitter.com/oauth/3-legged) and [Trello's](https://trello.com/docs/gettingstarted/oauth.html) authentication documentation for some great examples of how OAuth 1a can be implemented. Our system is designed to match their industry standard implementation pattern. Additionally, [oauth1a spec](http://oauth.net/core/1.0a/#anchor9) and [oauth bible](http://oauthbible.com/#oauth-10a-three-legged) can be extremely useful in understanding the 3 legged oauth flow.
@@ -287,9 +286,9 @@ We'll redirect the user to an `authorize_url` (provided by you), along with a qu
 
 ### 2. Redirecting the User Back to Zapier
 
-After the user clicks allow, you should redirect the user to the `redirect_uri` along with a `code` parameter in the query string. 
+After the user clicks allow, you should redirect the user to the `redirect_uri` along with a `code` parameter in the query string.
 
-> **Note:** *Don't* hardcode the `redirect_uri` on your side, as it will change as you deploy new versions of your app.  If your app goes public, we'll assign you a permanent ID, but some users may be using older versions even after that point.
+> **Note:** _Don't_ hardcode the `redirect_uri` on your side, as it will change as you deploy new versions of your app. If your app goes public, we'll assign you a permanent ID, but some users may be using older versions even after that point.
 
 `302 <redirect_uri>?code=<code>`
 
@@ -326,7 +325,7 @@ With `Content-Type: text/plain`:
 
 `access_token=1234567890abcdef&refresh_token=1234567890abcdef`
 
->We automatically pull and store `access_token` and `refresh_token` from the JSON, XML, or query string data, but if you want to pull and store more fields, you can set them up in your auth setup under _Extra Requested Fields_:
+> We automatically pull and store `access_token` and `refresh_token` from the JSON, XML, or query string data, but if you want to pull and store more fields, you can set them up in your auth setup under _Extra Requested Fields_:
 
 ![](https://cdn.zapier.com/storage/photos/8ac33bf6ba69b36f46733af4a3fe4792.png)
 
@@ -412,8 +411,8 @@ This is somewhat arbitrary but you should pick a good, short key name because yo
 
 Example: <br/> (you may not need all of these)
 
-*   `api_key` an API Key which you give to your users somewhere inside your service. Allows Zapier to authenticate on their behalf
-*   `account_name` an account name which you use to build the API Request URL (perhaps as a subdomain: https://&#123;&#123;account_name&#125;&#125;.example.com/api/v1)
+- `api_key` an API Key which you give to your users somewhere inside your service. Allows Zapier to authenticate on their behalf
+- `account_name` an account name which you use to build the API Request URL (perhaps as a subdomain: https://&#123;&#123;account_name&#125;&#125;.example.com/api/v1)
 
 ### Label
 
@@ -421,7 +420,7 @@ This will show up just above the text input field as a human-readable name. You 
 
 Example: <br/> API Key, Account Name
 
- ![label help default](https://cdn.zapier.com/storage/photos/96522edc71e94085537c1fa70480adb8.png)
+![label help default](https://cdn.zapier.com/storage/photos/96522edc71e94085537c1fa70480adb8.png)
 
 ### Required
 
@@ -431,7 +430,7 @@ Pretty easy concept; most all auth fields should be required. You really shouldn
 
 Smaller text which appears under the Label of the field. You can type longer directions here. A common pattern for Auth Field Help Text is to tell the user where in your interface they can find their API Key.
 
-Example: <br/>  The API Key for your account, you can find this by going to your Basecamp Profile page, clicking settings, then API Keys.
+Example: <br/> The API Key for your account, you can find this by going to your Basecamp Profile page, clicking settings, then API Keys.
 
 ### Default
 
@@ -452,7 +451,7 @@ You can create a dropdown-style select box by giving us a comma-separated list o
 
 Example: <br/> `choice_a,choice_b,choice_c` or `Yesterday, Today, Tomorrow`
 
- ![simple static dropdown](https://cdn.zapier.com/storage/photos/7641c6b42a5034432f63274226e84414.png)
+![simple static dropdown](https://cdn.zapier.com/storage/photos/7641c6b42a5034432f63274226e84414.png)
 
 If you would like to provide a label for the raw value of each choice, you can also use the raw|label,raw|label syntax instead.
 
@@ -467,7 +466,7 @@ If you need the user to supply an account name (or similar) which gets translate
 Example: <br/> {% raw %}https://,{% templatetag openvariable %}input{% templatetag closevariable %},.yourdomain.com/{% endraw %} will create:
 
 ![subdomain format](https://cdn.zapier.com/storage/photos/8cb23a041bd6bf522d14c6ca3829e70c.png)
- 
+
 > Note: don't forget the commas!
 
 ### Authentication Mappings
@@ -480,10 +479,11 @@ Your app might use `api_key` as the username and password is ignored:
 
 {% raw %}```javascript
 {
-  "username": "{% templatetag openvariable %}api_key{% templatetag closevariable %}",
-  "password": "x"
+"username": "{% templatetag openvariable %}api_key{% templatetag closevariable %}",
+"password": "x"
 }
-```{% endraw %}
+
+````{% endraw %}
 
 Or maybe, where `account_name` is the username and `api_key` is the password:
 
@@ -545,7 +545,7 @@ This will add headers like:
 ```html
 X-Account-Name: myfancyaccount
 X-API-Key: 0123456789
-```
+````
 
 ### Session Auth
 
@@ -563,7 +563,8 @@ Let's say our method makes a request which sends our `account_name` and `api_key
 If your app expects to receive the token in an header named `X-Token` the auth mapping could be:
 
 {% raw %}
-```javascript
+
+````javascript
 {
   "X-Token": "{% templatetag openvariable %}token{% templatetag closevariable %}"
 }
@@ -577,19 +578,19 @@ This will add a header like:
 
 ```html
 X-Token: WkFQSUVSIExPVkVTIFlPVTpYT1hP
-```
+````
 
-If your app expects the token as Query String parameter, select *Querystring* for *Auth Placement* instead.
+If your app expects the token as Query String parameter, select _Querystring_ for _Auth Placement_ instead.
 
-***
+---
 
 ## Triggers
 
 **Triggers** answer the question: _What events can my users listen for with Zapier?_ They are things like:
 
-*   New Contact _(EG: Highrise or Salesforce)_
-*   New Email _(EG: Gmail or IMAP)_
-*   New Issue _(EG: GitHub or Pivotal Tracker)_
+- New Contact _(EG: Highrise or Salesforce)_
+- New Email _(EG: Gmail or IMAP)_
+- New Issue _(EG: GitHub or Pivotal Tracker)_
 
 You can think of a Trigger as a GET or read. It involves Zapier receiving data from your app.
 
@@ -598,12 +599,12 @@ For example, say your app has a "New Ticket Opened" trigger. We will watch for n
 ```javascript
 [
   {
-    "id": 123456,
-    "owner_id": 654,
-    "date_created": "Mon, 25 Jun 2012 16:41:54 -0400",
-    "description": "Add our app to Zapier"
+    id: 123456,
+    owner_id: 654,
+    date_created: "Mon, 25 Jun 2012 16:41:54 -0400",
+    description: "Add our app to Zapier"
   }
-]
+];
 ```
 
 _Note: The data in the response must be an array, even for a single data point._
@@ -622,13 +623,12 @@ See also: [Triggers in the CLI](https://zapier.github.io/zapier-platform-cli/#tr
 
 There are four ways Zapier can obtain data from your API.
 
- * [Polling](#polling) - repeatedly hit a REST endpoint looking for new data.
- * [Static Webhooks](#static-webhooks)  - gives the user a URL to enter into your app. Hooks carry the full object.
- * [REST Hooks](#rest-hooks) work similar to static webhooks, but our system handles the subscriptions through your REST API.
- * [Notification REST Hooks](#notification-rest-hooks) are "lightweight" REST Hooks as they only contain a callback URL to retrieve the object.
+- [Polling](#polling) - repeatedly hit a REST endpoint looking for new data.
+- [Static Webhooks](#static-webhooks) - gives the user a URL to enter into your app. Hooks carry the full object.
+- [REST Hooks](#rest-hooks) work similar to static webhooks, but our system handles the subscriptions through your REST API.
+- [Notification REST Hooks](#notification-rest-hooks) are "lightweight" REST Hooks as they only contain a callback URL to retrieve the object.
 
 ### Polling
-
 
 Polling is the process of repeatedly hitting the same endpoint looking for new data. We don't like doing this (its wasteful), vendors don't like us doing it (again, its wasteful) and users dislike it (they have to wait a maximum interval to trigger on new data). However, it is the one method that is ubiquitous, so we support it.
 
@@ -640,21 +640,20 @@ That said, we support [REST Hooks](#rest-hooks), so if you like to make your use
 
 ### Static Webhooks
 
+Static webhooks are a very simple version of webhooks wherein the user of your service will have to take action to enable a webhook. Usually, this is done copying a url that Zapier provides during the Zap setup process (like `https://zapier.com/hooks/catch/123/n/456789/`). If you would like your app to go public, you should use [REST hooks](#rest-hooks).
 
-Static webhooks are a very simple version of webhooks wherein the user of your service will have to take action to enable a webhook. Usually, this is done copying a url that Zapier provides during the Zap setup process (like `https://zapier.com/hooks/catch/123/n/456789/`). If you would like your app to go public, you should use [REST hooks](#rest-hooks). 
-
-While Static webhooks are very useful for rapid prototyping, we don't accept apps for inclusion in the Zapbook that are solely Static webhooks.  Users can use our built in Webhook app to do the same things that a purely Static webhook app can do.  You should look at [REST Hooks](#rest-hooks) as the next step after you've proved the concept privately with Static webhooks.
+While Static webhooks are very useful for rapid prototyping, we don't accept apps for inclusion in the Zapbook that are solely Static webhooks. Users can use our built in Webhook app to do the same things that a purely Static webhook app can do. You should look at [REST Hooks](#rest-hooks) as the next step after you've proved the concept privately with Static webhooks.
 
 _To get a taste of how static webhooks work, check out our built-in [generic webhook service](https://zapier.com/apps/webhook/integrations)._
 
 ### Setup the Webhooks
 
-To get started simply create a new trigger on your app, choosing static webhook as the type. You can follow the [Hubspot example](#static-webhooks-example-app) to see a detailed walk through of how to do this. 
+To get started simply create a new trigger on your app, choosing static webhook as the type. You can follow the [Hubspot example](#static-webhooks-example-app) to see a detailed walk through of how to do this.
 
 Once defined in your app, static webhook triggers will appear like this to users when they create a Zap:
 
 ![static webhook user display](https://cdn.zapier.com/storage/photos/2a06f4e0432eb9bfc77bb263c740a2a3.png)
- 
+
 ### Using the Webhooks
 
 For as long as the Zap exists, requests made to that URL will be associated with your app and the user. That means requests made during the setup process (while the Zap is paused) will still get stored, making it easier for users to debug. However, requests will **not** trigger any actions until the Zap is turned on.
@@ -681,7 +680,7 @@ POST https://zapier.com//hooks/catch/123/n/456789/?hello=world \
 }
 ```
 
-> *Note:* We only support simple query strings at the moment. `&foo[hello]=world` will be parsed to the JavaScript object `{ "foo[hello]": "world" }` and not `{ "foo": { "hello": "world" } }`.
+> _Note:_ We only support simple query strings at the moment. `&foo[hello]=world` will be parsed to the JavaScript object `{ "foo[hello]": "world" }` and not `{ "foo": { "hello": "world" } }`.
 
 Of course, more simplistic examples like straight JSON or XML are handled as you'd expect.
 
@@ -715,7 +714,7 @@ Would result in two triggers...
 }
 ```
 
-Notice that the query string `hello=world` is ignored? That is because we assumed the data list was more important and we didn't want to maim the data contained therein. 
+Notice that the query string `hello=world` is ignored? That is because we assumed the data list was more important and we didn't want to maim the data contained therein.
 
 Check out an example where we would ignore a subkeyed list:
 
@@ -757,7 +756,7 @@ Below is our simple standard to stop the [Polling Madness](#polling)&#8482;. Thi
 
 The big benefit to REST Hooks is consumers wouldn't need to poll for changes, but could instead wait for hooks to deliver the payload. Additionally, producers can provide real-time updates with fewer devoted resources (compared to polling).
 
-The gist is: we POST a subscription to e.g. `/api/hooks` requesting to receive hooks at some target URL. Every time the event happens, ping us at the target URL with the payload. 
+The gist is: we POST a subscription to e.g. `/api/hooks` requesting to receive hooks at some target URL. Every time the event happens, ping us at the target URL with the payload.
 
 After we're done, we can cleanup with a DELETE (.e.g. `/api/hooks/:id`).
 
@@ -765,12 +764,12 @@ _Though we highly recommend this native pattern, you can override all the method
 
 #### Your Checklist
 
-*   enumerate the events you'd like to make available as triggers
-*   create a _subscribe_ REST endpoint for hooks. For example: `POST /api/hooks`
-*   when each event happens, loop over and notify each active subscription (or batch events of same type). Note that each user may have multiple active subscriptions to the same event.
-*   respect `410` responses on payload delivery and remove subscriptions
-*   create a _unsubscribe_ REST endpoint for hooks. For example: `DELETE /api/hooks/:id`
-*   add a polling URL for your REST Hook trigger for the best user experience
+- enumerate the events you'd like to make available as triggers
+- create a _subscribe_ REST endpoint for hooks. For example: `POST /api/hooks`
+- when each event happens, loop over and notify each active subscription (or batch events of same type). Note that each user may have multiple active subscriptions to the same event.
+- respect `410` responses on payload delivery and remove subscriptions
+- create a _unsubscribe_ REST endpoint for hooks. For example: `DELETE /api/hooks/:id`
+- add a polling URL for your REST Hook trigger for the best user experience
 
 You need to set the _subscribe_ and _unsubscribe_ REST endpoints under _Manage Trigger Settings_:
 
@@ -790,7 +789,7 @@ POST <subscribe_endpoint> \
 
 > You may notice a duplicate property `subscription_url`. That's legacy terminology. You can safely ignore it and use `target_url` only.
 
-This endpoint reuses whatever auth standard you have across the rest of your API (IE: Basic Auth, API Key, OAuth2, etc...).  We'd send along a **unique**, **auto-generated** subscription URL and the event we'd like to subscribe to. These three items would be persisted on your backend (the authenticated user, target_url, and event).
+This endpoint reuses whatever auth standard you have across the rest of your API (IE: Basic Auth, API Key, OAuth2, etc...). We'd send along a **unique**, **auto-generated** subscription URL and the event we'd like to subscribe to. These three items would be persisted on your backend (the authenticated user, target_url, and event).
 
 The value for the **subscribe_endpoint** field can be specified within the "Manage Trigger Settings" option in your app's dashboard.
 
@@ -817,12 +816,12 @@ POST https://hooks.zapier.com/<unique_path> \
     -d <json payload>
 ```
 
-This hook could provide any amount of data or payload in either JSON or XML (or form-encoded). See [static webhooks](#static-webhooks/#using-the-webhooks) on how we'll do our best to parse the response.  
+This hook could provide any amount of data or payload in either JSON or XML (or form-encoded). See [static webhooks](#static-webhooks/#using-the-webhooks) on how we'll do our best to parse the response.
 
-Usually Zapier expects an array of objects.  If your API only sends a single object, wrap it in a single element array:
+Usually Zapier expects an array of objects. If your API only sends a single object, wrap it in a single element array:
 
 ```json
-[ {"firstName": "Tom", "lastName": "Smith"} ]
+[{ "firstName": "Tom", "lastName": "Smith" }]
 ```
 
 On a successful hook, we'll return a `200` status code, content is irrelevant.
@@ -867,23 +866,23 @@ If you'd like to allow users to manage their subscriptions from inside your app 
 
 ### Required to Go Public: Set a polling URL
 
-In the trigger setup, there is a field to define a polling URL.  This URL will be used when users are setting up a Zap and must test it.  Without this defined, the user must always go to your app, create a new data point, and have it send the hook to Zapier.  This is not ideal, and in some cases may be particularly undesirable (if for example other Zaps are already set up on that hook, it would trigger them).
+In the trigger setup, there is a field to define a polling URL. This URL will be used when users are setting up a Zap and must test it. Without this defined, the user must always go to your app, create a new data point, and have it send the hook to Zapier. This is not ideal, and in some cases may be particularly undesirable (if for example other Zaps are already set up on that hook, it would trigger them).
 
-Setting up a polling URL fixes this.  The polling URL is only used during this testing phase, not during the regular operation of the Zap.  If you need to script special behavior, you can do so using the standard `pre_poll` and `post_poll` methods on the trigger key.
+Setting up a polling URL fixes this. The polling URL is only used during this testing phase, not during the regular operation of the Zap. If you need to script special behavior, you can do so using the standard `pre_poll` and `post_poll` methods on the trigger key.
 
 **Note**: Please ensure that the data format that returns from the Polling URL is the same as what returns from the REST Hook, so users can correctly map fields.
 
 ### Notification REST Hooks
 
-Below is the same pattern as our [REST Hooks](#rest-hooks), but with a twist (and an extra step!). Instead of delivering the payload with each hook, it just delivers a resource URL where the payload resides. This helps us move big requests into a queue with everything else which  lets us batch bigger requests. The URL can be one-time use or time sensitive as well.
+Below is the same pattern as our [REST Hooks](#rest-hooks), but with a twist (and an extra step!). Instead of delivering the payload with each hook, it just delivers a resource URL where the payload resides. This helps us move big requests into a queue with everything else which lets us batch bigger requests. The URL can be one-time use or time sensitive as well.
 
 #### Your Checklist
 
-* enumerate the events you'd like to make available as triggers
-* create a _subscribe_ REST endpoint for hooks. For example: `POST /api/hooks`
-* when each event happens, loop over and notify each active subscription (or batch events of same type)
-* respect `410` responses on payload delivery and remove subscriptions
-* create a _unsubscribe_ REST endpoint for hooks. For example: `DELETE /api/hooks/:id`
+- enumerate the events you'd like to make available as triggers
+- create a _subscribe_ REST endpoint for hooks. For example: `POST /api/hooks`
+- when each event happens, loop over and notify each active subscription (or batch events of same type)
+- respect `410` responses on payload delivery and remove subscriptions
+- create a _unsubscribe_ REST endpoint for hooks. For example: `DELETE /api/hooks/:id`
 
 You need to set the _subscrube_ and _unsubscribe_ REST endpoints under _Manage Trigger Settings_:
 
@@ -901,7 +900,7 @@ POST <subscribe_endpoint> \
          "event": "user_created"}'
 ```
 
-This endpoint reuses whatever auth standard you have across the rest of your API (IE: Basic Auth, API Key, OAuth2, etc...).  We'd send along a **unique**, **auto-generated** subscription URL and the event we'd like to subscribe to. These three items would be persisted on your backend (the authenticated user, target_url, and event). **A subscription is created when a user turns their Zap on.**
+This endpoint reuses whatever auth standard you have across the rest of your API (IE: Basic Auth, API Key, OAuth2, etc...). We'd send along a **unique**, **auto-generated** subscription URL and the event we'd like to subscribe to. These three items would be persisted on your backend (the authenticated user, target_url, and event). **A subscription is created when a user turns their Zap on.**
 
 If you prefer, you can modify this request to provide additional information (like further filtering or other metadata) via our `pre_subscribe` scripting method.
 
@@ -976,7 +975,7 @@ Example: <br/> `New Ticket Created` or `New Email with Label`
 
 This is the object that the trigger is most closely associated with. It will be a noun you used in the Name field. We rely on an accurate noun to generate human-friendly sentences for users.
 
-Example: <br/> "New Ticket Created" would have "Ticket" as the noun. "New Email with Label" would use "Email" or "Labeled Email". 
+Example: <br/> "New Ticket Created" would have "Ticket" as the noun. "New Email with Label" would use "Email" or "Labeled Email".
 
 ### Key
 
@@ -1002,13 +1001,13 @@ Occasionally, you'll have unimportant triggers which are used mostly to drive th
 
 ### Hide
 
-If you create a trigger solely to be used in a [dynamic dropdown](#dynamic-dropdowns) and it will never be helpful to users, you can mark it as hidden.  We will never show the trigger in the UI and users will not be able to pick it.
+If you create a trigger solely to be used in a [dynamic dropdown](#dynamic-dropdowns) and it will never be helpful to users, you can mark it as hidden. We will never show the trigger in the UI and users will not be able to pick it.
 
 This usually comes up with [test triggers](#test-triggers#), where the test trigger is for an endpoint that always returns the same data (a user profile, for instance).
 
 ### Paging
 
-When defining a trigger to power a [dynamic dropdown](#dynamic-dropdowns) you can use the  [Scripting API](#scripting) to implement paging by relying on `bundle.meta.page`.
+When defining a trigger to power a [dynamic dropdown](#dynamic-dropdowns) you can use the [Scripting API](#scripting) to implement paging by relying on `bundle.meta.page`.
 
 This flag must be set in order to enable paging in the dynamic dropdowns powered by this trigger. If set, the user will see the option in the dropdown to load more choices: “Don’t see your choices? Try loading more than {x}.”
 
@@ -1016,7 +1015,7 @@ This flag must be set in order to enable paging in the dynamic dropdowns powered
 
 Otherwise, the user will see standard language: “Check {your app} and reload the data”
 
-> Note: Paging is __not used__ in normal trigger polling calls.
+> Note: Paging is **not used** in normal trigger polling calls.
 
 ### Polling: URL
 
@@ -1038,15 +1037,15 @@ If you run into errors like `Scripting payload too large` then your API's respon
 
 Define a `KEY_pre_poll` scripting method and:
 
-- When `bundle.meta.frontend` is  `true`, modify the prepared request to include the relevant parameter that instructs your API to limit to the most recent 3 results. That's all we need when we poll for recent samples in the Editor.
+- When `bundle.meta.frontend` is `true`, modify the prepared request to include the relevant parameter that instructs your API to limit to the most recent 3 results. That's all we need when we poll for recent samples in the Editor.
 - When `bundle.meta.frontend` is **not** `true`, modify the prepared request to include the relevant parameter that instructs your API to limit to results for the last 12 hours. We poll every 5 to 15 minutes, but this allows for some downtime on either side.
 - If the API endpoint is one that may see a lot of results in a short time, try narrowing the above window of 12 hours or in addition add a sensible limit. Be aware that this may cause users to miss tasks, although without they would miss even more if the results are too large to process.
 
 ### Custom Trigger Result Fields URL
 
-This allows you to dynamically define user-friendly labels for data returned by triggers as well as fields that may not be found in all live samples. These labels are shown to users in the Zap Editor when they map fields from this trigger to the *Edit Template* step for actions or searches.
+This allows you to dynamically define user-friendly labels for data returned by triggers as well as fields that may not be found in all live samples. These labels are shown to users in the Zap Editor when they map fields from this trigger to the _Edit Template_ step for actions or searches.
 
-> Note: Unlike actions and searches, triggers don't support Custom Trigger Fields for the *Edit Template* step of the trigger. 
+> Note: Unlike actions and searches, triggers don't support Custom Trigger Fields for the _Edit Template_ step of the trigger.
 
 Example: <br/> {% raw %}`http://api.example.com/v2/fields.json` or `http://{% templatetag openvariable %}account{% templatetag closevariable %}.example.com/api/v1/fields.json`{% endraw %}
 
@@ -1055,10 +1054,10 @@ If your polling trigger returns:
 ```javascript
 [
   {
-    "id": 1,
-    "q_1": "Yes"
+    id: 1,
+    q_1: "Yes"
   }
-]
+];
 ```
 
 You can return in the custom fields URL something like:
@@ -1066,15 +1065,15 @@ You can return in the custom fields URL something like:
 ```javascript
 [
   {
-    "label": "Are you happy with your service?",
-    "key": "q_1",
-    "important": true,
-    "type": "unicode"
+    label: "Are you happy with your service?",
+    key: "q_1",
+    important: true,
+    type: "unicode"
   }
-]
+];
 ```
 
-And users will see *Are you happy with your service?* instead of *Q 1" when they map this field.
+And users will see _Are you happy with your service?_ instead of \*Q 1" when they map this field.
 
 > Read more about [custom field formatting here](#trigger-fields-custom).
 
@@ -1094,11 +1093,11 @@ A part of our [static webhooks](#static-webhooks), when static webhooks are in u
 
 **Trigger Fields** answer the question: _How can a user filter Triggers?_ Almost exclusively these are [dynamic dropdowns](#dynamic-dropdowns), but some real world examples are:
 
-* Search Term _(EG: Twitter Tweet Search)_
-* Label _(EG: Gmail Inbox)_
-* Parent Object _(span relationships via [dynamic dropdowns](#dynamic-dropdowns))_
-* Repo for an Issue _(EG: Github)_
-* Notebook for a Note _(EG: Evernote)_
+- Search Term _(EG: Twitter Tweet Search)_
+- Label _(EG: Gmail Inbox)_
+- Parent Object _(span relationships via [dynamic dropdowns](#dynamic-dropdowns))_
+- Repo for an Issue _(EG: Github)_
+- Notebook for a Note _(EG: Evernote)_
 
 > Imagine an endpoint like `https://example.com/api/v1/prospects.json` - that would require no trigger fields at all. However an endpoint like `https://example.com/api/v1/list/1234/prospects.json` - that would require at least a trigger field to select the list ID (and it would be a [dynamic dropdown](#dynamic-dropdowns) at that!).
 
@@ -1129,7 +1128,7 @@ A human readable Label shown in the UI as a user builds a Zap.
 Example: <br> `Room` or `Title`
 
 ![label help default](https://cdn.zapier.com/storage/photos/96522edc71e94085537c1fa70480adb8.png)
-  
+
 ### Help Text
 
 Human readable description of a trigger field, useful for describing some detail you couldn't list in the Label.
@@ -1159,14 +1158,14 @@ Refer to our [dynamic dropdown docs](#dynamic-dropdowns) for a more in depth exp
 Example: <br> `TRIGGERKEY.id.name` or `TRIGGERKEY.hash.itemName`
 
 ![dynamic dropdown](https://cdn.zapier.com/storage/photos/9a6185121c22d1397dad62c819333f0e.png)
- 
+
 ### Static Dropdown
 
 A comma separated string that will be turned into a select field for limiting the choices a user can provide to a trigger field.
 
 Example: <br> `choice_a,choice_b,choice_c` or `Yesterday, Today, Tomorrow`
 
- ![simple static dropdown](https://cdn.zapier.com/storage/photos/7641c6b42a5034432f63274226e84414.png)
+![simple static dropdown](https://cdn.zapier.com/storage/photos/7641c6b42a5034432f63274226e84414.png)
 
 If you would like to provide a label for the raw value of each choice, you can also use the raw|label,raw|label syntax instead.
 
@@ -1186,8 +1185,8 @@ Sometimes, the data returned by a trigger is hard to use in a Zap because of how
 
 To remedy this, we have Custom Trigger Result Fields, an additional HTTP GET to a URL you provide in your trigger definition that tells us additional metadata about the data the trigger will return, such as human-readable labels to display when mapping fields. All you need to do to enable custom trigger result fields is:
 
-*   Provide a *Custom Trigger Result Fields URL* for the trigger in question.
-*   Ensure the URL route returns data in the below format, or manipulate to fit with [a `_post_custom_trigger_fields` scripting method](#scripting/#key_post_custom_trigger_fields).
+- Provide a _Custom Trigger Result Fields URL_ for the trigger in question.
+- Ensure the URL route returns data in the below format, or manipulate to fit with [a `_post_custom_trigger_fields` scripting method](#scripting/#key_post_custom_trigger_fields).
 
 ```javascript
 [
@@ -1200,7 +1199,7 @@ To remedy this, we have Custom Trigger Result Fields, an additional HTTP GET to 
 ]
 ```
 
-> Note: Unlike actions and searches, triggers don't support Custom Trigger Fields for the *Edit Template* step of the trigger.
+> Note: Unlike actions and searches, triggers don't support Custom Trigger Fields for the _Edit Template_ step of the trigger.
 
 ### Trigger Sample Results
 
@@ -1241,7 +1240,7 @@ When the user is inserting fields in the Zap editor, and your API returns no res
 
 <!-- NO LONGER VALID: ![sample](https://cdn.zapier.com/storage/photos/97739db25b44a01d209d8488f640372b.png)-->
 
-> Your hard-coded JSON provided above will *not* be run through the Scripting API (either for key enumeration or sample data fallback) so if you use the Scripting API to add or modify fields on top of your normal API response, you'll want to make sure you perform the same manipulations manually before pasting in the JSON above.
+> Your hard-coded JSON provided above will _not_ be run through the Scripting API (either for key enumeration or sample data fallback) so if you use the Scripting API to add or modify fields on top of your normal API response, you'll want to make sure you perform the same manipulations manually before pasting in the JSON above.
 
 > Note - our system often does a sample "poll" or pulls cached values for a live example - samples are just a part of that system. If you need to omit bad fields from usage - you'll need to ensure the poll or webhook or whatever does not included the bad fields either!
 
@@ -1251,16 +1250,17 @@ A test trigger is a regular [trigger](#triggers) with a special responsibility. 
 
 You can only mark one trigger as the test trigger. A test trigger can be made for any endpoint in your API that:
 
- 1. Requires authentication
- 1. Is guaranteed to always return some data (or a 204 for empty responses)
+1.  Requires authentication
+1.  Is guaranteed to always return some data (or a 204 for empty responses)
 
 Some examples of good endpoints to use for the test trigger:
 
- * A url like `/ping` that is meant solely to test authentication
- * An endpoint that returns a user's profile
- * An endpoint for high-level objects in your API that users are virtually guaranteed to have (i.e. contacts if you are a CRM, tickets if you are a support center)
+- A url like `/ping` that is meant solely to test authentication
+- An endpoint that returns a user's profile
+- An endpoint for high-level objects in your API that users are virtually guaranteed to have (i.e. contacts if you are a CRM, tickets if you are a support center)
 
 ### Setting one up
+
 In your app, you'll need to choose a trigger that performs a "simple test" when its Polling URL is used to access an endpoint that requires valid authorization/credentials.
 
 If your trigger is intended to be solely used for authentication testing, then you can mark it hidden.
@@ -1298,15 +1298,15 @@ Scroll down to the bottom of the page, and select the appropriate trigger:
 
 ![](https://cdn.zapier.com/storage/photos/dddb3d5f5ba166fbe581ff214a7385e7.png)
 
-***
+---
 
 ## Actions
 
 Actions answer the question: _What should my users be able to create via Zapier?_ They are things like:
 
-*   Create ToDo Task _(EG: Basecamp)_
-*   Create Chat Message _(EG: Campfire or Hipchat)_
-*   Create Issue _(EG: GitHub or Pivotal Tracker)_
+- Create ToDo Task _(EG: Basecamp)_
+- Create Chat Message _(EG: Campfire or Hipchat)_
+- Create Issue _(EG: GitHub or Pivotal Tracker)_
 
 You can think of Actions as POSTs, writes, or the creation of a resource. It involves Zapier sending data to your app.
 
@@ -1335,7 +1335,7 @@ Example: <br/> `Create Issue`, `Send Alert` or `Unsubscribe User`
 This is the object that the action is most closely associated with. It will be a noun you used in the Name field. We rely on an accurate noun to generate human-friendly sentences for users.
 
 Example: <br/> "Create Issue" would have "Issue" as the noun. "Unsubscribe User" would use "User".
- 
+
 ### Key
 
 This is a field only really used internally for both [dynamic dropdowns](#dynamic-dropdowns) and [scripting](#scripting) references. Needs to be at least two characters long, start with an alpha, and only contain `a-z`, `A-Z`, `0-9` or `_`.
@@ -1388,12 +1388,12 @@ Action Fields answer the question: what details can a user provide when setting 
 
 These details might include:
 
-*   Title _(EG: Note Title in Evernote)_
-*   Description _(EG: Issue Description in Github)_
-*   Parent Object _(span relationships via [dynamic dropdowns](#dynamic-dropdowns))_
-*   Repo for an Issue _(EG: Github)_
-*   Notebook for a Note _(EG: Evernote)_
-*   Message Body _(EG: Chat Body in Campfire or Hipchat)_
+- Title _(EG: Note Title in Evernote)_
+- Description _(EG: Issue Description in Github)_
+- Parent Object _(span relationships via [dynamic dropdowns](#dynamic-dropdowns))_
+- Repo for an Issue _(EG: Github)_
+- Notebook for a Note _(EG: Evernote)_
+- Message Body _(EG: Chat Body in Campfire or Hipchat)_
 
 What a user sees:
 
@@ -1468,7 +1468,7 @@ A comma separated string that will be turned into a select field for limiting th
 Example:<br>
 `choice_a,choice_b,choice_c` or `Yesterday, Today, Tomorrow`
 
- ![simple static dropdown](https://cdn.zapier.com/storage/photos/7641c6b42a5034432f63274226e84414.png)
+![simple static dropdown](https://cdn.zapier.com/storage/photos/7641c6b42a5034432f63274226e84414.png)
 
 If you would like to provide a label for the raw value of each choice, you can also use the raw|label,raw|label syntax instead.
 
@@ -1479,7 +1479,7 @@ Example:<br>
 
 ### Search Connector
 
-Use an existing [Search](#searches) to find a value based on user input. Set the key of this field to the **same** key as the field in the search you want to use in executing the search. The second part of the definition is the attribute of the returned object that is sent to your service *in place of* this field.
+Use an existing [Search](#searches) to find a value based on user input. Set the key of this field to the **same** key as the field in the search you want to use in executing the search. The second part of the definition is the attribute of the returned object that is sent to your service _in place of_ this field.
 
 Example:<br>
 `SEARCHKEY.id`
@@ -1492,24 +1492,24 @@ The user does not see anything different for this type of field, so make sure to
 
 ### Parent Key
 
-Ok, parent key is a little tricky, but it can be really helpful if you want to support line items (an array of sub-objects). When an action has one or more fields that have a parent key, we treat all those fields as the schema for building sub-objects, which we combine into a list and nest under the parent key. 
+Ok, parent key is a little tricky, but it can be really helpful if you want to support line items (an array of sub-objects). When an action has one or more fields that have a parent key, we treat all those fields as the schema for building sub-objects, which we combine into a list and nest under the parent key.
 
 For example, say you define two fields `amount` and `quantity` and give them both the parent key `line_items`. Now imagine a user has a trigger that provides this data:
 
 ```json
 {
-    "sale": {
-        "items_sold": [
-          {
-             "cost": "$3.00",
-             "# sold": 12
-          },
-          {
-             "cost": "$2.55",
-             "# sold": 1
-          }
-        ]
-    }
+  "sale": {
+    "items_sold": [
+      {
+        "cost": "$3.00",
+        "# sold": 12
+      },
+      {
+        "cost": "$2.55",
+        "# sold": 1
+      }
+    ]
+  }
 }
 ```
 
@@ -1523,20 +1523,20 @@ Zapier would produce this JSON for POSTing:
 
 ```json
 {
-    "line_items": [
-      {
-         "amount": "$3.00",
-         "quantity": 12
-      },
-      {
-         "amount": "$2.55",
-         "quantity": 1
-      }
-    ]
+  "line_items": [
+    {
+      "amount": "$3.00",
+      "quantity": 12
+    },
+    {
+      "amount": "$2.55",
+      "quantity": 1
+    }
+  ]
 }
 ```
 
-Zapier will *automatically* expand fields with the same `parent_key` into a nested list of objects according to how the source data comes in (we'll make as many objects inside the list as the original source). All you need to do is provide the same `parent_key` and expect an array of objects under that `parent_key`.
+Zapier will _automatically_ expand fields with the same `parent_key` into a nested list of objects according to how the source data comes in (we'll make as many objects inside the list as the original source). All you need to do is provide the same `parent_key` and expect an array of objects under that `parent_key`.
 
 ### Send to Action Endpoint URL in JSON body
 
@@ -1572,7 +1572,7 @@ Think of this as a multi-line unicode field. It's really only used to give the u
 
 ![](https://cdn.zapier.com/storage/photos/b53b2c9bc902723203adce06f5efb69c.png)
 
-> Textarea fields are represented by a `type: text`. key 
+> Textarea fields are represented by a `type: text`. key
 
 ### Integer
 
@@ -1639,17 +1639,18 @@ You can provide a `choices` array which will be mapped automatically into a drop
 ```javascript
 [
   {
-    "type": "integer",
-    "key": "priority",
-    "label": "Priority",
-    "helpText": "Low Priority alerts do not send a notification. Medium Priority alerts send one notification. High Priority alerts send one notification every hour.",
-    "choices": {
+    type: "integer",
+    key: "priority",
+    label: "Priority",
+    helpText:
+      "Low Priority alerts do not send a notification. Medium Priority alerts send one notification. High Priority alerts send one notification every hour.",
+    choices: {
       0: "Low Priority",
       1: "Medium Priority",
       2: "High Priority"
     }
   }
-]
+];
 ```
 
 ![field choices](https://cdn.zapier.com/storage/photos/f968a75ac7138efa098f9fe77df64e24.png)
@@ -1662,17 +1663,16 @@ Say you wanted to allow the user to specify multiple values for a single field. 
 
 You can make a field a list by checking the appropriate box in the UI. For custom fields, you can use [Scripting](#scripting) to alter the field definition to include `list: true` like this:
 
-
 ```javascript
 [
   {
-    "type": "unicode",
-    "key": "to",
-    "label": "To",
-    "help_text": "What email addresses should this email be sent to?",
-    "list": true
+    type: "unicode",
+    key: "to",
+    label: "To",
+    help_text: "What email addresses should this email be sent to?",
+    list: true
   }
-]
+];
 ```
 
 ![field list](https://cdn.zapier.com/storage/photos/cbb6393e207e2dc26da7f51bfa1ac5cc.png)
@@ -1681,21 +1681,21 @@ You can make a field a list by checking the appropriate box in the UI. For custo
 
 Sometimes, API endpoints require clients to specify a parent object in order to create or access the child resources. Imagine having to specify a company id in order to get a list of employees for that company. Since people don't speak in auto-incremented ID's, it is necessary that Zapier offer a simple way to select that parent using human readable handles.
 
-Our solution is to present users a dropdown that is populated by making a live API call to fetch a list of *parent* objects. We call these special dropdowns **dynamic dropdowns**.
+Our solution is to present users a dropdown that is populated by making a live API call to fetch a list of _parent_ objects. We call these special dropdowns **dynamic dropdowns**.
 
 > Tip: We used to call the dynamic dropdowns "prefills"!
 
 Here is what a user sees as a dynamic dropdown:
 
 ![prefill](https://cdn.zapier.com/storage/photos/dd31fa761e0cf9d0abc9b50438f95210.png)
- 
+
 In order for a dynamic dropdown to work, we must have a working [trigger](#triggers) set up for the parent object. Zapier will query for that dynamic dropdown, parse out an identifier and a human readable handle for each record, and then offer the user a dropdown. Once they make a selection, we store the identifier for use later when reading or writing child objects.
 
 The dynamic dropdown syntax is split into three parts:
 
-*   Which trigger is this dynamic dropdown referring to?
-*   Which piece of data is the unique identifier?
-*   Which piece of data is a human readable representation?
+- Which trigger is this dynamic dropdown referring to?
+- Which piece of data is the unique identifier?
+- Which piece of data is a human readable representation?
 
 We combine those into one field: `TRIGGERKEY.identifier_key.human_readable_key`.
 
@@ -1755,9 +1755,9 @@ A natural extension of normal hard coded [action fields](#action-fields) are dyn
 
 All you need to do to enable custom fields is:
 
-* Provide a Custom Action Fields URL for your action (found in the "Where To Send Data" section of the Action setup).
-* Ensure the URL route returns data in the below format, or manipulate it to fit with [scripting](#scripting/#key_custom_action_fields).
-* You can choose from several internal types, documented here: [Field Types](#field-types).
+- Provide a Custom Action Fields URL for your action (found in the "Where To Send Data" section of the Action setup).
+- Ensure the URL route returns data in the below format, or manipulate it to fit with [scripting](#scripting/#key_custom_action_fields).
+- You can choose from several internal types, documented here: [Field Types](#field-types).
 
 ```javascript
 [
@@ -1783,8 +1783,8 @@ All you need to do to enable custom fields is:
 
 If your action **returns** custom fields you'll also want to configure a source for labels so other actions in multi-step Zaps can display those fields properly and allow users to correctly use the data in the Zap editor.
 
-* Provide a Custom Action Result Fields URL for the action. (This will likely be the same endpoint you used for Custom Action Fields)
-* Ensure that the URL route returns data in the below format, or manipulate it to fit with [scripting](#scripting). Extra data will be ignored, but we require at least the following to properly format your action results.
+- Provide a Custom Action Result Fields URL for the action. (This will likely be the same endpoint you used for Custom Action Fields)
+- Ensure that the URL route returns data in the below format, or manipulate it to fit with [scripting](#scripting). Extra data will be ignored, but we require at least the following to properly format your action results.
 
 ```javascript
 [
@@ -1792,11 +1792,12 @@ If your action **returns** custom fields you'll also want to configure a source 
         "type": "unicode",
         "key": "json_key", // the field "name", will be used to construct a label if none is provided
         "label": "Pretty Label",
-        "important": true // optional    
+        "important": true // optional
     },
     ...
 ]
 ```
+
 > Using parent_key or type=dict (or both) is not currently supported in custom fields.
 
 ### Action Sample Results
@@ -1830,17 +1831,17 @@ By default, we can handle flat dictionaries and dictionaries within dictionaries
 
 When the user is inserting fields in the Zap editor, and your API returns no results (`[]`) then we will use your hard-coded fallback JSON if it exists.
 
-> Your hard-coded JSON provided above will *not* be run through the Scripting API (either for key enumeration or sample data fallback) so if you use the Scripting API to add or modify fields on top of your normal API response, you'll want to make sure you perform the same manipulations manually before pasting in the JSON above.
+> Your hard-coded JSON provided above will _not_ be run through the Scripting API (either for key enumeration or sample data fallback) so if you use the Scripting API to add or modify fields on top of your normal API response, you'll want to make sure you perform the same manipulations manually before pasting in the JSON above.
 
-***
+---
 
 ## Searches
 
 **Searches** answer the question: _What records can I lookup by a particular query?_ They are things like:
 
-*   Find a Contact
-*   Find a Product 
-*   Find an Issue
+- Find a Contact
+- Find a Product
+- Find an Issue
 
 Searches can be useful on their own, or they can be combined with Actions to perform "Get or Create" style logic.
 
@@ -1868,7 +1869,7 @@ Example: <br/> `Find Contact` or `Find Ticket`
 
 This is the object that the search is most closely associated with. It will be a noun you used in the Name field. We rely on an accurate noun to generate human-friendly sentences for users.
 
-Example: <br/> "Find Contact" would have "Contact" as the noun. "Find Completed Sale" would use "Sale" or "Completed Sale". 
+Example: <br/> "Find Contact" would have "Contact" as the noun. "Find Completed Sale" would use "Sale" or "Completed Sale".
 
 ### Key
 
@@ -1892,7 +1893,7 @@ Usually you'll want to leave this unchecked. If you check it, we'll completely h
 
 ### Search Endpoint
 
-Define the URL route where we will, by default, `GET` for a list of results. Note that the results *must* be an array, otherwise your search may fail. If there are no results, we expect an empty array. If your API returns a single object, you can use scripting to wrap the object in an array in a `_post_search` method. You can also make use of [variable syntax](#variable-syntax) where [auth fields](#auth-fields) and [search fields](#search-fields) will be injected.
+Define the URL route where we will, by default, `GET` for a list of results. Note that the results _must_ be an array, otherwise your search may fail. If there are no results, we expect an empty array. If your API returns a single object, you can use scripting to wrap the object in an array in a `_post_search` method. You can also make use of [variable syntax](#variable-syntax) where [auth fields](#auth-fields) and [search fields](#search-fields) will be injected.
 
 Example: <br/> `http://api.example.com/v2/clients.json` or {% raw %}`http://{% templatetag openvariable %}account{% templatetag closevariable %}.example.com/api/v1/projects.json`{% endraw %}
 
@@ -1902,7 +1903,7 @@ Example: <br/> `http://api.example.com/v2/clients.json` or {% raw %}`http://{% t
 
 We will not automatically encode any URL variables, so you're responsible for encoding any if they require that. For example, emails _might_ include a `+` sign, so if you have {% raw %}`https://example.com/api/v2/leads?email={% templatetag openvariable %}email{% templatetag closevariable %}`{% endraw %} you'll want to encode that in your [`SEARCH_KEY_pre_search`](#available-methods/#search-methods) (or remove it from there and add it to the `bundle.request.params`), otherwise you'll get a "space" where the `+` sign is.
 
-A better approach is to not even include it in the URL and to instead *only* use `bundle.request.params` in this case since `bundle.request.params` will be encoded automatically.
+A better approach is to not even include it in the URL and to instead _only_ use `bundle.request.params` in this case since `bundle.request.params` will be encoded automatically.
 
 ### Custom Search Fields URL
 
@@ -1938,9 +1939,9 @@ Search Fields answer the question: what details can a user provide when setting 
 
 These details might include:
 
-*   Name to query for a Contact _(EG: Salesforce)_
-*   Repo to restrict search to for an Issue _(EG: Github)_
-*   Notebook for a Note _(EG: Evernote)_
+- Name to query for a Contact _(EG: Salesforce)_
+- Repo to restrict search to for an Issue _(EG: Github)_
+- Notebook for a Note _(EG: Evernote)_
 
 What a user sees:
 
@@ -2010,7 +2011,7 @@ A comma separated string that will be turned into a select field for limiting th
 Example:<br>
 `choice_a,choice_b,choice_c` or `Yesterday, Today, Tomorrow`
 
- ![simple static dropdown](https://cdn.zapier.com/storage/photos/7641c6b42a5034432f63274226e84414.png)
+![simple static dropdown](https://cdn.zapier.com/storage/photos/7641c6b42a5034432f63274226e84414.png)
 
 If you would like to provide a label for the raw value of each choice, you can also use the raw|label,raw|label syntax instead.
 
@@ -2018,7 +2019,7 @@ Example:<br>
 `1|Option 1,2|Option 2`
 
 ![simple static dropdown as key-value pairs](https://cdn.zapier.com/storage/photos/524ad1774802cc81d95cb2e3f23972d6.png)
- 
+
 ### List
 
 Indicates if this field can hold multiple values. For example, this could be useful if you want to allow users to search for a contact by name, but limit the search to contacts with one or more tags applied. List fields gain the +/- icons to the side.
@@ -2027,12 +2028,12 @@ Indicates if this field can hold multiple values. For example, this could be use
 
 ### Search or Create
 
-Search or Create allows users to combine your Searches and your Actions together into one flow.  Each Search may be associated with one Action, which represents the creation of the same type of object that search is used to look up. (Practical example [here](https://zapier.com/developer/documentation/v2/search-or-create-example))
+Search or Create allows users to combine your Searches and your Actions together into one flow. Each Search may be associated with one Action, which represents the creation of the same type of object that search is used to look up. (Practical example [here](https://zapier.com/developer/documentation/v2/search-or-create-example))
 
 Example use cases might include:
 
-*   Find or create a new customer _(EG: Salesforce)_
-*   Notebook for a Note _(EG: Evernote)_
+- Find or create a new customer _(EG: Salesforce)_
+- Notebook for a Note _(EG: Evernote)_
 
 What a user sees:
 
@@ -2049,9 +2050,9 @@ At this point, when the user selects the checkbox to do a Find or Create, they w
 When the Zap runs, if an element is found during the Search, it will be used. If not, a new item will be created.
 
 > Errors like a 404 will not be interpreted as a "miss" on search and will not trigger a follow up create - explicitly return `[]` when no records are found.
-  If your API can't do that, use scripting to return an empty list `[]` (note a `_post_search` won't work, you'll have to replace `_search` completely)
+> If your API can't do that, use scripting to return an empty list `[]` (note a `_post_search` won't work, you'll have to replace `_search` completely)
 
-This type of connection should be used in cases where the search is likely to yield one correct result, and unlikely to yield incorrect results.  Good use cases include searching by keys like `email` or `phone number`, or other uniquely identifying information that the user might have.
+This type of connection should be used in cases where the search is likely to yield one correct result, and unlikely to yield incorrect results. Good use cases include searching by keys like `email` or `phone number`, or other uniquely identifying information that the user might have.
 
 After every successful Search or Create - we'll attempt to grab a fresh record via the [Resource URL](#searches/#resource-url).
 
@@ -2061,9 +2062,9 @@ A natural extension of normal hard coded [search fields](#search-fields) are dyn
 
 All you need to do to enable custom fields is:
 
-* Provide a Custom Search Fields URL for your search action.
-* Ensure the URL route returns data in the below format, or manipulate it to fit with  [Scripting](#scripting).
-* You can choose from several internal types, documented here: [Field Types](#field-types).
+- Provide a Custom Search Fields URL for your search action.
+- Ensure the URL route returns data in the below format, or manipulate it to fit with [Scripting](#scripting).
+- You can choose from several internal types, documented here: [Field Types](#field-types).
 
 ```javascript
 [
@@ -2086,7 +2087,7 @@ All you need to do to enable custom fields is:
 If your search action **returns** custom fields you'll also want to configure a source for labels so other actions in multi-step Zaps can display those fields properly and allow users to correctly use the data in the Zap editor.
 
 - Provide a Custom Search Result Fields URL for the search action. (This will likely be the same endpoint you used for Custom Search Fields)
-- Ensure that the URL route returns data in the below format, or manipulate it to fit with  [Scripting](#scripting). Extra data will be ignored, but we require at least the following to properly format your search action results.
+- Ensure that the URL route returns data in the below format, or manipulate it to fit with [Scripting](#scripting). Extra data will be ignored, but we require at least the following to properly format your search action results.
 
 ```javascript
 [
@@ -2099,6 +2100,7 @@ If your search action **returns** custom fields you'll also want to configure a 
     ...
 ]
 ```
+
 > Right now `parent_key` and `type=dict` is not supported in custom fields.
 
 ### Search Sample Results
@@ -2114,7 +2116,7 @@ We will use this sample JSON for two things:
 
 > These result is primarily used when the user picks "Skip Test" when testing their Zap. Zapier will try to use a live API result, first.
 
-Here is the sample JSON for something like an  search for a Trello Card, and how it shows up in our user-facing Editor:
+Here is the sample JSON for something like an search for a Trello Card, and how it shows up in our user-facing Editor:
 
 ```javascript
 {
@@ -2134,15 +2136,15 @@ By default, we can handle flat dictionaries and dictionaries within dictionaries
 
 When the user is inserting fields in the Zap editor, and your API returns no results (`[]`) then we will use your hard-coded fallback JSON if it exists.
 
-> Your hard-coded JSON provided above will *not* be run through the Scripting API (either for key enumeration or sample data fallback) so if you use the Scripting API to add or modify fields on top of your normal API response, you'll want to make sure you perform the same manipulations manually before pasting in the JSON above.
+> Your hard-coded JSON provided above will _not_ be run through the Scripting API (either for key enumeration or sample data fallback) so if you use the Scripting API to add or modify fields on top of your normal API response, you'll want to make sure you perform the same manipulations manually before pasting in the JSON above.
 
-***
+---
 
 ## How to Launch an Integration
 
 ### Deploy
 
-Once your app is live (Public or Invite-Only), you'll probably want to make changes to it and add features or fix bugs. While you cannot make changes to a live app, you can **clone** an app and then make changes to the clone. 
+Once your app is live (Public or Invite-Only), you'll probably want to make changes to it and add features or fix bugs. While you cannot make changes to a live app, you can **clone** an app and then make changes to the clone.
 
 The first step is to click on the **Deployment** tab, and click the button **Make a Copy of Your App by Cloning**:
 
@@ -2154,7 +2156,6 @@ When you've finished testing your changes, and are ready to update the existing/
 
 > Once you have deployed your new/cloned app to replace an existing app, all zaps will be updated to use this new app. Read on for important notes on handling breaking app changes.
 
-
 > Do you need to change the name of your invite-only or public app? Please [contact us](mailto:partners@zapier.com) and we'll perform a manual deployment.
 
 A screen will ask you which app you want to replace. Select the existing/live app:
@@ -2164,19 +2165,19 @@ A screen will ask you which app you want to replace. Select the existing/live ap
 The system will run an audit and show you the results:
 
 ![deploy page](https://cdn.zapier.com/storage/photos/48aca3cc40273674cff94b58e4268338.png)
- 
+
 In the screenshot you can see an error for **New Item**, with the error of _Polling triggers should always have sample data_. This simply means you need to provide a sample result for a polling trigger.
 
 Usually you can just make some changes and ensure there is a symmetry between old and new versions of the app. If there is a breaking change that resolves a bug, please [contact us](mailto:partners@zapier.com) and we'll perform a manual deployment.
 
-There are a number of situations where making changes in your app may cause the existing Live Zaps to stop working. If any of those situations are detected, the system will not allow you to complete the deploy/replace process. Please visit [this page of Deploy Errors](https://zapier.com/developer/documentation/v2/deploy-errors) and try a workaround. 
+There are a number of situations where making changes in your app may cause the existing Live Zaps to stop working. If any of those situations are detected, the system will not allow you to complete the deploy/replace process. Please visit [this page of Deploy Errors](https://zapier.com/developer/documentation/v2/deploy-errors) and try a workaround.
 
 If your app is Invite-Only, your cloned app's OAuth redirect URI will become active upon migration (it will contain a new ID #), and the old OAuth redirect URI will no longer function.
-**Please plan accordingly.**  Contact us for a solution to this problem if it is difficult to manage - we can set a permanent redirect URI for your app.
+**Please plan accordingly.** Contact us for a solution to this problem if it is difficult to manage - we can set a permanent redirect URI for your app.
 
 #### How to Handle Breaking Changes
 
-The best approach is to copy the Triggers/Actions/Searches you want to update. Mark the originals hidden and append "(Legacy)" to their labels. On the copies, make the needed updates (it also helps to update their keys to something instructive, like append "_v2" to the original key). Once you deploy, new Zaps will only have the copies available and old Zaps will continue to work unaffected.
+The best approach is to copy the Triggers/Actions/Searches you want to update. Mark the originals hidden and append "(Legacy)" to their labels. On the copies, make the needed updates (it also helps to update their keys to something instructive, like append "\_v2" to the original key). Once you deploy, new Zaps will only have the copies available and old Zaps will continue to work unaffected.
 
 If you're working on an entirely new version of your app/integration, which doesn't preserve any compatibility with the existing app/integration, you can [learn more about the process of getting the new app deployed here.](https://zapier.com/developer/documentation/v2/migrating-your-zapier-integration)
 
@@ -2202,7 +2203,7 @@ This is useful for mainly for debugging purposes.
 
 ### Clone
 
-Once your app is live (Public or Invite-Only), you'll probably want to make changes to it and add features or fix bugs. While you cannot make changes to a live app, you can **clone** an app and then make changes to the clone. 
+Once your app is live (Public or Invite-Only), you'll probably want to make changes to it and add features or fix bugs. While you cannot make changes to a live app, you can **clone** an app and then make changes to the clone.
 
 To clone your app, click on the **Deployment** tab in your app editor, and click the button **Make a Copy of Your App by Cloning**:
 
@@ -2210,7 +2211,7 @@ To clone your app, click on the **Deployment** tab in your app editor, and click
 
 A cloned app will begin in Private mode, which allows you to make your edits. If you wish to use the cloned app to replace your previous app (either Public or Invite-Only), you'll want to [deploy a replacement](#deploy).
 
-***
+---
 
 ## Dates in Zapier
 
@@ -2223,7 +2224,7 @@ Examples of valid [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)-formatted v
 - `2018-05-17T13:04:00-0700` (time zone offset must be specified)
 - `2018-05-17T13:04:00-07:00` (time zone offset specified with a colon)
 - `2018-05-17T13:04:00-0000` (UTC time zone)
-- `2018-05-17T13:04:00Z`  (`Z` can be used instead of `-0000`) 
+- `2018-05-17T13:04:00Z` (`Z` can be used instead of `-0000`)
 - `2018-05-17` (single date without a time may be used, but note that a time of "midnight" may be implicitly applied if the value is used in subsequent steps)
 
 ### Datetimes in Actions
@@ -2232,7 +2233,7 @@ For actions, datetimes are normalized to an [ISO-8601](https://en.wikipedia.org/
 
 If you need a different date format (like epoch as int) - you'll need to use our scripting platform to do a conversion using the globally available [Moment.js](https://momentjs.com) library (web builder apps only). If you're building using our CLI, you can use any library of your choosing.
 
-***
+---
 
 ## Files in Zapier
 
@@ -2252,11 +2253,13 @@ var Zap = {
     var records = z.JSON.parse(bundle.response.content);
     return _.map(records, function(record) {
       // if you just do url, we'll include any standard authentication headers
-      record.file = z.dehydrateFile('https://yoursite.com/files/download/' + record.id);
+      record.file = z.dehydrateFile(
+        "https://yoursite.com/files/download/" + record.id
+      );
       return record;
     });
   }
-}
+};
 ```
 
 You can also define a more specific request if there is more data you need to provide to activate the download, like a special key or checksum:
@@ -2268,24 +2271,27 @@ var Zap = {
     return _.map(records, function(record) {
       // if you provide the full request, we will NOT include
       // any standard authentication headers
-      var url = 'https://yoursite.com/files/download/' + record.id;
-      record.file = z.dehydrateFile(url, {
-        method: 'post',
-        headers: {
-          'X-Download-Key': record.key
+      var url = "https://yoursite.com/files/download/" + record.id;
+      record.file = z.dehydrateFile(
+        url,
+        {
+          method: "post",
+          headers: {
+            "X-Download-Key": record.key
+          }
+        },
+        {
+          name: record.fileName, // if blank we will guess/inspect!
+          length: record.size // if blank we will guess/inspect!
         }
-      }, {
-        name: record.fileName, // if blank we will guess/inspect!
-        length: record.size // if blank we will guess/inspect!
-      });
+      );
       return record;
     });
   }
-}
+};
 ```
 
 And we'll handle the rest!
-
 
 ### Actions via Multipart
 
@@ -2335,13 +2341,14 @@ var Zap = {
     // * second item is a zapier.com endpoint that will stream the file
     // * third item is the mimetype, if any
 
-    bundle.request.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+    bundle.request.headers["Content-Type"] =
+      "application/x-www-form-urlencoded";
     // leave request data as object, not string!
     bundle.request.data = z.JSON.parse(bundle.request.data);
     // we will mix request.data and request.files together
     return bundle.request; // let zapier complete it
   }
-}
+};
 ```
 
 That pure `multipart/form-data` raw request will now look like this:
@@ -2374,9 +2381,10 @@ Content-Type: application/pdf
 
 At this time we do no support advanced streaming of files via the scripting platform (for example, uploading a file to receive an attachment ID that gets mixed into the normal JSON for POSTing). We may support that in the future, please send us an [email](mailto:contact@zapier.com) if you have questions!
 
-***
+---
 
 <a id="variable-syntax"></a>
+
 ## Zapier Variable Syntax
 
 If you've used [Django](https://www.djangoproject.com) or [Mustache](http://mustache.github.com) (or many other templating engines), you are probably well versed in the variable syntax we use. This also happens to be the exact same syntax our users use to map data from triggers into [Action Fields](#action-fields) (though they get a dropdown interface to do it).
@@ -2396,10 +2404,11 @@ And the following template (think [authentication mapping](#authentication-mappi
 
 {% raw %}```javascript
 {
-  "talking_user": "{% templatetag openvariable %}owner{% templatetag closevariable %}",
-  "chat_message": "{% templatetag openvariable %}title{% templatetag closevariable %} and of course {% templatetag openvariable %}description{% templatetag closevariable %}"
+"talking_user": "{% templatetag openvariable %}owner{% templatetag closevariable %}",
+"chat_message": "{% templatetag openvariable %}title{% templatetag closevariable %} and of course {% templatetag openvariable %}description{% templatetag closevariable %}"
 }
-```{% endraw %}
+
+````{% endraw %}
 
 We will generate the following output:
 
@@ -2408,13 +2417,14 @@ We will generate the following output:
   "talking_user": "Larry",
   "chat_message": "Hello world! and of course It's a beautiful day!"
 }
-```
+````
 
 The keys to put between the {% raw %}{% templatetag openvariable %}{% templatetag closevariable %}{% endraw %} come from the keys you specify when you setup [action fields](#action-fields), [trigger fields](#trigger-fields), and [authentication fields](#authentication-fields).
 
-***
+---
 
 <a id="versions"></a>
+
 ## Legacy Web Builder Versions
 
 Below is a changelog of the major releases of the Zapier Legacy Web Builder Platform. Each release has a summary of the new features added and any breaking changes that were made.
@@ -2423,19 +2433,19 @@ Below is a changelog of the major releases of the Zapier Legacy Web Builder Plat
 
 This is a backward incompatible update to the Developer Platform. It adds several new features and fixes some of the limitations of the first version.
 
- * Apps can now have [Searches](#searches). A Search is used to find individual records by a field (say finding a contact by name).
-  * Searches can be linked with Actions to create a [Search or Create](#search-or-create) flow, giving the user a way to search for an item, and if it doesn't exist, create it.
-  * Searches can be used to power action fields, similar to Dynamic Dropdowns.  Users input data to the field which is used to search for items, and a given data element returned from the search result (such as `id`) is used in place of their input.
- * Fields can now have the “List” property defined through the UI. Before this was only possible to set via Scripting.
- * Action fields have a “Parent Key” option that enables line item support.
- * Fields now have a "Placeholder" option that operates solely as an HTML5 style placeholder - it is only for helping the user understand what will happen if they enter nothing in the given field.
- * **Breaking Change** Scripting can no longer access `trigger_data` from `bundle` in `pre_write` and `post_write`.
- * **Breaking Change** Scripting can no longer access `trigger` and `action` from `bundle.zap`.
- * **Breaking Change** Scripting code now runs under JS strict mode (`'use strict';`), so developer should verify their code still executes correctly (the built in code editor runs jshint - so check there!)
- * **Breaking Change** Data mapped into Action Fields is always coerced according to the field's type
- * **Breaking Change** Data entering actions is no longer flattened into a string. This means lists and dictionaries will pass through to actions intact rather than being converted to CSV and 'key|value' respectively. If there is existing Scripting code that does any sort of parsing on those values, it will need to be updated to handle the new structure (likely this means deleting code that was expanding the strings back into arrays and dictionaries).
- * **Breaking Change** We now automatically include a `state` parameter on the Authorization URL for apps that use OAuth2.
- * **Bug Fix** Trigger fields passed into custom fields, REST hook and catch hook methods are always coerced according to the field's type
+- Apps can now have [Searches](#searches). A Search is used to find individual records by a field (say finding a contact by name).
+- Searches can be linked with Actions to create a [Search or Create](#search-or-create) flow, giving the user a way to search for an item, and if it doesn't exist, create it.
+- Searches can be used to power action fields, similar to Dynamic Dropdowns. Users input data to the field which is used to search for items, and a given data element returned from the search result (such as `id`) is used in place of their input.
+- Fields can now have the “List” property defined through the UI. Before this was only possible to set via Scripting.
+- Action fields have a “Parent Key” option that enables line item support.
+- Fields now have a "Placeholder" option that operates solely as an HTML5 style placeholder - it is only for helping the user understand what will happen if they enter nothing in the given field.
+- **Breaking Change** Scripting can no longer access `trigger_data` from `bundle` in `pre_write` and `post_write`.
+- **Breaking Change** Scripting can no longer access `trigger` and `action` from `bundle.zap`.
+- **Breaking Change** Scripting code now runs under JS strict mode (`'use strict';`), so developer should verify their code still executes correctly (the built in code editor runs jshint - so check there!)
+- **Breaking Change** Data mapped into Action Fields is always coerced according to the field's type
+- **Breaking Change** Data entering actions is no longer flattened into a string. This means lists and dictionaries will pass through to actions intact rather than being converted to CSV and 'key|value' respectively. If there is existing Scripting code that does any sort of parsing on those values, it will need to be updated to handle the new structure (likely this means deleting code that was expanding the strings back into arrays and dictionaries).
+- **Breaking Change** We now automatically include a `state` parameter on the Authorization URL for apps that use OAuth2.
+- **Bug Fix** Trigger fields passed into custom fields, REST hook and catch hook methods are always coerced according to the field's type
 
 ### Version 1 (2012-08-01)
 
