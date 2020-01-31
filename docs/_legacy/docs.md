@@ -9,7 +9,7 @@ redirect_from: /legacy/
 
 Zapier's Web Builder was the original way to build Zapier integrations since it was launched in 2012 and updated in [2014](https://zapier.com/blog/connect-any-service-zapier-new-and-improved-developer-platform). Since then, we've deeply updated our platform, and the latest Zapier Platform v3 lets you build integrations with all of Zapier's features in an online visual builder or with our CLI.
 
-If you have an existing integration that was built with Zapier's older Web Builder, you can [convert your Web Builder integration to Zapier's Platform CLI](http://platform.zapier.com/legacy/convert) or soon to our new online visual builder. Or you can continue to maintain it using our legacy web builder until your team is ready to switch.
+If you have an existing integration that was built with Zapier's older Web Builder, we're slowly migrating these integrations to the [Zapier Platform UI](https://platform.zapier.com/quickstart/introduction).
 
 Here is our full archived documentation for the original Zapier Web Builder to help maintain existing integrations.
 
