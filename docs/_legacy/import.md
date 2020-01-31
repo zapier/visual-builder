@@ -93,7 +93,7 @@ Zapier Platform UI includes most of the features you would expect from the Legac
 - **Static Web Hooks**: Zapier Platform UI supports only REST hooks and Polling for Triggers. If your converted integration includes static rest hooks in a trigger, you may continue to maintain them in the new Platform UI. If you add new triggers, though, you will not be able to add them with static web hooks.
 - **Custom Results Fields**: The Legacy Web Builder included an option in triggers and actions to make an API call that would [fetch custom result field names](https://platform.zapier.com/legacy/docs#trigger-results-fields-custom). Zapier Platform UI does not include this option for new triggers and actions, though it does let you continue to use this option in converted, existing triggers and actions. If you add new triggers or actions to your integration and need to fetch custom results fields, you will need to add that to the trigger or action's API call in the code mode.
 - **OAuth v1**: Zapier Platform UI does not support OAuth v1 for new integrations, and instead requires new integrations to use OAuth v2 authentication. You may continue to maintain existing OAuth v1 authentication in converted integrations, but if you make a new version of your integration or re-build it in Zapier Platform UI, you will need to use a newer authentication scheme.
-- **Advanced Editor**: The Legacy Web Builder included an _Advanced Editor_ option to edit your integration in JSON text instead of the web UI editor. That feature is no longer available in Zapier Platform UI, for new or converted integrations. If you would prefer to manage your integration in JSON text and code, the better option would be to convert your integration to [Zapier Platform CLI](https://platform.zapier.com/legacy/convert) to manage it from your local development environment.
+- **Advanced Editor**: The Legacy Web Builder included an _Advanced Editor_ option to edit your integration in JSON text instead of the web UI editor. That feature is no longer available in Zapier Platform UI, for new or converted integrations. If you would prefer to manage your integration in JSON text and code, the better option would be to convert your integration to Zapier Platform CLI to manage it from your local development environment. Once your app has been converted to the Platform UI, you will have the option of exporting your app to the CLI.
 
 ## How to Maintain Integrations in Zapier Legacy Web Builder
 
@@ -116,12 +116,6 @@ By the end of 2019, Zapier will convert all existing integrations to the new Zap
 ## How to Convert a Legacy Web Builder Integration to Zapier Platform UI
 
 Coming soon, Zapier will have a self-service tool to convert legacy Web Builder integrations to the new Zapier Platform UI, so you can upgrade your integrations when you want. For now, if you would like to try the new Zapier Platform UI, you can build a new integration at [zapier.com/app/developer](https://zapier.com/app/developer/), or [contact the Zapier team](mailto:partners@zapier.com) to have your existing integration upgraded to the new Platform UI.
-
-## How to Convert Legacy Web Builder Integrations to Zapier Platform CLI
-
-Prefer to work in code, collaborate on integrations with your team's version control system, and push changes from terminal? Zapier's Platform CLI may be the better option to upgrade your legacy Zapier integration. Check out our companion guide to convert your Legacy Web Builder integration to Zapier's CLI:
-
-_→ Learn more in our guide on [How to Convert an Integration to Zapier Platform CLI](https://platform.zapier.com/legacy/convert)_
 
 ## How to Build a New Zapier Integration
 
