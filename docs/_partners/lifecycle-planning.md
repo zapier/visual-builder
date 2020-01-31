@@ -9,7 +9,7 @@ redirect_from: /partners/
 
 No app can do everything on its own. The best apps are instead focused on their core features, then rely on integrations with dozens of other great apps to do the rest. That is what the Zapier platform enables. It brings the best of every app together.
 
-A Zapier integration connects your app to 1,300+ of the best business and productivity apps so millions of Zapier users can add it to their workflows.
+A Zapier integration connects your app to 1,800+ of the best business and productivity apps so millions of Zapier users can add it to their workflows.
 
 If you haven't yet, please read [How Zapier Works](https://zapier.com/help/how-zapier-works/) and set up a few Zaps to get a sense of the user experience.
 
@@ -125,7 +125,7 @@ We may invite your company to officially launch your Zapier integration and join
 
 - A [dedicated blog post](https://cdn.zapier.com/storage/photos/208bc1f088e3f2153b4631b6896f8cfe.png), [email](https://cdn.zapier.com/storage/photos/c7f8293e9d9cbc5b64051ae6ecca1b8c.png), and social media campaign about the launch of your integration
 - [Get leads](https://cdn.zapier.com/storage/photos/961169e674f45d11ff50e2c0510ff200.png) from your page in [Zapier's App Directory](https://zapier.com/apps)
-- Exposure within Zapier's product and on the sites of Zapier's 1,300+ integration partners
+- Exposure within Zapier's product and on the sites of Zapier's 1,800+ integration partners
 
 Here are the steps to take to officially launch and join the program:
 
@@ -155,7 +155,7 @@ The Zapier team provides frontline support for your integration and, in order to
 
 ### **4. Reach 50 Users to Receive an Invite from the Zapier Team**
 
-While your integration is in the Early Access stage, we'll monitor how it's performing. When your integration reaches 50 users, our team will get in touch to invite you to start the official launch process. You must receive an invite from our team before you can start the rest of this process.
+While your integration is in beta, we'll monitor how it's performing. When your integration reaches 50 users, our team will get in touch to invite you to start the official partner program launch process. 
 
 <a id="beta"></a>
 
@@ -166,7 +166,7 @@ _Estimated time to complete: 5-10 minutes for an engineering or technical resour
 
 _Who to involve: Your product and development team_
 
-The best way to ensure users are able to discover how to connect your app to 1,300+ other apps is to surface your integration where your users are looking for it. Using Zapier’s embedding technology, you can present your most popular Zap Templates to your users in your app’s UI, help docs, FAQs, blog posts, and more
+The best way to ensure users are able to discover how to connect your app to 1,800+ other apps is to surface your integration where your users are looking for it. Using Zapier’s embedding technology, you can present your most popular Zap Templates to your users in your app’s UI, help docs, FAQs, blog posts, and more
 
 There are two ways to add embed your Zap Templates on your site:
 
@@ -206,7 +206,7 @@ _Estimated time to complete: 1-2 weeks_
 
 _Who to involve: Your marketing team_
 
-Work with your marketing team to create a launch campaign to let your users know that they can now connect your product to 1,300+ web apps. Marketing campaigns help you get more users on your integration right away, so you can rise the ranks of the Zapier Partner Program more quickly.
+Work with your marketing team to create a launch campaign to let your users know that they can now connect your product to 1,800+ web apps. Marketing campaigns help you get more users on your integration right away, so you can rise the ranks of the Zapier Partner Program more quickly.
 
 Here's some inspiration from some of our most successful partners:
 
