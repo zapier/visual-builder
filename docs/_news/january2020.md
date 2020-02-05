@@ -7,6 +7,8 @@ redirect_from: /news/
 
 # A Streamlined Publishing Process, CLI v9.1.0, What's Coming Next
 
+_Zapier Developer Platform Team \| February 5, 2020_
+
 ## Eliminating the "Early Access" Stage
 
 We've simplified our publishing and review process.  We've eliminated the "Early Access" stage from the launch process.  Now the process for a developer to publish a new app to the Zapier App Directory is:
