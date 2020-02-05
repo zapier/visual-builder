@@ -1,6 +1,6 @@
 ---
 title: Introducing Zapier's New Platform UI
-order: 2
+order: 3
 layout: post
 redirect_from: /news/
 ---
