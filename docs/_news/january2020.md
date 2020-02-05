@@ -26,7 +26,7 @@ You'll follow the process outlined above to get your integration direcly into pu
 
 **I have an integration in Early Access.  What does this change for me?**
 
-Your integration is now in beta! You can create Zap templates, and your users no longer have to use the invite mechanism to use your integration.  Woot! 
+Your integration is now in beta! You can create Zap Templates, and your users no longer have to use the invite mechanism to use your integration.  Woot! 
 
 **I'm already in the partner program.  What does this change for me?**
 
@@ -43,7 +43,7 @@ We shipped a new version of the CLI.  Check out the [changelog](https://github.c
 
 ## Migrating Legacy Web Builder Integrations
 
-Through February and March we'll will be continuing to convert Web Builder integrations to our new platform, and will migrate all Zaps to the new version of your integration.  Watch for an email from the team about this.  If you have a legacy Web Builder integraiton we'll let you know when your date for conversion is coming up.  No action will be required on your part.  We're trying to make this as easy as possible for everyone. 
+Through February and March we'll will be continuing to convert Web Builder integrations to our new platform, and will migrate all Zaps to the new version of your integration.  Watch for an email from the team about this.  If you have a legacy Web Builder integration we'll let you know when your date for conversion is coming up.  No action will be required on your part.  We're trying to make this as easy as possible for everyone. 
 
 ## What's Coming Next?
 
