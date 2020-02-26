@@ -9,7 +9,6 @@ redirect_from: /partner_api/
 
 There are two ways to embed Zapier in your product: the [embed widget](#widget) or the Partner API (using an [iframe](#iframe)).
 
-
 ## widget.js
 
 ![](https://cdn.zapier.com/zapier/images/partners/in-your-product.png)
@@ -50,7 +49,7 @@ Edit a Zap from a Zap's `url`
 
 Our user's security is paramount. By default, we deny any embedding of our product unless you provide us with a list of domains that you expect to embed Zapier in. This protects the user from malicious activities like [Clickjacking](https://www.owasp.org/index.php/Clickjacking). An example of what the user would see if you were to attempt to embed Zapier and the embedding domain was not registered with us:
 
-![](https://zappy.zapier.com/ADC97813-C64D-4980-AED9-1A0D7FDDF50B.png)
+![](https://zappy.zapier.com/d417e90269bb019fcbe5718d18eb572d.png)
 
 To provide us a list of unique domains you'll embed Zapier in:
 
@@ -65,4 +64,3 @@ Common Questions:
 - **Which domains are appropriate and which ones are not, if any?** We do not support wildcard, or other patterns, within domains. Being explicit about the specific domains ensures we do not inadvertedly allow custom/user domains from being permitted. Example: `{username}.github.io` is a scheme used by Github to allow any user to create their own websites. In this example, only `github.io` would be permitted but not any subdomain of that domain. Moreover, the domains provided by you should be registered with your company with a public registrar. That is to say a `randomcnamedomain.com` is not valid for the same reason that a user or bad actor could register that domain.
 - **What about when I'm developing the embed?** Indeed this is tricky because `localhost`, `yourcomp.local` and `127.0.0.1` are not valid domains that we support. An option would be to use a tunnel service like [ngrok](https://ngrok.com/) and to register that ngrok tunnel with us. Be advised, that we will ask for a static domain from ngrok.com or similar tunneling service.
 - **What if my product requires wildcard support (e.g. `{account}.myproduct.com`)?** While this is unsupported, we'd like to [chat with you](mailto:partners@zapier.com) to understand your use case and to discuss other options.
-
