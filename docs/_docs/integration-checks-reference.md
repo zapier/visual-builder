@@ -704,9 +704,9 @@ a new integration.
 
 <a name="S001"></a><a name="S00001"></a>
 
-## S001 - 10 Users with a live Zap
+## S001 - 3 Users with a live Zap
 
-To verify user demand, there should be at least 10 users who have a live Zap using
+To verify user demand, there should be at least 3 users who have a live Zap using
 this integration. "Live" means at least one successful task in recent history.
 
 ---
