@@ -34,7 +34,7 @@ Absolutely nothing.  You are a rock star and we're so happy you are a part of th
 
 **Have questions?**  
 
-Hit us up at partners@zapier.com or in our [Platform Slack Channel](https://join.slack.com/t/zapier-platform/shared_invite/enQtNTg1MjM5NjMzNTI3LTUyYWJjM2E1NTQ3NjViMGY0MzQ1NWJiMDJmNjcyNTJjMWRlOTg4MTNjOWEwNDFlNGExODU5OTgzNWM3MzZlMjk)
+Hit us up at `partners@zapier.com` or in our [Platform Slack Channel]({{ site.slack_invite_url }})
 
 ## CLI v9.1.0
 

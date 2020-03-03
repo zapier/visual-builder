@@ -1,10 +1,10 @@
 # Settings
 title: Zapier Platform UI Documentation
-description: 'Zapier Platform UI'
-url: '' # the base hostname & protocol for your site, e.g. http://example.com
+description: "Zapier Platform UI"
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: kramdown
-baseurl: ''
-slack_invite_url: 'https://join.slack.com/t/zapier-platform/shared_invite/enQtNTg1MjM5NjMzNTI3LTUyYWJjM2E1NTQ3NjViMGY0MzQ1NWJiMDJmNjcyNTJjMWRlOTg4MTNjOWEwNDFlNGExODU5OTgzNWM3MzZlMjk'
+baseurl: ""
+slack_invite_url: "https://join.slack.com/t/zapier-platform/shared_invite/enQtOTgyMjkzNDU1NjM5LWM1MGQ1YmY5ODgxNmM1NjIzZTk3NjNkMzFlZWExYzU2MDJjNTVmNDEzMWUzYjdlNmMzZGViMzE0YjhlOGIyZDA"
 
 plugins:
   - jekyll-redirect-from
@@ -48,47 +48,47 @@ collections:
 
 defaults:
   - scope:
-      path: ''
-      type: 'quickstart'
+      path: ""
+      type: "quickstart"
     values:
       layout: default
   - scope:
-      path: ''
-      type: 'docs'
+      path: ""
+      type: "docs"
     values:
       layout: default
   - scope:
-      path: ''
-      type: 'news'
+      path: ""
+      type: "news"
     values:
       layout: default
   - scope:
-      path: ''
-      type: 'cli_docs'
+      path: ""
+      type: "cli_docs"
     values:
       layout: default
   - scope:
-      path: ''
-      type: 'cli_tutorials'
+      path: ""
+      type: "cli_tutorials"
     values:
       layout: default
   - scope:
-      path: ''
-      type: 'legacy'
+      path: ""
+      type: "legacy"
     values:
       layout: default
   - scope:
-      path: ''
-      type: 'partners'
+      path: ""
+      type: "partners"
     values:
       layout: default
   - scope:
-      path: ''
-      type: 'partner_success_stories'
+      path: ""
+      type: "partner_success_stories"
     values:
       layout: default
   - scope:
-      path: ''
-      type: 'partner_api'
+      path: ""
+      type: "partner_api"
     values:
       layout: default
