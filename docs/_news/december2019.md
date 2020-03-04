@@ -1,6 +1,6 @@
 ---
 title: December 2019 Update
-order: 2
+order: 3
 layout: post
 redirect_from: /news/
 ---
