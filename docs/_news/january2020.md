@@ -1,6 +1,6 @@
 ---
 title: January 2020 Update
-order: 1
+order: 2
 layout: post
 redirect_from: /news/
 ---
