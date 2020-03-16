@@ -32,7 +32,7 @@ Before submitting your Zapier integration for review, make sure you are familiar
 * Provide an active demo account and login credentials, plus any other resources that might be needed to review your integration (e.g. login credentials to your product under [contact@zapier.com](mailto:contact@zapier.com) as the username/email and dummy credit card credentials used to test making purchases, if applicable to your integration). We test each trigger/action/search in your integration, so please provide us with access to the appropriate platforms and resources to do so.
 * Test early with real users. Use our [invite links to beta test](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations) the integration.
 * Enable backend services so they’re live and accessible during review.
-* Include detailed explanations of non-obvious features in the activation request notes, including supporting documentation where appropriate. If we cannot understand aspects of your integration during the review, we may reject it.
+* Include detailed explanations of non-obvious features in the publishing request notes, including supporting documentation where appropriate. If we cannot understand aspects of your integration during the review, we may reject it.
 * Focus on ease of use. If you haven’t yet, please read [How Zapier Works](https://zapier.com/help/how-zapier-works/) and set up a few Zaps to get a sense of the user experience.
 
 ## 1. General
@@ -56,7 +56,7 @@ Test your integration early and often, both internally and externally during the
 The terminology and features in your Zapier integration should be consistent with the terminology and features seen in your product's own UI. We strive to give users a consistent experience throughout Zapier, so your integration should also be consistent with the style used in other popular Zapier integrations. Be sure to follow [Zapier’s Branding and Design Guidelines](https://platform.zapier.com/partners/planning-guide#how-to-brand-your-zapier-integration) to ensure your integration suits the Zapier ecosystem well.
 
 ### 1.5 Valid Test Account
-The Zapier team verifies each trigger, action,and search in the integration to verify they function consistently with the platform. To do so, please set up a valid test account on your platform and share the test credentials with our team via the activation form. Further requirements for the test account are below:
+The Zapier team verifies each trigger, action,and search in the integration to verify they function consistently with the platform. To do so, please set up a valid test account on your platform and share the test credentials with our team via the publishing form. Further requirements for the test account are below:
 
 * Create the test account using [contact@zapier.com](mailto:contact@zapier.com), so we have access to the Forgot Password flow.
 * Make sure the account includes all the features enabled needed to test out each Zap step with any special configurations set. All paid/premium features required for testing should be unlocked.
@@ -97,10 +97,10 @@ Here are some further scenarios of what integrations are prohibited from the Zap
 * Integrations by developers who do not own the API used in the integration or who have not been given explicit permission by the owners of the API cannot be public.
 
 ### 2.2 Developer Information
-Ensure all information provided in the Activation form is accurate and up-to-date. This helps us reach out to the appropriate contacts when questions or support issues arise. 
+Ensure all information provided in the Publishing form is accurate and up-to-date. This helps us reach out to the appropriate contacts when questions or support issues arise. 
 
 #### 2.2.1 Homepage URL
-* The Homepage URL submitted via the Activation form should be the homepage URL of the application's marketing site.
+* The Homepage URL submitted via the Publishing form should be the homepage URL of the application's marketing site.
 
 ### 2.3 Replacement Integration
 The integration should not already have an equivalent that is Public in our App Directory. If you’re replacing an existing integration, check out the guide for [Replacing Your Zapier Integration](https://zapier.com/developer/documentation/v2/replacing-your-zapier-integration/).
@@ -458,10 +458,10 @@ If you are using the [Zapier CLI](https://platform.zapier.com/cli_docs/docs) to 
 
 ## After You Submit
 
-Once you’ve submitted your integration for public activation, you’re in the review process! Here are some things to keep in mind:
+Once you’ve submitted your integration for publishing, you’re in the review process! Here are some things to keep in mind:
 
 * **Timing**: A member of the Zapier team will examine your integration as soon as possible. However, if your integration is complex or presents new issues, it may require greater scrutiny and consideration. And remember if your integration is repeatedly rejected for the same guideline violation or you’ve attempted to manipulate the review process, review of your integration will take longer to complete.
-* **Status Updates**: A member of the Zapier team will be in touch as soon as possible to provide you feedback regarding your integration. In order to proceed to the next step of the Public Activation, you will need to respond back to our feedback.
+* **Status Updates**: A member of the Zapier team will be in touch as soon as possible to provide you feedback regarding your integration. In order to proceed to the next step of Publishing, you will need to respond back to our feedback.
 * **Early Access**: Get listed on Zapier’s website and give users early access to your integration. We do our best to try and launch your integration into Early Access as quickly as possible. Learn more [here](https://platform.zapier.com/partners/lifecycle-planning#3-enable-early-access).
 * **Full Launch**: We keep an eye on your integration and may invite you to work with us on an official launch campaign to spread the word further. Learn more [here](https://platform.zapier.com/partners/lifecycle-planning#4-launch-your-zapier-integration).
 

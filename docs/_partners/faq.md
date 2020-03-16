@@ -106,7 +106,7 @@ There are two solutions:
 
 The existing app uses an authentication type (like Basic Auth, API Key, or OAuth), and your new app uses a different authentication type. This is a pretty big change, because all of the accounts that your users have connected up will stop working for their Zaps.
 
-The typical solution is to take your new app and put it into "Invite Only" status, or submit it for "Public Activation", and then [contact us](mailto:partners@zapier.com) and ask us to "hide" the previous app. You can [learn more about the process of getting the new app deployed here.](https://zapier.com/developer/documentation/v2/migrating-your-zapier-integration/)
+The typical solution is to take your new app and put it into "Invite Only" status, or submit it for "Publishing", and then [contact us](mailto:partners@zapier.com) and ask us to "hide" the previous app. You can [learn more about the process of getting the new app deployed here.](https://zapier.com/developer/documentation/v2/migrating-your-zapier-integration/)
 
 ### Deduplication comparison for triggers errored
 
