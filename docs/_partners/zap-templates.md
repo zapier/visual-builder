@@ -21,7 +21,7 @@ They’re also a great way to promote your app, as your Zap Templates are featur
 
 Zap Templates can also be featured inside your site and content to help your users start using Zapier integrations. The more Zap Templates you create and the more users they have, the more likely they are to be featured. This helps your Zapier integration gain popularity and rise the ranks of the [Zapier Partner Program](https://zapier.com/platform/partner-program).
 
-You can create Zap Templates for any public Zapier integration, or for any integration that has applied for public activation. Once you apply for public activation for your integration, you will need to build at least 10 Zap Templates in the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) to help people start using your integration.
+You can create Zap Templates for any public Zapier integration, or for any integration that has applied for publishing. Once you apply for publishing your integration, you will need to build at least 10 Zap Templates in the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) to help people start using your integration.
 
 > Expected time to create a Zap Template: 10 minutes.
 
