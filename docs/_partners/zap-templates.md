@@ -95,7 +95,7 @@ Most dropdown menus are used to select folders, projects, and other user-generat
 
 ![Zap Template required fields](https://cdn.zapier.com/storage/photos/da280e25dbcb49ec47133874c0265e73.png)
 
-Zap Template action forms include _required for user_ and _optional for user_ fields. When users set up your Zap Template, they will see the required fields by default, and  _must_ fill them in before turning on the Zap. Try to map as many required input fields as possible. Then, less-critical fields will often be marked as optional, and are hidden by default when users set up the Zap Template. If you know the best data to map to those fields, add them to make sure your users' Zaps include as much detail as possible.
+Zap Template action forms include _required for user_ and _optional for user_ fields. When users set up your Zap Template, they will see the required fields by default, and _must_ fill them in before turning on the Zap. Try to map as many required input fields as possible. Then, less-critical fields will often be marked as optional, and are hidden by default when users set up the Zap Template. If you know the best data to map to those fields, add them to make sure your users' Zaps include as much detail as possible.
 
 > **Note**: Do not enter plain text into an action form field unless _every_ user of this Zap Template would want the text included in the action.
 
@@ -132,6 +132,7 @@ Alternately, leave the filter details blank and let users customize the filter t
 > **Note**: Most Zap Templates don’t need filters, and most filters should be added by users later if required. However, including a filter in a Zap Template can be useful if your Zap Template is only useful with a filter to remove extraneous data.
 
 <a id="shared-zaps-description"></a>
+
 ### 4. Add a Title and Description
 
 ![Zap Template Description](https://cdn.zapier.com/storage/photos/771335061cfa2e631707662981f7e7cb.png)
@@ -161,15 +162,15 @@ Replace the defaults with your trigger and action apps, the items Zapier watches
 Follow these rules in your Zap Template Titles:
 
 - **Start with an appropriate verb**. Zap Templates start with an action verb that describes what the Zap does in the action app, such as `Create`, `Add`, `Make`, `Insert`, `Update`, `Subscribe`, or `Get`. Use unique verbs when possible, and use the most appropriate verb for the action Zapier performs with the app. For example:
-    - Only use `Send` with messages, including emails and text messages
-    - Only use `Post` with social network or chat apps
-    - Only use `Log` or `Archive` with spreadsheet, database, or note-taking apps
+  - Only use `Send` with messages, including emails and text messages
+  - Only use `Post` with social network or chat apps
+  - Only use `Log` or `Archive` with spreadsheet, database, or note-taking apps
 - **Use sentence case**. Capitalize the first letter in the title and app names when appropriate.
-    - **Right:** `Create Trello cards for new Wufoo form entries`
-    - **Wrong:** `Create Trello Cards For New Wufoo Form Entries`
+  - **Right:** `Create Trello cards for new Wufoo form entries`
+  - **Wrong:** `Create Trello Cards For New Wufoo Form Entries`
 - **Use present tense and active voice**. Zaps automatically run for every new item in an app. The title should reflect that with active present tense.
-    - **Right:** `Get Slack notifications for new Google Drive files`
-    - **Wrong:** `Slack will notify you when a new Google Drive file is saved`
+  - **Right:** `Get Slack notifications for new Google Drive files`
+  - **Wrong:** `Slack will notify you when a new Google Drive file is saved`
 - **Always mention _new_ before trigger apps**. Zaps only run when new items are created in apps, and cannot take action for existing items. Emphasize that by including `new` in your title before the action app name.
 - **Make app items plural**. Zaps run on every new item in your trigger app, and will always create the related item in your action app(s). Always make the trigger and action items plural to emphasize that, such as `Google Sheets rows` or `Mailchimp subscribers`.
 - **Respect app name styles**. Make sure to use the same capitalization and spelling that the apps in your Zap use in their branding; double-check the app’s site or [Zapier’s integration list](https://zapier.com/help/service-documentation/).
@@ -192,7 +193,7 @@ Keep these guidelines in mind:
 
 > **Note**: Always write unique descriptions for each Zap Template—we will reject Zap Templates that use the same descriptions but only replace app names.
 
-***
+---
 
 Once you've written and added your Zap Template title and description, it's time to save and test your work. Select `Draft` from the _Zap Template Visibility_ menu and click the _Save_ button.
 
@@ -203,6 +204,7 @@ You should then try using the Zap Template to make sure it works as expected. Op
 Optionally, you can let your team help test Zap Templates as well. When saving your Zap Template, choose `Shared` instead of draft, then share its link with others on your team so they can try the Zap Template.
 
 <a id="submit-your-zap-templates"></a>
+
 ### 5. Submit Zap Template for Review
 
 Finally, when your Zap Template is ready for public release, select the `For review` option on your Zap Template Visibility menu, and click _Save_ again. That submits the Zap Template to our team to review the Zap Template and ensure it works as expected and meets our standards.
@@ -324,9 +326,9 @@ You can load templates asynchronously (without blocking the rest of your page's 
 
 You can use the widget within React with a class component that dynamically creates a script tag `onComponentDidMount` and sets the script src to the widget.js URL containing the necessary params. Additionally, the URL should contain a `html_id` param set to the id of an empty child element (div) rendered by the component. The script tag should then be inserted into the DOM by either:
 
-* Getting the container element by ID and appending the script
-* Using a ref={} in the component for a parent element that will contain the script
-* Appending the script to the document body
+- Getting the container element by ID and appending the script
+- Using a ref={} in the component for a parent element that will contain the script
+- Appending the script to the document body
 
 ### Support for Angular
 
@@ -351,37 +353,39 @@ With an empty `<div id="zapierhere"></div>` in your Component's template, your C
         this.el.appendChild(this.zapierScript)
       }
     }
+
 <small>[See a working example of this code here.](https://codesandbox.io/s/0p54mmr89n)</small>
 
 ## Embed Zapier Into Your App With Zapier Partner API
 
 The Zapier Partner API is for partners that wish to have more flexibility and control over a user's experience with Zapier within their product. With the Partner API, you can:
 
-* **Have complete style control** over how you present Zap templates in your product. The Partner API gives you access to the raw Zap Template data so you can give your users access to your Zap template with your product's style, look and feel.
-* **Get access to all your Zap templates** and give your users the ability to search to quickly find the one they need.
-* **Streamline Zap setup** by pre-filling fields on behalf of your users.
-* **Show users the Zaps they have** set up from right within your product keeping them on your site longer and giving them complete confidence in their Zapier integration.
+- **Have complete style control** over how you present Zap templates in your product. The Partner API gives you access to the raw Zap Template data so you can give your users access to your Zap template with your product's style, look and feel.
+- **Get access to all your Zap templates** and give your users the ability to search to quickly find the one they need.
+- **Streamline Zap setup** by pre-filling fields on behalf of your users.
+- **Show users the Zaps they have** set up from right within your product keeping them on your site longer and giving them complete confidence in their Zapier integration.
 
-This API is currently for approved partners only. If you'd like to use this API, [request access using this form](https://zapier.typeform.com/to/pO5cJ4).
+This API is currently for approved partners only. If you'd like to use this API, [request access using this form]({{ site.partner_api_invite_url }}).
 
 Want to better understand what you can achieve with the Partner API? See how other partners have used the API to create a [native Zapier integration for their users](https://zapier.com/developer/documentation/v2/zapier-api/#see-it-in-action-how-unbounce-uses-the-api).
 
 ### Authentication
 
-There are two ways to authenticate with the Partner API. 
+There are two ways to authenticate with the Partner API.
 
 1. Your application's `client_id` which you will receive once you are approved for access to the API
 2. A user's access token
 
-Which authentication method you should use depends on which endpoint(s) you are using. Review each endpoint's documentation to understand which parameters are required. 
+Which authentication method you should use depends on which endpoint(s) you are using. Review each endpoint's documentation to understand which parameters are required.
 
-> Note: while we do generate a `client_secret`, the type of grant we use (`implicit`) doesn't need it so it's not something we provide. 
+> Note: while we do generate a `client_secret`, the type of grant we use (`implicit`) doesn't need it so it's not something we provide.
 
 #### Access Token
 
 For resources that require a valid access token you can use the [OAuth2 protocol](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2). At the moment, we only permit the [`implicit`](https://tools.ietf.org/html/rfc6749#section-4.2) grant type. Should your use case require a different grant type [send us your request](mailto:partners@zapier.com).
 
 #### Procuring a Token
+
 Construct the following URL, and redirect the user to authorize your application:
 
 > `{% raw %}https://zapier.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}{% endraw %}`
@@ -423,14 +427,14 @@ Construct the following URL, and redirect the user to authorize your application
 {% endraw %}
 ```
 
-| Parameter | Requirement | Explanation     |
-| :-------------: | :---:| ------------- |
-| **client_id**       | Required | Your application ID.       |
-| **redirect_uri** | Required | The URI you provided in the sign-up form. If you need to modify this, you'll need to [send us a request](mailto:partners@zapier.com). |
-| **response_type** | Required | Use `token`.
-| **scope** | Optional | Space (`%20`) separated variable. See each resource for their required scope, if any. |
-| **approval_prompt** | Optional | One of `auto` or `force`. Use `auto` if the second authorization (before expiration of previous token) should not prompt the user to re-authorize. Use `force` if the user should authorize your application again.
-| **state** | Optional | A unique string to help your application guard against XSRF.
+|      Parameter      | Requirement | Explanation                                                                                                                                                                                                         |
+| :-----------------: | :---------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|    **client_id**    |  Required   | Your application ID.                                                                                                                                                                                                |
+|  **redirect_uri**   |  Required   | The URI you provided in the sign-up form. If you need to modify this, you'll need to [send us a request](mailto:partners@zapier.com).                                                                               |
+|  **response_type**  |  Required   | Use `token`.                                                                                                                                                                                                        |
+|      **scope**      |  Optional   | Space (`%20`) separated variable. See each resource for their required scope, if any.                                                                                                                               |
+| **approval_prompt** |  Optional   | One of `auto` or `force`. Use `auto` if the second authorization (before expiration of previous token) should not prompt the user to re-authorize. Use `force` if the user should authorize your application again. |
+|      **state**      |  Optional   | A unique string to help your application guard against XSRF.                                                                                                                                                        |
 
 ##### Example Prompt
 
@@ -441,30 +445,31 @@ Construct the following URL, and redirect the user to authorize your application
 If the user cancels, or approves the authorization the user will be redirected to your `redirect_uri` with the following example urls:
 
 **Approved**
+
 > `http://your.redirect.url/#access_token=iuqhw8egojqenduvybtoken_type=Bearer&expires_in=36000&scope=zap`
 
 **Cancelled**
-> `http://your.redirect.url/?error=access_denied`
 
+> `http://your.redirect.url/?error=access_denied`
 
 Your application should use JavaScript to parse the hash parameter and use the token as needed. The **access token will not expire**. If ever invalid, however, provide the user with the authorize flow once more. In the `implicit` grant type, there are no refresh tokens. You can use a hidden iframe with `approval_prompt=auto`, or ask the user to authorize once more, to receive new tokens.
 
-
 #### Using the token:
+
 Preferred use of the tokens is via an HTTP Authorization Header.
 
 > `{% raw %}curl -H "Authorization: Bearer {token}" "https://api.zapier.com/v1/zaps"{% endraw %}`
 
-
 ### Errors
+
 Zapier uses HTTP response codes to indicate the success or failure of an API request.
 
-Code | Status | Explanation
--------|----------|---------
- **200** | OK | Successful request.
- **403** | Authentication | Not authorized.
- **404** | Not Found | The resource requested was not found.
- **5xx** | Server Error | A fatal error occurred while processing the request. Try again.
+| Code    | Status         | Explanation                                                     |
+| ------- | -------------- | --------------------------------------------------------------- |
+| **200** | OK             | Successful request.                                             |
+| **403** | Authentication | Not authorized.                                                 |
+| **404** | Not Found      | The resource requested was not found.                           |
+| **5xx** | Server Error   | A fatal error occurred while processing the request. Try again. |
 
 All errors will be JSON object with a String array of errors:
 
@@ -479,9 +484,9 @@ All errors will be JSON object with a String array of errors:
 
 #### Zaps
 
-| URL | Protected By     | Required Scopes |
-| :-------------: | :-------------: | :---: |
-| **api.zapier.com/v1/zaps**      | Access Token       | `zap`
+|            URL             | Protected By | Required Scopes |
+| :------------------------: | :----------: | :-------------: |
+| **api.zapier.com/v1/zaps** | Access Token |      `zap`      |
 
 #### Notes
 
@@ -490,11 +495,12 @@ All errors will be JSON object with a String array of errors:
 2. If your app is built with the [Zapier CLI](https://github.com/zapier/zapier-platform-cli) the Zaps returned are for **any** version of your app.
 
 #### Arguments
+
 Available parameters to the Zaps resource:
 
-parameter | requirement | notes
------------|-------------|-------
-`{% raw %}params__{KEY}={VALUE}`{% endraw %} | Optional | Return Zaps that have a specific key/value set in the params (settings) of the Zap. **Note the `app` parameter must be included as well.**
+| parameter                                    | requirement | notes                                                                                                                                      |
+| -------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `{% raw %}params__{KEY}={VALUE}`{% endraw %} | Optional    | Return Zaps that have a specific key/value set in the params (settings) of the Zap. **Note the `app` parameter must be included as well.** |
 
 #### EXAMPLE REQUEST
 
@@ -624,15 +630,14 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
 
 #### The Zap Object
 
-attribute | type | notes
-------------|-------|-------
-**id** | Number | The ID of the Zap.
-**modified_at** | Date | The last modified date time.
-**state** | String | One of `'on'`, `'off'`, or `'draft'`
-**steps** | Array<Zap Step> | An array steps in the Zap. See below.
-**title** | String | The name of the Zap, if any, otherwise `null`.
-**url** | String | An absolute url to the Zap (to edit).
-
+| attribute       | type            | notes                                          |
+| --------------- | --------------- | ---------------------------------------------- |
+| **id**          | Number          | The ID of the Zap.                             |
+| **modified_at** | Date            | The last modified date time.                   |
+| **state**       | String          | One of `'on'`, `'off'`, or `'draft'`           |
+| **steps**       | Array<Zap Step> | An array steps in the Zap. See below.          |
+| **title**       | String          | The name of the Zap, if any, otherwise `null`. |
+| **url**         | String          | An absolute url to the Zap (to edit).          |
 
 ```
 {% raw %}
@@ -649,11 +654,10 @@ attribute | type | notes
 
 #### The Zap Step Object
 
-attribute | type | notes
-------------|-------|-------
-**type_of** | String | One of `'read'`, `'write'`, `'filter'`, `'search'`, or `'search_or_write'`
-**app** | App | The app for the step. See below.
-
+| attribute   | type   | notes                                                                      |
+| ----------- | ------ | -------------------------------------------------------------------------- |
+| **type_of** | String | One of `'read'`, `'write'`, `'filter'`, `'search'`, or `'search_or_write'` |
+| **app**     | App    | The app for the step. See below.                                           |
 
 ```
 {% raw %}
@@ -664,25 +668,22 @@ attribute | type | notes
 {% endraw %}
 ```
 
-
-
 ### Zap Templates
 
-| URL | Protected By     |
-| :-------------: | :-------------: |
-| **api.zapier.com/v1/zap-templates**      | Client ID       |
-
+|                 URL                 | Protected By |
+| :---------------------------------: | :----------: |
+| **api.zapier.com/v1/zap-templates** |  Client ID   |
 
 #### Arguments
+
 Available parameters to the Zap templates resource:
 
-parameter | requirement | notes
------------|-------------|-------
-**client_id** | Required | Your application client ID.
-**templates** | Optional | A comma separated list of specific Zap templates.
-**apps** | Optional | A comma separated list of Zapier Apps to match Zap templates against. **Note: Your app will always be one of the apps.**
-**limit** | Optional | (defaults to 5, max of 100) Limit the number of Zap templates returned.
-
+| parameter     | requirement | notes                                                                                                                    |
+| ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **client_id** | Required    | Your application client ID.                                                                                              |
+| **templates** | Optional    | A comma separated list of specific Zap templates.                                                                        |
+| **apps**      | Optional    | A comma separated list of Zapier Apps to match Zap templates against. **Note: Your app will always be one of the apps.** |
+| **limit**     | Optional    | (defaults to 5, max of 100) Limit the number of Zap templates returned.                                                  |
 
 #### Example Requests
 
@@ -759,22 +760,21 @@ curl -L "https://api.zapier.com/v1/zap-templates?client_id=${client_id}&apps=mai
 
 Lookup a user's Zap templates that they've added (published or draft). **Note: We are limiting this endpoint to partners. This means that you will only see results for Zap templates that include your app in one of the steps.**
 
-| URL | Protected By     | Required Scopes |
-| :-------------: | :-------------: | :---: |
-| **api.zapier.com/v1/zap-templates/me**      | Client ID, Access Token       | `templates`
-
+|                  URL                   |      Protected By       | Required Scopes |
+| :------------------------------------: | :---------------------: | :-------------: |
+| **api.zapier.com/v1/zap-templates/me** | Client ID, Access Token |   `templates`   |
 
 #### Arguments
+
 Available parameters to the Zap templates resource:
 
-parameter | requirement | notes
------------|-------------|-------
-**client_id** | Required | Your application client ID.
-**templates** | Optional | A comma separated list of specific Zap templates.
-**apps** | Optional | A comma separated list of Zapier Apps to match Zap templates against. **Note: Your app will always be one of the apps.**
-**limit** | Optional | (defaults to 5, max of 100) Limit the number of Zap templates returned.
-**status** | Optional | (defaults to `published`) Filter by specific status of a Zap template. Available statuses: `draft` and `published`.
-
+| parameter     | requirement | notes                                                                                                                    |
+| ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **client_id** | Required    | Your application client ID.                                                                                              |
+| **templates** | Optional    | A comma separated list of specific Zap templates.                                                                        |
+| **apps**      | Optional    | A comma separated list of Zapier Apps to match Zap templates against. **Note: Your app will always be one of the apps.** |
+| **limit**     | Optional    | (defaults to 5, max of 100) Limit the number of Zap templates returned.                                                  |
+| **status**    | Optional    | (defaults to `published`) Filter by specific status of a Zap template. Available statuses: `draft` and `published`.      |
 
 #### Example Requests
 
@@ -857,18 +857,17 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zap-templa
 
 #### The Zap Template Object
 
-attribute | type | notes
-------------|-------|-------
-**create_url** | String | An absolute URL used to create the Zap.
-**description** | String | The HTML-rendered description provided when the Zap template was created.
-**description_plain** | String | Plain text (HTML tags stripped) description. **Note: `\r` and `\n` replaced with space character. Artifacts may be present.**
-**description_raw** | String | The [Markdown][markdown] description provided when the Zap template was created.
-**slug** | String | A URL/SEO friendly ID for the Zap template.
-**steps** | Array<App> | An array of two or more steps in the Zap template. See below.
-**title** | String | The name of the Zap template.
-**status** | String | The status of the Zap template (choices: `draft`, `published`).
-**url** | String | An absolute url to the Zapbook Zap template Page.
-
+| attribute             | type       | notes                                                                                                                         |
+| --------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **create_url**        | String     | An absolute URL used to create the Zap.                                                                                       |
+| **description**       | String     | The HTML-rendered description provided when the Zap template was created.                                                     |
+| **description_plain** | String     | Plain text (HTML tags stripped) description. **Note: `\r` and `\n` replaced with space character. Artifacts may be present.** |
+| **description_raw**   | String     | The [Markdown][markdown] description provided when the Zap template was created.                                              |
+| **slug**              | String     | A URL/SEO friendly ID for the Zap template.                                                                                   |
+| **steps**             | Array<App> | An array of two or more steps in the Zap template. See below.                                                                 |
+| **title**             | String     | The name of the Zap template.                                                                                                 |
+| **status**            | String     | The status of the Zap template (choices: `draft`, `published`).                                                               |
+| **url**               | String     | An absolute url to the Zapbook Zap template Page.                                                                             |
 
 ```
 {% raw %}
@@ -886,14 +885,13 @@ attribute | type | notes
 {% endraw %}
 ```
 
-
 ### `create_url` and Prefill Options
 
 Always link the user with the `create_url` in order to create the Zap. Optionally, you can add additional parameters to the `create_url` so that the user's Zap is prefilled with the provided custom values. You will need to know the fields that your app requires per step.
 
- > One tip is to use the [Zap template editor](https://zapier.com/developer/shared-zaps/) to find these fields.
+> One tip is to use the [Zap template editor](https://zapier.com/developer/shared-zaps/) to find these fields.
 
- Each parameter is in a flattened dictionary/object syntax. For example an object: `{a: {b: 2}}` would be flattened to: `a__b=2`. This allows you to provide countless prefills onbehalf of the user.
+Each parameter is in a flattened dictionary/object syntax. For example an object: `{a: {b: 2}}` would be flattened to: `a__b=2`. This allows you to provide countless prefills onbehalf of the user.
 
 #### Example
 
@@ -911,18 +909,17 @@ If you'd like to provide a label for the value (e.g. a Board's name) you can do 
 
 ![](https://cdn.zapier.com/storage/photos/86b71a90bc69e5b13024c08f1da4b812.png)
 
-
 #### The App Object
 
-attribute | type | notes
-----------|------|-------
-**description** | String | Plain text description of the app.
-**hex_color** | String | A Web Color Hex. Useful for icon/display background.
-**image** | String | The app's logo in large format.
-**images** | Object | Thumbnails for the app image. <br><small>Available sizes (and respective keys):<br> `url_128x128`, `url_64x64`, `url_32x32`, and `url_16x16`.</small>
-**slug** | String | A URL/SEO friendly ID for the app.
-**title** | String | The name of the app.
-**url** | String | An absolute url to the Zapbook Apps page.
+| attribute       | type   | notes                                                                                                                                                 |
+| --------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **description** | String | Plain text description of the app.                                                                                                                    |
+| **hex_color**   | String | A Web Color Hex. Useful for icon/display background.                                                                                                  |
+| **image**       | String | The app's logo in large format.                                                                                                                       |
+| **images**      | Object | Thumbnails for the app image. <br><small>Available sizes (and respective keys):<br> `url_128x128`, `url_64x64`, `url_32x32`, and `url_16x16`.</small> |
+| **slug**        | String | A URL/SEO friendly ID for the app.                                                                                                                    |
+| **title**       | String | The name of the app.                                                                                                                                  |
+| **url**         | String | An absolute url to the Zapbook Apps page.                                                                                                             |
 
 ```
 {% raw %}
@@ -945,20 +942,20 @@ attribute | type | notes
 
 ### Changelog
 
-| Date  | Resource | Change |
-| :---: | :-----:| ---- |
-| 2017-11-01 | All endpoints with access token protection | After security review, the access tokens granted **will no longer expire**. This may change in the future, however, based on endpoints provided by the API. In that event, we expect API consumers to provide the user with the authorize endpoint to get a fresh access token.
-| 2017-10-16 | `/zaps` | The endpoint will now return **all** Zaps regardless of the [Zapier CLI App's version](https://github.com/zapier/zapier-platform-cli) that was used when creating the Zap.
+|    Date    |                  Resource                  | Change                                                                                                                                                                                                                                                                          |
+| :--------: | :----------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2017-11-01 | All endpoints with access token protection | After security review, the access tokens granted **will no longer expire**. This may change in the future, however, based on endpoints provided by the API. In that event, we expect API consumers to provide the user with the authorize endpoint to get a fresh access token. |
+| 2017-10-16 |                  `/zaps`                   | The endpoint will now return **all** Zaps regardless of the [Zapier CLI App's version](https://github.com/zapier/zapier-platform-cli) that was used when creating the Zap.                                                                                                      |
 
-### See it in Action: How Unbounce Uses the API 
+### See it in Action: How Unbounce Uses the API
 
-The API allows for so much flexibility that it can be challenging to picture the end result. Here's how lead generation app, Unbounce, built Zapier integrations into the Unbounce UI. The end result? A seamless integration experience for their users who can now connect their new Unbounce leads to hundreds of apps right from their Unbounce dashboard. 
+The API allows for so much flexibility that it can be challenging to picture the end result. Here's how lead generation app, Unbounce, built Zapier integrations into the Unbounce UI. The end result? A seamless integration experience for their users who can now connect their new Unbounce leads to hundreds of apps right from their Unbounce dashboard.
 
-Now when Unbounce users are logged in, there's a slew of Zapier-powered integrations alongside their forms. 
+Now when Unbounce users are logged in, there's a slew of Zapier-powered integrations alongside their forms.
 
 ![](https://cdn.zapier.com/storage/photos/9e769e34030c2bbcf2fb80b827d69c22.png)
 
-When a user chooses an integration, pop-up Zap Template guides the user through setting up that Zap, with info from Unbounce pre-filled like the form, client, landing page - anything already known about the Unbounce form. 
+When a user chooses an integration, pop-up Zap Template guides the user through setting up that Zap, with info from Unbounce pre-filled like the form, client, landing page - anything already known about the Unbounce form.
 
 ![](https://cdn.zapier.com/storage/photos/edcf17488c8250dca213ed2083846fc5.png)
 
@@ -974,4 +971,4 @@ Then, once that Zap is set up and turned on, it's right there in Unbounce, where
 
 ### Ready to get started?
 
-[Request an API Key](https://zapier.typeform.com/to/pO5cJ4) for your app's Zapier integration.
+[Request an API Key]({{ site.partner_api_invite_url }}) for your app's Zapier integration.
