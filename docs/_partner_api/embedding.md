@@ -55,7 +55,7 @@ To provide us a list of unique domains you'll embed Zapier in:
 
 - if you've already embedded our Product, you're in luck! We should have already captured this and have permitted your product domains. Should we have missed any, please [reach out to us](mailto:partners@zapier.com) so we can add your domain.
 - else if you've already applied for a Partner API access: contact [partners@zapier.com](mailto:partners@zapier.com) and include the domains you'd like to register.
-- otherwise, when you [apply for the Partner API access](https://zapier.typeform.com/to/pO5cJ4) you'll have the opportunity to supply us the embedding domains inside of the form.
+- otherwise, when you [apply for the Partner API access]({{ site.partner_api_invite_url }}) you'll have the opportunity to supply us the embedding domains inside of the form.
 
 Common Questions:
 
