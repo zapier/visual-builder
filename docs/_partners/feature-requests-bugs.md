@@ -17,11 +17,13 @@ Keep these guidelines in mind as you maintain your Zapier integration:
 
 ![Update Zapier integration details](https://cdn.zapier.com/storage/photos/1075ef17df9d18db368adaed7e1d24bc.png)
 
-The easiest thing to change is your app's name, description, logo, and category. You can update those anytime for any Zapier integration in the [Zapier Platform site](https://zapier.com/app/developer). Select your app integration, click the gear icon near its name, then update the app details as needed.
+You can update your app's name, description, logo, and category anytime in the [Zapier Platform site](https://zapier.com/app/developer). Select your app integration, click the gear icon near its name, then update the app details as needed.
 
 If you built your app using Zapier Platform CLI, you can also update the app name and description from the integration bundle's `package.json` file. You will still need to use the [Zapier Platform site](https://zapier.com/app/developer) to update your app icon and category.
 
-You may update app branding whenever needed without re-submitting your app to Zapier for approval. However, do always follow [Zapier's branding guidelines](https://platform.zapier.com/partners/planning-guide) whenever updating app branding.
+If your app is public, you'll then need to [send us a request](mailto:partners@zapier.com) to publish those changes.
+
+Please make sure to follow [Zapier's branding guidelines](https://platform.zapier.com/partners/planning-guide) whenever updating app branding.
 
 ## How to Monitor Feature Requests and Bugs
 
