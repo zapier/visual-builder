@@ -5,6 +5,7 @@ layout: post-toc
 redirect_from: /cli-docs/
 ---
 
+<!-- AUTO GENERATED, DO NOT EDIT -->
 
 # Zapier CLI Reference
 
@@ -20,203 +21,121 @@ $ npm install -g zapier-platform-cli
 
 ## analytics
 
-> Shows the status of the analytics that are collected. Also used to change what is collected.
+> Show the status of the analytics that are collected. Also used to change what is collected.
 
 **Usage**: `zapier analytics`
 
 **Flags**
+
 * `-m, --mode` | Choose how much information to share. Anonymous mode drops the OS type and Zapier user id, but keeps command info. Identifying information is used only for debugging purposes. One of `[enabled | anonymous | disabled]`.
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Show extra debugging output.
 
 **Examples**
 * `zapier analytics --mode enabled`
 
 
-## apps
-
-> Lists any apps that you have admin access to.
-
-**Usage**: `zapier apps`
-
-This command also checks the current directory for a linked app.
-
-**Flags**
-* `-f, --format` | undefined One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
-
-
 ## build
 
-  > Builds a pushable zip from the current directory.
+> Build a pushable zip from the current directory.
 
-  **Usage:** `zapier build`
+**Usage**: `zapier build`
 
-
-Builds a ready-to-upload zip file, but does not upload / push the zip file. Generally you'd use `zapier push` which does this and `zapier upload` together.
-
-It does the following steps:
+This command does the following:
 
 * Creates a temporary folder
+
 * Copies all code into the temporary folder
-* Adds an entry point `zapierwrapper.js`
+
+* Adds an entry point: `zapierwrapper.js`
+
 * Generates and validates app definition.
-* Detects dependencies via browserify (optional)
+
+* Detects dependencies via browserify (optional, on by default)
+
 * Zips up all needed `.js` files. If you want to include more files, add a "includeInBuild" property (array with strings of regexp paths) to your `.zapierapprc`.
-* Moves the zip to `build/build.zip` and `build/source.zip`
 
-> If you get live errors like `Error: Cannot find module 'some-path'`, try disabling dependency detection.
+* Moves the zip to `build/build.zip` and `build/source.zip` and deletes the temp folder
 
-**Arguments**
+This command is typically followed by `zapier upload`.
 
-
-* `--disable-dependency-detection` -- _optional_, disables walking required files to slim the build
-* `--include-js-map` -- _optional_, include .js.map files (usually source maps)
-
-```bash
-$ zapier build
-# Building project.
-#
-#   Copying project to temp directory - done!
-#   Installing project dependencies - done!
-#   Applying entry point file - done!
-#   Validating project - done!
-#   Building app definition.json - done!
-#   Zipping project and dependencies - done!
-#   Cleaning up temp directory - done!
-#
-# Build complete!
-```
-
-
-## collaborate
-
-  > Manage the admins on your project. Can optionally --remove.
-
-  **Usage:** `zapier collaborate [user@example.com]`
-
-
-Give any user registered on Zapier the ability to collaborate on your app. Commonly, this is useful for teammates, contractors, or other developers who might want to make changes on your app. Only admin access is supported. If you'd only like to provide read-only or testing access, try `zapier invite`.
-
-**Arguments**
-
-* _none_ -- print all admins
-* `email [user@example.com]` -- _optional_, which user to add/remove
-* `--remove` -- _optional_, elect to remove this user
-* `--format={plain,json,raw,row,table}` -- _optional_, display format. Default is `table`
-* `--help` -- _optional_, prints this help text
-* `--debug` -- _optional_, print debug API calls and tracebacks
-
-```bash
-$ zapier collaborate
-# The admins on your app "Example" listed below.
-#
-# ┌──────────────────┬───────┬──────────┐
-# │ Email            │ Role  │ Status   │
-# ├──────────────────┼───────┼──────────┤
-# │ user@example.com │ admin │ accepted │
-# └──────────────────┴───────┴──────────┘
-
-$ zapier collaborate user@example.com
-# Preparing to add admin user@example.com to your app "Example".
-#
-#   Adding user@example.com - done!
-#
-# Admins updated! Try viewing them with `zapier collaborate`.
-
-$ zapier collaborate user@example.com --remove
-# Preparing to remove admin user@example.com from your app "Example".
-#
-#   Removing user@example.com - done!
-#
-# Admins updated! Try viewing them with `zapier collaborate`.
-```
+**Flags**
+* `--disable-dependency-detection` | Disable "smart" file inclusion. By default, Zapier only includes files that are required by `index.js`. If you (or your dependencies) require files dynamically (such as with `require(someVar)`), then you may see "Cannot find module" errors. Disabling this may make your `build.zip` too large. If that's the case, try using the `includeInBuild` option in your `.zapierapprc`. See the docs about `includeInBuild` for more info.
+* `-d, --debug` | Show extra debugging output.
 
 
 ## convert
 
-  > Converts a Legacy Web Builder or Visual Builder app to a CLI app.
+> Convert a Legacy Web Builder app or Visual Builder integration to a CLI integration.
 
-  **Usage:** `zapier convert appid path`
+**Usage**: `zapier convert INTEGRATIONID PATH`
 
+If you're converting a **Legacy Web Builder** app: the new integration will have a dependency named zapier-platform-legacy-scripting-runner, a shim used to simulate behaviors that are specific to Legacy Web Builder. There could be differences on how the shim simulates and how Legacy Web Builder actually behaves on some edge cases, especially you have custom scripting code.
 
-Creates a new CLI app from an existing app.
+If you're converting a **Visual Builder** app, then it will be identical and ready to push and use immediately!
 
-If you're converting a **Legacy Web Builder** app: the new app contains code stubs only. It is supposed to get you started - it isn't going to create a complete app!
+If you re-run this command on an existing directory it will leave existing files alone and not clobber them.
 
-After running this, you'll have a new app in your directory, with stubs for your trigger and actions.  If you re-run this command on an existing directory it will leave existing files alone and not clobber them.
-
-Once you've run the command, make sure to run `zapier push` to see it in the editor.
-
-If you're converting a **Visual Builder** app, then it will be identical and ready to push and use immediately! You'll need to do a `zapier push` before the new version is visible in the editor, but otherwise you're good to go.
+You'll need to do a `zapier push` before the new version is visible in the editor, but otherwise you're good to go.
 
 **Arguments**
+* (required) `integrationId` | To get the integration/app ID, go to "https://zapier.com/app/developer", click on an integration, and copy the number directly after "/app/" in the URL.
+* (required) `path` | Relative to your current path - IE: `.` for current directory.
 
-* `appid [value]` -- **required**, Get the appid from "https://zapier.com/app/developer", clicking on an integration, and taking the number after "/app" in the url.
-* `location [value]` -- **required**, Relative to your current path - IE: `.` for current directory
-* `--version=1.0.0` -- _optional_, Convert a specific version. Required when converting a Visual Builder app
-
-```bash
-$ zapier convert 1234 .
-# Let's convert your app!
-#
-#   Downloading app from Zapier - done!
-#   Writing triggers/trigger.js - done!
-#   Writing package.json - done!
-#   Writing index.js - done!
-#   Copy ./index.js - done!
-#   Copy ./package.json - done!
-#   Copy ./triggers/trigger.js - done!
-#
-# Finished! You might need to `npm install` then try `zapier test`!
-```
+**Flags**
+* `-v, --version` | Convert a specific version. Required when converting a Visual Builder integration.
+* `-d, --debug` | Show extra debugging output.
 
 
-## delete
+## delete:integration
 
-  > Delete a version of your app (or the whole app) as long as it has no users/Zaps.
+> Delete your integration (including all versions).
 
-  **Usage:** `zapier delete version 1.0.0`
+**Usage**: `zapier delete:integration`
+
+This only works if there are no active users or Zaps on any version. If you only want to delete certain versions, use the `zapier delete:version` command instead. It's unlikely that you'll be able to run this on an app that you've pushed publicly, since there are usually still users.
+
+**Flags**
+* `-d, --debug` | Show extra debugging output.
+
+**Aliases**
+* `delete:app`
 
 
-A utility to allow deleting app versions that aren't used.
+## delete:version
 
-> The app version needs to have no users/Zaps in order to be deleted.
+> Delete a specific version of your integration.
+
+**Usage**: `zapier delete:version VERSION`
+
+This only works if there are no users or Zaps on that version. You will probably need to have run `zapier migrate` and `zapier deprecate` before this command will work.
 
 **Arguments**
+* (required) `version` | Specify the version to delete. It must have no users or Zaps.
 
-* `appOrVersion [{app,version}]` -- **required**, delete the whole app, or just a version?
-* `version [1.0.0]` -- _optional_, the version to delete
-
-
-```bash
-$ zapier delete version 1.0.0
-# Preparing to delete version 1.0.0 of your app "Example".
-#
-#   Deleting 1.0.0 - done!
-#   Deletion successful!
-```
+**Flags**
+* `-d, --debug` | Show extra debugging output.
 
 
 ## deprecate
 
-> Marks a non-production version of your app as deprecated, with removal by a certain date.
+> Mark a non-production version of your integration as deprecated, with removal by a certain date.
 
 **Usage**: `zapier deprecate VERSION DATE`
 
-Use this when an app version will not be supported or start breaking at a known date.
+Use this when an integration version will not be supported or start breaking at a known date.
 
 Zapier will send an email warning users of the deprecation once a date is set, they'll start seeing it as "Deprecated" in the UI, and once the deprecation date arrives, if the Zaps weren't updated, they'll be paused and the users will be emailed again explaining what happened.
 
-After the deprecation date has passed it will be safe to delete that app version.
+After the deprecation date has passed it will be safe to delete that integration version.
 
-> Do not use this if you have non-breaking changes, such as fixing help text.
+Do not use this if you have non-breaking changes, such as fixing help text.
 
 **Arguments**
 * (required) `version` | The version to deprecate.
 * (required) `date` | The date (YYYY-MM-DD) when Zapier will make the specified version unavailable.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Show extra debugging output.
 
 **Examples**
 * `zapier deprecate 1.2.3 2011-10-01`
@@ -224,393 +143,182 @@ After the deprecation date has passed it will be safe to delete that app version
 
 ## describe
 
-  > Describes the current app.
+> Describe the current integraiton.
 
-  **Usage:** `zapier describe`
+**Usage**: `zapier describe`
 
+This command prints a human readable enumeration of your integrations's
 
-Prints a human readable enumeration of your app's triggers, searches, and actions as seen by Zapier. Useful to understand how your resources convert and relate to different actions.
+triggers, searches, and creates as seen by Zapier. Useful to understand how your
 
-> These are the same actions we'd display in our editor!
+resources convert and relate to different actions.
 
-* `Noun` -- your action's noun
-* `Label` -- your action's label
-* `Resource` -- the resource (if any) this action is tied to
-* `Available Methods` -- testable methods for this action
+* **Noun**: your action's noun
 
-**Arguments**
+* **Label**: your action's label
 
+* **Resource**: the resource (if any) this action is tied to
 
+* **Available Methods**: testable methods for this action
 
-* `--format={plain,json,raw,row,table}` -- _optional_, display format. Default is `table`
-* `--help` -- _optional_, prints this help text
-* `--debug` -- _optional_, print debug API calls and tracebacks
-
-```bash
-$ zapier describe
-# A description of your app "Example" listed below.
-#
-# Triggers
-#
-# ┌────────────┬────────────────────┬──────────────┬───────────────────────────────────────────────┐
-# │ Noun       │ Label              │ Resource Ref │ Available Methods                             │
-# ├────────────┼────────────────────┼──────────────┼───────────────────────────────────────────────┤
-# │ Member     │ Updated Subscriber │ member       │ triggers.updated_member.operation.perform     │
-# │            │                    │              │ triggers.updated_member.operation.inputFields │
-# │            │                    │              │ resources.member.list.operation.perform       │
-# │            │                    │              │ resources.member.list.operation.inputFields   │
-# └────────────┴────────────────────┴──────────────┴───────────────────────────────────────────────┘
-#
-# Searches
-#
-#  Nothing found for searches, maybe try the `zapier scaffold` command?
-#
-# Creates
-#
-#  Nothing found for creates, maybe try the `zapier scaffold` command?
-#
-# If you'd like to add more, try the `zapier scaffold` command to kickstart!
-```
+**Flags**
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
 
 
 ## env:get
 
-  > Get environment variables for a version.
+> Get environment variables for a version.
 
-**Usage:** `zapier env:get VERSION`
+**Usage**: `zapier env:get VERSION`
 
 **Arguments**
-
 * (required) `version` | The version to get the environment for.
 
 **Flags**
-
-*  `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
-*  `-d, --debug` | Show extra debugging output.
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
 
 **Examples**
-
 * `zapier env:get 1.2.3`
 
 
 ## env:set
 
-  > Set environment variables for a version.
+> Set environment variables for a version.
 
-**Usage:** `zapier env:set VERSION [KEY-VALUE PAIRS...]`
+**Usage**: `zapier env:set VERSION [KEY-VALUE PAIRS...]`
 
 **Arguments**
-
 * (required) `version` | The version to set the environment for. Values are copied forward when a new version is created, but this command will only ever affect the specified version.
-* `key-value pairs...` | The key-value pairs to set. Keys are case-insensitive. Each pair should be space separated and pairs should be separated by an `=`. For example: `A=123 B=456`.
+* `key-value pairs...` | The key-value pairs to set. Keys are case-insensitive. Each pair should be space separated and pairs should be separated by an `=`. For example: `A=123 B=456`
 
 **Flags**
-
-*  `-d, --debug` | Show extra debugging output.
+* `-d, --debug` | Show extra debugging output.
 
 **Examples**
-
 * `zapier env:set 1.2.3 SECRET=12345 OTHER=4321`
 
 
 ## env:unset
 
-  > Unset environment variables for a version.
+> Unset environment variables for a version.
 
-**Usage:** `zapier env:unset VERSION [KEYS...]`
+**Usage**: `zapier env:unset VERSION [KEYS...]`
 
 **Arguments**
-
 * (required) `version` | The version to set the environment for.
 * `keys...` | The keys to unset. Keys are case-insensitive.
 
 **Flags**
-
-*  `-d, --debug` | Show extra debugging output.
+* `-d, --debug` | Show extra debugging output.
 
 **Examples**
-
 * `zapier env:unset 1.2.3 SECRET OTHER`
-
-
-## help
-
-  > Lists all the commands you can use.
-
-  **Usage:** `zapier help [command]`
-
-
-Prints documentation to the terminal screen.
-
-Generally - the `zapier` command works off of two files:
-
- * ~/.zapierrc      (home directory identifies the deploy key & user)
- * ./.zapierapprc   (current directory identifies the app)
-
-The `zapier login` and `zapier register "Example"` or `zapier link` commands will help manage those files. All commands listed below.
-
-**Arguments**
-
-* _none_ -- print all commands
-* `cmd [value]` -- _optional_, the command to view docs for
-* `--format={plain,json,raw,row,table}` -- _optional_, display format. Default is `table`
-* `--help` -- _optional_, prints this help text
-* `--debug` -- _optional_, print debug API calls and tracebacks
-
-```bash
-$ zapier help apps
-$ zapier help scaffold
-$ zapier help
-# Usage: zapier COMMAND [command-specific-arguments] [--command-specific-options]
-#
-# ┌─────────────┬───────────────────────────────────────┬────────────────────────────────────────────────────────────────────────────┐
-# │ Command     │ Example                               │ Help                                                                       │
-# ├─────────────┼───────────────────────────────────────┼────────────────────────────────────────────────────────────────────────────┤
-# │ apps        │ zapier apps                           │ Lists all the apps you can access.                                         │
-# │ build       │ zapier build                          │ Builds a uploadable zip from the current directory.                        │
-# │ collaborate │ zapier collaborate [user@example.com] │ Manage the admins on your project. Can optionally --remove.         │
-# │ push        │ zapier push                           │ Build and upload the current app - does not promote.                       │
-# │ deprecate   │ zapier deprecate 1.0.0 2017-01-20     │ Mark a non-production version of your app as deprecated by a certain date. │
-# │ describe    │ zapier describe                       │ Describes the current app.                                                 │
-# │ env         │ zapier env 1.0.0 CLIENT_SECRET 12345  │ Read and write environment variables.                                      │
-# │ help        │ zapier help [command]                 │ Lists all the commands you can use.                                        │
-# │ history     │ zapier history                        │ Prints all recent history for your app.                                    │
-# │ init        │ zapier init path                      │ Initializes a new zapier app in a directory.                               │
-# │ invite      │ zapier invite [user@example.com]      │ Manage the invitees/testers on your project. Can optionally --remove.      │
-# │ link        │ zapier link                           │ Link the current directory to an app you have access to.                   │
-# │ login       │ zapier login                          │ Configure your `~/.zapierrc` with a deploy key.                            │
-$ │ logout      │ zapier logout                         │ Deactivates all your personal deploy keys and resets `~/.zapierrc`.        │
-# │ logs        │ zapier logs                           │ Prints recent logs. See help for filter arguments.                         │
-# │ migrate     │ zapier migrate 1.0.0 1.0.1 [10%]      │ Migrate users from one version to another.                                 │
-# │ promote     │ zapier promote 1.0.0                  │ Promotes a specific version to public access.                              │
-# │ register    │ zapier register "Example"             │ Registers a new app in your account.                                       │
-# │ scaffold    │ zapier scaffold resource "Contact"    │ Adds a starting resource, trigger, action or search to your app.           │
-# │ test        │ zapier test                           │ Tests your app via `npm test`.                                             │
-# │ upload      │ zapier upload                         │ Upload the last build as a version.                                        │
-# │ validate    │ zapier validate                       │ Validates the current project.                                             │
-# │ versions    │ zapier versions                       │ Lists all the versions of the current app.                                 │
-# └─────────────┴───────────────────────────────────────┴────────────────────────────────────────────────────────────────────────────┘
-```
 
 
 ## history
 
-> Gets the history of your app.
+> Get the history of your integration.
 
 **Usage**: `zapier history`
 
-History includes all the changes made over the lifetime of your app. This includes everything from creation, updates, migrations, admins, and invitee changes, as well as who made the change and when.
+History includes all the changes made over the lifetime of your integration. This includes everything from creation, updates, migrations, admins, and invitee changes, as well as who made the change and when.
 
 **Flags**
-* `-f, --format` | undefined One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
 
 
-## init
+## integrations
 
-> Initializes a new Zapier app. Optionally uses a template.
+> List integrations you have admin access to.
 
-**Usage**: `zapier init PATH`
+**Usage**: `zapier integrations`
 
-After running this, you'll have a new example app in your directory. If you re-run this command on an existing directory it will leave existing files alone and not clobber them.
-
-> Note: this doesn't register or deploy the app with Zapier - try the `zapier register` and `zapier push` commands for that!
-
-**Arguments**
-* (required) `path` | Where to create the new app. If the directory doesn't exist, it will be created. If the directory isn't empty, we'll ask for confirmation
+This command also checks the current directory for a linked integration.
 
 **Flags**
-* `-t, --template` | The template to start your app with. One of `[minimal | trigger | search | create | basic-auth | custom-auth | digest-auth | oauth2 | oauth1-trello | oauth1-tumblr | oauth1-twitter | session-auth | dynamic-dropdown | files | middleware | resource | rest-hooks | search-or-create | babel | typescript | github | onedrive]`. Defaults to `minimal`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
 
-**Examples**
-* `zapier init ./some/path`
-* `zapier init . --template typescript`
-
-
-## invite
-
-  > Manage the invitees/testers on your project. Can optionally specify a version or --remove.
-
-  **Usage:** `zapier invite [user@example.com] [1.0.0]`
-
-
-Invite any user registered on Zapier to test your app. Commonly, this is useful for teammates, contractors, or other team members who might want to test, QA, or view your app versions. If you'd like to provide full admin access, try `zapier collaborate`.
-
-> Send an email directly, which contains a one-time use link for them only - or share the public URL to "bulk" invite folks!
-
-**Arguments**
-
-* _none_ -- print all invitees
-* `email [user@example.com]` -- _optional_, which user to add/remove
-* `version [1.0.0]` -- _optional_, only invite to a specific version
-* `--remove` -- _optional_, elect to remove this user
-* `--format={plain,json,raw,row,table}` -- _optional_, display format. Default is `table`
-* `--help` -- _optional_, prints this help text
-* `--debug` -- _optional_, print debug API calls and tracebacks
-
-```bash
-$ zapier invite
-# The invitees on your app listed below.
-
-# ┌───────────────────┬──────────┬──────────┬─────────┐
-# │ Email             │ Role     │ Status   │ Version │
-# ├───────────────────┼──────────┼──────────┼─────────┤
-# │ user@example.com  │ invitees │ accepted │ 1.0.0   │
-# └───────────────────┴──────────┴──────────┴─────────┘
-#
-# Don't want to send individual invite emails? Use this public link and share with anyone on the web:
-#
-#   https://zapier.com/platform/public-invite/1/222dcd03aed943a8676dc80e2427a40d/
-
-$ zapier invite user@example.com 1.0.0
-# Preparing to add invitee user@example.com to your app "Example (1.0.0)".
-#
-#   Adding user@example.com - done!
-#
-# Invitees updated! Try viewing them with `zapier invite`.
-
-$ zapier invite user@example.com --remove
-# Preparing to remove invitee user@example.com from your app "Example".
-#
-#   Removing user@example.com - done!
-#
-# Invitees updated! Try viewing them with `zapier invite`.
-```
+**Aliases**
+* `apps`
 
 
 ## link
 
-  > Link the current directory to an app you have access to.
+> Link the current directory with an existing integration.
 
-  **Usage:** `zapier link`
+**Usage**: `zapier link`
 
+This command generates a `.zapierapprc` file in the directory in which it's ran. This file ties this code to an integration and is referenced frequently during `push` and `validate` operations. This file should be checked into source control.
 
-Link the current directory to an app you have access to. It is fairly uncommon to run this command - more often you'd just `git clone git@github.com:example-inc/example.git` which would have a `.zapierapprc` file already included. If not, you'd need to be an admin on the app and use this command to regenerate the `.zapierapprc` file.
+If you're starting an integration from scratch, use `zapier init` instead.
 
-Or, if you are making an app from scratch - you should prefer `zapier init`.
-
-> This will change the `./.zapierapprc` (which identifies the app assosciated with the current directory).
-
-**Arguments**
-
-
-
-* `--format={plain,json,raw,row,table}` -- _optional_, display format. Default is `table`
-* `--help` -- _optional_, prints this help text
-* `--debug` -- _optional_, print debug API calls and tracebacks
-
-```bash
-$ zapier link
-# Which app would you like to link the current directory to?
-#
-# ┌────────┬─────────────┬────────────┬─────────────────────┬────────┐
-# │ Number │ Title       │ Unique Key │ Timestamp           │ Linked │
-# ├────────┼─────────────┼────────────┼─────────────────────┼────────┤
-# │ 1      │ Example     │ Example    │ 2016-01-01T22:19:28 │ ✔      │
-# └────────┴─────────────┴────────────┴─────────────────────┴────────┘
-#      ...or type any title to create new app!
-#
-# Which app number do you want to link? You also may type a new app title to create one. (Ctrl-C to cancel)
-#
-  1
-#
-#   Selecting existing app "Example" - done!
-#   Setting up `.zapierapprc` file - done!
-#
-# Finished! You can `zapier push` now to build & upload a version!
-```
+**Flags**
+* `-d, --debug` | Show extra debugging output.
 
 
 ## login
 
-> Configures your `~/.zapierrc` with a deploy key.
+> Configure your `~/.zapierrc` with a deploy key.
 
 **Usage**: `zapier login`
 
 **Flags**
-* `-s, --sso` | Use this flag if you log into Zapier a Single Sign-On (SSO) button and don't have a Zapier password
-* `-d, --debug` | Show extra debugging output
+* `-s, --sso` | Use this flag if you log into Zapier a Single Sign-On (SSO) button and don't have a Zapier password.
+* `-d, --debug` | Show extra debugging output.
 
 
 ## logout
 
-> Deactivates your acive deploy key and resets `~/.zapierrc`.
+> Deactivate your active deploy key and reset `~/.zapierrc`.
 
 **Usage**: `zapier logout`
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Show extra debugging output.
 
 
 ## logs
 
-  > Prints recent logs. See help for filter arguments.
+> Print recent logs.
 
-  **Usage:** `zapier logs`
+**Usage**: `zapier logs`
 
+Logs are created when your integration is run as part of a Zap. They come from explicit calls to `z.console.log()`, usage of `z.request()`, and any runtime errors.
 
-Get the logs that are automatically collected during the running of your app. Either explicitly during `z.console.log()`, automatically via `z.request()`, or any sort of traceback or error.
+This won't show logs from running locally with `zapier test`, since those never hit our server.
 
-> Does not collect or list the errors found locally during `zapier test`.
-
-**Arguments**
-
-
-* `--version=value` -- _optional_, display only this version's logs (default is all versions)
-* `--status={any,success,error}` -- _optional_, display only success logs (status code < 400 / info) or error (status code > 400 / tracebacks). Default is `any`
-* `--type={console,bundle,http}` -- _optional_, display only console, bundle, or http logs. Default is `console`
-* `--detailed` -- _optional_, show detailed logs (like request/response body and headers)
-* `--user=user@example.com` -- _optional_, display only this user's logs. Default is `me`
-* `--limit=50` -- _optional_, control the maximum result size. Default is `50`
-* `--format={plain,json,raw,row,table}` -- _optional_, display format. Default is `table`
-* `--help` -- _optional_, prints this help text
-* `--debug` -- _optional_, print debug API calls and tracebacks
-
-```bash
-$ zapier logs
-# The logs of your app "Example" listed below.
-#
-# ┌──────────────────────────────────────────────────────┐
-# │ = 1 =                                                │
-# │     Log       │ console says hello world!            │
-# │     Version   │ 1.0.0                                │
-# │     Step      │ 99c16565-1547-4b16-bcb5-45189d9d8afa │
-# │     Timestamp │ 2016-01-01T23:04:36-05:00            │
-# └───────────────┴──────────────────────────────────────┘
-
-$ zapier logs --type=http
-# The logs of your app "Example" listed below.
-#
-# ┌────────────────────────────────────────────────────────┐
-# │ = 1 =                                                  │
-# │     Status      │ 200                                  │
-# │     URL         │ https://httpbin.org/get               │
-# │     Querystring │ hello=world                          │
-# │     Version     │ 1.0.0                                │
-# │     Step        │ 99c16565-1547-4b16-bcb5-45189d9d8afa │
-# │     Timestamp   │ 2016-01-01T23:04:36-05:00            │
-# └─────────────────┴──────────────────────────────────────┘
-```
+**Flags**
+* `-v, --version` | Filter logs to the specified version.
+* `-s, --status` | Filter logs to only see errors or successes One of `[any | success | error]`. Defaults to `any`.
+* `-t, --type` | See logs of the specified type One of `[console | bundle | http]`. Defaults to `console`.
+* `--detailed` | See extra info, like request/response body and headers.
+* `-u, --user` | Only show logs for this user. Defaults to your account.  Defaults to `me`.
+* `--limit` | Cap the number of logs returned. Max is 50 (also the default)  Defaults to `50`.
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
 
 
 ## migrate
 
-> Migrates users from one version of your app to another.
+> Migrate users from one version of your integration to another.
 
 **Usage**: `zapier migrate FROMVERSION TOVERSION [PERCENT]`
 
-Starts a migration to move users between different versions of your app. You may also "revert" by simply swapping the from/to verion strings in the command line arguments (i.e. `zapier migrate 1.0.1 1.0.0`).
+Start a migration to move users between different versions of your integration. You may also "revert" by simply swapping the from/to verion strings in the command line arguments (i.e. `zapier migrate 1.0.1 1.0.0`).
 
-Only migrate users between non-breaking versions, use `zapier deprecate` if you have breaking changes!
+Only use this command to migrate users between non-breaking versions, use `zapier deprecate` if you have breaking changes!
 
-Migrations can take between 5-10 minutes, so be patient and check `zapier history` to track the status.
+Migration time varies based on the number of affected Zaps. Be patient and check `zapier history` to track the status.
 
-Note: since a migration is only for non-breaking changes, users are not emailed about the update/migration. It will be a transparent process for them.
+Since a migration is only for non-breaking changes, users are not emailed about the update/migration. It will be a transparent process for them.
 
-> Tip: We recommend migrating a small subset of users first, then watching error logs of the new version for any sort of odd behavior. When you feel confident there are no bugs, go ahead and migrate everyone. If you see unexpected errors, you can revert.
+We recommend migrating a small subset of users first, then watching error logs of the new version for any sort of odd behavior. When you feel confident there are no bugs, go ahead and migrate everyone. If you see unexpected errors, you can revert.
 
-> Tip 2: You can migrate a single user by using `--user` (i.e. `zapier migrate 1.0.0 1.0.1 --user=user@example.com`).
+You can migrate a single user by using `--user` (i.e. `zapier migrate 1.0.0 1.0.1 --user=user@example.com`).
 
 **Arguments**
 * (required) `fromVersion` | The version FROM which to migrate users.
@@ -619,7 +327,7 @@ Note: since a migration is only for non-breaking changes, users are not emailed 
 
 **Flags**
 * `--user` | Migrate only this user
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Show extra debugging output.
 
 **Examples**
 * `zapier migrate 1.0.0 1.0.1`
@@ -629,29 +337,29 @@ Note: since a migration is only for non-breaking changes, users are not emailed 
 
 ## promote
 
-> Promotes a specific version to public access.
+> Promote a specific version to public access.
 
 **Usage**: `zapier promote VERSION`
 
-Promotes an app version into production (non-private) rotation, which means new users can use this app version.
+Promote an integration version into production (non-private) rotation, which means new users can use this integration version.
 
-* This does mark the version as the official public version - all other versions & users are grandfathered.
+* This **does** mark the version as the official public version - all other versions & users are grandfathered.
 
-* This does NOT build/upload or deploy a version to Zapier - you should `zapier push` first.
+* This does **NOT** build/upload or deploy a version to Zapier - you should `zapier push` first.
 
-* This does NOT move old users over to this version - `zapier migrate 1.0.0 1.0.1` does that.
+* This does **NOT** move old users over to this version - `zapier migrate 1.0.0 1.0.1` does that.
 
-* This does NOT recommend old users to stop using this version - `zapier deprecate 1.0.0 2017-01-01` does that.
+* This does **NOT** recommend old users stop using this version - `zapier deprecate 1.0.0 2017-01-01` does that.
 
-Promotes are an inherently safe operation for all existing users of your app.
+Promotes are an inherently safe operation for all existing users of your integration.
 
-> If this is your first time promoting - this will start the platform quality assurance process by alerting the Zapier platform team of your intent to make your app public. We'll respond within a few business days.
+If your integration is private and passes our integration checks, this will give you a URL to a form where you can fill in additional information for your integration to go public. After reviewing, the Zapier team will approve to make it public if there are no issues or decline with feedback.
 
 **Arguments**
 * (required) `version` | The version you want promote.
 
 **Flags**
-* `-d, --debug` | Show extra debugging output
+* `-d, --debug` | Show extra debugging output.
 
 **Examples**
 * `zapier promote 1.0.0`
@@ -659,121 +367,154 @@ Promotes are an inherently safe operation for all existing users of your app.
 
 ## push
 
-  > Build and upload the current app - does not promote.
+> Build and upload the current integration.
 
-  **Usage:** `zapier push`
+**Usage**: `zapier push`
 
+This command is the same as running `zapier build` and `zapier upload` in sequence. See those for more info.
 
-A shortcut for `zapier build && zapier upload` - this is our recommended way to push an app. This is a common workflow:
-
-1. Make changes in `index.js` or other files.
-2. Run `zapier test`.
-3. Run `zapier push`.
-4. QA/experiment in the Zapier.com Zap editor.
-5. Go to 1 and repeat.
-
-> Note: this is always a safe operation as live/production apps are protected from pushes. You must use `zapier promote` or `zapier migrate` to impact live users.
-
-> Note: this command will create (or overwrite) an AppVersion that matches the ones listed in your `package.json`. If you want to push to a new version, increment the "version" key in `package.json`.
-
-If you have not yet registered your app, this command will prompt you for your app title and to register the app.
-
-```bash
-$ zapier push
-# Preparing to build and upload app.
-#
-#   Copying project to temp directory - done!
-#   Installing project dependencies - done!
-#   Applying entry point file - done!
-#   Validating project - done!
-#   Building app definition.json - done!
-#   Zipping project and dependencies - done!
-#   Cleaning up temp directory - done!
-#   Uploading version 1.0.0 - done!
-#
-# Build and upload complete! Try loading the Zapier editor now, or try `zapier promote` to put it into rotation or `zapier migrate` to move users over
-```
+**Flags**
+* `--disable-dependency-detection` | Disable "smart" file inclusion. By default, Zapier only includes files that are required by `index.js`. If you (or your dependencies) require files dynamically (such as with `require(someVar)`), then you may see "Cannot find module" errors. Disabling this may make your `build.zip` too large. If that's the case, try using the `includeInBuild` option in your `.zapierapprc`. See the docs about `includeInBuild` for more info.
+* `-d, --debug` | Show extra debugging output.
 
 
 ## register
 
-  > Registers a new app in your account.
+> Register a new integration in your account.
 
-  **Usage:** `zapier register "Example"`
+**Usage**: `zapier register [TITLE]`
 
+After running this, you can run `zapier push` to build and upload your integration for use in the Zapier editor.
 
-This command registers your app with Zapier. After running this, you can run `zapier push` to push a version of your app that you can use in the Zapier editor.
-
-> This will change the  `./.zapierapprc` (which identifies the app associated with the current directory).
+This will change the  `./.zapierapprc` (which identifies this directory as holding code for a specific integration).
 
 **Arguments**
+* `title` | Your integrations's public title. Asked interactively if not present.
 
-* `title ["My App Name"]` -- **required**,
+**Flags**
+* `-d, --debug` | Show extra debugging output.
 
-
-```bash
-$ zapier register "Example"
-# Let's register your app "Example" on Zapier!
-#
-#   Creating a new app named "Example" on Zapier - done!
-#   Setting up .zapierapprc file - done!
-#   Applying entry point file - done!
-#
-# Finished!
-```
+**Examples**
+* `zapier register`
+* `zapier register "My Cool Integration"`
 
 
 ## scaffold
 
-  > Adds a starting resource, trigger, action or search to your app.
+> Add a starting trigger, create, search, or resource to your integration.
 
-  **Usage:** `zapier scaffold {resource|trigger|search|create} "Name"`
+**Usage**: `zapier scaffold ACTIONTYPE NOUN`
 
+The first argument should be one of `trigger|search|create|resource` followed by the noun that this will act on (something like "contact" or "deal").
 
 The scaffold command does two general things:
 
-* Creates a new destination file like `resources/contact.js`
-* (Attempts to) import and register it inside your entry `index.js`
+* Creates a new file (such as `triggers/contact.js`)
+
+* Imports and registers it inside your `index.js`
 
 You can mix and match several options to customize the created scaffold for your project.
 
-> Note, we may fail to rewrite your `index.js` so you may need to handle the require and registration yourself.
+**Arguments**
+* (required) `actionType` | undefined
+* (required) `noun` | undefined
+
+**Flags**
+* `-d, --dest` | Specify the new file's directory. Use this flag when you want to create a different folder structure such as `src/triggers` instead of the default `triggers`. Defaults to `[triggers|searches|creates]/{noun}`.
+* `--test-dest` | Specify the new test file's directory. Use this flag when you want to create a different folder structure such as `src/triggers` instead of the default `triggers`. Defaults to `test/[triggers|searches|creates]/{noun}`.
+* `-e, --entry` | Supply the path to your integration's root (`index.js`). Only needed if your `index.js` is in a subfolder, like `src`.  Defaults to `index.js`.
+* `-f, --force` | Should we overwrite an exisiting trigger/search/create file?
+* `--no-help` | When scaffolding, should we skip adding helpful intro comments? Useful if this isn't your first rodeo.
+* `-d, --debug` | Show extra debugging output.
+
+**Examples**
+* `zapier scaffold trigger contact`
+* `zapier scaffold search contact --dest=my_src/searches`
+* `zapier scaffold create contact --entry=src/index.js`
+* `zapier scaffold resource contact --force`
+
+
+## team:add
+
+> Add a team member to your integration.
+
+**Usage**: `zapier team:add EMAIL ROLE [MESSAGE]`
+
+These users come in two levels:
+
+  * `admin`, who can edit everything about the integration
+
+  * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health socores and more.
+
+Team members can be freely added and removed.
 
 **Arguments**
+* (required) `email` | The user to be invited. If they don't have a Zapier account, they'll be prompted to create one.
+* (required) `role` | The level the invited team member should be at. Admins can edit everything and get email updates. Subscribers only get email updates.
+* `message` | A message sent in the email to your team member, if you need to provide context. Wrap the message in quotes to ensure spaces get saved.
 
-* `type [{resource,trigger,search,create}]` -- **required**, what type of thing are you creating
-* `name ["Some Name"]` -- **required**, the name of the new thing to create
-* `--dest={type}s/{name}` -- _optional_, sets the new file's path. Default is `{type}s/{name}`
-* `--entry=index.js` -- _optional_, where to import the new file. Default is `index.js`
+**Flags**
+* `-d, --debug` | Show extra debugging output.
 
-```bash
-$ zapier scaffold resource "Contact"
-$ zapier scaffold resource "Contact" --entry=index.js
-$ zapier scaffold resource "Contag Tag" --dest=resources/tag
-$ zapier scaffold resource "Tag" --entry=index.js --dest=resources/tag
-# Adding resource scaffold to your project.
-#
-#   Writing new resources/tag.js - done!
-#   Rewriting your index.js - done!
-#
-# Finished! We did the best we could, you might gut check your files though.
-```
+**Examples**
+* `zapier team:add bruce@wayne.com admin`
+* `zapier team:add alfred@wayne.com subscriber "Hey Alfred, check out this app."`
+
+**Aliases**
+* `team:invite`
+
+
+## team:get
+
+> Get team members involved with your integration.
+
+**Usage**: `zapier team:get`
+
+These users come in two levels:
+
+  * `admin`, who can edit everything about the integration
+
+  * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health socores and more.
+
+Use the `zapier team:add` and `zapier team:remove` commands to modify your team.
+
+**Flags**
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
+
+**Aliases**
+* `team:list`
+
+
+## team:remove
+
+> Remove a team member from all versions of your integration.
+
+**Usage**: `zapier team:remove`
+
+Admins will immediately lose write access to the integration. Subscribers won't receive future email updates.
+
+**Flags**
+* `-d, --debug` | Show extra debugging output.
+
+**Aliases**
+* `team:delete`
 
 
 ## test
 
-> Tests your app via `npm test`.
+> Test your integration via `npm test`.
 
 **Usage**: `zapier test`
 
-This command is effectively the same as `npm test`, except we also validate your app and set up the environment. We recommend using mocha as your testing framework.
+This command is effectively the same as `npm test`, except we also validate your integration and set up the environment. We recommend using mocha as your testing framework.
 
 **Flags**
-* `-t, --timeout` | Set test-case timeout in milliseconds  Defaults to `2000`.
-* `--grep` | Only run tests matching pattern
-* `--skip-validate` | Forgo running `zapier validate` before `npm test`
-* `--yarn` | Use yarn instead of npm
-* `-d, --debug` | Show extra debugging output
+* `-t, --timeout` | Set test-case timeout in milliseconds.  Defaults to `2000`.
+* `--grep` | Only run tests matching pattern.
+* `--skip-validate` | Forgo running `zapier validate` before `npm test`.
+* `--yarn` | Use yarn instead of npm.
+* `-d, --debug` | Show extra debugging output.
 
 **Examples**
 * `zapier test`
@@ -782,37 +523,102 @@ This command is effectively the same as `npm test`, except we also validate your
 
 ## upload
 
-  > Upload the last build as a version.
+> Upload the latest build of your integration to Zapier.
 
-  **Usage:** `zapier upload`
+**Usage**: `zapier upload`
+
+This command sends both build/build.zip and build/source.zip to Zapier for use.
+
+Typically we recommend using `zapier push`, which does a build and upload, rather than `upload` by itself.
+
+**Flags**
+* `-d, --debug` | Show extra debugging output.
 
 
-Upload the zip files already built by `zapier build` in build/build.zip and build/source.zip. The version and other app details are read by Zapier from the zip files.
+## users:add
 
-> Note: we generally recommend using `zapier push` which does both `zapier build && zapier upload` in one step.
+> Add a user to some or all versions of your integration.
 
-```bash
-$ zapier upload
-# Preparing to upload a new version.
-#
-#   Uploading version 1.0.0 - done!
-#
-# Upload of build/build.zip and build/source.zip complete! Try `zapier versions` now!
-```
+**Usage**: `zapier users:add EMAIL [VERSION]`
+
+When this command is run, we'll send an email to the user inviting them to try your integration. You can track the status of that invite using the `zapier users:get` command.
+
+Invited users will be able to see your integration's name, logo, and description. They'll also be able to create Zaps using any available triggers and actions.
+
+**Arguments**
+* (required) `email` | The user to be invited. If they don't have a Zapier account, they'll be prompted to create one.
+* `version` | A version string (like 1.2.3). Optional, used only if you want to invite a user to a specific version instead of all versions.
+
+**Flags**
+* `-f, --force` | Skip confirmation. Useful for running programatically.
+* `-d, --debug` | Show extra debugging output.
+
+**Examples**
+* `zapier users:add bruce@wayne.com`
+* `zapier users:add alfred@wayne.com 1.2.3`
+
+**Aliases**
+* `users:invite`
+
+
+## users:get
+
+> Get a list of users who have been invited to your integration.
+
+**Usage**: `zapier users:get`
+
+Note that this list of users is NOT a comprehensive list of everyone who is using your integration. It only includes users who were invited directly by email (using the `zapier users:add` command or the web UI). Users who joined by clicking links generated using the `zapier user:links` command won't show up here.
+
+**Flags**
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
+
+**Aliases**
+* `users:list`
+
+
+## users:links
+
+> Get a list of links that are used to invite users to your integration.
+
+**Usage**: `zapier users:links`
+
+**Flags**
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
+
+
+## users:remove
+
+> Remove a user from all versions of your integration.
+
+**Usage**: `zapier users:remove EMAIL`
+
+When this command is run, their Zaps will immediately turn off. They won't be able to use your app again until they're re-invited or it has gone public. In practice, this command isn't run often as it's very disruptive to users.
+
+**Arguments**
+* (required) `email` | The user to be removed.
+
+**Flags**
+* `-f, --force` | Skips confirmation. Useful for running programatically.
+* `-d, --debug` | Show extra debugging output.
+
+**Aliases**
+* `users:delete`
 
 
 ## validate
 
-> Validates your Zapier app.
+> Validate your integration.
 
 **Usage**: `zapier validate`
 
-Runs the standard validation routine powered by json-schema that checks your app for any structural errors. This is the same routine that runs during `zapier build`, `zapier upload`, `zapier push` or even as a test in `zapier test`.
+Run the standard validation routine powered by json-schema that checks your integration for any structural errors. This is the same routine that runs during `zapier build`, `zapier upload`, `zapier push` or even as a test in `zapier test`.
 
 **Flags**
-* `--without-style` | Forgo pinging the Zapier server to run further checks
-* `-f, --format` | undefined One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `--without-style` | Forgo pinging the Zapier server to run further checks.
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
 
 **Examples**
 * `zapier validate`
@@ -822,10 +628,10 @@ Runs the standard validation routine powered by json-schema that checks your app
 
 ## versions
 
-> Lists the versions of your app available for use in the Zapier editor.
+> List the versions of your integration available for use in the Zapier editor.
 
 **Usage**: `zapier versions`
 
 **Flags**
-* `-f, --format` | undefined One of `[plain | json | raw | row | table]`. Defaults to `table`.
-* `-d, --debug` | Show extra debugging output
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
