@@ -225,7 +225,7 @@ Boolean fields let users select between `yes` and `no` values to set default set
 
 ![Zapier DateTime Field][image-13]
 
-DateTime fields let users enter dates and times, using their human readable values, machine readable datetimes, or standard English words for time like `tomorrow`. Zapier interperpates the date input from users and outputs a standard UNIX time to your API.
+DateTime fields let users enter dates and times, using their human readable values, machine readable datetimes, or standard English words for time like `tomorrow`. Zapier interperpates the date input from users and outputs a standard [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) datetime to your API.
 
 > Learn more about how users can [modify dates and times in Zapier][2]{:target="_blank"}.
 
