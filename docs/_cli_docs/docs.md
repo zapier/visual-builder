@@ -13,11 +13,11 @@ Zapier is a platform for creating integrations and workflows. This CLI is your g
 
 You may find docs duplicate or outdated across the Zapier site. The most up-to-date contents are always available on GitHub:
 
-- [CLI Docs](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md)
-- [CLI Reference](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md)
-- [Schema Docs](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md)
+- [Latest CLI Docs](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md)
+- [Latest CLI Reference](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md)
+- [Latest Schema Docs](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md)
 
-This doc decribes the latest CLI version **9.4.0**, as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc decribes the latest CLI version **10.0.0**, as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [9.4.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.4.0/packages/cli/README.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@8.4.2/packages/cli/README.md)
 - CLI Reference: [9.4.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.4.0/packages/cli/README.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@8.4.2/packages/cli/README.md)
@@ -64,16 +64,16 @@ Zapier Platform CLI is designed to be used by development teams who collaborate 
 
 ### Requirements
 
-All Zapier CLI apps are run using Node.js `v10`.
+All Zapier CLI apps are run using Node.js `v12`.
 
-You can develop using any version of Node you'd like, but your eventual code must be compatible with `v10`. If you're using features not yet available in `v10`, you can transpile your code to a compatible format with [Babel](https://babeljs.io/) (or similar).
+You can develop using any version of Node you'd like, but your eventual code must be compatible with `v12`. If you're using features not yet available in `v12`, you can transpile your code to a compatible format with [Babel](https://babeljs.io/) (or similar).
 
-To ensure stability for our users, we strongly encourage you run tests on `v10` sometime before your code reaches users. This can be done multiple ways.
+To ensure stability for our users, we strongly encourage you run tests on `v12` sometime before your code reaches users. This can be done multiple ways.
 
 Firstly, by using a CI tool (like [Travis CI](https://travis-ci.org/) or [Circle CI](https://circleci.com/), which are free for open source projects). We provide a sample [.travis.yml](https://github.com/zapier/zapier-platform/blob/master/example-apps/minimal/.travis.yml) file in our template apps to get you started.
 
 Alternatively, you can change your local node version with tools such as [nvm](https://github.com/nvm-sh/nvm#installation-and-update) or [n](https://github.com/tj/n#installation).
-Then you can either swap to that version with `nvm use v10`, or do `nvm exec v10 zapier test` so you can run tests without having to switch versions while developing.
+Then you can either swap to that version with `nvm use v12`, or do `nvm exec v12 zapier test` so you can run tests without having to switch versions while developing.
 
 
 ### Quick Setup Guide
@@ -453,10 +453,11 @@ const getSessionKey = async (z, bundle) => {
     },
   });
 
-  // Call response.throwForStatus() if you're using a core version < 10
+  // response.throwForStatus() if you're using core v9 or older
 
   return {
     sessionKey: response.data.sessionKey,
+    // or response.json.sessionKey if you're using core v9 and older
   };
 };
 
@@ -941,8 +942,10 @@ In some cases, it might be necessary to provide fields that are dynamically gene
 const recipeFields = async (z, bundle) => {
   const response = await z.request('https://example.com/api/v2/fields.json');
 
+  // Call reponse.throwForStatus() if you're using core v9 or older
+
   // Should return an array like [{"key":"field_1"},{"key":"field_2"}]
-  return response.data;
+  return response.data; // response.json if you're using core v9 or older
 };
 
 const App = {
@@ -1150,7 +1153,10 @@ perform: async (z, bundle) => {
       spreadsheet_id: bundle.inputData.spreadsheet_id,
     },
   });
-  return response.data;
+
+  // response.throwForStatus() if you're using core v9 or older
+
+  return response.data; // or response.json if you're using core v9 or older
 };
 
 ```
@@ -1370,8 +1376,10 @@ To define an Output Field for a nested field use `{{parent}}__{{key}}`. For chil
 const recipeOutputFields = async (z, bundle) => {
   const response = await z.request('https://example.com/api/v2/fields.json');
 
+  // response.throwForStatus() if you're using core v9 or older
+
   // Should return an array like [{"key":"field_1","label":"Label for Custom Field"}]
-  return response.data;
+  return response.data; // or response.json if you're on core v9 or older
 };
 
 const App = {
@@ -1491,10 +1499,10 @@ We provide several methods off of the `z` object, which is provided as the first
 
 The available errors are:
 
-* (*New in v9.3.0*) Error - Stops the current operation, allowing for (auto) replay. Read more on [General Errors](#general-errors)
-* HaltedError - Stops current operation, but will never turn off Zap. Read more on [Halting Execution](#halting-execution)
-* ExpiredAuthError - Turns off Zap and emails user to manually reconnect. Read more on [Stale Authentication Credentials](#stale-authentication-credentials)
-* RefreshAuthError - (OAuth2 or Session Auth) Tells Zapier to refresh credentials and retry operation. Read more on [Stale Authentication Credentials](#stale-authentication-credentials)
+* `Error` (_new in v9.3.0_) - Stops the current operation, allowing for (auto) replay. Read more on [General Errors](#general-errors)
+* `HaltedError` - Stops current operation, but will never turn off Zap. Read more on [Halting Execution](#halting-execution)
+* `ExpiredAuthError` - Turns off Zap and emails user to manually reconnect. Read more on [Stale Authentication Credentials](#stale-authentication-credentials)
+* `RefreshAuthError` - (OAuth2 or Session Auth) Tells Zapier to refresh credentials and retry operation. Read more on [Stale Authentication Credentials](#stale-authentication-credentials)
 
 For more details on error handling in general, see [here](#error-handling).
 
@@ -1563,7 +1571,7 @@ The user's Zap ID is available during the [subscribe and unsubscribe](https://gi
 For example - you could do:
 
 ```js
-const subscribeHook = (z, bundle) => {
+const subscribeHook = async (z, bundle) => {
 
   const options = {
     url: 'https://57b20fb546b57d1100a3c405.mockapi.io/api/hooks',
@@ -1574,7 +1582,8 @@ const subscribeHook = (z, bundle) => {
     },
   };
 
-  return z.request(options).then((response) => response.data);
+  const response = await z.request(options);
+  return response.data; // or response.json if you're using core v9 or older
 };
 
 module.exports = {
@@ -1716,7 +1725,10 @@ const listExample = async (z, bundle) => {
     'https://example.com/api/v2/recipes.json',
     httpOptions
   );
-  return response.data;
+
+  // response.throwForStatus() if you're using core v9 or older
+
+  return response.data; // or response.json if you're using core v9 or older
 };
 
 const App = {
@@ -1807,7 +1819,7 @@ const listExample = async (z, bundle) => {
   };
   const response = await z.request(customHttpOptions);
 
-  const recipes = response.data;
+  const recipes = response.data; // or response.json if you're using core v9 or older
   // You can do any custom processing of recipes here...
   return recipes;
 };
@@ -1862,7 +1874,7 @@ const App = {
             );
           }
 
-          return response.data;
+          return response.data; // or response.json if you're using core v9 or older
         },
       },
     },
@@ -1887,18 +1899,17 @@ const addHeader = (request, z, bundle) => {
   return request;
 };
 
+// This example only works on core v10+!
 const handleErrors = (response, z) => {
   // Prevent `throwForStatus` from throwing for a certain status.
   if (response.status === 456) {
     response.skipThrowForStatus = true;
-  }
-
-  // Throw an error that `throwForStatus` wouldn't throw (correctly) for.
-  else if (response.status === 200 && response.data.success === false) {
+  } else if (response.status === 200 && response.data.success === false) {
     throw new z.errors.Error(response.data.message, response.data.code);
   }
 };
 
+// This example only works on core v10+!
 const parseXML = (response, z, bundle) => {
   // Parse content that is not JSON
   // eslint-disable-next-line no-undef
@@ -1945,10 +1956,10 @@ Shorthand requests and manual `z.request([url], options)` calls support the foll
 * `agent`: Node.js `http.Agent` instance, allows custom proxy, certificate etc. Default is `null`.
 * `timeout`: request / response timeout in ms. Set to `0` to disable (OS limit still applies), timeout reset on `redirect`. Default is `0` (disabled).
 * `size`: maximum response body size in bytes. Set to `0` to disable. Default is `0` (disabled).
-* `skipThrowForStatus`: don't call `response.throwForStatus()` before resolving the request with `response`. See [HTTP Response Object](#http-response-object).
+* `skipThrowForStatus` (_new in v10.0.0_): don't call `response.throwForStatus()` before resolving the request with `response`. See [HTTP Response Object](#http-response-object).
 
 ```js
-z.request({
+const response = await z.request({
   url: 'https://example.com',
   method: 'POST',
   headers: {
@@ -1975,37 +1986,47 @@ The response object returned by `z.request([url], options)` supports the followi
 
 * `status`: The response status code, i.e. `200`, `404`, etc.
 * `content`: The response content as a String. For Buffer, try `options.raw = true`.
-* `data`: The response content as an object if the content is JSON or ` application/x-www-form-urlencoded` (`undefined` otherwise).
-* `json`: The response content as an object if the content is JSON (`undefined` otherwise). Deprecated: Use `data` instead.
+* `data` (_new in v10.0.0_): The response content as an object if the content is JSON or ` application/x-www-form-urlencoded` (`undefined` otherwise).
+* `json`: The response content as an object if the content is JSON (`undefined` otherwise). Deprecated since v10.0.0: Use `data` instead.
 * `json()`: Get the response content as an object, if `options.raw = true` and content is JSON (returns a promise).
 * `body`: A stream available only if you provide `options.raw = true`.
 * `headers`: Response headers object. The header keys are all lower case.
 * `getHeader(key)`: Retrieve response header, case insensitive: `response.getHeader('My-Header')`
-* `skipThrowForStatus`: don't call `throwForStatus()` before resolving the request with this response.
+* `skipThrowForStatus` (_new in v10.0.0_): don't call `throwForStatus()` before resolving the request with this response.
 * `throwForStatus()`: Throw error if 400 <= `status` < 600.
 * `request`: The original request options object (see above).
 
 ```js
-z.request({
-  // ..
-}).then((response) => {
-  // a bunch of examples lines for cherry picking
-  response.status;
-  response.headers['Content-Type'];
-  response.getHeader('content-type');
-  response.request; // original request options
-  response.throwForStatus();
-  if (options.raw === false) { // (default)
-    response.data; // same as...
-    JSON.parse(response.content); // or...
-    querystring.parse(response.content);
-  } else {
-    response.buffer().then(buf => buf.toString());
-    response.text().then(content => content);
-    response.json().then(json => json);
-    response.body.pipe(otherStream);
-  }
+const response = await z.request({
+  // options
 });
+
+// A bunch of examples lines for cherry picking
+response.status;
+response.headers['Content-Type'];
+response.getHeader('content-type');
+response.request; // original request options
+response.throwForStatus();
+
+if (options.raw === false) { // (default)
+  // If you're core v10+
+  response.data; // same as...
+  z.JSON.parse(response.content); // or...
+  querystring.parse(response.content);
+
+  // If you're core v9 or older...
+  response.json;  // same as
+  z.JSON.parse(response.content);
+} else {
+  const buf = await response.buffer();
+  buf.toString();
+
+  const text = await response.text();
+
+  const json = await response.json();
+
+  response.body.pipe(otherStream);
+}
 ```
 
 
@@ -2031,11 +2052,17 @@ Here is an example that pulls in extra data for a movie:
 const getMovieDetails = async (z, bundle) => {
   const url = `https://example.com/movies/${bundle.inputData.id}.json`;
   const response = await z.request(url);
-  return response.data;
+
+  // reponse.throwForStatus() if you're using core v9 or older
+
+  return response.data; // or response.json if you're using core v9 or older
 };
 
 const movieList = async (z, bundle) => {
   const response = await z.request('https://example.com/movies.json');
+
+  // response.throwForStatus() if you're using core v9 or older
+
   return response.data.map((movie) => {
     // so maybe /movies.json is thin content but /movies/:id.json has more
     // details we want...
@@ -2128,6 +2155,10 @@ const stashPDFfunction = (z, bundle) => {
 
 const pdfList = async (z, bundle) => {
   const response = await z.request('https://example.com/pdfs.json');
+
+  // response.throwForStatus() if you're using core v9 or older
+
+  // response.json.map if you're using core v9 or older
   return response.data.map((pdf) => {
     // Lazily convert a secret_download_url to a stashed url
     // zapier won't do this until we need it
@@ -2243,7 +2274,7 @@ Zapier provides a couple of tools to help with error handling. First is the
 `afterResponse` middleware ([docs](#using-http-middleware)), which provides a hook for
 processing all responses from HTTP calls. Second is `response.throwForStatus()`
 ([docs](#http-response-object)), which throws an error if the response status indicates
-an error (status >= 400). We automatically call this method before returning the
+an error (status >= 400). Since v10.0.0, we automatically call this method before returning the
 response, unless you set `skipThrowForStatus` on the request or response object. The
 last tool is the collection of errors in `z.errors` ([docs](#zerrors)), which control
 the behavior of Zaps when various kinds of errors occur.
@@ -2450,7 +2481,7 @@ This makes it pretty straightforward to integrate into your testing interface. I
 ```yaml
 language: node_js
 node_js:
-  - "v10"
+  - "v12"
 before_script: npm install -g zapier-platform-cli
 script: CLIENT_ID=1234 CLIENT_SECRET=abcd zapier test
 ```
@@ -2584,7 +2615,7 @@ There are a lot of details left out - check out the full example app for a worki
 
 ### Why doesn't Zapier support newer versions of Node.js?
 
-We run your code on AWS Lambda, which only supports a few [versions](https://docs.aws.amazon.com/lambda/latest/dg/programming-model.html) of Node (the latest of which is `v10`. As that updates, so too will we.
+We run your code on AWS Lambda, which only supports a few [versions](https://docs.aws.amazon.com/lambda/latest/dg/programming-model.html) of Node (the latest of which is `v12`. As that updates, so too will we.
 
 ### How do I manually set the Node.js version to run my app with?
 
@@ -2612,7 +2643,7 @@ Not natively, but it can! Users have reported that the following `npm` modules a
 * [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
 * [fast-xml-parser](https://github.com/NaturalIntelligence/fast-xml-parser)
 
-For [shorthand requests](shorthand-http-requests), use an `afterResponse` [middleware](using-http-middleware) that sets `response.data` to the parsed XML:
+Since core v10, it's possible for [shorthand requests](shorthand-http-requests) to parse XML. Use an `afterResponse` [middleware](using-http-middleware) that sets `response.data` to the parsed XML:
 
 ```js
 const xml = require('pixl-xml');
@@ -2621,6 +2652,7 @@ const App = {
   // ...
   afterResponse: [
     (response, z, bundle) => {
+      // Only works on core v10+!
       response.throwForStatus();
       response.data = xml.parse(response.content);
       return response;
@@ -2702,7 +2734,7 @@ const asyncExample = async (z, bundle) => {
     },
   });
 
-  let results = response.data;
+  let results = response.data; // response.json if you're using core v9 or older
 
   // keep paging until the last item was created over two hours ago
   // then we know we almost certainly haven't missed anything and can let
@@ -2766,7 +2798,7 @@ const perform = async (z, bundle) => {
       offset: 100 * bundle.meta.page
     }
   });
-  return response.data;
+  return response.data; // or response.json you're using core v9 or older
 };
 ```
 
@@ -2847,7 +2879,7 @@ For deduplication to work, we need to be able to identify and use a unique field
 
 ```js
 // ...
-let items = response.data.items;
+let items = response.data.items; // or response.json.items if you're using core v9 or older
 return items.map((item) => {
   item.id = item.contactId;
   return item;
@@ -2866,7 +2898,7 @@ InvalidParameterValueException An error occurred (InvalidParameterValueException
 
 1. Edit `package.json` to depend on the latest version of `zapier-platform-core`. There's a list of all breaking changes (marked with an :exclamation:) in the [changelog](https://github.com/zapier/zapier-platform/blob/master/CHANGELOG.md).
 2. Increment the `version` property in `package.json`
-3. Ensure you're using version `v10` (or greater) of node locally (`node -v`). Use [nvm](https://github.com/nvm-sh/nvm) to use a different one if need be.
+3. Ensure you're using version `v12` (or greater) of node locally (`node -v`). Use [nvm](https://github.com/nvm-sh/nvm) to use a different one if need be.
 4. Run `rm -rf node_modules && npm i` to get a fresh copy of everything
 5. Run `zapier test` to ensure your tests still pass
 6. Run `zapier push`
@@ -2930,7 +2962,7 @@ The Zapier platform and its tools are under active development. While you don't 
 Barring unforeseen circumstances, all released platform versions will continue to work for the forseeable future. While you never *have* to upgrade your app's `zapier-platform-core` dependency, we recommend keeping an eye on the [changelog](https://github.com/zapier/zapier-platform/blob/master/CHANGELOG.md) to see what new features and bux fixes are available.
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **9.4.0**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **10.0.0**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
