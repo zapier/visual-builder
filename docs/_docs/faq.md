@@ -81,9 +81,18 @@ You _can_ manage the other details of your CLI integration from the UI, however,
 - Promote a new integration version to public
 - Migrate users between versions
 
-_Coming Soon_: In an upcoming version of Zapier's visual builder, you will be able to export a CLI version of your visual builder project. This will be a one-time export that converts your visual builder integration to a CLI format that you can edit and maintain on your local development machine. You can then create and push new versions of your integration via Zapier CLI, and can manage the details from the visual builder UI or the CLI. Once you enable CLI, though, you will not be able to edit or add authentication, trigger, or action details in the visual builder UI.
+You can [export a CLI version of your builder project to a CLI format](https://platform.zapier.com/docs/export) that you can edit and maintain on your local development machine. You can then create and push new versions of your integration via Zapier CLI, and can manage the details from the visual builder UI or the CLI. Once you enable CLI, though, you will not be able to edit or add authentication, trigger, or action details in the visual builder UI.
+
+If your app was originally built on our legacy platform, any custom code you wrote there will be accessible in a ‘scripting.js’ file in your exported CLI app.
 
 <a id="response"></a>
+
+## Can I add files/attachments to a Trigger/Action using the Platform UI Visual Builder?
+
+No. If you'd like to work with file attachments in your app, you'll need to convert your app from the [Visual Builder to the CLI platform](https://platform.zapier.com/docs/export) instead. 
+
+<a id="files"></a>
+
 ## What Response Type Does Zapier Expect?
 
 With every API call, including authentication and auth testing calls, triggers, searches, and create actions, Zapier expects to receive response data from the API. If your API call does not return a response, Zapier will show a timeout error.
