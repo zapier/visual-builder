@@ -1,11 +1,11 @@
 ---
-title: How to Include Zapier in Your App and Website
+title: Zap Templates: Include Zapier in Your App and Website
 order: 4
 layout: post-toc
 redirect_from: /partners/
 ---
 
-# How to Include Zapier in Your App and Website
+# Zap Templates: Include Zapier in Your App and Website
 
 Zapier empowers apps to do together what they can’t on their own. With a bit of inspiration and creativity, your users can pull dozens of apps together into unique workflows to get more done with your app in far less time.
 
@@ -112,8 +112,6 @@ Most Zap Templates only need two steps, with a Trigger to watch for data from an
 - **Additional create actions** to add additional automations to your workflow
 - **[Filters](https://zapier.com/help/filter/)** to watch for specific items from trigger or action step(s)
 - **[Search actions](https://zapier.com/learn/getting-started-guide/search-actions/)** to find specific data from apps, recommended especially to find customers, tickets, projects, and more before creating new items with Zaps
-- **[Formatter actions](https://zapier.com/help/formatter/)** to split and customize data before adding it to an action step
-- **[Delay actions](https://zapier.com/help/delay/)** to wait for a specified amount of time before performing another action step
 
 > **Note**: You cannot build Paths in Zap Templates at this time.
 
@@ -151,11 +149,12 @@ Descriptions, then, are what users see when they click the Zap Template. They ex
 
 Zap Template titles clearly and briefly state the apps the Zap connects and the workflow it accomplishes. They include the trigger and action apps and the actions they perform. They use present tense, active voice, and sentence case.
 
-Most Zap Template titles read something like this: `Add new Gmail emails to Google Sheets as rows`. The title mention what happens in the trigger app followed by what Zapier does in the action app, with a template like:
+Most Zap Template titles read something like this: `Add new Gmail emails to Google Sheets as rows`. The title mentions what happens in the trigger app followed by what Zapier does in the action app. Some examples of good titles: 
 
-`Add new Trigger App items as Action App items`
-
-Replace the defaults with your trigger and action apps, the items Zapier watches for and creates in each, and a verb at the beginning of the sentence that fits the workflow. For example:
+- `Create Trello cards for new Wufoo form entries`
+- `Get Slack notifications for new Google Drive files in a folder`
+- `Subscribe new Gumroad customers to a MailChimp list`
+- `Save new SoundCloud tracks I like to Google Drive`
 
 > **Tip**: Use your discretion whether to mention the action or trigger app first. The trigger app works best first in most cases, but sometimes it sounds awkward—if so, go with the trigger app first.
 
@@ -181,7 +180,13 @@ Follow these rules in your Zap Template Titles:
 
 Zap Template descriptions share more detail about what the Zap does and scenarios in which to use it in two to four sentences. They tell readers what this Zap does for them and how it works.
 
-Start your description with the user's problem or need. Then explain how Zapier meets that need, when the Zap will run, and what the Zap does when it runs. Explain the trigger and action items in plain language that show the workflow's value.
+Start your description with the user's problem or need. Then explain how Zapier meets that need, when the Zap will run, and what the Zap does when it runs. Explain the trigger and action items in plain language that show the workflow's value. Some good examples:
+
+> Find yourself spending too much time adding event attendees to your CRM by hand? Now with the help of Zapier, the tedious work is done for you. This integration will add every new Eventbrite attendee to Zoho CRM as a new contact, saving you time for more important work.
+
+> After someone fills out a form on your site, you'll want to hear about it or send them a follow-up email. This Zapier automation handles both gracefully, sending an email via Gmail to you or the form respondent whenever you get a new Typeform entry. You'll never have to send the same message over and over again.
+
+> Expedient order processing makes for happy customers. Make sure you act on every new delivery with this Zapier automation. It will capture every new order placed on your Shopify store after being set up, creating a delivery task for it on Onfleet so your team can fulfill it without delay.
 
 Keep these guidelines in mind:
 
