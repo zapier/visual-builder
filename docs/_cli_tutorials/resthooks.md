@@ -52,7 +52,8 @@ const subscribeHook = (z, bundle) => {
 
   // make the request and parse the response - this does not include any error handling.
   return z.request(options)
-    .then((response => z.JSON.parse(response.content));
+    .then(response => z.JSON.parse(response.content));
+}
 ```
 
 which is then called in the `performSubscribe` method on the module for the Trigger, like so:
