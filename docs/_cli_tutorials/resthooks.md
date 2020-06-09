@@ -82,11 +82,11 @@ const unsubscribeHook = (z, bundle) => {
 
   const options = {
     url: `your endpoint url/${hookId}`,
-    method: 'DELETE',
+    method: 'DELETE'
   }
 
   return z.request(options)
-    .then((response => z.JSON.parse(response.content));
+    .then(response => z.JSON.parse(response.content));
 };
 ```
 
@@ -146,7 +146,7 @@ const getFallbackSample = (z, bundle) => {
   };
 
   return z.request(options)
-    .then((response) => JSON.parse(response.content));
+    .then(response => JSON.parse(response.content));
 };
 ```
 
