@@ -52,7 +52,8 @@ const subscribeHook = (z, bundle) => {
 
   // make the request and parse the response - this does not include any error handling.
   return z.request(options)
-    .then((response => z.JSON.parse(response.content));
+    .then(response => z.JSON.parse(response.content));
+}
 ```
 
 which is then called in the `performSubscribe` method on the module for the Trigger, like so:
@@ -81,11 +82,11 @@ const unsubscribeHook = (z, bundle) => {
 
   const options = {
     url: `your endpoint url/${hookId}`,
-    method: 'DELETE',
+    method: 'DELETE'
   }
 
   return z.request(options)
-    .then((response => z.JSON.parse(response.content));
+    .then(response => z.JSON.parse(response.content));
 };
 ```
 
@@ -145,7 +146,7 @@ const getFallbackSample = (z, bundle) => {
   };
 
   return z.request(options)
-    .then((response) => JSON.parse(response.content));
+    .then(response => JSON.parse(response.content));
 };
 ```
 
