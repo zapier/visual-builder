@@ -26,7 +26,6 @@ $ npm install -g zapier-platform-cli
 **Usage**: `zapier analytics`
 
 **Flags**
-
 * `-m, --mode` | Choose how much information to share. Anonymous mode drops the OS type and Zapier user id, but keeps command info. Identifying information is used only for debugging purposes. One of `[enabled | anonymous | disabled]`.
 * `-d, --debug` | Show extra debugging output.
 
@@ -228,6 +227,28 @@ History includes all the changes made over the lifetime of your integration. Thi
 **Flags**
 * `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
 * `-d, --debug` | Show extra debugging output.
+
+
+## init
+
+> Initialize a new Zapier integration with a project template.
+
+**Usage**: `zapier init PATH`
+
+After running this, you'll have a new integration in the specified directory. If you re-run this command on an existing directory, it will prompt before overwriting any existing files.
+
+This doesn't register or deploy the integration with Zapier - try the `zapier register` and `zapier push` commands for that!
+
+**Arguments**
+* (required) `path` | Where to create the new integration. If the directory doesn't exist, it will be created. If the directory isn't empty, we'll ask for confirmation
+
+**Flags**
+* `-t, --template` | The template to start your integration with. One of `[basic-auth | custom-auth | digest-auth | dynamic-dropdown | files | minimal | oauth1-trello | oauth2 | search-or-create | session-auth | typescript]`.
+* `-d, --debug` | Show extra debugging output.
+
+**Examples**
+* `zapier init myapp`
+* `zapier init ./path/myapp --template oauth2`
 
 
 ## integrations
