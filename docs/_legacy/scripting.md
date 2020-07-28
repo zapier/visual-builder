@@ -1958,7 +1958,7 @@ Example: `throw new ExpiredAuthException('Your message.');`
 
 For apps that use OAuth, but do not return a typical 401 when tokens expire, you can use the `RefreshTokenException` in a post_XXX. This will signal Zapier to attempt to refresh the access token and then repeat the failed call.
 
-Example: `throw new RefreshTokenException();`
+Example: `throw new RefreshTokenException('Your message.');`
 
 ### Updating Session Credentials
 
