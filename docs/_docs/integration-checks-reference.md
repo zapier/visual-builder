@@ -414,9 +414,11 @@ fix this, add more triggers/searches/actions.
 
 ## D017 - Static Hook Is Discouraged
 
-As static webhooks are a little more complicated to set up correctly, we discourage
-their use. We no longer support adding new static webhook triggers to a public
-integration, please use an alternative trigger type, such as REST Hook or Polling.
+When a REST Hook trigger is missing a Subscribe or Unsubscribe endpoint, it is
+presented to users as a Static Webhook. As static webhooks are complicated to set up
+correctly, we no longer support adding new static webhook triggers to a public
+integration. Please set up Subscribe and Unsubscribe requests for this trigger,
+or use a Polling trigger type instead.
 
 ---
 
@@ -707,7 +709,8 @@ a new integration.
 ## S001 - 3 Users with a live Zap
 
 To verify user demand, there should be at least 3 users who have a live Zap using
-this integration. "Live" means the Zaps are switched on with at least one successful task in recent history.
+this integration. "Live" means the Zaps are switched on with at least one successful
+task in recent history.
 
 ---
 
@@ -734,9 +737,12 @@ version so you can delete the unwanted versions.
 
 ## T001 - One Successful Task for Each Trigger/Search/Action
 
-To ensure you have tested every visible trigger/search/action, there should be at
-least one successful task in at least one of the integration admin's task histories
-for each visible trigger/search/action.
+To ensure you have run a live test of every visible trigger/action/search, you'll
+need to turn a Zap on and trigger it live for each visible trigger/action/search, so
+that there is at least one successful Task for each visible trigger/action/search in
+one of the integration admin's [Task History](https://zapier.com/app/history).
+
+Learn more about Tasks [here](https://zapier.com/help/manage/tasks).
 
 ---
 
@@ -820,10 +826,12 @@ samples.
 
 Static samples provide Zapier users and partners a way to preview and map the fields
 without actually making a request to your API. For a better UX, it's important that
-static samples truthfully reflect the live results pulled from your API.
+static samples truthfully reflect the live results pulled from your API, which users
+can see in their Task History.
 
-This check requires the static sample you write in your integration's code to
-contain a subset of keys from the latest live result.
+This check requires the static sample you define for each trigger/action/search to
+contain a subset of the keys in the latest Task in your [Task History](https://zapier.com/app/history)
+for that trigger/action/search.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -879,11 +887,15 @@ output fields: [
 ## T006 - Polling Sample Contains a Subset of Keys from Live Result
 
 For hook triggers, we require you to provide a Perform List URL so that users can
-pull a live sample in the Zap editor. This is called a Polling Sample. To ensure
-users don't map a missing field in the Zap editor, this check compares the latest
-task history with the selected polling sample in the corresponding Zap. For it to
-pass, the selected polling sample must contain a subset of keys of the latest live
-result in Task History.
+pull a live sample in the Zap editor. This is called a Polling Sample, and is created
+when you test the trigger in a Zap before turning it on.
+
+Errors occur when a Zap uses a field from the Polling Sample that ends up not being
+provided by the actual hook payload once the Zap is running. To ensure this doesn't
+happen, this check compares the latest item in your
+[Task History](https://zapier.com/app/history) with the selected Polling Sample in
+the corresponding Zap. For it to pass, the selected Polling Sample must contain a
+subset of the keys returned in the latest live result in Task History.
 
 ✘ an example of an **incorrect** implementation:
 
