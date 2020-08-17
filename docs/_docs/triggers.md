@@ -81,7 +81,7 @@ Once you've added your trigger settings, be sure to click the _Save API Request 
 
 ![Zapier Rest Hook Settings](https://cdn.zapier.com/storage/photos/de85ffb1cc01a16b4b0e753dd7c0745c.png)
 
-Alternately, if your app supports [REST Hooks](http://resthooks.org/)—or webhook subscriptions that can be manipulated through a REST API—select _Rest Hook_ for your trigger. This will let your trigger run in near realtime with your app pushing data to Zapier, running Zaps as soon as new data comes into your app instead of waiting for Zapier to fetch new data from your API.
+Alternately, if your app supports REST Hooks—or webhook subscriptions that can be manipulated through a REST API—select _Rest Hook_ for your trigger. More detail on REST Hooks are [here] (http://resthooks.org/), but please note that the Zapier implementation does not support Identity Confirmation. This will let your trigger run in near realtime with your app pushing data to Zapier, running Zaps as soon as new data comes into your app instead of waiting for Zapier to fetch new data from your API.
 
 With a REST Hook trigger, you need to add a Subscribe and Unsubscribe URL, along with a Perform List URL where Zapier should check for recent items. Zapier requires the response to include an array of items, which Zapier will then deduplicate and use to trigger the Zap to run.
 
