@@ -40,11 +40,11 @@ If your API calls need more customization, however, or your API response is in a
 
 The first time you switch to code mode, Zapier copies everything entered in the API request form, including any custom options added, and converts them to JavaScript code. It then changes the UI to code mode where you can add code for your API call.
 
-In code mode, you can write JavaScript code, using Zapier's default code as a base or writing custom code. Use the `z.object` for Zapier specific features, including `z.console` to write to the console log, `z.JSON` to parse JSON, `z.errors` to take action on errors, and more. Check [Zapier's CLI Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for details.
+In code mode, you can write JavaScript code, using Zapier's default code as a base or writing custom code. Use the `z.object` for Zapier specific features, including `z.console` to write to the console log, `z.JSON` to parse JSON, `z.errors` to take action on errors, and more. Check [Zapier's CLI Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for details. 
 
 Additionally, use Zapier bundles to access auth data, data from user input forms, request data, and more. Learn more in our [Zapier bundle docs](https://platform.zapier.com/docs/advanced#bundle).
 
-> **Note**: Code Mode does not load any default libraries. If you need to load NPM modules, use [Zapier Platform CLI](https://zapier.github.io/zapier-platform-cli/) instead.
+> **Note**: Built-in Node libraries are available using `z.require('library')`, but we don't recommend this - we can't guarantee the version of Node your app will run under and the visual builder is not meant for editing and testing complex custom code. Code Mode also does not support NPM modules. For both, you should use [Zapier Platform CLI](https://zapier.github.io/zapier-platform-cli/) instead. Instructions for exporting your project [here.](https://platform.zapier.com/docs/export)
 
 Do note that changes are not saved automatically. Once you have added the code you want, click _Save & Continue_ to add the changes to your integration.
 
