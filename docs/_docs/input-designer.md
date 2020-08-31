@@ -35,7 +35,7 @@ To add a field, click the _Add_ button and select the field type. Enter the fiel
 
 - **Label**: A user friendly name for the field, such as `First Name`.
 - **Key**: A unique identifier for the field, without spaces, ideally with the same key as your API, such as `first_name`.
-- **Help Text**: (optional) A 20 character or longer description that appears under the field label, with [Markdown][1]{:target="_blank"} formatting.
+- **Help Text**: (optional) A 20 character or longer description that appears under the field label, with [Markdown][1]{:target="\_blank"} formatting.
 - **Type**: One of ten field types, with `String` as the default field type; see details on each field type below.
 - **Default Text**: (optional) Copy to include in the field if the user doesn’t enter anything; only include if this copy would work in every user’s account.
 - **Options**: (optional) Check whether this field should be required, if multiple values can be added, if the field is used to alter dynamic fields, or if it should be a dropdown.
@@ -71,6 +71,7 @@ Say you have a field that is only shown depending on the value of a previous fie
 If you check the _Alters Dynamic Fields_ option on a field, Zapier will automatically recompute any dynamic fields in your Zapier integration anytime this field is changed. Do not check the _Alters Dynamic Fields_ box unless the field is needed for your integrations’ dynamic fields.
 
 <a id="dropdown"></a>
+
 ### Dropdown
 
 <a id="static"></a>
@@ -97,18 +98,20 @@ To do that, add each menu item inside curly brackets, with the sample, value, an
 
 For example, if our API expected a value of `1` or `2`, but `1` actually means `pork` and `2` actually means `fish`, you could use the following code to add a dropdown menu that would look like the one above:
 
-`[`
-`  {`
-`    "sample": "1",`
-`    "value": "1",`
-`    "label": "Pork"`
-`  },`
-`  {`
-`    "sample": "2",`
-`    "value": "2",`
-`    "label": "Fish"`
-`  }`
-`]`
+```json
+[
+  {
+    "sample": "1",
+    "value": "1",
+    "label": "Pork"
+  },
+  {
+    "sample": "2",
+    "value": "2",
+    "label": "Fish"`
+  }
+]
+```
 
 <a id="dynamic"></a>
 **Dynamic Dropdown**
@@ -117,7 +120,7 @@ If users need to select data from their account in your app—such as a project,
 
 Zapier uses triggers to fetch the values for dynamic dropdown menus. The best way to make a dropdown is to make a dedicated trigger specifically for the dropdown data.
 
-***Build a Trigger to Fetch Dynamic Dropdown Data***
+**_Build a Trigger to Fetch Dynamic Dropdown Data_**
 
 ![Zapier hidden trigger setting](https://cdn.zapier.com/storage/photos/da0b142705534296dd1d2113c35b4f64.png)
 
@@ -127,7 +130,7 @@ Skip the _Input Designer_ tab as the dynamic dropdown does not need any input da
 
 ![Zapier hidden trigger API setting](https://cdn.zapier.com/storage/photos/4a64a727bc4301337acc72bc33edbad6.png)
 
-Then select the *API Configuration* tab, and add the API call where Zapier can fetch the data from your API. In standard Zapier triggers, you would use an API call that fetches new or newly updated items. Here, though, use an API call that pulls in a list of the data that you need for your dynamic dropdown.
+Then select the _API Configuration_ tab, and add the API call where Zapier can fetch the data from your API. In standard Zapier triggers, you would use an API call that fetches new or newly updated items. Here, though, use an API call that pulls in a list of the data that you need for your dynamic dropdown.
 
 ![Zapier hidden trigger API options](https://cdn.zapier.com/storage/photos/f9edb67b0c9be0378fd4ec1e9e4f3e79.png)
 
@@ -138,13 +141,14 @@ Additionally, most dynamic menus should let users load additional data if your A
 To add that, check the _Support Paging_ box, then in your API call include your API's pagination key and the {% raw %}`{{bundle.meta.page}}`{% endraw %} value to pull in a page value. Zapier will call page `0` first, then page `1` when users request additional entries, using zero-based numbering. You can customize the pagination from the _Code Mode_ button as well. Check our _[Pagination Triggers guide](http://zapier.github.io/visual-builder/docs/triggers#pagination)_ for more details.
 
 <a id="order"></a>
+
 > **Ordering Your Dropdown Menu Items**: Zapier will show the data in the dropdown menu in the order your API sends it to Zapier. If your API sends the data in alphabetical order, or numerical order, it will show as such in your drop-down menu. If your API call supports sorting, be sure to include the sorting parameter in your API call that would return data in the order you want it to show in your drop-down.
 
 ![Set output fields from dynamic dropdown](https://cdn.zapier.com/storage/photos/10eec1daf419738bee3dd8c9526dd443.png)
 
 Finally, you need to define the fields from your trigger that you need to use in the action input field. Test your trigger, then find the output fields needed, and add them to the _Output Fields_ list at the end of your settings page. Include at least a field with the data that Zapier needs to send to your API in the action, along with a field that includes a human friendly name for the data in that field.
 
-***Add an Input Field with Dynamic Fields***
+**_Add an Input Field with Dynamic Fields_**
 
 ![Select Trigger for Dynamic Fields](https://cdn.zapier.com/storage/photos/10eec1daf419738bee3dd8c9526dd443.png)
 
@@ -156,8 +160,16 @@ Whenever someone uses this input field in a Zap and selects this dynamic dropdow
 
 Do note that users can always choose to enter a custom value as the final option in dropdown fields, to map data from other Zap steps into this field.
 
+If you're creating dynamic dropdowns, via code, there's a few structures based on whether the order matters and you need lables. They're outlined in more detail [in the schema](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md#fieldchoicesschema), but the sparknotes is:
+
+| Need a Label? | Does Order Matter? | Type to Use                                                                                                                                            |
+| ------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Yes           | No                 | Object of value -> label                                                                                                                               |
+| No            | Yes                | Array of Strings                                                                                                                                       |
+| Yes           | Yes                | Array of [FieldChoiceWithLabel](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md#fieldchoicewithlabelschema) |
+
 <a id="dropdown-search"></a>
-***Add Search to a Dynamic Field (Optional)***
+**_Add Search to a Dynamic Field (Optional)_**
 
 ![Zapier Dynamic Dropdown Search](https://cdn.zapier.com/storage/photos/6e358b96fa8e28d43e3f50d9cb945d01.png)
 
@@ -218,7 +230,7 @@ Number fields can gather numbers with any value, including decimal points, and s
 ### Boolean
 
 ![Zapier Boolean Field][image-12]
-  
+
 Boolean fields let users select between `yes` and `no` values to set default settings in integrations, and return a corresponding `1` or `0` to your app. These are the simplest dropdown menus in Zaps.
 
 ### DateTime
@@ -227,7 +239,7 @@ Boolean fields let users select between `yes` and `no` values to set default set
 
 DateTime fields let users enter dates and times, using their human readable values, machine readable datetimes, or standard English words for time like `tomorrow`. Zapier interperpates the date input from users and outputs a standard [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) datetime to your API.
 
-> Learn more about how users can [modify dates and times in Zapier][2]{:target="_blank"}.
+> Learn more about how users can [modify dates and times in Zapier][2]{:target="\_blank"}.
 
 ### Password
 
@@ -255,7 +267,7 @@ Line Items are a useful way to add as much data to an app as users need, especia
 
 Normal input fields in Zapier add one item each time the Zap runs. Fields inside a Line Item Group, however, are added once per comma separated value added to the field. Users would map, say, an order field containing `item1,item2,item3` and a price field with `1.99,12.95,9.99`, and Zapier would add three line item rows with each item and its correct price.
 
-> Learn more about line items from Zapier’s [Line Item Guide][4]{:target="_blank"} and our [Line Item Help Docs][5]{:target="_blank"}.
+> Learn more about line items from Zapier’s [Line Item Guide][4]{:target="\_blank"} and our [Line Item Help Docs][5]{:target="\_blank"}.
 
 ![Add Zapier Line Item Group][image-18]
 
@@ -294,6 +306,7 @@ You can then include this field in your API call using the key set in the code.
 To use the custom fields in your API call, you must switch to _Code Mode_ and make a custom API call that includes `body: { ...bundle.inputData }` to send every input field, including pre-defined and custom fields, in the body of the API call. Alternately, use the `bundle.inputData` in code mode along with individual listings of your pre-defined fields.
 
 <a id="test-dynamic"></a>
+
 ## How to Test Dynamic Fields
 
 When you add a dynamic field, it will not show in the Zap step preview on the right side of your input designer. That is expected, as Zapier will not run `z.request` call inside the Input Designer, so your custom fields will not show up in the preview.
@@ -304,32 +317,31 @@ To test a dynamic field, [create a new Zap](https://zapier.com/app/editor/) and 
 
 ![See Zapier dynamic field data from Monitoring tab](https://cdn.zapier.com/storage/photos/45ec3a1bdbd0256d9b17d798621f7efa.png)
 
-You can then see details about the dynamic field in the _Monitoring_ tab in your integration's Zapier Platform UI details editor. Click the _Moitoring_ tab, then look through the API call details to find the details about the API call that fetched the dynamic fields.
+You can then see details about the dynamic field in the _Monitoring_ tab in your integration's Zapier Platform UI details editor. Click the _Monitoring_ tab, then look through the API call details to find the details about the API call that fetched the dynamic fields.
 
-[1]:	https://zapier.com/blog/beginner-ultimate-guide-markdown/
-[2]:	https://zapier.com/help/modifying-dates-and-times/
-[3]:	https://zapier.com/blog/beginner-ultimate-guide-markdown/
-[4]:	https://zapier.com/blog/formatter-line-item-automation/
-[5]:	https://zapier.com/help/line-items/
-
-[image-1]:	https://cdn.zapier.com/storage/photos/31dfcf36c01b0ee0db946a6a46c3de8c.png
-[image-2]:	https://cdn.zapier.com/storage/photos/aba4afb45bd9dbd5ec8c5e4a4137636d.png
-[image-3]:	https://cdn.zapier.com/storage/photos/842d24708f402853e08ce6fbc06d650c.png
-[image-4]:	https://cdn.zapier.com/storage/photos/0cf01c1dd6923b09cbb2cff97f0d6906.png
-[image-5]:	https://cdn.zapier.com/storage/photos/f70686a8b053b541388da667e602f5b5.png
-[image-6]:	https://cdn.zapier.com/storage/photos/2e73521bfc2f99ff43e12b444226421b.gif
-[image-7]:	https://cdn.zapier.com/storage/photos/f065e57e78c2c57c65827a611a3a3fb1.gif
-[image-8]:	https://cdn.zapier.com/storage/photos/14d9254a5e1195d6fc8bf03743e35aba.png
-[image-9]:	https://cdn.zapier.com/storage/photos/4a2561c266257c72f20acbf35bdadbbb.png
-[image-10]:	https://cdn.zapier.com/storage/photos/5f172119f8e4c28cef88cc0b01e78539.png
-[image-11]:	https://cdn.zapier.com/storage/photos/fdcbd1c11d748a58a88598c635705ec2.png
-[image-12]:	https://cdn.zapier.com/storage/photos/abc4b4149e7768680910607a708e6c2a.png
-[image-13]:	https://cdn.zapier.com/storage/photos/cafd896bfcf92977464de936bdb4049b.png
-[image-14]:	https://cdn.zapier.com/storage/photos/d6198c63b6adfd6d2d36ddcc49118acf.png
-[image-15]:	https://cdn.zapier.com/storage/photos/ba63e87ff25ed2f16eb2bf538ad3ec48.png
-[image-16]:	https://cdn.zapier.com/storage/photos/184904cd7048a06caed45b9575565096.png
-[image-17]:	https://cdn.zapier.com/storage/photos/997589da843fbd06f89c18beb9e9ae02.png
-[image-18]:	https://cdn.zapier.com/storage/photos/39e7e2296b66de0a9edea5ccef08c505.png
-[image-19]:	https://cdn.zapier.com/storage/photos/5dcf22f358eb16c18abea7e532137269.png
-[image-20]:	https://cdn.zapier.com/storage/photos/abf8f19ef35997b8919888da91b88590.png
-[image-21]:	https://cdn.zapier.com/storage/photos/fdfe0ef4278760b1c22b47b6b66cb290.png
+[1]: https://zapier.com/blog/beginner-ultimate-guide-markdown/
+[2]: https://zapier.com/help/modifying-dates-and-times/
+[3]: https://zapier.com/blog/beginner-ultimate-guide-markdown/
+[4]: https://zapier.com/blog/formatter-line-item-automation/
+[5]: https://zapier.com/help/line-items/
+[image-1]: https://cdn.zapier.com/storage/photos/31dfcf36c01b0ee0db946a6a46c3de8c.png
+[image-2]: https://cdn.zapier.com/storage/photos/aba4afb45bd9dbd5ec8c5e4a4137636d.png
+[image-3]: https://cdn.zapier.com/storage/photos/842d24708f402853e08ce6fbc06d650c.png
+[image-4]: https://cdn.zapier.com/storage/photos/0cf01c1dd6923b09cbb2cff97f0d6906.png
+[image-5]: https://cdn.zapier.com/storage/photos/f70686a8b053b541388da667e602f5b5.png
+[image-6]: https://cdn.zapier.com/storage/photos/2e73521bfc2f99ff43e12b444226421b.gif
+[image-7]: https://cdn.zapier.com/storage/photos/f065e57e78c2c57c65827a611a3a3fb1.gif
+[image-8]: https://cdn.zapier.com/storage/photos/14d9254a5e1195d6fc8bf03743e35aba.png
+[image-9]: https://cdn.zapier.com/storage/photos/4a2561c266257c72f20acbf35bdadbbb.png
+[image-10]: https://cdn.zapier.com/storage/photos/5f172119f8e4c28cef88cc0b01e78539.png
+[image-11]: https://cdn.zapier.com/storage/photos/fdcbd1c11d748a58a88598c635705ec2.png
+[image-12]: https://cdn.zapier.com/storage/photos/abc4b4149e7768680910607a708e6c2a.png
+[image-13]: https://cdn.zapier.com/storage/photos/cafd896bfcf92977464de936bdb4049b.png
+[image-14]: https://cdn.zapier.com/storage/photos/d6198c63b6adfd6d2d36ddcc49118acf.png
+[image-15]: https://cdn.zapier.com/storage/photos/ba63e87ff25ed2f16eb2bf538ad3ec48.png
+[image-16]: https://cdn.zapier.com/storage/photos/184904cd7048a06caed45b9575565096.png
+[image-17]: https://cdn.zapier.com/storage/photos/997589da843fbd06f89c18beb9e9ae02.png
+[image-18]: https://cdn.zapier.com/storage/photos/39e7e2296b66de0a9edea5ccef08c505.png
+[image-19]: https://cdn.zapier.com/storage/photos/5dcf22f358eb16c18abea7e532137269.png
+[image-20]: https://cdn.zapier.com/storage/photos/abf8f19ef35997b8919888da91b88590.png
+[image-21]: https://cdn.zapier.com/storage/photos/fdfe0ef4278760b1c22b47b6b66cb290.png
