@@ -11,7 +11,7 @@ redirect_from: /docs/
 
 The visual builder is a brand new addition and as such we're bound to have a few wrinkles to iron out. Here's a couple we know about and are working on. If you find issues not listed here be sure to let us know at contact@zapier.com. If you have questions please join us and other Zapier Platform developers on Slack [here]({{ site.slack_invite_url }}).
 
-- **Ignorable Async/Await Syntax Warnings** The Zapier Platform supoorts async/await Javascript syntax, but when in code mode you'll see syntax warnings. You can ignore these and save/test your code.
+- **Ignorable Async/Await Syntax Warnings** The Zapier Platform supports async/await Javascript syntax, but when in code mode you'll see syntax warnings. You can ignore these and save/test your code.
 - **Incomplete validation rules for input fields** When adding input fields, particularly when working with dictionary types, line items, and drop downs, take care when selecting options like "allow multiples", etc. For now you might have a look at the [schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) for Fields to see what's allowed, while we work to implement better guard rails for field creation.
 
 ## Top Tips
