@@ -35,9 +35,11 @@ Typeform knows that when their users also use Zapier, they're 50 percent more li
 
 Typeform encourages its users to try Zapier at multiple points in the customer journey, including:
 
-Typeform support team members actively suggest Zapier integrations to users, referencing dedicated Zapier training materials 
-Help documentation with a [branded widget](https://zapier.com/partner/embed/) that helps users start automating common tasks in a familiar setting 
-An onboarding email highlighting the value of connecting Typeform to the other apps they use to run their business 
+- Typeform support team members actively suggest Zapier integrations to users, referencing dedicated Zapier training materials 
+
+- Help documentation with a [branded widget](https://zapier.com/partner/embed/) that helps users start automating common tasks in a familiar setting 
+
+- An onboarding email highlighting the value of connecting Typeform to the other apps they use to run their business 
 
 ![](https://cdn.zappy.app/7bdad8be66d3720ed31bb398718c48e9.png)
 
@@ -51,7 +53,7 @@ In Typeform’s in-product “Connect Your Form” tab, they contextually surfac
 
 ![](https://zappy.zapier.com/3ed64bf1484d6c50375ce323a8084a15.png)
 
-After making Zapier easier to find in their product, Typeform saw a 16 percent increase Zapier adoption across all users. Additionally, Typeform and Zapier have continued to cultivate a deep product partnership and collaborate on co-marketing activities, which has also resulted in more of the kinds of users Typeform values most: users who use Typeform as the solution to multiple challenges and who keep coming back to build new forms, surveys, and quizzes.
+After making Zapier easier to find in their product, Typeform saw a 16 percent increase in Zapier adoption across all users. Additionally, Typeform and Zapier have continued to cultivate a deep product partnership and collaborate on co-marketing activities, which has also resulted in more of the kinds of users Typeform values most: users who use Typeform as the solution to multiple challenges and who keep coming back to build new forms, surveys, and quizzes.
 
 _Explore how you could succeed with Zapier like Typeform did. Get in touch with us at partners@zapier.com._
 
