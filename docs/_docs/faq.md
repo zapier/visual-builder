@@ -44,7 +44,9 @@ In code mode, you can write JavaScript code, using Zapier's default code as a ba
 
 Additionally, use Zapier bundles to access auth data, data from user input forms, request data, and more. Learn more in our [Zapier bundle docs](https://platform.zapier.com/docs/advanced#bundle).
 
-> **Note**: Built-in Node libraries are available using `z.require('library')`, but we don't recommend this - we can't guarantee the version of Node your app will run under and the visual builder is not meant for editing and testing complex custom code. Code Mode also does not support NPM modules. For both, you should use [Zapier Platform CLI](https://zapier.github.io/zapier-platform-cli/) instead. Instructions for exporting your project [here.](https://platform.zapier.com/docs/export)
+> **Note**: If you were familiar with our legacy Web Builder environment, we used to include several 3rd party libraries, like lodash, and made them available on the z object. Those libraries are not included in the new version of the UI tool. If you need access to additional modules you can easily move your project to the [Zapier CLI](https://zapier.github.io/zapier-platform-cli) and take advantage of npm to bring in any additional libraries you need.
+
+> Note that, in Code Mode you can import from Node's standard library with `z.require`, for example, `z.require('querystring')` or `z.require('crypto')`. We strongly recommend you keep it simple when coding in the UI tool. The CLI is much better suited to building and testing complex code. And be sure you know what you're doing - we can't guarantee that everything you might use from the standard library will be supported in our platform's runtime.
 
 Do note that changes are not saved automatically. Once you have added the code you want, click _Save & Continue_ to add the changes to your integration.
 
