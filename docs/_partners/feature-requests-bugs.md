@@ -82,18 +82,7 @@ If the existing API endpoints will be **deprecated/terminated**, or an **older a
 
 At this time, the users and Zaps on the old integration should be migrated over to the new version. This is **not** done automatically during the "Hide and Replace" step of the replacement.
 
-If the existing API endpoints in the old integration are **still working and available**, the Zapier team will **not** assist you with migrating users and Zaps to the new version. You will need to send out communication to notify your users to update their Zaps on your own.
-
-If the existing API endpoints will be **deprecated/terminated**, or an **older authentication type is no longer usable**, we can assist with migrating over Zaps and users if discussed in advance, so please reach out to [partners@zapier.com](mailto:partners@zapier.com) as early as possible to discuss migration plans and tips on preserving compatibility with the existing integration. Once we've ascertained the new integration is working well, we'll start converting/migrating users and their Zaps from the older integration, and switch them to the newer integration.
-
-This migration process occurs gradually and may take a few weeks or months to complete depending on the quantity of Zaps that are present, and the number of issues that are encountered during the Zap migration. This is to help ensure any edge-cases won't result in a large eruption of data errors if/when a large quantity of Zaps are converted. Our shared goal is to move our mutual users to the new integration as seamlessly as possible.
-
-#### Common Reasons Why Migrations Can't Occur
-
-* The new integration doesn’t have a Trigger, Action, or Search for every respective step being used in a Zap on the old version.
-* The new integration requires inputs (trigger or action fields) the old version did not.
-* Authentication has changed, and there is no way to programmatically swap in the new authentication for the old authentication.
-* The data from the new integration has changed in a way that does not maintain 1:1 parity with the data returned from the old integration, or the format of data returned has changed.
+The Zapier team will not* assist you with migrating users and Zaps to the new version. You will need to send out communication to notify your users to update their Zaps on your own.
 
 ### 4. Migrate existing Zap Templates
 
