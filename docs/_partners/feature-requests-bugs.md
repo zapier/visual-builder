@@ -82,7 +82,7 @@ If the existing API endpoints will be **deprecated/terminated**, or an **older a
 
 At this time, the users and Zaps on the old integration should be migrated over to the new version. This is **not** done automatically during the "Hide and Replace" step of the replacement.
 
-The Zapier team will not* assist you with migrating users and Zaps to the new version. You will need to send out communication to notify your users to update their Zaps on your own.
+The Zapier team will **not** assist you with migrating users and Zaps to the new version. You will need to send out communication to notify your users to update their Zaps on their own.
 
 ### 4. Migrate existing Zap Templates
 
