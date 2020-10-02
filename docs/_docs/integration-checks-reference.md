@@ -590,10 +590,11 @@ You can't promote a deprecated version.
 
 <a name="L002"></a><a name="L00002"></a>
 
-## L002 - Integration Is Pending
+## L002 - Version Was Already Submitted
 
-This could happen if you're repeatedly submitting an integration that is already
-pending for review.
+You can't submit a version you've already submitted. If your integration was pushed
+back and you want to resubmit for another review, you should make changes on a
+**new** version and submit that.
 
 ---
 
@@ -917,7 +918,7 @@ live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 
 ## U001 - Developer Terms of Service
 
-You must agree to the Developer Terms of Service in order to proceed. Go to
+You must agree to the latest Developer Terms of Service in order to proceed. Go to
 [Developer Home](https://zapier.com/app/developer) to agree.
 
 ---
