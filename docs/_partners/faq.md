@@ -127,7 +127,7 @@ Some common issues that may cause this:
 
 Can't find the answer you need here or in Zapier's [integration planning guide](https://platform.zapier.com/partners/planning-guide)? Feel free to get in touch with our team:
 
-### Join Zapier Develoer Community
+### Join Zapier Developer Community
 
 Zapier's Platform team has a [community](https://community.zapier.com/developer-discussion-13) dedicated to helping developers with new and existing app integrations. We're a worldwide team, so there's usually someone around to answer your questions. We'd love to hear your experience building on Zapier.
 
