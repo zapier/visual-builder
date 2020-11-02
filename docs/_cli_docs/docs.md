@@ -18,7 +18,7 @@ You may find docs duplicate or outdated across the Zapier site. The most up-to-d
 - [Latest CLI Reference](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md)
 - [Latest Schema Docs](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md)
 
-This doc decribes the latest CLI version **10.1.1**, as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc decribes the latest CLI version **10.1.2**, as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [9.4.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.4.0/packages/cli/README.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@8.4.2/packages/cli/README.md)
 - CLI Reference: [9.4.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.4.0/packages/cli/README.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@8.4.2/packages/cli/README.md)
@@ -224,7 +224,7 @@ Registering your App with Zapier is a necessary first step which only enables ba
 zapier register "Zapier Example"
 
 # list your apps
-zapier apps
+zapier integrations
 ```
 
 > Note: This doesn't put your app in the editor - see the docs on pushing an App Version to do that!
@@ -274,10 +274,10 @@ This is how you would share your app with friends, co-workers or clients. This i
 
 ```bash
 # sends an email this user to let them view the app version 1.0.0 in the UI privately
-zapier invite user@example.com 1.0.0
+zapier users:add user@example.com 1.0.0
 
 # sends an email this user to let them admin the app (make changes just like you)
-zapier collaborate user@example.com
+zapier team:add user@example.com
 ```
 
 You can also invite anyone on the internet to your app by using the links from `zapier users:links`. The link should look something like `https://zapier.com/platform/public-invite/1/222dcd03aed943a8676dc80e2427a40d/`. You can put this in your help docs, post it to Twitter, add it to your email campaign, etc. You can choose an invite link specific to an app version or for the entire app (i.e. all app versions).
@@ -537,8 +537,8 @@ You'll also likely need to set your `CLIENT_ID` and `CLIENT_SECRET` as environme
 
 ```bash
 # setting the environment variables on Zapier.com
-$ zapier env 1.0.0 CLIENT_ID 1234
-$ zapier env 1.0.0 CLIENT_SECRET abcd
+$ zapier env:set 1.0.0 CLIENT_ID=1234
+$ zapier env:set 1.0.0 CLIENT_SECRET=abcd
 
 # and when running tests locally, don't forget to define them in .env or in the command!
 $ CLIENT_ID=1234 CLIENT_SECRET=abcd zapier test
@@ -649,8 +649,8 @@ You are required to define the authorization URL and the API call to fetch the a
 
 ```bash
 # setting the environment variables on Zapier.com
-$ zapier env 1.0.0 CLIENT_ID 1234
-$ zapier env 1.0.0 CLIENT_SECRET abcd
+$ zapier env:set 1.0.0 CLIENT_ID=1234
+$ zapier env:set 1.0.0 CLIENT_SECRET=abcd
 
 # and when running tests locally, don't forget to define them in .env or in the command!
 $ CLIENT_ID=1234 CLIENT_SECRET=abcd zapier test
@@ -889,6 +889,16 @@ Each of the 3 types of function expects a certain type of object. As of core v1.
 | Trigger | Array       | 0 or more objects that will be passed to the [deduper](https://zapier.com/developer/documentation/v2/deduplication/) |
 | Search  | Array       | 0 or more objects. If len > 0, put the best match first                                                              |
 | Action  | Object      | Return values are evaluated by [`isPlainObject`](https://lodash.com/docs#isPlainObject)                              |
+
+### Fallback Sample
+In cases where Zapier needs to show an example record to the user, but we are unable to get a live example from the API, Zapier will fallback to this hard-coded sample. This should reflect the data structure of the Trigger's perform method, and have dummy values that we can show to any user.
+
+```js
+,sample: {
+  dummydata_field1: 'This will be compared against your perform method output'
+  style: 'mediterranean'
+}
+```
 
 ## Input Fields
 
@@ -1516,6 +1526,55 @@ The `z.cursor` object exposes two methods:
 
 Any data you `set` will be available to that Zap for about an hour (or until it's overwritten). For more information, see: [paging](#paging).
 
+### `z.generateCallbackUrl()`
+
+The `z.generateCallbackUrl()` will return a callback URL your app can `POST` to later for handling long running tasks (like transcription or encoding jobs). In the meantime, the Zap and Task will wait for your response and the user will see the Task marked as waiting.
+
+For example, in your `perform` you might do:
+
+```js
+const perform = async (z, bundle) => {
+  // something like this url:
+  // https://zapier.com/hooks/callback/123/abcdef01-2345-6789-abcd-ef0123456789/abcdef0123456789abcdef0123456789abcdef01/
+  const callbackUrl = z.generateCallbackUrl();
+  await z.request({
+    url: 'https://example.com/api/slow-job',
+    method: 'POST',
+    body: {
+      // ... whatever your integration needs
+      url: callbackUrl,
+    },
+  });
+  return {"hello": "world"}; // available later in bundle.outputData
+};
+```
+
+And in your own `/api/slow-job` view (or more likely, an async job) you'd make this request to Zapier when the long-running job completes to populate `bundle.cleanedRequest`:
+
+```http
+POST /hooks/callback/123/abcdef01-2345-6789-abcd-ef0123456789/abcdef0123456789abcdef0123456789abcdef01/ HTTP/1.1
+Host: zapier.com
+Content-Type: application/json
+
+{"foo":"bar"}
+```
+
+And finally, in a `performResume` to handle the final step which will receive three bundle properties:
+
+* `bundle.outputData` is `{"hello": "world"}`, the data returned from the initial `perform`
+* `bundle.cleanedRequest` is `{"foo": "bar"}`, the payload from the callback URL
+* `bundle.rawRequest` is the full request object corresponding to `bundle.cleanedRequest`
+
+```js
+const performResume = async (z, bundle) => {
+  // this will give a final value of: {"hello": "world", "foo": "bar"}
+  return  { ...bundle.outputData, ...bundle.cleanedRequest };
+};
+```
+
+> The app will have a maximum of 90 days to `POST` to the callback URL. If a user deletes or modifies the Zap or Task in the meantime, we will not resume the task.
+
+
 ## Bundle Object
 
 This object holds the user's auth details and the data for the API requests.
@@ -1591,7 +1650,7 @@ const perform = async (z, bundle) => {
 
 ### `bundle.rawRequest`
 
-> `bundle.rawRequest` is only available in the `perform` for web hooks and `getAccessToken` for oauth authentication methods.
+> `bundle.rawRequest` is only available in the `perform` for web hooks, `getAccessToken` for oauth authentication methods, and `performResume` in a callback action.
 
 `bundle.rawRequest` holds raw information about the HTTP request that triggered the `perform` method or that represents the users browser request that triggered the `getAccessToken` call:
 
@@ -1610,7 +1669,7 @@ const perform = async (z, bundle) => {
 
 ### `bundle.cleanedRequest`
 
-> `bundle.cleanedRequest` is only available in the `perform` for webhooks and `getAccessToken` for oauth authentication methods.
+> `bundle.cleanedRequest` is only available in the `perform` for webhooks, `getAccessToken` for oauth authentication methods, and `performResume` in a callback action.
 
 `bundle.cleanedRequest` will return a formatted and parsed version of the request. Some or all of the following will be available:
 
@@ -1629,6 +1688,13 @@ const perform = async (z, bundle) => {
   }
 }
 ```
+
+### `bundle.outputData`
+
+> `bundle.outputData` is only available in the `performResume` in a callback action.
+
+`bundle.outputData` will return a whatever data you originally returned in the `perform` allowing you to mix that with `bundle.rawRequest` or `bundle.cleanedRequest`.
+
 
 ### `bundle.targetUrl`
 
@@ -1687,7 +1753,7 @@ To define an environment variable, use the `env` command:
 
 ```bash
 # Will set the environment variable on Zapier.com
-zapier env 1.0.0 MY_SECRET_VALUE 1234
+zapier env:set 1.0.0 MY_SECRET_VALUE=1234
 ```
 
 You will likely also want to set the value locally for testing.
@@ -1702,7 +1768,7 @@ Alternatively, we provide some extra tooling to work with an `.env` (or `.enviro
 MY_SECRET_VALUE=1234
 ```
 
-> `.env` is the new recommended name for the environment file since v5.1.0. The old name `.environment` is depreated but will continue to work for backward compatibility.
+> `.env` is the new recommended name for the environment file since v5.1.0. The old name `.environment` is deprecated but will continue to work for backward compatibility.
 
 And then in your `test/basic.js` file:
 
@@ -1718,7 +1784,7 @@ should('some tests', () => {
 
 > This is a popular way to provide `process.env.ACCESS_TOKEN || bundle.authData.access_token` for convenient testing.
 
-> **NOTE** Variables defined via `zapier env` will _always_ be uppercased. For example, you would access the variable defined by `zapier env 1.0.0 foo_bar 1234` with `process.env.FOO_BAR`.
+> **NOTE** Variables defined via `zapier env:set` will _always_ be uppercased. For example, you would access the variable defined by `zapier env:set 1.0.0 foo_bar=1234` with `process.env.FOO_BAR`.
 
 
 ### Accessing Environment Variables
@@ -1727,10 +1793,10 @@ To view existing environment variables, use the `env` command.
 
 ```bash
 # Will print a table listing the variables for this version
-zapier env 1.0.0
+zapier env:get 1.0.0
 ```
 
-Within your app, you can access the environment via the standard `process.env` - any values set via local `export` or `zapier env` will be there.
+Within your app, you can access the environment via the standard `process.env` - any values set via local `export` or `zapier env:set` will be there.
 
 For example, you can access the `process.env` in your perform functions and in templates:
 
@@ -2123,6 +2189,28 @@ And in future steps of the Zap - if Zapier encounters a pointer as returned by `
 
 > **Why can't I just load the data immediately?** Isn't it easier? In some cases it can be - but imagine an API that returns 100 records when polling - doing 100x `GET /id.json` aggressive inline HTTP calls when 99% of the time Zapier doesn't _need_ the data yet is wasteful.
 
+### Merging Hydrated Data
+
+As you've seen, the usual call to dehydrate will assign the result to an object property:
+
+```js
+movie.details = z.dehydrate(getMovieDetails, { id: movie.id });
+```
+
+In this example, all of the movie details will be located in the `details` property (e.g. `details.releaseDate`) after hydration occurs. But what if you want these results available at the top-level (e.g. `releaseDate`)? Zapier supports a specific keyword for this scenario:
+
+```js
+movie.$HOIST$ = z.dehydrate(getMovieDetails, { id: movie.id });
+```
+
+Using `$HOIST$` as the key will signal to Zapier that the results should be merged into the object containing the `$HOIST$` key. You can also use this to merge your hydrated data into a property containing "partial" data that exists before dehydration occurs:
+
+```js
+movie.details = {
+  title: movie.title,
+  $HOIST$: z.dehydrate(getMovieDetails, { id: movie.id })
+};
+```
 
 ### File Dehydration
 
@@ -2406,7 +2494,7 @@ const yourAfterResponse = (resp) => {
 
 ## Testing
 
-You can write unit tests for your Zapier app that run locally, outside of the zapier editor.
+You can write unit tests for your Zapier app that run locally, outside of the Zapier editor.
 You can run these tests in a CI tool like [Travis](https://travis-ci.com/).
 
 ### Writing Unit Tests
@@ -2700,7 +2788,7 @@ You will see both [template literal placeholders](https://developer.mozilla.org/
 
 In general, use `${var}` within functions and use `{{var}}` anywhere else.
 
-Placeholders get evaluated as soon as the line of code is evaluated. This means that if you use `${process.env.VAR}` in a trigger configuration, `zapier push` will substitute it with your local environment's value for `VAR` when it builds your app and the value set via `zapier env` will not be used.
+Placeholders get evaluated as soon as the line of code is evaluated. This means that if you use `${process.env.VAR}` in a trigger configuration, `zapier push` will substitute it with your local environment's value for `VAR` when it builds your app and the value set via `zapier env:set` will not be used.
 
 > If you're not familiar with [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals), know that `const val = "a" + b + "c"` is essentially the same as <code>const val = &#96;a${b}c&#96;</code>.
 
@@ -3028,10 +3116,10 @@ The Zapier Platform consists of 3 npm packages that are released simultaneously 
 
 The Zapier platform and its tools are under active development. While you don't need to install every release, we release new versions because they are better than the last. We do our best to adhere to [Semantic Versioning](https://semver.org/) wherein we won't break your code unless there's a `major` release. Otherwise, we're just fixing bugs (`patch`) and adding features (`minor`).
 
-Barring unforeseen circumstances, all released platform versions will continue to work for the forseeable future. While you never *have* to upgrade your app's `zapier-platform-core` dependency, we recommend keeping an eye on the [changelog](https://github.com/zapier/zapier-platform/blob/master/CHANGELOG.md) to see what new features and bux fixes are available.
+Barring unforeseen circumstances, all released platform versions will continue to work for the foreseeable future. While you never *have* to upgrade your app's `zapier-platform-core` dependency, we recommend keeping an eye on the [changelog](https://github.com/zapier/zapier-platform/blob/master/CHANGELOG.md) to see what new features and bug fixes are available.
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **10.1.1**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **10.1.2**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
@@ -3041,5 +3129,5 @@ For maximum compatibility, keep the versions of `cli` and `core` in sync.
 
 ## Get Help!
 
-You can get help by either emailing partners@zapier.com or by [joining our Slack team here](https://join.slack.com/t/zapier-platform/shared_invite/enQtOTgyMjkzNDU1NjM5LWM1MGQ1YmY5ODgxNmM1NjIzZTk3NjNkMzFlZWExYzU2MDJjNTVmNDEzMWUzYjdlNmMzZGViMzE0YjhlOGIyZDA).
+You can get help by either emailing partners@zapier.com or by [joining our developer community here](https://community.zapier.com/developer-discussion-13).
 {% endraw %}
