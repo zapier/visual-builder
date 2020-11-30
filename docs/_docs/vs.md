@@ -15,7 +15,7 @@ Zapier CLI is the most advanced way to build integrations in your local developm
 
 ![Zapier Platform UI and CLI comparison table](https://cdn.zapier.com/storage/photos/f79f4f8387cd0291d9bf9b0a74c82088.png)
 
-Zapier Platform UI and CLI both include the same core authentication, trigger, action and most testing features. The CLI additionally lets you add advanced features including resources, middleware, files, hydration, and NPM modules, along with options to write custom test suites. The UI gives you an easier way to build integrations with a form-based editor and WYSIWYG preview of your integration in Zapier, with the option to export projects coming soon.
+Zapier Platform UI and CLI both include the same core authentication, trigger, action and most testing features. The CLI additionally lets you add advanced features including resources, middleware, files, hydration, and NPM modules, along with options to write custom test suites. The UI gives you an easier way to build integrations with a form-based editor and WYSIWYG preview of your integration in Zapier, with the option to [export projects to the CLI](/docs/export) if your needs change.
 
 You can accomplish the same goals and build equally powerful Zapier integrations with both Zapier Platform UI and CLI. The best one for your integration depends on your work style and integration needs.
 
@@ -27,7 +27,7 @@ You can accomplish the same goals and build equally powerful Zapier integrations
 
 Zapier Platform UI is the easiest way to build new integrations. With a general understanding of API authentication and calls, you can build a full Zapier integration without any coding. Its visual builder sets many of the defaults for you automatically. All you need to do is add details about your trigger and action steps, build input forms for users to enter data, and set the API call details to send that data to your app.
 
-The visual builder additionally includes a code mode toggle on every API call, where you can write custom JavaScript code for your API call and response data parsing. Coming soon, you will also be able to convert a Platform UI integration to CLI for an easy way to start new integrations then customize them in your local development environment, as they both share the same Zapier Platform backend.
+The visual builder additionally includes a code mode toggle on every API call, where you can write custom JavaScript code for your API call and response data parsing. You can also [export](/docs/export) an existing Platform UI integration to CLI, which provides an easy way to start new integrations, then customize them in your local development environment, as they both share the same Zapier Platform backend.
 
 Choose Zapier Platform UI for your integration if you're new to Zapier integration development, want an easy way to build a new integration, or have a team with non-engineers working together on the integration who would find the CLI more difficult to use.
 
