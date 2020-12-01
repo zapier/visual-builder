@@ -148,7 +148,6 @@ Now, let's add a test to make sure our code is working properly.
 In `test/index.js`, **replace** the file with:
 
 ```javascript
-const should = require('should')
 
 const zapier = require('zapier-platform-core')
 
@@ -161,12 +160,12 @@ describe('My App', () => {
 
     appTester(App.triggers.recipe.operation.perform, bundle)
       .then(results => {
-        should(results.length).above(1)
+        expect(results.length).toBeGreaterThan(1)
 
         const firstResult = results[0]
         console.log('test result: ', firstResult)
-        should(firstResult.name).eql('name 1')
-        should(firstResult.directions).eql('directions 1')
+        expect(firstResult.name).toBe('name 1')
+        expect(firstResult.directions).toBe('directions 1')
 
         done()
       })
