@@ -15,6 +15,36 @@ There are two ways to embed Zapier in your product: the [embed widget](#widget) 
 
 Learn more about embedding with the widget.js and creating your own widget [here](https://zapier.com/partner/embed/).
 
+Want to embed specific individual Zap Templates instead? Copy the Zap ID number from your [Zap Templates Dashboard](https://zapier.com/developer/zap-templates/) by clicking the gear icon beside a Zap and selecting the _Copy ID_ option. Then, include it in place of `1234` in the text below:
+
+`<script type="text/javascript" src="https://zapier.com/apps/embed/widget.js?guided_zaps=1234"></script>`
+
+Want to embed multiple Zap Templates? Include each of their IDs in a comma separated list, such as:
+
+`<script type="text/javascript" src="https://zapier.com/apps/embed/widget.js?guided_zaps=1234,9876,3456"></script>`
+
+<a id="embed-widget-options"></a>
+You can additionally use these options to customize your Zap Template embeds:
+
+- `limit=10` to set the number of Zaps to display; use any number you want
+- `theme=dark` for a dark-colored embed, instead of the default light background
+- `categories=CATEGORYNAME` to show only Zap Templates with apps from a specific category, with `CATEGORYNAME` replaced with the name of a category from [Zapier’s App Directory](https://zapier.com/apps/)
+- `categories=-CATEGORYNAME` to _not_ show Zap Templates with apps from a specific category
+- `services=-APP,-APP` to exclude specific apps
+- `borderColor` to set the color of the borders to any css value or “none”
+- `backgroundColor` to set the background of each row to any css value including “transparent”
+- `buttonColor` to set the background color of the primary button to any css value
+- `inheritFont` to disable the widget font styling allowing it to inherit from the parent container
+- `buttonType` to set the button type. Type `outline` (currently the only option) sets the `buttonColor` as a border around the button with a transparent background
+- `title` to set a styled header to the widget
+- `textColor` to set the text color of the widget (template titles)
+- `button` to set the primary button text (default: Use This Zap)
+- `width` to set a fixed width to the widget. By default, the widget markup is fully responsive with a max width of 100% of its parent’s width.
+
+Include the additional options at the end of the script text with an ampersand, such as:
+
+`<script src="https://zapier.com/apps/embed/widget.js?services=APP&container=true&limit=10&theme=dark"></script>`
+
 <span id="iframe"><!-- helper anchor for simpler linking --></span>
 
 ## Partner API (using an iframe)
