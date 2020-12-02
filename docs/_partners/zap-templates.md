@@ -276,7 +276,7 @@ You can additionally use these options to customize your Zap Template embeds:
 
 Include the additional options at the end of the script text with an ampersand, such as:
 
-`<script src="https://zapier.com/apps/embed/widget.js?services=APP&container=true&limit=10&theme=dark"></script>`
+`<script src="https://zapier.com/apps/embed/widget.js?services=APP&borderColor=green&limit=10&theme=dark"></script>`
 
 ### Embed Zap Templates in Your App
 
