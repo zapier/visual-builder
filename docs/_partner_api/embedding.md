@@ -11,7 +11,7 @@ There are two ways to embed Zapier in your product: the [embed widget](#widget) 
 
 ## widget.js
 
-![](https://cdn.zapier.com/zapier/images/partners/in-your-product.png)
+![](https://cdn.zapier.com/zapier/images/partners/in-your-product-wave.png)
 
 Learn more about embedding with the widget.js and creating your own widget [here](https://zapier.com/partner/embed/).
 
