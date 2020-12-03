@@ -149,7 +149,7 @@ Descriptions, then, are what users see when they click the Zap Template. They ex
 
 Zap Template titles clearly and briefly state the apps the Zap connects and the workflow it accomplishes. They include the trigger and action apps and the actions they perform. They use present tense, active voice, and sentence case.
 
-Most Zap Template titles read something like this: `Add new Gmail emails to Google Sheets as rows`. The title mentions what happens in the trigger app followed by what Zapier does in the action app. Some examples of good titles: 
+Most Zap Template titles read something like this: `Add new Gmail emails to Google Sheets as rows`. The title mentions what happens in the trigger app followed by what Zapier does in the action app. Some examples of good titles:
 
 - `Create Trello cards for new Wufoo form entries`
 - `Get Slack notifications for new Google Drive files in a folder`
@@ -264,10 +264,19 @@ You can additionally use these options to customize your Zap Template embeds:
 - `categories=CATEGORYNAME` to show only Zap Templates with apps from a specific category, with `CATEGORYNAME` replaced with the name of a category from [Zapier’s App Directory](https://zapier.com/apps/)
 - `categories=-CATEGORYNAME` to _not_ show Zap Templates with apps from a specific category
 - `services=-APP,-APP` to exclude specific apps
+- `borderColor=%23333` to set the color of the borders to any css value or “none”. Use "%23" in place of "#" for HEX values
+- `backgroundColor=green` to set the background of each row to any css value including “transparent”
+- `buttonColor=%23000000` to set the background color of the primary button to any css value
+- `inheritFont=true` to disable the widget font styling allowing it to inherit from the parent container
+- `buttonType=outline` to set the button type. Type `outline` (currently the only option) sets the `buttonColor` as a border around the button with a transparent background
+- `title=TITLE` to set a styled header to the widget
+- `textColor=red` to set the text color of the widget (template titles)
+- `button=BUTTONTEXT` to set the primary button text (default: Use This Zap)
+- `width=600` to set a fixed width to the widget. By default, the widget markup is fully responsive with a max width of 100% of its parent’s width.
 
 Include the additional options at the end of the script text with an ampersand, such as:
 
-`<script src="https://zapier.com/apps/embed/widget.js?services=APP&container=true&limit=10&theme=dark"></script>`
+`<script src="https://zapier.com/apps/embed/widget.js?services=APP&borderColor=green&limit=10&theme=dark"></script>`
 
 ### Embed Zap Templates in Your App
 
