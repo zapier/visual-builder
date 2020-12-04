@@ -151,7 +151,7 @@ _Estimated time to complete: 5 minutes_
 
 _Who to involve: Your product or marketing team_
 
-The Zapier team provides frontline support for your integration and, in order to provide the best experience for your users, we also host help documentation about your integration on our site. Help our support team create accurate documentation by filling out [this form](https://form.jotformeu.com/73104550800343).
+The Zapier team provides frontline support for your integration and, in order to provide the best experience for your users, we also host help documentation about your integration on our site. Help our support team create accurate documentation by filling out [this form](https://eu.jotform.com/form/202233475923352).
 
 ### **4. Reach 50 Users to Receive an Invite from the Zapier Team**
 
