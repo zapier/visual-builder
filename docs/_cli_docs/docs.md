@@ -102,7 +102,7 @@ cd example-app
 npm install
 ```
 
-> Note: there are plenty of templates & example apps to choose from! [View all Example Apps here.](#example-apps).
+> Note: there are plenty of templates & example apps to choose from! [View all Example Apps here.](https://github.com/zapier/zapier-platform/tree/master/example-apps).
 
 You should now have a working local app. You can run several local commands to try it out.
 
