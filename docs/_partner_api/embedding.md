@@ -13,8 +13,6 @@ There are two ways to embed Zapier in your product: the [embed widget](#widget) 
 
 ![](https://cdn.zapier.com/zapier/images/partners/in-your-product-wave.png)
 
-Learn more about embedding with the widget.js and creating your own widget [here](https://zapier.com/partner/embed/).
-
 Want to embed specific individual Zap Templates instead? Copy the Zap ID number from your [Zap Templates Dashboard](https://zapier.com/developer/zap-templates/) by clicking the gear icon beside a Zap and selecting the _Copy ID_ option. Then, include it in place of `1234` in the text below:
 
 `<script type="text/javascript" src="https://zapier.com/apps/embed/widget.js?guided_zaps=1234"></script>`
