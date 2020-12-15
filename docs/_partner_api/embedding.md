@@ -7,7 +7,7 @@ redirect_from: /partner_api/
 
 # Embedding Zapier in your Product
 
-There are two ways to embed Zapier in your product: the [embed widget](#widget) or the Partner API (using an [iframe](#iframe)).
+There are two ways to embed Zapier in your product: the embed widget or the Partner API (using an [iframe](#iframe)).
 
 ## widget.js
 
