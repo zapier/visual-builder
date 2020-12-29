@@ -81,4 +81,4 @@ When your integration is nearly finished and ready for wider testing, you can in
 
 From the [_Monitoring_ page](#monitoring), you'll then see every action taken by your integration users. You can filter by user, see auth and trigger/action events, and see any errors that occur.
 
-Soon you'll additionally be able to see more detailed usage statistics from the _Usage_ tab in visual builder.
+The _Analytics_ tab in the visual builder also provides usage statistics, focusing on how many users each trigger and action has.
