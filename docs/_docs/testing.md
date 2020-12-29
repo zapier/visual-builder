@@ -55,9 +55,17 @@ Then be sure to check each of the following:
 - **Fields**: Do triggers and actions show the fields you expect? Are their names and labels accurate and grammatically correct? Do any links or formatting in descriptions work correctly? Do drop-down fields or those with multiple selectors work correctly?
 - **Output**: When you run a Zap trigger or action's test, does the step return the fields and data you expect? Are those formatted correctly? Do triggers show the most recently added item from your app, and do searches return appropriate results?
 - **Input**: Open your app, and check each item that Zapier actions added or updated. Were they added correctly? Is their data in the correct format?
-- **Automation**: Turn on Zaps with each of your integration's triggers. Do they run correctly when the data they watch for is added or updated in your app account? Do your integration's actions successfully add and update items automatically? Check your Zap history and your Zapier visual builder monitoring page to ensure everything is running without errors.
+- **Automation**: Turn on Zaps with each of your integration's triggers. Do they run correctly when the data they watch for is added or updated in your app account? Do your integration's actions successfully add and update items automatically?
 
-Using your integration inside Zapier's core editor is the best way to notice things that might have been overlooked while building your integration. Pay special attention to the fields included in triggers and actions, and any that might be missing. Additionally, be sure to double-check copy throughout your integration to make your integration easy for users to incorporate in their Zaps.
+Check your Zap's [Task History](https://zapier.com/app/history) to make sure Zaps ran as expected.
+
+Using your integration inside Zapier's core editor is the best way to notice details that might have been overlooked while building your integration. Pay special attention to the fields included in triggers and actions, and any that might be missing. Be sure to double-check all copy to make your integration easy for users to incorporate in their Zaps.
+
+### Monitoring
+
+![Monitoring Zapier integration](https://cdn.zapier.com/storage/photos/9797530c2c6c7d5ea56dbc3d43e1ffaa.png)
+
+When testing in the editor, use your integration's _Monitoring_ page to ensure that test Zaps are running without errors. This tab shows every action taken by your integration within the Zapier platform, and you can filter it by timeframe and log type. This provides you with more details to diagnose any issues that occur.
 
 ## How to Invite Others to Test New Integrations
 
@@ -71,8 +79,6 @@ While developing your app integration, invite additional admins from your integr
 
 When your integration is nearly finished and ready for wider testing, you can invite testers from your integration's _Visibility_ page. These testers will be able to use your integration inside the Zapier editor, but cannot change your app's core settings and functionality in visual builder. This is the best way to add non-technical team members, beta testers, and advanced users of your app to your integration, to build up the minimum user count before launching your integration.
 
-![Monitoring Zapier integration](https://cdn.zapier.com/storage/photos/9797530c2c6c7d5ea56dbc3d43e1ffaa.png)
-
-Then, from the _Monitoring_ page, you can see every action taken by your integration users with the Zapier platform. You can filter by user, see auth and trigger/action events, and see whenever errors occur.
+From the [_Monitoring_ page](#monitoring), you'll then see every action taken by your integration users. You can filter by user, see auth and trigger/action events, and see any errors that occur.
 
 Soon you'll additionally be able to see more detailed usage statistics from the _Usage_ tab in visual builder.
