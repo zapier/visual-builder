@@ -192,7 +192,7 @@ Output Fields add user-friendly labels to your API's response data. Zapier uses 
 
 For example, if you use GitHub's API to watch for new issues, the API calls the issue name `title`. Users may expect that field to be called _Issue_ or _Issue Title_, so you could define the Output Field as having the name _Issue Title_, rather than the default transformation of "Title".
 
-You can learn more about how Zapier uses sample data and output fields in [triggers]() and [actions]().
+You can learn more about how Zapier uses sample data and output fields in [triggers](/docs/triggers#define-sample-data-and-output-fields) and [actions](/docs/actions#define-sample-data-and-output-fields).
 
 <a id="resthooktesting"></a>
 ## How do I define Rest Hooks and use the embedded tester with them?
