@@ -1,7 +1,2 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-.DS_Store
-docs/.DS_Store
-.vscode
+.gitignore
+.ruby-version

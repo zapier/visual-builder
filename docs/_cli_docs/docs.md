@@ -1023,6 +1023,14 @@ module.exports = {
 
 > Only dropdowns support `altersDynamicFields`.
 
+When using dynamic fields, the fields will be retrieved in three different contexts:
+
+* Whenever the value of a field with `altersDynamicFields` is changed, as described above.
+* Whenever Zap Editor opens the "Set up" section for the trigger or action.
+* Whenever the Refresh Fields button is used on the trigger or action.
+
+Be sure to set up your code accordingly - for example, don't rely on any input fields already having a value, since they won't have one the first time the "Set up" section loads.
+
 ### Dynamic Dropdowns
 
 Sometimes, API endpoints require clients to specify a parent object in order to create or access the child resources. For instance, specifying a spreadsheet id in order to retrieve its worksheets. Since people don't speak in auto-incremented ID's, it is necessary that Zapier offer a simple way to select that parent using human readable handles.
