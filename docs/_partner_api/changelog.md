@@ -7,11 +7,11 @@ redirect_from: /partner_api/
 
 # Changelog
 
-## 2020-01-13
+## 2021-01-14
 
 ### Introducing rate limiting
 
-The endpoints are now rate limit protected. The limit is set to 9,000 requets per hour for an individual endpoint.
+The endpoints are now rate limit protected. The limit is set to 9,000 requests per hour for an individual endpoint.
 
 ## 2018-05-31
 
