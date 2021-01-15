@@ -13,6 +13,7 @@ You don't need to know the implication of the initial capitial letter. But if yo
 
 Area | Description
 --- | ---
+<b><u>C</u></b>ompatibility | Only apply when your integration is public, these checks verify how the new version is backward compatible with the currently public version. They ask questions like "would this change break existing Zaps, Zap Templates, or connected accounts?"
 <b><u>D</u></b>efinition | Definition of the integration, including auth and trigger/search/action configurations. Some of these checks could block you from saving/pushing if the violation results in a broken trigger/search/action.
 <b><u>M</u></b>arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
 Connected <b><u>A</u></b>ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
@@ -34,6 +35,36 @@ When the checks are run, we'll give a brief blurb summarizing the violation (wit
 
 To ensure you've tested auth, we require you to set up at least one
 connected account.
+
+---
+
+<a name="C001"></a><a name="C00001"></a>
+
+## C001 - Try To Avoid Hiding/Removing Public Triggers/Searches/Creates
+
+During promotion, we compare features of your currently public version with your soon-to-be-public version.
+
+When you hide/remove a trigger in a new version, Zap Templates that use that trigger become invalid. Try to avoid this when you can. The same applies for searches and creates.
+
+---
+
+<a name="C002"></a><a name="C00002"></a>
+
+## C002 - Try To Avoid Removing Input Fields
+
+During promotion, we compare features of your currently public version with your soon-to-be-public version.
+
+When you change/remove the `key` property of an `input_field`, Zap Templates that use that field become invalid. Try to avoid this when you can.
+
+---
+
+<a name="C003"></a><a name="C00003"></a>
+
+## C003 - Try To Avoid Removing Sample Data
+
+During promotion, we compare features of your currently public version with your soon-to-be-public version.
+
+When you change/remove the `key` property of an item in your `sample`, Zap Templates that use that field become invalid. Try to avoid this when you can.
 
 ---
 
