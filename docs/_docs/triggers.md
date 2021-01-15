@@ -108,13 +108,24 @@ Click _Test Your Result_, and if your trigger is set up correctly, you'll see a 
 
 Zapier will show the raw, JSON formatted response from your API in the _Response_ tab with every output field your app sends to Zapier. You can see the data Zapier sent to your API in the _Bundle_ tab, or the raw HTTP request in the _HTTP_ tab.
 
-![Zapier Define Output Fields](https://cdn.zapier.com/storage/photos/d9a84ecb06a3f8f9e40fb91ba1a63ea5.png)
+### Define Sample Data and Output Fields
 
-As a final step, you need to define the most important output fields to help users easily know what data from your app they should use in subsequent Zap steps. In the _Sample Data_ box, either click the _Use Response from Test Data_ button to import the fields your app sent to Zapier in the previous test, or add your own JSON-formatted fields. Only keep the most important fields, and make sure the data you include with those fields is non-private, non-identifiable testing data that can be shared publicly.
+![Adding Sample Data to Zapier integration](https://cdn.zapier.com/storage/photos/8ab32f061aa89f3b57e8f4a5ea16a9d9.png)
+_Sample Data gives Zapier example data if users don't test the trigger or action. Output Fields give your API data user-friendly names in subsequent Zap steps._
 
-Then click _Generate Output Field Definitions_, and Zapier will build a table of your fields under _Output Fields_. Add a human friendly name for each field and select the field type. Click _Save Output & Finish_ to finish the final part of your trigger.
+The last step in creating a new Trigger for a Zapier integration is to _Define your Output_. Here, Zapier asks both for Sample Data and Output Fields. Both will help improve the Zapier experience for your users, and Sample Data is especially important for Triggers.
 
-_[Learn more about how Zapier uses sample data and output fields](http://zapier.github.io/visual-builder/docs/faq#output)_.
+![Sample Data in a Zap Step](https://cdn.zapier.com/storage/photos/d4e5d47c461efa897a907c2806aecc1d.png)
+
+Sample Data is the default data Zapier shows users when building a Zap using this trigger. In the Zap Editor, Zapier will ask to test the Zap step after users set it up. With Triggers, Zapier will try to fetch recently added or updated items during the test.
+
+If users are in a hurry, though, they can skip the testing step. Zapier will then show the sample data instead. Or, if the connected account doesn't have any data for this item yet, Zapier will default to showing the sample data instead of showing an error that no items are available.
+
+Note that regardless of how many items are retrieved when testing, the Zap Editor will only show up to three samples during the initial test. If new items are later added, those can be pulled in using "Load More", but older items will not be used.
+
+In the _Sample Data_ box, either click the _Use Response from Test Data_ button to import the fields your app sent to Zapier in the previous test, or add your own JSON-formatted fields. Only keep the most important fields, and make sure the data you include with those fields is non-private, non-identifiable testing data that can be shared publicly.
+
+Then click _Generate Output Field Definitions_, and Zapier will build a table of your fields under _Output Fields_. Add a user-friendly name for each field and select the field type. Click _Save Output & Finish_ to finish the final part of your trigger.
 
 You can now make a new Zap using your trigger to test out the trigger live inside Zapier.
 

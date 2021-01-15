@@ -82,24 +82,24 @@ If your app returns an error, be sure to check:
 - Input Field Keys: Did you use the same field keys in your input field as your API expects? Double-check that in the Input Designer, and change if needed.
 - API Call Customization: Does your API expect something different than the standard API call details Zapier sets by default? You may need to use custom coding if the options you need aren't available.
 
+### Define Sample Data and Output Fields
+
 ![Zapier Define Output Fields](https://cdn.zapier.com/storage/photos/ae070045d9e23b162f1b0a0a1507b029.png)
 
-Every time your action step runs, your API will return data to Zapier—ideally detailing the item that was added to your app or found via a search. Each item includes multiple details, including each item users would add via the Zap input form along with extra details, often with items users may not care about as much.
+Every time your action step runs, your API will return data to Zapier—ideally detailing the item that was added to your app or found via a search. Each item includes multiple details, including any attribute users would add via the Zap input form, along with other attributes or details that users may not care about as much.
 
 Zapier lets you define the most important fields with friendly field names. Each field you define will show up first in the output field list after the Zap runs, and will be usable in subsequent Zap steps.
 
-In the _Sample_ box, add a JSON formatted example of the output data from your API with the most commonly used output fields. Include the field key on the left, and sample data for that field on the right, using sample, demo data that can be used publicly.
+First, fill in sample data by clicking the _Use Response from Test Data_ button to import the fields your app sent to Zapier in the previous test, or add your own JSON-formatted fields. This data will also be used as a fallback in the Zap Editor if users skip the test step for the action, so that these fields can still be mapped into other steps. Make sure the data you include with those fields is non-private, non-identifiable testing data that can be shared publicly.
 
-Then click _Generate Output Field Definitions_ and Zapier will list a table of the fields with the keys on the left and the field type on the right. Select the correct field type (including the default String field or Text, integer, number, boolean, datetime, file, and password field options), and add a human-friendly field name in the center column.
-
-_[Learn more about how Zapier uses sample data and output fields](http://zapier.github.io/visual-builder/docs/faq#output)_.
+Then click _Generate Output Field Definitions_ and Zapier will list a table of the fields with the keys on the left and the field type on the right. Add a human-friendly name for each field in the center column, especially if users might expect a different name than the API provides, as in the GitHub example above where `body` becomes "Issue Details".  Then select the field type. Lastly, click _Save Output & Finish_ to complete your action.
 
 <a id="code"></a>
 ## How to Use Custom Code in Zapier Actions
 
 ![Zapier visual builder code mode](https://cdn.zapier.com/storage/photos/0e52a1110b0f6cd37afd4c005e97dfa0.png)
 
-The default API settings form is the best option for most actions with default settings. If your action needs customized API calls, scripting to manipulate input field data, or other unique features, you can add custom JavaScript code for your API request.
+The default API settings form is the best option for most actions. If your action needs customized API calls, scripting to manipulate input field data, or other unique features, you can add custom JavaScript code for your API request.
 
 To use custom code, click the _Switch to Code Mode_ button. Zapier will translate your default API call settings into JavaScript code the first time you switch to code mode for an easy way to start. If you switch back to form mode, though, Zapier will not transfer your code settings back to the form.
 
