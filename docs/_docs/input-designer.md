@@ -291,6 +291,14 @@ To add a custom field, open your integration's _Input Designer_, add a new, fiel
 
 In the code box, add custom code to make an API call and fetch the fields from your app. Use Zapier's `z.request` to make the API call; see our [Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for more details. Then have your code return the field key and names to Zapier in an array, to display in the user's Zap.
 
+When using dynamic fields, the fields will be retrieved in three different contexts:
+
+* Whenever the value of a field with `altersDynamicFields` is changed, as described above.
+* Whenever Zap Editor opens the "Set up" section for the trigger or action.
+* Whenever the Refresh Fields button is used on the trigger or action.
+
+Be sure to set up your code accordingly - for example, don't rely on any input fields already having a value, since they won't have one the first time the "Set up" section loads.
+
 ### Add Dynamic Field Based on Previous Input Field Data
 
 To add a dynamic field that includes data from another input field or is only shown based on specific criteria, first add at least one input field that has _Alters Dynamic Fields_ checked. This is the field that Zapier will use to decide if the dynamic field should be shown.
