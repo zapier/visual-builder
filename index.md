@@ -37,4 +37,4 @@ Maintain existing Zapier integrations built with Zapier's original web builder:
 
 Learn from the Zapier team and other Zapier platform developers in our communities!
 
-- Join [Zapier Platform's Slack group]({{ site.slack_invite_url }})
+- Join [Zapier Platform's Community Discussion](https://community.zapier.com/developer-discussion-13)
