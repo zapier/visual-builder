@@ -57,7 +57,7 @@ Then be sure to check each of the following:
 - **Input**: Open your app, and check each item that Zapier actions added or updated. Were they added correctly? Is their data in the correct format?
 - **Automation**: Turn on Zaps with each of your integration's triggers. Do they run correctly when the data they watch for is added or updated in your app account? Do your integration's actions successfully add and update items automatically?
 
-Check your Zap's [Task History](https://zapier.com/app/history) to make sure Zaps ran as expected.
+Check your [Zap History](https://zapier.com/app/history) to make sure Zaps ran as expected.
 
 Using your integration inside Zapier's core editor is the best way to notice details that might have been overlooked while building your integration. Pay special attention to the fields included in triggers and actions, and any that might be missing. Be sure to double-check all copy to make your integration easy for users to incorporate in their Zaps.
 

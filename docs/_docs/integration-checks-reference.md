@@ -769,12 +769,11 @@ version so you can delete the unwanted versions.
 
 ## T001 - One Successful Task for Each Trigger/Search/Action
 
-To ensure you have run a live test of every visible trigger/action/search, you'll
-need to turn a Zap on and trigger it live for each visible trigger/action/search, so
-that there is at least one successful Task for each visible trigger/action/search in
-one of the integration admin's [Task History](https://zapier.com/app/history).
+There must be at least one successful Task for each visible trigger/action/search in your app. 
 
-Learn more about Tasks [here](https://zapier.com/help/manage/tasks).
+To ensure you have run a live test of every visible trigger/action/search, create a Zap for each one, turn it on, and trigger a Zap run while it's on. This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts. 
+
+Learn more about Tasks [here](https://zapier.com/help/manage/history/learn-about-tasks-in-zapier).
 
 ---
 
@@ -788,7 +787,7 @@ If your object is returned with a differently named `id` field (such as
 `contact_id`), write code to rename it.
 
 This check is similiar to `D010`. But unlike `D010`, this one validates the live
-polling results in the task history instead of the static samples in your
+polling results in the Zap history instead of the static samples in your
 integration definition.
 
 ✘ an example of an **incorrect** implementation:
@@ -819,7 +818,7 @@ To ensure Zapier can correctly parse dates and times, you should always use ISO-
 format to represent dates or times. Timezone info should also be present if it
 contains time.
 
-Unlike `D023`, this check validates the data in task history instead of static
+Unlike `D023`, this check validates the data in the Zap history instead of static
 samples.
 
 ✘ examples of an **incorrect** implementation:
@@ -859,10 +858,10 @@ samples.
 Static samples provide Zapier users and partners a way to preview and map the fields
 without actually making a request to your API. For a better UX, it's important that
 static samples truthfully reflect the live results pulled from your API, which users
-can see in their Task History.
+can see in their Zap History.
 
 This check requires the static sample you define for each trigger/action/search to
-contain a subset of the keys in the latest Task in your [Task History](https://zapier.com/app/history)
+contain a subset of the keys in the latest run in your [Zap History](https://zapier.com/app/history)
 for that trigger/action/search.
 
 ✘ an example of an **incorrect** implementation:
@@ -885,7 +884,7 @@ live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 
 ## T005 - Live Trigger Result Respects Output Field Definition
 
-This check takes the latest task from Task History and verifies if the trigger
+This check takes the latest run from the Zap History and verifies whether the trigger
 result conforms to the output fields if you define them for your integration. The
 specific checks are:
 
@@ -925,7 +924,7 @@ when you test the trigger in a Zap before turning it on.
 Errors occur when a Zap uses a field from the Polling Sample that ends up not being
 provided by the actual hook payload once the Zap is running. To ensure this doesn't
 happen, this check compares the latest item in your
-[Task History](https://zapier.com/app/history) with the selected Polling Sample in
+[Zap History](https://zapier.com/app/history) with the selected Polling Sample in
 the corresponding Zap. For it to pass, the selected Polling Sample must contain a
 subset of the keys returned in the latest live result in Task History.
 
