@@ -18,10 +18,12 @@ Area | Description
 <b><u>M</u></b>arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
 Connected <b><u>A</u></b>ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
 <b><u>S</u></b>tats | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.
-<b><u>T</u></b>ask History | Data in your task history, produced by live Zaps. These are more likely to block you from going public.
+<b><u>T</u></b>ask History | Data in your Zap History, produced by live Zaps. These are more likely to block you from going public.
 <b><u>U</u></b>ser | Things in the developer's (your) account, such as Terms of Service acceptance.
 <b><u>L</u></b>ifecycle | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).
 <b><u>Z</u></b>ap | Things related to Zaps, such as the trigger samples you pulled into the Zap editor.
+
+The "T" checks are named as such for historical reasons. Zapier now shows tasks in the Zap History.
 
 When the checks are run, we'll give a brief blurb summarizing the violation (with a check ID) along with a link to this page. This will act as a full reference explaining each error and giving examples for each.
 
@@ -320,7 +322,7 @@ required to have an `id`.
 
 This check is similiar to `T002`. But unlike `T002`, this one validates the static
 samples in your integration definition instead of the live polling results in the
-task history.
+Zap History.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -546,8 +548,8 @@ To ensure Zapier can correctly parse dates and times, you should always use ISO-
 format to represent dates or times. Timezone info should also be present if it
 contains time.
 
-Unlike `T003`, this check validates the fields in static samples instead of task
-history.
+Unlike `T003`, this check validates the fields in static samples instead of live Zap
+runs in the Zap History.
 
 ✘ examples of an **incorrect** implementation:
 
@@ -742,7 +744,7 @@ a new integration.
 
 To verify user demand, there should be at least 3 users who have a live Zap using
 this integration. "Live" means the Zaps are switched on with at least one successful
-task in recent history.
+Zap in recent history.
 
 ---
 
@@ -767,9 +769,9 @@ version so you can delete the unwanted versions.
 
 <a name="T001"></a><a name="T00001"></a>
 
-## T001 - One Successful Task for Each Trigger/Search/Action
+## T001 - One Successful Zap for Each Trigger/Search/Action
 
-There must be at least one successful Task for each visible trigger/action/search in your app. 
+There must be at least one successful Zap for each visible trigger/action/search in your app.
 
 To ensure you have run a live test of every visible trigger/action/search, create a Zap for each one, turn it on, and trigger a Zap run while it's on. This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts. 
 
@@ -787,7 +789,7 @@ If your object is returned with a differently named `id` field (such as
 `contact_id`), write code to rename it.
 
 This check is similiar to `D010`. But unlike `D010`, this one validates the live
-polling results in the Zap history instead of the static samples in your
+polling results in the [Zap History](https://zapier.com/app/history) instead of the static samples in your
 integration definition.
 
 ✘ an example of an **incorrect** implementation:
@@ -812,14 +814,14 @@ integration definition.
 
 <a name="T003"></a><a name="T00003"></a>
 
-## T003 - ISO-8601 Date/Time Format in Task History
+## T003 - ISO-8601 Date/Time Format in Zap History
 
 To ensure Zapier can correctly parse dates and times, you should always use ISO-8601
 format to represent dates or times. Timezone info should also be present if it
 contains time.
 
-Unlike `D023`, this check validates the data in the Zap history instead of static
-samples.
+Unlike `D023`, this check validates the data in the [Zap History](https://zapier.com/app/history)
+instead of static samples.
 
 ✘ examples of an **incorrect** implementation:
 
@@ -884,9 +886,9 @@ live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 
 ## T005 - Live Trigger Result Respects Output Field Definition
 
-This check takes the latest run from the Zap History and verifies whether the trigger
-result conforms to the output fields if you define them for your integration. The
-specific checks are:
+This check takes the latest run from the [Zap History](https://zapier.com/app/history)
+and verifies whether the trigger result conforms to the output fields if you define them
+for your integration. The specific checks are:
 
 * "required" fields must be in the trigger result
 * field values in the trigger result match their field type
@@ -926,7 +928,7 @@ provided by the actual hook payload once the Zap is running. To ensure this does
 happen, this check compares the latest item in your
 [Zap History](https://zapier.com/app/history) with the selected Polling Sample in
 the corresponding Zap. For it to pass, the selected Polling Sample must contain a
-subset of the keys returned in the latest live result in Task History.
+subset of the keys returned in the latest live result in the Zap History.
 
 ✘ an example of an **incorrect** implementation:
 
