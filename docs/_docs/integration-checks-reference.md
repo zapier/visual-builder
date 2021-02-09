@@ -744,7 +744,7 @@ a new integration.
 
 To verify user demand, there should be at least 3 users who have a live Zap using
 this integration. "Live" means the Zaps are switched on with at least one successful
-Zap in recent history.
+Zap run in recent history.
 
 ---
 
