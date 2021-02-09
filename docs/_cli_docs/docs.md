@@ -18,7 +18,7 @@ You may find docs duplicate or outdated across the Zapier site. The most up-to-d
 - [Latest CLI Reference](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md)
 - [Latest Schema Docs](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md)
 
-This doc decribes the latest CLI version **10.1.2**, as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc decribes the latest CLI version **10.1.3**, as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [9.4.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.4.0/packages/cli/README.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@8.4.2/packages/cli/README.md)
 - CLI Reference: [9.4.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.4.0/packages/cli/README.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@8.4.2/packages/cli/README.md)
@@ -59,7 +59,7 @@ The Zapier Platform includes two ways to build integrations: a CLI to build inte
 
 Zapier Platform CLI is designed to be used by development teams who collaborate with version control and CI, and can be used to build more advanced integrations with custom coding for every part of your API calls and response parsing.
 
-[Zapier Platform UI](https://zapier.com/app/developer/) is designed to quickly spin up new integrations, and collaborate on them with teams that include non-developers. It's the quickest way to start using the Zapier platform—and you can manage your CLI apps' core details from its online UI as well. Coming soon, you will be able to convert Zapier Platform UI integrations to CLI to start development in your browser then finish out the core features in your local development environment.
+[Zapier Platform UI](https://zapier.com/app/developer/) is designed to quickly spin up new integrations, and collaborate on them with teams that include non-developers. It's the quickest way to start using the Zapier platform—and you can manage your CLI apps' core details from its online UI as well. You can also [export](https://platform.zapier.com/docs/export) Zapier Platform UI integrations to CLI to start development in your browser, then finish out the core features in your local development environment.
 
 > Learn more in our [Zapier Platform UI vs CLI](https://platform.zapier.com/docs/vs) post.
 
@@ -147,7 +147,7 @@ npm install
 If you'd like to manage your **local App**, use these commands:
 
 * `zapier init myapp` - initialize/start a local app project
-* `zapier convert 1234 .` - initialize/start from an existing app (alpha)
+* `zapier convert 1234 .` - initialize/start from an existing app
 * `zapier scaffold resource Contact` - auto-injects a new resource, trigger, etc.
 * `zapier test` - run the same tests as `npm test`
 * `zapier validate` - ensure your app is valid
@@ -945,7 +945,7 @@ You can find more details on the different field schema options at [our Field Sc
 
 In some cases, it might be necessary to provide fields that are dynamically generated - especially for custom fields. This is a common pattern for CRMs, form software, databases and more. Basically - you can provide a function instead of a field and we'll evaluate that function - merging the dynamic fields with the static fields.
 
-> You should see `bundle.inputData` partially filled in as users provide data - even in field retrieval. This allows you to build hierarchical relationships into fields (EG: only show issues from the previously selected project).
+> You should see `bundle.inputData` partially filled in as users provide data - even in field retrieval. This allows you to build hierarchical relationships into fields (e.g. only show issues from the previously selected project).
 
 > A function that returns a list of dynamic fields cannot include additional functions in that list to call for dynamic fields.
 
@@ -1738,7 +1738,7 @@ Read more in the [REST hook example](https://github.com/zapier/zapier-platform/b
 
 ### `bundle.subscribeData`
 
-> `bundle.subscribeData` is only available in the `performUnsubscribe` method for webhooks.
+> `bundle.subscribeData` is available in the `perform` and `performUnsubscribe` method for webhooks.
 
 This is an object that contains the data you returned from the `performSubscribe` function. It should contain whatever information you need send a `DELETE` request to your server to stop sending webhooks to Zapier.
 
@@ -2654,6 +2654,60 @@ You can substitute `zapier test` with `npm test`, or a direct call to `node_modu
 
 As an alternative to reading the deploy key from root (the default location), you may set the `ZAPIER_DEPLOY_KEY` environment variable to run privileged commands without the human input needed for `zapier login`. We suggest encrypting your deploy key in whatever manner you CI provides (such as [these instructions](https://docs.travis-ci.com/user/environment-variables/#Defining-encrypted-variables-in-.travis.yml), for Travis).
 
+### Debugging Tests
+
+Sometimes tests aren't enough and you may want to step through your code and set breakpoints. The testing suite is a regular Node.js process, so debugging it doesn't take anything special. Because we recommend `jest` for testing, these instructions will outline steps for debugging w/ jest, but other test runners will work similarly. You can also refer to [Jest's own docs on the subject](https://jestjs.io/docs/en/troubleshooting#tests-are-failing-and-you-dont-know-why).
+
+To start, add the following line to the `scripts` section of your `package.json`:
+
+```
+"test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
+```
+
+This will tell `node` to inspect the `jest` processes, which is exactly what we need.
+
+Next, add a `debugger;` statement somewhere in your code, probably in a `perform` method:
+
+```js
+// triggers on a new pizza with a certain tag
+const perform = async (z, bundle) => {
+  const response = await z.request({
+    url: "https://jsonplaceholder.typicode.com/posts",
+    params: {
+      tag: bundle.inputData.tagName,
+    },
+  });
+  debugger;
+  // this should return an array of objects
+  return response.data;
+};
+```
+
+This creates a _breakpoint_ while `inspect`ing, or a starting point for our manual inspection.
+
+Next, you'll need an inspection client. The most available one is probably the Google Chrome browser, but there are [lots of options](https://nodejs.org/en/docs/guides/debugging-getting-started/#inspector-clients). We'll use Chrome for this example. In your terminal (and in your integration's root directory), run `yarn test:debug` (or `npm run test:debug`). You should see the following:
+
+```
+% yarn test:debug
+yarn run v1.22.10
+$ node --inspect-brk node_modules/.bin/jest --runInBand
+Debugger listening on ws://127.0.0.1:9229/5edaab3c-a1d3-45e4-b374-0536095c559b
+For help, see: https://nodejs.org/en/docs/inspector
+```
+
+Now in Chrome, go to chrome://inspect. Make sure `Discover Network Targets` is checked and you should see a path to your `jest` file on your local machine:
+
+![](https://cdn.zappy.app/e2836d2950e1f8a03e3621a22452c3cd.png)
+
+Click `inspect`. A new window will open. Next, click the little blue arrow in the top right to actually run the code:
+
+![](https://cdn.zappy.app/a64e7963a7090e9730d9c8e7b3595a6a.png)
+
+After a few seconds, you'll see your code, the `debugger` statement, and info about the current environment on the right panel. You should see familiar data in the `Locals` section, such as the `response` variable, and the `z` object.
+
+![](https://cdn.zappy.app/4bfdfe079a344ab7aced64ad7728bc6a.png)
+
+Using debugging in combination with thorough unit tests, you will hopefully be able to keep your Zapier integration in smooth working order.
 
 ## Using `npm` Modules
 
@@ -3127,7 +3181,7 @@ The Zapier platform and its tools are under active development. While you don't 
 Barring unforeseen circumstances, all released platform versions will continue to work for the foreseeable future. While you never *have* to upgrade your app's `zapier-platform-core` dependency, we recommend keeping an eye on the [changelog](https://github.com/zapier/zapier-platform/blob/master/CHANGELOG.md) to see what new features and bug fixes are available.
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **10.1.2**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **10.1.3**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
@@ -3138,4 +3192,5 @@ For maximum compatibility, keep the versions of `cli` and `core` in sync.
 ## Get Help!
 
 You can get help by either emailing partners@zapier.com or by [joining our developer community here](https://community.zapier.com/developer-discussion-13).
+
 {% endraw %}
