@@ -18,12 +18,10 @@ Area | Description
 <b><u>M</u></b>arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
 Connected <b><u>A</u></b>ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
 <b><u>S</u></b>tats | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.
-<b><u>T</u></b>ask History | Data in your Zap History, produced by live Zaps. These are more likely to block you from going public.
+<b><u>T</u></b> - Zap History | Data in your Zap History, produced by live Zaps. These are more likely to block you from going public. The "T" checks are named as such for historical reasons. Zapier now shows tasks in the Zap History.
 <b><u>U</u></b>ser | Things in the developer's (your) account, such as Terms of Service acceptance.
 <b><u>L</u></b>ifecycle | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).
 <b><u>Z</u></b>ap | Things related to Zaps, such as the trigger samples you pulled into the Zap editor.
-
-The "T" checks are named as such for historical reasons. Zapier now shows tasks in the Zap History.
 
 When the checks are run, we'll give a brief blurb summarizing the violation (with a check ID) along with a link to this page. This will act as a full reference explaining each error and giving examples for each.
 
@@ -771,11 +769,11 @@ version so you can delete the unwanted versions.
 
 ## T001 - One Successful Zap for Each Trigger/Search/Action
 
-There must be at least one successful Zap for each visible trigger/action/search in your app.
+There must be at least one successful Zap run for each visible trigger/action/search in your app.
 
 To ensure you have run a live test of every visible trigger/action/search, create a Zap for each one, turn it on, and trigger a Zap run while it's on. This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts. 
 
-Learn more about Tasks [here](https://zapier.com/help/manage/history/learn-about-tasks-in-zapier).
+Learn more about the Zap History [here](https://zapier.com/help/manage/history/view-and-manage-your-zap-history).
 
 ---
 
