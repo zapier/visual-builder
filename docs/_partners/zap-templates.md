@@ -1,5 +1,5 @@
 ---
-title: Zap Templates: Include Zapier in Your App and Website
+title: Zap Templates - Include Zapier in Your App and Website
 order: 4
 layout: post-toc
 redirect_from: /partners/
