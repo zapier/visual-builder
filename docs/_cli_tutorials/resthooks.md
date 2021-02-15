@@ -101,7 +101,7 @@ module.exports = {
 
 ## Step 3: Write the `perform` Function
 
-The next function to write is the `perform` function which sends the payload of data received from your server to the Zap. This is what actually triggers the Zap. Typically, you would simply return the cleaned request in an array. It is extremely important that the request is returned in an array—this is a requirement outlined [here](https://github.com/zapier/zapier-platform-cli#return-types).
+The next function to write is the `perform` function which sends the payload of data received from your server to the Zap. This is what actually triggers the Zap. Typically, you would simply return the cleaned request in an array. It is extremely important that the request is returned in an array—this is a requirement outlined [here](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#return-types).
 
 ```
 const parsePayload = (z, bundle) => {
@@ -171,7 +171,7 @@ This should be a function that calls an endpoint you control with a payload of d
 
 ### `perform`
 
-This should be a function that processes the inbound webhook request. No `HTTP` request has to made here. As seen in our example app [here](https://github.com/zapier/zapier-platform-example-app-rest-hooks/blob/master/triggers/recipe.js#L41-L54), this can simply take the data from `bundle``.``cleanedRequest` and build a new object that is returned within an array. It's important to return this object within an array as specified [here](https://github.com/zapier/zapier-platform-cli#return-types).
+This should be a function that processes the inbound webhook request. No `HTTP` request has to made here. As seen in our example app [here](https://github.com/zapier/zapier-platform-example-app-rest-hooks/blob/master/triggers/recipe.js#L41-L54), this can simply take the data from `bundle``.``cleanedRequest` and build a new object that is returned within an array. It's important to return this object within an array as specified [here](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#return-types).
 
 ### `performList`
 

@@ -1286,7 +1286,7 @@ Based on the response status code we then try to add a more general explanation 
 
 Alternatively, you can compose a custom error message by raising an `ErrorException` in your Scripting. More information in the [Available Exceptions section](https://zapier.com/developer/documentation/v2/available-exceptions) of our docs.
 
-> Heads up! This style is only valid for the legacy web builder. Zapier's [CLI platform](https://github.com/zapier/zapier-platform-cli#error-handling) and [visual builder](https://zapier.github.io/visual-builder/docs/auth#common-authentication-error-messages) expect standard HTTP Errors to be thrown.
+> Heads up! This style is only valid for the legacy web builder. Zapier's [CLI platform](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#error-handling) and [visual builder](https://zapier.github.io/visual-builder/docs/auth#common-authentication-error-messages) expect standard HTTP Errors to be thrown.
 
 ### Testing
 

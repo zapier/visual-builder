@@ -71,7 +71,7 @@ You can develop using any version of Node you'd like, but your eventual code mus
 
 To ensure stability for our users, we strongly encourage you run tests on `v12` sometime before your code reaches users. This can be done multiple ways.
 
-Firstly, by using a CI tool (like [Travis CI](https://travis-ci.org/) or [Circle CI](https://circleci.com/), which are free for open source projects). We provide a sample [.travis.yml](https://github.com/zapier/zapier-platform/blob/master/example-apps/minimal/.travis.yml) file in our template apps to get you started.
+Firstly, by using a CI tool (like [Travis CI](https://travis-ci.org/) or [Circle CI](https://circleci.com/), which are free for open source projects). We provide a sample [.travis.yml](https://github.com/zapier/zapier-platform/blob/master/example-apps/create/.travis.yml) file in our template apps to get you started.
 
 Alternatively, you can change your local node version with tools such as [nvm](https://github.com/nvm-sh/nvm#installation-and-update) or [n](https://github.com/tj/n#installation).
 Then you can either swap to that version with `nvm use v12`, or do `nvm exec v12 zapier test` so you can run tests without having to switch versions while developing.
@@ -102,7 +102,7 @@ cd example-app
 npm install
 ```
 
-> Note: there are plenty of templates & example apps to choose from! [View all Example Apps here.](https://github.com/zapier/zapier-platform/tree/master/example-apps)
+> Note: there are plenty of templates & example apps to choose from! [View all Example Apps here.](https://github.com/zapier/zapier-platform/wiki/Example-Apps)
 
 You should now have a working local app. You can run several local commands to try it out.
 
