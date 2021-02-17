@@ -17,4 +17,4 @@ Zapier does that with a dropdown that is populated by making a live API call to 
 
 ![screenshot of dynamic dropdown in Zap Editor](https://cdn.zapier.com/storage/photos/dd31fa761e0cf9d0abc9b50438f95210.png)  
 
-More details about implementing dynamic dropdowns in your integration can be found in our [CLI Docs](https://github.com/zapier/zapier-platform-cli#dynamic-dropdowns).
+More details about implementing dynamic dropdowns in your integration can be found in our [CLI Docs](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#dynamic-dropdowns).

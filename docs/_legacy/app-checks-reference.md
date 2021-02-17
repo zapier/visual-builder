@@ -224,7 +224,7 @@ https://slack.com/api/auth.test
 
 For **v2** apps, you denote a test trigger. There's more information [here](https://zapier.com/developer/documentation/v2/test-triggers/).
 
-For **CLI** apps, you add a test url or function to your authentication, details [here](https://github.com/zapier/zapier-platform-cli#authentication).
+For **CLI** apps, you add a test url or function to your authentication, details [here](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#authentication).
 
 ---
 
@@ -587,7 +587,7 @@ screen from your Website Dashboard to find your API Key.
 
 [Connection Labels](../appdevguide-auth/#connection-label) helps customers understand and remember which account they connected for a given Connected Account. These should be short and something easily identifiable.
 
-For both [CLI](https://github.com/zapier/zapier-platform-cli#basic) and [Web Builder](https://zapier.com/developer/documentation/v2/app-dev-guide/#connection-label), the connection label is a string. You can use any data returned by your test function.
+For both [CLI](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#basic) and [Web Builder](https://zapier.com/developer/documentation/v2/app-dev-guide/#connection-label), the connection label is a string. You can use any data returned by your test function.
 
 For instance, if a successful run of the auth test returns the following json:
 
@@ -631,7 +631,7 @@ Assuming the Test Trigger returns an object with a `user` and a `team` property.
 
 To **fix** this, see examples at the following links:
 
-- CLI: https://github.com/zapier/zapier-platform-cli#basic
+- CLI: https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#basic
 - Web Builder: https://zapier.com/developer/documentation/v2/app-dev-guide/#connection-label
 
 ---
@@ -652,7 +652,7 @@ We've found that instead of instructing users to paste an item `id` into Zapier,
 
 Read more about implementing dynamic dropdowns below:
 
-- CLI: https://github.com/zapier/zapier-platform-cli#dynamic-dropdowns
+- CLI: https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#dynamic-dropdowns
 - Web Builder: https://zapier.com/developer/documentation/v2/dynamic-dropdowns/
 
 ---

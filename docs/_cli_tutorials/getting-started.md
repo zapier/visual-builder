@@ -11,7 +11,7 @@ Welcome to the Zapier Platform! In this tutorial, we'll walk you through the pro
 
 ## Installing the CLI
 
-To get started, first make sure that your dev environment meets the [requirements](https://github.com/zapier/zapier-platform-cli#requirements) for running the the platform. Once you have the proper version of Node.js, install the Zapier CLI tool.
+To get started, first make sure that your dev environment meets the [requirements](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#requirements) for running the the platform. Once you have the proper version of Node.js, install the Zapier CLI tool.
 
 ```bash
 # install the CLI globally
@@ -112,10 +112,10 @@ First, look first at the function definition for `listRecipes`. You see that it 
 
 The `listReceipes` function receives two arguments, a `z` object and a `bundle` object.
 
-- The [Z Object](https://github.com/zapier/zapier-platform-cli#z-object) is a collection of utilities needed when working with APIs. In our snippet, we use `z.request` to make the HTTP call and `z.JSON` to parse the response.
-- The [Bundle Object](https://github.com/zapier/zapier-platform-cli#bundle-object) contains any data needed to make API calls, like authentication credentials or data for a POST body. In our snippet the Bundle is not used, since we don't require any of those to make our simple GET request.
+- The [Z Object](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#z-object) is a collection of utilities needed when working with APIs. In our snippet, we use `z.request` to make the HTTP call and `z.JSON` to parse the response.
+- The [Bundle Object](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#bundle-object) contains any data needed to make API calls, like authentication credentials or data for a POST body. In our snippet the Bundle is not used, since we don't require any of those to make our simple GET request.
 
-> Note about Z Object: While it is possible to accomplish the same tasks using alternate Node.js libraries, it's preferable to use the `z` object as there are features built into these utilities that augment the Zapier experience. For example, logging of HTTP calls and better handling of JSON parsing failures. [Read the docs](https://github.com/zapier/zapier-platform-cli#z-object) for more info.
+> Note about Z Object: While it is possible to accomplish the same tasks using alternate Node.js libraries, it's preferable to use the `z` object as there are features built into these utilities that augment the Zapier experience. For example, logging of HTTP calls and better handling of JSON parsing failures. [Read the docs](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#z-object) for more info.
 
 Second, look at the second part of our snippet; the export. Essentially, we export some metadata plus our `listRecipes` function and a sample. We'll explain later how Zapier uses this metadata and exposes it to the end user. For now, know that it satisfies the minimum info required to define a trigger.
 
@@ -338,7 +338,7 @@ Good work, we've built a trigger locally and pushed it to Zapier.
 
 ## Adding Authentication
 
-Up to this point we've ignored something that is usually crucial to APIs: authentication. Zapier supports a number of different [authentication schemes](https://github.com/zapier/zapier-platform-cli#authentication). For our app, we are going to set it up to include an API Key in a header.
+Up to this point we've ignored something that is usually crucial to APIs: authentication. Zapier supports a number of different [authentication schemes](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#authentication). For our app, we are going to set it up to include an API Key in a header.
 
 For different types of authentication, see these example apps:
 
@@ -473,4 +473,4 @@ For more on inviting users, see our [detailed documentation](https://zapier.gith
 
 ## Tutorial Next Steps
 
-Congrats, you've completed the tutorial! At this point we recommend reading up on the [Z Object](https://github.com/zapier/zapier-platform-cli#z-object) and [Bundle Object](https://github.com/zapier/zapier-platform-cli#bundle-object) to get a better idea of what is possible within the `perform` functions. You can also check out the other [example apps](https://github.com/zapier/zapier-platform-cli/wiki/Example-Apps) to see how to incorporate different authentication schemes into your app and how to implement things like searches and creates.
+Congrats, you've completed the tutorial! At this point we recommend reading up on the [Z Object](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#z-object) and [Bundle Object](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#bundle-object) to get a better idea of what is possible within the `perform` functions. You can also check out the other [example apps](https://github.com/zapier/zapier-platform/wiki/Example-Apps) to see how to incorporate different authentication schemes into your app and how to implement things like searches and creates.

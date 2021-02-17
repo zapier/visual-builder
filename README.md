@@ -17,9 +17,9 @@ Zapier Platform UI is the easiest way to build new Zapier integrations in an onl
 Zapier Platform CLI is the most advanced way to build integrations in your local development environment with your team's source code management and custom testing.
 
 - Install Zapier Platform CLI and build a sample integration in the [CLI Quick Start guide](https://zapier.com/developer/start/introduction)
-- Learn more in [Zapier's Platform CLI Documentation](https://zapier.github.io/zapier-platform-cli/)
+- Learn more in [Zapier's Platform CLI Documentation](https://zapier.github.io/zapier-platform/)
 - Find detailed info on the Zapier Platform in the [Zapier Platform Schema](https://zapier.github.io/zapier-platform-schema/build/schema.html) from our built-in code docs
-- Start quicker with our template [Zapier CLI name Apps](https://github.com/zapier/zapier-platform-cli/wiki/name-Apps)
+- Start quicker with our templates [Zapier Example Apps](https://github.com/zapier/zapier-platform/wiki/Example-Apps)
 
 ## Zapier Legacy Web Builder
 
