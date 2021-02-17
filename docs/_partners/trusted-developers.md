@@ -16,6 +16,8 @@ If you don't have the time/resources to dedicate towards building and launching 
 
 * [DataAutomation](https://dataautomation.com/zapier-developer/)
 
+* [GetUWired](https://www.getuwired.com/zapier-partner-page/)
+
 If you're looking for help with Zap workflows and not building an app, contact one of our [Zapier Experts](https://zapier.com/experts/) who can help you out.
 
 > Note*: If you do work with one of our Zapier Trusted Developers to develop an app, make sure you develop a plan for continued support and maintenance, either using that developer, or with an in-house team who will take responsibility for the app.*
