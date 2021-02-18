@@ -20,4 +20,4 @@ The tool will guide you through a three step process:
 1. Test your integration’s triggers and actions on the new platform. 
 1. Update your existing users’ Zaps to use the new integration. 
 
-The legacy platform will be disabled this year, so this process is required to maintain your integration. We’ve worked hard to make this process as easy as possible while avoiding any impact for users.
+The legacy platform will be disabled this year, so this process is required to maintain your integration. We’ve worked hard to make this process as easy as possible while avoiding any impact on users.
