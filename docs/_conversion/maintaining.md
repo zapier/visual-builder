@@ -93,7 +93,7 @@ You'll be able to continue your development, creating new triggers and actions, 
 
 The following applies when you're building _new_ triggers and actions, and working with custom scripting code.  These are the idioms of the way operations are executed on the new platform.  
 
-_If you're making changes to the code in the Advanced > "Legacy Web Builder" section, the following statemetns do not apply.  That code is run in an "emulated" context and works just like the old environment._
+_If you're making changes to the code in the Advanced > "Legacy Web Builder" section, the following statements do not apply.  That code is run in an "emulated" context and works just like the old environment._
 
 **Code us scoped to the individual trigger or action**
 
