@@ -78,7 +78,7 @@ We're looking to bring out lots more data and insights about your integration's 
 
 Your converted project looks a little different than if you’d started it from scratch in the new platform, but should feel pretty familiar (apart from versioning).  One thing you may notice are sections where the configuration is a code block, and the code is simply calling `z.legacyScripting.run()`.  To make integrations written in the old environment run, without modification, in the new environment we 'wrapped' your custom code and API configuration, and created a runtime library that emulates the behavior of the old platform.  So each time you see this, you can recognize it as an artifact of this emulation - we're calling into the emulator to perform the operation we need using your original code and configuration.
 
-Where you added custom code to override lifecyle methods in Web Builder, we've included that code in the "Advanced" section of the UI, in the "Legacy Web Builder" tab.  The `z.legacyScripting` will call these functions to drive your triggers, actions, and authentication transactions.  
+Where you added custom code to override lifecycle methods in Web Builder, we've included that code in the "Advanced" section of the UI, in the "Legacy Web Builder" tab.  The `z.legacyScripting` will call these functions to drive your triggers, actions, and authentication transactions.  
 
 ![](https://cdn.zappy.app/79bb2a1ea31a301f286e07e209994dcd.png)
 
