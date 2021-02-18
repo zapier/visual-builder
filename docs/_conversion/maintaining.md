@@ -105,7 +105,7 @@ When you're writing custom scripting code in the new platform the scope of that 
 
 **No pre or post functions**
 
-In Web Builder, you could write custom code that ran before the request was made, or after the request returned, or you could take over complete control of makeing the request and returning data to Zapier.  In the new platform there is only the 'complete control' option.  Your request can implement a `perform` function that takes a bundle as input and is expected to return data when the request handling is completed.  
+In Web Builder, you could write custom code that ran before the request was made, or after the request returned, or you could take over complete control of making the request and returning data to Zapier.  In the new platform, there is only the 'complete control' option.  Your request can implement a `perform` function that takes a bundle as input and is expected to return data when the request handling is completed.  
 
 **Promise based API**
 
