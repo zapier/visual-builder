@@ -56,7 +56,7 @@ Deprecation is an extremely useful feature introduced in the new platform.  If y
 
 ## Teams
 
-In Web Builder, an intergration had a single admin.  In the new platform you can add your whole team as admins to collaborate on the development and maintenance of your integration.  No need to share logins.  It's helpful that each member of your team be added, so everyone can see the status of the integration and get notification emails when a user reports a bug or feature request for your integration through Zapier support.
+In Web Builder, an integration had a single admin.  In the new platform, you can add your whole team as admins to collaborate on the development and maintenance of your integration.  No need to share logins.  It's helpful that each member of your team is added, so everyone can see the status of the integration and get notification emails when a user reports a bug or feature request for your integration through Zapier support.
 
 You can also add 'subscribers'.  Those folks will get emails about the integration's performance, but won't be allowed to edit the integration. 
 
