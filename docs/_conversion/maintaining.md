@@ -118,7 +118,7 @@ A big difference in the API of the new environment is that the request API is as
 
 **No libraries included**
 
-The legacy Web Builder tool included several Javascript libraries, such as Lodash, in its context that you could use in your script code.  Those are no longer available when writing scripting code in the new platform's UI tool.  You'll be able to use any Javacript feature of Node.js (version 12 at the time of this writing, possibly v14 by the time you're reading this), including its standard library with `z.require`.
+The legacy Web Builder tool included several JavaScript libraries, such as Lodash, in its context that you could use in your script code.  Those are no longer available when writing scripting code in the new platform's UI tool.  You'll be able to use any JavaScript feature of Node.js (version 12 at the time of this writing, possibly v14 by the time you're reading this), including its standard library with `z.require`.
 
 If you need, or prefer to use, a 3rd party Javascript library you'll want to switch to the Zapier CLI where you can install modules from npm and reference them throughout your code.
 
