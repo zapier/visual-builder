@@ -29,7 +29,7 @@ Inside this container are versions.  Versions hold all the actual workings of yo
 
 _To make a change to your integration._
 
-- Create a new version by cloning an existing version in the versions section found in the left hand navigation bar.
+- Create a new version by cloning an existing version in the versions section found in the left-hand navigation bar.
 - Make your changes to the new version.  
 - If you have invited testers they can create Zaps with this new version before anyone else has access to it.
 - When you’re ready for the world to use your new version, promote it.  Promoting a version makes it the version new users will see when they make Zaps. 
