@@ -83,6 +83,6 @@ After you’ve tested all your triggers and actions, you’re ready to update yo
 
 ## STEP 3: Update your Users’ Zaps
 
-After you’ve completed testing, update your users Zaps to use the integration you’ve created on the new platform. We’ll provide the status of the operation, letting you know when it’s complete.  If you have a lot of users this may take several hours to complete.  
+After you’ve completed testing, update your users' Zaps to use the integration you’ve created on the new platform. We’ll provide the status of the operation, letting you know when it’s complete.  If you have a lot of users this may take several hours to complete.  
 
 After this process is complete, all your users’ Zaps will be using the new version of your integration, and all references to your integration will have been updated across Zapier.
