@@ -37,7 +37,7 @@ _To make a change to your integration._
 
 ## About breaking changes
 
-A breaking change happens when you need to change something that prevents us from being able to switch users Zaps to the new version without their interaction.  Breaking changes include:
+A breaking change happens when you need to change something that prevents us from being able to switch users' Zaps to the new version without their interaction.  Breaking changes include:
 
 - Changing authentication
 - Adding a new required field
