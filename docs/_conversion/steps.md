@@ -63,7 +63,7 @@ In the left sidebar menu, click “Versions.” Next to your new integration, cl
 
 ![](https://cdn.zappy.app/ef97ecfc1a3f9a9642c6baa4084a3780.png)
 
-Change the visibility of of a trigger/action/search so you can make a new test Zap:
+Change the visibility of a trigger/action/search so you can make a new test Zap:
 
 To select the test version of your integration, click the “Version” dropdown menu in the upper left, or from the versions section. Then select the new version you just created for this test.
 
