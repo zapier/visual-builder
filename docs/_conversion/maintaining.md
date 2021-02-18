@@ -72,7 +72,7 @@ Check out how many Zaps are using each trigger & action, for each version of you
 
 ![](https://cdn.zappy.app/67ad08f295dde5fc914dd74fb7819c67.png)
 
-We're looking to bring out lots more data and insights about your integrations performance and usage dynamics in the near future.
+We're looking to bring out lots more data and insights about your integration's performance and usage dynamics in the near future.
 
 ## Where’s my code?
 
