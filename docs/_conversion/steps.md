@@ -33,7 +33,7 @@ After testing is complete, you’re ready to update your existing users’ Zaps 
 
 >Ensure that you’re using the _new_ integration to test your triggers and actions. This version is not yet available within Zapier’s public app directory. 
 
-The new platform’s web based development tool has a feature to create test Zaps. Your new integration’s triggers and actions will be listed on the left sidebar navigation. Select one and you’ll see an option to create a Zap with this trigger or action.
+The new platform’s web-based development tool has a feature to create test Zaps. Your new integration’s triggers and actions will be listed on the left sidebar navigation. Select one and you’ll see an option to create a Zap with this trigger or action.
 
 ![](https://cdn.zappy.app/098ef458bac63799457ad55e342101d9.png)
 
