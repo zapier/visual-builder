@@ -19,7 +19,7 @@ On your “My Integrations” page, make sure you’re working on the copy of yo
 
 The most immediate and important difference you’ll notice is that the new platform introduces the concept of [versions](https://platform.zapier.com/docs/versions).  
 
-In the legacy Web Builder, you’d make a clone of your project to make changes to your integration. In the new platform the workflow is similar, but you can manage multiple version of your app for a lot more control and flexibility.  
+In the legacy Web Builder, you’d make a clone of your project to make changes to your integration. In the new platform, the workflow is similar, but you can manage multiple versions of your app for a lot more control and flexibility.  
 
 The top level of your integration is a thin container that houses the title, logo, description of your app.  All partnership metrics and analytics will reference this container.
 
@@ -137,4 +137,3 @@ Some reasons to consider the Zapier CLI
 - If you wanted to fully remove references to the legacy environment the CLI gives you the power to do that.
 
 More information on moving to the CLI [here](https://platform.zapier.com/docs/export)
-
