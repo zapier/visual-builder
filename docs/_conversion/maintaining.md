@@ -109,7 +109,7 @@ In Web Builder, you could write custom code that ran before the request was made
 
 **Promise based API**
 
-A big difference in the API of the new environment is that the request API is ansyncronous, using promises rather than syncronous requests or callbacks.  For developers new to Javascript promises this can be a small stumbling block.  We recommend spending a few minutes getting familiar with how promises work in general.  The `z.request` library works very similarly to the promise-based Fetch API, so most articles and tutorials about that apply to working with custom code in Zapier's environment.  
+A big difference in the API of the new environment is that the request API is asynchronous, using promises rather than synchronous requests or callbacks.  For developers new to Javascript promises this can be a small stumbling block.  We recommend spending a few minutes getting familiar with how promises work in general.  The `z.request` library works very similarly to the promise-based Fetch API, so most articles and tutorials about that apply to working with custom code in Zapier's environment.  
 
 - [Using promises (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
 - [JavaScript Promises in Depth (Egghead.io)](https://egghead.io/courses/javascript-promises-in-depth)
