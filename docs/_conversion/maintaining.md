@@ -101,7 +101,7 @@ When you're writing custom scripting code in the new platform the scope of that 
 
 ![](https://cdn.zappy.app/27b0a08799b047fc9db1ed204d030377.gif)
 
->Pro Tip: A handy way to understand this is to have a look at the [schema](https://zapier.github.io/zapier-platform-schema/build/schema.html) of the integration defintion you're building.  [Here](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicpollingoperationschema) you'll see the structure of the definion of a polling trigger.  Notice that the `perform` field takes a request configuration object, or it simply takes a Javascript function.  The new builder UI reflects this.  When you configure an API interaction, you use the form UI to configure a request, or you use "Code Mode" to write a function to be called instead.
+>Pro Tip: A handy way to understand this is to have a look at the [schema](https://zapier.github.io/zapier-platform-schema/build/schema.html) of the integration definition you're building.  [Here](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicpollingoperationschema) you'll see the structure of the definition of a polling trigger.  Notice that the `perform` field takes a request configuration object, or it simply takes a Javascript function.  The new builder UI reflects this.  When you configure an API interaction, you use the form UI to configure a request, or you use "Code Mode" to write a function to be called instead.
 
 **No pre or post functions**
 
