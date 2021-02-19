@@ -46,6 +46,9 @@ collections:
   partner_api:
     output: true
     permalink: /:collection/:name
+  conversion:
+    output: true
+    permalink: /:collection/:name
 
 defaults:
   - scope:
@@ -76,6 +79,11 @@ defaults:
   - scope:
       path: ""
       type: "legacy"
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "conversion"
     values:
       layout: default
   - scope:
