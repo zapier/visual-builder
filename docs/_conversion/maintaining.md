@@ -48,7 +48,7 @@ A breaking change happens when you need to change something that prevents us fro
 
 ## Deprecation
 
-Deprecation is an extremely useful feature introduced in the new platform.  If you made a breaking change and can’t migrate users to your new version, you might choose to deprecate the older version.  This will automatically email users of the older version to let them know they need to revisit the Zap Editor and reconfigure their Zaps for your newer version.  On the deprecation date you set any remaining Zaps still using the deprecated version will be paused.
+Deprecation is an extremely useful feature introduced in the new platform.  If you made a breaking change and can’t migrate users to your new version, you might choose, if necessary, to deprecate the older version.  This will automatically email users of the older version to let them know they need to revisit the Zap Editor and reconfigure their Zaps for your newer version.  On the deprecation date you set any remaining Zaps still using the deprecated version will be paused.  Zapier is a "set it and forget it" experience for users, so use this feature carefully weighing the impact to user experience.
 
 > **To minimize user disruption, try to avoid too frequent breaking changes and deprecations.** 
 
