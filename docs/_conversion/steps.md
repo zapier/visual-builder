@@ -22,7 +22,7 @@ _Select Get Started_
 ![](https://cdn.zappy.app/5d4479163eb1d8448b5a5850b83ad596.png)
 
 _Confirm Copies of Your Integration_
-![](https://cdn.zappy.app/9e7e317466c85e6b5615838403670f2b.png)
+![](https://cdn.zappy.app/0e8430b75ea09f1f2c23091e1fe6ed4a.png)
 
 _Done. Ready to Navigate to the New Tool._
 ![](https://cdn.zappy.app/0df71bf63b59386c08586a75643cc375.png)
