@@ -5,23 +5,23 @@ layout: post-toc
 redirect_from: /conversion/
 ---
 
-# Maintaining your integration on the new platform
+# Maintaining Your Integration on the New Platform
 
 After you’ve completed the process, you’re ready to continue development on the new platform. If you’re coming from the legacy Web Builder tool, the new UI will be familiar, but with some important differences in how you manage your work.
 
 Locating the current integration
 
-On your “My Integrations” page, make sure you’re working on the copy of your integration in the “Integrations” section - not the “Integrations Built with Legacy Web Builder” section.
+On your [“My Integrations”](https://developer.zapier.com/) page, make sure you’re working on the copy of your integration in the “Integrations” section - _not_ the “Integrations Built with Legacy Web Builder” section.
 
 ![](https://cdn.zappy.app/50e1b6f3dfe56965ffce80cc7ad879cd.png)
 
 ## Versions
 
-The most immediate and important difference you’ll notice is that the new platform introduces the concept of [versions](https://platform.zapier.com/docs/versions).  
+The most immediate and important difference you’ll notice is that the new platform introduces the concept of [versions](/docs/versions).  
 
 In the legacy Web Builder, you’d make a clone of your project to make changes to your integration. In the new platform, the workflow is similar, but you can manage multiple versions of your app for a lot more control and flexibility.  
 
-The top level of your integration is a thin container that houses the title, logo, description of your app.  All partnership metrics and analytics will reference this container.
+You might think of the top level of your integration as a thin container that describes your product and brand, including the title, logo, description of your app.  All partnership metrics and analytics will reference this "container".
 
 Inside this container are versions.  Versions hold all the actual workings of your integration - triggers, actions, authentication configuration, etc.  You are free to make big changes from one version to another.  
 
@@ -33,7 +33,8 @@ _To make a change to your integration._
 - Make your changes to the new version.  
 - If you have invited testers they can create Zaps with this new version before anyone else has access to it.
 - When you’re ready for the world to use your new version, promote it.  Promoting a version makes it the version new users will see when they make Zaps. 
-- If you didn’t make breaking changes, migrate your users to the new version.  Unlike Web Builder, this doesn’t happen automatically. You can control when it happens.  A recommended practice is to migrate percentages of your users and watch for problems in your logs before migrating every one.  If you made breaking changes, you can simply leave users using the older version, or deprecate the old version to force users to reconfigure their Zaps to accommodate your changes.
+- If you didn’t make breaking changes, migrate your users to the new version.  Unlike Web Builder, this doesn’t happen automatically. You can control when it happens.  A useful practice, when introducing non-trivial changes, is to migrate percentages of your users and watch for problems in your logs before migrating 100%.  
+- If you made breaking changes, you can simply leave users using the older version, or deprecate the old version to force users to reconfigure their Zaps to accommodate your changes.
 
 ## About breaking changes
 
@@ -42,17 +43,20 @@ A breaking change happens when you need to change something that prevents us fro
 - Changing authentication
 - Adding a new required field
 - Removing a trigger/action/search
+- Changing the key of a trigger/search/action or any inputField
 
 
 ## Deprecation
 
 Deprecation is an extremely useful feature introduced in the new platform.  If you made a breaking change and can’t migrate users to your new version, you might choose to deprecate the older version.  This will automatically email users of the older version to let them know they need to revisit the Zap Editor and reconfigure their Zaps for your newer version.  On the deprecation date you set any remaining Zaps still using the deprecated version will be paused.
 
+> **To minimize user disruption, try to avoid too frequent breaking changes and deprecations.** 
+
 ![](https://cdn.zappy.app/567798b6c42e238d9d446763d5d9abbc.png)
 
 ![](https://cdn.zappy.app/673162702ac6f277b752624ee7dd8e88.png)
 
-> To minimize user disruption, try to avoid too frequent breaking changes and deprecations. 
+
 
 ## Teams
 
@@ -118,9 +122,13 @@ A big difference in the API of the new environment is that the request API is as
 
 **No libraries included**
 
-The legacy Web Builder tool included several JavaScript libraries, such as Lodash, in its context that you could use in your script code.  Those are no longer available when writing scripting code in the new platform's UI tool.  You'll be able to use any JavaScript feature of Node.js (version 12 at the time of this writing, possibly v14 by the time you're reading this), including its standard library with `z.require`.
+The legacy Web Builder tool included several JavaScript libraries, such as Underscore and jQuery, in its context that you could use in your script code.  Those are no longer available when writing scripting code in the new platform's UI tool.  You'll be able to use any JavaScript feature of Node.js (version 12 at the time of this writing, possibly v14 by the time you're reading this), including its standard library with `z.require`.
 
 If you need, or prefer to use, a 3rd party Javascript library you'll want to switch to the Zapier CLI where you can install modules from npm and reference them throughout your code.
+
+**Structure and naming of the Bundle Object is different**
+
+Field names and structure of the Bundle is slightly different between the legacy Web Builder and the new platform.  Please see the [Bundle docs](/cli_docs/docs#bundle-object) for details.
 
 ## The Zapier CLI
 

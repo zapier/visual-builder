@@ -16,10 +16,16 @@ To get started, create a copy of your integration on the new platform. This is a
 
 Navigate to your integration built on the legacy web builder. At the top of the integration page, you’ll see a banner message with details about the platform update. Click “Get Started” to begin the conversion process.
 
-The tool will identify older copies of your integration to include in the conversion. Copies of your integration will be available as [versions](https://platform.zapier.com/docs/versions) of your new integration on the new platform. If any of the copies identified by the tool are separate products, clear the checkbox for those copies. 
+The tool will identify older copies of your integration to include in the conversion. Copies of your integration will be available as [versions](/docs/versions) of your new integration on the new platform. If any of the copies identified by the tool are separate products, clear the checkbox for those copies. 
 
+_Select Get Started_
+![](https://cdn.zappy.app/5d4479163eb1d8448b5a5850b83ad596.png)
 
-`<INSERT SCREENSHOTS OF WEB BUILDER CONVERT UI>`
+_Confirm Copies of Your Integration_
+![](https://cdn.zappy.app/9e7e317466c85e6b5615838403670f2b.png)
+
+_Done. Ready to Navigate to the New Tool._
+![](https://cdn.zappy.app/0df71bf63b59386c08586a75643cc375.png)
 
 ## STEP 2: TEST YOUR NEW INTEGRATION
 
