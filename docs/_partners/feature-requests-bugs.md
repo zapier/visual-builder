@@ -58,35 +58,7 @@ Breaking changes require a new major version of your integration. That requires 
 
 _→ Find how to manage versions in [Zapier Platform UI](https://platform.zapier.com/docs/versions) and [CLI](https://zapier.github.io/zapier-platform-cli/#deploying-an-app-version)_
 
-## How to Replace Your Zapier Integration
 
-If you have an integration that's usable by other people (either as invite only or public), you will additionally need to follow our our 4-step approach to replacing your integration with a new one:
-
-### 1. Reach out to our Partnerships Team
-
-Contact us at [partners@zapier.com](mailto:partners@zapier.com) with your intentions **before you start building** the updated integration and we'll help get you started in the right direction. Giving us a heads up will expedite the review process of and help set proper expectations for the replacement integration. We also recommend reading our [blog post](https://zapier.com/engineering/api-auth-migration/) on auth migration best practices and pitfalls, with real-world examples.
-
-### 2. Build the Replacement Integration for a "Hide and Replace"
-
-Your team will build a completely new version of the integration with the same triggers, actions, and searches as your original integration if at all possible. You will need to have 10 test users for the new version of your integration with at least 1 live Zap for each trigger, action, and search, just as with a new integration. Then, you will need to re-submit your integration for approval as with a new integration.
-
-> **Note:** You will need to accumulate enough test users on your new integration before you can request for review. Please expect some time between when you submit for review and when the new integration is made “Public”, as the speed of the review depends on how closely your integration matches our style guide and the responsiveness of your team to our feedback.
-
-When the review process is complete, we'll "hide" the older version of your integration, and deploy the newer version, so it becomes the default version that's used for creating new Zaps.
-
-If the existing API endpoints in the old integration are **still working and available**, they are set as “Pending.” Existing users’ Zaps will continue to work "as is", but no users will be able to create new Zaps with the old version. Any Zaps using the old integration will show a “Legacy” label to prompt users to update their Zaps to use the new one.
-
-If the existing API endpoints will be **deprecated/terminated**, or an **older authentication type is no longer usable**, after we deploy the new version of the integration, existing users’ Zaps will only continue to work as long as the original endpoints are available.
-
-### 3. Migrate Users and Zaps to the new integration
-
-At this time, the users and Zaps on the old integration should be migrated over to the new version. This is **not** done automatically during the "Hide and Replace" step of the replacement.
-
-The Zapier team will **not** assist you with migrating users and Zaps to the new version. You will need to send out communication to notify your users to update their Zaps on their own.
-
-### 4. Migrate existing Zap Templates
-
-We'll also determine whether we can reuse/migrate the [Zap Templates](https://zapier.com/developer/documentation/v2/zap-templates/) for your integration, or need to remove all the Zap Templates if the keys/fields in the data have changed significantly. Templates may not be migrated right away when the ‘Hide and Replace’ occurs, but will be placed in a queue to be migrated in priority order.
 
 ### We're here to help!
 
