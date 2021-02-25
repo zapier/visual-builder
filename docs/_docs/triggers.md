@@ -59,7 +59,9 @@ Once your form is complete—or if you don't need to include an input form—cli
 
 The last part of adding a trigger is setting is API configuration.
 
-Zapier uses either a Polling API call to check periodically for new or updated data, or a REST hook with a subscription URL where Zapier can subscribe to receive new or updated data automatically. With both, Zapier expects to receive an array with 0 or more objects that will be passed to Zapier's [deduper](https://zapier.com/developer/documentation/v2/deduplication/)—and it will return any items that haven't been received before, and use them to run the subsequent steps in the user's Zap.
+Zapier uses either a Polling API call to check periodically for new or updated data, or a REST hook with a subscription URL where Zapier can subscribe to receive new or updated data automatically. 
+
+Polling API results are expected to be an array with 0 or more objects that will be passed to Zapier's [deduper](https://zapier.com/developer/documentation/v2/deduplication/).  The deduper will return any items that haven't been received before, and use them to run the subsequent steps in the user's Zap.
 
 ### Polling Trigger
 

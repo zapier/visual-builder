@@ -9,7 +9,7 @@ redirect_from: /conversion/
 
 After you’ve completed the process, you’re ready to continue development on the new platform. If you’re coming from the legacy Web Builder tool, the new UI will be familiar, but with some important differences in how you manage your work.
 
-Locating the current integration
+**Locating the current integration**
 
 On your [“My Integrations”](https://developer.zapier.com/) page, make sure you’re working on the copy of your integration in the “Integrations” section - _not_ the “Integrations Built with Legacy Web Builder” section.
 

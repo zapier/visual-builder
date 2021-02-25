@@ -83,7 +83,8 @@ In the left sidebar menu, select the hidden trigger or action in your integratio
 
 If everything works as expected, you’re ready to check this trigger/action/search off the list and repeat this process for the next one. If you see any unexpected results, contact us at partners@zapier.com. 
 
-`<INSERT SCREENSHOT OF SIDEBAR CHECKLIST>`
+_Check off Triggers & Actions after you've verified them_
+<img src="https://cdn.zappy.app/a698148fc38345edfb401bfa17d95ec6.png" style="width:413px" />
 
 After you’ve tested all your triggers and actions, you’re ready to update your users’ Zaps with the new integration.
 
@@ -92,3 +93,10 @@ After you’ve tested all your triggers and actions, you’re ready to update yo
 After you’ve completed testing, update your users' Zaps to use the integration you’ve created on the new platform. We’ll provide the status of the operation, letting you know when it’s complete.  If you have a lot of users this may take several hours to complete.  
 
 After this process is complete, all your users’ Zaps will be using the new version of your integration, and all references to your integration will have been updated across Zapier.
+
+_Select 'Update Zaps' to start migrating users to the new platform_
+<img src="https://cdn.zappy.app/4a37deebef5908c6569229b88d465283.png" style="width:413px" />
+
+_View progress of your migration_
+
+<img src="https://cdn.zappy.app/164e2027d2252642044f067c6901e4e1.png" style="width:413px" />
