@@ -28,6 +28,7 @@ You can additionally use these options to customize your Zap Template embeds:
 - `theme=dark` for a dark-colored embed, instead of the default light background
 - `categories=CATEGORYNAME` to show only Zap Templates with apps from a specific category, with `CATEGORYNAME` replaced with the name of a category from [Zapier’s App Directory](https://zapier.com/apps/)
 - `categories=-CATEGORYNAME` to _not_ show Zap Templates with apps from a specific category
+- `services=APP,APP` to show only Zap Templates between two (or more) apps 
 - `services=-APP,-APP` to exclude specific apps
 - `borderColor=%23333` to set the color of the borders to any css value or “none”. Use "%23" in place of "#" for HEX values.
 - `backgroundColor=green` to set the background of each row to any css value including “transparent”
