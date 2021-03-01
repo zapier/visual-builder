@@ -129,7 +129,9 @@ With OAuth v2, when users select to connect their account on your app with Zapie
 
 The second best option is API Key authentication. Users should be able to obtain their API key from your app without human intervention. Zapier will not allow your integration to be publicly released if your service requires users to email or call your team in order to receive an API Key or access to your API.
 
-Basic authentication, while acceptable, is the least appropriate authentication type to use for a third party service like Zapier, as users must type their account credentials directly into Zapier's UI.
+Basic authentication, while acceptable, is the least appropriate authentication type to use for a third-party service like Zapier, since users must enter their account credentials directly into Zapier's UI.
+
+For security and consistency across the platform, any integration intended for public release on Zapier must use authentication.
 
 Here are additional considerations when adding authentication to your integration:
 

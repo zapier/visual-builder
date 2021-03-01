@@ -49,7 +49,7 @@ Learn how to use the Zapier Platform with our [visual builder Quick Start tutori
 
 ### Test Your Integration
 
-While you're building your integration, it's best to test authentication, triggers, and actions as you add them to your app. In Platform UI, you can test each step live in the editor as its built. With both Platform UI and CLI, have a separate tab open in your browser to the user-facing [Zap editor](https://zapier.com/app/editor), then refresh anytime you add a new trigger or action to test it live immediately.
+While you're building your integration, it's best to test authentication, triggers, and actions as you add them to your app. In Platform UI, you can test each step live in the editor as it's built. With both Platform UI and CLI, have a separate tab open in your browser to the user-facing [Zap editor](https://zapier.com/app/editor), then refresh anytime you add a new trigger or action to test it live immediately.
 
 > **Note:** You may have to refresh a few times for new triggers and actions to appear.
 
