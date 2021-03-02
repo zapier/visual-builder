@@ -60,9 +60,9 @@ Deprecation is an extremely useful feature introduced in the new platform.  If y
 
 ## Teams
 
-In Web Builder, an integration had a single admin.  In the new platform, you can add your whole team as admins to collaborate on the development and maintenance of your integration.  No need to share logins.  It's helpful that each member of your team is added, so everyone can see the status of the integration and get notification emails when a user reports a bug or feature request for your integration through Zapier support.
+This is not _new_ functionality, unique to the new platform, but as a reminder be sure to add your whole team as admins to collaborate on the development and maintenance of your integration.  There's no need to share logins.  It's helpful that each member of your team is added, so everyone can see the status of the integration and get notification emails when a user reports a bug or feature request for your integration through Zapier support.
 
-You can also add 'subscribers'. Those folks will get emails about the integration's performance, but won't be allowed to edit the integration. 
+In addition to "Admins" who can change and manage your integration, you can also add "subscribers". Those folks will get emails about the integration's performance, but won't be allowed to edit the integration. 
 
 ![](https://cdn.zappy.app/a3f77d24190e718b6177efe3d7074736.png)
 
@@ -99,7 +99,7 @@ The following applies when you're building _new_ triggers and actions, and worki
 
 _If you're making changes to the code in the Advanced > "Legacy Web Builder" section, the following statements do not apply.  That code is run in an "emulated" context and works just like the old environment._
 
-**Code us scoped to the individual trigger or action**
+**Code is scoped to the individual trigger or action**
 
 When you're writing custom scripting code in the new platform the scope of that code is local to that trigger or action.  This makes it easier to understand when a request will be handled by custom code, or simply configuring a request for default request handling.  It also means you can't easily share code between different triggers and actions.  For that, have a look at moving to the Zapier CLI, which is geared toward teams, projects with custom code, projects that need 3rd party libraries, etc.  
 
