@@ -10,6 +10,8 @@ redirect_from: /conversion/
 
 **Before you begin:** it’s important that you don’t make any edits to your integration during the conversion process. If you encounter errors during the process, email us at partners@zapier.com and we’ll resolve the issue.
 
+Also, before you get started it's a really good idea to test each trigger and action of your existing public Web Builder integration.  Your integration may have existing issues, and it's going to be useful to isolate those from any problems caused by the conversion itself.
+
 ## STEP 1: CONVERT YOUR INTEGRATION
 
 To get started, create a copy of your integration on the new platform. This is a non-destructive operation. It doesn’t change your existing integration or impact your existing users’ Zaps.
@@ -27,6 +29,8 @@ _Confirm Copies of Your Integration_
 _Done. Ready to Navigate to the New Tool._
 ![](https://cdn.zappy.app/0df71bf63b59386c08586a75643cc375.png)
 
+
+
 ## STEP 2: TEST YOUR NEW INTEGRATION
 
 Now you’ve created a copy of your integration on the new developer platform. The next step is to test your triggers and actions in the Zap editor to make sure everything is working as expected. We’ve provided a checklist to track each trigger and action to test. 
@@ -36,6 +40,8 @@ Within the Zap editor, check the task history to confirm there aren’t any erro
 After testing is complete, you’re ready to update your existing users’ Zaps to use the new integration.
 
 ### Testing tips
+
+
 
 >Ensure that you’re using the _new_ integration to test your triggers and actions. This version is not yet available within Zapier’s public app directory. 
 
@@ -60,6 +66,8 @@ You should see your action run. To check the details in your task history, click
 ![](https://cdn.zappy.app/22fca8a22adbe6727154374c51c7b586.png)
 
 ### If your integration has hidden triggers or actions
+
+>You should be able to create test Zaps for hidden triggers & actions using the "Create a Zap" link provided in the conversion/migration utility on the right hand section of the new UI tool, next to the check boxes for each trigger and action.  This is the recommended approach, but if you need to create them directly in the Zap editor, follow the directions below.
 
 It’s important that you don’t make edits to the new copy of your project during the conversion process. To test hidden triggers and actions in new Zaps, you’ll need to change the visibility of the trigger/action/search. To do this, create a copy of your integration and make the visibility changes to that version only to access those triggers/actions/searches to test them in the Zap editor. When your test is complete, you can delete this copy of your integration.  
 

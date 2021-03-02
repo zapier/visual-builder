@@ -21,3 +21,5 @@ The tool will guide you through a three step process:
 1. Update your existing users’ Zaps to use the new integration. 
 
 The legacy platform will be disabled this year, so this process is required to maintain your integration. We’ve worked hard to make this process as easy as possible while avoiding any impact on users.
+
+>**This feature is being progressively rolled out, and may not be immediately available for your integration. It is planned to be available to everyone by the end of March 2021.**
