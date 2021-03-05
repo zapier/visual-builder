@@ -25,9 +25,6 @@ collections:
   docs:
     output: true
     permalink: /:collection/:name
-  news:
-    output: true
-    permalink: /:collection/:name
   cli_docs:
     output: true
     permalink: /:collection/:name
