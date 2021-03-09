@@ -191,7 +191,7 @@ are identical. Typically, this means modifying a poll result so that it looks li
 hook. If a poll has fields that a hook doesn't, the user may map them to a later
 step and when the zap is run for real, the value will be blank.
 
-Let's walk through an example. Say we have a `New Contact` REST hook trigger. When a
+Let's walk through an example. Say we have a `New Contact` REST Hook trigger. When a
 new contact is created, Zapier gets a webhook that looks like this:
 
 ```json
@@ -227,7 +227,7 @@ and return:
 }
 ```
 
-Typically you could return the first object from the `results` array as part of a
+Typically you could return the `results` array as part of a
 poll (and hydrate the `friends`), but since the hook has no friend information, you
 should instead remove it. A good way to do this is a `processContact` function that
 you map all results (of either type) through, which reduces each object to the lowest
@@ -242,7 +242,7 @@ See [Sample Data](./faq#output) in the FAQ for more details on this.
 ## D007 - All URLs Should Be HTTPS
 
 When handling customer data (which all Zapier functions do), it's strongly
-encouraged that all communication take securely. Using SSL is a big part of that, so
+encouraged that all communication take place securely. Using SSL is a big part of that, so
 ensure your URLs have HTTPS as their protocol.
 
 If you need help setting up an SSL certificate for your API, we suggest
