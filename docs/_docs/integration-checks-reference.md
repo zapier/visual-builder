@@ -228,10 +228,8 @@ and return:
 ```
 
 Typically you could return the `results` array as part of a
-poll (and hydrate the `friends`), but since the hook has no friend information, you
-should instead remove it. A good way to do this is a `processContact` function that
-you map all results (of either type) through, which reduces each object to the lowest
-common denominator.
+poll (and hydrate the `friends`), but since the hook has no `friends`` information, you
+should instead remove it from the poll results.
 
 See [Sample Data](./faq#output) in the FAQ for more details on this.
 

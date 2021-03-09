@@ -200,7 +200,7 @@ If that field isn't available when the user's Zap runs, the action field will be
 }
 ```
 
-A user might map the "Job Title" information into a required field in another app, such as a CRM. Then, when the Zap runs, `job_title` is only included in the live result if it happens to be available, and the data the Zap receives looks like this:
+A user might map the `job_title` information into a required field in another app, such as a CRM. Then, when the Zap runs, `job_title` is only included in the live result if it happens to be available, and the data the Zap receives looks like this:
 
 ```json
 {
@@ -211,7 +211,7 @@ A user might map the "Job Title" information into a required field in another ap
 }
 ```
 
-The user's Zap will error unexpectedly when they try to add the person to their CRM because "Job Title" is a required field but there's no data in it. Because this result is confusing, there are several [integration checks](./integration-checks-reference) that require sample and live data to match.
+The user's Zap will error unexpectedly when they try to add the person to their CRM because `job_title` is a required field in the CRM but there's no data in it. Because this result is confusing, there are several [integration checks](./integration-checks-reference) that require sample and live data to match.
 
 ### Output Fields
 
