@@ -192,11 +192,11 @@ If that field isn't available when the user's Zap runs, the action field will be
 
 ```json
 {
-  id: 1,
-  first_name: "Jane",
-  last_name: "Suarez",
-  email_address: "janesz@example.com",
-  job_title: "Executive Director"
+  "id": 1,
+  "first_name": "Jane",
+  "last_name": "Suarez",
+  "email_address": "janesz@example.com",
+  "job_title": "Executive Director"
 }
 ```
 
@@ -204,10 +204,10 @@ A user might map the "Job Title" information into a required field in another ap
 
 ```json
 {
-  id: 5,
-  first_name: "Jacob",
-  last_name: "Giotto",
-  email_address: "jacob@example.com"
+  "id": 5,
+  "first_name": "Jacob",
+  "last_name": "Giotto",
+  "email_address": "jacob@example.com"
 }
 ```
 
