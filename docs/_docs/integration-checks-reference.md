@@ -228,7 +228,7 @@ and return:
 ```
 
 Typically you could return the `results` array as part of a
-poll (and hydrate the `friends`), but since the hook has no `friends`` information, you
+poll (and hydrate the `friends`), but since the hook has no `friends` information, you
 should instead remove it from the poll results.
 
 See [Sample Data](./faq#output) in the FAQ for more details on this.
