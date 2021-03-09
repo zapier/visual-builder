@@ -83,16 +83,20 @@ Once you've added your trigger settings, be sure to click the _Save API Request 
 
 ![Zapier Rest Hook Settings](https://cdn.zapier.com/storage/photos/de85ffb1cc01a16b4b0e753dd7c0745c.png)
 
-Alternately, if your app supports REST Hooks—or webhook subscriptions that can be manipulated through a REST API—select _Rest Hook_ for your trigger. More detail on REST Hooks are [here] (http://resthooks.org/), but please note that the Zapier implementation does not support Identity Confirmation. This will let your trigger run in near realtime with your app pushing data to Zapier, running Zaps as soon as new data comes into your app instead of waiting for Zapier to fetch new data from your API.
+Alternately, if your app supports REST Hooks—or webhook subscriptions that can be manipulated through a REST API—select _REST Hook_ for your trigger. More detail on REST Hooks is [here](http://resthooks.org/), but please note that the Zapier implementation does not support Identity Confirmation. This will let your trigger run in near realtime with your app pushing data to Zapier, running Zaps as soon as new data comes into your app instead of waiting for Zapier to fetch new data from your API.
 
-With a REST Hook trigger, you need to add a Subscribe and Unsubscribe URL, along with a Perform List URL where Zapier should check for recent items. Zapier requires the response to include an array of items, which Zapier will then deduplicate and use to trigger the Zap to run.
+With a REST Hook trigger, you need to add a Subscribe and Unsubscribe URL that Zapier can use to set up and remove the hook subscription.
+
+In addition to the subscribe and unsubscribe URLs, it's helpful to add a Perform List URL where Zapier should check for recent items. This will be used to fetch data when users are testing the Zap, so that they don't need to fire off a hook during testing.
 
 <a id="perform"></a>
 ![Rest Hook Perform](https://cdn.zapier.com/storage/photos/5c6c154be13fbcad2a5dc8cb786f2dea.png)
 
-Finally, you can customize the code to evaluate the data your app's webhooks pass to Zapier. By default, Zapier includes `return [bundle.cleanedRequest];` to return the object from your previous step. If your data needs transformed or includes multiple objects, add custom code to parse the response data from the Perform List URL call in `bundle.cleanedRequest` and turn it into an array of objects Zapier can use in deduplication, such as [this example code](https://gist.github.com/maguay/7109e9f885304794852d1dd400dc4887).
+Finally, you can customize the code to evaluate the data your app's webhooks pass to Zapier. By default, Zapier includes `return [bundle.cleanedRequest];` to return the object from your previous step. If your data needs to be transformed, or includes multiple objects, add custom code to parse the response data in `bundle.cleanedRequest` within the Perform and turn it into an array of objects, such as [this example code](https://gist.github.com/maguay/7109e9f885304794852d1dd400dc4887).
 
-Then, as with polling triggers, once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
+Both the Perform and Perform List methods should return arrays. The object(s) within the arrays should have the same data structure, so that live data will behave as expected based on the test data the user maps. See [Sample Data](./faq#output) in the FAQ for more details on this.
+
+Once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
 
 _→ Learn more about [how Zapier REST Hooks work](https://platform.zapier.com/docs/faq#how-do-i-define-rest-hooks-and-use-the-embedded-tester-with-them) in our FAQ_
 

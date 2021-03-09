@@ -229,9 +229,11 @@ and return:
 
 Typically you could return the first object from the `results` array as part of a
 poll (and hydrate the `friends`), but since the hook has no friend information, you
-should always remove it. A good way to do this is a `processContact` function that
-you map all results (of either type) through that reduces each object to the lowest
+should instead remove it. A good way to do this is a `processContact` function that
+you map all results (of either type) through, which reduces each object to the lowest
 common denominator.
+
+See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 ---
 
@@ -380,6 +382,8 @@ live results, we use static sample data as a fallback.
 It's very important that the structure of an object from the actual trigger and in
 the sample data are identical. Otherwise, users could map fields that don't exist
 in the live results, which results in a broken Zap.
+
+See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 ---
 
@@ -871,6 +875,8 @@ static: {"id": 1, "email": "john@example.com"}
 live: {"id": 2, "name": "Alice"}
 ```
 
+See [Sample Data](./faq#output) in the FAQ for more details on this.
+
 ✔ an example of a **correct** implementation:
 
 ```
@@ -911,6 +917,8 @@ output fields: [
 ]
 ```
 
+See [Sample Data](./faq#output) in the FAQ for more details on this.
+
 ---
 
 <a name="T006"></a><a name="T00006"></a>
@@ -941,6 +949,8 @@ live: {"id": 2, "name": "Alice"}
 polling sample: {"id": 1, "name": "John"}
 live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ```
+
+See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 ---
 
