@@ -186,6 +186,33 @@ In the Zap Editor, Zapier will attempt to retrieve or create existing data to te
 
 Make sure to provide JSON-formatted sample data using the same field names as your API. The sample response data should not include any personally identifiable data, have copy that is safe for work, and be easily recognizable as sample data.
 
+When providing sample data, it's also important that it only include fields that are present every time a Zap runs. When a field is provided in the sample, it can be mapped into a field in a later action.
+
+If that field isn't available when the user's Zap runs, the action field will be empty, which can cause errors or unexpected results for users. For example, suppose your sample data looks like this:
+
+```json
+{
+  "id": 1,
+  "first_name": "Jane",
+  "last_name": "Suarez",
+  "email_address": "janesz@example.com",
+  "job_title": "Executive Director"
+}
+```
+
+A user might map the `job_title` information into a required field in another app, such as a CRM. Then, when the Zap runs, `job_title` is only included in the live result if it happens to be available, and the data the Zap receives looks like this:
+
+```json
+{
+  "id": 5,
+  "first_name": "Jacob",
+  "last_name": "Giotto",
+  "email_address": "jacob@example.com"
+}
+```
+
+The user's Zap will error unexpectedly when they try to add the person to their CRM because `job_title` is a required field in the CRM but there's no data in it. Because this result is confusing, there are several [integration checks](./integration-checks-reference) that require sample and live data to match.
+
 ### Output Fields
 
 Output Fields add user-friendly labels to your API's response data. Zapier uses a basic human-friendly transformation of field names by default, capitalizing words and adding spaces instead of underscores. You can customize this further with Output Fields.

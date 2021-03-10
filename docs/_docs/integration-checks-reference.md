@@ -191,7 +191,7 @@ are identical. Typically, this means modifying a poll result so that it looks li
 hook. If a poll has fields that a hook doesn't, the user may map them to a later
 step and when the zap is run for real, the value will be blank.
 
-Let's walk through an example. Say we have a `New Contact` REST hook trigger. When a
+Let's walk through an example. Say we have a `New Contact` REST Hook trigger. When a
 new contact is created, Zapier gets a webhook that looks like this:
 
 ```json
@@ -227,11 +227,11 @@ and return:
 }
 ```
 
-Typically you could return the first object from the `results` array as part of a
-poll (and hydrate the `friends`), but since the hook has no friend information, you
-should always remove it. A good way to do this is a `processContact` function that
-you map all results (of either type) through that reduces each object to the lowest
-common denominator.
+Typically you could return the `results` array as part of a
+poll (and hydrate the `friends`), but since the hook has no `friends` information, you
+should instead remove it from the poll results.
+
+See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 ---
 
@@ -240,7 +240,7 @@ common denominator.
 ## D007 - All URLs Should Be HTTPS
 
 When handling customer data (which all Zapier functions do), it's strongly
-encouraged that all communication take securely. Using SSL is a big part of that, so
+encouraged that all communication take place securely. Using SSL is a big part of that, so
 ensure your URLs have HTTPS as their protocol.
 
 If you need help setting up an SSL certificate for your API, we suggest
@@ -380,6 +380,8 @@ live results, we use static sample data as a fallback.
 It's very important that the structure of an object from the actual trigger and in
 the sample data are identical. Otherwise, users could map fields that don't exist
 in the live results, which results in a broken Zap.
+
+See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 ---
 
@@ -871,6 +873,8 @@ static: {"id": 1, "email": "john@example.com"}
 live: {"id": 2, "name": "Alice"}
 ```
 
+See [Sample Data](./faq#output) in the FAQ for more details on this.
+
 ✔ an example of a **correct** implementation:
 
 ```
@@ -911,6 +915,8 @@ output fields: [
 ]
 ```
 
+See [Sample Data](./faq#output) in the FAQ for more details on this.
+
 ---
 
 <a name="T006"></a><a name="T00006"></a>
@@ -941,6 +947,8 @@ live: {"id": 2, "name": "Alice"}
 polling sample: {"id": 1, "name": "John"}
 live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ```
+
+See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 ---
 
