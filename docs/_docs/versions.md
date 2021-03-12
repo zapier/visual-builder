@@ -17,7 +17,7 @@ That’s where versions come in. Zapier lets you create multiple versions of you
 
 ![Zapier integration versions](https://cdn.zapier.com/storage/photos/4294ed1a2f6c7e3980cb9ac9c43f8655.png)
 
-Zapier’s visual builder includes a _Versions_ page in the left sidebar. New integrations provide a starter `1.0.0` version, and you can create other versions as needed.
+Zapier’s Platform UI includes a _Versions_ page in the left sidebar. New integrations provide a starter `1.0.0` version, and you can create other versions as needed.
 
 Click the gear icon beside a version on the _Versions_ page to make changes. You can _Clone_ your integration to make a new version based on the features of an existing version. Once the new version is ready, you can _Promote_ the new version to have new users start using it.
 
