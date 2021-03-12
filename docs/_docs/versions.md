@@ -17,9 +17,9 @@ That’s where versions come in. Zapier lets you create multiple versions of you
 
 ![Zapier integration versions](https://cdn.zapier.com/storage/photos/4294ed1a2f6c7e3980cb9ac9c43f8655.png)
 
-Zapier’s visual builder includes a _Versions_ tab in the left sidebar. New integrations provide a starter `1.0.0` version, and you can create others versions as needed.
+Zapier’s visual builder includes a _Versions_ page in the left sidebar. New integrations provide a starter `1.0.0` version, and you can create other versions as needed.
 
-Click the gear icon beside a version in the _Versions_ tab to make changes. You can _Clone_ your integration to make a new version based on the features of an existing version. Once the new version is ready, you can _Promote_ the new version to have new users start using it.
+Click the gear icon beside a version on the _Versions_ page to make changes. You can _Clone_ your integration to make a new version based on the features of an existing version. Once the new version is ready, you can _Promote_ the new version to have new users start using it.
 
 ## Clone Your Integration
 
@@ -27,13 +27,13 @@ Click the gear icon beside a version in the _Versions_ tab to make changes. You 
 
 When creating a new version of your Zapier integration, you never need to start over. Instead, to make a new version, start by cloning an existing version. That lets you start with an exact copy of your integration where you can make the changes and additions you need.
 
-To clone a version, click the gear icon in the _Versions_ tab, and select _Clone_. In the dialog, select the version to clone from (usually the most recent version, unless you want to roll back recent changes). Then choose what type of version you want to create:
+To clone a version, click the gear icon in the _Versions_ page, and select _Clone_. In the dialog, select the version to clone from (usually the most recent version, unless you want to roll back recent changes). Then choose what type of version you want to create:
 
 - **Patch**: A `x.x.1` version, typically used to fix bugs and issues in existing integrations
 - **Minor**: A `x.1.x` version, typically to add new minor features to existing integrations
 - **Major**: A `2.x.x` version to launch a full new version of your integration with new triggers and or actions
 
-Once you clone the integration, click the _Edit_ button to tweak the new version of your integration, or click _Close_ to go back to the _Versions_ tab.
+Once you clone the integration, click the _Edit_ button to tweak the new version of your integration, or click _Close_ to go back to the _Versions_ page.
 
 ## Edit a Version of Your Integration
 
@@ -41,7 +41,7 @@ Once you clone the integration, click the _Edit_ button to tweak the new version
 
 You can add, edit, and test features in your new integration version just as you did in the original version. All you need to do is switch between your integration versions to add changes to the new version, not the original.
 
-To edit a specific integration version, either select it from the upper left of the Platform UI sidebar, or open the _Versions_ tab, click the gear icon beside the version you want to edit, and select _Edit_. You can see  what version you’re editing from the version number in the top left of your Zapier visual editor sidebar anytime.
+To edit a specific integration version, either select it from the upper left of the Platform UI sidebar, or open the _Versions_ page, click the gear icon beside the version you want to edit, and select _Edit_. You can see  what version you’re editing from the version number in the top left of the sidebar anytime.
 
 You can also test any version of your integration from Zapier’s standard Zap editor. Search for your app name when adding a Zap step, and Zapier will show multiple entries on your account with the version number beside each. Select the newest one to test your new changes.
 

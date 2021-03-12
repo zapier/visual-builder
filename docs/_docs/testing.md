@@ -45,7 +45,7 @@ Then click _Test Your Request_ to run the trigger or action step. Zapier will no
 
 Testing inside the visual builder is crucial to building functioning integrations. But to ensure people can easily use your integration, it's equally crucial to test your integration inside Zapier with live Zaps.
 
-To test your integration, make a Zap as normal at [zapier.com/app/editor](https://zapier.com/app/editor/), and choose your app in the _Choose App_ selector. Your integration will show the name and logo set in visual builder, along with the integration's current version number and a _By invite_ tag. If your integration is a new version of an existing integration, look for the latest version number and the _By invite_ tag to differentiate from existing, public integrations.
+To test your integration, make a Zap in the [Zap editor](https://zapier.com/app/editor/), and choose your app in the _Choose App_ selector. Your integration will show the name and logo set in visual builder, along with the integration's current version number and a _By invite_ tag. If your integration is a new version of an existing integration, look for the latest version number and the _By invite_ tag to differentiate from existing, public integrations.
 
 Then be sure to check each of the following:
 
@@ -69,16 +69,16 @@ When testing in the editor, use your integration's _Monitoring_ page to ensure t
 
 ## How to Invite Others to Test New Integrations
 
-![Zapier integration admins](https://cdn.zapier.com/storage/photos/5db3a5364349cbb17812e02e1eeddf11_2.png)
+It's crucial to have as many people test your integration as possible before launching it to the public. Integrations are required to have at least 3 users with live Zaps before they can be released. Each additional tester helps ensure that your app doesn't ship with usability problems or bugs.
 
-It's crucial to have as many people test your integration as possible before launching it to the public. Integrations are required to have at least 10 users with live Zaps before they can be released. Each additional tester helps ensure that your app doesn't ship with usability problems or bugs.
+![Zapier integration admins](https://cdn.zapier.com/storage/photos/5db3a5364349cbb17812e02e1eeddf11_2.png)
 
 While developing your app integration, invite additional admins from your integration's _Admins_ page. These users will have full access to your app's visual builder to edit the app details, authentication, triggers, actions, and versions. This is the best way to add additional developers to your project.
 
 ![Zapier integration visibility](https://cdn.zapier.com/storage/photos/c818563358f8566d969e9be09a560220.png)
 
-When your integration is nearly finished and ready for wider testing, you can invite testers from your integration's _Visibility_ page. These testers will be able to use your integration inside the Zapier editor, but cannot change your app's core settings and functionality in visual builder. This is the best way to add non-technical team members, beta testers, and advanced users of your app to your integration, to build up the minimum user count before launching your integration.
+When your integration is nearly finished and ready for wider testing, you can invite testers from your integration's _Sharing_ page. These testers will be able to use your integration inside the Zapier editor, but cannot change your app's core settings and functionality in the Platform UI. This is the best way to add non-technical team members, beta testers, and advanced users of your app to your integration, to allow for additional testing before launching your integration.
 
 From the [_Monitoring_ page](#monitoring), you'll then see every action taken by your integration users. You can filter by user, see auth and trigger/action events, and see any errors that occur.
 
-The _Analytics_ tab in the visual builder also provides usage statistics, focusing on how many users each trigger and action has.
+The _Analytics_ tab in the visual builder provides usage statistics, focusing on how many users each trigger and action has.
