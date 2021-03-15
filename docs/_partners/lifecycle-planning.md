@@ -49,27 +49,25 @@ Learn how to use the Zapier Platform with our [visual builder Quick Start tutori
 
 ### Test Your Integration
 
-While you're building your integration, it's best to test authentication, triggers, and actions as you add them to your app. In Platform UI, you can test each step live in the editor as its built. With both Platform UI and CLI, have a separate tab open in your browser to the user-facing [Zap editor](https://zapier.com/app/editor), then refresh anytime you add a new trigger or action to test it live immediately.
+While you're building your integration, it's best to test authentication, triggers, and actions as you add them to your app. In the Platform UI, you can test each step live in the editor as it's built. With both Platform UI and CLI, have a separate tab open in your browser to the user-facing [Zap editor](https://zapier.com/app/editor), then refresh anytime you add a new trigger or action to test it live immediately.
 
 > **Note:** You may have to refresh a few times for new triggers and actions to appear.
 
-After you're done building, you will want to invite users to try your integration before making it available to a wider audience.
+After you're done building, invite users to try your integration before making it available to a wider audience.
 
 #### Invite Others to Help Test Your Integration
 
-![Invite people to use Zapier integration](https://cdn.zapier.com/storage/photos/4fb2802664a2fe72f44d223e892ca88e.png)
-
 As you're getting close to finishing development, you’ll want others to try out your app using Zapier. You can invite co-workers or your users to provide feedback. Invitees must have a Zapier account, which they can create for free during the invite process.
 
-You can invite people directly to your integration from Zapire's Platform UI, whether you built it in the Platform UI or CLI. Open Zapier's developer platform at [zapier.com/app/developer](https://zapier.com/app/developer), select your app, then click the _Visibility_ tab on the left. There, you can enter contacts' email addresses to invite them to your integration, or can copy a public invite link to share privately with those who you want to test.
+You can invite people directly to your integration from Zapier's Platform UI, whether you built it in the Platform UI or CLI. Open Zapier's developer platform at [zapier.com/app/developer](https://zapier.com/app/developer), select your app, then click the _Sharing_ tab on the left. There, you can enter contacts' email addresses to invite them to your integration, or can copy a public invite link to share with those whom you want to test. The link will invite users to all versions of your app, while email invites allow you to select specific version(s) to share.
 
 ![Invite screen](https://cdn.zapier.com/storage/photos/d7e6f91a029c9ae740f70e475c97081d.png)
 
 When users accept your invite or click the link, they'll see a page that explains that you have invited them to your app, covers some common questions about Zapier, and explains that you will support your app while in beta.
 
-After accepting the invite, users will land in the Zapier editor, where they are prompted to build a Zap with your product.
+After accepting the invite, users land in the Zapier editor, where they are prompted to build a Zap with your product.
 
-It's a good idea to reach out to the users you invited and check in on their experience using your integration with Zapier so that you can identify any problematic usability issues.
+It's a good idea to reach out to the users you invited and check in on their experience using your integration with Zapier so that you can identify any usability issues.
 
 #### Manage Your Integration Versions
 

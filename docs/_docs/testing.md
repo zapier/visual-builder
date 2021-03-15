@@ -73,11 +73,15 @@ It's crucial to have as many people test your integration as possible before lau
 
 ![Zapier integration admins](https://cdn.zapier.com/storage/photos/5db3a5364349cbb17812e02e1eeddf11_2.png)
 
-While developing your app integration, invite additional admins from your integration's _Admins_ page. These users will have full access to the Platform UI to edit the app details, authentication, triggers, actions, and versions. This is the best way to add additional developers to your project.
+While developing your app integration, invite additional admins from your integration's _Manage Team_ page. These users will have full access to the Platform UI to edit the app details, authentication, triggers, actions, and versions. This is the best way to add additional developers to your project.
 
 ![Zapier integration visibility](https://cdn.zapier.com/storage/photos/c818563358f8566d969e9be09a560220.png)
 
-When your integration is nearly finished and ready for wider testing, you can invite testers from your integration's _Sharing_ page. These testers will be able to use your integration inside the Zapier editor, but cannot change your app's core settings and functionality in the Platform UI. This is the best way to add non-technical team members, beta testers, and advanced users of your app to your integration, to allow for additional testing before launching your integration.
+When your integration is nearly finished and ready for wider testing, you can invite testers from your integration's _Sharing_ page. These testers will be able to use your integration inside the Zapier editor, but cannot see or change your app's core settings and functionality in the Platform UI.
+
+Using the invite link on the _Sharing_ page to invite testers will give them access to all versions of your integration. If you'd like to manage access by version, invite your users by email, and select the version(s) to give them access to.
+
+This is the best way to add non-technical team members, beta testers, and advanced users of your app to your integration, to allow for additional testing before launching.
 
 From the [_Monitoring_ page](#monitoring), you'll then see every action taken by your integration users. You can filter by user, see auth and trigger/action events, and see any errors that occur.
 
