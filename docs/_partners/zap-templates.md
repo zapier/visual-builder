@@ -319,11 +319,24 @@ You can load templates asynchronously (without blocking the rest of your page's 
 
 ### Support for React
 
-You can use the widget within React with a class component that dynamically creates a script tag `onComponentDidMount` and sets the script src to the widget.js URL containing the necessary params. Additionally, the URL should contain a `html_id` param set to the id of an empty child element (div) rendered by the component. The script tag should then be inserted into the DOM by either:
+You can use the widget within React by simply using a useEffect hook. Just be sure to make use of the `html_id=` param.
 
-- Getting the container element by ID and appending the script
-- Using a ref={} in the component for a parent element that will contain the script
-- Appending the script to the document body
+This might look like the following:
+
+    import { useEffect } from 'react';
+    
+    function MyComponent() {
+      useEffect(() => {
+        const widget = document.createElement("script");
+        widget.type = "text/javascript";
+        widget.async = true;
+        widget.src = "https://zapier.com/apps/embed/widget.js?services=mailchimp&html_id=zapier-widget";
+        document.body.appendChild(widget);
+      }, []);
+
+      return <div id="zapier-widget"></div>;
+    }
+
 
 ### Support for Angular
 
