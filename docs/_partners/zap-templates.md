@@ -32,12 +32,7 @@ _An example Zap Template that automatically saves Gmail attachments to Google Dr
 
 Zap Templates take a few steps to build, similar to any other Zap. You first select the app and trigger you want to start the Zap, then add an action app and map the fields from the trigger app to the action—and optionally add additional steps. Then, add a title and description to help people quickly understand when to use your Zap.
 
-For help as you build, you can follow this video or the written instructions below:
-
-<div class="wistia_responsive_padding" style="padding:44.17% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/0y50h71p98?seo=false&videoFoam=true" title="Zap template creator video howto" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe></div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-<br>
-<br>
+For help as you build, follow the instructions below:
 
 ### 1. Add a Trigger Step
 
@@ -71,7 +66,7 @@ In the final trigger option, Zapier shows sample data from the app. You can clic
 
 Now add the action step to your Zap. Select the action app, either from the popular apps list or from the search menu.
 
-> **Tip:** You can use Zapier integrations that are publicly available or that have applied to be launched publicly.
+> **Note:** All public integrations are avaliable here. **Code** steps and **Webhook** steps with prefilled destinations are not allowed.
 
 ![Zap Template select action step](https://cdn.zapier.com/storage/photos/8dc73de8622e7fdde9e1da7286b96fd3.png)
 
@@ -89,7 +84,7 @@ Now for the most crucial part of your Zap Template: Map the input fields from th
 
 For most form fields, you need to add input fields from the trigger to the appropriate form field. Click the `+` button on the right of the field to see every input field from the trigger step. Select the input field that fits the action field best. For example, you might select Gmail’s _Attachment_ field to upload the attachment via Google Drive’s _File_ form field, or you might add Stripe’s _Email_ field to Mailchimp’s _Subscriber Email_ form field to add customers to an email list.
 
-> **Tip**: Use [Zapier’s date and time syntax](https://zapier.com/help/modifying-dates-and-times/) to modify dates and times in action form fields.
+> **Tip**: Use [Zapier’s date and time syntax](https://zapier.com/help/modifying-dates-and-times/) to modify dates and times in action form fields. Adding {{zap_meta_human_now}} to a field will produce the time when the Zap runs.
 
 Most dropdown menus are used to select folders, projects, and other user-generated data and should be left blank by default. You can, however, select options for dropdowns for boolean yes/no fields if you're certain which option is best for this Zap Template.
 
@@ -180,7 +175,13 @@ Follow these rules in your Zap Template Titles:
 
 Zap Template descriptions share more detail about what the Zap does and scenarios in which to use it in two to four sentences. They tell readers what this Zap does for them and how it works.
 
-Start your description with the user's problem or need. Then explain how Zapier meets that need, when the Zap will run, and what the Zap does when it runs. Explain the trigger and action items in plain language that show the workflow's value. Some good examples:
+The best descriptions follow a relatively simple pattern:
+
+1. Present a problem statement or job to be done where the integration can help
+2. Explain how it works
+3. End with the impact on the user's workflow.
+
+Please keep your descriptions unique and varied across the sets of Zaps you create. Please keep to concise, explanatory language that isn't sales or marketing-oriented or unclear. Some good examples below:
 
 > Find yourself spending too much time adding event attendees to your CRM by hand? Now with the help of Zapier, the tedious work is done for you. This integration will add every new Eventbrite attendee to Zoho CRM as a new contact, saving you time for more important work.
 
@@ -214,11 +215,15 @@ Optionally, you can let your team help test Zap Templates as well. When saving y
 
 Finally, when your Zap Template is ready for public release, select the `For review` option on your Zap Template Visibility menu, and click _Save_ again. That submits the Zap Template to our team to review the Zap Template and ensure it works as expected and meets our standards.
 
-> **Note**: Zapier will only approve Zap Templates that include either public integrations or integrations that have applied for public release.
+> **Note**: Zapier will only approve Zap Templates that include public integrations.
 
-We'll then contact you, typically within a couple of weeks, after reviewing your Zap Template(s). If your Zap Templates pass the tests, we will mark them as public to automatically have them show up on your app's App Directory page, inside select partners' apps and sites, and in Zapier's onboarding experience.
+Please allow for up to 14 days for Zap Template reviews. These are processed on a first in, first out basis, and you will rceive automatic emails the day after any of your Zap templates are Published or Rejected. 
 
-Then make some more Zap Templates. Every Zapier integration must have at least 10 Zap Templates, and the more you make, the easier it will be to start using your Zapier integration. Open the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) again and create any more Zap Templates you want.
+If they were Rejected, please see the email you received for rejection reasons - after making the noted edits, please re-submit.
+
+Every Zapier integration must have at least 10 Zap Templates, and the more you make, the easier it will be to start using your Zapier integration. Open the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) again and create any more Zap Templates you want.
+
+Once Zap Templates are published, they will show up on your app's App Directory page, surface anywhere Zap Templates are embedded (like our blog and even inside other Partners' Zapier experience), and in Zapier's product flow.
 
 ## Promote Your Zap Templates
 
@@ -228,15 +233,11 @@ It’s not enough to turn your ideal workflows into Zap Templates. You need to g
 
 ![Zapier App Directory Page](https://cdn.zapier.com/storage/photos/b625939587cb8a8c7242f375c714d6aa.png)
 
-The easiest way to find Zap Templates is in Zapier’s [App Directory](https://zapier.com/apps/) where we have individual pages for each of the 1,300+ apps that integrate with Zapier. Want to find Gmail integrations? Go to [zapier.com/apps/gmail/integrations](https://zapier.com/apps/gmail/integrations/) to see the top apps connected with Gmail on Zapier, followed by a list of popular Gmail Zap Templates and Zapier content about Gmail use cases.
-
-Find your app’s App Directory page at `zapier.com/apps/YourApp/integrations`, replacing `YourApp` with your app’s name.
+The easiest way to find Zap Templates is in Zapier’s [App Directory](https://zapier.com/apps/) where we have individual pages for each of the 3000+ apps that integrate with Zapier. Want to find Gmail integrations? Go to [zapier.com/apps/gmail/integrations](https://zapier.com/apps/gmail/integrations/) to see the top apps connected with Gmail on Zapier, followed by a list of popular Gmail Zap Templates and Zapier content about Gmail use cases.
 
 ![Zapier App Directory two-app page](https://cdn.zapier.com/storage/photos/ca6556adda39eeb6f8477a873122d444.png)
 
 Want to find ways to connect two specific apps? Click one of the top apps on any App Directory page to see our two-app pages, such as the one above for Trello and Gmail. It shows the most popular use cases for those two apps together.
-
-Find your app’s two-app pages at `zapier.com/apps/YourApp/integrations/OtherApp`, substituting `YourApp` with your app’s name and `OtherApp` with the other app connected to your app.
 
 Zapier also shows these top use cases to logged in users, promoting your app’s top Zap Templates to people who have connected Zapier to your app.
 
