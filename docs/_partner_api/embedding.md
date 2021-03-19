@@ -44,7 +44,7 @@ Include the additional options at the end of the script text with an ampersand, 
 
 `<script src="https://zapier.com/apps/embed/widget.js?services=APP&borderColor=green&limit=10&theme=dark"></script>`
 
-> Need to embed the widget in a dynamic site or using a JavaScript framework? Try out our [troubleshooting section](/partners/zap-templates.md#troubleshoot-zap-template-embeds).
+> Need to embed the widget in a dynamic site or using a JavaScript framework? Try out our [troubleshooting section](https://platform.zapier.com/partners/zap-templates#troubleshoot-zap-template-embeds).
 
 <span id="iframe"><!-- helper anchor for simpler linking --></span>
 
