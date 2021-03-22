@@ -61,7 +61,7 @@ which is then called in the `performSubscribe` method on the module for the Trig
 ```
 module.exports = {
   // Other data about the Trigger, e.g. key, name, etc. omitted
-  performSubscribe: performSubscribe
+  performSubscribe: subscribeHook
 };
 ```
 
