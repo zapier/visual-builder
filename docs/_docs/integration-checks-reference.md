@@ -183,7 +183,7 @@ When users are setting up a hook-based (aka instant) Trigger, it's important to 
 a polling fallback. For example, imagine a Zap that triggers on a new Slack message.
 Without a polling URL, the test won't complete without the user sending an actual
 message in a Slack channel, which is disruptive. Instead, the test fetches a (real)
-recent message and uses it as the test result. After that, the polling URL is only
+recent message and uses it as the test result. The polling URL is only
 used for tests.
 
 It's very important that the structure of an object from a webhook and from a poll
@@ -227,9 +227,12 @@ and return:
 }
 ```
 
-Typically you could return the `results` array as part of a
-poll (and hydrate the `friends`), but since the hook has no `friends` information, you
-should instead remove it from the poll results.
+To match the polling result to the hook result, you would modify this response to
+remove the `friends` information, and return only the array of contacts, not the
+enclosing object.
+
+The polling result is not used when a user skips testing the Zap step. In that case,
+Zapier uses the sample data, so the sample data must also match the hook data format.
 
 See [Sample Data](./faq#output) in the FAQ for more details on this.
 
@@ -240,8 +243,8 @@ See [Sample Data](./faq#output) in the FAQ for more details on this.
 ## D007 - All URLs Should Be HTTPS
 
 When handling customer data (which all Zapier functions do), it's strongly
-encouraged that all communication take place securely. Using SSL is a big part of that, so
-ensure your URLs have HTTPS as their protocol.
+encouraged that all communication take place securely. Using SSL is a big part
+of that, so ensure your URLs have HTTPS as their protocol.
 
 If you need help setting up an SSL certificate for your API, we suggest
 [Let's Encrypt](https://letsencrypt.org/).
@@ -389,7 +392,7 @@ See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 ## D013 - Connects to a Non-Existing Search
 
-[Search-Powered Fiels](https://platform.zapier.com/cli_docs/docs#search-powered-fields)
+[Search-Powered Fields](https://platform.zapier.com/cli_docs/docs#search-powered-fields)
 prompt users to set up a search step to populate the value of the field. It won't
 work if the search key you specify doesn't exist.
 
