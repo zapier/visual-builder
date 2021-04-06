@@ -179,12 +179,7 @@ if the trigger key you specify doesn't exist.
 
 ## D006 - REST Hook Trigger Needs a Polling URL
 
-When users are setting up a hook-based (aka instant) Trigger, it's important to have
-a polling fallback. For example, imagine a Zap that triggers on a new Slack message.
-Without a polling URL, the test won't complete without the user sending an actual
-message in a Slack channel, which is disruptive. Instead, the test fetches a (real)
-recent message and uses it as the test result. The polling URL is only
-used for tests.
+For hook-based (aka instant) triggers, we require you to provide a Perform List URL so that users can pull a live sample in the Zap editor. This is called a Polling Sample and is something users need in order to be able to complete the setup of their Zaps and then turn them on.
 
 It's very important that the structure of an object from a webhook and from a poll
 are identical. Typically, this means modifying a poll result so that it looks like a
