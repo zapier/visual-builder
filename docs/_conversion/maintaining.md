@@ -31,7 +31,7 @@ _To make a change to your integration._
 
 - Create a new version by cloning an existing version in the versions section found in the left-hand navigation bar.
 - Make your changes to the new version.  
-- If you have invited testers they can create Zaps with this new version before anyone else has access to it.
+- If you have invited testers, they can create Zaps with this new version before anyone else has access to it.
 - When you’re ready for the world to use your new version, promote it.  Promoting a version makes it the version new users will see when they make Zaps. 
 - If you didn’t make breaking changes, migrate your users to the new version.  Unlike Web Builder, this doesn’t happen automatically. You can control when it happens.  A useful practice, when introducing non-trivial changes, is to migrate percentages of your users and watch for problems in your logs before migrating 100%.  
 - If you made breaking changes, you can simply leave users using the older version, or deprecate the old version to force users to reconfigure their Zaps to accommodate your changes.
@@ -45,12 +45,11 @@ A breaking change happens when you need to change something that prevents us fro
 - Removing a trigger/action/search
 - Changing the key of a trigger/search/action or any inputField
 
-
 ## Deprecation
 
-Deprecation is an extremely useful feature introduced in the new platform.  If you made a breaking change and can’t migrate users to your new version, you might choose, if necessary, to deprecate the older version.  This will automatically email users of the older version to let them know they need to revisit the Zap Editor and reconfigure their Zaps for your newer version.  On the deprecation date you set any remaining Zaps still using the deprecated version will be paused.  Zapier is a "set it and forget it" experience for users, so use this feature carefully weighing the impact to user experience.
+Deprecation is an extremely useful feature introduced in the new platform.  If you made a breaking change and can’t migrate users to your new version, you can choose, if necessary, to deprecate the older version.  This will automatically email users of the older version to let them know they need to revisit the Zap Editor and reconfigure their Zaps for your newer version.  On the deprecation date you set, any remaining Zaps still using the deprecated version will be paused.  Zapier is a "set it and forget it" experience for users, so use this feature carefully weighing the impact to user experience.
 
-> **To minimize user disruption, try to avoid too frequent breaking changes and deprecations.** 
+> **To minimize user disruption, try to avoid frequent breaking changes and deprecations.**
 
 ![](https://cdn.zappy.app/567798b6c42e238d9d446763d5d9abbc.png)
 
@@ -60,7 +59,7 @@ Deprecation is an extremely useful feature introduced in the new platform.  If y
 
 ## Teams
 
-This is not _new_ functionality, unique to the new platform, but as a reminder be sure to add your whole team as admins to collaborate on the development and maintenance of your integration.  There's no need to share logins.  It's helpful that each member of your team is added, so everyone can see the status of the integration and get notification emails when a user reports a bug or feature request for your integration through Zapier support.
+This is not _new_ functionality, but as a reminder, be sure to add your whole team as admins to collaborate on the development and maintenance of your integration.  There's no need to share logins.  It's helpful that each member of your team is added, so everyone can see the status of the integration and get notification emails when a user reports a bug or feature request for your integration through Zapier support.
 
 In addition to "Admins" who can change and manage your integration, you can also add "subscribers". Those folks will get emails about the integration's performance, but won't be allowed to edit the integration. 
 
