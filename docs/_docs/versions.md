@@ -69,6 +69,8 @@ If you're working with an integration that's currently private, the _Promote_ op
 
 If you introduce breaking changes to your integration and want existing users to switch to the new version, you can deprecate the old version.
 
+Deprecation is only recommended if the older integration version will eventually stop working, such as if the related API will be removed. Zapier is normally a "set it and forget it" experience for users, so use this feature carefully.
+
 When you deprecate an integration version:
 
 * The Zaps that use it will continue to run until the deprecation date. On the deprecation date, they will be paused.
