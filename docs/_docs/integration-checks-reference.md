@@ -184,7 +184,7 @@ a polling fallback. For example, imagine a Zap that triggers on a new Slack mess
 If testing relies on the sending of a webhook, the test won't complete without the user
 sending an actual message in a Slack channel, which is disruptive.
 
-Instead, during testing, the Perform List (performList) operation fetches a
+Instead, during testing, the Perform List (`performList`) operation fetches a
 (real) recent message using the provided URL for polling and uses it as the test result.
 The polling URL is only used for tests.
 
