@@ -181,10 +181,12 @@ if the trigger key you specify doesn't exist.
 
 When users are setting up a hook-based (aka instant) Trigger, it's important to have
 a polling fallback. For example, imagine a Zap that triggers on a new Slack message.
-Without a polling URL, the test won't complete without the user sending an actual
-message in a Slack channel, which is disruptive. Instead, the test fetches a (real)
-recent message and uses it as the test result. The polling URL is only
-used for tests.
+If testing relies on the sending of a webhook, the test won't complete without the user
+sending an actual message in a Slack channel, which is disruptive.
+
+Instead, during testing, the Perform List (`performList`) operation fetches a
+(real) recent message using the provided URL for polling and uses it as the test result.
+The polling URL is only used for tests.
 
 It's very important that the structure of an object from a webhook and from a poll
 are identical. Typically, this means modifying a poll result so that it looks like a
