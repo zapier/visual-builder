@@ -49,62 +49,61 @@ curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&per_page=5"
 
 ```json
 {
-  "prev_url": "https://api.zapier.com/v1/apps?per_page=2&page=1",
+  "total": 3649,
   "page": 2,
+  "pages": 1825,
+  "per_page": 2,
   "objects": [
     {
+      "uuid": "ca83afc5-ee9a-470d-b577-e7f8fd555b67",
+      "title": "Slack",
+      "slug": "slack",
       "description": "Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go. Offering instant messaging, document sharing and knowledge search for modern teams.",
+      "image": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+      "url": "https://api.zapier.com/v1/embed/apps/google-ads/integrations/slack",
       "links": {
         "mutual:zap_templates": "https://api.zapier.com/v1/zap-templates?apps=slack"
       },
-      "title": "Slack",
-      "url": "https://zapier.com/partner/embed/apps/trello/integrations/slack",
-      "image": "https://cdn.zapier.com/storage/developer/57b336375384ab62cc06e7e83d5c3622_2.png",
-      "images": {
-        "url_16x16": "https://cdn.zapier.com/storage/developer/57b336375384ab62cc06e7e83d5c3622_2.16x16.png",
-        "url_32x32": "https://cdn.zapier.com/storage/developer/57b336375384ab62cc06e7e83d5c3622_2.32x32.png",
-        "url_128x128": "https://cdn.zapier.com/storage/developer/57b336375384ab62cc06e7e83d5c3622_2.128x128.png",
-        "url_64x64": "https://cdn.zapier.com/storage/developer/57b336375384ab62cc06e7e83d5c3622_2.64x64.png"
-      },
-      "slug": "slack",
       "categories": [
         {
           "slug": "team-chat"
-        },
-        {
-          "slug": "top-100"
         }
-      ]
+      ],
+      "images": {
+        "url_16x16": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+        "url_32x32": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+        "url_64x64": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+        "url_128x128": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
+      }
     },
     {
-      "description": "Share your ideas with MailChimp email newsletters\u2014then use its landing page and form builders to grow your lists and take marketing further with drip and transactional emails.",
+      "uuid": "d74234df-0045-436e-bd5b-ee577e74e6b8",
+      "title": "Google Calendar",
+      "slug": "google-calendar",
+      "description": "Google Calendar lets you organize your schedule and share events with co-workers and friends. With Google's free online calendar, it's easy to keep track of your daily schedule.",
+      "image": "https://zapier-images.imgix.net/storage/services/62c82a7958c6c29736f17d0495b6635c.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+      "url": "https://api.zapier.com/v1/embed/apps/google-ads/integrations/google-calendar",
       "links": {
-        "mutual:zap_templates": "https://api.zapier.com/v1/zap-templates?apps=mailchimp"
+        "mutual:zap_templates": "https://api.zapier.com/v1/zap-templates?apps=google-calendar"
       },
-      "title": "MailChimp",
-      "url": "https://zapier.com/partner/embed/apps/trello/integrations/mailchimp",
-      "image": "https://cdn.zapier.com/storage/services/5c727288d9c2f69a9eee136c5f5a0f72.png",
-      "images": {
-        "url_16x16": "https://cdn.zapier.com/storage/services/5c727288d9c2f69a9eee136c5f5a0f72.16x16.png",
-        "url_32x32": "https://cdn.zapier.com/storage/services/5c727288d9c2f69a9eee136c5f5a0f72.32x32.png",
-        "url_128x128": "https://cdn.zapier.com/storage/services/5c727288d9c2f69a9eee136c5f5a0f72.128x128.png",
-        "url_64x64": "https://cdn.zapier.com/storage/services/5c727288d9c2f69a9eee136c5f5a0f72.64x64.png"
-      },
-      "slug": "mailchimp",
       "categories": [
         {
-          "slug": "email-newsletters"
+          "slug": "calendar"
         },
         {
-          "slug": "top-100"
+          "slug": "google"
         }
-      ]
+      ],
+      "images": {
+        "url_16x16": "https://zapier-images.imgix.net/storage/services/62c82a7958c6c29736f17d0495b6635c.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+        "url_32x32": "https://zapier-images.imgix.net/storage/services/62c82a7958c6c29736f17d0495b6635c.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+        "url_64x64": "https://zapier-images.imgix.net/storage/services/62c82a7958c6c29736f17d0495b6635c.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+        "url_128x128": "https://zapier-images.imgix.net/storage/services/62c82a7958c6c29736f17d0495b6635c.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
+      }
     }
   ],
-  "next_url": "https://api.zapier.com/v1/apps?per_page=2&page=3",
-  "per_page": 2,
-  "total": 1193,
-  "pages": 597
+  "prev_url": "https://api.zapier.com/v1/apps?per_page=2&page=1",
+  "next_url": "https://api.zapier.com/v1/apps?per_page=2&page=3"
 }
 ```
 
@@ -147,50 +146,52 @@ curl -L "https://api.zapier.com/v1/zap-templates?client_id=${client_id}&apps=mai
 ```json
 [
   {
-    "description": "<p>Facebook Lead Ads are an excellent way to grow your list of individuals interested in learning more about your product or service, but taking a next step with those people can sometimes take a back seat to your other tasks. With this Facebook Lead Ads-MailChimp integration, you'll no longer need to think about adding new leads to a marketing campaign—each new lead is automatically added to the list of your choice.</p>\n\n<h2>How this Facebook Lead Ads-MailChimp integration works</h2>\n\n<ol>\n<li>Someone fills out one of your Facebook Lead Ads</li>\n<li>Zapier adds that individual to a specified list in MailChimp</li>\n</ol>\n\n<h2>Apps involved</h2>\n\n<ul>\n<li>Facebook Lead Ads</li>\n<li>MailChimp</li>\n</ul>\n",
-    "title": "Subscribe new Facebook Lead Ad leads to a MailChimp list",
-    "url": "https://zapier.com/apps/facebook-lead-ads/integrations/mailchimp/10127/subscribe-new-facebook-lead-ads-mailchimp-list",
-    "type": "guided_zap",
-    "status": "published",
-    "description_raw": "Facebook Lead Ads are an excellent way to grow your list of individuals interested in learning more about your product or service, but taking a next step with those people can sometimes take a back seat to your other tasks. With this Facebook Lead Ads-MailChimp integration, you'll no longer need to think about adding new leads to a marketing campaign—each new lead is automatically added to the list of your choice.\r\n\r\n## How this Facebook Lead Ads-MailChimp integration works\r\n\r\n1. Someone fills out one of your Facebook Lead Ads\r\n2. Zapier adds that individual to a specified list in MailChimp\r\n\r\n## Apps involved\r\n\r\n- Facebook Lead Ads\r\n- MailChimp",
-    "slug": "subscribe-new-facebook-lead-ads-mailchimp-list",
-    "description_plain": "Facebook Lead Ads are an excellent way to grow your list of individuals interested in learning more about your product or service, but taking a next step with those people can sometimes take a back seat to your other tasks. With this Facebook Lead Ads-MailChimp integration, you'll no longer need to think about adding new leads to a marketing campaign—each new lead is automatically added to the list of your choice.\n\nHow this Facebook Lead Ads-MailChimp integration works\n\nSomeone fills out one of your Facebook Lead Ads\n\nZapier adds that individual to a specified list in MailChimp\n\nApps involved\n\nFacebook Lead Ads\n\nMailChimp",
+    "id": 51652,
     "steps": [
       {
-        "description": "Facebook lead ads make signing up for business information easy for people and more valuable for businesses. The Facebook lead ad app is useful for marketers who want to automate actions on their leads.",
-        "title": "Facebook Lead Ads",
-        "url": "https://zapier.com/apps/facebook-lead-ads/integrations",
-        "image": "https://cdn.zapier.com/storage/services/fd9fef95169fd589d6cda992c0057cf8.png",
-        "api": "FacebookLeadsAPI",
-        "slug": "facebook-lead-ads",
-        "hex_color": "3b5998",
+        "id": 1,
+        "title": "Google Ads",
+        "slug": "google-ads",
+        "description": "Google Ads (formerly Google AdWords) is an online advertising platform developed by Google, where advertisers pay to display brief advertisements, service offerings, product listings, video content, and generate mobile application installs within the Google ad network to web users.",
+        "image": "https://zapier-images.imgix.net/storage/services/4058ec8b47ad751cbd39bd686cf4eab7.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+        "hex_color": "4285F4",
         "images": {
-          "url_128x128": "https://cdn.zapier.com/storage/services/fd9fef95169fd589d6cda992c0057cf8.128x128.png",
-          "url_64x64": "https://cdn.zapier.com/storage/services/fd9fef95169fd589d6cda992c0057cf8.64x64.png",
-          "url_16x16": "https://cdn.zapier.com/storage/services/fd9fef95169fd589d6cda992c0057cf8.16x16.png",
-          "url_32x32": "https://cdn.zapier.com/storage/services/fd9fef95169fd589d6cda992c0057cf8.32x32.png"
+          "url_16x16": "https://zapier-images.imgix.net/storage/services/4058ec8b47ad751cbd39bd686cf4eab7.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+          "url_32x32": "https://zapier-images.imgix.net/storage/services/4058ec8b47ad751cbd39bd686cf4eab7.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+          "url_64x64": "https://zapier-images.imgix.net/storage/services/4058ec8b47ad751cbd39bd686cf4eab7.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+          "url_128x128": "https://zapier-images.imgix.net/storage/services/4058ec8b47ad751cbd39bd686cf4eab7.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
         },
-        "id": 3535
+        "api": "GoogleAdsCLIAPI@3.0.0",
+        "url": "https://zapier.com/apps/google-ads/integrations?utm_medium=partner_api",
+        "label": "New Campaign"
       },
       {
-        "description": "MailChimp is an email marketing service provider, founded in 2001. It has 6 million users that collectively send over 10 billion emails through the service each month.",
-        "title": "MailChimp",
-        "url": "https://zapier.com/apps/mailchimp/integrations",
-        "image": "https://cdn.zapier.com/storage/services/5c727288d9c2f69a9eee136c5f5a0f72.png",
-        "api": "MailChimpAPI",
-        "slug": "mailchimp",
-        "hex_color": "239AB9",
+        "id": 2,
+        "title": "Slack",
+        "slug": "slack",
+        "description": "Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go. Offering instant messaging, document sharing and knowledge search for modern teams.",
+        "image": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+        "hex_color": "510f4d",
         "images": {
-          "url_128x128": "https://cdn.zapier.com/storage/services/5c727288d9c2f69a9eee136c5f5a0f72.128x128.png",
-          "url_64x64": "https://cdn.zapier.com/storage/services/5c727288d9c2f69a9eee136c5f5a0f72.64x64.png",
-          "url_16x16": "https://cdn.zapier.com/storage/services/5c727288d9c2f69a9eee136c5f5a0f72.16x16.png",
-          "url_32x32": "https://cdn.zapier.com/storage/services/5c727288d9c2f69a9eee136c5f5a0f72.32x32.png"
+          "url_16x16": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+          "url_32x32": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+          "url_64x64": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+          "url_128x128": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
         },
-        "id": 6
+        "api": "SlackAPI",
+        "url": "https://zapier.com/apps/slack/integrations?utm_medium=partner_api",
+        "label": "Send Channel Message"
       }
     ],
-    "create_url": "https://zapier.com/app/editor/template/10127?utm_campaign=Zap%20Templates%20Partners%20API&embedded=true&referrer=FacebookLeadsAPI&utm_source=partners&utm_medium=api&selected_apis=FacebookLeadsAPI,MailchimpCLIAPI@1.0.10",
-    "id": 10127
+    "title": "Send messages to Slack channels whenever new Google Ads campaigns launch",
+    "slug": "send-messages-to-slack-channels-whenever-new-google-ads-campaigns-launch",
+    "status": "published",
+    "description_plain": "A new Google Ads campaign can mean the start of your next marketing push, but it can also mean the start of a ton of new sales and service workflows. Zapier gives you a head start on those projects by automatically posting a new message in Slack to a specific channel you choose. Give your teams the heads up they need before your new clients come rolling in!\n",
+    "description_raw": "A new Google Ads campaign can mean the start of your next marketing push, but it can also mean the start of a ton of new sales and service workflows. Zapier gives you a head start on those projects by automatically posting a new message in Slack to a specific channel you choose. Give your teams the heads up they need before your new clients come rolling in!",
+    "url": "https://zapier.com/apps/google-ads/integrations/slack/51652/send-messages-to-slack-channels-whenever-new-google-ads-campaigns-launch?utm_medium=partner_api",
+    "description": "<p>A new Google Ads campaign can mean the start of your next marketing push, but it can also mean the start of a ton of new sales and service workflows. Zapier gives you a head start on those projects by automatically posting a new message in Slack to a specific channel you choose. Give your teams the heads up they need before your new clients come rolling in!</p>\n",
+    "create_url": "https://api.zapier.com/v1/embed/google-ads/create/51652",
+    "type": "guided_zap"
   }
 ]
 ```
