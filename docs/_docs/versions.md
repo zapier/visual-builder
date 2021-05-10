@@ -67,11 +67,25 @@ If you're working with an integration that's currently private, the _Promote_ op
 
 ![Deprecate Zapier integration version](https://cdn.zapier.com/storage/photos/dd6acdd75278ecd733a5f3945ea641a2.png)
 
-If you did introduce breaking changes to your integration and want existing users to switch to the new version, you can deprecate the old version. That will let your older integration and Zaps that use it continue to run—but they will include a `(Legacy)` tag in the Zapier editor to prompt users to re-build the Zap with the new integration. Additionally, when adding a new Zap step, Zapier will no longer show the older, deprecated version of your integration as an option.
+If you introduce breaking changes to your integration and want existing users to switch to the new version, you can deprecate the old version.
 
-To deprecate a version, select _Deprecate_ in the Versions menu, then select a date to deprecate the integration in the calendar drop-down. Choose a date between two weeks and a year from today, then click the _Deprecate_ button to confirm.
+Deprecation is only recommended if the older integration version will eventually stop working, such as if the related API will be removed. Zapier is normally a "set it and forget it" experience for users, so use this feature carefully.
 
-Zapier then shows a yellow exclamation mark beside that version in your integration’s versions menu, showing the date it will be deprecated when you hover over it. You’ll also see your user count as it goes down, switching from the old integration version to the new.
+When you deprecate an integration version:
+
+* The Zaps that use it will continue to run until the deprecation date. On the deprecation date, they will be paused.
+* Zapier will send users with active Zaps a notification that they need to update their Zaps.
+* When adding a new Zap step, Zapier will no longer show the deprecated version of your integration as an option.
+
+Zap steps using this integration version will include a `Deprecated` tag in the Zapier editor, to help prompt users to re-build the Zap with the new integration.
+
+To deprecate a version:
+
+* Select _Deprecate_ in the Versions menu.
+* Select a date to deprecate the integration version in the calendar drop-down. Choose a date between two weeks and a year from today when Zaps using that version will no longer work. 
+* Click the _Deprecate_ button to confirm.
+
+Zapier then shows a yellow exclamation mark beside that version in your integration’s versions menu, showing the date it will be deprecated when you hover over it. You can also track your user count as it goes down, switching from the old integration version to the new.
 
 ## Delete Older Versions of Your Integration
 
