@@ -40,12 +40,7 @@ Please review the entire style guide below before submitting templates for revie
 
 Zap Templates take a few steps to build, similar to any other Zap. You first select the app and trigger you want to start the Zap, then add an action app and map the fields from the trigger app to the action—and optionally add additional steps. Then, add a title and description to help people quickly understand when to use your Zap.
 
-For help as you build, you can follow this video or the written instructions below:
-
-<div class="wistia_responsive_padding" style="padding:44.17% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/0y50h71p98?seo=false&videoFoam=true" title="Zap template creator video howto" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe></div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-<br>
-<br>
+For help as you build, follow the instructions below:>
 
 ### 1. Add a Trigger Step
 
