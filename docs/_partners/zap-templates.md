@@ -17,16 +17,24 @@ They’re also a great way to promote your app, as your Zap Templates are featur
 
 - Zapier’s App Directory
 - Zapier’s onboarding experience
-- In many of Zapier's 1,300+ integration partners' apps and sites
+- In many of Zapier's thousands of integration partners' apps and sites
 
 Zap Templates can also be featured inside your site and content to help your users start using Zapier integrations. The more Zap Templates you create and the more users they have, the more likely they are to be featured. This helps your Zapier integration gain popularity and rise the ranks of the [Zapier Partner Program](https://zapier.com/platform/partner-program).
 
 You can create Zap Templates for any public Zapier integration, or for any integration that has applied for publishing. Once you apply for publishing your integration, you will need to build at least 10 Zap Templates in the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) to help people start using your integration.
 
-> Expected time to create a Zap Template: 10 minutes.
+> Expected time to create a Zap Template: <10 minutes.
 
 ![Example Zap Template](https://cdn.zapier.com/storage/photos/c89bedd08435ca8e9dc42b348eca732c.gif)
 _An example Zap Template that automatically saves Gmail attachments to Google Drive—a handy way to speed up email file management._
+
+## How to Choose Zap Templates To Build
+
+You know your users best. Zap Templates should be built first and foremost to encourage people to adopt the usecases _you_ know are most valuable to your users. We recommend sourcing from your support teams, customer surveys, and internal usage of your product to determine all the various apps and workflows your users rely on every day - templatize and promote those!
+
+These should be broad usecases with a starter user in mind - they are often simple, with 2 and rarely 3 steps. Zap Templates should also illustrate the widest possible range of pairings. Focus primarily on templatizing usecases with the apps you hear about the most, but we also recommend exploring our [App Directory](https://zapier.com/apps) by category and making templates for other apps in the same categories as your more popular pairings.
+
+Please review the entire style guide below before submitting templates for review, and take particular note of our [Rejected Zap Templates](https://platform.zapier.com/partners/zap-templates#rejected-zap-templates) section. Templates that do not comply with our style guide will be rejected - preparing in advance will save you time with rounds of iteration if changes are required.
 
 ## How to Build a Zap Template
 
@@ -216,9 +224,39 @@ Finally, when your Zap Template is ready for public release, select the `For rev
 
 > **Note**: Zapier will only approve Zap Templates that include either public integrations or integrations that have applied for public release.
 
-We'll then contact you, typically within a couple of weeks, after reviewing your Zap Template(s). If your Zap Templates pass the tests, we will mark them as public to automatically have them show up on your app's App Directory page, inside select partners' apps and sites, and in Zapier's onboarding experience.
+Zap Templates are processed in order of arrival - please account for up to two weeks. The day after your Zap templates are processed, you will receive an automatic email with a digest detailing the status of each template you submitted.
 
-Then make some more Zap Templates. Every Zapier integration must have at least 10 Zap Templates, and the more you make, the easier it will be to start using your Zapier integration. Open the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) again and create any more Zap Templates you want.
+#### Published Templates
+
+If your templates adhere to our style and construction guidelines, they will be marked Public. They will then automatically show up on your app's Zapier App Directory page. Most importantly, **[Public Zap Templates can be embedded into your app and across your website](https://zapier.com/partner/embed/)**, allowing you seamlessly extend your product and integration support by incorporating automated workflows where your users are looking for them. This is the best way to to promote adoption of your Zapier integration, increasing the value and retention of your user-base overall. 
+
+[Learn more about embedding tools like our JavaScript Widgets and Partner API here.](https://platform.zapier.com/partner_api/embedding)
+
+Then go ahead and make some more Zap Templates! Every Zapier integration must have at least 10 Zap Templates, and the more you make, the easier it will be to start using your Zapier integration. Open the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) again and create any more Zap Templates you want.
+
+<a id="rejected-zap-templates"></a>
+#### Rejected Zap Templates
+
+If your templates do not comply with an aspect of our guidelines, whether from your title/description or how your template is built, they will be rejected back to you. 
+
+**Request for updates:** Most of the time, templates only need a few updates to align with our guidelines. Every 24 hours, our system digests all Zap Templates created by an author and emails them with a roundup. 
+
+The reason for each Zap Template's rejection is included in this email, and visible in the sharing menu for your template.
+
+The most typical issues are titles and descriptions that are simply copies with different app names, and missing mapping in the action step. Please refer to the list below for more detail on common rejections:
+
+- _Needs a unique title/description:_ Your template was submitted with non-unique titles. Please reference [title](https://platform.zapier.com/partners/zap-templates#how-to-write-a-zap-template-title) and [description](https://platform.zapier.com/partners/zap-templates#how-to-write-a-zap-template-description) style guidelines and resubmit.
+- _Has content or style guide issues:_ There are other specific issues with your template - please review additional provided detail and general guidelines.
+- _Usecase is too specific:_ Templates are meant to be broad, starter usecases. Most commonly they have two steps, possibly three if a partner's integration value comes primarily from search actions. Templates with too many steps become too specific to be useful - we recommend building tutorials and referencing Shared Zaps for these.
+- _Mappings are incorrect or incomplete:_ Fields that were available from your trigger or preceding actions were not mapped, or not mapped accurately. Refer to [Action step guidelines.](https://platform.zapier.com/partners/zap-templates#2-add-an-action-step)
+- _Template already exists:_ Template duplicates another public template, or you submitted duplicates. Please consult the [Zapier App Directory](https://zapier.com/apps) to explore our public templates.
+- _Content should be in English:_ We only support Zap Templates in English.
+- _Includes unallowed apps:_ We do not support Zap Templates with Code steps, or Webhooks with hardcoded destinations/origins as replacements for integrations.
+- _Other:_ Zap Template reviewers may reject your template for different or additional reasons, provided below.
+
+**Invalid:** Unfortunately your Zap Template is not suitable for public status - often because it is too complex of a usecase.
+
+If you have questions about the invalidation or request for updates on any of your Zap Templates, please email us indicating the ID of your Zap Template (copy this from your Zap Template menu)
 
 ## Promote Your Zap Templates
 
@@ -228,7 +266,7 @@ It’s not enough to turn your ideal workflows into Zap Templates. You need to g
 
 ![Zapier App Directory Page](https://cdn.zapier.com/storage/photos/b625939587cb8a8c7242f375c714d6aa.png)
 
-The easiest way to find Zap Templates is in Zapier’s [App Directory](https://zapier.com/apps/) where we have individual pages for each of the 1,300+ apps that integrate with Zapier. Want to find Gmail integrations? Go to [zapier.com/apps/gmail/integrations](https://zapier.com/apps/gmail/integrations/) to see the top apps connected with Gmail on Zapier, followed by a list of popular Gmail Zap Templates and Zapier content about Gmail use cases.
+The easiest way to find Zap Templates is in Zapier’s [App Directory](https://zapier.com/apps/) where we have individual pages for each of the thousands that integrate with Zapier. Want to find Gmail integrations? Go to [zapier.com/apps/gmail/integrations](https://zapier.com/apps/gmail/integrations/) to see the top apps connected with Gmail on Zapier, followed by a list of popular Gmail Zap Templates and Zapier content about Gmail use cases.
 
 Find your app’s App Directory page at `zapier.com/apps/YourApp/integrations`, replacing `YourApp` with your app’s name.
 
