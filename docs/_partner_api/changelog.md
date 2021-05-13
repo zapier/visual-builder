@@ -7,6 +7,18 @@ redirect_from: /partner_api/
 
 # Changelog
 
+## 2021-05-13
+
+### Added attributes to existing endpoint payloads
+
+The endpoint `/v1/apps` exposes the `uuid` attribute for each app that is returned. This attribute is a UUID v4 string.
+
+The endpoint `/v1/zap-templates` exposes the `label` attribute to each step. A `null` placeholder value is used if the label is unable to be resolved.
+
+### Updated example endpoint payloads
+
+The example payloads for endpoints `/v1/apps` and `/v1/zap-templates` have been updated to reflect these new attributes.
+
 ## 2021-01-14
 
 ### Introducing rate limiting
