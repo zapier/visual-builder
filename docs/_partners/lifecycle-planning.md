@@ -97,15 +97,13 @@ Zapier's support team serves as frontline support for your Zapier integration. I
 
 ### **4. Submit your integration for review by the Zapier team**
 
-Read our [App Review Guidelines](https://platform.zapier.com/partners/integration-review-guidelines) to help you better prepare your integration before submitting it for review. Navigate to the Visibility tab for your app and click the _Make this App Public_ button. Expect to hear from us within a week.
+Read our [App Review Guidelines](https://platform.zapier.com/partners/integration-review-guidelines) to help you better prepare your integration before submitting it for review.
 
-Legacy builder:
+Then, navigate to the Publishing page for your app, fill out the form, and click _Submit for Review_.
 
-![](https://zappy.zapier.com/511FFD77-85D4-4B93-A7BC-C2D1F52624AC.png)
+![](https://cdn.zappy.app/0055e6014cceb63fdb90ad671eb13229.png)
 
-New visual builder:
-
-![](https://zappy.zapier.com/6193B587-6437-47E8-B0C1-47ABB4B05291.png)
+Expect to hear from us within a week.
 
 <a id="early"></a>
 
