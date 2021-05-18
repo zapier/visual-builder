@@ -60,7 +60,7 @@ In addition to promoting integration improvements, the Close team also puts time
 
 The team creates how-to articles for their help documentation that demonstrate how to set up automations for different use cases, such as how to use Close and Zapier to push daily activity reports to Slack or Google Sheets.
 
-*Publish your own Zapier help document.** Copy [this pre-made template](https://docs.google.com/document/d/1A_eNBcoy8V8aB1bkVdZ386_U4WD-GkLPRDSvNBu-cCQ/edit), customize it, and publish it in your knowledge base within 5 minutes.*
+*Publish your own Zapier help document.** Copy [this pre-made template](https://docs.google.com/document/d/1eg3CaU9ytf5QH38FuaxAyQgmFN2HYZFbBN7E3l9kZZg/edit), customize it, and publish it in your knowledge base within 5 minutes.*
 
 They link to the [Close landing page](https://zapier.com/apps/closeio/integrations) on Zapier site's from their [integration directory page](https://close.com/api/) to help Close users get started with the integration right away. 
 
