@@ -109,7 +109,7 @@ Expect to hear from us within a week.
 
 ### Your App is Now a Part of the Zapier Platform!
 
-Your app will be listed with a dedicated page in [Zapier's App Directory](https://zapier.com/apps).  All Zapier users can discover your app and start building Zaps with your integration.  Your new integration will feature a Beta tag when it's first published.  At this point you'll have access to build Zap Templates, which are the best way to help new users discover specific useful things they can do with your integration.
+Your app will be listed with a dedicated page in [Zapier's App Directory](https://zapier.com/apps). All Zapier users can discover your app and start building Zaps with your integration. Your new integration will feature a Beta tag when it's first published. At this point you'll have access to build Zap Templates, which are the best way to help new users discover specific useful things they can do with your integration.
 
 ### What's the Next Step?
 
@@ -133,7 +133,7 @@ See previous section on building and publishing a new integration.
 
 ### **2. Create 10 Zap Templates**
 
-As soon as your app is published and in beta you can and should begin creating and sharing Zap Templates.  This is a great way to help your users discover specific, useful things they can do with your integration.  We'll look for a least 10 of these in place before an official partnership launch.
+As soon as your app is published and in beta you can and should begin creating and sharing Zap Templates. This is a great way to help your users discover specific, useful things they can do with your integration. We'll look for a least 10 of these in place before an official partnership launch.
 
 _Estimated time to complete: 1-2 hours_
 
@@ -151,10 +151,9 @@ The Zapier team provides frontline support for your integration and, in order to
 
 ### **4. Reach 50 Users to Receive an Invite from the Zapier Team**
 
-While your integration is in beta, we'll monitor how it's performing. When your integration reaches 50 users, our team will get in touch to invite you to start the official partner program launch process. 
+While your integration is in beta, we'll monitor how it's performing. When your integration reaches 50 users, our team will get in touch to invite you to start the official partner program launch process.
 
 <a id="beta"></a>
-
 
 ### **5. Surface Your Zap Templates In Your Product and On _Your_ Site**
 
@@ -194,7 +193,7 @@ Make sure your users of your Zapier integration can get their questions answered
 
 ![](https://cdn.zapier.com/storage/photos/90186e0afa54eab0817ae1f66488d380.gif)
 
-We've put together [this template](https://docs.google.com/document/d/1A_eNBcoy8V8aB1bkVdZ386_U4WD-GkLPRDSvNBu-cCQ/edit) to help you get your page up quickly.
+We've put together [this template](https://docs.google.com/document/d/1eg3CaU9ytf5QH38FuaxAyQgmFN2HYZFbBN7E3l9kZZg/edit) to help you get your page up quickly.
 
 ### **7. Create a Marketing Campaign for The Integration's Launch**
 
