@@ -766,9 +766,8 @@ of your integration should have a live Zap that demonstrates it works.
 
 ## S003 - Live Version Count Limit
 
-You can't have more than 5 (former and current) production versions with users that
-have active Zaps using it. To continue, you should migrate users over to a new
-version so you can delete the unwanted versions.
+You can't have more than 5 previous or current production versions with live Zaps. To continue,
+migrate users on older versions to a newer version.
 
 ---
 
