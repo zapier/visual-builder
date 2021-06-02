@@ -7,6 +7,9 @@ redirect_from: /partner_api/
 
 # Changelog
 
+## 2021-06-01
+[DEPRECATION] After July 5, 2021, the endpoint `v1/zap-template/me` will no longer exist.
+
 ## 2021-05-13
 
 ### Added attributes to existing endpoint payloads

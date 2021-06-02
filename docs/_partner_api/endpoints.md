@@ -208,7 +208,7 @@ curl -H "Authorization: Bearer {token}" \
   -L "https://api.zapier.com/v1/zap-templates?client_id=${client_id}&limit=20&offset=20"
 ```
 
-## GET /v1/zap-templates/me
+## GET /v1/zap-templates/me [DEPRECATED ON JULY 5, 2021]
 
 Lookup a user's Zap templates that they've added (published or draft). **Note: We are limiting this endpoint to partners. This means that you will only see results for Zap templates that include your app in one of the steps.**
 
