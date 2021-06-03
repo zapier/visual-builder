@@ -7,7 +7,7 @@ redirect_from: /legacy/
 
 # Zapier Legacy Web Builder Scripting
 
-> **Caution**: Do not use this documentation with new integrations built in Zapier's Platform CLI or UI visual builder. For new integrations, use [Zapier's new visual builder](https://platform.zapier.com/quickstart/introduction) or the [Zapier Command Line Interface](https://platform.zapier.io/cli_docs/docs) to build an integration in code.
+> **Caution**: Do not use this documentation with new integrations built in Zapier's Platform CLI or UI visual builder. For new integrations, use [Zapier's new visual builder](https://platform.zapier.com/quickstart/introduction) or the [Zapier Command Line Interface](https://platform.zapier.com/cli_docs/docs) to build an integration in code.
 >
 > If you have an existing integration built with Zapier's legacy web builder, or have migrated a legacy web builder integration to the new Zapier Platform UI, use this doc to edit and maintain your existing scripts.
 
