@@ -1,10 +1,9 @@
 # Settings
 title: Zapier Platform UI Documentation
 description: "Zapier Platform UI"
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://platform.zapier.com" # the base hostname & protocol for your site, e.g. http://example.com
 markdown: kramdown
-baseurl: ""
-slack_invite_url: "https://join.slack.com/t/zapier-platform/shared_invite/enQtOTgyMjkzNDU1NjM5LWM1MGQ1YmY5ODgxNmM1NjIzZTk3NjNkMzFlZWExYzU2MDJjNTVmNDEzMWUzYjdlNmMzZGViMzE0YjhlOGIyZDA"
+baseurl: "" # intentionally left blank, site is served at root
 partner_api_invite_url: "https://zapier.typeform.com/to/atnWuF"
 
 plugins:
