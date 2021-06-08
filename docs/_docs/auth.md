@@ -18,7 +18,7 @@ When building a Zapier integration, you define how the Zapier platform connects 
 <a id="schemes"></a>
 ## Zapier Supported Authentication Schemes
 
-![Zapier Authentication](https://cdn.zapier.com/storage/photos/5f1a0e1fc0eb5635bdf1a2983f31a9ba.png)
+![Zapier Authentication](https://cdn.zappy.app/1ecb446a74b35c93aa6d213219df3878.png)
 
 All Zapier integrations that can access or add private data for users require authentication. The only apps don't require authentication include data feeds (such as news or weather updates) or utilities (such as file format conversion tools or public search engines). If you're building an integration for any app that stores private data and requires an account to use , your integration will require authentication.
 
