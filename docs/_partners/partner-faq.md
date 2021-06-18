@@ -142,7 +142,7 @@ As your product evolves, your integration should, too. An up-to-date, bug-free i
 
 ## What is the Zapier Partner Program?
 
-The [Zapier Partner Program](https://zapier.com/platform/partner-program) is a program for Zapier's [1,300+ integration partners](https://zapier.com/apps). It is designed to give all partners a clear path to success for their integrations and reward them with benefits along the way.
+The [Zapier Partner Program](https://zapier.com/platform/partner-program) is a program for Zapier's [3,500+ integration partners](https://zapier.com/apps). It is designed to give all partners a clear path to success for their integrations and reward them with benefits along the way.
 
 ## I'm already a Zapier partner. How do I know what level I'm in?
 

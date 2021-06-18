@@ -9,7 +9,7 @@ redirect_from: /docs/
 
 Your app can't do everything. It shouldn't. Despite every new feature request, the best thing is a clear focus on what makes your app unique.
 
-For everything else, there are Zapier integrations. [Zapier](https://zapier.com/) is the most popular way to automate tasks through customized workflows with 1,300+ web apps. Using Zaps, what we call automated Zapier workflows, Zapier watches for new or updated data in connected apps, then use that data to do tasks in that or other connected apps. Zaps let your app rely on other best-in-class tools to do the extra things your users want, freeing your app to focus on its core features.
+For everything else, there are Zapier integrations. [Zapier](https://zapier.com/) is the most popular way to automate tasks through customized workflows with 3,500+ web apps. Using Zaps, what we call automated Zapier workflows, Zapier watches for new or updated data in connected apps, then use that data to do tasks in that or other connected apps. Zaps let your app rely on other best-in-class tools to do the extra things your users want, freeing your app to focus on its core features.
 
 Build a Zapier integration, and you’ll clear dozens of your app’s top feature requests at once. You don’t need to build custom integrations with every app. One Zapier integration connects your app to every other Zapier integrated app, with more added every day.
 
