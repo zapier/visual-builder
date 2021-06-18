@@ -17,7 +17,7 @@ They’re also a great way to promote your app, as your Zap Templates are featur
 
 - Zapier’s App Directory
 - Zapier’s onboarding experience
-- In many of Zapier's 3,500+ integration partners' apps and sites
+- In many of Zapier's {{ site.partner_count }} integration partners' apps and sites
 
 Zap Templates can also be featured inside your site and content to help your users start using Zapier integrations. The more Zap Templates you create and the more users they have, the more likely they are to be featured. This helps your Zapier integration gain popularity and rise the ranks of the [Zapier Partner Program](https://zapier.com/platform/partner-program).
 
@@ -228,7 +228,7 @@ It’s not enough to turn your ideal workflows into Zap Templates. You need to g
 
 ![Zapier App Directory Page](https://cdn.zapier.com/storage/photos/b625939587cb8a8c7242f375c714d6aa.png)
 
-The easiest way to find Zap Templates is in Zapier’s [App Directory](https://zapier.com/apps/) where we have individual pages for each of the 3,500+ apps that integrate with Zapier. Want to find Gmail integrations? Go to [zapier.com/apps/gmail/integrations](https://zapier.com/apps/gmail/integrations/) to see the top apps connected with Gmail on Zapier, followed by a list of popular Gmail Zap Templates and Zapier content about Gmail use cases.
+The easiest way to find Zap Templates is in Zapier’s [App Directory](https://zapier.com/apps/) where we have individual pages for each of the {{ site.partner_count }} apps that integrate with Zapier. Want to find Gmail integrations? Go to [zapier.com/apps/gmail/integrations](https://zapier.com/apps/gmail/integrations/) to see the top apps connected with Gmail on Zapier, followed by a list of popular Gmail Zap Templates and Zapier content about Gmail use cases.
 
 Find your app’s App Directory page at `zapier.com/apps/YourApp/integrations`, replacing `YourApp` with your app’s name.
 

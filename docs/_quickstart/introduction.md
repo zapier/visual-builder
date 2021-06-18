@@ -7,7 +7,7 @@ redirect_from: /quick-start/
 
 # Welcome to Zapier Platform UI
 
-[Zapier](https://zapier.com/){:target="_blank"} is an app automation platform where over 2 million people connect apps into customized workflows—what we call Zaps. A Zapier integration can connect your app's API to the Zapier platform and let it integrate with 3,500+ other popular apps to watch for new or updated data, find existing data, or create and update data.
+[Zapier](https://zapier.com/){:target="_blank"} is an app automation platform where over 2 million people connect apps into customized workflows—what we call Zaps. A Zapier integration can connect your app's API to the Zapier platform and let it integrate with {{ site.partner_count }} other popular apps to watch for new or updated data, find existing data, or create and update data.
 
 ![Example Zap](https://cdn.zapier.com/storage/photos/bcad0a485f61f4acccf36cb19a0261ec.gif)
 
@@ -37,7 +37,7 @@ When you add an action step to a Zap, you can map the data from any previous ste
 
 ![Zapier Platform UI](https://cdn.zapier.com/storage/photos/2316a669768c5c2ee9f4b1e84c70d1d0.png)
 
-To enable those workflows for your app's API, you need to build a Zapier integration. The easiest way to do that is with [Zapier Platform UI](https://zapier.com/app/developer/){:target="_blank"}, a new tool to build complete Zapier integrations online in minutes. Add your app's authentication scheme, turn your API calls into triggers, searches, and create actions, and create forms where users can input the data your app needs—then release your new integration to let users connect it to 3,500+ apps with Zapier.
+To enable those workflows for your app's API, you need to build a Zapier integration. The easiest way to do that is with [Zapier Platform UI](https://zapier.com/app/developer/){:target="_blank"}, a new tool to build complete Zapier integrations online in minutes. Add your app's authentication scheme, turn your API calls into triggers, searches, and create actions, and create forms where users can input the data your app needs—then release your new integration to let users connect it to {{ site.partner_count }} apps with Zapier.
 
 If you haven't used Zapier before, sign up for a free [Zapier](https://zapier.com/){:target="_blank"} account and check our [Zapier Getting Started guide](https://zapier.com/learn/getting-started-guide/){:target="_blank"} to learn the basics about using Zapier.
 

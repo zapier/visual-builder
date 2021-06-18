@@ -7,7 +7,7 @@ redirect_from: /partners/
 
 # Zapier Partner Program Tips and FAQs
 
-With 3,500+ integration partners on Zapier, we have the inside scoop on the activities that can skyrocket your growth and earn you more [benefits from the Partner Program](https://zapier.com/platform/partner-program). Steal these 10 tried-and-true tactics from our top partners and you'll be on your way to the Platinum level.
+With {{ site.partner_count }} integration partners on Zapier, we have the inside scoop on the activities that can skyrocket your growth and earn you more [benefits from the Partner Program](https://zapier.com/platform/partner-program). Steal these 10 tried-and-true tactics from our top partners and you'll be on your way to the Platinum level.
 
 > 1. [Level up your team](#tip-1-level-up-your-team)
 > 2. [Track your Zapier users' retention and activity](#tip-2-track-your-zapier-users-retention-and-activity)
@@ -142,7 +142,7 @@ As your product evolves, your integration should, too. An up-to-date, bug-free i
 
 ## What is the Zapier Partner Program?
 
-The [Zapier Partner Program](https://zapier.com/platform/partner-program) is a program for Zapier's [3,500+ integration partners](https://zapier.com/apps). It is designed to give all partners a clear path to success for their integrations and reward them with benefits along the way.
+The [Zapier Partner Program](https://zapier.com/platform/partner-program) is a program for Zapier's [{{ site.partner_count }} integration partners](https://zapier.com/apps). It is designed to give all partners a clear path to success for their integrations and reward them with benefits along the way.
 
 ## I'm already a Zapier partner. How do I know what level I'm in?
 
