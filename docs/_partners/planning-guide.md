@@ -9,7 +9,7 @@ redirect_from: /partners/
 
 No app can do everything on its own. The best apps are instead focused on their core features, then rely on integrations with dozens of other great apps to do the rest. That is what the Zapier platform enables. It brings the best of every app together.
 
-A Zapier integration connects your app to 3,500+ of the best business and productivity apps so millions of Zapier users can add it to their workflows.
+A Zapier integration connects your app to {{ site.partner_count }} of the best business and productivity apps so millions of Zapier users can add it to their workflows.
 
 Here are the core things to keep in mind to build a great Zapier integration.
 
