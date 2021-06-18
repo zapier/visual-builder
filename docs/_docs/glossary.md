@@ -8,7 +8,7 @@ redirect_from: /docs/
 ## Zapier Glossary
 
 
-- **Zapier**: An integration platform that connects over 1,300+ web apps and APIs together into multi-step, automated, customizable workflows.
+- **Zapier**: An integration platform that connects over 3,500+ web apps and APIs together into multi-step, automated, customizable workflows.
 - **Zap**: An automated Zapier workflow including a trigger and at least one one action.
 - **Trigger**: The app integration step that starts a Zapier workflow when new or updated data is added to that app, either by Zapier polling the API to check for new data or with notification REST webhooks that push new data to Zapier.
 - **Action**: An app integration step that finds, creates, or updates data in the app through a Zapier workflow using an HTTP PUT or POST request to the API.
