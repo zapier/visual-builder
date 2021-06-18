@@ -5,7 +5,7 @@ url: "https://platform.zapier.com" # the base hostname & protocol for your site,
 markdown: kramdown
 baseurl: "" # intentionally left blank, site is served at root
 partner_api_invite_url: "https://zapier.typeform.com/to/atnWuF"
-partner_count: "3,500+"
+partner_count: "3,800+"
 
 plugins:
   - jekyll-redirect-from
