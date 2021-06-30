@@ -269,15 +269,15 @@ It’s not enough to turn your ideal workflows into Zap Templates. You need to g
 
 ### Zapier App Directory
 
-![Zapier App Directory Page](https://cdn.zapier.com/storage/photos/b625939587cb8a8c7242f375c714d6aa.png)
+![Zapier App Directory Page](https://cdn.zappy.app/2019079afe2bcc82f2257a22eb4afd77.png)
 
-The easiest way to find Zap Templates is in Zapier’s [App Directory](https://zapier.com/apps/) where we have individual pages for each of the thousands that integrate with Zapier. Want to find Gmail integrations? Go to [zapier.com/apps/gmail/integrations](https://zapier.com/apps/gmail/integrations/) to see the top apps connected with Gmail on Zapier, followed by a list of popular Gmail Zap Templates and Zapier content about Gmail use cases.
+The easiest way to find Zap Templates is in Zapier’s [App Directory](https://zapier.com/apps/) where we have individual pages for each of the thousands that integrate with Zapier. Want to find Trello integrations? Go to [zapier.com/apps/trello/integrations](https://zapier.com/apps/trello/integrations/) to see the top apps connected with Trello on Zapier, followed by a list of popular Trello Zap Templates and Zapier content about Trello use cases.
 
 Find your app’s App Directory page at `zapier.com/apps/YourApp/integrations`, replacing `YourApp` with your app’s name.
 
-![Zapier App Directory two-app page](https://cdn.zapier.com/storage/photos/ca6556adda39eeb6f8477a873122d444.png)
+![Zapier App Directory two-app page](https://cdn.zappy.app/6ab8c80fdf2664eade6903ee74b66c56.png)
 
-Want to find ways to connect two specific apps? Click one of the top apps on any App Directory page to see our two-app pages, such as the one above for Trello and Gmail. It shows the most popular use cases for those two apps together.
+Want to find ways to connect two specific apps? Click one of the top apps on any App Directory page to see our two-app pages, such as the one above for Slack and Trello. It shows the most popular use cases for those two apps together.
 
 Find your app’s two-app pages at `zapier.com/apps/YourApp/integrations/OtherApp`, substituting `YourApp` with your app’s name and `OtherApp` with the other app connected to your app.
 
@@ -948,17 +948,17 @@ Each parameter is in a flattened dictionary/object syntax. For example an object
 
 Prefill Trello's board ID (field: `board`) in the second step of the Zap template:
 
-`https://zapier.com/app/editor/template/2405?steps__1__params__board=12345`
+`https://zapier.com/webintent/create-zap?template=2405&steps__1__params__board=12345`
 
 Here's what it would look like in the editor:
 
-![](https://cdn.zapier.com/storage/photos/1f3544e43787d1d2e0b528b08b909dcb.png)
+![](https://cdn.zappy.app/e3221301de448fde1b5017c9cdbe59d3.png)
 
 If you'd like to provide a label for the value (e.g. a Board's name) you can do so by passing an additional parameter:
 
 `https://zapier.com/webintent/create-zap?template=2405&steps__1__params__board=12345&steps__1__meta__parammap__board=My+Board`
 
-![](https://cdn.zapier.com/storage/photos/86b71a90bc69e5b13024c08f1da4b812.png)
+![](https://cdn.zappy.app/697fe1806f4c8cbf8bbcfa1ad0360626.png)
 
 #### The App Object
 
