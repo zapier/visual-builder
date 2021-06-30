@@ -25,8 +25,8 @@ You can create Zap Templates for any public Zapier integration, or for any integ
 
 > Expected time to create a Zap Template: <10 minutes.
 
-![Example Zap Template](https://cdn.zapier.com/storage/photos/c89bedd08435ca8e9dc42b348eca732c.gif)
-_An example Zap Template that automatically saves Gmail attachments to Google Drive—a handy way to speed up email file management._
+![Example Zap Template](https://cdn.zappy.app/8b396feac45287ada0ca1025628f9082.gif)
+_An example Zap Template that automatically sends saved Slack messages to Trello to create new cards._
 
 ## How to Choose Zap Templates To Build
 
@@ -215,19 +215,17 @@ Keep these guidelines in mind:
 
 ---
 
-Once you've written and added your Zap Template title and description, it's time to save and test your work. Select `Draft` from the _Zap Template Visibility_ menu and click the _Save_ button.
-
 ![Test Zap Template](https://cdn.zapier.com/storage/photos/87a8cdc2f4d28b3ca8f743d0b332e84c.png)
 
 You should then try using the Zap Template to make sure it works as expected. Open your [Zap Template dashboard](https://zapier.com/developer/zap-templates/), click the gear icon beside the Zap Template you built, and select _Copy Link_. Open that link in a new tab or window, and follow the steps to set up and turn on the Zap—and make sure everything looks and works correctly.
-
-Optionally, you can let your team help test Zap Templates as well. When saving your Zap Template, choose `Shared` instead of draft, then share its link with others on your team so they can try the Zap Template.
 
 <a id="submit-your-zap-templates"></a>
 
 ### 5. Submit Zap Template for Review
 
-Finally, when your Zap Template is ready for public release, select the `For review` option on your Zap Template Visibility menu, and click _Save_ again. That submits the Zap Template to our team to review the Zap Template and ensure it works as expected and meets our standards.
+Finally, when your Zap Template is ready for public release, use the _Share_ button to open the publishing options modal, and the _Submit_ button. That submits the Zap Template to our team to review the Zap Template and ensure it works as expected and meets our standards.
+
+![Zap Template submit for review](https://cdn.zappy.app/acf31a3a067785c82770f3269851fa14.png)
 
 > **Note**: Zapier will only approve Zap Templates that include either public integrations or integrations that have applied for public release.
 
@@ -958,7 +956,7 @@ Here's what it would look like in the editor:
 
 If you'd like to provide a label for the value (e.g. a Board's name) you can do so by passing an additional parameter:
 
-`https://zapier.com/app/editor/template/2405?steps__1__params__board=12345&steps__1__meta__parammap__board=My+Board`
+`https://zapier.com/webintent/create-zap?template=2405&steps__1__params__board=12345&steps__1__meta__parammap__board=My+Board`
 
 ![](https://cdn.zapier.com/storage/photos/86b71a90bc69e5b13024c08f1da4b812.png)
 
