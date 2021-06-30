@@ -25,7 +25,7 @@ You can create Zap Templates for any public Zapier integration, or for any integ
 
 > Expected time to create a Zap Template: <10 minutes.
 
-![Example Zap Template](https://cdn.zappy.app/8b396feac45287ada0ca1025628f9082.gif)
+![Example Zap Template](https://github.com/zapier/visual-builder/blob/doyle-zap-templates-2021/Doyle-Zap-Template-2021-06-30.gif)
 _An example Zap Template that automatically sends saved Slack messages to Trello to create new cards._
 
 ## How to Choose Zap Templates To Build
