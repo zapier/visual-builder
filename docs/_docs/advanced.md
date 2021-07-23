@@ -67,7 +67,7 @@ To do that, use the _Code Mode_ option and add custom code to have Zapier call b
 <a id="bundle"></a>
 ## Zapier Data Bundles
 
-Zapier stores data from users' authentication and input forms for API calls in the `bundle` object. You can reference that data in your integration using {% raw %}`{{bundle.bundleName.field}}`{% endraw %} text in API requests and connection labels, replacing `bundleName` with the bundle name and `field` with the input field key or API response field key you need. You can also reference bundles in custom code if you switch to code mode, using the same name but without the curly brackets, for example `return bundle.bundleName.field;` to have JavaScript code return a specific field.
+Zapier stores data from users' authentication and input forms for API calls in the `bundle` object. You can reference that data in your integration using {% raw %}`{{bundle.bundleName.field}}`{% endraw %} text in API requests and connection labels, replacing `bundleName` with the bundle name and `field` with the input field key or API response field key you need. You can also reference bundles in custom code if you switch to [Code Mode](/faq#how-does-code-mode-work) for a request, using the same name but without the curly brackets, for example `return bundle.bundleName.field;` to have JavaScript code return a specific field.
 
 If an API response includes a nested field, you can reference it as `field.nestedfield`, for example {% raw %}`{{bundle.inputData.data.name}}`{% endraw %} to reference a `name` nested field inside the `data` field.
 
@@ -81,7 +81,7 @@ Includes data users enter into the authentication input form, including the `use
 
 {% raw %}`{{bundle.authData.field}}`{% endraw %}
 
-For example, the Access Token value will often accessed via {% raw %}`{{bundle.authData.access_token}}`{% endraw %} or {% raw %}`{{bundle.authData.accessToken}}`{% endraw %}
+For example, the Access Token value will often accessed via {% raw %}`{{bundle.authData.access_token}}`{% endraw %} or {% raw %}`{{bundle.authData.accessToken}}`{% endraw %}.
 
 Commonly used authData fields include:
 
@@ -95,22 +95,24 @@ Referenced with: {% raw %}`{{bundle.inputData.field}}`{% endraw %}
 
 In authentication fields and connection labels, `inputData` contains the output fields returned from the test API call, typically used to add a label to new integration connections.
 
-In Trigger and Action steps, `inputData` contains the data from input forms that users enter themselves which Zapier passes to the app with that Trigger or Action's API call, with {% raw %}`{{curlies}}`{% endraw %} mapped fields from previous Zap steps rendered with their raw data.
+In triggers and actions, `inputData` contains the data that users enter into the input forms, with {% raw %}`{{curlies}}`{% endraw %} (mapped fields from previous Zap steps) rendered with their raw data. Zapier passes these inputs to the app for use with that trigger or action.
 
-If you want the input field data with the original {% raw %}`{{curlies}}`{% endraw %} and not the text from previous steps, use {% raw %}`{{bundle.inputDataRaw.field}}`{% endraw %} instead.
+If you want the input field data with the original {% raw %}`{{curlies}}`{% endraw %} and not the data from previous steps, use {% raw %}`{{bundle.inputDataRaw.field}}`{% endraw %} instead.
 
 Commonly used inputData fields include:
 
 - Zapier Redirect URI: {% raw %}`{{bundle.inputData.redirect_uri}}`{% endraw %}
-- Authentication Code: {% raw %}`{{bundle.inputData.code}}`{% endraw %}
+- Authorization Code: {% raw %}`{{bundle.inputData.code}}`{% endraw %}
 
 ### rawRequest and cleanedRequest
 
-> Note: Only used with the `getAccessToken` data from OAuth v2 authentication
+> Note: `bundle.rawRequest` and `bundle.cleanedRequest` are only available in the `perform` for webhooks and `getAccessToken` for OAuth.
 
 Referenced with: {% raw %}`{{bundle.rawRequest}}`{% endraw %} or {% raw %}`{{bundle.cleanedRequest.field}}`{% endraw %}
 
-Includes the raw or cleaned info, respectively, from the user's browser request that triggers the `getAccessToken` call from OAuth v2 authentication. Can reference individual fields with `cleanedRequest`.
+Includes the raw or cleaned info, respectively, from the HTTP request that triggered the `perform` method, or from the user's browser request that triggers the `getAccessToken` call from OAuth v2 authentication. You can reference individual fields with `cleanedRequest`.
+
+Use `bundle.rawRequest` if you need access to header data. In `bundle.rawRequest`, headers other than `Content-Length` and `Content-Type` will be prefixed with `Http-`, and all headers will be named in Camel-Case.
 
 ### targetUrl
 
@@ -122,7 +124,7 @@ In triggers using REST hooks, this returns the URL a site should send data to, s
 
 Referenced with: {% raw %}`{{bundle.subscribeData}}`{% endraw %}
 
-In triggers using REST hooks, this includes the data from the `performSubscribe` function which is used if you need to send a `DELETE` request to your server to stop sending webhook data to Zapier
+In triggers using REST Hooks, this includes the data from the `performSubscribe` function, which is used if you need to send a `DELETE` request to your server to stop sending webhook data to Zapier when the user turns off a Zap.
 
 ### process.env
 
