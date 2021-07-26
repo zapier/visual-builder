@@ -29,9 +29,9 @@ Please make sure to follow [Zapier's branding guidelines](https://platform.zapie
 
 ![Issues in Zapier Integration](https://cdn.zapier.com/storage/photos/7e214665d64998a7cc8c3276e5b8f86f.png)
 
-As people use your Zapier integration, they may encounter buggs and problems with your integration, or think of new ways they'd like to use your app with Zapier, and send them to the Zapier support team. We log those in Zapier's issue tracker, which you can see from the _Issues_ tab on your app's Developer Platform settings page.
+As people use your Zapier integration, they may encounter bugs and problems with your integration, or think of new ways they'd like to use your app with Zapier, and send them to the Zapier support team. We log those in Zapier's issue tracker, which you can see from the _Bug & Feature Requests_ page in the Manage section of your app's sidebar.
 
-Problems and issues with your integration, authentication, API calls, and more will be logged as `bug`, while new things users requires from your integration will be logged as `feature request`.
+Problems and issues with your integration, authentication, API calls, and more will be logged as `bug`, while new things users require from your integration will be logged as `feature request`.
 
 ![Reply to Zapier Integration Issue](https://cdn.zapier.com/storage/photos/a793bc2741fd1c82159c01d0a59fe735.png)
 
@@ -49,12 +49,13 @@ Sometimes you may want to add something new to your integration. You may need to
 
 The Zapier platform makes it easy to build new versions of your integration when needed. You can create new versions for minor or major changes as needed.
 
-Non-breaking changes, or changes to an integration that do not effect the way it works, may be added at any time. You may change your app's branding, update the name and description of triggers, actions, and input fields to your integration at any time.
-Breaking or major changes, such as switching to a new API endpoint, changing authentication type, or rewriting an integration, require a new version and approval from our team.
+Non-breaking changes, or changes to an integration that do not affect the way it works, may be added at any time. You can change your app's branding or update the name and description of triggers, actions, and input fields in your integration at any time.
 
-Non-breaking changes are still best to build in a new integration version so you can test the features and roll them out to a smaller subset of your Zapier integration users. Once you've made sure the new features work well, you can roll them out to all of your users.
+It's still best to include non-breaking changes in a new integration version, so you can test the changes and roll them out to a smaller subset of your Zapier integration users. Once you've made sure the new version works well, you can roll it out to all of your users.
 
-Breaking changes require a new major version of your integration. That requires users to re-create their Zaps with the new version of your integration. You can test the new version privately, as when you first built your Zapier integration. Once it's ready for wider use, you can promote the new integration version and deprecate the older version. Zapier will then mark Zaps using the older integration as _Legacy_, and will show the new version instead of the original integration when users make new Zaps.
+Breaking or major changes, such as switching to a new API endpoint, changing authentication type, or rewriting an integration, require a new major version of your integration, and users will need to re-create their Zaps with the new version of your integration.
+
+You can test the new version privately, as when you first built your Zapier integration. Once it's ready for wider use, you can promote the new integration version and deprecate the older version. Zapier will then mark Zaps using the older integration as _Legacy_, and will show the new version instead of the original integration when users make new Zaps.
 
 _→ Find how to manage versions in [Zapier Platform UI](https://platform.zapier.com/docs/versions) and [CLI](https://zapier.github.io/zapier-platform-cli/#deploying-an-app-version)_
 
