@@ -13,11 +13,7 @@ The endpoint return information about the user whose `access_token` is authorize
 It also includes the list of available accounts. Check the endpoint
 [documentation](https://platform.zapier.com/partner_api/endpoints#get-v1profilesme) for the payload structure.
 
-### Added account selection to `v1/zaps`
-The endpoint `/v1/zaps` supports the `account_id` query parameter to specify the user account 
-to filter the list of zaps.
-
-### Added pagination to v1/zaps and account selection
+### Added pagination to v1/zaps
 The endpoint `/v1/zaps` supports `limit`/`offset` query parameters to paginate the results.
 It now brings `count`/`next`/`previous` in the payload.
 

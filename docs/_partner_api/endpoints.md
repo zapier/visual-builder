@@ -250,7 +250,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
 {
   "next": "https://api.zapier.com/v1/zaps?limit=2&offset=2",
   "previous": null,
-  "count": "4",
+  "count": 4,
   "objects": [
     {
       "id": 125,
@@ -455,7 +455,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 | attribute           | type            | notes                                                 |
 | ------------------- | --------------- | ----------------------------------------------------- |
 | **account_id**      | Number          | The ID of the User's account.                         |
-| **role**            | String          | User's role (ex: owner)                               |
+| **role**            | String          | User's role (ex: owner, member)                               |
 
 ```json
 {
