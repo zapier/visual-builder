@@ -372,13 +372,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
     "email": "jacob.corwin@gmail.com",
     "email_confirmed": true,
     "timezone": null,
-    "full_name": "Jacob Corwin",
-    "roles": [
-        {
-            "account_id": 998998998,
-            "role": "owner"
-        }
-    ]
+    "full_name": "Jacob Corwin"
 }
 ```
 
@@ -435,7 +429,6 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 | **email_confirmed** | Boolean         | Says if the user confirmed the email to Zapier.       |
 | **timezone**        | String          | User's timezone.                                      |
 | **full_name**       | String          | User's full name                                      |
-| **roles**           | List<Role>      | List of user's accounts with their respective roles   |
 
 ```json
 {
@@ -445,25 +438,9 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
     "email": "jacob.corwin@gmail.com",
     "email_confirmed": true,
     "timezone": null,
-    "full_name": "Jacob Corwin",
-    "roles": [{ "See Role object definition ..." }]
+    "full_name": "Jacob Corwin"
 }
 ```
-
-## Role
-
-| attribute           | type            | notes                                                 |
-| ------------------- | --------------- | ----------------------------------------------------- |
-| **account_id**      | Number          | The ID of the User's account.                         |
-| **role**            | String          | User's role (ex: owner, member)                               |
-
-```json
-{
-    "account_id": 99998999,
-    "role": "owner"
-}
-```
-
 
 ## Zap
 
