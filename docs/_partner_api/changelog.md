@@ -7,7 +7,7 @@ redirect_from: /partner_api/
 
 # Changelog
 
-## 2021-07-28
+## 2021-07-29
 ### Added `v1/profiles/me`
 The endpoint return information about the user whose `access_token` is authorized.  
 It also includes the list of available accounts. Check the endpoint
