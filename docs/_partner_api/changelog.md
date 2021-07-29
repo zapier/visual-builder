@@ -7,6 +7,16 @@ redirect_from: /partner_api/
 
 # Changelog
 
+## 2021-07-29
+### Added `v1/profiles/me`
+The endpoint return information about the user whose `access_token` is authorized.  
+It also includes the list of available accounts. Check the endpoint
+[documentation](https://platform.zapier.com/partner_api/endpoints#get-v1profilesme) for the payload structure.
+
+### Added pagination to `v1/zaps`
+The endpoint `/v1/zaps` supports `limit`/`offset` query parameters to paginate the results.  
+`count`/`next`/`previous` have been added to the response payload.
+
 ## 2021-06-01
 [DEPRECATION] After July 5, 2021, the endpoint `v1/zap-template/me` will no longer exist.
 

@@ -248,6 +248,9 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
 
 ```json
 {
+  "next": "https://api.zapier.com/v1/zaps?limit=2&offset=2",
+  "previous": null,
+  "count": 4,
   "objects": [
     {
       "id": 125,
@@ -347,6 +350,32 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
 }
 ```
 
+## GET /v1/profiles/me
+
+**Example Requests**
+
+Get user information related to the given `access_token`
+
+```bash
+curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/me"
+```
+
+**Example Response**
+
+> Refer to the [Profile](#profile) reference for all the available fields.
+
+```json
+{
+    "id": 88998899,
+    "first_name": "Jacob",
+    "last_name": "Corwin",
+    "email": "jacob.corwin@gmail.com",
+    "email_confirmed": true,
+    "timezone": null,
+    "full_name": "Jacob Corwin"
+}
+```
+
 # Data Objects
 
 ## App
@@ -386,6 +415,30 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
       "slug": "top-100"
     }
   ]
+}
+```
+
+## Profile
+
+| attribute           | type            | notes                                                 |
+| ------------------- | --------------- | ----------------------------------------------------- |
+| **id**              | Number          | The ID of the User.                                   |
+| **first_name**      | String          | User's first name.                                    |
+| **last_name**       | String          | User's last name.                                     |
+| **email**           | String          | User's email.                                         |
+| **email_confirmed** | Boolean         | Says if the user confirmed the email to Zapier.       |
+| **timezone**        | String          | User's timezone.                                      |
+| **full_name**       | String          | User's full name                                      |
+
+```json
+{
+    "id": 88998899,
+    "first_name": "Jacob",
+    "last_name": "Corwin",
+    "email": "jacob.corwin@gmail.com",
+    "email_confirmed": true,
+    "timezone": null,
+    "full_name": "Jacob Corwin"
 }
 ```
 
