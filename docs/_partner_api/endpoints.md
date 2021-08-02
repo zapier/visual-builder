@@ -150,6 +150,7 @@ curl -L "https://api.zapier.com/v1/zap-templates?client_id=${client_id}&apps=mai
     "steps": [
       {
         "id": 1,
+        "uuid": "b9df4eff-f311-44f9-ac54-2901f952c6ac",
         "title": "Google Ads",
         "slug": "google-ads",
         "description": "Google Ads (formerly Google AdWords) is an online advertising platform developed by Google, where advertisers pay to display brief advertisements, service offerings, product listings, video content, and generate mobile application installs within the Google ad network to web users.",
@@ -167,6 +168,7 @@ curl -L "https://api.zapier.com/v1/zap-templates?client_id=${client_id}&apps=mai
       },
       {
         "id": 2,
+        "uuid": "ca83afc5-ee9a-470d-b577-e7f8fd555b67",
         "title": "Slack",
         "slug": "slack",
         "description": "Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go. Offering instant messaging, document sharing and knowledge search for modern teams.",
@@ -382,6 +384,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 
 | attribute       | type   | notes                                                                                                                                                 |
 | --------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **uuid**        | String | An unique canonical identifier to the app                                                                                                             |
 | **description** | String | Plain text description of the app.                                                                                                                    |
 | **links**       | Object | Link to get mutual Zap templates from Zapier's Partner API                                                                                            |
 | **title**       | String | The name of the app.                                                                                                                                  |
@@ -393,6 +396,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 
 ```json
 {
+  "uuid": "ca83afc5-ee9a-470d-b577-e7f8fd555b67",
   "description": "Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go. Offering instant messaging, document sharing and knowledge search for modern teams.",
   "links": {
     "mutual:zap_templates": "https://api.zapier.com/v1/zap-templates?apps=slack"
@@ -485,12 +489,13 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 
 | attribute             | type       | notes                                                                                                                         |
 | --------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **id**                | Number     | The ID of the Zap Template                                                                                                    |
 | **create_url**        | String     | An absolute URL used to create the Zap.                                                                                       |
 | **description**       | String     | The HTML-rendered description provided when the Zap template was created.                                                     |
 | **description_plain** | String     | Plain text (HTML tags stripped) description. **Note: `\r` and `\n` replaced with space character. Artifacts may be present.** |
 | **description_raw**   | String     | The [Markdown][markdown] description provided when the Zap template was created.                                              |
 | **slug**              | String     | A URL/SEO friendly ID for the Zap template.                                                                                   |
-| **steps**             | Array<App> | An array of two or more steps in the Zap template. See [Zap step object](#zap-step).                                          |
+| **steps**             | Array<App> | An array of two or more steps in the Zap template. See [App object](#app).                                                    |
 | **title**             | String     | The name of the Zap template.                                                                                                 |
 | **status**            | String     | The status of the Zap template (choices: `draft`, `published`).                                                               |
 | **url**               | String     | An absolute url to the Zapbook Zap template Page.                                                                             |
