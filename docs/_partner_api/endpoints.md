@@ -384,7 +384,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 
 | attribute       | type   | notes                                                                                                                                                 |
 | --------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **uuid**        | String | An unique canonical identifier to the app                                                                                                             |
+| **uuid**        | String | The unique canonical identifier to the app                                                                                                             |
 | **description** | String | Plain text description of the app.                                                                                                                    |
 | **links**       | Object | Link to get mutual Zap templates from Zapier's Partner API                                                                                            |
 | **title**       | String | The name of the app.                                                                                                                                  |
