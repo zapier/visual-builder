@@ -7,6 +7,12 @@ redirect_from: /partner_api/
 
 # Changelog
 
+## 2021-08-03
+
+### Added attribute to `v1/zap-tamplates`
+The endpoint `/v1/zap-templates` exposes the `uuid` attribute to each step. This attribute is a UUID v4 string.
+
+
 ## 2021-07-29
 ### Added `v1/profiles/me`
 The endpoint return information about the user whose `access_token` is authorized.  
