@@ -20,7 +20,7 @@ You may find docs duplicate or outdated across the Zapier site. The most up-to-d
 
 Our code is updated frequently. To see a full list of changes, look no further than [the CHANGELOG](https://github.com/zapier/zapier-platform/blob/master/CHANGELOG.md).
 
-This doc describes the latest CLI version (**11.0.1**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc describes the latest CLI version (**11.1.0**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/README.md), [9.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.4.2/packages/cli/README.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@8.4.2/packages/cli/README.md)
 - CLI Reference: [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/docs/cli.md), [9.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.4.2/packages/cli/docs/cli.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@8.4.2/packages/cli/docs/cli.md)
@@ -1653,9 +1653,9 @@ const perform = async (z, bundle) => {
 
 ### `bundle.rawRequest`
 
-> `bundle.rawRequest` is only available in the `perform` for web hooks, `getAccessToken` for oauth authentication methods, and `performResume` in a callback action.
+> `bundle.rawRequest` is only available in the `perform` for webhooks, `getAccessToken` for OAuth authentication methods, and `performResume` in a callback action.
 
-`bundle.rawRequest` holds raw information about the HTTP request that triggered the `perform` method or that represents the users browser request that triggered the `getAccessToken` call:
+`bundle.rawRequest` holds raw information about the HTTP request that triggered the `perform` method or that represents the user's browser request that triggered the `getAccessToken` call:
 
 ```
 {
@@ -1668,7 +1668,7 @@ const perform = async (z, bundle) => {
 }
 ```
 
-
+In `bundle.rawRequest`, headers other than `Content-Length` and `Content-Type` will be prefixed with `Http-`, and all headers will be named in Camel-Case. For example, the header `X-Time-GMT` would become `Http-X-Time-Gmt`.
 
 ### `bundle.cleanedRequest`
 
@@ -1696,7 +1696,7 @@ const perform = async (z, bundle) => {
 
 > `bundle.outputData` is only available in the `performResume` in a callback action.
 
-`bundle.outputData` will return a whatever data you originally returned in the `perform` allowing you to mix that with `bundle.rawRequest` or `bundle.cleanedRequest`.
+`bundle.outputData` will return a whatever data you originally returned in the `perform`, allowing you to mix that with `bundle.rawRequest` or `bundle.cleanedRequest`.
 
 
 ### `bundle.targetUrl`
@@ -1996,6 +1996,7 @@ const handleErrors = (response, z) => {
   } else if (response.status === 200 && response.data.success === false) {
     throw new z.errors.Error(response.data.message, response.data.code);
   }
+  return response;
 };
 
 // This example only works on core v10+!
@@ -2537,6 +2538,60 @@ describe('triggers', () => {
     const firstRecipe = results[0];
     expect(firstRecipe.id).toBe(1);
     expect(firstRecipe.name).toBe('Baked Falafel');
+  });
+});
+
+```
+
+### Using the `z` Object in Tests
+
+Introduced in `core@11.1.0`, `appTester` can now run arbitrary functions:
+
+```js
+/* globals describe, expect, test */
+
+const zapier = require('zapier-platform-core');
+
+const App = require('../index');
+const appTester = zapier.createAppTester(App);
+
+describe('triggers', () => {
+  test('load recipes', async () => {
+    const adHodResult = await appTester(
+      // your in-line function takes the same [z, bundle] arguments as normal
+      async (z, bundle) => {
+        // requests are made using your integration's actual middleware
+        // make sure to pass the normal `bundle` arg to `appTester` if your requests need auth
+        const response = await z.request(
+          'https://example.com/some/setup/method',
+          {
+            params: {
+              numItems: bundle.inputData.someValue,
+            },
+          }
+        );
+
+        return {
+          // you can use all the functions on the `z` object
+          someHash: z.hash('md5', 'mySecret'),
+          data: response.data,
+        };
+      },
+      {
+        // you must provide auth data for authenticated requests
+        // (just like running a normal trigger)
+        authData: { token: 'some-api-key' },
+        // put arbitrary function params in `inputData`
+        inputData: {
+          someValue: 3,
+        },
+      }
+    );
+
+    expect(adHodResult.someHash).toEqual('a5beb6624e092adf7be31176c3079e64');
+    expect(adHodResult.data).toEqual({ whatever: true });
+
+    // ... rest of test
   });
 });
 
@@ -3178,7 +3233,7 @@ Broadly speaking, all releases will continue to work indefinitely. While you nev
 For more info about which Node versions are supported, see [the faq](#how-do-i-manually-set-the-nodejs-version-to-run-my-app-with).
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **11.0.1**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **11.1.0**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
