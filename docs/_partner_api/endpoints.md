@@ -354,6 +354,10 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
 
 ## GET /v1/profiles/me
 
+|            URL                    | Protected By | Required Scopes     |
+| :-------------------------------: | :----------: | :-----------------: |
+| **api.zapier.com/v1/profiles/me** | Access Token |      `profile`      |
+
 **Example Requests**
 
 Get user information related to the given `access_token`
