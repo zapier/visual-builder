@@ -65,7 +65,7 @@ Polling API results are expected to be an array with 0 or more objects that will
 
 ### Polling Trigger
 
-Zapier selects a _Polling_ trigger by default, where Zapier will send a `GET` request to an API endpoint URL to request new data—and in live Zaps, Zapier automatically deduplicates and sorts for the newest data from the API. Live Zaps automatically poll the URL for new data every 5 to 15 minutes, depending on the user's Zapier plan.
+Zapier selects a _Polling_ trigger by default, where Zapier will send a `GET` request to an API endpoint URL to request new data—and in live Zaps, Zapier automatically deduplicates and sorts for the newest data from the API. Live Zaps automatically poll the URL for new data every 1 to 15 minutes, depending on the user's Zapier plan (see [Plans & Pricing](https://zapier.com/pricing) for more details).
 
 To add a polling trigger, select _Polling_ at the top of the settings page, then enter your API URL in the _API Endpoint_ field. If your API URL requires specific data in the URL, enter the following text in the URL where your API expects that data, replacing `key` for the input field key with the relevant data from the input form you created before:
 
