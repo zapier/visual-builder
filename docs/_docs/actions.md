@@ -13,9 +13,11 @@ All Zaps start with a trigger that watches for new or updated data. They get the
 
 Zapier actions push or put new data into apps through API calls that pass data from user customized [input fields](https://platform.zapier.com/docs/input-designer). 
 
-Action steps in Zaps can create new items in an app or update existing items with a *create* action, or find existing items in an app with *search* actions (which can optionally be paired with create actions to add a new item if the search does not return a result). Every action additionally returns output fields detailing what was created—and that data can be used in subsequent steps to build detailed workflows.
+Action steps in Zaps can create new items in an app or update existing items with a *create* action, or find existing items in an app with *search* actions. Search actions can optionally be paired with create actions to add a new item if the search does not return a result.
 
-Zapier does not allow action steps to delete or remove data, to prevent data loss. Action steps may only add or update data.
+Actions should also return output fields detailing what was created (or found), so that data can be used in subsequent steps to build detailed workflows.
+
+Zapier strongly recommends against action steps that delete or remove data. To prevent data loss, action steps should only add or update data. If you are considering adding a delete action to your app, consider alternative actions for items such as deactivating, unsubscribing, or canceling, instead of deleting items completely.
 
 > **Note**: Actions are displayed in the order they are added to Zapier integrations, so be sure to add your app's most important actions first.
 
@@ -47,9 +49,9 @@ Once the action settings are added, click _Save and Continue_ to add the new act
 
 Then, the _Input Designer_ will open to build the input form field for your action. All action steps _must_ include an input form for Zapier to gather the data needed to create or find items in your app. Add at least one input field to your action before switching to the final _API Configuration_ tab.
 
-Before building your action's input form, list each data item your app needs to create a new item. For example, if building an action to send an email, fields for the email address, subject, and email body would be needed at a minimum. Your action will likely have several required fields, along with others that are optional such as for tags or other additional details.
+Before building your action's input form, list each piece of data your app needs to create a new item. For example, if building an action to send an email, fields for the email address, subject, and email body would be needed. Your action will likely have several required fields, along with others that are optional, such as for tags or other details.
 
-Add action fields for each item your app needs to create or find this item in your app. Add the fields in the order they're listed in your app, if possible, to make the Zapier integration easier for your users to use.
+Add action fields for each piece of data your app needs to create or find this item in your app. Add the fields in the order they're listed in your app, if possible, to make the Zapier integration easier for your users to use.
 
 > **Tip**: Check our detailed [Zapier input designer](https://platform.zapier.com/docs/input-designer) guide for details on each option in the input designer, along with each field type you can add to your action's form.
 
@@ -59,9 +61,9 @@ Add action fields for each item your app needs to create or find this item in yo
 
 The last part of building a Zapier action is the most crucial: tell Zapier how to send the data to your API.
 
-Zapier uses a `POST` call for create actions by default, sending a single item to your API endpoint. Zapier then expects a response with an object containing a single item, to be evaluated by [isPlainObject](https://lodash.com/docs#isPlainObject) then parsed into individual fields for use in subsequent Zap steps.
+Zapier uses a `POST` call for create actions by default, sending a single item to your API endpoint. Zapier then expects a response with an object containing a single item, to be evaluated by [isPlainObject](https://lodash.com/docs#isPlainObject) and parsed into individual fields for use in subsequent Zap steps.
 
-Zapier uses a `GET` call for search actions by default, and sends the data from the input form to your API endpoint. Zapier expects an array response with 0 or more items—and if more than 1 item is returned, Zapier shows the best match first, and parses it into individual fields for use in subsequent Zap steps.
+Zapier uses a `GET` call for search actions by default, and sends the data from the input form to your API endpoint. Zapier expects an array response with 0 or more items. If more than 1 item is returned, Zapier shows only the first match, and parses it into individual fields for use in subsequent Zap steps.
 
 For most actions, select the correct API call if your app expects something other than the default, then paste the URL for your API call in the box under _API Endpoint_. Zapier will include each of your input form fields in the _Request Body_ automatically.
 
@@ -73,7 +75,7 @@ The defaults on all other settings work for most basic API calls. If you need to
 
 ![Test Zapier API Call](https://cdn.zapier.com/storage/photos/08da97b61a7f3cdbdd5335ba5a03f906.png)
 
-Once your API call is added, test it inside Zapier visual builder with testing data. Authenticate with your app if you haven't already, then fill in each input field under the _Configure Test Data_ section with data that will work in your app. Click _Test Your Result_ to have Zapier run the action as it would inside a Zap—and see the results instantly.
+Once your API call is added, test it inside the Zapier visual builder with testing data. Authenticate with your app if you haven't already, then fill in each input field under the _Configure Test Data_ section with data that will work in your app. Click _Test Your Result_ to have Zapier run the action as it would inside a Zap—and see the results instantly.
 
 If your app returns an error, be sure to check:
 
