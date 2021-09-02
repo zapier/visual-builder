@@ -39,7 +39,7 @@ Session authentication lets users enter their username and password or other app
 
 _→ [Add Session Auth to your Zapier Integration](https://platform.zapier.com/docs/session)_
 
-### [API Key](https://platform.zapier.com/docs/api)
+### [API Key](https://platform.zapier.com/docs/apikey)
 
 API key authentication lets users enter a custom API key from your app, and can optionally request additional info such as a domain. Users will need to locate an API key from your app, then enter it in the Zapier authentication form. Zapier will then pass the API key, along with any additional authentication details needed, to authenticate each API call.
 
