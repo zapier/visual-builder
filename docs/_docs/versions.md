@@ -21,6 +21,14 @@ Zapier’s Platform UI includes a _Versions_ page in the left sidebar. New integ
 
 Click the gear icon beside a version on the _Versions_ page to make changes. You can _Clone_ your integration to make a new version based on the features of an existing version. Once the new version is ready, you can _Promote_ the new version to have new users start using it.
 
+## Decide on How You Want to Work
+
+You and your team can decide what works best for your workflow. You can continue building and developing an integration within the UI, or if your developers prefer to work within a standard [Node.js](https://nodejs.org/en/) app, you can export your app and work within the CLI environment.
+
+When creating a new version of your Zapier integration in the UI, you never need to start over. Instead, to make a new version, start by cloning an existing version. That lets you start with an exact copy of your integration where you can make the changes and additions you need. Learn how to clone your integration [here](#clone-your-integration).
+
+Or if you prefer to export your app for the CLI environment, learn how to do that [here](./export) and skip the cloning portion of this guide.
+
 ## Clone Your Integration
 
 ![Clone Zapier integration](https://cdn.zapier.com/storage/photos/dca2130ce5dddca928519ad60130d35a.png)
@@ -44,6 +52,20 @@ You can add, edit, and test features in your new integration version just as you
 To edit a specific integration version, either select it from the upper left of the Platform UI sidebar, or open the _Versions_ page, click the gear icon beside the version you want to edit, and select _Edit_. You can see  what version you’re editing from the version number in the top left of the sidebar anytime.
 
 You can also test any version of your integration from Zapier’s standard Zap editor. Search for your app name when adding a Zap step, and Zapier will show multiple entries on your account with the version number beside each. Select the newest one to test your new changes.
+
+**Additions Vs Enhancements**
+
+The two main ways to edit your integration will either be adding new features or changing existing Triggers/Actions/Searches to have new functionality or bug fixes. There are a couple of things you want to keep in mind when doing either.
+
+**Additions**
+
+When adding new Triggers/Actions/Searches, feel free to add all of the ones you would like. However, I would encourage you to keep in mind the workflows or use-cases you are attempting to enable. The best integrations have a curated list of Triggers/Actions/Searches rather than every endpoint that exists in your API. One way to see what kinds of features users are asking for is to utilize our “Issues” section on your app. Our support team will open up new bugs and or feature requests based on user feedback.
+
+**Enhancements**
+
+Outside of adding new features, you can modify or update existing functionality to improve the experience for your users. Zapier’s Zaps are configured based on the JSON representation of what comes back from your API, so if you ever remove any fields being returned or modify that structure, this is considered a breaking change. If you modify a new version of your app that does have a breaking change on a Trigger/Action/Search, you will not be able to migrate users to that new version.
+
+There are two strategies for this. You can “hide” the existing Trigger/Action/Search that users are using, and then create a new version with the enhancements for those new users. This would enable you to bring your users between versions as this is helpful when you only are improving something relatively small. However, when there is a larger change where you would like to deprecate the older Trigger/Action/Search if you are retiring that endpoint or upgrading the whole API for example, you will want to leave users on the old version and not migrate them between versions. The reason for this, is you can use our built-in [deprecation tool](#deprecate-an-older-version-of-your-integration) to alert users that they will need to manually migrate their Zaps to the latest version by a specific date.
 
 ## Migrate Users to Your New Integration Version
 
