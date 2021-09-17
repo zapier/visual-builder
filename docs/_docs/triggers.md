@@ -96,6 +96,8 @@ Finally, you can customize the code to evaluate the data your app's webhooks pas
 
 Both the Perform and Perform List methods should return arrays. The object(s) within the arrays should have the same data structure, so that live data will behave as expected based on the test data the user maps. See [Sample Data](./faq#output) in the FAQ for more details on this.
 
+If for architectural reasons, your webhook will receive some data that shouldn't trigger the Zap, your code can return an empty array in those cases. If the Perform method returns an empty array, the Zap won't run.
+
 Once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
 
 _→ Learn more about [how Zapier REST Hooks work](https://platform.zapier.com/docs/faq#how-do-i-define-rest-hooks-and-use-the-embedded-tester-with-them) in our FAQ_
