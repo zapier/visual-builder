@@ -79,34 +79,52 @@ If your API requires any additional data, you can add them from the _Show Option
 
 Once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
 
-### Rest Hook Trigger
+### REST Hook Trigger
 
-![Zapier Rest Hook Settings](https://cdn.zapier.com/storage/photos/de85ffb1cc01a16b4b0e753dd7c0745c.png)
+![Zapier REST Hook Settings](https://cdn.zapier.com/storage/photos/de85ffb1cc01a16b4b0e753dd7c0745c.png)
 
-Alternately, if your app supports REST Hooks—or webhook subscriptions that can be manipulated through a REST API—select _REST Hook_ for your trigger. More detail on REST Hooks is [here](http://resthooks.org/), but please note that the Zapier implementation does not support Identity Confirmation. This will let your trigger run in near realtime with your app pushing data to Zapier, running Zaps as soon as new data comes into your app instead of waiting for Zapier to fetch new data from your API.
+Alternately, if your app supports REST Hooks—webhook subscriptions that can be manipulated through a REST API—select _REST Hook_ for your trigger. More detail on REST Hooks is [here](http://resthooks.org/), but please note that the Zapier implementation does not support Identity Confirmation.
 
-With a REST Hook trigger, you need to add a Subscribe and Unsubscribe URL that Zapier can use to set up and remove the hook subscription.
+This will let your trigger run in near realtime with your app pushing data to Zapier, running Zaps as soon as new data comes into your app instead of waiting for Zapier to fetch new data from your API.
 
-In addition to the subscribe and unsubscribe URLs, it's helpful to add a Perform List URL where Zapier should check for recent items. This will be used to fetch data when users are testing the Zap, so that they don't need to fire off a hook during testing.
+With a REST Hook trigger, you need to add Subscribe and Unsubscribe API requests that Zapier can use to set up and remove the hook subscription. Zapier provides the subscription URL in the Subscribe request.
+
+**Subscribe**
+
+Here's an example Subscribe request using Gitlab's API. Note that you'll need to make sure the parameters here match what your API expects.  In this case `url` is the field name that Gitlab expects to contain the webhook callback URL.
+
+![](https://zappy.zapier.com/CF1A11AF-949A-4C74-AFCD-37F4F4C5B362.png)
+
+**Unsubscribe**
+
+When Zapier sends the request to your API to unsubscribe the webhook, it includes the the unique ID that was returned during the Subscribe request, and you can reference it in the unsubscribe request, on the `bundle.subscribeData` object.  
+
+![](https://zappy.zapier.com/EF2923B4-B361-45A6-983C-BA2A57DC5623.png)
+
+**Perform List**
+
+In addition to the Subscribe and Unsubscribe requests, it's important to add a Perform List request where Zapier can check for recent items. This will be used to fetch data when users are setting up and testing the Zap. If you don't define a Perform List, then the user needs to go into your app and do something to generate a new event while the Zap editor waits for data, which is not an optimal experience.
 
 <a id="perform"></a>
-![Rest Hook Perform](https://cdn.zapier.com/storage/photos/5c6c154be13fbcad2a5dc8cb786f2dea.png)
+**Perform**
 
-Finally, you can customize the code to evaluate the data your app's webhooks pass to Zapier. By default, Zapier includes `return [bundle.cleanedRequest];` to return the object from your previous step. If your data needs to be transformed, or includes multiple objects, add custom code to parse the response data in `bundle.cleanedRequest` within the Perform and turn it into an array of objects, such as [this example code](https://gist.github.com/maguay/7109e9f885304794852d1dd400dc4887).
+![REST Hook Perform](https://cdn.zapier.com/storage/photos/5c6c154be13fbcad2a5dc8cb786f2dea.png)
 
-Both the Perform and Perform List methods should return arrays. The object(s) within the arrays should have the same data structure, so that live data will behave as expected based on the test data the user maps. See [Sample Data](./faq#output) in the FAQ for more details on this.
+Finally, in the Perform, you can customize the code to evaluate the data your app's webhooks pass to Zapier. By default, Zapier includes `return [bundle.cleanedRequest];` to return the object from the webhook. If your data needs to be transformed, or includes multiple objects, add custom code to parse the response data in `bundle.cleanedRequest` within the Perform and turn it into an array of objects, such as [this example code](https://github.com/zapier/zapier-platform/blob/master/example-apps/rest-hooks/triggers/recipe.js#L42).
+
+Both the Perform and Perform List methods should return arrays, even if they only contain one object. The object(s) within the arrays should have the same data structure, so that live data will behave as expected based on the test data the user maps. See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 If for architectural reasons, your webhook will receive some data that shouldn't trigger the Zap, your code can return an empty array in those cases. If the Perform method returns an empty array, the Zap won't run.
 
 Once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
 
-_→ Learn more about [how Zapier REST Hooks work](https://platform.zapier.com/docs/faq#how-do-i-define-rest-hooks-and-use-the-embedded-tester-with-them) in our FAQ_
-
 ### Test Trigger API Calls
 
 ![Test Zapier Trigger](https://cdn.zapier.com/storage/photos/120d65ddd8baed9d781c358b66078851.png)
 
-Once you've finished adding your polling or rest hook trigger settings, it's time to make sure everything you've built so far works and fetches the correct data from Zapier. In the _Test Your API Request_ section, you should see the app account you added when testing your authentication. If not, add an app account first.
+Once you've finished adding your polling or REST Hook trigger settings, it's time to make sure everything you've built so far works and fetches the correct data from Zapier. 
+
+For polling triggers, use the _Test Your API Request_ section. You should see the app account you added when testing your authentication. If not, add an app account first.
 
 Then if you added an input form for your Trigger, add data for each of those fields. Be sure to use real data that will work in your app, as Zapier will use it in an API call to your app to fetch live data from your authenticated app account.
 
@@ -115,6 +133,8 @@ Click _Test Your Result_, and if your trigger is set up correctly, you'll see a 
 ![Zapier Trigger Test Results](https://cdn.zapier.com/storage/photos/a43315730778c1cf5251d1e80a465819.png)
 
 Zapier will show the raw, JSON formatted response from your API in the _Response_ tab with every output field your app sends to Zapier. You can see the data Zapier sent to your API in the _Bundle_ tab, or the raw HTTP request in the _HTTP_ tab.
+
+To test a REST Hook trigger, use the Zap editor to build a real Zap, and try turning it on. Be sure to check the logs in the [Monitoring](./testing#monitoring) component to get feedback from your Zap testing. It's also great idea to go and verify in your system that the subscription was set up properly.
 
 ### Define Sample Data and Output Fields
 
