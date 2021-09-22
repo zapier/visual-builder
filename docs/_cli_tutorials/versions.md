@@ -1,6 +1,6 @@
 ---
-title: Versions
-order: 3
+title: How to Manage Versions of your Zapier Integration
+order: 6
 layout: post-toc
 redirect_from: /cli-docs/
 ---
@@ -54,13 +54,13 @@ There are two strategies for this. You can “hide” the existing Trigger/Actio
 ## Testing Your Integration
 
 One advantage building your integration within the CLI environment, you can write your own unit tests!
-See our complete [Testing Guide here](./docs#testing).
+See our complete [Testing Guide here](../cli_docs/docs#testing).
 
 ## Migrate Users to Your New Integration Version
 
 Once you’ve added all the changes needed to your integration, you can start rolling it out to users to update their existing Zaps and let users make new Zaps with your new integration features.
 
-If you made a patch version with only minor, non-breaking changes, you can migrate existing users and Zaps to your new integration version. For a complete guide to the `migrate` command, look [here](./cli#migrate).
+If you made a patch version with only minor, non-breaking changes, you can migrate existing users and Zaps to your new integration version. For a complete guide to the `migrate` command, look [here](../cli_docs/cli#migrate).
 
 Typically, Zapier recommends moving a small percentage of your users—perhaps 10 or 20%—to the new integration version to make sure everything is working as expected. Once everything looks good, you can migrate the remainder of your users to the new version.
 
@@ -81,7 +81,7 @@ zapier migrate 2.0.0 2.0.1 --user=user@example.com
 
 ## Promote a New Version of Your Integration
 
-You can also Promote your new integration version to make it the default version that Zapier shows to users when creating new Zaps. For a complete guide to the `promote` command, look [here](./cli#promote).
+You can also Promote your new integration version to make it the default version that Zapier shows to users when creating new Zaps. For a complete guide to the `promote` command, look [here](../cli_docs/cli#promote).
 
 If this isn’t the first time you’ve promoted your app - you might have users on older versions. You can `zapier migrate` to either move users over (which can be dangerous if you have breaking changes). Or, you can `zapier deprecate` to give users some time to move over themselves.
 
@@ -112,7 +112,7 @@ When you deprecate an integration version:
 
 Zap steps using this integration version will include a Deprecated tag in the Zapier editor, to help prompt users to re-build the Zap with the new integration.
 
-To deprecate a version, you will use the deprecate command. For a complete guide to the `deprecate` command, look [here](./cli#deprecate).
+To deprecate a version, you will use the deprecate command. For a complete guide to the `deprecate` command, look [here](../cli_docs/cli#deprecate).
 
 **Example**
 
@@ -127,7 +127,7 @@ Zapier then shows a yellow exclamation mark beside that version in your integrat
 
 Once you’ve deprecated an integration version and it has no existing users, you can delete that version to clean up your Zapier integration. This is mostly for clearing out old test apps you used personally.
 
-To deprecate a version, you will use the `delete:version` command. For a complete guide to the `delete:version` command, look [here](./cli#deleteversion). The command will fail if there are any users. You probably want `deprecate` instead.
+To deprecate a version, you will use the `delete:version` command. For a complete guide to the `delete:version` command, look [here](../cli_docs/cli#deleteversion). The command will fail if there are any users. You probably want `deprecate` instead.
 
 **Example**
 
