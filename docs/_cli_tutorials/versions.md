@@ -1,6 +1,6 @@
 ---
-title: Versions
-order: 3
+title: How to Manage Versions of your Zapier Integration
+order: 6
 layout: post-toc
 redirect_from: /cli-docs/
 ---
