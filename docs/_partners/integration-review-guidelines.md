@@ -93,7 +93,7 @@ Here are some further scenarios of what integrations are permitted on the Zapier
 Here are some further scenarios of what integrations are prohibited from the Zapier Platform by integration status, ownership, and intention:
 
 * Integrations by developers who are building on an API they own but for a competing product with Zapier are prohibited from going public or being invite-only.
-* Integrations by developers who are building on a public API they do not own, and routing traffic to their own servers are prohibited from going public or being invite-only.
+* Integrations by developers who are building on a public API they do not own, and routing traffic to their own servers are prohibited from going public or being invite-only. Exceptions apply when building on an approved third-party API.
 * Integrations by developers who do not own the API used in the integration or who have not been given explicit permission by the owners of the API cannot be public.
 
 ### 2.2 Developer Information
