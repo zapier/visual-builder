@@ -20,7 +20,7 @@ You may find docs duplicate or outdated across the Zapier site. The most up-to-d
 
 Our code is updated frequently. To see a full list of changes, look no further than [the CHANGELOG](https://github.com/zapier/zapier-platform/blob/master/CHANGELOG.md).
 
-This doc describes the latest CLI version (**11.1.0**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc describes the latest CLI version (**11.1.1**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/README.md), [9.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.4.2/packages/cli/README.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@8.4.2/packages/cli/README.md)
 - CLI Reference: [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/docs/cli.md), [9.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.4.2/packages/cli/docs/cli.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@8.4.2/packages/cli/docs/cli.md)
@@ -880,13 +880,15 @@ You can find more details on the definition for each by looking at the [Trigger 
 
 ### Return Types
 
-Each of the 3 types of function expects a certain type of object. As of core v1.0.11, there are automated checks to let you know when you're trying to pass the wrong type back. There's more info in each relevant `post_X` section of the [v2 docs](https://zapier.com/developer/documentation/v2/scripting/#available-methods). For reference, each expects:
+Each of the 3 types of function expects a certain type of object. As of core v1.0.11, there are automated checks to let you know when you're trying to pass the wrong type back. For reference, each expects:
 
 | Method  | Return Type | Notes                                                                                                                |
 |---------|-------------|----------------------------------------------------------------------------------------------------------------------|
-| Trigger | Array       | 0 or more objects that will be passed to the [deduper](https://zapier.com/developer/documentation/v2/deduplication/) |
-| Search  | Array       | 0 or more objects. If len > 0, put the best match first                                                              |
+| Trigger | Array       | 0 or more objects; passed to the [deduper](https://zapier.com/developer/documentation/v2/deduplication/) if polling  |
+| Search  | Array       | 0 or more objects. Only the first object will be returned, so if len > 1, put the best match first                   |
 | Action  | Object      | Return values are evaluated by [`isPlainObject`](https://lodash.com/docs#isPlainObject)                              |
+
+When a trigger function returns an empty array, the Zap will not trigger. For REST Hook triggers, this can be used to filter data if the available subscription options are not specific enough for the Zap's needs.
 
 ### Fallback Sample
 In cases where Zapier needs to show an example record to the user, but we are unable to get a live example from the API, Zapier will fallback to this hard-coded sample. This should reflect the data structure of the Trigger's perform method, and have dummy values that we can show to any user.
@@ -1590,27 +1592,31 @@ This object holds the user's auth details and the data for the API requests.
 
 ### `bundle.inputData`
 
-`bundle.inputData` is user-provided data for this particular run of the trigger/search/create, as defined by the inputFields. For example:
+`bundle.inputData` is user-provided data for this particular run of the trigger/search/create, as defined by the `inputFields`. For example:
 
 ```js
 {
-  createdBy: 'his name is Bobby Flay'
-  style: 'he cooks mediterranean'
+  createdBy: 'his name is Bobby Flay',
+  style: 'he cooks mediterranean',
+  scheduledAt: "2021-09-09T09:00:00-07:00"
 }
 ```
 
 ### `bundle.inputDataRaw`
 
-`bundle.inputDataRaw` is kind of like `inputData`, but before rendering `{{curlies}}`:
+`bundle.inputDataRaw` is like `bundle.inputData`, but before processing such as interpreting friendly datetimes and rendering `{{curlies}}`:
 
 ```js
 {
-  createdBy: 'his name is {{123__chef_name}}'
-  style: 'he cooks {{456__style}}'
+  createdBy: 'his name is {{123__chef_name}}',
+  style: 'he cooks {{456__style}}',
+  scheduledAt: "today"
 }
 ```
 
-> "curlies" are data mapped in from previous steps. They take the form `{{NODE_ID__key_name}}`. You'll usually want to use `bundle.inputData` instead.
+> "curlies" represent data mapped in from previous steps. They take the form `{{NODE_ID__key_name}}`. 
+
+You'll usually want to use `bundle.inputData` instead.
 
 ### `bundle.meta`
 
@@ -3233,7 +3239,7 @@ Broadly speaking, all releases will continue to work indefinitely. While you nev
 For more info about which Node versions are supported, see [the faq](#how-do-i-manually-set-the-nodejs-version-to-run-my-app-with).
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **11.1.0**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **11.1.1**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
