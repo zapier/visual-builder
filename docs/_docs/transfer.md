@@ -2,7 +2,7 @@
 title: Transfer
 order: 23
 layout: post-toc
-redirect_from: /docs
+redirect_from: /docs/
 exclude: true
 ---
 
@@ -19,7 +19,7 @@ exclude: true
 
 ## What is Transfer?
 
-Transfer is a new Zapier service that enables users to perform bulk operations using their historical data. Today Zaps only process new data and events created after the user turns on their Zap, Transfer lets users reach back and use existing data. Think of it as allowing your users to leverage Zapier for ETL (“Extract, Transform, Load”)  tasks.
+Transfer is a new Zapier service that enables users to perform bulk operations using their historical data. Today Zaps only process new data and events created after the user turns on their Zap. Transfer lets users reach back and use existing data. Think of it as allowing your users to leverage Zapier for ETL (“Extract, Transform, Load”)  tasks.
 
 Some example usage scenarios:
 
@@ -29,9 +29,9 @@ Some example usage scenarios:
 
 ## How Transfer Works
 
-In simple terms, Transfer works by running Zaps, just as you’re familiar with. The difference is that normally, when a user turns a Zap on, the Zap will ignore past data, and only process future data and events. Transfer operates by pulling in all of the data from your Trigger and making it available to the user to select and send through the Zap - executing perhaps thousands of tasks at once.
+In simple terms, Transfer works by running Zaps, just as you’re familiar with. The difference is that normally, when a user turns a Zap on, the Zap will ignore past data, and only process future data and events. Transfer operates by pulling in all of the data from your Trigger and making it available for the user to select and send through the Zap. This will execute perhaps thousands of tasks at once.
 
-Transfer will invoke the trigger of the Zap, repeatedly, pulling back all the data available, and gives the user the ability to choose which of the data objects to process with the Zap. 
+Transfer will invoke the trigger of the Zap, repeatedly, pulling back all the data available. It then gives the user the ability to choose which of the data objects to process with the Zap. 
 
 Transfer leverages a long-standing platform feature, API request pagination. Before Transfer, pagination was only used for triggers that populate dynamic dropdowns, enabling the “load more data” feature. Transfer calls the trigger’s perform/performList function, repeatedly, incrementally requesting additional “pages” of data until the endpoint signals it’s returned all of its data.
 
@@ -86,7 +86,7 @@ When you’re supporting a request to page through all of an endpoint’s result
 
 When your endpoint has no more pages of data to return, return an empty array.
 
-Support for Both Polling Triggers and REST Hook Triggers
+### Support for Both Polling Triggers and REST Hook Triggers
 
 Zapier CLI version 11 adds support for implementing pagination in a performList method of a REST Hook trigger. Be sure to select “canPaginate” to true.
 
