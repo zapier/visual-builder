@@ -50,19 +50,23 @@ If you need to change a key and its value, first delete the old key, then add a 
 
 When adding an input field in your integration's authentication, Zapier includes a _Field Type_ option with two field options: _Field_ and _Computed Field_. The former is a standard input field much like those in the trigger and action [input designer](https://platform.zapier.com/docs/input-designer), where users enter info needed for authentication.
 
-> **Note:** Only use computed fields with session and OAuth v2 authentication.
+> **Note:** Only use Computed Fields with Session and OAuth v2 authentication.
 
-Computed Fields, on the other hand, store values obtained from an integration's API test call, so they can be referenced in your integration's subsequent API calls. Use the same field key as the name your API uses for this field. Zapier then will match the API test call's output to your computed field, make sure the response includes that field, and will show an error if that field is not included. You can then reference the field in any subsequent API call from your integration from the input bundle with the following text, replacing `field` with your field key:
+Computed Fields, on the other hand, store values returned by your integration's authentication response, so they can be referenced in subsequent API calls. Use the same field key as the name your API uses for this field.
+
+Zapier stores all fields returned by the authentication process. Computed fields are marked as _required_, so Zapier watches specifically for those fields in the response data. If the auth process does not return fields marked as computed fields, Zapier will show an error.
+
+For example, when using OAuth v2 authentication, Zapier will store all fields returned by the `getAccessToken` request. If an access token is not included in the response, or any computed fields are missing, it will show an error. You could therefore use a computed field to reference a value that the `getAccessToken` call returns if you need to use it in subsequent API calls.
+
+You can reference the field in any subsequent API call from your integration from the input bundle with the following text, replacing `field` with your field key:
 
 {% raw %}`{{bundle.authData.field}}`{% endraw %}
 
-Zapier stores all fields returned by authentication API test call and auth process. Computed fields are marked as _required_ so Zapier watches specifically for those fields in the response data. If the auth process does not return fields marked as computed fields, Zapier will show an error. For example, if using OAuth v.2 authentication, Zapier will store all fields returned by the `getAccessToken` request, and will show an error if the response doesn't include an access token along with any fields you marked as computed fields. You could use a computed field, then, to reference a field that the `getAccessToken` call returns if you need to use it in subsequent API calls.
-
 ### How to Use a Field From the Test API Call as a Computed Field?
 
-Zapier stores every field from the core API authentication calls in OAuth v2 and Session auth, but does not store the responses from the test API call. If you need to use the data from a test API call later in your Zapier integration, you need to instead have Zapier call that API along with your Token Exchange Endpoint or Authorization URL call.
+Zapier stores every field from the core API authentication calls in OAuth v2 and Session auth, but does not store the responses from the test API call. If you need to use the data from a test API call later in your Zapier integration, you need to instead have Zapier call that API endpoint as part of your Token Exchange Endpoint or Authorization URL code.
 
-To do that, use the _Code Mode_ option and add custom code to have Zapier call both the URL needed for the authorization step and with your test API call. You can then include computed fields for data returned from either API call and reference them in later steps.
+To do that, use the _Code Mode_ option and [add custom code](./faq#how-does-code-mode-work) to have Zapier call both the URL needed for the authorization step and your test API call. You can then include computed fields for data returned from either API call and reference them in later steps.
 
 <a id="bundle"></a>
 ## Zapier Data Bundles
@@ -82,6 +86,8 @@ Includes data users enter into the authentication input form, including the `use
 {% raw %}`{{bundle.authData.field}}`{% endraw %}
 
 For example, the Access Token value will often accessed via {% raw %}`{{bundle.authData.access_token}}`{% endraw %} or {% raw %}`{{bundle.authData.accessToken}}`{% endraw %}.
+
+However, note that the `authData` bundle does not support nested objects: all values returned from auth functions need to be at the top level.
 
 Commonly used authData fields include:
 
