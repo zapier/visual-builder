@@ -21,7 +21,7 @@ They’re also a great way to promote your app, as your Zap Templates are featur
 
 Zap Templates can also be featured inside your site and content to help your users start using Zapier integrations. The more Zap Templates you create and the more users they have, the more likely they are to be featured. This helps your Zapier integration gain popularity and rise the ranks of the [Zapier Partner Program](https://zapier.com/platform/partner-program).
 
-You can create Zap Templates for any public Zapier integration, or for any integration that has applied for publishing. Once you apply for publishing your integration, you will need to build at least 10 Zap Templates in the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) to help people start using your integration.
+You can create Zap Templates for any public Zapier integration, or for any integration that has applied for publishing. Once you apply for publishing your integration, you will need to build at least 10 Zap Templates in the [Zap Template Creator](https://zapier.com/zap-templates/create) to help people start using your integration.
 
 > Expected time to create a Zap Template: 10 minutes.
 
@@ -43,7 +43,7 @@ For help as you build, you can follow this video or the written instructions bel
 
 ![Zap Template select trigger app](https://cdn.zapier.com/storage/photos/800758ee8bf0437e6904dd7842760ac5.png)
 
-Open Zapier’s [Zap Template creator](https://zapier.com/developer/zap-templates/create) at [zapier.com/developer/zap-templates/create](https://zapier.com/developer/zap-templates/create), or click the _Create Zap Template_ button in your [Zap Template dashboard](https://zapier.com/developer/zap-templates/). Select the trigger app, as you would when making a Zap for yourself. Select a popular app from the grid, or search for the app you need from the dropdown menu.
+Open Zapier’s [Zap Template creator](https://zapier.com/zap-templates/create) at [zapier.com/zap-templates/create](https://zapier.com/zap-templates/create), or click the _Create Zap Template_ button in your [Zap Template dashboard](https://zapier.com/zap-templates/). Select the trigger app, as you would when making a Zap for yourself. Select a popular app from the grid, or search for the app you need from the dropdown menu.
 
 > **Tip:** The ability to build and publish Zap Templates is only available if your Zapier integration has a [beta tag](https://platform.zapier.com/partners/lifecycle-planning/#beta) or has [officially launched](https://platform.zapier.com/partners/lifecycle-planning#4-launch-your-zapier-integration) and become a part of the Zapier Integration Partner Program.
 
@@ -204,7 +204,7 @@ Once you've written and added your Zap Template title and description, it's time
 
 ![Test Zap Template](https://cdn.zapier.com/storage/photos/87a8cdc2f4d28b3ca8f743d0b332e84c.png)
 
-You should then try using the Zap Template to make sure it works as expected. Open your [Zap Template dashboard](https://zapier.com/developer/zap-templates/), click the gear icon beside the Zap Template you built, and select _Copy Link_. Open that link in a new tab or window, and follow the steps to set up and turn on the Zap—and make sure everything looks and works correctly.
+You should then try using the Zap Template to make sure it works as expected. Open your [Zap Template dashboard](https://zapier.com/zap-templates/), click the gear icon beside the Zap Template you built, and select _Copy Link_. Open that link in a new tab or window, and follow the steps to set up and turn on the Zap—and make sure everything looks and works correctly.
 
 Optionally, you can let your team help test Zap Templates as well. When saving your Zap Template, choose `Shared` instead of draft, then share its link with others on your team so they can try the Zap Template.
 
@@ -218,7 +218,7 @@ Finally, when your Zap Template is ready for public release, select the `For rev
 
 We'll then contact you, typically within a couple of weeks, after reviewing your Zap Template(s). If your Zap Templates pass the tests, we will mark them as public to automatically have them show up on your app's App Directory page, inside select partners' apps and sites, and in Zapier's onboarding experience.
 
-Then make some more Zap Templates. Every Zapier integration must have at least 10 Zap Templates, and the more you make, the easier it will be to start using your Zapier integration. Open the [Zap Template Creator](https://zapier.com/developer/zap-templates/create) again and create any more Zap Templates you want.
+Then make some more Zap Templates. Every Zapier integration must have at least 10 Zap Templates, and the more you make, the easier it will be to start using your Zapier integration. Open the [Zap Template Creator](https://zapier.com/zap-templates/create) again and create any more Zap Templates you want.
 
 ## Promote Your Zap Templates
 
@@ -248,7 +248,7 @@ You can also promote Zap Templates on your site with Zap embeds. The easiest way
 
 > **Tip**: Learn more about Zap Templates’ benefits in our [Zap Template presentation](https://docs.google.com/presentation/d/e/2PACX-1vQNBCEb0UsK75jnbsn9-1Ki5AnHJyxM8VfAiMHzOnXon2_HzEINt3D5l7a-_HoMDsIzBRjvN2FcWqXJ/pub?start=false&loop=false&delayms=15000).
 
-Want to embed specific individual Zap Templates instead? Copy the Zap ID number from your [Zap Templates Dashboard](https://zapier.com/developer/zap-templates/) by clicking the gear icon beside a Zap and selecting the _Copy ID_ option. Then, include it in place of `1234` in the text below:
+Want to embed specific individual Zap Templates instead? Copy the Zap ID number from your [Zap Templates Dashboard](https://zapier.com/zap-templates/) by clicking the gear icon beside a Zap and selecting the _Copy ID_ option. Then, include it in place of `1234` in the text below:
 
 `<script type="text/javascript" src="https://zapier.com/apps/embed/widget.js?guided_zaps=1234"></script>`
 
@@ -289,13 +289,13 @@ Here are some example embedded Zapier experiences with our Partner API, and you 
 
 ![Zap Template List](https://cdn.zapier.com/storage/photos/fd0cf812b5abc1f8ca5f0cec8029b428.png)
 
-One Zap Template isn’t enough—you’ll want to make Zap Templates for each of your app’s most popular use cases. Over time, you’ll likely make dozens of Zap Templates. You can manage them—in draft, review, or publicly available—from your [Zap Templates](https://zapier.com/developer/zap-templates/) dashboard alongside Zapier’s developer platform tools.
+One Zap Template isn’t enough—you’ll want to make Zap Templates for each of your app’s most popular use cases. Over time, you’ll likely make dozens of Zap Templates. You can manage them—in draft, review, or publicly available—from your [Zap Templates](https://zapier.com/zap-templates/) dashboard alongside Zapier’s developer platform tools.
 
 Filter through your Zap Templates by status on the left sidebar, click a Zap Template to edit it, or select the gear icon on the right of a Zap Template to copy its public link, test it, or delete it.
 
 If you have any Zap Templates in your _Rejected_ list, edit them to fix the issues then re-submit them. You cannot edit public Zap Templates, but if you notice something that you need to change in your existing Zap Templates, please email [partners@zapier.com](mailto:partners@zapier.com) with the link to the Zap Template, and we can set the Zap as _Draft_ again so you can edit and re-submit it with any changes.
 
-Then start again. Whenever you think of something that’s the _perfect_ use case for your Zapier integration, turn it into a Zap Template with the [Zap Template Creator](https://zapier.com/developer/zap-templates/create). As soon as it’s approved, it’ll show up everywhere your Zapier integration is promoted, spreading your use case to the people who will benefit from it most.
+Then start again. Whenever you think of something that’s the _perfect_ use case for your Zapier integration, turn it into a Zap Template with the [Zap Template Creator](https://zapier.com/zap-templates/create). As soon as it’s approved, it’ll show up everywhere your Zapier integration is promoted, spreading your use case to the people who will benefit from it most.
 
 ## Troubleshoot Zap Template Embeds
 
