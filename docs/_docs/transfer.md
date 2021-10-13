@@ -52,7 +52,7 @@ Transfer leverages a long-standing platform feature, API request pagination. Bef
 - You’ll need to have a Zapier integration published before your trigger can be made available within the Transfer tool.
 - To make this work your API needs an endpoint that allows the client to fetch a large number of records. For most APIs, this means supporting paginated requests - the ability for the API client to fetch a set, or “page”, of data, then request the next set, the next set, until the end of the data set is reached.
 - You’ll need to publish a trigger in your integration that is able to make paginated requests when invoked from Transfer, but also returns the most recent page of data otherwise. 
-- Your integration will need to be running on the current Developer Platform, whether it’s built with the Platform UI or the Zapier CLI. Legacy Web Builder integrations are not supported. 
+- Your integration will need to be running on the current Developer Platform, whether it’s built with the Platform UI or the Zapier CLI (recommended). Legacy Web Builder integrations are not supported. 
 
 ### Developing in the CLI vs. the Platform UI
 
@@ -105,10 +105,6 @@ When you’ve finished testing your Transfer-capable trigger and you want to mak
 
 ```javascript
 const getList = async (z, bundle) => {
-  // if paginating then use the current page (ie. a dropdown or bulk read)
-  // otherwise use the first page (ie. pulling in Zap samples)
-  const page = bundle.meta.page ? bundle.meta.page + 1 : 1;
-  const attendees = await getAttendees(z, bundle, page);
   let attendees = []
   if (bundle.meta.isBulkRead || bundle.meta.prefill) {
     // if paginating then use the current page
@@ -118,8 +114,10 @@ const getList = async (z, bundle) => {
     // when pulling in attendee samples in the editor we want the most recent
     attendees = await getRecentAttendees(z, bundle);
   }
+  return attendees;
+};
   ```
-Example of a trigger perform. This API uses the page/offset approach to paging. Here we check `bundle.meta.page` to differential handling for a Transfer request vs. a regular Zap handling which just returns the most recent objects.
+Example of a trigger perform. This API uses the page/offset approach to paging. Here we check `bundle.meta.page` to differentiate handling for a Transfer request vs. a regular Zap handling which just returns the most recent objects.
 
 ### References
 
