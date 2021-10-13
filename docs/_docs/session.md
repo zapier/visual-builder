@@ -39,11 +39,12 @@ The first thing to add for Session auth is an _input form_. Much like [Zapier's 
 In Step 1's _Configure your Fields_ section, click _Add Fields_ to add a new field to your input form. There, add the following details:
 
 - **Key**: The internal name for your field, used to reference this field in Zapier API calls. For convenience, use the same key as your API uses for this field.
-- **Label**: A human-friendly name for this field that will be shown to users in the authentication form
-- **Required? (checkbox)**: Check if this field is required for successful authentication
+- **Label**: A human-friendly name for this field that will be shown to users in the authentication form.
+- **Required? (checkbox)**: Check if this field is required for successful authentication.
 - **Type**: (optional) Usually String, but select "Password" to obscure text for secret values.
-- **Help Text**: Add [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) formatted details on what users should enter in this field, optionally with a link to your site to help users find the data
-- **Default Value**: If your API request can accept standard data that works for every user, you can add a default value. Zapier will store and use the value on all API calls if set as non-required; if in a required field, Zapier will only use this value during account creation.
+- **Help Text**: Add [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) formatted details on what users should enter in this field, optionally with a link to your site to help users find the data.
+- **Input Format**: (optional) Help users figure out exactly what piece of data you need them to enter. For example, for a subdomain, https://{{input}}.yourdomain.com/.
+- **Default Value**: If appropriate, for optional fields, enter text that can be used by default if users don't enter a value. For required fields, enter text that can be used for authentication, but that won't be used in subsequent Zap steps.
 
 Be sure to add one field for every piece of data users need to enter to authenticate their account with your API. Session auth does not include any default input fields.
 

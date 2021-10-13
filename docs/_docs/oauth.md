@@ -32,13 +32,13 @@ To add OAuth authentication to a Zapier integration, open your app's _Authentica
 
 You'll need the following items to add OAuth authentication:
 
-- (optionally) An Input Form to gather data from users, such as account team name or site URL for self-hosted apps
+- An input form (optional) to gather data from users, such as account team name or site URL for self-hosted apps
 - An OAuth application configured in your own app's settings, where you'll add Zapier's OAuth Redirect URL
 - A Client ID (may be called Customer or API Key) and Client Secret (may be called Customer or API secret) from your app
-- An Authorization URL on your app's site where users will login with their account credentials
-- (optionally) A list of API scope(s) to restrict what Zapier can access
+- An Authorization URL on your app's site where users will log in with their account credentials
+- A list of API scope(s) (optional) to restrict what Zapier can access
 - An Access Token Request URL where Zapier exchanges the request token for an access token
-- (optionally) A Refresh Token Request URL where Zapier can refresh the access token if it expires, along with an option to have Zapier automatically refresh credentials
+- A Refresh Token Request URL (optional) where Zapier can refresh the access token if it expires, along with an option to have Zapier automatically refresh credentials
 - A Test API endpoint where Zapier can make an API call to ensure your user credentials work
 - A Connection Label to uniquely identify users' accounts
 
@@ -49,7 +49,7 @@ You'll need the following items to add OAuth authentication:
 
 ![Zapier OAuth input form](https://cdn.zapier.com/storage/photos/739190c32c449a03e415ccaa83960a6f.png)
 
-If your API's OAuth authentication needs additional details from users before it can display the authorization URL, or if it needs to have Zapier store fields received from your server to use in subsequent API calls, you can add an input form as the first step in your authentication. This will show a form to users with the fields you've added before redirecting them to your authorization URL.
+If your API's OAuth authentication needs additional details from users before it can display the authorization URL, or Zapier needs to store fields received from your server to use in subsequent API calls, you can add an input form as the first step in your authentication. This will show a form to users with the fields you've added before redirecting them to your authorization URL.
 
 To add input fields, click the _Add Fields_ button, then select the type of field you need.
 
@@ -57,12 +57,13 @@ Zapier includes two types of fields: standard fields, which work much like other
 
 For input fields, select the default _Field_ type, then add:
 
-- **Key**: The field key, ideally using the same key as your API expects for this field
-- **Label**: A human friendly name for this field
-- **Required**: Check if this field is required for successful API authentication
-- **Type**: Choose the field type, either _string_ (default) for plain text or _password_ for obscured text
-- **Help Text**: Enter a description to help users know what data to enter in this field, especially if the info is hard to find such as team names or subdomain info. Use [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) to format the text, and include a link to your app's settings or documentation if needed to help users locate the data.
-- **Default Value**: For optional fields, enter text that can be used by default if users don't enter a value. For required fields, enter text that can be used for authentication, but that won't be used in subsequent Zap steps.
+- **Key**: The internal name for your field, used to reference this field in Zapier API calls. For convenience, use the same key as your API uses for this field.
+- **Label**: A human-friendly name for this field that will be shown to users in the authentication form.
+- **Required? (checkbox)**: Check if this field is required for successful authentication.
+- **Type**: (optional) Usually String, but select "Password" to obscure text for secret values.
+- **Help Text**: Add [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) formatted details on what users should enter in this field, optionally with a link to your site to help users find the data.
+- **Input Format**: (optional) Help users figure out exactly what piece of data you need them to enter. For example, for a subdomain, https://{{input}}.yourdomain.com/.
+- **Default Value**: (optional) If appropriate, for optional fields, enter text that can be used by default if users don't enter a value. For required fields, enter text that can be used for authentication, but that won't be used in subsequent Zap steps.
 
 ![Edit or delete input fields](https://cdn.zapier.com/storage/photos/a5660976799c62274adfd7fe620fe96c.png)
 
