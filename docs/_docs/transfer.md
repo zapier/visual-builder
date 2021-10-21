@@ -119,9 +119,11 @@ const getList = async (z, bundle) => {
   ```
 Example of a trigger perform. This API uses the page/offset approach to paging. Here we check `bundle.meta.page` to differentiate handling for a Transfer request vs. a regular Zap handling which just returns the most recent objects.
 
-### References
+## References
 
 - [CLI Reference on Pagination](https://zapier.github.io/zapier-platform/#whats-the-deal-with-pagination-when-is-it-used-and-how-does-it-work)
+- [User Help Docs for Transfer](https://zapier.com/help/create/other-functions/bulk-import-data-into-apps-with-transfer)
+- [Viewing Transfer History](https://zapier.com/help/manage/history/view-and-manage-your-transfer-history)
 
 ## Considerations & Known Limitations
 
