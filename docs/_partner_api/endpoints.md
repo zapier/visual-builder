@@ -1,13 +1,125 @@
 ---
-title: Endpoints
-order: 6
+title: Partner API
+order: 3
 layout: post-toc
 redirect_from: /partner_api/
 ---
 
-# Endpoints
+# Partner API
 
-## GET /v1/apps
+## Introduction
+The Partner API is the best tool for complete style control over a user's Zapier experience within your app. Essentially, it lets you customize how you present Zapier within your product without sacrificing your app's look, feel, and flow. 
+
+Think of it as a native Zapier integration, helping you showcase your best Zapier-powered workflows where it's most helpful to your users (within the flow of your tool). You can customize styling, streamline Zap set-up for users, expose relevant Zap information, and more! 
+
+
+With the Partner API, you can:
+
+- Get a list of all the apps available in Zapier’s app directory so you can power your app directory and show your users all the integration possibilities with your Zapier integration.
+- Have complete style control over how you present Zap templates in your product. The Partner API gives you access to the raw Zap Template data so you can give your users access to your Zap template with your product’s style, look and feel.
+- Get access to all your Zap templates and give your users the ability to search to quickly find the one they need.
+- Streamline Zap setup by pre-filling fields on behalf of your users.
+- Show users the Zaps they have set up from right within your product keeping them on your site longer and giving them complete confidence in their Zapier integration.
+- Embed our Zapier Editor to allow your users to create new Zaps and modify existing ones, without needing to leave your product.
+
+**Before you start**
+This API requires approval from Zapier’s team. [Click here to fill out a form to request access.](https://zapier.typeform.com/to/atnWuF)
+
+## Authentication
+
+There are two ways to authenticate with the Partner API.
+
+1. Your application's `client_id` which you will receive once you are approved for access to the API
+2. A user's access token
+
+Which authentication method you should use depends on which endpoint(s) you are using. Review each endpoint's documentation to understand which parameters are required.
+
+> Note: while we do generate a `client_secret`, the type of grant we use (`implicit`) doesn't need it so it's not something we provide.
+
+### Access Token
+
+For resources that require a valid access token you can use the [OAuth2 protocol](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2). At the moment, we only permit the [`implicit`](https://tools.ietf.org/html/rfc6749#section-4.2) grant type. Should your use case require a different grant type [send us your request](mailto:partners@zapier.com). There's also a [suggested workaround on how to work with an implicit oauth flow below](#workaround-for-implicit-only).
+
+#### Procuring a Token
+
+Construct the following URL, and redirect the user to authorize your application:
+
+```
+https://zapier.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}
+```
+
+|      Parameter      | Requirement | Explanation                                                                                                                                                                                                         |
+| :-----------------: | :---------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|    **client_id**    |  Required   | Your application ID.                                                                                                                                                                                                |
+|  **redirect_uri**   |  Required   | The URI you provided in the sign-up form. If you need to modify this, you'll need to [send us a request](mailto:partners@zapier.com).                                                                               |
+|  **response_type**  |  Required   | Use `token`.                                                                                                                                                                                                        |
+|      **scope**      |  Optional   | Space (`%20`) separated values. See each resource for their required scope, if any. This (and all other params) should be properly [url encoded](https://en.wikipedia.org/wiki/Percent-encoding).                   |
+| **approval_prompt** |  Optional   | One of `auto` or `force`. Use `auto` if the second authorization (before expiration of previous token) should not prompt the user to re-authorize. Use `force` if the user should authorize your application again. |
+|      **state**      |  Optional   | A unique string to help your application guard against XSRF.                                                                                                                                                        |
+
+**Example Prompt**
+
+![Example OAuth2 Authorization Prompt](https://cdn.zapier.com/storage/photos/d926ea5ba6ca80c184a45cf3f5e420fb.png)
+
+#### Receiving the Token, or Error
+
+If the user cancels, or approves the authorization the user will be redirected to your `redirect_uri` with the following example urls:
+
+**Approved**
+
+```
+http://your.redirect.url/#access_token=iuqhw8egojqenduvybtoken_type=Bearer&expires_in=36000&scope=zap
+```
+
+**Cancelled**
+
+```
+http://your.redirect.url/?error=access_denied
+```
+
+Your application should use JavaScript to parse the hash parameter and use the token as needed. The **access token will not expire**. If ever invalid, however, provide the user with the authorize flow once more. In the `implicit` grant type, there are no refresh tokens. You can use a hidden iframe with `approval_prompt=auto`, or ask the user to authorize once more, to receive new tokens.
+
+#### Using the token:
+
+Preferred use of the tokens is via an HTTP Authorization Header.
+
+```bash
+curl -H "Authorization: Bearer {token}" "https://api.zapier.com/v1/zaps"
+```
+
+#### Workaround for Implicit Only
+
+While we consider and implement other OAuth flows, the following is a suggested workaround for working with the implicit OAuth flow. A sequence diagram is provided for the example:
+
+![](https://cdn.zapier.com/storage/photos/505e5f9b46d6f45822ae4090f7dcec8d.png)
+
+<div style="display: none">
+
+<!-- Recreate using https://mdp.tylingsoft.com/ and take a screenshot -->
+
+```mermaid
+sequenceDiagram
+    participant Your App's Dashboard
+    participant Zapier
+    participant Your App's Proxy (Read/POST Token)
+    participant Your App's Backend
+
+
+    Your App's Dashboard ->> Zapier: Redirect user to /oauth/authorize
+    Zapier -->> Your App's Proxy (Read/POST Token): Once approved we'll redirect to redirect_uri
+
+    Your App's Proxy (Read/POST Token) ->> Your App's Backend: Read token in URL fragment, and POSTs token to backend
+    Your App's Backend-->> Your App's Proxy (Read/POST Token): On 200 success
+    Your App's Proxy (Read/POST Token) ->> Your App's Dashboard: Redirect user back to the dashboard
+```
+
+</div>
+
+The idea is to use an intermediate page that reads the access token from the URL fragment. An example like so: `https://your.app/your/redirect_uri#access_token=THE_USER_ACCESS_TOKEN`. Then the page would `POST` to your backend the access token. If you created a popup, you can also use a `postMessage` to pass the access token to the main page. Ultimately, you'll want to save the token to your backend for the signed in user. Once the backend returns a successful save, then redirect the user (or close the popup) back to the page you'd like the user to interact with your page and uses the access token.
+
+## Endpoints
+
+### GET /v1/apps
 
 |            URL             | Protected By |
 | :------------------------: | :----------: |
@@ -107,7 +219,7 @@ curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&per_page=5"
 }
 ```
 
-## GET /v1/zap-templates
+### GET /v1/zap-templates
 
 |                 URL                 | Protected By |
 | :---------------------------------: | :----------: |
@@ -210,7 +322,7 @@ curl -H "Authorization: Bearer {token}" \
   -L "https://api.zapier.com/v1/zap-templates?client_id=${client_id}&limit=20&offset=20"
 ```
 
-## GET /v1/zaps
+### GET /v1/zaps
 
 |            URL             | Protected By | Required Scopes |
 | :------------------------: | :----------: | :-------------: |
@@ -352,7 +464,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
 }
 ```
 
-## GET /v1/profiles/me
+### GET /v1/profiles/me
 
 |            URL                    | Protected By | Required Scopes     |
 | :-------------------------------: | :----------: | :-----------------: |
@@ -382,9 +494,9 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 }
 ```
 
-# Data Objects
+### Data Objects
 
-## App
+#### App
 
 | attribute       | type   | notes                                                                                                                                                 |
 | --------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -426,7 +538,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 }
 ```
 
-## Profile
+#### Profile
 
 | attribute           | type            | notes                                                 |
 | ------------------- | --------------- | ----------------------------------------------------- |
@@ -450,7 +562,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 }
 ```
 
-## Zap
+#### Zap
 
 | attribute       | type            | notes                                                 |
 | --------------- | --------------- | ----------------------------------------------------- |
@@ -473,7 +585,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 
 ```
 
-## Zap Step
+#### Zap Step
 
 | attribute   | type   | notes                                                                      |
 | ----------- | ------ | -------------------------------------------------------------------------- |
@@ -489,7 +601,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 }
 ```
 
-## Zap Template
+#### Zap Template
 
 | attribute             | type       | notes                                                                                                                         |
 | --------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -521,3 +633,136 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
   "url": "https://zapier.com/apps/inside-sales-box/integrations/zoho-crm/12084/add-new-leads-created-in-inside-sales-box-to-zoho-crm"
 }
 ```
+  
+## Embedding the Zap Editor
+By embedding our Zap Editor in your product, your users can create and edit their Zaps without leaving your product.
+
+### Creating a new Zap
+Use the Partner API to query the public Zap templates featuring your integration (using the `/zap-templates` endpoint) and feature them in your product. When a user chooses a Zap template they’d like to try, use the `create_url` value as the source to load in an embedded frame such as:
+  
+`<iframe src="https://zapier.com/partner/embed/trello/create/113"></iframe>`
+  
+Where https://zapier.com/partner/embed/trello/create/113 is the `create_url` value of the Zap template.
+  
+Optionally, you can add additional parameters to the `create_url` to prefill the user’s Zap with custom values (e.g., specifying a workspace for the trigger to filter by).
+  
+### Editing a Zap
+Use the Partner API to load a user’s Zaps (using the /zaps endpoint). When the user chooses to open or edit a Zap use the the `url` value of the Zap as the source of an embedded frame such as:
+
+`<iframe src="https://zapier.com/app/editor/123456"></iframe>`
+
+Where https://zapier.com/app/editor/123456 is the `url` of the Zap to be edited.
+
+Additionally, if you’d prefer, you can open these urls in a separate window, new tab, or popup just as well.
+  
+### Prefill Options
+
+Always link the user with the `create_url` (available in a [Zap template object](/partner_api/endpoints#zap-template)) in order to create the Zap. Optionally, you can add additional parameters to the `create_url` so that the user's Zap is prefilled with the provided custom values.
+
+> Note: You will need to know the fields that your app requires per step. You can find the fields as definied in your Zapier integration.
+
+Each parameter is in a flattened dictionary/object syntax. For example an object: `{a: {b: 2}}` would be flattened to: `a__b=2`. This allows you to provide countless prefills onbehalf of the user.
+
+**Example**
+
+Prefill Trello's board ID (field: `board`) in the second step of the Zap template:
+
+`https://zapier.com/app/editor/template/2405?steps__1__params__board=12345`
+
+Here's what it would look like in the editor:
+
+![](https://cdn.zapier.com/storage/photos/1f3544e43787d1d2e0b528b08b909dcb.png)
+
+If you'd like to provide a label for the value (e.g. a Board's name) you can do so by passing an additional parameter:
+
+`https://zapier.com/app/editor/template/2405?steps__1__params__board=12345&steps__1__meta__parammap__board=My+Board`
+
+![](https://cdn.zapier.com/storage/photos/86b71a90bc69e5b13024c08f1da4b812.png)
+
+## Errors
+Zapier uses HTTP response codes to indicate the success or failure of an API request.
+
+| Code    | Status            | Explanation                                                                |
+| ------- | ----------------- | -------------------------------------------------------------------------- |
+| **200** | OK                | Successful request.                                                        |
+| **400** | Bad Request       | Invalid request, or invalid parameters .                                   |
+| **403** | Authentication    | Not authorized.                                                            |
+| **404** | Not Found         | The resource requested was not found.                                      |
+| **429** | Too Many Requests | Too many requests were performed within a window of time. Try again later. |
+| **5xx** | Server Error      | A fatal error occurred while processing the request. Try again.            |
+
+All errors will be JSON object with a String array of errors:
+
+```json
+{
+  "errors": ["Malformed request"]
+}
+```
+  
+## Changelog
+  
+### 2021-08-03
+
+#### Added attribute to `v1/zap-tamplates`
+The endpoint `/v1/zap-templates` exposes the `uuid` attribute to each step. This attribute is a UUID v4 string.
+
+
+### 2021-07-29
+#### Added `v1/profiles/me`
+The endpoint return information about the user whose `access_token` is authorized.  
+Check the endpoint [documentation](https://platform.zapier.com/partner_api/endpoints#get-v1profilesme) for the payload structure.
+
+#### Added pagination to `v1/zaps`
+The endpoint `/v1/zaps` supports `limit`/`offset` query parameters to paginate the results.  
+`count`/`next`/`previous` have been added to the response payload.
+
+### 2021-06-01
+[DEPRECATION] After July 5, 2021, the endpoint `v1/zap-template/me` will no longer exist.
+
+### 2021-05-13
+
+#### Added attributes to existing endpoint payloads
+
+The endpoint `/v1/apps` exposes the `uuid` attribute for each app that is returned. This attribute is a UUID v4 string.
+
+The endpoint `/v1/zap-templates` exposes the `label` attribute to each step. A `null` placeholder value is used if the label is unable to be resolved.
+
+#### Updated example endpoint payloads
+
+The example payloads for endpoints `/v1/apps` and `/v1/zap-templates` have been updated to reflect these new attributes.
+
+### 2021-01-14
+
+#### Introducing rate limiting
+
+The endpoints are now rate limit protected. The limit is set to 9,000 requests per hour for an individual endpoint.
+
+### 2018-05-31
+
+#### New `/apps` endpoint
+
+This is a new endpoint that returns a list of apps in Zapier's App Directory.
+
+### 2018-03-19
+
+#### Updated `/zap-templates` and `/zap-templates/me`
+
+These endpoints now accept an `offset` parameter to support pagination through results.
+
+### 2018-02-12
+
+#### Faster `/zap-templates` lookup.
+
+Sub-second responses to the `/v1/zap-templates` even when requesting up to 100 Zap templates.
+
+### 2017-11-01
+
+#### Access tokens never expire.
+
+After security review, the access tokens granted **will no longer expire**. This may change in the future, however, based on endpoints provided by the API. In that event, we expect API consumers to provide the user with the authorize endpoint to get a fresh access token.
+
+### 2017-10-16
+
+####  `/zaps`
+
+The endpoint will now return **all** Zaps regardless of the [Zapier CLI App's version](https://github.com/zapier/zapier-platform-cli) that was used when creating the Zap.
