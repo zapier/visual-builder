@@ -2,7 +2,13 @@
 title: Partner API
 order: 3
 layout: post-toc
-redirect_from: /partner_api/
+redirect_from: 
+  - /partner_api/authentication
+  - /partner_api/examples
+  - /partner_api/changelog
+  - /partner_api/errors
+  - /partner_api/endpoints
+  - /partner_api/best-practices
 ---
 
 # Partner API

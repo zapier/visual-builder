@@ -2,7 +2,8 @@
 title: Elements
 order: 2
 layout: post
-redirect_from: /partner_api/
+redirect_from: 
+  - /partner_api/embedding
 ---
 
 # Elements
