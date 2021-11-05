@@ -1,11 +1,14 @@
 ---
-title: Introduction
+title: Overview
 order: 1
 layout: post
-redirect_from: /partner_api/
+redirect_from: 
+  - /embed/
+  - /partner_api/
+  - /partner_api/introduction
 ---
 
-# Introduction
+# Overview
 
 By embedding Zapier in your product, you can create a simple end-to-end user experience, helping your customers discover available integrations within your product and letting them manage their workflows over time—without ever having to leave your app.
 
