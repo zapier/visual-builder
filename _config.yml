@@ -40,7 +40,7 @@ collections:
   partner_success_stories:
     output: true
     permalink: /:collection/:name
-  partner_api:
+  embed:
     output: true
     permalink: /:collection/:name
   conversion:
@@ -95,6 +95,6 @@ defaults:
       layout: default
   - scope:
       path: ""
-      type: "partner_api"
+      type: "embed"
     values:
       layout: default
