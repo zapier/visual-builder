@@ -1,7 +1,7 @@
 ---
 title: Elements
 order: 2
-layout: post
+layout: post-toc
 redirect_from: 
   - /partner_api/embedding
 ---
