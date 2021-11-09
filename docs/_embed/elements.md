@@ -20,6 +20,9 @@ A customized version of Zapier’s App Directory for users to search and build n
 
 Open the [App Directory Element generator](https://zapier.com/partner/embed/app-directory/create) and type in your app's name. Using the sidebar panel in the tool, you can change the theme, add an introduction, include a search bar, display (or exclude) popular apps and categories, showcase your Zap templates, and more! When it's ready, you generate the correct codes and add them anywhere on your site. 
 
+> If you prefer to have a video overview of the App Directory Element, see below
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4-SkPIV1L84" title="Embedding the App Directory element video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Zap Template Element
 
 ![](https://cdn.zapier.com/zapier/images/partners/in-your-product-wave.png)
@@ -72,6 +75,9 @@ You can load templates asynchronously (without blocking the rest of your page’
 > *Note:* The `html_id` parameter must point to a valid element `id` on the page you wish to be the direct parent of the embed.
 
 Using React or another client-side rendering library? See documentation on how to integrate with these here: [https://platform.zapier.com/partners/zap-templates#support-for-react](https://platform.zapier.com/partners/zap-templates#support-for-react).
+
+> If you prefer to have a video overview of the Zap Template Element, see below
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xWwECaAfdPo" title="Embedding the Zap Template element video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Zap Manager Element
 ![](https://zapier.com/partner/_next/image?url=%2Fpartner%2Fimg%2Fzap-manager%2Fpreview2-dark-large.png&w=1920&q=75)
