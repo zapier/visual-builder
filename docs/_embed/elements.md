@@ -13,16 +13,14 @@ Elements are prebuilt UI components that offer the quickest—and easiest—way 
 
 Our Element generators let you customize the visual design and features of Zapier you want to include, and generate JavaScript code snippets that can be copied and pasted directly into your site. No programming experience is required!
 
-## Elements
-
-### App Directory Element
+## App Directory Element
 ![](https://zapier.com/partner/_next/static/image/public/img/app-directory-page/app-directory-anydo.345cf1d1f5b0808e6994ef0cf84aad0f.png?w=1080&q=75)
 
 A customized version of Zapier’s App Directory for users to search and build new Zaps with your Zapier integration. 
 
 Open the [App Directory Element generator](https://zapier.com/partner/embed/app-directory/create) and type in your app's name. Using the sidebar panel in the tool, you can change the theme, add an introduction, include a search bar, display (or exclude) popular apps and categories, showcase your Zap templates, and more! When it's ready, you generate the correct codes and add them anywhere on your site. 
 
-### Zap Template Element
+## Zap Template Element
 
 ![](https://cdn.zapier.com/zapier/images/partners/in-your-product-wave.png)
 
@@ -75,7 +73,7 @@ You can load templates asynchronously (without blocking the rest of your page’
 
 Using React or another client-side rendering library? See documentation on how to integrate with these here: [https://platform.zapier.com/partners/zap-templates#support-for-react](https://platform.zapier.com/partners/zap-templates#support-for-react).
 
-### Zap Manager Element
+## Zap Manager Element
 ![](https://zapier.com/partner/_next/image?url=%2Fpartner%2Fimg%2Fzap-manager%2Fpreview2-dark-large.png&w=1920&q=75)
 
 Our Zap Manager Element lets your users see the Zaps they've set up with your app directly inside your product. They can view their Zaps and see their status at a glance without having to go through Zapier first.
