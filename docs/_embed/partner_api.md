@@ -624,7 +624,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 
 ```json
 {
-  "create_url": "https://zapier.com/app/editor/template/10127?utm_campaign=Zap%20Templates%20Partners%20API&embedded=true&referrer=FacebookLeadsAPI&utm_source=partners&utm_medium=api&selected_apis=FacebookLeadsAPI,MailchimpCLIAPI@1.0.10",
+  "create_url": "https://zapier.com/webintent/create-zap?template=10127?utm_campaign=Zap%20Templates%20Partners%20API&embedded=true&referrer=FacebookLeadsAPI&utm_source=partners&utm_medium=api&selected_apis=FacebookLeadsAPI,MailchimpCLIAPI@1.0.10",
   "description": "<p>Facebook Lead Ads are an...",
   "description_plain": "Facebook Lead Ads ... ",
   "description_raw": "**Facebook Lead Ads** are an ...",
@@ -673,7 +673,7 @@ Each parameter is in a flattened dictionary/object syntax. For example an object
 
 Prefill Trello's board ID (field: `board`) in the second step of the Zap template:
 
-`https://zapier.com/app/editor/template/2405?steps__1__params__board=12345`
+`https://zapier.com/webintent/create-zap?template=2405?steps[1][params][board]=12345`
 
 Here's what it would look like in the editor:
 
@@ -681,7 +681,7 @@ Here's what it would look like in the editor:
 
 If you'd like to provide a label for the value (e.g. a Board's name) you can do so by passing an additional parameter:
 
-`https://zapier.com/app/editor/template/2405?steps__1__params__board=12345&steps__1__meta__parammap__board=My+Board`
+`https://zapier.com/webintent/create-zap?template=2405?steps[1][params][board]=12345&steps__1__meta__parammap__board=My+Board`
 
 ![](https://cdn.zapier.com/storage/photos/86b71a90bc69e5b13024c08f1da4b812.png)
 
