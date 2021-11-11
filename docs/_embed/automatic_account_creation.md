@@ -10,7 +10,7 @@ redirect_from: /partner_api/
 
 Our Automatic Account Creation feature will automatically create an account for first-time Zapier users when they try to set up Zaps through your app, removing the hassle of having to create a new account with a new service.
 
-THe following requirements exist for partners who are interested in leveraging Automatic Account Creation. A partner must support the following:
+The following requirements exist for partners who are interested in leveraging Automatic Account Creation. A partner must support the following:
 
 - OAuth2 Protocol
 - OpenID Connect protocol
