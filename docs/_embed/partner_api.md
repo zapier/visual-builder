@@ -663,27 +663,27 @@ Additionally, if you’d prefer, you can open these urls in a separate window, n
   
 ### Prefill Options
 
-Always link the user with the `create_url` (available in a [Zap template object](/partner_api/endpoints#zap-template)) in order to create the Zap. Optionally, you can add additional parameters to the `create_url` so that the user's Zap is prefilled with the provided custom values.
+Prefills allow you to define the fields on behalf of the user, thus simplying the experience of setting up their Zap.
 
-> Note: You will need to know the fields that your app requires per step. You can find the fields as definied in your Zapier integration.
+You'll use the `create_url` (available in a [Zap template object](/partner_api/endpoints#zap-template)) in order to create the Zap. Next, you will add parameters to the `create_url` so that the user's Zap is prefilled with the provided custom values.
 
-Each parameter is in a flattened dictionary/object syntax. For example an object: `{a: {b: 2}}` would be flattened to: `a__b=2`. This allows you to provide countless prefills onbehalf of the user.
+> Note: You will need to know the fields that your app requires per step. You can find the fields as defined in your Zapier integration.
 
 **Example**
 
-Prefill Trello's board ID (field: `board`) in the second step of the Zap template:
+You can prefill the name of a Trello card (field: `name`) in the second step of the Zap template:
 
-`https://zapier.com/webintent/create-zap?template=2405?steps[1][params][board]=12345`
+`https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=hello`
 
 Here's what it would look like in the editor:
 
-![](https://cdn.zapier.com/storage/photos/1f3544e43787d1d2e0b528b08b909dcb.png)
-
-If you'd like to provide a label for the value (e.g. a Board's name) you can do so by passing an additional parameter:
-
-`https://zapier.com/webintent/create-zap?template=2405?steps[1][params][board]=12345&steps__1__meta__parammap__board=My+Board`
-
-![](https://cdn.zapier.com/storage/photos/86b71a90bc69e5b13024c08f1da4b812.png)
+![](https://cdn.zappy.app/5db273249f668a1520e1632cf331a141.png)
+  
+You can prefill multiple values for the user. In this example `name` and `desc` are prefilled
+  
+`https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=yoyoyo&steps[1][params][desc]=yeehaw`
+  
+![](https://cdn.zappy.app/35882f8b86dade9e41c13cdbd0baf03c.png)
 
 ## Errors
 Zapier uses HTTP response codes to indicate the success or failure of an API request.
