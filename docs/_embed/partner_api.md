@@ -624,7 +624,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 
 ```json
 {
-  "create_url": "https://zapier.com/webintent/create-zap?template=10127?utm_campaign=Zap%20Templates%20Partners%20API&embedded=true&referrer=FacebookLeadsAPI&utm_source=partners&utm_medium=api&selected_apis=FacebookLeadsAPI,MailchimpCLIAPI@1.0.10",
+  "create_url": "https://zapier.com/webintent/create-zap?template=10127&utm_campaign=Zap%20Templates%20Partners%20API&embedded=true&referrer=FacebookLeadsAPI&utm_source=partners&utm_medium=api&selected_apis=FacebookLeadsAPI,MailchimpCLIAPI@1.0.10",
   "description": "<p>Facebook Lead Ads are an...",
   "description_plain": "Facebook Lead Ads ... ",
   "description_raw": "**Facebook Lead Ads** are an ...",
@@ -681,7 +681,7 @@ Here's what it would look like in the editor:
   
 You can prefill multiple values for the user. In this example `name` and `desc` are prefilled
   
-`https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=yoyoyo&steps[1][params][desc]=yeehaw`
+`https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=yoyoyo&steps[1][meta][parammap][desc]=yeehaw`
   
 ![](https://cdn.zappy.app/35882f8b86dade9e41c13cdbd0baf03c.png)
 
