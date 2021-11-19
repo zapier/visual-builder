@@ -681,10 +681,16 @@ Here's what it would look like in the editor:
   
 You can prefill multiple values for the user. In this example `name` and `desc` are prefilled
   
-`https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=yoyoyo&steps[1][meta][parammap][desc]=yeehaw`
+`https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=yoyoyo&steps[1][params][desc]=yeehaw`
   
 ![](https://cdn.zappy.app/35882f8b86dade9e41c13cdbd0baf03c.png)
-
+  
+You can provide a label for prefill dropdowns as we won't fetch all of the pages of choices until the user opens the dropdown:
+  
+`https://zapier.com/webintent/create-zap/?template=113&steps[1][params][board]=1234&steps[1][meta][parammap][board]=Test`
+  
+![](https://cdn.zappy.app/fd9fd4872773018bfd15dfebea0795a4.png)
+  
 ## Errors
 Zapier uses HTTP response codes to indicate the success or failure of an API request.
 
