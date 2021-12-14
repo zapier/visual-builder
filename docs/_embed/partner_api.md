@@ -691,6 +691,20 @@ You can provide a label for prefill dropdowns as we won't fetch all of the pages
   
 ![](https://cdn.zappy.app/fd9fd4872773018bfd15dfebea0795a4.png)
   
+### postMessages
+If you decide to embed the Zapier Editior within your product you can listen to <code>postMessage</code> which can help you improve the interactivity with the iframe (e.g. automatically close the iframe modal.)
+  
+The messages available include:
+- <code>zap:unpause</code> = Zap turned on
+- <code>zap:unpause:done</code> = Zap turned on success
+- <code>zap:unpause:fail</code> = Zap turned on failure
+- <code>zap:pause</code> = Zap turned off
+- <code>zap:pause:done</code> = Zap turned off success
+- <code>zap:pause:fail</code> = Zap turned off failure
+  
+### Turning off a Zap
+The API does not currently have an endpoint to turn off/on a user's Zaps. If your Zapier app uses Webhook Subscriptions, you can send a <code>DELETE</code> to the webhook subscription URL and that will then pause/turn off a Zap.
+  
 ## Errors
 Zapier uses HTTP response codes to indicate the success or failure of an API request.
 
