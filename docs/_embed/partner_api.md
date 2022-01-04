@@ -347,6 +347,8 @@ Available parameters to the Zaps resource:
 | parameter                   | requirement | notes                                                                                                                                      |
 | --------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **params\_\_{KEY}={VALUE}** | Optional    | Return Zaps that have a specific key/value set in the params (settings) of the Zap. **Note the `app` parameter must be included as well.** |
+| **limit** | Optional | (defaults to 5, max of 100) Limits the number of returned items |
+| **offset** | Optional | (defaults to 0) the number of Zaps to skip before beginning to return the Zaps. The default value of 0, which is the offset of the first item. |
 
 **Example Requests**
 
