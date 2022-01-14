@@ -18,7 +18,7 @@ Area | Description
 <b><u>M</u></b>arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
 Connected <b><u>A</u></b>ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
 <b><u>S</u></b>tats | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.
-<b><u>T</u></b> - Zap History | Data in your Zap History, produced by live Zaps. These are more likely to block you from going public. The "T" checks are named as such for historical reasons. Zapier now shows tasks in the Zap History.
+<b><u>T</u></b> - Zap History | Data from runs in your Zap History, produced by live (enabled) Zaps. These are more likely to block you from going public. The "T" checks are named as such for historical reasons. Zapier now shows tasks in the Zap History.
 <b><u>U</u></b>ser | Things in the developer's (your) account, such as Terms of Service acceptance.
 <b><u>L</u></b>ifecycle | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).
 <b><u>Z</u></b>ap | Things related to Zaps, such as the trigger samples you pulled into the Zap editor.
@@ -777,7 +777,9 @@ migrate users on older versions to a newer version.
 
 There must be at least one successful Zap run for each visible trigger/action/search in your app.
 
-To ensure you have run a live test of every visible trigger/action/search, create a Zap for each one, turn it on, and trigger a Zap run while it's on. This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts. 
+To ensure you have run a test of every visible trigger/action/search, create a Zap for each one, turn it on, and trigger a Zap run while it's on.
+
+This check and all other T checks are performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
 
 Learn more about the Zap History [here](https://zapier.com/help/manage/history/view-and-manage-your-zap-history).
 
@@ -792,9 +794,9 @@ object before. It can be any sort of string, but it's important that it's unique
 If your object is returned with a differently named `id` field (such as
 `contact_id`), write code to rename it.
 
-This check is similiar to `D010`. But unlike `D010`, this one validates the live
-polling results in the [Zap History](https://zapier.com/app/history) instead of the static samples in your
-integration definition.
+This check is similiar to `D010`. This check validates the live
+polling results in the [Zap History](https://zapier.com/app/history), while `D010`
+validates the static samples in your integration definition.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -824,8 +826,9 @@ To ensure Zapier can correctly parse dates and times, you should always use ISO-
 format to represent dates or times. Timezone info should also be present if it
 contains time.
 
-Unlike `D023`, this check validates the data in the [Zap History](https://zapier.com/app/history)
-instead of static samples.
+This check is similiar to `D023`. This check validates the data in the
+[Zap History](https://zapier.com/app/history), while `D023` validates
+the static samples in your integration definition.
 
 ✘ examples of an **incorrect** implementation:
 
@@ -861,10 +864,11 @@ instead of static samples.
 
 ## T004 - Static Sample Contains a Subset of Keys from Live Result
 
-Static samples provide Zapier users and partners a way to preview and map the fields
-without actually making a request to your API. For a better UX, it's important that
-static samples truthfully reflect the live results pulled from your API, which users
-can see in their Zap History.
+Static samples provide Zapier users and partners a way to preview and map fields
+for a trigger or action without actually making a request to your API. It's
+important that static samples reflect the real results from these calls as seen
+in the Zap History. Errors occur when a Zap uses a field from static sample that
+is not provided once the Zap is running.
 
 This check requires the static sample you define for each trigger/action/search to
 contain a subset of the keys in the latest run in your [Zap History](https://zapier.com/app/history)
@@ -893,8 +897,8 @@ live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ## T005 - Live Trigger Result Respects Output Field Definition
 
 This check takes the latest run from the [Zap History](https://zapier.com/app/history)
-and verifies whether the trigger result conforms to the output fields if you define them
-for your integration. The specific checks are:
+and verifies whether the trigger result conforms to the output fields
+for the trigger in your integration (if defined). The specific checks are:
 
 * "required" fields must be in the trigger result
 * field values in the trigger result match their field type
@@ -927,16 +931,21 @@ See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 ## T006 - Polling Sample Contains a Subset of Keys from Live Result
 
-For hook triggers, we require you to provide a Perform List URL so that users can
-pull a live sample in the Zap editor. This is called a Polling Sample, and is created
+For REST Hook triggers, we require you to provide a Perform List URL (check `D006`) so that users can
+retrieve a real data sample in the Zap editor. This is called a polling sample, and is created
 when you test the trigger in a Zap before turning it on.
 
-Errors occur when a Zap uses a field from the Polling Sample that ends up not being
-provided by the actual hook payload once the Zap is running. To ensure this doesn't
-happen, this check compares the latest item in your
-[Zap History](https://zapier.com/app/history) with the selected Polling Sample in
-the corresponding Zap. For it to pass, the selected Polling Sample must contain a
-subset of the keys returned in the latest live result in the Zap History.
+Errors occur when a Zap uses a field from the polling sample that is not
+provided by the hook payload sent once the Zap is running.
+
+To ensure this doesn't happen, this check compares the latest item in the
+[Zap History](https://zapier.com/app/history) with the selected polling sample in
+the corresponding Zap. For it to pass:
+
+- There must be a Zap which is using the trigger
+- The Zap must have at least one Zap run (the most recent run will be used)
+- The trigger must have been tested in the Zap editor via the Perform List method to retrieve a polling sample
+- The polling sample should have the same data keys, or a subset of keys, compared to those available in the Zap run data.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -969,15 +978,15 @@ You must agree to the latest Developer Terms of Service in order to proceed. Go 
 
 ## Z001 - Polling Sample Respects Output Field Definition
 
-For hook triggers, we require you to provide a Perform List URL so that users can
-pull a live sample in the Zap editor. This is called a Polling Sample.
+For REST Hook triggers, we require you to provide a Perform List URL (check `D006`) so that users can
+pull a live sample in the Zap editor. This is called a polling sample.
 
 This check takes the latest polling sample from one of the integration admins' Zaps
-and verifies if the sample conforms to the output fields if you defined them for
-your integration. The specific checks are:
+and verifies that the sample conforms to the output fields for this trigger in
+your integration (if defined). The specific checks are:
 
 * "required" fields must be in the polling sample
-* field values in the trigger result match their field type
+* field values in the trigger result must match their field type
 
 ✘ an example of an **incorrect** implementation:
 
