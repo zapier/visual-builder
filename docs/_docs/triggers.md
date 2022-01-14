@@ -15,7 +15,7 @@ Triggers are how your app's users can start automated workflows whenever they ad
 
 As triggers only watch for new data and typically need to send no or little data to the app, they're often quicker to setup than Zapier action steps. Zapier can watch for any new or updated item through your API—or optionally, you can include [input fields](https://platform.zapier.com/docs/input-designer) for users to enter filters, tags, and other details to filter through new data and watch for the items they want.
 
-> **Note**: Triggers are displayed in the order they are added to Zapier integrations, so be sure to add your app’s most important triggers first.
+> **Note**: Triggers are initially displayed in the order they are added to Zapier integrations, so be sure to add your app’s most important triggers first.
 
 ## Trigger Types
 
@@ -39,7 +39,7 @@ Add each of the following to your trigger:
 - **Name**: A human friendly plain text name for this trigger, typically with a verb such as _New_ or _Updated_ followed by the name of the item this watches for in your app. Shown inside the Zap editor and on Zapier's app directory marketing pages.
 - **Noun**: A single noun that describes what this trigger watches for, used by Zapier to auto-generate text in Zaps about your trigger.
 - **Description**: A plain text sentence that describes what the trigger does and when it should be used. Shown inside the Zap editor and on Zapier's app directory marketing pages.
-- **Visibility Options**: An option to select when this trigger will be shown. _Important_ is chosen by default, and will show this trigger inside Zap trigger steps by default. Choose _None_ if you want this trigger hidden by default, useful for rarely used triggers. Or, choose _Hidden_ if this trigger should not be shown to users.
+- **Visibility Options**: An option to select when this trigger will be shown. _Important_ is chosen by default. Choose _None_ if the trigger is not important. Or, choose _Hidden_ if this trigger should not be shown to users.
 
 Once the settings are added, click _Save and Continue_ to add the new trigger and save your settings. You can edit the settings any time later with the exception of the create or search option.
 
@@ -161,19 +161,17 @@ You can now make a new Zap using your trigger to test out the trigger live insid
 
 ![Triggers in Zapier](https://cdn.zapier.com/storage/photos/316fc36427a242269ec9118a06f0347a.png)
 
-When users select your app as the trigger step in a Zap, they'll see the triggers marked as _Important_ by default, with every other integration hidden under the _show less common options_ menu.
-
 Triggers are originally listed in the order you add them to your integration. As people use your integration, Zapier will show your integration's most popular triggers first, automatically reordering them based on popularity. You cannot set a trigger to always be in a specific order in your integration's trigger list.
 
 ![Trigger visibility](https://cdn.zapier.com/storage/photos/478830f781668c2f9c6131de63954f1c.png)
 
-You can however change a trigger's importance and thus choose whether it's shown by default or not at any time. Open the trigger in Zapier visual builder, scroll to the bottom of the page to the _Visibility Options_ menu. Select _Important_ to have the trigger show by default, _None_ to have the trigger in the _show less common options_ menu, and _Hidden_ if you want to keep users from being able to use this trigger (often used if the trigger is only used to power dynamic fields).
+You can, however, change a trigger's visibility and thus choose whether it's shown or not at any time. Open the trigger in the Zapier visual builder, and scroll to the bottom of the page to the _Visibility Options_ menu. Select _Hidden_ if you want to keep users from being able to use this trigger (often used if the trigger is only used to power dynamic fields).
 
 ## How to Remove Triggers From a Zapier Integration
 
 ![Delete Trigger from Zapier Integration](https://cdn.zapier.com/storage/photos/188948a918eb589684b1d04c17707a52.png)
 
-If your app no longer supports a trigger, or you wish to fully rebuild one, you can remove it from Zapier anytime. To delete a trigger from an integration, open the Triggers tab in Zapier visual builder, click the gear icon beside the trigger you wish to remove, select _Delete_, and confirm you wish to remove the trigger.
+If your app no longer supports a trigger, or you wish to fully rebuild one, you can remove it from Zapier. To delete a trigger from an integration, open the Triggers tab in Zapier visual builder, click the gear icon beside the trigger you wish to remove, select _Delete_, and confirm you wish to remove the trigger.
 
 You cannot restore deleted triggers, so make sure you select the correct triggers for deletion.
 

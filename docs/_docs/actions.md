@@ -19,7 +19,7 @@ Actions should also return output fields detailing what was created (or found), 
 
 Zapier strongly recommends against action steps that delete or remove data. To prevent data loss, action steps should only add or update data. If you are considering adding a delete action to your app, consider alternative actions for items such as deactivating, unsubscribing, or canceling, instead of deleting items completely.
 
-> **Note**: Actions are displayed in the order they are added to Zapier integrations, so be sure to add your app's most important actions first.
+> **Note**: Actions are initially displayed in the order they are added to Zapier integrations, so be sure to add your app's most important actions first.
 
 # How to Add a New Action to a Zapier Integration
 
@@ -39,7 +39,7 @@ Then add the core details to your action, including:
 - **Name**: A human friendly plain text name for this action, typically with a verb such as _Add_ or _Create_ followed by the name of the item this action will create in your app. Shown inside the Zap editor and on Zapier's app directory marketing pages.
 - **Noun**: A single noun that describes what this action creates, used by Zapier to auto-generate text in Zaps about your action.
 - **Description**: A plain text sentence that describes what your action does to help users understand why they should use this action. Shown inside the Zap editor and on Zapier's app directory marketing pages.
-- **Visibility Options**: An option to select when this action will be shown. _Important_ is chosen by default, and will show this action inside Zap action steps by default. Choose _None_ if you want this action hidden by default, useful for rarely used actions. Or, choose _Hidden_ if this action should not be shown to users, helpful if you build a create action solely to pair with a search action but do not want it used otherwise.
+- **Visibility Options**: An option to select when this action will be shown. _Important_ is chosen by default. Choose _None_ if the action is not important. Or, choose _Hidden_ if this action should not be shown to users. This is helpful if you build a create action solely to pair with a search action but do not want it used on its own.
 
 Once the action settings are added, click _Save and Continue_ to add the new action and save your settings. You can edit the settings any time later with the exception of the create or search option.
 
@@ -130,16 +130,16 @@ When users use the search action in a Zap, Zapier will show your core search act
 
 ![Actions inside Zapier](https://cdn.zapier.com/storage/photos/8dc1f3517e530fd079b9f8107e5e993d.png)
 
-Whenever a user selects your app's integration in a Zapier action step, they'll see every create and search action in your integration. Zapier shows create actions that are marked as _Important_ first, followed by search actions marked as _Important_. If users click the _show less common options_ link, they'll then see the remaining actions that weren't marked as important, if any.
+Whenever a user selects your app's integration in a Zapier action step, they'll see every create and search action in your integration. Zapier shows create actions first, followed by search actions.
 
 Actions are originally listed in the order you add them to your integration. As people use your integration, Zapier will show your integration's most popular actions first, automatically reordering them based on popularity.
 
-You change actions' visibility at any time, if you don't want an action to show first. Edit the action, then in the last option on the _Settings_ page, choose _Important_ to have the action show by default, _None_ to hide it behind the _show less common options_ toggle, or _Hidden_ to make this action not usable inside Zapier.
+You change actions' visibility at any time, if you don't want an action to show first. Edit the action, then in the last option on the _Settings_ page, choose _Hidden_ to make this action not usable inside Zapier.
 
 ## How to Remove an Existing Action
 
 ![Remove Zapier action](https://cdn.zapier.com/storage/photos/8e220c4270159ca43b7c1e02036f4a04.png)
 
-You can remove an action at any time from Zapier visual builder's _Actions_ page. Click _Actions_ in the left sidebar, then click the gear beside any action you wish to remove. Select _Delete_, then confirm to remove the action fully.
+You can remove an action from Zapier visual builder's _Actions_ page. Click _Actions_ in the left sidebar, then click the gear beside any action you wish to remove. Select _Delete_, then confirm to remove the action fully.
 
-If you remove an action from a live Zapier integration, this will break existing Zaps. As such, before removing an action, always [create a new major version](https://platform.zapier.com/docs/versions) of your integration, remove the action from the new version, then migrate users to the new version as when adding any other breaking changes to an integration.
+If you remove an action from a live Zapier integration, this will break existing Zaps. As such, before removing an action, always [create a new major version](https://platform.zapier.com/docs/versions) of your integration, remove the action from the new version, then follow best practices for migrating users when introducing breaking changes to an integration.

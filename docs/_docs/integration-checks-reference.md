@@ -488,8 +488,6 @@ New Contact
 
 In order to highlight your most popular steps and give the user a clear
 recommendation of what to use Zapier for, we encourage the use of "important" steps.
-Important steps are shown first in the UI, while non-important steps are shown after
-a "show more" click.
 
 These can be adjusted in the settings for each individual step, either via a
 checkbox (Platform UI) or via the `important` property (Platform CLI).
@@ -502,8 +500,7 @@ checkbox (Platform UI) or via the `important` property (Platform CLI).
 
 In order to highlight your most popular steps and give the user a clear
 recommendation of what to use Zapier for, we encourage a limited number of
-"important" steps. These are shown first in the UI and aren't behind a "show more"
-click.
+"important" steps.
 
 These can be adjusted in the settings for each individual step, either via a
 checkbox (Platform UI) or via the `important` property (Platform CLI).
