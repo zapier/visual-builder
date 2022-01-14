@@ -39,7 +39,7 @@ Add each of the following to your trigger:
 - **Name**: A human friendly plain text name for this trigger, typically with a verb such as _New_ or _Updated_ followed by the name of the item this watches for in your app. Shown inside the Zap editor and on Zapier's app directory marketing pages.
 - **Noun**: A single noun that describes what this trigger watches for, used by Zapier to auto-generate text in Zaps about your trigger.
 - **Description**: A plain text sentence that describes what the trigger does and when it should be used. Shown inside the Zap editor and on Zapier's app directory marketing pages.
-- **Visibility Options**: An option to select when this trigger will be shown. _Important_ is chosen by default. Choose _None_ if the trigger is not important. Or, choose _Hidden_ if this trigger should not be shown to users.
+- **Visibility Options**: An option to select when this trigger will be shown. _Important_ is chosen by default. Choose _None_ if the trigger is not important, or choose _Hidden_ if this trigger should not be shown to users.
 
 Once the settings are added, click _Save and Continue_ to add the new trigger and save your settings. You can edit the settings any time later with the exception of the create or search option.
 

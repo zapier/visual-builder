@@ -460,13 +460,9 @@ If you are using the [Zapier CLI](https://platform.zapier.com/cli_docs/docs) to 
 
 Once you’ve submitted your integration for publishing, you’re in the review process! Here are some things to keep in mind:
 
-* **Timing**: A member of the Zapier team will examine your integration as soon as possible. However, if your integration is complex or presents new issues, it may require greater scrutiny and consideration. And remember if your integration is repeatedly rejected for the same guideline violation or you’ve attempted to manipulate the review process, review of your integration will take longer to complete.
-* **Status Updates**: A member of the Zapier team will be in touch as soon as possible to provide you feedback regarding your integration. In order to proceed to the next step of Publishing, you will need to respond back to our feedback.
+* **Timing**: A member of the Zapier team will examine your integration as soon as possible. However, if your integration is complex or presents new issues, it may require greater scrutiny and consideration. And remember, if your integration is repeatedly rejected for the same guideline violation or you’ve attempted to manipulate the review process, review of your integration will take longer to complete.
+* **Status Updates**: A member of the Zapier team will be in touch as soon as possible to provide you feedback regarding your integration. In order to proceed to the next step of Publishing, you will need to respond to our feedback.
 * **Early Access**: Get listed on Zapier’s website and give users early access to your integration. We do our best to try and launch your integration into Early Access as quickly as possible. Learn more [here](https://platform.zapier.com/partners/lifecycle-planning#3-enable-early-access).
 * **Full Launch**: We keep an eye on your integration and may invite you to work with us on an official launch campaign to spread the word further. Learn more [here](https://platform.zapier.com/partners/lifecycle-planning#4-launch-your-zapier-integration).
 
 We're excited to have you as a Partner on Zapier! If you have any questions or concerns about our integration review guidelines, [email us](mailto:partners@zapier.com).
-
-
-
-Version 1.0.0 updated on August 13, 2019
