@@ -31,9 +31,6 @@ collections:
   cli_tutorials:
     output: true
     permalink: /:collection/:name
-  platform_wide:
-    output: true
-    permalink: /:collection/:name
   legacy:
     output: true
     permalink: /:collection/:name
@@ -74,11 +71,6 @@ defaults:
   - scope:
       path: ""
       type: "cli_tutorials"
-    values:
-      layout: default
-  - scope:
-      path: ""
-      type: "platform_wide"
     values:
       layout: default
   - scope:

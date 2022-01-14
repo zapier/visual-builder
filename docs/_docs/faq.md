@@ -1,6 +1,6 @@
 ---
 title: FAQs
-order: 16
+order: 17
 layout: post-toc
 redirect_from: /docs/
 ---
@@ -8,6 +8,7 @@ redirect_from: /docs/
 # Frequently Asked Questions
 
 <a id="save"></a>
+
 ## Does Zapier auto-save integrations?
 
 _No_. Always remember to save your work when building integrations. Zapier asks you to save and continue in several spots while building integrations, so be sure to save at each point:
@@ -25,6 +26,7 @@ When adding a new trigger or action, there is a _Save_ button after the Zap step
 When adding a new field to an authentication, trigger, or action step's input field, click _Save_ after adding the field details.
 
 <a id="code"></a>
+
 ## How does Code Mode work?
 
 ![Zapier visual builder code mode](https://cdn.zapier.com/storage/photos/5abf045cf0b8f3cce37d05d51071d6e9.png)
@@ -40,7 +42,7 @@ If your API calls need more customization, however, or your API response is in a
 
 The first time you switch to code mode, Zapier copies everything entered in the API request form, including any custom options added, and converts them to JavaScript code. It then changes the UI to code mode, where you can add code for your API call.
 
-In code mode, you can write JavaScript code, using Zapier's default code as a base or writing custom code. Use the `z.object` for Zapier specific features, including `z.console` to write to the console log, `z.JSON` to parse JSON, `z.errors` to take action on errors, and more. Check [Zapier's CLI Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for details. 
+In code mode, you can write JavaScript code, using Zapier's default code as a base or writing custom code. Use the `z.object` for Zapier specific features, including `z.console` to write to the console log, `z.JSON` to parse JSON, `z.errors` to take action on errors, and more. Check [Zapier's CLI Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for details.
 
 Additionally, use Zapier bundles to access auth data, data from user input forms, request data, and more. Learn more in our [Zapier bundle docs](https://platform.zapier.com/docs/advanced#bundle).
 
@@ -68,13 +70,14 @@ Zapier uses the currently visible option when running each part of your integrat
 To check which mode and settings Zapier is using for each API call, open that part of your Zapier integration and visually check to see if the form or code mode is visible.
 
 <a id="cli"></a>
+
 ## Why are options grayed out for my CLI-built integration?
 
 ![Zapier CLI integration in visual builder](https://cdn.zapier.com/storage/photos/c631ca2cd91ab43b0bc4d22f641eb4d6.png)
 
 The Zapier Command Line Interface (CLI) is a separate SDK available to install on your local development machine to create Zapier integrations. It lets you work in code rather than a web based UI for more advanced integrations.
 
-Integrations created in the CLI cannot be edited in the visual builder UI. You can’t add triggers or actions, edit code or configurations, for instance.  Zapier's platform site lists every integration you build, in the visual builder or CLI, but disables the core editing options for CLI-built integrations. These options will be grayed out in the UI.
+Integrations created in the CLI cannot be edited in the visual builder UI. You can’t add triggers or actions, edit code or configurations, for instance. Zapier's platform site lists every integration you build, in the visual builder or CLI, but disables the core editing options for CLI-built integrations. These options will be grayed out in the UI.
 
 You _can_ manage the other details of your CLI integration from the UI, however, including:
 
@@ -93,7 +96,7 @@ If your app was originally built on our legacy platform, any custom code you wro
 
 ## Can I add files/attachments to a Trigger/Action using the Platform UI Visual Builder?
 
-No. If you'd like to work with file attachments in your app, you'll need to convert your app from the [Visual Builder to the CLI platform](https://platform.zapier.com/docs/export) instead. 
+No. If you'd like to work with file attachments in your app, you'll need to convert your app from the [Visual Builder to the CLI platform](https://platform.zapier.com/docs/export) instead.
 
 <a id="files"></a>
 
@@ -103,10 +106,11 @@ With every API call, including authentication and auth testing calls, triggers, 
 
 Zapier additionally expects different data for different API calls:
 
-- **Object** *for Authentication, Auth testing, and Create Actions*. Zapier expects to receive a single JSON formatted object with the correct details, including specific fields for Authentication calls depending on the auth scheme. Zapier will parse the individual fields and, with Create Actions, let users include their data in subsequent Zap steps.
-- **Array** *for Triggers and Search Actions*. Zapier expects to receive a JSON formatted array with the results in reverse chronological order. Even if the trigger or search only returns a single item, it should be formatted as an array. Zapier will then parse the results and return the most relevant result for searches, and return all new items from Triggers that pass Zapier's deduper.
+- **Object** _for Authentication, Auth testing, and Create Actions_. Zapier expects to receive a single JSON formatted object with the correct details, including specific fields for Authentication calls depending on the auth scheme. Zapier will parse the individual fields and, with Create Actions, let users include their data in subsequent Zap steps.
+- **Array** _for Triggers and Search Actions_. Zapier expects to receive a JSON formatted array with the results in reverse chronological order. Even if the trigger or search only returns a single item, it should be formatted as an array. Zapier will then parse the results and return the most relevant result for searches, and return all new items from Triggers that pass Zapier's deduper.
 
 <a id="array"></a>
+
 ## I got an "An array is expected" error. How do I fix that?
 
 With you add a polling trigger or search action to a Zap, the Zapier platform expects to get a bare array of the new or found items, sorted in reverse chronological order. APIs will instead return a result _object_ that contains the array of items the trigger needs.
@@ -149,6 +153,7 @@ Now, retest the request and it should run successfully. Note the response this t
 ![](https://cdn.zapier.com/storage/photos/33098c9f9c1584295e074c1dc8a40e72.png)
 
 <a id="censored"></a>
+
 ## Why does Zapier show `censored` fields in request and response data?
 
 ![Example censored fields in Zapier](https://cdn.zapier.com/storage/photos/9356f3af9c0a844a652868d877e22486.png)
@@ -158,6 +163,7 @@ When testing Authentication, Triggers, or Actions in Zapier visual builder, you 
 Zapier automatically censors sensitive values at runtime, including all input fields marked as `password` and all authentication fields that will include sensitive, private data including username and password fields from Basic and Digest auth, API keys from API key auth, access and refresh tokens from Session and OAuth v2 authentication. These values are stored in the `Auth` bundle and used in API calls, but are replaced in Zapier's logs with a `censored` value.
 
 <a id="cleanup"></a>
+
 ## How do I clean up test authentication accounts?
 
 ![Example account with multiple test accounts](https://cdn.zapier.com/storage/photos/7fe9f9155dafbcc5d9b461720d664d4d.png)
@@ -171,6 +177,7 @@ Open your [Zapier _Connected Accounts_](https://zapier.com/app/connections) page
 Then refresh your integration page in the Visual Builder, and you'll only see the authentications that were not deleted.
 
 <a id="output"></a>
+
 ## How do Sample Data and Output Fields work?
 
 ![Adding Sample Data to Zapier integration](https://cdn.zapier.com/storage/photos/8ab32f061aa89f3b57e8f4a5ea16a9d9.png)
@@ -222,6 +229,7 @@ For example, if you use GitHub's API to watch for new issues, the API calls the 
 You can learn more about how Zapier uses sample data and output fields in [triggers](/docs/triggers#define-sample-data-and-output-fields) and [actions](/docs/actions#define-sample-data-and-output-fields).
 
 <a id="resthooktesting"></a>
+
 ## How do I define REST Hooks?
 
 See [Triggers: REST Hook Trigger](./triggers#rest-hook-trigger) for details.
