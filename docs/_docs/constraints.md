@@ -14,7 +14,7 @@ Zapier offers a relatively unique run-time environment for your integration and 
 
 This document exposes various operating constraints of these run-time modes, errors users and your integration could run into, as well as best practices. This information is targeted towards users of our CLI development environment, but many of the strategies can be used in code mode in our Platform UI.
 
-Integration log monitoring can be viewed in the [Platform UI](https://platform.zapier.com/docs/testing#monitoring), or if using the [CLI](https://zapier.github.io/zapier-platform/cli#logs), using `zapier logs`.
+Many errors can be viewed in your integration's log monitoring in the [Platform UI](https://platform.zapier.com/docs/testing#monitoring), or if using the [CLI](https://zapier.github.io/zapier-platform/cli#logs), using `zapier logs`.
 
 # Zap step setup using the Zap editor
 
@@ -24,7 +24,7 @@ There are three areas where a user will interact with your integration when they
 
 **Constraint:** When a user clicks **Test Trigger** in the Zap editor the output of your `perform` (polling) or `performList` (REST Hook) must be returned within 30 seconds.
 
-**What error messages a user will see:**
+**What error messages a user could see if constraint hit:**
 
 - _“The app did not respond in-time. It may or may not have completed successfully.”_
 - _"Problem creating Sample: Our computers ran into a problem"_
@@ -34,13 +34,13 @@ There are three areas where a user will interact with your integration when they
 
 ## Custom fields request
 
-**Constraint:** If your trigger, action, or search supports retrieving custom fields from your API, you must be aware of both the 30 second and 1,000 field limits. You should also consider how a user will find and map data to a specific custom field if you provide a large number of custom fields.
+**Constraint:** If your trigger, action, or search supports retrieving custom fields from your API, you must be aware of both a 30 second and 1,000 field limit. You should also consider how a user will find and map data to a specific custom field if you provide a large number of custom fields.
 
-**What errors a user will see:**
+**What errors a user could see if constraint hit:**
 
 - Slow rendering of the step that includes your action
 - Custom fields might not display
-- The user will not see an error message, but not all output fields will be available for mapping in later steps
+- Not all output fields will be available for mapping in later steps
 
 **Best practice:** We’ll offer how one integration works around both of these issues. [Hubspot](https://zapier.com/apps/hubspot/integrations) offers a CRM product, and users often have thousands of custom fields for Company records. In their **_Create Company_** action, they’ve taken this innovative approach. Instead of presenting an overwhelming number of custom fields, they present a set of default fields that all companies have, then allow the user to select the other fields they might need from an **_Additional Properties to Retrieve_** dropdown menu field. Those fields chosen are then subsequently retrieved by the Zap editor for mapping. This helps in both making sure the request can be accomplished within the time limit, and also making sure the user can easily find the custom fields important to their specific workflow.
 
@@ -50,9 +50,9 @@ There are three areas where a user will interact with your integration when they
 
 **Constraint:** When a user clicks the “On” button of a Zap, Zapier does some additional initialization that must be accomplished in 30 seconds. First, it tests the user’s authentication to your service. Then it uses your default perform method to build a deduplication table of records so that the Zap will not run for existing records. More on that process is [here](https://platform.zapier.com/legacy/dedupe).
 
-**What errors a user will see:**
+**What errors a user will see if constraint hit:**
 
-- Users will receive an email with an error message about not being able to enable their Zap
+- Users will receive an email with an error message that includes text _"could not be switched on"_.
 
 **Best practice:** There is also a `bundle.meta` property that you can take advantage of here, `bundle.meta.isPopulatingDedupe`. When this is set to `true`, you can know the Zap is being enabled and create a distinct request. One option you might want to consider is loading more records into the Zap’s deduplication table than you usually request in your `perform`. This is especially relevant for an API that might return an inadvertent older record in your request. As the deduplication process only uses the id property of each record, you can also limit the data returned here to retrieve more records in the 30 second limit.
 
@@ -64,19 +64,21 @@ Once a Zap is enabled, then a different set of constraints and best practices co
 
 ## Timeouts (triggers)
 
-**Constraint:** Once a user's Zap is running, each time the Zap is run, the trigger step must finish processing in 30 seconds. Polling triggers run based on a user's Zapier plan, REST Hook Triggers run on an inbound POST to their subscription URL.
+**Constraint:** Each time a Zap executes the trigger step must finish processing in 30 seconds. Polling triggers run on an interval based on a user's Zapier plan, REST Hook triggers run on an inbound POST to their subscription URL.
 
-**What errors a user will see:**
+**What errors a user will see if constraint hit:**
 
-- User will receive an email with an error message about the trigger error
+- User will receive an email with an error message, usually with _"Trigger Partner Failure"_ in the message text. An example of the text when a request times out:
 
-**Best practice:** For polling, reducing the number of records you retrieve can help. If you have multiple requests per record, another option is to use the Zapier platform dehydration service to lazily complete the full record. These additio
+![](https://cdn.zappy.app/7032ac81d9a5c99e2b4ffa40c246b9bf.png)
+
+**Best practice:** For polling triggers, reducing the number of records you retrieve can help. If you have multiple requests per record that are causing timeouts, another option is to use the Zapier platform dehydration service, as explained [here](https://github.com/zapier/zapier-platform/tree/master/packages/cli#dehydration). Instead of making the request directly, a dehydration pointer is created, and this pointer will only be resolved if the Zap needs a hydrated property in a later step.
 
 ## Timeouts (actions)
 
 **Constraint:** Sometimes an API request can’t be finished within 30 seconds - the rendering of a file conversion is a good example of this.
 
-**What errors a user will see:**
+**What errors a user will see if constraint hit:**
 
 - An error in the Zap history of their Zap due to the request timing out
 
@@ -90,13 +92,11 @@ Once a Zap is enabled, then a different set of constraints and best practices co
 
 **Constraint:** Each time a Zap runs and your integration is invoked can mean multiple requests to your API endpoints, depending on what your trigger/action seeks to accomplish. This can mean hundreds of requests/hour based on a Zapier customer plan, or thousands based on a Zap with an active RESThook Trigger.
 
-**Best practice:** One way to reduce that API load is via the dehydration feature mentioned earlier. A pointer is created for any subsequent requests that might need to happen, and these will only be made if the Zap needs a hydrated property in a later step.
+**Best practice:** One way to reduce that API load is via the Zapier platform dehydration feature mentioned earlier. By putting these secondary requests behind a dehydration pointer, Zapier will only make this request once, although it might see these same records again and again based on the Zap’s polling cycle.
 
-This is especially true for polling triggers that might require an additional request to create a full record. By putting these secondary requests behind a dehydration pointer, Zapier will only make this request once, although it might see these same records again and again based on the Zap’s polling cycle.
+More on dehydration again [here](https://github.com/zapier/zapier-platform/tree/master/packages/cli#dehydration).
 
-More on dehydration [here](https://github.com/zapier/zapier-platform/tree/master/packages/cli#dehydration).
-
-## Reducing file requests
+## Reducing file requests to your API
 
 **Constraint:** Each time a Zap step requests a file from your API, it will be accessed and downloaded.
 
@@ -112,16 +112,17 @@ There are a number of throttles that a Zapier user could encounter when using yo
 
 **Constraint:** Your API has request limits
 
-**What errors a user will see:**
+**What errors a user will see if constraint hit:**
 
 - If a trigger, user will receive an email with an error message about the trigger error
 - If an action, user will see an error in Zap history
 
-**Best practice:** You can add a specific 429 `Retry-After` header to your response, or add a timed delay in your error response. Instead of a user’s Zap erroring and halting, the request will be retried at the specified time. More on the retry [here](https://github.com/zapier/zapier-platform/tree/master/packages/cli#handling-throttled-requests).
+**Best practice:** You can add a specific 429 `Retry-After` header to your response, or add a timed delay in your error response. Instead of a user’s Zap erroring and halting, the request will be retried at the specified time. More on the retry [here](https://github.com/zapier/zapier-platform/tree/master/packages/cli#handling-throttled-requests). The user will see this message in Zap History instead of an error while the limit is still in place:
+![](https://cdn.zappy.app/0933736266259b11771a0eba0aff23ce.png)
 
 ## Webhook throttles (Zapier)
 
-**Constraint:** Zapier’s current limits are [here](https://zapier.com/help/troubleshoot/behavior/rate-limits-and-throttling-in-zapier#step-4). We will issue a 429 response when your integration exceeds these throttle limits.
+**Constraint:** Zapier’s current webhook limits are [here](https://zapier.com/help/troubleshoot/behavior/rate-limits-and-throttling-in-zapier#step-4). We will issue a 429 response when your integration exceeds these throttle limits.
 
 **What errors a user will see:**
 
@@ -134,22 +135,23 @@ There are a number of throttles that a Zapier user could encounter when using yo
 
 **Constraint:** There is a default limit of 100 returned items/poll.
 
-**What errors a user will see:**
+**What errors a user will see if constraint hit:**
 
-- The user will receive an email about the held Zap runs, as well as a banner with the same information in their Zap history.
+- The user will receive an email about held Zap runs, as well as a banner with the same information in their Zap history.
 
 **Best practice:** If your trigger will be returning > 100 new records consistently, we’d encourage you to look at these two options:
-Converting your trigger to be RESThook based. Webhook limits are much expanded (up to 10,000 requests in a 5 minute period).
-Add support for Transfer. This is a new service that supports paging so users can select and send up to 25,000 records: https://platform.zapier.com/docs/transfer
+
+- Converting your trigger to be RESThook based. Webhook limits are much expanded (up to 10,000 requests in a 5 minute period).
+- Add support for Transfer. This is a new Zapier service that supports paging so users can create a Zap tp select and batch transfer up to 25,000 records at one time. More [here](https://platform.zapier.com/docs/transfer).
 
 # Important Zapier constraints
 
-| Time Limits                                                 |            |
-| ----------------------------------------------------------- | ---------- |
-| Zap Editor test step: request(s) + scripting                | 30 seconds |
-| Polling trigger: request(s) + scripting                     | 30 seconds |
-| Create/search action: requests(s) + scripting + scripting   | 30 seconds |
-| REST Hook trigger: payload processing scripting + scripting | 30 seconds |
+| Time Limits                                                |            |
+| ---------------------------------------------------------- | ---------- |
+| Zap Editor test step: request(s) + scripting               | 30 seconds |
+| Polling trigger: request(s) + scripting                    | 30 seconds |
+| Create/search action: requests(s) + scripting              | 30 seconds |
+| REST Hook trigger: ingest and payload processing scripting | 30 seconds |
 
 | Size limits         |                      |
 | ------------------- | -------------------- |
@@ -159,12 +161,13 @@ Add support for Transfer. This is a new service that supports paging so users ca
 | Response payload    | 6 MB                 |
 | Downloaded files    | ~120 MB              |
 
-| Throttles         |                             |
-| ----------------- | --------------------------- |
-| Polling trigger   | Default: 100 new items/poll |
-| REST Hook trigger | 10000 webhooks/5 minutes    |
-|                   | 30 webhooks/second          |
+| Throttles                                                                                                           |                             |
+| ------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| Polling trigger                                                                                                     | Default: 100 new items/poll |
+| REST Hook trigger                                                                                                   | 10000 webhooks/5 minutes    |
+|                                                                                                                     | 30 webhooks/second          |
+| More on throttles [here](https://zapier.com/help/troubleshoot/behavior/rate-limits-and-throttling-in-zapier#step-3) |                             |
 
-More on throttles [here](https://zapier.com/help/troubleshoot/behavior/rate-limits-and-throttling-in-zapier#step-3).
-
-Integration IP Address assignment: [AWS-East](https://zapier.com/help/troubleshoot/behavior/cant-access-or-use-zapier-with-other-apps)
+| TCP/IP                  |                                                                                                     |
+| ----------------------- | --------------------------------------------------------------------------------------------------- |
+| Integration assigned IP | [AWS-East](https://zapier.com/help/troubleshoot/behavior/cant-access-or-use-zapier-with-other-apps) |
