@@ -143,7 +143,7 @@ For security purposes, all API endpoints used by in integration must use HTTPS v
 The first launch of your integration should include no more than **three important triggers**, and **five total triggers** representing the top use cases of your integration. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers) before you start building out triggers. Iterate and add more triggers over time with user feedback once the integration is public.
 
 #### 4.1.1 Important Triggers
-* As mentioned above, we allow integrations to set a maximum of three triggers as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/triggers#how-to-add-a-new-trigger-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer triggers, generally you should set them all as ‘Important’. Important triggers are displayed first to users in the Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
+* As mentioned above, we allow integrations to set a maximum of three triggers as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/triggers#how-to-add-a-new-trigger-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer triggers, generally you should set them all as ‘Important’.
 
 ### 4.2 Copy
 Any copy associated with a trigger should match the copy, text, and terminology used in your product’s UI. This includes the trigger’s name, description, input fields, help text, output fields, etc. For instance, since Dropbox calls directories "folders" in their product UI, the respective trigger in [their Zapier integration](https://zapier.com/integrations/dropbox/integrations#triggers-and-actions) refers to "folders" instead of "directories". If your API uses different terminology than your product’s UI, match the UI as users are most familiar with this - not the API.
@@ -254,7 +254,7 @@ Users should never receive a successful response if there was an error in the re
 The first launch of your integration should include no more than **three important actions**, and **five total actions** representing the top use cases of your integration. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your actions. You can iterate and add more actions over time with user feedback.
 
 #### 5.1.1 Important Actions
-* As mentioned above, we allow integrations to set a maximum of three actions as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer actions, generally you should set them all as ‘Important’. Important actions are displayed first to users in the Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
+* As mentioned above, we allow integrations to set a maximum of three actions as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer actions, generally you should set them all as ‘Important’.
 
 ### 5.2 Copy
 The copy for actions should match your product’s UI. This includes the action’s name, description, input fields, help text, etc. For instance, since Dropbox calls directories "folders" in their product UI, the Zapier integration should refer to "folders" in the respective action. If the API uses different terminology than your product’s UI, match the UI - not the API.
@@ -460,13 +460,9 @@ If you are using the [Zapier CLI](https://platform.zapier.com/cli_docs/docs) to 
 
 Once you’ve submitted your integration for publishing, you’re in the review process! Here are some things to keep in mind:
 
-* **Timing**: A member of the Zapier team will examine your integration as soon as possible. However, if your integration is complex or presents new issues, it may require greater scrutiny and consideration. And remember if your integration is repeatedly rejected for the same guideline violation or you’ve attempted to manipulate the review process, review of your integration will take longer to complete.
-* **Status Updates**: A member of the Zapier team will be in touch as soon as possible to provide you feedback regarding your integration. In order to proceed to the next step of Publishing, you will need to respond back to our feedback.
+* **Timing**: A member of the Zapier team will examine your integration as soon as possible. However, if your integration is complex or presents new issues, it may require greater scrutiny and consideration. And remember, if your integration is repeatedly rejected for the same guideline violation or you’ve attempted to manipulate the review process, review of your integration will take longer to complete.
+* **Status Updates**: A member of the Zapier team will be in touch as soon as possible to provide you feedback regarding your integration. In order to proceed to the next step of Publishing, you will need to respond to our feedback.
 * **Early Access**: Get listed on Zapier’s website and give users early access to your integration. We do our best to try and launch your integration into Early Access as quickly as possible. Learn more [here](https://platform.zapier.com/partners/lifecycle-planning#3-enable-early-access).
 * **Full Launch**: We keep an eye on your integration and may invite you to work with us on an official launch campaign to spread the word further. Learn more [here](https://platform.zapier.com/partners/lifecycle-planning#4-launch-your-zapier-integration).
 
 We're excited to have you as a Partner on Zapier! If you have any questions or concerns about our integration review guidelines, [email us](mailto:partners@zapier.com).
-
-
-
-Version 1.0.0 updated on August 13, 2019
