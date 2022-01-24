@@ -1,12 +1,11 @@
 ---
 title: Glossary
-order: 17
+order: 18
 layout: post
 redirect_from: /docs/
 ---
 
 ## Zapier Glossary
-
 
 - **Zapier**: An integration platform that connects over {{ site.partner_count }} web apps and APIs together into multi-step, automated, customizable workflows.
 - **Zap**: An automated Zapier workflow including a trigger and at least one one action.
