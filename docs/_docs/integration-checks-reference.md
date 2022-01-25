@@ -191,7 +191,7 @@ The polling URL is only used for tests.
 It's very important that the structure of an object from a webhook and from a poll
 are identical. Typically, this means modifying a poll result so that it looks like a
 hook. If a poll has fields that a hook doesn't, the user may map them to a later
-step and when the zap is run for real, the value will be blank.
+step, and when the Zap runs live, the value will be blank.
 
 Let's walk through an example. Say we have a `New Contact` REST Hook trigger. When a
 new contact is created, Zapier gets a webhook that looks like this:
@@ -323,9 +323,9 @@ If your object is returned with a differently named `id` field (such as
 `contact_id`), write code to rename it. Hooks are not deduped, so they're not
 required to have an `id`.
 
-This check is similiar to `T002`. But unlike `T002`, this one validates the static
-samples in your integration definition instead of the live polling results in the
-Zap History.
+This check is similiar to `T002`. This check validates the static samples in
+your integration definition, while `T002` validates the live polling results
+in the Zap History.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -488,8 +488,6 @@ New Contact
 
 In order to highlight your most popular steps and give the user a clear
 recommendation of what to use Zapier for, we encourage the use of "important" steps.
-Important steps are shown first in the UI, while non-important steps are shown after
-a "show more" click.
 
 These can be adjusted in the settings for each individual step, either via a
 checkbox (Platform UI) or via the `important` property (Platform CLI).
@@ -502,8 +500,7 @@ checkbox (Platform UI) or via the `important` property (Platform CLI).
 
 In order to highlight your most popular steps and give the user a clear
 recommendation of what to use Zapier for, we encourage a limited number of
-"important" steps. These are shown first in the UI and aren't behind a "show more"
-click.
+"important" steps.
 
 These can be adjusted in the settings for each individual step, either via a
 checkbox (Platform UI) or via the `important` property (Platform CLI).
@@ -553,8 +550,9 @@ To ensure Zapier can correctly parse dates and times, you should always use ISO-
 format to represent dates or times. Timezone info should also be present if it
 contains time.
 
-Unlike `T003`, this check validates the fields in static samples instead of live Zap
-runs in the Zap History.
+This check is similiar to `T003`. This check validates the static samples in
+your integration definition, while `T003` validates the live results
+in the Zap History.
 
 ✘ examples of an **incorrect** implementation:
 
@@ -690,7 +688,7 @@ Google Translate is a service that translates text from one language into anothe
 ## M003 - Role Must Be Employee or Contractor
 
 For your integration to go public, you must be employed or hired by the company who
-makes the app for the integration to go public. Go to Integration Settings page
+makes the app for the integration to go public. Go to the Integration Settings page
 to select your role.
 
 ---
@@ -779,7 +777,7 @@ There must be at least one successful Zap run for each visible trigger/action/se
 
 To ensure you have run a test of every visible trigger/action/search, create a Zap for each one, turn it on, and trigger a Zap run while it's on.
 
-This check and all other T checks are performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
+This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
 
 Learn more about the Zap History [here](https://zapier.com/help/manage/history/view-and-manage-your-zap-history).
 
@@ -793,6 +791,8 @@ For polling triggers, the deduper uses the `id` field to decide if it's seen an
 object before. It can be any sort of string, but it's important that it's unique.
 If your object is returned with a differently named `id` field (such as
 `contact_id`), write code to rename it.
+
+This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
 
 This check is similiar to `D010`. This check validates the live
 polling results in the [Zap History](https://zapier.com/app/history), while `D010`
@@ -825,6 +825,8 @@ validates the static samples in your integration definition.
 To ensure Zapier can correctly parse dates and times, you should always use ISO-8601
 format to represent dates or times. Timezone info should also be present if it
 contains time.
+
+This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
 
 This check is similiar to `D023`. This check validates the data in the
 [Zap History](https://zapier.com/app/history), while `D023` validates
@@ -871,8 +873,8 @@ in the Zap History. Errors occur when a Zap uses a field from static sample that
 is not provided once the Zap is running.
 
 This check requires the static sample you define for each trigger/action/search to
-contain a subset of the keys in the latest run in your [Zap History](https://zapier.com/app/history)
-for that trigger/action/search.
+contain a subset of the keys in the latest run in the [Zap History](https://zapier.com/app/history). This check is performed using the Zap History for accounts belonging to the integration admins, so build your test Zaps in these accounts.
+
 
 ✘ an example of an **incorrect** implementation:
 
@@ -902,6 +904,8 @@ for the trigger in your integration (if defined). The specific checks are:
 
 * "required" fields must be in the trigger result
 * field values in the trigger result match their field type
+
+This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -942,10 +946,12 @@ To ensure this doesn't happen, this check compares the latest item in the
 [Zap History](https://zapier.com/app/history) with the selected polling sample in
 the corresponding Zap. For it to pass:
 
-- There must be a Zap which is using the trigger
+- There must be a Zap that is using the trigger
 - The Zap must have at least one Zap run (the most recent run will be used)
 - The trigger must have been tested in the Zap editor via the Perform List method to retrieve a polling sample
 - The polling sample should have the same data keys, or a subset of keys, compared to those available in the Zap run data.
+
+This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -981,12 +987,14 @@ You must agree to the latest Developer Terms of Service in order to proceed. Go 
 For REST Hook triggers, we require you to provide a Perform List URL (check `D006`) so that users can
 pull a live sample in the Zap editor. This is called a polling sample.
 
-This check takes the latest polling sample from one of the integration admins' Zaps
+This check takes the latest polling sample from the [Zap History](https://zapier.com/app/history)
 and verifies that the sample conforms to the output fields for this trigger in
 your integration (if defined). The specific checks are:
 
 * "required" fields must be in the polling sample
 * field values in the trigger result must match their field type
+
+This check is performed using the Zap History for accounts belonging to the integration admins, so build your test Zaps in these accounts.
 
 ✘ an example of an **incorrect** implementation:
 
