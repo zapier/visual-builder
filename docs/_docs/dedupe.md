@@ -77,13 +77,13 @@ On the next poll after the new to-do is created, the API returns all to-dos, but
 
 In order for this mechanism to work, the `id` field should always be supplied and unique among all items in the result. 
 
-Your API must also be able to return results in reverse-chronological order to make sure new/updated items can be found on the first page of results, as we don't fetch additional pages. [Wufoo is a great example](https://wufoo.github.io/docs/#form-entries) of an API that supports sorting on any field and direction.
+Your API must also be able to return results in reverse-chronological order to make sure new/updated items can be found on the first page of results, as Zapier polling triggers don't automatically fetch additional pages. [Wufoo is a great example](https://wufoo.github.io/docs/#form-entries) of an API that supports sorting on any field and direction.
 
 ## Custom or multiple ID fields
 
 What if the items your API returns do not have an `id` field? Or how would you go about adding a *Updated to-do* trigger to our to-do app? In both cases you would use [Code Mode](./faq#codemode) to modify the API response.
 
-Let's assume your to-do API has an endpoint to return to-dos sorted by `updatedAt` in descending direction. Here's an example of how you could add code to your trigger to incorporate the `updatedAt` value in the ID, so that Zapier recognizes a new update as a new item. Assuming that you have configured `options` with the appropriate API request URL and parameters:
+Let's assume your to-do API has an endpoint that can return to-dos sorted by `updatedAt` in descending direction. Here's an example of how you could add code to your trigger to incorporate the `updatedAt` value in the ID, so that Zapier recognizes a new update as a new item. Assuming that you have configured `options` with the appropriate API request URL and parameters:
 
 {% highlight javascript %}
 {% raw %}
@@ -111,4 +111,4 @@ One possible scenario could be:
 1. Fetch the first page, containing the oldest items, but also the total number of pages.
 2. Fetch the last page and reverse the order of the items before returning it.
 
-You should be cautious when adding additional requests to your custom code. All your requests and processing code for a trigger must [finish within 30 seconds](./constraints).
+You should be cautious when adding additional requests to your custom code. All your requests and processing code for a trigger must [finish within 30 seconds](./constraints#timeouts-triggers-1). It's not recommended to attempt to fetch all pages of results.
