@@ -2,7 +2,7 @@
 title: Deduplication
 order: 11
 layout: post-toc
-redirect_from: /legacy/
+redirect_from: /docs/
 ---
 
 # Trigger Data Deduplication
