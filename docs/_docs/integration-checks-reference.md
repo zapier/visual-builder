@@ -688,7 +688,7 @@ Google Translate is a service that translates text from one language into anothe
 ## M003 - Role Must Be Employee or Contractor
 
 For your integration to go public, you must be employed or hired by the company who
-makes the app for the integration to go public. Go to the Integration Settings page
+makes the app used in the integration. Go to the Integration Settings page
 to select your role.
 
 ---
@@ -937,7 +937,7 @@ See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 For REST Hook triggers, we require you to provide a Perform List URL (check `D006`) so that users can
 retrieve a real data sample in the Zap editor. This is called a polling sample, and is created
-when you test the trigger in a Zap before turning it on.
+when you test the trigger in the Zap editor before turning it on.
 
 Errors occur when a Zap uses a field from the polling sample that is not
 provided by the hook payload sent once the Zap is running.
