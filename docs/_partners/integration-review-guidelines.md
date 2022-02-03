@@ -185,7 +185,7 @@ Live Zaps with [polling triggers](https://platform.zapier.com/docs/triggers#poll
 * Return results from the polling URL in reverse chronological order by created date, so the most recently created or updated object is returned first. 
 * Return a sufficient amount of items from the polling endpoint. Generally, 100 items is plenty for most integrations, but there are be cases where it’s common for users to perform an action that would trigger more than 100+ records at once.
 * Use [pagination](https://platform.zapier.com/docs/triggers#how-to-use-pagination) on the trigger results if large amounts of data will be returned.
-* Each result should contain an explicit ‘id’ field for [deduplication](https://platform.zapier.com/legacy/dedupe#zapier-deduplication) from the polling endpoint. By default, the field called `id` will be used as the deduplication key if it exists. Otherwise Zapier looks for the shortest field key with `id` in the key name.
+* Each result should contain an explicit ‘id’ field for [deduplication](https://platform.zapier.com/docs/dedup) from the polling endpoint. By default, the field called `id` will be used as the deduplication key if it exists. Otherwise Zapier looks for the shortest field key with `id` in the key name.
 
 ### 4.6 REST Webhooks
 [REST hook-based triggers](https://platform.zapier.com/docs/triggers#rest-hook-trigger) are Zapier’s preferred implementation of triggers, since they fire immediately after the triggering action is performed. Here’s a [post](https://zapier.com/engineering/introducing-resthooksorg/) further describing why we and our mutual users prefer REST hook triggers over polling triggers.

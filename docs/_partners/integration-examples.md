@@ -160,7 +160,7 @@ We recommend you use [REST Hooks](https://platform.zapier.com/docs/triggers#rest
 
 Updated triggers should run whenever an item has new data added, or when relational data is added or removed. If you are using REST hook triggers, which we recommend, ensure that when relational data is reapplied your app sends Zapier that updated record.
 
-If you are using polling triggers, this may cause issues with [how Zapier perform deduplication](https://platform.zapier.com/legacy_web_builder/dedupe), as we don’t consider the status, stage, or tag to be newly applied to that contact anymore. You may need to customize your API call's code to add a timestamp to the id field you’re using for deduplication so that the Zap triggers anew.
+If you are using polling triggers, this may cause issues with [how Zapier performs deduplication](https://platform.zapier.com/docs/dedupe), as we don’t consider the status, stage, or tag to be newly applied to that contact anymore. You may need to customize your API call's code to add a timestamp to the id field you’re using for deduplication so that the Zap triggers each time the record is updated.
 
 ### Trigger Response Format
 
