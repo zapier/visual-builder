@@ -1,6 +1,6 @@
 ---
 title: FAQs
-order: 17
+order: 18
 layout: post-toc
 redirect_from: /docs/
 ---

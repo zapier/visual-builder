@@ -1,6 +1,6 @@
 ---
 title: Zapier Platform UI vs CLI
-order: 19
+order: 20
 layout: post-toc
 redirect_from: /docs/
 ---

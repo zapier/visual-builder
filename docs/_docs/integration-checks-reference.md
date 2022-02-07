@@ -1,6 +1,6 @@
 ---
 title: Integration Checks Reference
-order: 22
+order: 24
 layout: post-toc
 redirect_from: /docs/
 ---
