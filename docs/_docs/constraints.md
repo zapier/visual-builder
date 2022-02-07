@@ -100,7 +100,7 @@ _“Scripting payload too large ('n' bytes but max is 6291456bytes).”_ - ('n' 
 
 ## Timeouts and payload size (polling triggers)
 
-**Constraint:** When a user clicks the “On” button of a Zap, Zapier does some additional initialization that must be accomplished in 30 seconds. First, it tests the user’s authentication to your service. Then it uses the trigger's `perform` method to build a deduplication table of records, so that the Zap will not run for existing records. More on that process is [here](https://platform.zapier.com/legacy/dedupe). The payload returned from this request must also be less than 6 MB.
+**Constraint:** When a user clicks the “On” button of a Zap, Zapier does some additional initialization that must be accomplished in 30 seconds. First, it tests the user’s authentication to your service. Then it uses the trigger's `perform` method to build a deduplication table of records, so that the Zap will not run for existing records. More on that process is [here](./dedupe). The payload returned from this request must also be less than 6 MB.
 
 **Errors a user will see if constraint is hit:**
 
