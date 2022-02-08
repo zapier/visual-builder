@@ -994,7 +994,7 @@ your integration (if defined). The specific checks are:
 * "required" fields must be in the polling sample
 * field values in the trigger result must match their field type
 
-This check is performed using the Zap History for accounts belonging to the integration admins, so build your test Zaps in these accounts.
+This check is performed using the Zap History for accounts belonging to the integration admins, so build your test Zaps in these accounts, and enable them to generate Zap runs in the Zap History.
 
 ✘ an example of an **incorrect** implementation:
 
