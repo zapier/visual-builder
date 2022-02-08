@@ -14,7 +14,7 @@ Deduplication tl;dr:
 *   Provide a unique `id` key.
 *   Sort reverse-chronologically by time created.
 
-An unfortunate artifact of [polling](,/triggers#polling) for new data is that polling usually returns many results, most of which Zapier has seen before. Since we don't want to trigger an action multiple times when an item in your API exists in multiple distinct polls, we must deduplicate the data.
+An unfortunate artifact of [polling](./triggers#polling) for new data is that polling usually returns many results, most of which Zapier has seen before. Since we don't want to trigger an action multiple times when an item in your API exists in multiple distinct polls, we must deduplicate the data.
 
 For example, say your endpoint returns a list of to-dos:
 
@@ -41,7 +41,7 @@ For example, say your endpoint returns a list of to-dos:
 
 When a Zap is turned on, we make an initial call to your API to retrieve existing data, and cache and store each `id` field in our database.
 
-After this, we will poll at an interval (based on a customer's plan) looking for changes against this cached list of `id`s.
+After this, we will [poll at an interval](https://zapier.com/help/create/basics/learn-key-concepts-in-zapier#step-6) (based on a customer's plan) looking for changes against this cached list of `id`s.
 
 Now let's say the user created a new to-do:
 
