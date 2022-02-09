@@ -191,7 +191,8 @@ The polling URL is only used for tests.
 It's very important that the structure of an object from a webhook and from a poll
 are identical. Typically, this means modifying a poll result so that it looks like a
 hook. If a poll has fields that a hook doesn't, the user may map them to a later
-step, and when the Zap runs live, the value will be blank.
+step, and when the Zap runs live, the value will be blank. This can cause errors
+or unexpected results for users.
 
 Let's walk through an example. Say we have a `New Contact` REST Hook trigger. When a
 new contact is created, Zapier gets a webhook that looks like this:
@@ -234,9 +235,9 @@ remove the `friends` information, and return only the array of contacts, not the
 enclosing object.
 
 The polling result is not used when a user skips testing the Zap step. In that case,
-Zapier uses the sample data, so the sample data must also match the hook data format.
+Zapier uses the sample data.
 
-See [Sample Data](./faq#output) in the FAQ for more details on this.
+See [Sample Data](./faq#output) for more details on this.
 
 ---
 
@@ -386,7 +387,7 @@ It's very important that the structure of an object from the actual trigger and 
 the sample data are identical. Otherwise, users could map fields that don't exist
 in the live results, which results in a broken Zap.
 
-See [Sample Data](./faq#output) in the FAQ for more details on this.
+See [Sample Data](./faq#output) for more details on this.
 
 ---
 
@@ -771,13 +772,17 @@ migrate users on older versions to a newer version.
 
 <a name="T001"></a><a name="T00001"></a>
 
-## T001 - One Successful Zap for Each Trigger/Search/Action
+## T001 - One Successful Zap Run for Each Trigger/Search/Action
 
-There must be at least one successful Zap run for each visible trigger/action/search in your app.
+There must be at least one successful Zap run for each visible trigger/action/search
+in your app.
 
-To ensure you have run a test of every visible trigger/action/search, create a Zap for each one, turn it on, and trigger a Zap run while it's on.
+To ensure you have run a live test of every visible trigger/action/search, create a
+Zap for each one, turn it on, and trigger a Zap run while it's on.
 
-This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
+This check is performed using the [Zap History](https://zapier.com/app/history) for
+accounts belonging to the integration admins, so build your test Zaps in these
+accounts.
 
 Learn more about the Zap History [here](https://zapier.com/help/manage/history/view-and-manage-your-zap-history).
 
@@ -792,11 +797,13 @@ object before. It can be any sort of string, but it's important that it's unique
 If your object is returned with a differently named `id` field (such as
 `contact_id`), write code to rename it.
 
-This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
-
 This check is similiar to `D010`. This check validates the live
 polling results in the [Zap History](https://zapier.com/app/history), while `D010`
 validates the static samples in your integration definition.
+
+This check is performed using the [Zap History](https://zapier.com/app/history) for
+accounts belonging to the integration admins, so build your test Zaps in these
+accounts.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -826,11 +833,13 @@ To ensure Zapier can correctly parse dates and times, you should always use ISO-
 format to represent dates or times. Timezone info should also be present if it
 contains time.
 
-This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
-
 This check is similiar to `D023`. This check validates the data in the
 [Zap History](https://zapier.com/app/history), while `D023` validates
 the static samples in your integration definition.
+
+This check is performed using the [Zap History](https://zapier.com/app/history) for
+accounts belonging to the integration admins, so build your test Zaps in these
+accounts.
 
 ✘ examples of an **incorrect** implementation:
 
@@ -873,8 +882,11 @@ in the Zap History. Errors occur when a Zap uses a field from static sample that
 is not provided once the Zap is running.
 
 This check requires the static sample you define for each trigger/action/search to
-contain a subset of the keys in the latest run in the [Zap History](https://zapier.com/app/history). This check is performed using the Zap History for accounts belonging to the integration admins, so build your test Zaps in these accounts.
+contain a subset of the keys in the latest run in the [Zap History](https://zapier.com/app/history).
 
+This check is performed using the [Zap History](https://zapier.com/app/history)
+for accounts belonging to the integration admins, so build your test Zaps in
+these accounts.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -883,14 +895,14 @@ static: {"id": 1, "email": "john@example.com"}
 live: {"id": 2, "name": "Alice"}
 ```
 
-See [Sample Data](./faq#output) in the FAQ for more details on this.
-
 ✔ an example of a **correct** implementation:
 
 ```
 static: {"id": 1, "name": "John"}
 live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ```
+
+See [Sample Data](./faq#output) for more details on this.
 
 ---
 
@@ -905,7 +917,9 @@ for the trigger in your integration (if defined). The specific checks are:
 * "required" fields must be in the trigger result
 * field values in the trigger result match their field type
 
-This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
+This check is performed using the [Zap History](https://zapier.com/app/history)
+for accounts belonging to the integration admins, so build your test
+Zaps in these accounts.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -927,7 +941,7 @@ output fields: [
 ]
 ```
 
-See [Sample Data](./faq#output) in the FAQ for more details on this.
+See [Sample Data](./faq#output) for more details on this.
 
 ---
 
@@ -935,9 +949,10 @@ See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 ## T006 - Polling Sample Contains a Subset of Keys from Live Result
 
-For REST Hook triggers, we require you to provide a Perform List URL (check `D006`) so that users can
-retrieve a real data sample in the Zap editor. This is called a polling sample, and is created
-when you test the trigger in the Zap editor before turning it on.
+For REST Hook triggers, we require you to provide a Perform List URL
+(check `D006`) so that users can retrieve a real data sample in the Zap
+editor. This is called a polling sample, and is created when you test
+the trigger in the Zap editor before turning it on.
 
 Errors occur when a Zap uses a field from the polling sample that is not
 provided by the hook payload sent once the Zap is running.
@@ -946,12 +961,16 @@ To ensure this doesn't happen, this check compares the latest item in the
 [Zap History](https://zapier.com/app/history) with the selected polling sample in
 the corresponding Zap. For it to pass:
 
-- There must be a Zap that is using the trigger
-- The Zap must have at least one Zap run (the most recent run will be used)
-- The trigger must have been tested in the Zap editor via the Perform List method to retrieve a polling sample
-- The polling sample should have the same data keys, or a subset of keys, compared to those available in the Zap run data.
+- There must be a Zap that is using the trigger.
+- The Zap must have at least one Zap run (the most recent run will be used).
+- The trigger must have been tested in the Zap editor via the Perform List method
+  to retrieve a polling sample.
+- The polling sample should have the same data keys, or a subset of keys, compared
+  to those available in the Zap run data.
 
-This check is performed using the [Zap History](https://zapier.com/app/history) for accounts belonging to the integration admins, so build your test Zaps in these accounts.
+This check is performed using the [Zap History](https://zapier.com/app/history)
+for accounts belonging to the integration admins, so build your test Zaps
+in these accounts.
 
 ✘ an example of an **incorrect** implementation:
 
@@ -966,8 +985,7 @@ live: {"id": 2, "name": "Alice"}
 polling sample: {"id": 1, "name": "John"}
 live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ```
-
-See [Sample Data](./faq#output) in the FAQ for more details on this.
+See [Sample Data](./faq#output) for more details on this.
 
 ---
 
@@ -984,17 +1002,19 @@ You must agree to the latest Developer Terms of Service in order to proceed. Go 
 
 ## Z001 - Polling Sample Respects Output Field Definition
 
-For REST Hook triggers, we require you to provide a Perform List URL (check `D006`) so that users can
-pull a live sample in the Zap editor. This is called a polling sample.
+For REST Hook triggers, we require you to provide a Perform List URL
+(check `D006`) so that users can pull a live sample in the Zap editor.
+This is called a polling sample.
 
-This check takes the latest polling sample from the [Zap History](https://zapier.com/app/history)
-and verifies that the sample conforms to the output fields for this trigger in
-your integration (if defined). The specific checks are:
+This check takes the latest polling sample from a Zap with this trigger
+and verifies that the sample conforms to the output fields for the
+trigger in your integration (if defined). The specific checks are:
 
 * "required" fields must be in the polling sample
 * field values in the trigger result must match their field type
 
-This check is performed using the Zap History for accounts belonging to the integration admins, so build your test Zaps in these accounts, and enable them to generate Zap runs in the Zap History.
+This check is performed using the Zaps in accounts belonging to the
+integration admins, so build your test Zaps in these accounts.
 
 ✘ an example of an **incorrect** implementation:
 
