@@ -6,11 +6,12 @@ redirect_from: /partner_api/
 ---
 
 # Automatic Account Creation
-![](https://cdn.zappy.app/e45cd24ed1fbd687a7294bb956440c6e.gif)
+
+Save time and reduce friction for your users by having a Zapier account created on their behalf when using one of our produt embeds.  Users no longer need to worry about the hassle of signing up to a new service.
+
+<video controls loop src="https://cdn.zappy.app/29e94e1421ab8c4cbae09bcba07f2fdb.mp4" height="100%" width="100%"></video>
 
 *Pictured above: A Zapier partner demo site, Space by Zapier, uses Auth0 as their identity provider and has enabled Automatic Account Creation.  When a new user interacts with a Zapier embed the user is asked to consent in sharing their profile information with Zapier and an account is created on their behalf.*
-
-Automatic Account Creation enables first time Zapier users to have an account created on their behalf so they don’t need to worry about the hassle of signing up to a new service.
 
 Zapier accomplishes this by being an OpenID Connect relaying party.  Partners who support being an identity provider and are able to communicate via OpenID Connect can take advantage of this new communication channel.
 
@@ -18,7 +19,7 @@ In order to help customers feel secure during this exchange of profile informati
 
 Following account creation the end user will be sent an email to let them know a Zapier account has been created, how to set a password on their new account, and highlight the partner that brought them to Zapier.
 
-[Enable this for your product](https://zapier.typeform.com/to/OlPloIcW/?utm_source=zapier_marketing_website&utm_medium=embed_experience&utm_campaign=solutions_marketing_page)
+<a class="button" style="background-color:#20272B;color:white" href="https://zapier.typeform.com/to/OlPloIcW/?utm_source=zapier_marketing_website&utm_medium=embed_experience&utm_campaign=solutions_marketing_page">Enable this for your product</a>
 
 ## Requirements
 
