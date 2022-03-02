@@ -730,7 +730,7 @@ All errors will be JSON object with a String array of errors:
 ## Changelog
   
 - 2021-08-03
-  - Added attribute to `v1/zap-tamplates`
+  - Added attribute to `v1/zap-templates`
     - The endpoint `/v1/zap-templates` exposes the `uuid` attribute to each step. This attribute is a UUID v4 string.
 
 
