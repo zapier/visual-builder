@@ -14,7 +14,7 @@ Elements are prebuilt UI components that offer the quickest—and easiest—way 
 Our Element generators let you customize the visual design and features of Zapier you want to include, and generate JavaScript code snippets that can be copied and pasted directly into your site. No programming experience is required!
 
 ## App Directory Element
-![](https://zapier.com/partner/_next/static/image/public/img/app-directory-page/app-directory-anydo.345cf1d1f5b0808e6994ef0cf84aad0f.png?w=1080&q=75)
+![](https://cdn.zappy.app/a9a9f75aedac153d83ec45f6b08dd3a5.png)
 
 A customized version of Zapier’s App Directory for users to search and build new Zaps with your Zapier integration. 
 
@@ -25,59 +25,13 @@ Open the [App Directory Element generator](https://zapier.com/partner/embed/app-
 
 ## Zap Template Element
 
-![](https://cdn.zapier.com/zapier/images/partners/in-your-product-wave.png)
+![](https://cdn.zappy.app/6b01c4a5207f60d90b41d7de22fefa74.png)
 
 Zap templates are pre-made Zaps that help users discover popular use cases for automating their work. Each template features a specific use case and the apps (including yours!) needed for it to work.
 
-Select your app in our [Zap Template generator](https://zapier.com/partner/embed), choose the number of Zap templates you want to display, then copy the code that's generated.
+Open the [Zap Template generator](https://zapier.com/partner/embed/zap-templates/create#type=popular) and type in your app's name. Using the sidebar panel in the tool, you can change the theme, display Zap Templates based on app pairings, display (or exclude) popular apps and categories, and more! When it's ready, you generate the correct codes and add them anywhere on your site. 
 
-Want to embed specific individual Zap Templates instead? Copy the Zap ID number from your [Zap Templates Dashboard](https://zapier.com/developer/zap-templates/) by clicking the [gear icon](https://cdn.zappy.app/486616954fc147c65285248eea031841.png) beside a Zap template and selecting the Copy ID option. Then, include it in place of 1234 in the text below:
-
-```javascript
-<script type="text/javascript" src="https://zapier.com/apps/embed/widget.js?guided_zaps=1234"></script>
-```
-
-Want to embed multiple Zap Templates? Include each of their IDs in a comma separated list, such as:
-
-```javascript
-<script type="text/javascript" src="https://zapier.com/apps/embed/widget.js?guided_zaps=1234,9876,3456"></script>
-```
-
-You can additionally use these options to customize your Zap Template embeds:
-- `limit=10` to set the number of Zaps to display; use any number you want
-- `theme=dark` for a dark-colored embed, instead of the default light background
-- `categories=CATEGORYNAME` to show only Zap Templates with apps from a specific category, with `CATEGORYNAME` replaced with the name of a category from [Zapier’s App Directory](https://zapier.com/apps/)
-- `categories=-CATEGORYNAME` to _not_ show Zap Templates with apps from a specific category
-- `services=APP,APP` to show only Zap Templates between two (or more) apps 
-- `services=-APP,-APP` to exclude specific apps
-- `borderColor=%23333` to set the color of the borders to any css value or “none”. Use "%23" in place of "#" for HEX values.
-- `backgroundColor=green` to set the background of each row to any css value including “transparent”
-- `buttonColor=%23000000` to set the background color of the primary button to any css value
-- `inheritFont=true` to disable the widget font styling allowing it to inherit from the parent container
-- `buttonType=outline` to set the button type. Type `outline` (currently the only option) sets the `buttonColor` as a border around the button with a transparent background
-- `title=TITLE` to set a styled header to the widget
-- `textColor=red` to set the text color of the widget (template titles)
-- `button=BUTTONTEXT` to set the primary button text (default: Use This Zap)
-- `width=600` to set a fixed width to the widget. By default, the widget markup is fully responsive with a max width of 100% of its parent’s width.
-
-Include the additional options at the end of the script text with an ampersand, such as:
-
-```javascript
-<script src="https://zapier.com/apps/embed/widget.js?services=APP&borderColor=green&limit=10&theme=dark"></script>
-```
-
-You can load templates asynchronously (without blocking the rest of your page’s content) by adding the `async` attribute and `html_id` parameter to the script tag, like so:
-```javascript
-<div id="foo"></div>
-<script async src="https://zapier.com/apps/embed/widget.js?services=mailchimp&html_id=foo"></script>
-```
-
-> *Note:* The `html_id` parameter must point to a valid element `id` on the page you wish to be the direct parent of the embed.
-
-Using React or another client-side rendering library? See documentation on how to integrate with these here: [https://platform.zapier.com/partners/zap-templates#support-for-react](https://platform.zapier.com/partners/zap-templates#support-for-react).
-
-> If you prefer to have a video overview of the Zap Template Element, see below
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xWwECaAfdPo" title="Embedding the Zap Template element video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Want to embed specific Zap Templates instead? Simply select the [Custom selected](https://zapier.com/partner/embed/zap-templates/create#type=custom) tab where you can search and select one or multiple Zap Templates.
 
 ## Zap Manager Element
 ![](https://zapier.com/partner/_next/image?url=%2Fpartner%2Fimg%2Fzap-manager%2Fpreview2-dark-large.png&w=1920&q=75)
