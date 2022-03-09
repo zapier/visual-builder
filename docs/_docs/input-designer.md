@@ -92,7 +92,7 @@ Enter the fields as used in your API, as Zapier will pass the exact value users 
 
 ![Zapier dropdown with key value pairs](https://cdn.zapier.com/storage/photos/949f2aff9847ac14199f4884d0f4b861.png)
 
-If your API requires different values for the field than the text you want to show to users inside the dropdown menu in Zapier, you can make a key value pair that includes the value to send to your API, the sample value to show users (typically the same as the value), and a user-friendly label.
+If your API requires different values for the field than the text you want to show to users inside the dropdown menu in Zapier, you can make a key value pair that includes the value to send to your API, the sample value to show users ([should be the same as the value](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md#fieldchoicewithlabelschema)), and a user-friendly label.
 
 To do that, add each menu item inside curly brackets, with the sample, value, and label comma seperated, with the item listed first and the value listed second, both wrapped in quotes. Seperate each menu item with commas, and wrap the whole set in square brackets.
 
