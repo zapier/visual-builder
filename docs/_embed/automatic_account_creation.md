@@ -7,7 +7,7 @@ redirect_from: /partner_api/
 
 # Automatic Account Creation
 
-Save time and reduce friction for your users by having a Zapier account created on their behalf when using one of our produt embeds.  Users no longer need to worry about the hassle of signing up to a new service.
+Save time and reduce friction for your users by having a Zapier account created on their behalf when using one of our product embeds.  Users no longer need to worry about the hassle of signing up to a new service.
 
 <video controls loop src="https://cdn.zappy.app/29e94e1421ab8c4cbae09bcba07f2fdb.mp4" height="100%" width="100%"></video>
 
@@ -44,3 +44,4 @@ Below are just a few examples of services that offer being an identity provider.
   - Automatic Account Creation works out-of-the-box for all Zapier Embed offerings.
 - How does Automatic Account Creation differ from setting up an integration and enabling OAuth Authentication in the developer platform?
   - To provide flexibility to our partners we allow customizing these features independently of each other.  However, partners can choose to reuse the same `client_id`, `client_secret`, and endpoints for both features if desired.
+
