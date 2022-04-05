@@ -7,7 +7,7 @@ redirect_from: /partner_api/
 
 # Automatic Account Creation
 
-Save time and reduce friction for your users by having a Zapier account created on their behalf when using one of our produt embeds.  Users no longer need to worry about the hassle of signing up to a new service.
+Save time and reduce friction for your users by having a Zapier account created on their behalf when using one of our product embeds.  Users no longer need to worry about the hassle of signing up to a new service.
 
 <video controls loop src="https://cdn.zappy.app/29e94e1421ab8c4cbae09bcba07f2fdb.mp4" height="100%" width="100%"></video>
 
