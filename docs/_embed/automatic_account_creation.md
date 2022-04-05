@@ -44,3 +44,4 @@ Below are just a few examples of services that offer being an identity provider.
   - Automatic Account Creation works out-of-the-box for all Zapier Embed offerings.
 - How does Automatic Account Creation differ from setting up an integration and enabling OAuth Authentication in the developer platform?
   - To provide flexibility to our partners we allow customizing these features independently of each other.  However, partners can choose to reuse the same `client_id`, `client_secret`, and endpoints for both features if desired.
+
