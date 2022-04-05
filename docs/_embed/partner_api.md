@@ -793,3 +793,5 @@ All errors will be JSON object with a String array of errors:
   - `/zaps`
 
     - The endpoint will now return **all** Zaps regardless of the [Zapier CLI App's version](https://github.com/zapier/zapier-platform-cli) that was used when creating the Zap.
+  
+  
