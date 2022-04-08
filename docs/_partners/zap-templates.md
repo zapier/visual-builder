@@ -206,8 +206,6 @@ Once you've written and added your Zap Template title and description, it's time
 
 You should then try using the Zap Template to make sure it works as expected. Open your [Zap Template dashboard](https://zapier.com/zap-templates/), click the gear icon beside the Zap Template you built, and select _Copy Link_. Open that link in a new tab or window, and follow the steps to set up and turn on the Zap—and make sure everything looks and works correctly.
 
-Optionally, you can let your team help test Zap Templates as well. When saving your Zap Template, choose `Shared` instead of draft, then share its link with others on your team so they can try the Zap Template.
-
 <a id="submit-your-zap-templates"></a>
 
 ### 5. Submit Zap Template for Review
