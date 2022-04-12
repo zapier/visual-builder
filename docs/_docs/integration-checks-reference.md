@@ -759,6 +759,12 @@ Zap run in recent history.
 To ensure any show-stopping bugs are worked out, every visible trigger/search/action
 of your integration should have a live Zap that demonstrates it works.
 
+You can create a [new Zapier account](https://zapier.com/help/account/billing-pricing/get-started-with-your-free-zapier-trial)
+with a 14-day trial and [add it as an admin](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations)
+of your integration if you need extra Zaps to clear this validation.
+
+You can also [contact us](https://developer.zapier.com/contact) if you need a trial extension.
+
 ---
 
 <a name="S003"></a><a name="S00003"></a>
