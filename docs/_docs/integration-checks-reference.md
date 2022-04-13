@@ -490,8 +490,8 @@ New Contact
 In order to highlight your most popular steps and give the user a clear
 recommendation of what to use Zapier for, we encourage the use of "important" steps.
 
-These can be adjusted in the settings for each individual step, either via a
-checkbox (Platform UI) or via the `important` property (Platform CLI).
+These can be adjusted in the settings for each individual step, either via the
+Visibility Options dropdown menu (Platform UI) or via the `important` property ([Platform CLI Basic Display Schema](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md#basicdisplayschema)).
 
 ---
 
@@ -503,8 +503,8 @@ In order to highlight your most popular steps and give the user a clear
 recommendation of what to use Zapier for, we encourage a limited number of
 "important" steps.
 
-These can be adjusted in the settings for each individual step, either via a
-checkbox (Platform UI) or via the `important` property (Platform CLI).
+These can be adjusted in the settings for each individual step, either via the
+Visibility Options dropdown menu (Platform UI) or via the `important` property ([Platform CLI Basic Display Schema](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md#basicdisplayschema)).
 
 ---
 
