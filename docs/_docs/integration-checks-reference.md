@@ -761,7 +761,7 @@ of your integration should have a live Zap that demonstrates it works.
 
 You can create a [new Zapier account](https://zapier.com/help/account/billing-pricing/get-started-with-your-free-zapier-trial)
 with a 14-day trial and [add it as an admin](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations)
-of your integration if you need extra Zaps to clear this validation.
+of your integration if you need extra Zaps.
 
 You can also [contact us](https://developer.zapier.com/contact) if you need a trial extension.
 
