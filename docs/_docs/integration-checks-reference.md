@@ -748,7 +748,10 @@ a new integration.
 
 To verify user demand, there should be at least 3 users who have a live Zap using
 this integration. "Live" means the Zaps are switched on with at least one successful
-Zap run in recent history.
+[Zap run in recent history](https://zapier.com/help/manage/history/view-and-manage-your-zap-history).
+
+You can [invite others to test your integration](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations)
+before publication.
 
 ---
 
