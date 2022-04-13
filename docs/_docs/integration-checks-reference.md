@@ -757,11 +757,13 @@ Zap run in recent history.
 ## S002 - One Live Zap for Each Trigger/Search/Action
 
 To ensure any show-stopping bugs are worked out, every visible trigger/search/action
-of your integration should have a live Zap that demonstrates it works.
+of your integration should have a live Zap that demonstrates it works. "Live" means
+the Zaps are switched on with at least one successful
+[Zap run in recent history](https://zapier.com/help/manage/history/view-and-manage-your-zap-history).
 
 You can create a [new Zapier account](https://zapier.com/help/account/billing-pricing/get-started-with-your-free-zapier-trial)
-with a 14-day trial and [add it as an admin](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations)
-of your integration if you need extra Zaps.
+and [invite it to your integration](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations)
+if you need extra Zaps.
 
 You can also [contact us](https://developer.zapier.com/contact) if you need a trial extension.
 
