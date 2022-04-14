@@ -31,7 +31,7 @@ We strive to give users a consistent experience throughout Zapier. Be sure to fo
 
 ## Make Connecting New Accounts Easy
 
-Connecting to Zapier must be easy for the user. OAuth v2 is the preferred authentication scheme; otherwise, users must be able to easily retrieve or generate an API Key or other credentials themselves without needing support. Both authentication and test authentication requests should return actionable, user-friendly error messages to guide users in successfully connecting their account.
+Connecting to Zapier must be easy for the user. OAuth v2 is the preferred authentication scheme; otherwise, users must be able to easily retrieve or generate an API Key or other credentials themselves without needing support. Both authentication and test authentication requests should return actionable, user-friendly error messages to guide users in successfully connecting their accounts.
 
 ## Ensure Your Integration is Complete and Platform Consistent
 
