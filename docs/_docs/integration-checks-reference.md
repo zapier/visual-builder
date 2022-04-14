@@ -11,8 +11,7 @@ We run your integration through a set of automated checks to ensure it's working
 
 To [publish your integration](https://platform.zapier.com/partners/lifecycle-planning#3-publish-your-integration-to-the-app-directory), all Errors and Publishing Tasks should be validated. You can address any Warnings after [submitting your integration for review](https://platform.zapier.com/partners/lifecycle-planning#4-submit-your-integration-for-review-by-the-zapier-team).
 
-If your integration will remain private, it isn't necessary to clear validation checks. You can [invite others to test your integration](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations)
-before publication.
+If your integration will remain private, it isn't necessary to clear validation checks. You can [invite others to test your integration](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations) before publication.
 
 To help better address a check in communication, each check is given a unique ID, consisting of a capital letter and three digits, such as `D001`.
 
