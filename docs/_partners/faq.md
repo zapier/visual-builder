@@ -61,7 +61,7 @@ Zapier's Platform team has a [community](https://community.zapier.com/developer-
 
 For questions, email [partners@zapier.com](mailto:partners@zapier.com), where our Platform team can help resolve issues you encounter while building Zapier integrations, and our Partnerships team can help launch them.
 
-If you have issues with Zaps or core Zapier account, please reach out to [contact@zapier.com](mailto:contact@zapier.com). Our support team is best equip with the most recent logs and other details to assist you.
+If you have issues with Zaps or core Zapier account, please reach out to [contact@zapier.com](mailto:contact@zapier.com). Our support team is best equipped with the most recent logs and other details to assist you.
 
 ### Find a Zapier Integration Partner
 
