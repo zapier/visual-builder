@@ -14,24 +14,24 @@ Zapier's platform runs basic automated checks to prevent situations that may bre
 
 Here are some commonly encountered errors and breaking changes to watch out for, with suggested solutions:
 
-> **Note:** You can also always choose not to migrate users, and follow our [deprecation process](https://platform.zapier.com/cli_tutorials/versions#deprecate-an-older-version-of-your-integration).
+> **Note:** You can also always choose to promote an incompatible version, not migrate users, and either follow our [deprecation process](https://platform.zapier.com/cli_tutorials/versions#deprecate-an-older-version-of-your-integration) or leave them on the old version.
 
 ### You cannot remove or update keys for existing Triggers, Actions, and Searches.
 
 You will see a similar error to the one below from our automated checks:
 `vX.X is missing the following keys: {<list of missing keys>}. Hide them instead of removing them.`
 
-The Triggers, Actions, and Searches are identified by their **key**, so if you remove it, or change its **key**, this message appears.
+The Triggers, Actions, and Searches are identified by their **key**, such as `new_contact` or `create_post`, so if you remove it, or change its **key**, this message appears.
 
 There are two solutions:
 
-- If you need to remove a Trigger/Action/Search, change its visibility to **hidden** instead.
+- If you need to remove a Trigger/Action/Search, change its visibility to **hidden** instead. Use the Visibility Options dropdown in the [UI](https://platform.zapier.com/docs/triggers#1-configure-trigger-settings), or the `hidden` key in the [CLI](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema).
 - If you've renamed the **key** for a Trigger/Action/Search, you'll need to switch it back to the previous **key**.
 
 ### You cannot change the authentication type
 
 You will see a similar error to the one below from our automated checks:
-`You cannot migrate users between auth types (from "{}" to "{}").`
+`You cannot migrate users between auth types (from "X" to "Y").`
 
 Changing an integration's authentication type (such as Basic Auth, API Key, or OAuth) to a different one is a pretty big change, because existing connected accounts will stop working for their Zaps if you migrate users. In this case, we suggest not migrating users and following the [deprecation process](https://platform.zapier.com/cli_tutorials/versions#deprecate-an-older-version-of-your-integration).
 
@@ -51,7 +51,7 @@ This is a pretty big change, because it means all of the accounts already setup 
 There are two solutions:
 
 - Leave the field as "optional", and use custom code in your API call to set a value if left blank.
-- [contact us](mailto:partners@zapier.com), and we'll try to help find the best approach.
+- [Contact us](https://developer.zapier.com/contact), and we'll try to help find the best approach.
 
 ### You cannot change an existing Trigger's type (Polling vs REST Hooks).
 
