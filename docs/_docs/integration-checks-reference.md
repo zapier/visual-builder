@@ -7,7 +7,13 @@ redirect_from: /docs/
 
 # Integration Checks Reference
 
-We run your integration through a set of automated checks to ensure it's working property and giving our users the best possible experience. To help better address a check in communication, each check is given a unique ID, consisting of a capital letter and three digits, such as `D001`.
+We run your integration through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience. 
+
+To [publish your integration](https://platform.zapier.com/partners/lifecycle-planning#3-publish-your-integration-to-the-app-directory), all Errors and Publishing Tasks should be validated. You can address any Warnings after [submitting your integration for review](https://platform.zapier.com/partners/lifecycle-planning#4-submit-your-integration-for-review-by-the-zapier-team).
+
+If your integration will remain private, it isn't necessary to clear validation checks. You can [invite others to test your integration](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations) before publication.
+
+To help better address a check in communication, each check is given a unique ID, consisting of a capital letter and three digits, such as `D001`.
 
 You don't need to know the implication of the initial capitial letter. But if you're curious, they are:
 
