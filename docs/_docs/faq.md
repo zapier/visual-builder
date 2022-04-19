@@ -63,6 +63,19 @@ If you wish to switch back to the form mode, click the _Switch to Form Mode_ but
 
 You may switch back to code mode again—though this time, Zapier will show the last saved version of your code, and will not copy any changes from your API call form to the code.
 
+Here are some resources that will be helpful when using the Code Mode: 
+- [HTTP Request Options](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#http-request-options)
+- [HTTP Response Object](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#http-response-object)
+- [HTTP Requests](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#manual-http-requests)
+- [Dynamic Dropdowns](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#dynamic-dropdowns)
+- [Return Types for Triggers, actions and searches](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#return-types)
+- [The Bundle Object](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#bundle-object)
+- [Accessing Environment Variables](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#accessing-environment-variables)
+- [When to use placeholders or curlies vs template literals](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#when-to-use-placeholders-or-curlies)
+- [Error Handling](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#error-handling)
+- [Error Response Handling](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#error-response-handling)
+- Schema Docs: [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-schema@10.2.0/packages/schema/docs/build/schema.md), [9.6.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-schema@9.6.0/packages/schema/docs/build/schema.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-schema@8.4.2/packages/schema/docs/build/schema.md)
+
 ## Is my Zapier integration using the Form or Code Mode settings?
 
 Zapier uses the currently visible option when running each part of your integration. If the form mode is visible for an API call in an integration's authentication, trigger, or action settings, that Zapier integration is using the data from form mode. If the code mode is visible for an API call, Zapier is using the code instead to turn that part of the integration.
