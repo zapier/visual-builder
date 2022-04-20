@@ -675,7 +675,7 @@ You'll use the `create_url` (available in a [Zap template object](/partner_api/e
 
 You can prefill the name of a Trello card (field: `name`) in the second step of the Zap template:
 
-`https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=hello`
+`https://api.zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=hello`
 
 Here's what it would look like in the editor:
 
