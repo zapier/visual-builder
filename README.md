@@ -59,7 +59,7 @@ You should now have all of the packages installed and are ready to get up an run
 bundle exec jekyll serve
 ```
 
-Go to 127.0.0.1:4000 in your browser and you'll be viewing a local instance of the Zapier Retreats. Now you can make updates to the site and see them change instantly in your browser! :rocket:
+Go to <http://localhost:4000> in your browser and you'll be viewing a local instance of the Zapier Platform. Now you can make updates to the site and see them change instantly in your browser! :rocket:
 
 :writing_hand: Ready to make some changes? Check out our [contributing guidelines](CONTRIBUTING.md).
 

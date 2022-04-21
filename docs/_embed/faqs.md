@@ -1,6 +1,6 @@
 ---
 title: FAQs
-order: 6
+order: 7
 layout: post
 redirect_from: /partner_api/
 ---

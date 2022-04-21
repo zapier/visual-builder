@@ -1,6 +1,6 @@
 ---
 title: Automatic Account Creation
-order: 4
+order: 5
 layout: post
 redirect_from: /partner_api/
 ---
