@@ -48,9 +48,6 @@ You'll use the `create_url` (available in a [Zap template object](/partner_api/e
 
 You can prefill the name of a Trello card (field: `name`) in the second step of the Zap template:
 
-<!-- Should we use webintent URLs? -->
-<!-- > `https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=hello` -->
-
 > `https://api.zapier.com/v1/embed/trello/create/113?steps[1][params][name]=hello`
 
 - `template=113`
@@ -63,8 +60,6 @@ Here's what it would look like in the editor:
 
 You can prefill multiple values for the user. In this example `name` and `desc` are prefilled
 
-<!-- > `https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=yoyoyo&steps[1][params][desc]=yeehaw` -->
-
 > `https://api.zapier.com/v1/embed/trello/create/113?steps[1][params][name]=yoyoyo&steps[1][params][desc]=yeehaw`
 
 - `template=113`
@@ -74,8 +69,6 @@ You can prefill multiple values for the user. In this example `name` and `desc` 
 ![Zap Editor showing "yoyoyo" pre-filled into the name field, and "yeehaw" pre-filled into the description field of a new Zap titled Create Card in Trello](https://cdn.zappy.app/35882f8b86dade9e41c13cdbd0baf03c.png)
 
 You can provide a label for prefill dropdowns as we won't fetch all of the pages of choices until the user opens the dropdown:
-
-<!-- > `https://zapier.com/webintent/create-zap/?template=113&steps[1][params][board]=1234&steps[1][meta][parammap][board]=Test` -->
 
 > `https://api.zapier.com/v1/embed/trello/create/113?steps[1][params][board]=1234&steps[1][meta][parammap][board]=Test`
 
