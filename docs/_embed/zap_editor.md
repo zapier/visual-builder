@@ -17,10 +17,10 @@ By embedding our Zap Editor in your product, your users can create and edit thei
 Use the Partner API to query the public Zap templates featuring your integration (using the [`GET /v1/zap-templates`](./partner-api#get-v1zap-templates) endpoint) and feature them in your product. When a user chooses a Zap template they’d like to try, use the `create_url` value as the source to load in an embedded frame such as:
 
 ```html
-<iframe src="https://zapier.com/partner/embed/trello/create/113"></iframe>
+<iframe src="https://api.zapier.com/v1/embed/trello/create/113"></iframe>
 ```
 
-Where `https://zapier.com/partner/embed/trello/create/113` is the `create_url` value of the Zap template.
+Where `https://api.zapier.com/v1/embed/trello/create/113` is the `create_url` value of the Zap template.
 
 Optionally, you can add additional parameters to the `create_url` to prefill the user’s Zap with custom values (e.g., specifying a workspace for the trigger to filter by).
 
@@ -48,7 +48,10 @@ You'll use the `create_url` (available in a [Zap template object](/partner_api/e
 
 You can prefill the name of a Trello card (field: `name`) in the second step of the Zap template:
 
-> `https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=hello`
+<!-- Should we use webintent URLs? -->
+<!-- > `https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=hello` -->
+
+> `https://api.zapier.com/v1/embed/trello/create/113?steps[1][params][name]=hello`
 
 - `template=113`
 - `steps[1][params][name]=hello`
@@ -60,7 +63,9 @@ Here's what it would look like in the editor:
 
 You can prefill multiple values for the user. In this example `name` and `desc` are prefilled
 
-> `https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=yoyoyo&steps[1][params][desc]=yeehaw`
+<!-- > `https://zapier.com/webintent/create-zap/?template=113&steps[1][params][name]=yoyoyo&steps[1][params][desc]=yeehaw` -->
+
+> `https://api.zapier.com/v1/embed/trello/create/113?steps[1][params][name]=yoyoyo&steps[1][params][desc]=yeehaw`
 
 - `template=113`
 - `steps[1][params][name]=yoyoyo`
@@ -70,7 +75,9 @@ You can prefill multiple values for the user. In this example `name` and `desc` 
 
 You can provide a label for prefill dropdowns as we won't fetch all of the pages of choices until the user opens the dropdown:
 
-> `https://zapier.com/webintent/create-zap/?template=113&steps[1][params][board]=1234&steps[1][meta][parammap][board]=Test`
+<!-- > `https://zapier.com/webintent/create-zap/?template=113&steps[1][params][board]=1234&steps[1][meta][parammap][board]=Test` -->
+
+> `https://api.zapier.com/v1/embed/trello/create/113?steps[1][params][board]=1234&steps[1][meta][parammap][board]=Test`
 
 - `template=113`
 - `steps[1][params][board]=1234`
