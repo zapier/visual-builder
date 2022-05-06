@@ -38,4 +38,4 @@ Want to embed specific Zap Templates instead? Simply select the [Custom selected
 
 Our Zap Manager Element lets your users see the Zaps they've set up with your app directly inside your product. They can view their Zaps and see their status at a glance without having to go through Zapier first.
 
-Once you [request access](https://zapier.typeform.com/to/tzFDFLsm) using our [Zap Manager generator](https://zapier.com/partner/embed/zap-manager/create), you'll get a client ID, which you can use to generate your specific code. All you need to do is copy and paste! Then, once inside your product, your users will have the option to log into Zapier, where their Zaps will be displayed. 
+Access your integration in the [Developer Platform](https://developer.zapier.com/) to obtain your client ID, which you can use to generate your specific code. All you need to do is copy and paste! Then, once inside your product, your users will have the option to log into Zapier, where their Zaps will be displayed. 

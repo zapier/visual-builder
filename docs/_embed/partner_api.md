@@ -28,8 +28,7 @@ With the Partner API, you can:
 - Show users the Zaps they have set up from right within your product keeping them on your site longer and giving them complete confidence in their Zapier integration.
 - [Embed our Zap Editor](./zap-editor/) to allow your users to create new Zaps and modify existing ones, without needing to leave your product.
 
-**Before you start**
-This API requires approval from Zapier’s team. [Click here to fill out a form to request access.](https://zapier.typeform.com/to/atnWuF)
+Access your integration in the [Developer Platform](https://developer.zapier.com/) to obtain your client ID, which you can used to call the Partner API.
 
 ## Authentication
 
