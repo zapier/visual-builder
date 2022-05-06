@@ -1532,7 +1532,7 @@ _/
 
     // Returned string will be used as a Connection Label.
     // Please note it should be short and easily identifiable
-    return 'contact@zapier.com';
+    return 'partners@zapier.com';
 
 }
 };
@@ -1679,7 +1679,7 @@ var b64data = btoa("this is my string to turn into base64");
 
 ### Hydration & Dehydration
 
-> Hydration & dehydration is an experimental feature! Contact us if you need a hand at [contact@zapier.com](contact@zapier.com).
+> Hydration & dehydration is an experimental feature! [Contact us](https://developer.zapier.com/contact) if you need a hand.
 
 Dehydration is what we call the creation of a pointer to some data, this is what you'll normally use to provide data that may not be needed now but could the future.
 

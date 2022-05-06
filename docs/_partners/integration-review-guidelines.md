@@ -29,7 +29,7 @@ Before submitting your Zapier integration for review, make sure you are familiar
 * Ensure your integration is complete, and you've tested your integration by creating test Zaps on your end that check for bugs, edge cases, and errors.
 * Focus on key use cases. Check similar integrations in [Zapier’s App Directory](https://zapier.com/integrations/) to get some ideas on which items to include in your integration and keep your first release lean. You can always add more functionality later.
 * Ensure all integration information and metadata is complete and accurate. Be sure to follow [Zapier’s standards for integration branding](https://platform.zapier.com/partners/planning-guide#how-to-brand-your-zapier-integration) to help your integration fit into the Zapier ecosystem well.
-* Provide an active demo account and login credentials, plus any other resources that might be needed to review your integration (e.g. login credentials to your product under [contact@zapier.com](mailto:contact@zapier.com) as the username/email and dummy credit card credentials used to test making purchases, if applicable to your integration). We test each trigger/action/search in your integration, so please provide us with access to the appropriate platforms and resources to do so.
+* Provide an active demo account and login credentials, plus any other resources that might be needed to review your integration (e.g. login credentials to your product under integration-testing@zapier.com as the username/email and dummy credit card credentials used to test making purchases, if applicable to your integration). We test each trigger/action/search in your integration, so please provide us with access to the appropriate platforms and resources to do so.
 * Test early with real users. Use our [invite links to beta test](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations) the integration.
 * Enable backend services so they’re live and accessible during review.
 * Include detailed explanations of non-obvious features in the publishing request notes, including supporting documentation where appropriate. If we cannot understand aspects of your integration during the review, we may reject it.
@@ -58,7 +58,7 @@ The terminology and features in your Zapier integration should be consistent wit
 ### 1.5 Valid Test Account
 The Zapier team verifies each trigger, action,and search in the integration to verify they function consistently with the platform. To do so, please set up a valid test account on your platform and share the test credentials with our team via the publishing form. Further requirements for the test account are below:
 
-* Create the test account using [contact@zapier.com](mailto:contact@zapier.com), so we have access to the Forgot Password flow.
+* Create the test account using integration-testing@zapier.com, so we have access to the Forgot Password flow.
 * Make sure the account includes all the features enabled needed to test out each Zap step with any special configurations set. All paid/premium features required for testing should be unlocked.
 * Ensure the account is non-expiring and not under a trial to avoid any interruption during your review and going forward even after your integration goes live. Our team will need occasional access for troubleshooting and testing while supporting our mutual users
 * Provide a demo video or detailed documentation to the Zapier team if testing any features requires an environment that is difficult to replicate or requires specific hardware.
