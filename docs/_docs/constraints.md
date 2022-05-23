@@ -237,6 +237,12 @@ There are a number of throttles that a Zapier user could encounter when using yo
 - Converting your trigger to be REST Hook based. Webhook limits are much expanded (up to 10,000 requests in a 5 minute period).
 - Add support for Transfer. This is a new Zapier service that supports paging so users can create a Zap to select and batch transfer up to 25,000 records at one time. More [here](https://platform.zapier.com/docs/transfer).
 
+# Error messages
+
+When writing user-facing error messages, keep the message below 250 characters total. Zapier truncates errors from integrations at 250 characters when displaying them to users.
+
+As an integration developer, you'll be able to see more detail in your [Monitoring](https://platform.zapier.com/docs/testing#monitoring) page, including the error stacktrace.
+
 # Important Zapier constraints summary
 
 | Time Limits                                                |            |
