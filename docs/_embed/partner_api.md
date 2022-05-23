@@ -383,6 +383,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
             "description": "Typeform helps you ask awesomely online! If you ever need to run a survey, questionnaire, form, contest etc... Typeform will help you achieve it beautifully across all devices, every time, using its next generation platform.",
             "hex_color": "8bcbca",
             "id": 4259,
+            "uuid": " b9df4eff-f311-44f9-ac54-2901f952c6ac",
             "image": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.png",
             "images": {
               "url_128x128": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.128x128.png",
@@ -402,6 +403,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
             "description": "Trello is team collaboration tool that lets you organize anything and everything to keep your projects on task.",
             "hex_color": "0079bf",
             "id": 4192,
+            "uuid": " b9df4eff-f311-44f9-ac54-2901f952c6ac",
             "image": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.png",
             "images": {
               "url_128x128": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.128x128.png",
@@ -430,6 +432,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
             "description": "Typeform helps you ask awesomely online! If you ever need to run a survey, questionnaire, form, contest etc... Typeform will help you achieve it beautifully across all devices, every time, using its next generation platform.",
             "hex_color": "8bcbca",
             "id": 4259,
+            "uuid": "ca83afc5-ee9a-470d-b577-e7f8fd555b67",
             "image": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.png",
             "images": {
               "url_128x128": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.128x128.png",
@@ -449,6 +452,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&para
             "description": "Trello is team collaboration tool that lets you organize anything and everything to keep your projects on task.",
             "hex_color": "0079bf",
             "id": 4192,
+            "uuid": "fa55afc5-dd9a-890d-c8b7-a7f8fd777b67",
             "image": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.png",
             "images": {
               "url_128x128": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.128x128.png",
