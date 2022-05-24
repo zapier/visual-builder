@@ -673,12 +673,14 @@ All errors will be JSON object with a String array of errors:
     - The endpoint `/v1/zaps` exposes the `uuid` attribute to each step app. This attribute is a UUID v4 string.
 
 - 2021-08-03
+  
   - Added attribute to `v1/zap-templates`
   
     - The endpoint `/v1/zap-templates` exposes the `uuid` attribute to each step. This attribute is a UUID v4 string.
 
 - 2021-07-29
   - Added `v1/profiles/me`
+  
     - The endpoint return information about the user whose `access_token` is authorized.
   
     - Check the endpoint [documentation](https://platform.zapier.com/partner_api/endpoints#get-v1profilesme) for the payload structure.
