@@ -11,6 +11,8 @@ Our user's security is paramount. By default, we deny any embedding of our produ
 
 ![](https://zappy.zapier.com/d417e90269bb019fcbe5718d18eb572d.png)
 
+**NOTE:** the App Directory and Zap Template Elements are exempt from this as users are required to log in to their Zapier account after clicking on a Zap Template link.
+
 To provide us a list of unique domains you'll embed Zapier in:
 
 - if you've already embedded our Product, you're in luck! We should have already captured this and have permitted your product domains. Should we have missed any, please [reach out to us](mailto:partners@zapier.com) so we can add your domain.
