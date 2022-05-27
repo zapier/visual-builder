@@ -108,7 +108,7 @@ For example, if our API expected a value of `1` or `2`, but `1` actually means `
   {
     "sample": "2",
     "value": "2",
-    "label": "Fish"`
+    "label": "Fish"
   }
 ]
 ```
