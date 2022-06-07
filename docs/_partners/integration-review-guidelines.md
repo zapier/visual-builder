@@ -140,7 +140,7 @@ For security purposes, all API endpoints used by in integration must use HTTPS v
 ## 4. Triggers
 
 ### 4.1 Important Triggers
-* As mentioned above, we allow integrations to set a maximum of three triggers as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/triggers#how-to-add-a-new-trigger-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer triggers, generally you should set them all as ‘Important’.
+We allow integrations to set a maximum of three triggers as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/triggers#how-to-add-a-new-trigger-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer triggers, generally you should set them all as ‘Important’.
 
 ### 4.2 Copy
 Any copy associated with a trigger should match the copy, text, and terminology used in your product’s UI. This includes the trigger’s name, description, input fields, help text, output fields, etc. For instance, since Dropbox calls directories "folders" in their product UI, the respective trigger in [their Zapier integration](https://zapier.com/integrations/dropbox/integrations#triggers-and-actions) refers to "folders" instead of "directories". If your API uses different terminology than your product’s UI, match the UI as users are most familiar with this - not the API.
@@ -248,7 +248,7 @@ Users should never receive a successful response if there was an error in the re
 ## 5. Actions
 
 ### 5.1 Important Actions
-* As mentioned above, we allow integrations to set a maximum of three actions as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer actions, generally you should set them all as ‘Important’.
+We allow integrations to set a maximum of three actions as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer actions, generally you should set them all as ‘Important’.
 
 ### 5.2 Copy
 The copy for actions should match your product’s UI. This includes the action’s name, description, input fields, help text, etc. For instance, since Dropbox calls directories "folders" in their product UI, the Zapier integration should refer to "folders" in the respective action. If the API uses different terminology than your product’s UI, match the UI - not the API.
@@ -341,7 +341,7 @@ Avoid delete actions which make it easy for users to accidentally delete data th
 ## 6. Searches
 
 ### 6.1 Important Searches
-* As mentioned above, we allow integrations to set a maximum of three searches as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or less searches, generally you should set them all as ‘Important’. Important searches are displayed first to users in thee Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
+We allow integrations to set a maximum of three searches as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or less searches, generally you should set them all as ‘Important’.
 
 ### 6.2 Find or Create
 Search actions can optionally create items if nothing is found in the search. If your integration has a ‘Create-or-Update’ action, please implement a ‘Find-or-Create Search’ with an ‘Update’ action versus a ‘Search’ with a ‘Create-or-Update’ action or a standalone ‘Create-or-Update’ action.
