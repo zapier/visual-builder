@@ -41,7 +41,7 @@ Before submitting your Zapier integration for review, make sure you are familiar
 If you haven’t used Zapier before, [sign up](https://zapier.com/sign-up/) for a free account and try a few popular integrations before building your integration. This will help you understand how Zapier works, how your users will set up Zaps, and how your integration can best fit into Zap workflows.
 
 ### 1.2 Key Use Cases
-Your initial triggers, actions, and searches should focus on the main use cases of your platform. Check similar integrations in [Zapier’s App Directory](https://zapier.com/integrations/) to get some ideas on which items to include in your integration. Do not include more than 5 (of each) triggers, actions, or searches or you will receive push back to hide the less popular use cases at the start of the review. If you feel your integration requires more than the maximum 5 to be valuable to users, please reach out to [partners@zapier.com](mailto:partners@zapier.com) with the proposed use cases. *After your integration is reviewed and launched to Public, you may add additional triggers, actions, and searches without another full review.*
+Your triggers, actions, and searches should focus on the main use cases of your platform. Check similar integrations in [Zapier’s App Directory](https://zapier.com/integrations/) to get some ideas on which items to include in your integration.
 
 ### 1.3. Integration Testing
 Test your integration early and often, both internally and externally during the build stage. This will help you catch bugs and identify any usability issues early on that you otherwise will be asked to address during the review process, which may extend the time to launch.
@@ -139,11 +139,8 @@ For security purposes, all API endpoints used by in integration must use HTTPS v
 
 ## 4. Triggers
 
-### 4.1 Maximum Number of Triggers
-The first launch of your integration should include no more than **three important triggers**, and **five total triggers** representing the top use cases of your integration. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers) before you start building out triggers. Iterate and add more triggers over time with user feedback once the integration is public.
-
-#### 4.1.1 Important Triggers
-* As mentioned above, we allow integrations to set a maximum of three triggers as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/triggers#how-to-add-a-new-trigger-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer triggers, generally you should set them all as ‘Important’.
+### 4.1 Important Triggers
+We allow integrations to set a maximum of three triggers as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/triggers#how-to-add-a-new-trigger-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer triggers, generally you should set them all as ‘Important’.
 
 ### 4.2 Copy
 Any copy associated with a trigger should match the copy, text, and terminology used in your product’s UI. This includes the trigger’s name, description, input fields, help text, output fields, etc. For instance, since Dropbox calls directories "folders" in their product UI, the respective trigger in [their Zapier integration](https://zapier.com/integrations/dropbox/integrations#triggers-and-actions) refers to "folders" instead of "directories". If your API uses different terminology than your product’s UI, match the UI as users are most familiar with this - not the API.
@@ -250,11 +247,8 @@ Users should never receive a successful response if there was an error in the re
 
 ## 5. Actions
 
-### 5.1 Maximum Number of Actions
-The first launch of your integration should include no more than **three important actions**, and **five total actions** representing the top use cases of your integration. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your actions. You can iterate and add more actions over time with user feedback.
-
-#### 5.1.1 Important Actions
-* As mentioned above, we allow integrations to set a maximum of three actions as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer actions, generally you should set them all as ‘Important’.
+### 5.1 Important Actions
+We allow integrations to set a maximum of three actions as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer actions, generally you should set them all as ‘Important’.
 
 ### 5.2 Copy
 The copy for actions should match your product’s UI. This includes the action’s name, description, input fields, help text, etc. For instance, since Dropbox calls directories "folders" in their product UI, the Zapier integration should refer to "folders" in the respective action. If the API uses different terminology than your product’s UI, match the UI - not the API.
@@ -346,11 +340,8 @@ Avoid delete actions which make it easy for users to accidentally delete data th
 
 ## 6. Searches
 
-### 6.1 Maximum Number of Searches
-The first launch of your integration should include no more than **three important searches**, and **five total searches** representing the top use cases of your integration. We recommend reviewing the guidelines in our [Planning Guide](https://zapier.com/developer/documentation/v2/planning-guide-v1/#how-design-successful-triggers), before you start building your searches. You can iterate and add more searches over time with user feedback.
-
-#### 6.1.1 Important Searches
-* As mentioned above, we allow integrations to set a maximum of three searches as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or less searches, generally you should set them all as ‘Important’. Important searches are displayed first to users in thee Zap Editor, while non-important ones will be collapsed under a ‘Show More’ link.
+### 6.1 Important Searches
+We allow integrations to set a maximum of three searches as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or less searches, generally you should set them all as ‘Important’.
 
 ### 6.2 Find or Create
 Search actions can optionally create items if nothing is found in the search. If your integration has a ‘Create-or-Update’ action, please implement a ‘Find-or-Create Search’ with an ‘Update’ action versus a ‘Search’ with a ‘Create-or-Update’ action or a standalone ‘Create-or-Update’ action.
