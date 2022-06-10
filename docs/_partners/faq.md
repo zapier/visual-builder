@@ -39,7 +39,7 @@ Only submit your integration for review when it is complete and ready to be publ
 
 ## Provide a Valid Test Account
 
-When submitting your integration for review, make sure to include a valid, non-expiring test account under contact@zapier.com. During the review and going forward after launch, our team may need occasional access for troubleshooting support issues. Please ensure the account is not under a trial and all necessary paid/premium features are unlocked.
+When submitting your integration for review, we require a valid, non-expiring test account under `integration-testing@zapier.com`. During the review and going forward after launch, our team may need occasional access for troubleshooting support issues. Please ensure the account is not under a trial and all necessary paid/premium features are unlocked.
 
 ## Avoid Misleading or Malicious Functionality
 
@@ -57,11 +57,11 @@ Can't find the answer you need here or in Zapier's [integration planning guide](
 
 Zapier's Platform team has a [community](https://community.zapier.com/developer-discussion-13) dedicated to helping developers with new and existing integrations. We're a worldwide team, so there's usually someone around to answer your questions. We'd love to hear about your experience building on Zapier.
 
-### Email Zapier's Platform Team
+### Contact Zapier's Platform Team
 
-For questions, email [partners@zapier.com](mailto:partners@zapier.com), where our Platform team can help resolve issues you encounter while building Zapier integrations, and our Partnerships team can help launch them.
+For questions about the developer platform and partnerships, [contact us through our help center](https://developer.zapier.com/contact), where our Platform Support team can help resolve issues you encounter while building Zapier integrations, and our Partnerships team can help with any launch questions.
 
-If you have issues with Zaps or core Zapier account, please reach out to [contact@zapier.com](mailto:contact@zapier.com). Our support team is best equipped with the most recent logs and other details to assist you.
+If you have issues with Zaps or core Zapier account, please reach out to [our support team](https://zapier.com/app/get-help). Our support team is best equipped with the most recent logs and other details to assist you.
 
 ### Find a Zapier Integration Partner
 

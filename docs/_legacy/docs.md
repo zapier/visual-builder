@@ -2379,7 +2379,7 @@ Content-Type: application/pdf
 
 ### Advanced Streaming via Scripting
 
-At this time we do no support advanced streaming of files via the scripting platform (for example, uploading a file to receive an attachment ID that gets mixed into the normal JSON for POSTing). We may support that in the future, please send us an [email](mailto:contact@zapier.com) if you have questions!
+At this time we do not support advanced streaming of files via the scripting platform (for example, uploading a file to receive an attachment ID that gets mixed into the normal JSON for POSTing). We may support that in the future, please [let us know](https://developer.zapier.com/contact) if you have questions!
 
 ---
 
