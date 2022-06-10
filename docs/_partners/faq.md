@@ -59,7 +59,7 @@ Zapier's Platform team has a [community](https://community.zapier.com/developer-
 
 ### Contact Zapier's Platform Team
 
-For questions about the developer platform and partnerships, [contact us through our help center](https://developer.zapier.com/contact), where our Platform Support team can help resolve issues you encounter while building Zapier integrations, and our Partnerships team can help any launch questions.
+For questions about the developer platform and partnerships, [contact us through our help center](https://developer.zapier.com/contact), where our Platform Support team can help resolve issues you encounter while building Zapier integrations, and our Partnerships team can help with any launch questions.
 
 If you have issues with Zaps or core Zapier account, please reach out to [our support team](https://zapier.com/app/get-help). Our support team is best equipped with the most recent logs and other details to assist you.
 
