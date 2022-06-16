@@ -23,7 +23,7 @@ Most Zapier triggers run when new items are added to an app, database, project, 
 
 To create a "new item" trigger, use an API endpoint that lists items in an array sorted in reverse chronological order. These are typically the most common API endpoints to read data from a platform. If your API lists items in a different order by default, but allows for sorting, include an order or sorting field in your API call.
 
-To create an "updated item" trigger, use an API endpoint that lists all items, both new and updated, or an endpoint that lists only updated items. Zapier needs a composite `id` field that changes whenever the item is updated (ideally `z.hash('md5', item.id + item.updated_at)`), so subsequent updates aren't be filtered out by Zapier's deduper. Again, this endpoint should return an array of items in reverse chronological, preferably by recency of update. Be sure to include details in your trigger description that lets users know which updates will run this trigger.
+To create an "updated item" trigger, use an API endpoint that lists all items, both new and updated, or an endpoint that lists only updated items. Zapier needs a composite `id` field that changes whenever the item is updated (ideally `z.hash('md5', item.id + item.updated_at)`), so subsequent updates aren't be filtered out by Zapier's deduper. Again, this endpoint should return an array of items in reverse chronological order, preferably by recency of update. Be sure to include details in your trigger description that lets users know which updates will run this trigger.
 
 # How to Add a New Trigger to a Zapier Integration
 
@@ -36,7 +36,7 @@ Start building your trigger by adding details about what this trigger does. You 
 Add each of the following to your trigger:
 
 - **Key**: A unique identifier for this trigger to reference it inside Zapier. Does not need to be the same identifier as used in your API. Not shown to users.
-- **Name**: A human friendly plain text name for this trigger, typically with an adjective such as _New_ or _Updated_ followed by the name of the item this watches for in your app. Shown inside the Zap editor and on Zapier's app directory marketing pages.
+- **Name**: A human-friendly plain-text name for this trigger, typically with an adjective such as _New_ or _Updated_ followed by the name of the item this watches for in your app. Shown inside the Zap editor and on Zapier's app directory marketing pages.
 - **Noun**: A single noun that describes what this trigger watches for, used by Zapier to auto-generate text in Zaps about your trigger.
 - **Description**: A plain text sentence that describes what the trigger does and when it should be used. Shown inside the Zap editor and on Zapier's app directory marketing pages.
 - **Visibility Options**: An option to select when this trigger will be shown. _Important_ is chosen by default. Choose _None_ if the trigger is not important, or choose _Hidden_ if this trigger should not be shown to users.
@@ -71,11 +71,11 @@ To add a polling trigger, select _Polling_ at the top of the settings page, then
 
 {% raw %}`{{bundle.inputData.key}}`{% endraw %}
 
-Otherwise, Zapier will automatically include any input field data as with the API call as URL parameters (for GET requests) or in the request body (for POST requests, e.g. for GraphQL APIs).
+Otherwise, Zapier will automatically include any input field data with the API call as URL parameters (for GET requests) or in the request body (for POST requests, e.g. for GraphQL APIs).
 
 If you plan to use this trigger to power dropdown menus in other Zap steps (such as to find users, projects, folders, and other app data often used to create new items), and if your API call can paginate data, check the _Support Paging_ box (see [more details on pagination](#pagination) below).
 
-If your API requires any additional data, you can add it using the _Show Options_ button to expose more detailed request configuration. Or, if needed, click the _Switch to Code Mode_ to write a custom API call in JavaScript code. The first time you switch to Code Mode, Zapier will translate the settings in the form to code so you can start with the basics already configured. If you switch back to Form Mode, though, Zapier will not transfer any changes made in Code Mode to the form.
+If your API requires any additional data, you can add it using the _Show Options_ button to expose more detailed request configuration. Or, if needed, click _Switch to Code Mode_ to write a custom API call in JavaScript code. The first time you switch to Code Mode, Zapier will translate the settings in the form to code so you can start with the basics already configured. If you switch back to Form Mode, though, Zapier will not transfer any changes made in Code Mode to the form.
 
 Once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
 
@@ -87,7 +87,7 @@ Alternately, if your app supports REST Hooks—webhook subscriptions that can be
 
 This will let your trigger run in near realtime with your app pushing data to Zapier, running Zaps as soon as new data comes into your app instead of waiting for Zapier to fetch new data from your API.
 
-With a REST Hook trigger, you need to add Subscribe and Unsubscribe API requests that Zapier can use to set up and remove the hook subscription. Zapier provides the subscription URL in the Subscribe request as {% raw %}`{{bundle.targetUrl}}`{% endraw %}.
+With a REST Hook trigger, you need to add Subscribe and Unsubscribe API requests that Zapier can use to set up and remove the hook subscription. Zapier provides the subscription URL in the Subscribe request as `bundle.targetUrl`.
 
 **Subscribe**
 
@@ -118,7 +118,7 @@ Both the Perform and Perform List methods should return arrays, even if they onl
 
 #### Sending Data to Zapier
 
-The object(s) within the arrays coming from Perform and Perform List should have the same data structure, so that live data will behave as expected based on the test data the user maps. See [Sample Data](./faq#output) in the FAQ for more details on this.
+The object(s) within the arrays coming from the Perform and Perform List methods should have the same data structure, so that live data will behave as expected based on the test data the user maps. See [Sample Data](./faq#output) in the FAQ for more details on this.
 
 If, for architectural reasons, your webhook will receive some data that shouldn't trigger the Zap, your code can return an empty array in those cases. If the Perform method returns an empty array, the Zap won't run.
 
