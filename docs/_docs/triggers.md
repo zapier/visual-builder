@@ -89,30 +89,30 @@ This will let your trigger run in near realtime with your app pushing data to Za
 
 With a REST Hook trigger, you need to add Subscribe and Unsubscribe API requests that Zapier can use to set up and remove the hook subscription. Zapier provides the subscription URL in the Subscribe request as `bundle.targetUrl`.
 
-**Subscribe**
+#### Subscribe
 
-Here's an example Subscribe request using Gitlab's API. Note that you'll need to make sure the parameters here match what your API expects.  In this case `url` is the field name that Gitlab expects to contain the webhook callback URL.
+Here's an example Subscribe request using Gitlab's API. Note that you'll need to make sure the parameters here match what your API expects.  In this case `url` is the field name that Gitlab expects to contain the webhook URL to send data to.
 
 ![](https://zappy.zapier.com/CF1A11AF-949A-4C74-AFCD-37F4F4C5B362.png)
 
 We recommend that a successful Subscribe response return a 201. The data returned should include any data needed to attempt a later Unsubscribe request. This data will be stored in `bundle.subscribeData`.
 
-**Unsubscribe**
+#### Unsubscribe
 
 When Zapier sends the request to your API to unsubscribe the webhook, it can reference any data that was returned during the Subscribe request and stored in `bundle.subscribeData`.
 
 ![](https://zappy.zapier.com/EF2923B4-B361-45A6-983C-BA2A57DC5623.png)
 
-**Perform List**
+#### Perform List
 
 In addition to the Subscribe and Unsubscribe requests, it's important to add a Perform List request where Zapier can check for recent items. This will be used to fetch data when users are setting up and testing the Zap. If you don't define a Perform List, then the user needs to go into your app and do something to generate a new event while the Zap editor waits for data, which is not an optimal experience.
 
 <a id="perform"></a>
-**Perform**
+#### Perform
 
 ![REST Hook Perform](https://cdn.zapier.com/storage/photos/5c6c154be13fbcad2a5dc8cb786f2dea.png)
 
-Finally, in the Perform, you can customize the code to evaluate the data your app's webhooks pass to Zapier. By default, Zapier includes `return [bundle.cleanedRequest];` to return the object from the webhook as an array. If your data needs to be transformed, or includes multiple objects, add custom code to parse the response data in `bundle.cleanedRequest` within the Perform and turn it into an array of objects, such as [this example code](https://github.com/zapier/zapier-platform/blob/master/example-apps/rest-hooks/triggers/recipe.js#L42).
+Finally, in the Perform, you can customize the code to evaluate the data your app's webhooks pass to Zapier. By default, Zapier includes `return [bundle.cleanedRequest];` to return the request data from the webhook as an array. If your data needs to be transformed, or includes multiple objects, add custom code to parse the response data in `bundle.cleanedRequest` within the Perform and turn it into an array of objects, such as [this example code](https://github.com/zapier/zapier-platform/blob/master/example-apps/rest-hooks/triggers/recipe.js#L42).
 
 Both the Perform and Perform List methods should return arrays, even if they only contain one object. The default Perform code adds an array around the cleaned webhook payload, so if your webhook already provides an array, you can remove this additional array and simply `return bundle.cleanedRequest;`.
 
@@ -124,17 +124,21 @@ If, for architectural reasons, your webhook will receive some data that shouldn'
 
 For data sent to Zapier via REST Hook, most requests will be successful and return a 200 status code with some request-tracking data. This indicates that Zapier has accepted the data, but it's still possible for errors to occur within the Zap if the structure of the provided data is unexpected.
 
-If your application receives repeated 4xx or 5xx failures from Zapier, this can be handled at your discretion. You may choose to try again later, or to stop sending data and deactivate the hook.
+When sending data:
+
+* Be mindful of Zapier's [rate limits](https://zapier.com/help/troubleshoot/behavior/rate-limits-and-throttling-in-zapier#step-4).
+* If your application receives a 410 response, that webhook subscription is no longer active, and you should stop sending data to it.
+* If your application receives repeated 4xx or 5xx failures from Zapier outside those error types, this can be handled at your discretion. You may choose to try again later, or to stop sending data and deactivate the hook.
 
 To signal that your app has deactivated the hook for any reason, you can optionally send a "reverse unsubscribe" call to Zapier. This can allow users to manage their subscriptions from inside your app, or permit you to clean up after a user deletes their account or revokes credentials. The request should be of the form `DELETE <target_url>`, where `target_url` is the unique target URL that was provided when the subscription was created. This will pause the Zap within Zapier.
 
 Once you've added your trigger settings, be sure to click the _Save API Request & Continue_ button to save the settings you've added.
 
-### Test Trigger API Calls
+## Test Trigger API Calls
 
 ![Test Zapier Trigger](https://cdn.zapier.com/storage/photos/120d65ddd8baed9d781c358b66078851.png)
 
-Once you've finished adding your polling or REST Hook trigger settings, it's time to make sure everything you've built so far works and fetches the correct data from Zapier. 
+Once you've finished adding your polling or REST Hook trigger settings, it's time to make sure everything you've built so far works and fetches the correct data from Zapier.
 
 For polling triggers, use the _Test Your API Request_ section. You should see the app account you added when testing your authentication. If not, add an app account first.
 
@@ -148,7 +152,7 @@ Zapier will show the raw, JSON formatted response from your API in the _Response
 
 To test a REST Hook trigger, use the Zap editor to build a real Zap, and try turning it on. Be sure to check the logs in the [Monitoring](./testing#monitoring) component to get feedback from your Zap testing. It's also great idea to verify in your system that the subscription was set up properly.
 
-### Define Sample Data and Output Fields
+## Define Sample Data and Output Fields
 
 ![Adding Sample Data to Zapier integration](https://cdn.zapier.com/storage/photos/8ab32f061aa89f3b57e8f4a5ea16a9d9.png)
 _Sample Data gives Zapier example data if users don't test the trigger or action. Output Fields give your API data user-friendly names in subsequent Zap steps._
@@ -169,7 +173,7 @@ Then click _Generate Output Field Definitions_, and Zapier will build a table of
 
 You can now make a new Zap using your trigger to test out the trigger live inside Zapier.
 
-## How to Reorder Triggers in a Zapier Integration
+# How to Reorder Triggers
 
 ![Triggers in Zapier](https://cdn.zapier.com/storage/photos/316fc36427a242269ec9118a06f0347a.png)
 
@@ -179,7 +183,7 @@ Triggers are originally listed in the order you add them to your integration. As
 
 You can, however, change a trigger's visibility and thus choose whether it's shown or not at any time. Open the trigger in the Zapier visual builder, and scroll to the bottom of the page to the _Visibility Options_ menu. Select _Hidden_ if you want to keep users from being able to use this trigger (often used if the trigger is only used to power dynamic fields).
 
-## How to Remove Triggers From a Zapier Integration
+# How to Remove Triggers
 
 ![Delete Trigger from Zapier Integration](https://cdn.zapier.com/storage/photos/188948a918eb589684b1d04c17707a52.png)
 
@@ -187,19 +191,19 @@ If your app no longer supports a trigger, or you wish to fully rebuild one, you 
 
 You cannot restore deleted triggers, so make sure you select the correct triggers for deletion.
 
-> **Note**: Only remove triggers from pre-release integrations, or from new versions that will later be rolled out to users. Never remove a trigger from a live, public integration version.
+> **Note**: Never remove a trigger from a live, public integration version. Only remove triggers from pre-release integrations, or from new versions that will later be rolled out to users.
 
 <a id="pagination"></a>
-## How to Use Pagination
+# How to Use Pagination
 
-Zapier triggers by default fetch new or recently updated data to start Zaps, and only need to find the most recently added item. Triggers can also be embedded in Zapier action drop-down menus, though, and there they need to find all possible items to populate the menu.
+By default, Zapier triggers fetch new or recently updated data to start Zaps, and only need to find the most recently added items. Triggers can also be embedded in Zapier drop-down menus, though, and there they need to find all possible items to populate the menu.
 
 Instead of a single item, these triggers' API calls for dynamic menus will often find dozens or hundreds of items. Many APIs let you split the results into pages, much like pages of search results or blog entries. The first API call will return the first set of results—often 20 to 100. If you want additional entries, you can make a new API call requesting page 2 and get the next set of results, iterating through the pages until the API has sent every possible option.
 
 ![Zapier drop-down](https://cdn.zapier.com/storage/photos/05b63c557de501cb4764f29747b733ec.png)
 _Example drop-down menu in the Zap editor, with an option to load more choices via pagination_
 
-To enable pagination, check the _Support Paging_ checkbox in the API settings when building a Zapier trigger. That enables Zapier's `bundle.meta.page` value which tracks which page Zapier has loaded, along with a _Check Ap‌p & reload to bring in new choices_ option in the user-facing Zapier editor's dropdown menus.
+To enable pagination, check the _Support Paging_ checkbox in the API settings when building a Zapier trigger. That enables Zapier's `bundle.meta.page` value which tracks which page Zapier has loaded, along with a _Load more_ option in the user-facing Zapier editor's dropdown menus.
 
 ![Include pagination value in Zapier API call](https://cdn.zapier.com/storage/photos/0c73268e2e0d62e1bbe7d3d4f552fcda.png)
 _In Zapier visual editor, include the bundle.meta.page value to request the correct page of results_
@@ -222,4 +226,4 @@ To test your paginating trigger, first build a Zapier Action that uses this trig
 ![Check headers](https://cdn.zapier.com/storage/photos/8675a69add537f2e7d5ed950724fc15f.png)
 _In the Zapier trigger test tool's HTTP logs, you can see the headers and params that Zapier sends to your app_
 
-If you see a _Sorry, no more choices_ option when there should be more options available from your account, go back and check your trigger settings to ensure Zapier is passing the correct details to your app. Test the trigger, and check the HTTP tap for details about the request Zapier sent your app. Zapier should show a `page=0` value (or the correct term for pages in your API) under the Request Params header by default, or a page=1` if you're customizing the page request to start at 1.
+If you see a _Sorry, no more choices_ message when there should be more options available from your account, go back and check your trigger settings to ensure Zapier is passing the correct details to your app. Test the trigger, and check the HTTP tab for details about the request Zapier sent your app. Zapier should show a `page=0` value (or the correct term for pages in your API) under the Request Params header by default, or `page=1` if you're customizing the page requests to start at 1.
