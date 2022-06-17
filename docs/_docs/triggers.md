@@ -112,7 +112,7 @@ In addition to the Subscribe and Unsubscribe requests, it's important to add a P
 
 ![REST Hook Perform](https://cdn.zapier.com/storage/photos/5c6c154be13fbcad2a5dc8cb786f2dea.png)
 
-Finally, in the Perform, you can customize the code to evaluate the data your app's webhooks pass to Zapier. By default, Zapier includes `return [bundle.cleanedRequest];` to return the request data from the webhook as an array. If your data needs to be transformed, or includes multiple objects, add custom code to parse the response data in `bundle.cleanedRequest` within the Perform and turn it into an array of objects, such as [this example code](https://github.com/zapier/zapier-platform/blob/master/example-apps/rest-hooks/triggers/recipe.js#L42).
+Finally, in the Perform, you can customize the code to evaluate the data your app's webhooks pass to Zapier. By default, Zapier includes `return [bundle.cleanedRequest];` to return the request data from the webhook as an array. If your data needs to be transformed, or includes multiple objects, add custom code to parse the response data in `bundle.cleanedRequest` within the Perform and turn it into an array of objects, such as [this example code](https://github.com/zapier/zapier-platform/blob/512f558ffa6dff11a0985c2e43c159d534bb6f36/example-apps/rest-hooks/triggers/recipe.js#L42).
 
 Both the Perform and Perform List methods should return arrays, even if they only contain one object. The default Perform code adds an array around the cleaned webhook payload, so if your webhook already provides an array, you can remove this additional array and simply `return bundle.cleanedRequest;`.
 
