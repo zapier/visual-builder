@@ -71,7 +71,7 @@ To add a polling trigger, select _Polling_ at the top of the settings page, then
 
 {% raw %}`{{bundle.inputData.key}}`{% endraw %}
 
-Otherwise, Zapier will automatically include any input field data with the API call as URL parameters (for GET requests) or in the request body (for POST requests, e.g. for GraphQL APIs).
+Otherwise, Zapier will automatically include any input field data with the API call as URL parameters (for GET requests), or in the request body as JSON (for POST requests).
 
 If you plan to use this trigger to power dropdown menus in other Zap steps (such as to find users, projects, folders, and other app data often used to create new items), and if your API call can paginate data, check the _Support Paging_ box (see [more details on pagination](#pagination) below).
 
@@ -114,7 +114,7 @@ In addition to the Subscribe and Unsubscribe requests, it's important to add a P
 
 Finally, in the Perform, you can customize the code to evaluate the data your app's webhooks pass to Zapier. By default, Zapier includes `return [bundle.cleanedRequest];` to return the request data from the webhook as an array. If your data needs to be transformed, or includes multiple objects, add custom code to parse the response data in `bundle.cleanedRequest` within the Perform and turn it into an array of objects, such as [this example code](https://github.com/zapier/zapier-platform/blob/512f558ffa6dff11a0985c2e43c159d534bb6f36/example-apps/rest-hooks/triggers/recipe.js#L42).
 
-Both the Perform and Perform List methods should return arrays, even if they only contain one object. The default Perform code adds an array around the cleaned webhook payload, so if your webhook already provides an array, you can remove this additional array and simply `return bundle.cleanedRequest;`.
+The Perform and Perform List methods should each return an array, even if the array only contains one object. The default Perform code includes an array around the cleaned webhook payload, so if your webhook already provides an array, you can remove the wrapping array and simply `return bundle.cleanedRequest;`.
 
 #### Sending Data to Zapier
 
