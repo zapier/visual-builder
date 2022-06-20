@@ -75,6 +75,10 @@ It's crucial to have as many people test your integration as possible before lau
 
 While developing your app integration, invite additional admins from your integration's _Manage Team_ page. These users will have full access to the Platform UI to edit the app details, authentication, triggers, actions, and versions. This is the best way to add additional developers to your project.
 
+> **Reminder:** You can also invite other team members as _collaborators_, which gives them view-only access. Collaborators can view performance data, view feature requests and bugs, and access tools to embed Zapier integrations inside your UI. 
+Collaborator access is recommended for marketers, product managers, and others not contributing directly to the creation and maintenance of the integration.
+
+
 ![Zapier integration visibility](https://cdn.zapier.com/storage/photos/c818563358f8566d969e9be09a560220.png)
 
 When your integration is nearly finished and ready for wider testing, you can invite testers from your integration's _Sharing_ page. These testers will be able to use your integration inside the Zapier editor, but cannot see or change your app's core settings and functionality in the Platform UI.

@@ -47,6 +47,10 @@ Your integration must perform as advertised and must not give users a false impr
 
 Violations of the review process or guidelines can have your integration removed from Zapier, and you could be banned from submitting more in the future.
 
+## Add collaborators to your team
+
+Bring your team onboard by inviting other team members to your integration as collaborators. Collaborators can log into your Zapier dashboard and gain valuable insights into your integration—including what your customers are saying about it. They can view performance data, see feature requests and bugs, and access tools to embed Zapier integrations inside your UI to rack up user adoption. 
+
 ---
 
 ## Contact Zapier
