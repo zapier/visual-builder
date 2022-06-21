@@ -461,9 +461,11 @@ You can mix and match several options to customize the created scaffold for your
 
 **Usage**: `zapier team:add EMAIL ROLE [MESSAGE]`
 
-These users come in two levels:
+There are three types of user:
 
   * `admin`, who can edit everything about the integration
+
+  * `collaborator`, who has view-only access and can see performance data, view feature requests and bugs, and access tools to embed Zapier integrations inside your UI.
 
   * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health socores and more.
 
@@ -471,7 +473,7 @@ Team members can be freely added and removed.
 
 **Arguments**
 * (required) `email` | The user to be invited. If they don't have a Zapier account, they'll be prompted to create one.
-* (required) `role` | The level the invited team member should be at. Admins can edit everything and get email updates. Subscribers only get email updates.
+* (required) `role` | The level the invited team member should be at. Admins can edit everything and get email updates. Collaborators can view the integration and get email updates. Subscribers only get email updates.
 * `message` | A message sent in the email to your team member, if you need to provide context. Wrap the message in quotes to ensure spaces get saved.
 
 **Flags**
