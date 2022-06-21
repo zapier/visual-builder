@@ -61,7 +61,8 @@ Deprecation is an extremely useful feature introduced in the new platform.  If y
 
 This is not _new_ functionality, but as a reminder, be sure to add your whole team as admins to collaborate on the development and maintenance of your integration.  There's no need to share logins.  It's helpful that each member of your team is added, so everyone can see the status of the integration and get notification emails when a user reports a bug or feature request for your integration through Zapier support.
 
-In addition to "Admins" who can change and manage your integration, you can also add "subscribers". Those folks will get emails about the integration's performance, but won't be allowed to edit the integration. 
+In addition to "Admins" who can change and manage your integration, you can also add "collaborators". Collaborators can view performance data, view feature requests and bugs, and access tools to embed Zapier integrations inside your UI. 
+ 
 
 ![](https://cdn.zappy.app/a3f77d24190e718b6177efe3d7074736.png)
 

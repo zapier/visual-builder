@@ -491,11 +491,13 @@ Team members can be freely added and removed.
 
 **Usage**: `zapier team:get`
 
-These users come in two levels:
+There are three types of user:
 
   * `admin`, who can edit everything about the integration
 
-  * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health socores and more.
+  * `collaborator`, who has view-only access and can see performance data, view feature requests and bugs, and access tools to embed Zapier integrations inside your UI. 
+
+  * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health scores and more. This is a legacy role that was replaced by collaborator for new team members.
 
 Use the `zapier team:add` and `zapier team:remove` commands to modify your team.
 
@@ -513,7 +515,7 @@ Use the `zapier team:add` and `zapier team:remove` commands to modify your team.
 
 **Usage**: `zapier team:remove`
 
-Admins will immediately lose write access to the integration. Subscribers won't receive future email updates.
+Admins will immediately lose write access to the integration. Subscribers won't receive future email updates. Collaborators won't be able to view the integration. 
 
 **Flags**
 * `-d, --debug` | Show extra debugging output.
