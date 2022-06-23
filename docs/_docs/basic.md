@@ -14,7 +14,7 @@ _Example Basic Auth screen for users inside Zapier_
 
 When you add Basic Auth to your integration, Zapier adds a pre-built form that requests a username and password whenever users authenticate with your API. Zapier then makes a test call to verify the credentials, and stores them to use with every subsequent API call Zapier makes to your app on behalf of the user. 
 
-> **When to use Basic Auth:** Use Basic Auth if your API only requires a username and password, needs no special configuration, and specifically if your API leverages "[HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)". If you need further customization of your login flow or need additional data from users, [API key authentication](https://platform.zapier.com/docs/apikey) works the same as Basic auth but includes a customizable form where you can request additional authentication data from users.
+> **When to use Basic Auth:** Use Basic Auth if your API requires a username and password or other basic fields, needs no special configuration, and specifically if your API leverages "[HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)". If you need further customization of your login flow or need additional data from users, [API key authentication](https://platform.zapier.com/docs/apikey) may be what your API requires.
 
 <a id="add"></a>
 ## How to Add Basic Auth to a Zapier Integration
@@ -28,6 +28,37 @@ To add Basic Auth to your Zapier integration, open the _Authentication_ tab in Z
 Zapier automatically adds a form where users will enter their username and password, so you don't need to configure anything for core basic auth. 
 
 All you need to add is a test API call where Zapier can verify that the credentials work, and optionally a connection label to help users identify the account.
+
+<a id="form"></a>
+
+## Add More Fields to a Basic Auth Input Form
+
+![Add fields to Basic Auth Zapier](https://cdn.zappy.app/7b0b5bbe2af09cb2829bcd10ab3b2267.png)
+
+In addition to the username and password on the pre-built form, you can add more fields if your API documentation requires it.
+
+For each field that you need, click the _Add Fields_ button and fill in the details for your field.
+
+![Zapier Basic Auth Input Form](https://cdn.zappy.app/e5cb345fe7ecbe01d854205ece4d6a47.png)
+
+Every input field requires a _Key_, the name your API uses to reference this field. Enter the same key name that your API uses.
+
+Then fill in the optional fields, as appropriate, especially the _Label_:
+
+- **Label**: A human-friendly name for this field. Enter what this value is called inside your app's UI.
+- **Is this field required**: Check this box for your field, and for any other fields that your API requires for authentication.
+- **Type**: Zapier uses the `string` text field for all input fields by default; select `password` instead if you would like to obscure the data as users enter it.
+- **Help Text**: Include details to assist users in authenticating with your app, especially if they may be unsure where to find the data needed. Format text with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/), and include a link if needed.
+- **Default Value**: Include a value for this field to be used as a fallback. For optional fields, the default value is set on initial creation and used instead of missing or null values every time the Zap runs. For required fields, this value is used during Zap creation, but not when the Zap runs (Zapier raises an error for missing/null values instead).
+- **Static Dropdown**: Include values to offer users pre-set options to choose from. [Learn more](https://platform.zapier.com/docs/input-designer#dropdown).
+
+> **Note:** The input field designer also includes an option for computed fields; those are not applicable to Basic Auth login and are only used with OAuth v2 and Session auth.
+
+Once you've added your input fields, Zapier lists each input field with its label, key, type, and required status on your authentication settings. Click the field to edit it, or click the gear icon and select _Delete_ to remove a field.
+
+![Edit Basic Auth input fields](https://cdn.zappy.app/0d2c4f86b9ccd3ea45c55b93bb52f97d.png)
+
+When you've added the needed fields, click _Continue_ to Configure a Test Request & Connection Label and continue setting up your app's authentication.
 
 <a id="test_request"></a>
 ## Configure a Test Request
