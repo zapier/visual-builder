@@ -718,12 +718,14 @@ To resize an image or convert an image to PNG, you can use this
 
 <a name="M005"></a><a name="M00005"></a>
 
-## M005 - Developer Email Domain Matches App Domain
+## M005 - Admin Email Domain Matches App Domain
 
-To ensure that this integration is being submitted by the app owner we require that
-one of the developers listed on the project have an email address with the same
+To ensure that this integration is being submitted by the app owner, we require that
+one of the admins listed on the project have an email address with the same
 domain as your app's homepage URL (which must also be present). You can add the homepage
 URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`.
+
+Note that collaborators are not able to satisfy this requirement, it must be an admin.
 
 ---
 
