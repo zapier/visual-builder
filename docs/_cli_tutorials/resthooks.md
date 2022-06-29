@@ -9,7 +9,7 @@ redirect_from: /cli-tutorials/
 
 ## What are REST Hooks?
 
-REST Hooks are an alternative to polling. We subscribe to your server using a unique URL on a per Zap basis and you send a payload of data back to the unique URL to trigger that particular Zap. This will allow your customers' Zaps to trigger instantly and will also reduce the load on your servers as we will not be constantly querying for data every 5 or 15 minutes.
+REST Hooks are an alternative to polling. We subscribe to your server using a unique URL on a per Zap activation basis and you send a payload of data back to the unique URL to trigger that particular Zap. This will allow your customers' Zaps to trigger instantly and will also reduce the load on your servers as we will not be constantly querying for data every 5 or 15 minutes.
 
 You can read more about how REST hooks work in general at [https://resthooks.org](https://resthooks.org/). **These are not the same as static webhooks**. With static webhooks, your customer needs to copy and paste a specific URL to connect your app and their Zap together, whereas with REST hooks this is all handled automatically for them between Zapier and your app.
 
