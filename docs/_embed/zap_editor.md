@@ -85,9 +85,9 @@ If you decide to embed the Zapier Editior within your product you can listen to 
 
 The messages available include:
 
-- `zap:unpause` = Zap turned on
-- `zap:unpause:done` = Zap turned on (success)
-- `zap:unpause:fail` = Zap turned on (failure)
+- `zap:unpause` = Zap turned on / published
+- `zap:unpause:done` = Zap turned on / published (success)
+- `zap:unpause:fail` = Zap turned on / published (failure)
 - `zap:pause` = Zap turned off
 - `zap:pause:done` = Zap turned off (success)
 - `zap:pause:fail` = Zap turned off (failure)
