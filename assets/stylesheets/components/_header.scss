@@ -56,7 +56,17 @@
 }
 
 .platform-header__logo {
+  height: 32px;
+}
+
+a#platform-header__logo.new {
   background: url($baseurl + "/assets/images/platform-logo.svg") no-repeat;
+  width: 192px;
+  height: 32px;
+}
+
+a#platform-header__logo.old {
+  background: url($baseurl + "/assets/images/platform-logo-old.svg") no-repeat;
   width: 177px;
   height: 32px;
 }
