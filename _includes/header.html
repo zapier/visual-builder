@@ -1,5 +1,14 @@
 <header class="platform-header">
-  <a href="/" class="platform-header__logo"></a>
+  <a href="/" id="platform-header__logo"></a>
+  <script>
+    (function() {
+      const cookies = Object.fromEntries(document.cookie.split('; ').map(v=>v.split(/=(.*)/s).map(decodeURIComponent)));
+      const isRebrand = cookies['__tzp'] === 'true';
+      const logo = document.getElementById('platform-header__logo');
+      logo.classList.remove(isRebrand ? 'old' : 'new');
+      logo.classList.add(isRebrand ? 'new' : 'old');
+    })();
+  </script>
 
   <ul class="platform-header__links">
     <li><a href="https://zapier.com/platform/how-to-build">How to Build</a></li>
