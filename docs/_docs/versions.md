@@ -5,114 +5,157 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-# Manage Versions of Your Zapier Integration
+# How to update your integration on the Zapier Developer Platform
 
-Your Zapier integration should be quite nice when first launched—minimal, perhaps, but with the basics covered. The app authentication will let users connect to your API, and the triggers and actions should get data to and from your API.
+## Overview
 
-Over time, though, things will change. Users will request new triggers and actions, or want to send and receive more data with your existing ones. You’ll add new features to your app and want to add them to your Zapier integration, too. And eventually, your API may change, and your Zapier integration’s authentication or API calls may need to be changed as well.
+Later sections of this guide will cover the steps for _Cloning_, _Promoting_, _Migrating_, and _Deprecating_ integration versions in more detail. Put briefly, the process of creating a new version of your integration takes three steps in either the Developer Platform [Visual Builder](https://developer.zapier.com/) or [Zapier Command Line Interface](https://platform.zapier.com/docs/export) (CLI).
 
-That’s where versions come in. Zapier lets you create multiple versions of your integration to test and build new features without interrupting existing users. You can then release the new version to some users, ensure everything is working, and eventually migrate all of your users to the new version. After that, you can deprecate and remove the old version.
+In the Visual Builder:
 
-## Manage Integration Versions in Zapier
+1. In the sidebar on the right, navigate to **Manage**, then **Versions**
+2. Select the gear icon next to the version you’d like to update, then select **Clone**
+3. Select a new version number, then **Clone** and **Edit** to create the new version and begin editing it
 
-![Zapier integration versions](https://cdn.zapier.com/storage/photos/4294ed1a2f6c7e3980cb9ac9c43f8655.png)
+Using the Zapier CLI:
 
-Zapier’s Platform UI includes a _Versions_ page in the left sidebar. New integrations provide a starter `1.0.0` version, and you can create other versions as needed.
+1. Increment the version number in your app’s `package.json` file
+2. Make the necessary updates to the rest of the app’s resources
+3. Run `zapier push` to build and upload the new version to Zapier
 
-Click the gear icon beside a version on the _Versions_ page to make changes. You can _Clone_ your integration to make a new version based on the features of an existing version. Once the new version is ready, you can _Promote_ the new version to have new users start using it.
+## Which version can users access?
 
-## Decide on How You Want to Work
+A Zapier integration can be either _Private_, _Beta_, or _Public_. Private integrations require an [invitation](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations) for users to access it. Public and Beta integrations can be seen by Zapier users on [the public Apps page](https://zapier.com/apps). Each integration can have many versions, but only one version can be public at a time, while the rest remain private. 
 
-You and your team can decide what works best for your workflow. You can continue building and developing an integration within the UI, or if your developers prefer to work within a standard [Node.js](https://nodejs.org/en/) app, you can export your app and work within the CLI environment.
+Newly published integrations will feature a _Beta_ tag when first published. While your integration is in Beta, we’ll monitor how it’s performing. When your integration reaches 50 users, our team will get in touch to invite you to start the [official partner program](https://zapier.com/platform/partner-program) launch process.
 
-When creating a new version of your Zapier integration in the UI, you never need to start over. Instead, to make a new version, start by cloning an existing version. That lets you start with an exact copy of your integration where you can make the changes and additions you need. Learn how to clone your integration [here](#clone-your-integration).
+To review your integration’s versions, open it in the Developer Platform and navigate to Manage then Versions. This page shows a list of all versions of the integration, along with status and the number of users of each.
 
-Or if you prefer to export your app for the CLI environment, learn how to do that [here](./export) and skip the cloning portion of this guide.
+![The Versions page in the Zapier Developer Platform](https://cdn.zappy.app/220a5f0055ab88b41ec83bfa953db20b.png)
 
-## Clone Your Integration
+> **Note:** In the Zapier CLI, you can also run `zapier versions` to see the information in your terminal.
 
-![Clone Zapier integration](https://cdn.zapier.com/storage/photos/dca2130ce5dddca928519ad60130d35a.png)
+For Public apps, which are searchable in the Zap Editor/App Directory, a user that selects your integration in the Zap Editor will be using the current Public version by default. Optionally, you can use the Sharing page to send users an invitation to a specific private version, which will allow them to select it in the Zap Editor. This is also how all users of Private integrations are added.
 
-When creating a new version of your Zapier integration, you never need to start over. Instead, to make a new version, start by cloning an existing version. That lets you start with an exact copy of your integration where you can make the changes and additions you need.
+## Making changes
 
-To clone a version, click the gear icon in the _Versions_ page, and select _Clone_. In the dialog, select the version to clone from (usually the most recent version, unless you want to roll back recent changes). Then choose what type of version you want to create:
+To make edits to a version of your integration in the Developer Platform Visual Builder, select it in the Version dropdown menu in the top right, or select **Edit** from the options menu on the Versions page.
 
-- **Patch**: A `x.x.1` version, typically used to fix bugs and issues in existing integrations
-- **Minor**: A `x.1.x` version, typically to add new minor features to existing integrations
-- **Major**: A `2.x.x` version to launch a full new version of your integration with new triggers and or actions
+![Highlighting the Version dropdown menu, and Edit option on the Versions page](https://cdn.zappy.app/bea20fbdee6ee96c6af4cf39261481a2.png)
 
-Once you clone the integration, click the _Edit_ button to tweak the new version of your integration, or click _Close_ to go back to the _Versions_ page.
+That will update the _Authentication_, _Triggers_, _Actions_, and _Advanced_ sections to reflect the latest changes to that version. You can then make changes in those sections as needed, and saving those changes will automatically apply them to the version (and by extension, any Zaps using it). 
 
-## Edit a Version of Your Integration
+While using the Zapier CLI, you can change which version you are editing by updating the version number in your `package.json` file. When you run `zapier push` your code will overwrite the specified version. While optional, we also recommend using some form of versioning software, such as GitHub or GitLab, to keep track of previous versions of your code.
 
-![Edit Zapier integration version](https://cdn.zapier.com/storage/photos/a506b0a211b75a473fe71a59781eca12.png)
+## Why can’t I edit a particular version?
 
-You can add, edit, and test features in your new integration version just as you did in the original version. All you need to do is switch between your integration versions to add changes to the new version, not the original.
+To make sure that existing Zaps can continue to work consistently, the Zapier Developer Platform only allows you to edit versions that are Private and have fewer than 5 users. Versions that are Public or have more than 5 users will show a warning message prompting you to Clone the version instead.
 
-To edit a specific integration version, either select it from the upper left of the Platform UI sidebar, or open the _Versions_ page, click the gear icon beside the version you want to edit, and select _Edit_. You can see  what version you’re editing from the version number in the top left of the sidebar anytime.
+!['You can't edit this version'](https://cdn.zappy.app/8b5cbf5a37ce60ba89eb555c0429eca6.png)
 
-You can also test any version of your integration from Zapier’s standard Zap editor. Search for your app name when adding a Zap step, and Zapier will show multiple entries on your account with the version number beside each. Select the newest one to test your new changes.
+## Cloning
 
-**Additions Vs Enhancements**
+_Cloning_ is a process in the Zapier Developer Platform Visual Builder that allows you to create a new version of your integration, based on a previous one. 
 
-The two main ways to edit your integration will either be adding new features or changing existing Triggers/Actions/Searches to have new functionality or bug fixes. There are a couple of things you want to keep in mind when doing either.
+> **Note:** While the term “cloning” doesn’t appear in the Zapier CLI, this is equivalent to updating the version number in `package.json` and running `zapier push` to create a new version. 
 
-**Additions**
+To clone a version of your integration, navigate to **Manage** then **Versions** in the Developer Platform, and select the **gear icon** next to the version you’d like to duplicate. 
 
-When adding new Triggers/Actions/Searches, feel free to add all of the ones you would like. However, I would encourage you to keep in mind the workflows or use-cases you are attempting to enable. The best integrations have a curated list of Triggers/Actions/Searches rather than every endpoint that exists in your API. One way to see what kinds of features users are asking for is to utilize our “Issues” section on your app. Our support team will open up new bugs and or feature requests based on user feedback.
+![Selecting the 'Clone' option](https://cdn.zappy.app/6b8b23a4943bfe11c8dd4abd29bf8994.png)
 
-**Enhancements**
+That will open a window that prompts you to select a number for the new version, to help represent the kinds of changes you plan on making.
 
-Outside of adding new features, you can modify or update existing functionality to improve the experience for your users. Zapier’s Zaps are configured based on the JSON representation of what comes back from your API, so if you ever remove any fields being returned or modify that structure, this is considered a breaking change. If you modify a new version of your app that does have a breaking change on a Trigger/Action/Search, you will not be able to migrate users to that new version.
+![The 'Clone Version' window, showing the options for a new version number](https://cdn.zappy.app/7cd3bf761bb35529c33d5bd5c9c376db.png)
 
-There are two strategies for this. You can “hide” the existing Trigger/Action/Search that users are using, and then create a new version with the enhancements for those new users. This would enable you to bring your users between versions as this is helpful when you only are improving something relatively small. However, when there is a larger change where you would like to deprecate the older Trigger/Action/Search if you are retiring that endpoint or upgrading the whole API for example, you will want to leave users on the old version and not migrate them between versions. The reason for this, is you can use our built-in [deprecation tool](#deprecate-an-older-version-of-your-integration) to alert users that they will need to manually migrate their Zaps to the latest version by a specific date.
+Zapier uses semantic versioning numbers, which gives you three options to choose from:
 
-## Migrate Users to Your New Integration Version
+* **Patch** (e.g. 1.0.0 to 1.0.1) can be used for changes that are still compatible with the previous version, such as fixing a bug or updating help text.
+* **Minor** (e.g. 1.0.0 to 1.1.0) is recommended for changes that add new functionality without changing what’s already there, such as creating a new trigger or action.
+* **Major** (e.g. 1.0.0 to 2.0.0) is used when making changes that are likely to break existing Zaps, such as removing triggers or actions, changing authentication methods, or starting over from scratch.
 
-![Migrate users to new Zapier integration version](https://cdn.zapier.com/storage/photos/49423feb86f237b5186d7efdcaf2ac53.png)
+Select the version that feels correct based on your plans, then click **Clone** to create the new version and start editing it.
+
+## Promoting a version
+
+After your integration has entered the _Beta_ or _Public_ status, one of its versions also becomes _Public_, meaning users see and use it by default. The process of changing which version is Public is called _Promotion_, and can be done from either the CLI or the Versions page. 
+
+In the CLI, running `zapier promote [version]` will make the specified version number the new Public version. [Read more about that here](https://platform.zapier.com/cli_docs/docs#promoting-an-app-version).
+
+In the Visual Builder, head to **Manage** then **Versions**, and select the **gear icon** next to the version you’d like to make public. In the menu that appears, select **Promote**.
+
+![Selecting 'Promote' on the Versions page](https://cdn.zappy.app/dd4fccc5acb2beb2194ca448871c0d4d.png)
+
+If you’re working with an integration that’s currently private, the _Promote_ option won’t appear. Instead, make sure users you’d like to test or move to the new integration version are invited to that version, and encourage them to try it out.
+
+### What happens when a version is promoted?
+
+* Zap templates are updated to use the new Public version of your app
+* Any new triggers or actions will appear on your integration’s public app page
+* When a user selects your integration in a new Zap, they’ll use the promoted version by default
+
+## Migrating users
 
 Once you’ve added all the changes needed to your integration, you can start rolling it out to users to update their existing Zaps and let users make new Zaps with your new integration features.
 
-If you made a patch version with only minor, non-breaking changes, you can migrate existing users and Zaps to your new integration version. Select the _Migrate_ option on your new integration version, then choose which older version of your integration to move users from, and the new version to move them to. Finally, choose what percentage of users to migrate. 
+If you made a new version with only minor, non-breaking changes, you can migrate existing users and Zaps to your new integration version. On the **Versions** page, select the **Migrate** option on your new integration version.
 
-Typically, Zapier recommends moving a small percentage of your users—perhaps 10 or 20%—to the new integration version to make sure everything is working as expected. Once everything looks good, you can migrate the remainder of your users to the new version.
+![Selecting the 'Migrate' option on the Versions page](https://cdn.zappy.app/ee93e158cfe97f48a2cdc7b8881df405.png)
 
-Major versions of integrations—especially if authentication or API calls were changed and other breaking changes were added—will require users to re-create their Zaps with the new version of your integration. In that case, you won’t be able to migrate existing users. Instead, you'll need to promote the new version and deprecate the old one so new users and Zaps will be made with the new integration.
+That will reveal a screen that will allow you to move users between two versions. Select the _From_ and _To_ versions, then select **Migrate** to begin moving users to the selected version.
 
-## Promote a New Version of Your Integration
+![After selecting 'Migrate', the Migration window allows you to select 'From' and 'To' versions](https://cdn.zappy.app/5d8d487544914ddaa1c72037b331aad1.png)
 
-You can also Promote your new integration version to make it the default version that Zapier shows to users when creating new Zaps. Select the _Promote_ button in your version settings to mark an integration as the new default version.
+When migrating users, you are also migrating their Zaps. This means that any active Zaps using the _From_ version will begin using the _To_ version as soon as the migration is complete. This makes it a great solution for Patch and Minor updates, but _not_ a recommended option for Major updates. For Major updates, review our section on Deprecation instead.
 
-If you're working with an integration that's currently private, the _Promote_ option isn't used. Instead, make sure users you'd like to test or move to the new integration version are [invited](./testing#how-to-invite-others-to-test-new-integrations) to that version, and encourage them to try it out.
+In some cases, it may be more useful to migrate only a portion of the current users, to ensure that the minor change did not accidentally introduce any unforeseen issues. You can do that using the **Percentage** option in the Migration window, or select **Email** to migrate only one user at a time.
 
-## Deprecate an Older Version of Your Integration
+![Using the Percentage slider to migrate only 55% of users](https://cdn.zappy.app/5b3a6a1a49fbed8e22a4b423f72d35d0.png)
 
-![Deprecate Zapier integration version](https://cdn.zapier.com/storage/photos/dd6acdd75278ecd733a5f3945ea641a2.png)
+You can then repeat the Migration process later on, and migrate the rest of the users once you are comfortable with how the new version is running in production.
 
-If you introduce breaking changes to your integration and want existing users to switch to the new version, you can deprecate the old version.
+> **Note:** It is also possible to migrate a portion of users with the CLI using the `zapier migrate` command. [Read more about that here](https://platform.zapier.com/cli_docs/docs#deploying-an-app-version). 
 
-Deprecation is only recommended if the older integration version will eventually stop working, such as if the related API will be removed. Zapier is normally a "set it and forget it" experience for users, so use this feature carefully.
+### What is a “breaking change”?
 
-When you deprecate an integration version:
+Before performing a migration, it is important to consider all Zaps which are currently running on previous versions of your integration. The configuration of these Zaps will not be modified during the migration, so they will need to be capable of functioning correctly on both the old and new versions.
 
-* The Zaps that use it will continue to run until the deprecation date. On the deprecation date, they will be paused.
-* Zapier will send users with active Zaps a notification that they need to update their Zaps.
-* When adding a new Zap step, Zapier will no longer show the deprecated version of your integration as an option.
+Because of that, a “breaking change” can be defined as any modification to the integration which renders existing Zaps incompatible with the new version. Examples include:
 
-Zap steps using this integration version will include a `Deprecated` tag in the Zapier editor, to help prompt users to re-build the Zap with the new integration.
+* Removing an input or output field on a trigger/action
+* Changing the Authentication scheme
+* Making a previously optional input field “required”
+* Deleting a trigger/action
 
-To deprecate a version:
+## Deprecating versions
 
-* Select _Deprecate_ in the Versions menu.
-* Select a date to deprecate the integration version in the calendar drop-down. Choose a date between two weeks and a year from today when Zaps using that version will no longer work. 
-* Click the _Deprecate_ button to confirm.
+_Deprecation_ is an optional process that allows you to set a date from which a non-Public version of your integration will no longer be supported. This is usually recommended after promoting a major update which cannot support automatic migration of users due to breaking changes. It allows Zapier to notify all of that version's users that a new version is available, and that action is required on their part to update their Zaps manually.
 
-Zapier then shows a yellow exclamation mark beside that version in your integration’s versions menu, showing the date it will be deprecated when you hover over it. You can also track your user count as it goes down, switching from the old integration version to the new.
+To deprecate a Private version, select the **gear icon** next to the version number on the Versions page, then select **Deprecate**.
 
-## Delete Older Versions of Your Integration
+![The window that opens when selecting 'Deprecate'](https://cdn.zappy.app/7e62435659f494a9143aa1602640ef97.png)
 
-![Delete Zapier integration version](https://cdn.zapier.com/storage/photos/86bf4dbabd06b989d7717f95e8479fba.png)
+> **Note:** You can also set a deprecation date using the CLI, with the `zapier deprecate` command. [More about that here](https://platform.zapier.com/cli_docs/docs#promoting-an-app-version).
 
-Once you’ve deprecated an integration version and it has no existing users, you can delete that version to clean up your Zapier integration.
+When a deprecation date is set, Zapier sends a notification to that version’s users, to let them know about the need to upgrade to the latest Public version. Users can then manually update their Zaps, and ensure that the new version fits their workflows.
 
-Click the _Delete_ button in your version’s gear menu, select _Really?_ when asked to confirm, and Zapier will remove that version of your integration. Since Zapier will only delete deprecated versions with no users, you never have to worry about accidentally removing a version that's in active use.
+After the deprecation date has passed, the version will still be available in the Versions page for future reference. You can even invite users to it with the options in the Sharing page, like you would with a Private version.
+
+### Should I deprecate or delete?
+
+You may have noticed that it’s also possible to _Delete_ versions from the Versions page. That option will fully remove the version from the Developer Platform, meaning that neither you nor users will be able to access it from that time — so use it with caution! 
+
+In most cases, either deprecation or leaving a private version untouched are recommended, and deletion should only be used when absolutely necessary.
+
+## Can I start over?
+
+In some cases, it may make sense to rebuild your integration from scratch. For example, if your company has introduced a new product, or if the API that was originally used with the integration is now considered “Legacy”. There’s also a chance that it’s just been a while since you’ve used Zapier, and you wish to refresh your knowledge of the Developer Platform.
+
+Because our mutual users see your Zapier integration as an extension of your brand, we do not allow creating separate integrations in these cases. Even if the new integration is clearly labelled as “New App!” or “App V2”, having two separate versions of your brand available often causes confusion amongst users, so we have this restriction in place to prevent them selecting the wrong version by mistake.
+
+Instead, we recommend cloning the latest version of your integration, and picking the **Major** version number change. The triggers, actions, and even authentication of the new version can be changed entirely, so that the update looks and feels like a brand new app, but maintains the brand consistency for our end users.
+
+It is also possible to change which development environment your integration is built in, to help make the experience of building the new version easier for your team:
+
+If your integration was built with our [Visual Builder](https://developer.zapier.com), you can convert it to the Zapier CLI using [the steps provided here](https://platform.zapier.com/docs/export). The CLI gives full control over your integration’s code, and is a great fit for teams of developers who are used to sharing code via tools like GitHub or GitLab.
+
+Alternatively, if your integration was built with the Zapier CLI, and your team would prefer to use our Visual Builder moving forward, please [contact our Support team](https://developer.zapier.com/contact) to let us know. In some cases, we can create a new version of your integration that can be edited on the Visual Builder, while allowing the existing CLI integration to continue running.
