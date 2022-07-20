@@ -29,6 +29,8 @@ Using the Zapier CLI:
 2. Make the necessary updates to the rest of the app’s resources
 3. Run `zapier push` to build and upload the new version to Zapier
 
+This guide is intended to cover version management in the Visual Builder. If you're using the CLI, we recommend reading the [CLI version tutorial](https://platform.zapier.com/cli_tutorials/versions).
+
 ## Which version can users access?
 
 A Zapier integration can be either _Private_, _Beta_, or _Public_. Private integrations require an [invitation](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations) for users to access it. Public and Beta integrations can be seen by Zapier users on [the public Apps page](https://zapier.com/apps). Each integration can have many versions, but only one version can be public at a time, while the rest remain private. 
