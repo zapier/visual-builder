@@ -164,6 +164,6 @@ Instead, we recommend cloning the latest version of your integration, and pickin
 
 It is also possible to change which development environment your integration is built in, to help make the experience of building the new version easier for your team:
 
-If your integration was built with our [Visual Builder](https://developer.zapier.com), you can convert it to the Zapier CLI using [the steps provided here](https://platform.zapier.com/docs/export). The CLI gives full control over your integration’s code, and is a great fit for teams of developers who are used to sharing code via tools like GitHub or GitLab.
+If your integration was built with our [Visual Builder](https://developer.zapier.com), you can export and convert it to the Zapier CLI using [the steps provided here](https://platform.zapier.com/docs/export). The CLI gives full control over your integration’s code, and is a great fit for teams of developers who are used to sharing code via tools like GitHub or GitLab.
 
 Alternatively, if your integration was built with the Zapier CLI, and your team would prefer to use our Visual Builder moving forward, please [contact our Support team](https://developer.zapier.com/contact) to let us know. In some cases, we can create a new version of your integration that can be edited on the Visual Builder, while allowing the existing CLI integration to continue running.
