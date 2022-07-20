@@ -9,7 +9,13 @@ redirect_from: /docs/
 
 ## Overview
 
-Later sections of this guide will cover the steps for _Cloning_, _Promoting_, _Migrating_, and _Deprecating_ integration versions in more detail. Put briefly, the process of creating a new version of your integration takes three steps in either the Developer Platform [Visual Builder](https://developer.zapier.com/) or [Zapier Command Line Interface](https://platform.zapier.com/docs/export) (CLI).
+Your Zapier integration should be ready to use when first launched—minimal, perhaps, but with the basics covered. The app authentication will let users connect to your API, and the triggers and actions should get data to and from your API.
+
+Over time, though, things will change. Users will request new triggers and actions, or want to send and receive more data with your existing ones. You’ll add new features to your app and want to add them to your Zapier integration, too. And eventually, your API may change, and your Zapier integration’s authentication or API calls may need to be changed as well.
+
+That’s where versions come in. Zapier lets you create multiple versions of your integration to test and build new features without interrupting existing users. You can then release the new version to some users, ensure everything is working, and eventually migrate all of your users to the new version. After that, you can deprecate and remove the old version.
+
+This guide will cover the steps for _Cloning_, _Promoting_, _Migrating_, and _Deprecating_ integration versions in more detail. Put briefly, the process of creating a new version of your integration takes three steps in either the Developer Platform [Visual Builder](https://developer.zapier.com/) or [Zapier Command Line Interface](https://platform.zapier.com/docs/export) (CLI).
 
 In the Visual Builder:
 
