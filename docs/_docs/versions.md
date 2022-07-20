@@ -7,8 +7,6 @@ redirect_from: /docs/
 
 # How to update your integration on the Zapier Developer Platform
 
-## Overview
-
 Your Zapier integration should be ready to use when first launched—minimal, perhaps, but with the basics covered. The app authentication will let users connect to your API, and the triggers and actions should get data to and from your API.
 
 Over time, though, things will change. Users will request new triggers and actions, or want to send and receive more data with your existing ones. You’ll add new features to your app and want to add them to your Zapier integration, too. And eventually, your API may change, and your Zapier integration’s authentication or API calls may need to be changed as well.
