@@ -13,7 +13,7 @@ Later sections of this guide will cover the steps for _Cloning_, _Promoting_, _M
 
 In the Visual Builder:
 
-1. In the sidebar on the right, navigate to **Manage**, then **Versions**
+1. In the sidebar on the left, navigate to **Manage**, then **Versions**
 2. Select the gear icon next to the version you’d like to update, then select **Clone**
 3. Select a new version number, then **Clone** and **Edit** to create the new version and begin editing it
 
