@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: /docs/
 ---
 
-# How to update your integration on the Zapier Developer Platform
+# Manage Versions of Your Zapier Integration
 
 Your Zapier integration should be ready to use when first launched—minimal, perhaps, but with the basics covered. The app authentication will let users connect to your API, and the triggers and actions should get data to and from your API.
 
