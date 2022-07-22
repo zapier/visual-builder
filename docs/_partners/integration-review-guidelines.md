@@ -103,7 +103,7 @@ Ensure all information provided in the Publishing form is accurate and up-to-dat
 * The Homepage URL submitted via the Publishing form should be the homepage URL of the application's marketing site.
 
 ### 2.3 Replacement Integration
-The integration should not already have an equivalent that is Public in our App Directory. If you’re looking to replace an existing integration, check out the guide on [versions](https://platform.zapier.com/docs/versions) on how to deploy changes.
+The integration should not already have an equivalent that is Public in our App Directory. If you’re trying to replace an existing integration, check out the guide on [versions](https://platform.zapier.com/docs/versions) and how to deploy changes.
 
 ### 2.4 Multiple Integrations
 Do not create separate integrations for functionality that share the same authentication method and interact with the same API. Consolidate the functionality into one, high-level integration.
