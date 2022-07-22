@@ -103,21 +103,24 @@ Ensure all information provided in the Publishing form is accurate and up-to-dat
 * The Homepage URL submitted via the Publishing form should be the homepage URL of the application's marketing site.
 
 ### 2.3 Replacement Integration
-The integration should not already have an equivalent that is Public in our App Directory. If you’re replacing an existing integration, check out the guide for [Replacing Your Zapier Integration](https://zapier.com/developer/documentation/v2/replacing-your-zapier-integration/).
+The integration should not already have an equivalent that is Public in our App Directory. If you’re looking to replace an existing integration, check out the guide on [versions](https://platform.zapier.com/docs/versions) on how to deploy changes.
 
-### 2.4 Name
+### 2.4 Multiple Integrations
+Do not create separate integrations for functionality that share the same authentication method and interact with the same API. Consolidate the functionality into one, high-level integration.
+
+### 2.5 Name
 Make the integration name [titlecased](https://titlecase.com/), representative of the integration, and free of any cruft like “Cloned” or “Archived”.
 
-### 2.5 Logo
+### 2.6 Logo
 The logo image must be square, at least 256px on each side, and have a transparent background. Use a version of the logo without the name or other writing on the image as the words may not be legible at small sizes around the Zapier platform and website. Upload the logo as a PNG file.
 
-### 2.6 Description
+### 2.7 Description
 The integration description is 1-3 sentences or approximately 20-40 words in the form of “<Integration Name'> is a...”. Here’s a good description to follow: https://zapier.com/integrations/slack/integrations. It should describe what your integration is *outside* of the Zapier context, and be free of generic marketing-speak, links, and mentions of Zapier itself. Do not make it appear your integration is associated with or endorsed by Zapier such as “<Integration Name> is Zapier's preferred CRM application.“ And do not use overstated language such “<Integration Name> is the best CRM in the world.”
 
-###  2.7 Category and Role
+###  2.8 Category and Role
 Whether your integration is built with the [Platform UI or CLI](https://platform.zapier.com/docs/vs#zapier-platform-ui-vs-cli-which-should-i-choose), be sure to select the most appropriate category to classify your integration by in the Category field and the integration owner’s relationship with your integration in the Role field.
 
-### 2.8 Language
+### 2.9 Language
 We do not have native support for language other than English on the Zapier Platform. The description of your integration, trigger/action/search names, field names, output field labels, help texts, and error messages must be in English. The data returned from your API and passed back to Zapier can be in the native language of your product.
 
 ## 3. Authentication
