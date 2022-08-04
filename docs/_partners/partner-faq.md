@@ -32,7 +32,7 @@ We routinely hear from our partners that Zapier users are higher-value, sticky u
 
 ## Tip 3: Share Zapier use cases in your onboarding
 
-From tool tips to testimonials, make sure your newest customers know it's possible to connect your tool to 1,000+ other web apps via Zapier.
+From tool tips to testimonials, make sure your newest customers know it's possible to connect your tool to {{ site.partner_count }} other web apps via Zapier.
 
 **Steal this from Base:** Base CRM shares a customer story in their onboarding sequence to help new users picture automation magic in their own work. The result? Stickier users right from the get-go.
 
