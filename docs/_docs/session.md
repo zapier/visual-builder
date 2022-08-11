@@ -85,11 +85,11 @@ As Session Auth doesn't include a defined standard for how access tokens are inc
 
 ![Example Session auth connection label](https://cdn.zapier.com/storage/photos/541510fff1e01b358f898b33f0ced5c2.png)
 
-Finally add a connection label to uniquely identify each account users add from your app to Zapier. Zapier includes your app's name in the connection label by default, followed by the version number, then any text you include in the connection label. You can include:
+Finally, add a connection label to uniquely identify each account users add from your app to Zapier. Zapier includes your app's name in the connection label by default, then any text you include in the connection label. You can include:
 
 - Plain text that will be included in every account connection
-- Any input field from your authentication form, or from your Token Exchange API call—enter {% raw %}`{{bundle.authData.field}}`{% endraw %}, replacing `field` with the input form field key or Token Exchange API call field
-- Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name
+- Any input field from your authentication form, or output from your Token Exchange API call
+- Output fields from your app's authentication test API call
 
 Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 

@@ -87,7 +87,7 @@ Includes data users enter into the authentication input form, including the `use
 
 For example, the Access Token value will often accessed via {% raw %}`{{bundle.authData.access_token}}`{% endraw %} or {% raw %}`{{bundle.authData.accessToken}}`{% endraw %}.
 
-However, note that the `authData` bundle does not support nested objects: all values returned from auth functions need to be at the top level.
+However, note that the `authData` bundle does not support nested objects: all values returned from auth functions need to be at the top level. This bundle also does not include values provided by intermediate steps in OAuth2 or Session auth flows, like `redirect_uri`.
 
 Commonly used authData fields include:
 
@@ -99,7 +99,7 @@ Commonly used authData fields include:
 
 Referenced with: {% raw %}`{{bundle.inputData.field}}`{% endraw %}
 
-In authentication fields and connection labels, `inputData` contains the output fields returned from the test API call, typically used to add a label to new integration connections.
+In authentication fields and connection labels, `inputData` contains the output fields returned from the test API call, typically used to add a label to new integration connections, as well as some values provided by intermediate steps in more complex auth flows, such as the OAuth 2 `redirect_uri`.
 
 In triggers and actions, `inputData` contains the data that users enter into the input forms, with {% raw %}`{{curlies}}`{% endraw %} (mapped fields from previous Zap steps) rendered with their raw data. Zapier passes these inputs to the app for use with that trigger or action.
 

@@ -80,9 +80,9 @@ If you need more customization, you can write custom JavaScript code to call you
 
 Finally, add a connection label to your Zapier integration. Zapier always includes the app's name in each account label. You can additionally include:
 
-- Plain text that will be included after your app's full name
-- The username that users enter in the Zapier authentication form when adding your app—enter {% raw %}`{{bundle.authData.username}}`{% endraw %} to include that
-- Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name.
+- Plain text that will be included in every account connection
+- Any information that that users enter in the Zapier authentication form when adding your app, including the username
+- Output fields from your app's authentication test API call
 
 Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 

@@ -122,7 +122,13 @@ Click the _Edit Code_ button to switch to code mode. If the code mode is visible
 
 If you want to switch back to the regular field, click the _Delete Code_ button to delete your custom connection label code and revert to using the text entered in the connection label field.
 
-Use JavaScript to customize your connection label. When writing code for the connection label, fields are not pulled up to the top level - you must use `bundle.authData` for auth input fields, or `bundle.inputData` for fields returned from the test API request. 
+Use JavaScript to customize your connection label. When writing code for the connection label, fields are not pulled up to the top level - you must use `bundle.authData` for auth input fields, or `bundle.inputData` for fields returned from the test API request. For example, your code might look like this:
+
+```
+return `bundle.authData.username`;
+```
+
+This is equivalent to using {% raw %}`{{username}}` in the regular string mode.
 
 You can also add custom data to Zapier's console log with the `z.console.log` function to assist testing and monitoring your app authentication.
 

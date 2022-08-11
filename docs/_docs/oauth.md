@@ -147,8 +147,8 @@ If you need a specialized API call or response parsing on this or other API call
 Finally add a connection label to help users identify each account that they add from your app to Zapier. Zapier includes your app's name in the connection label by default, followed by the version number, then any text you include in the connection label. You can include:
 
 - Plain text that will be included in every account connection
-- Any input field from your authentication form—enter {% raw %}`{{bundle.authData.field}}`{% endraw %}, replacing `field` with your input form field key
-- Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` with your API output field name
+- Any input field from your authentication form (if present)
+- Output fields from your app's authentication test API call
 
 Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 
