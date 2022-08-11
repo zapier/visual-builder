@@ -27,9 +27,9 @@ Add authentication to your integration before adding triggers or actions. To do 
 ### [Basic Auth](https://platform.zapier.com/docs/basic)
 _As documented by [RFC 7616](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)_
 
-Basic authentication lets users connect their accounts to Zapier with a username and password. Zapier then passes the provided credentials with each API call to authenticate the user. For Basic Auth, username and password are requested automatically, but you can also add additional fields if needed.
+Basic authentication lets users connect their accounts to Zapier with a username and password. Zapier passes the provided credentials with each API call to authenticate the user. For Basic Auth, username and password are requested automatically.
 
-The only other requirement is to add a test API call to confirm the credentials are valid.
+The only other requirement is to add a test API call to confirm the credentials are valid, but you can add additional input fields if needed.
 
 Only use Basic Auth if it's the only way to authenticate your API calls, as it requires Zapier to store users' credentials.
 
@@ -37,20 +37,20 @@ _→ [Add Basic Auth to your Zapier Integration](https://platform.zapier.com/doc
 
 ### [Session Auth](https://platform.zapier.com/docs/session)
 
-Session authentication also starts with users providing their app credentials. Using the credentials, Zapier makes an API call to a token exchange UR, and exchanges the credentials for an authentication token. The token is used to authenticate every subsequent API call.
+Session authentication also starts with users providing their app credentials. Using the credentials, Zapier makes an API call to a token exchange URL, and exchanges the credentials for an authentication token. The token is used to authenticate every subsequent API call.
 
 _→ [Add Session Auth to your Zapier Integration](https://platform.zapier.com/docs/session)_
 
 ### [API Key](https://platform.zapier.com/docs/apikey)
 
-API key authentication lets users provide an API key or similar credential from your app, along with any additional information, such as a domain. Zapier then passes the API key, along with any additional authentication details needed, to authenticate each API call.
+API key authentication lets users provide an API key or similar credential from your app, along with any additional information, such as a domain. Zapier then uses the API key and any additional details to authenticate each API call.
 
 _→ [Add API Key Auth to your Zapier Integration](https://platform.zapier.com/docs/apikey)_
 
 ### [OAuth v2](https://platform.zapier.com/docs/oauth)
 _Zapier's OAuth 2 implementation is based on the `authorization_code` flow, similar to [GitHub](https://developer.github.com/v3/oauth/) and [Facebook](https://developers.facebook.com/docs/authentication/server-side/)._
 
-OAuth 2.0 authentication lets users sign into app accounts and allow Zapier access via a popup window from that app. The app sends a request token before the user authenticates, which Zapier exchanges for an access token after they authenticate.
+OAuth 2.0 authentication lets users sign into app accounts and allow Zapier access via a popup window from that app. The app sends a request token when the user authenticates, which Zapier exchanges for an access token that's used to authenticate subsequent calls.
 
 Use OAuth 2.0 whenever possible, as it matches users' expectations for modern app authentication.
 
@@ -59,7 +59,7 @@ _→ [Add OAuth v2 Auth to your Zapier Integration](https://platform.zapier.com/
 ### [Digest Auth](https://platform.zapier.com/docs/digest)
 _As documented by [RFC 7616](https://tools.ietf.org/html/rfc7616)_
 
-Digest authentication lets users enter their username, password, and other required details for authentication in a Zapier-powered form. With every subsequent request, Zapier first makes an API call to request the nonce key before running the trigger or action's API call and including the encrypted authentication details and any other API call data to your app. Zapier handles the nonce and quality of protection details automatically.
+Digest authentication lets users enter their username, password, and other required details for authentication in a Zapier-powered form. With every subsequent request, Zapier first makes an API call to request the nonce key before running the trigger or action's API call. The encrypted authentication details and any other API call data are included in the request to your app. Zapier handles the nonce and quality of protection details automatically.
 
 _→ [Add Digest Auth to your Zapier Integration](https://platform.zapier.com/docs/digest)_
 

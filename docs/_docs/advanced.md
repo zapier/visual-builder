@@ -99,7 +99,7 @@ Commonly used authData fields include:
 
 Referenced with: {% raw %}`{{bundle.inputData.field}}`{% endraw %}
 
-In authentication fields and connection labels, `inputData` contains the output fields returned from the test API call, typically used to add a label to new integration connections, as well as some values provided by intermediate steps in more complex auth flows, such as the OAuth 2 `redirect_uri`.
+In authentication configuration, including connection labels, `inputData` contains the fields returned from the test API call, as well as some values provided by intermediate steps in more complex auth flows, such as the OAuth 2 `redirect_uri`. Values returned by the test API call are typically used to add a [connection label](./auth#label) to new integration connections.
 
 In triggers and actions, `inputData` contains the data that users enter into the input forms, with {% raw %}`{{curlies}}`{% endraw %} (mapped fields from previous Zap steps) rendered with their raw data. Zapier passes these inputs to the app for use with that trigger or action.
 
