@@ -91,6 +91,8 @@ Finally, add a connection label to uniquely identify each account users add from
 - Any input field from your authentication form, or output from your Token Exchange API call
 - Output fields from your app's authentication test API call
 
+Fields can be referenced using double curly braces. For example, a `username` field would look like {% raw %}`{{username}}`{% endraw %}. 
+
 Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 
 Click _Save & Continue_ when finished to save your authentication settings.

@@ -13,7 +13,7 @@ Authentication allows Zapier access to an individual account in an app. Users co
 
 Once users authenticate their account on an app through Zapier, they can use any of that app's Zap steps without authenticating again. Users may also authenticate an app again if they wish to use additional accounts from an app with Zapier, typically to manage multiple projects or to use both work and personal accounts in workflows.
 
-When building a Zapier integration, you define how the Zapier platform connects to your app to authenticate users, and add an API call where Zapier can test the account authentication. After configuring authentication, you can attempt to create a connection to your app on Zapier to validate the configuration. You can then use the connection to test any Zap Triggers and Actions you add to the integration.
+When building a Zapier integration, you define how the Zapier platform connects to your app to authenticate users, and add an API call where Zapier can test the account authentication. After configuring authentication, you can attempt to create a connection to your app on Zapier to validate the configuration. You can then use the connection to test any Triggers and Actions you add to the integration.
 
 <a id="schemes"></a>
 ## Zapier Supported Authentication Schemes
@@ -50,7 +50,7 @@ _→ [Add API Key Auth to your Zapier Integration](https://platform.zapier.com/d
 ### [OAuth v2](https://platform.zapier.com/docs/oauth)
 _Zapier's OAuth 2 implementation is based on the `authorization_code` flow, similar to [GitHub](https://developer.github.com/v3/oauth/) and [Facebook](https://developers.facebook.com/docs/authentication/server-side/)._
 
-OAuth 2.0 authentication lets users sign into app accounts and allow Zapier access via a popup window from that app. The app sends a request token when the user authenticates, which Zapier exchanges for an access token that's used to authenticate subsequent calls.
+OAuth 2.0 authentication lets users sign into app accounts and allow Zapier access via a popup window from that app. The app sends an authorization code when the user authenticates, which Zapier exchanges for an access token that's used to authenticate subsequent calls.
 
 Use OAuth 2.0 whenever possible, as it matches users' expectations for modern app authentication.
 
@@ -73,7 +73,7 @@ _A Zapier integration with a custom connection label (above) and without one (be
 
 Zapier lets users authenticate multiple accounts for any app. By default, every new app account added to Zapier is identified by the app's name, followed by a number (#2, #3, ...) for accounts connected after the first.
 
-The _Connection Label_ field in your app's authentication options let you customize this account connection for your integration to include a username, email address, name, or other identifiable information in the connection label. That helps users distinguish between their authenticated accounts.
+The _Connection Label_ field in your app's authentication options lets you customize the account connections for your integration to include a username, email address, name, or other identifiable information in the connection label. That helps users distinguish between their authenticated accounts.
 
 ![Zapier Authentication Connection Label](https://cdn.zapier.com/storage/photos/f2c3d557023ce2a65b41122da34c1fdd.png)
 
@@ -115,22 +115,22 @@ You can customize your connection label further with JavaScript code if needed. 
 Custom code for connection labels is best used for:
 
 - Using code to manipulate data from an auth or test call before using it in a connection label, such as to format a number or date
-- Logging additional data to the authentication log
+- Logging additional data
 - Making a new API call to access data to use in the connection label
 
-Click the _Edit Code_ button to switch to code mode. If the code mode is visible, Zapier will only use the code to create your connection label, and will ignore any existing text in the connection label field. 
+Click the _Edit Code_ button to switch to [Code Mode](./faq#how-does-code-mode-work). If the Code Mode is active, Zapier will only use the code to create your connection label, and will ignore any text that was in the _Connection Label_ field in the regular string mode. 
 
-If you want to switch back to the regular field, click the _Delete Code_ button to delete your custom connection label code and revert to using the text entered in the connection label field.
+If you want to switch back to the regular field, click the _Delete Code_ button to delete your custom connection label code and revert to using the text entered in the _Connection Label_ field.
 
-Use JavaScript to customize your connection label. When writing code for the connection label, fields are not pulled up to the top level - you must use `bundle.authData` for auth input fields, or `bundle.inputData` for fields returned from the test API request. For example, your code might look like this:
+When writing code for the connection label, fields are not pulled up to the top level - you must use `bundle.authData` for auth input fields, or `bundle.inputData` for fields returned from the test API request. For example, your code might look like this:
 
 ```
 return `bundle.authData.username`;
 ```
 
-This is equivalent to using {% raw %}`{{username}}` in the regular string mode.
+This is equivalent to using {% raw %}`{{username}}`{% endraw %} in the regular string mode.
 
-You can also add custom data to Zapier's console log with the `z.console.log` function to assist testing and monitoring your app authentication.
+You can also add custom data to Zapier's console log with the `z.console.log` function to assist with testing and monitoring your app authentication.
 
 <a id="test"></a>
 ## How to Test Authentication
@@ -139,19 +139,19 @@ You can also add custom data to Zapier's console log with the `z.console.log` fu
 
 Once you've added the core details of how Zapier can authenticate users and test the connection, you need to try it out to set the final options. Click the _Connect an Account_ button to add your account with this app to Zapier.
 
-Zapier will open a popup window (the same one your users will see) to prompt you to enter the necessarily information. Enter your account info or API key, or authenticate through your app's site, using real account details for a personal or testing account.
+Zapier will open a popup window (the same one your users will see) to prompt you to enter the necessary information. Enter your account info or API key, or authenticate through your app's site, using real account details for a personal or testing account.
 
-> **Tip**: The account you add here will be the one you use to test any triggers and actions you add to Zapier. It can also be used in live Zaps in Zapier, if you wish. These account details are not tied to your app definition, though, and if you add a collaborator to your Zapier integration, they will need to connect their own account for testing.
+> **Tip**: The account you add here will be the one you use to test any triggers and actions you add to Zapier. It can also be used in live Zaps in Zapier, if you wish. These account details are not tied to your app definition, though -- they're tied to your user account. If you add a collaborator to your Zapier integration, they will need to connect their own account for testing.
 
-Once you've added your account, you'll see it, with any connection label detail you added, under the setup box. Click _Test Connected Account_ to have Zapier run your testing API call.
+If the connection attempt succeeds, you'll see the new account connection, with any connection label detail you added, under the setup box. Click _Test Connected Account_ to have Zapier run your testing API call and show the results.
 
 ![Example Zapier authentication test response](https://cdn.zapier.com/storage/photos/d5cf1a5cbc5a8389ad3272d01ef71c06.png)
 
-If everything works as expected, Zapier will receive response data from the API call and display it in the _Response_ tab. You can look through the JSON-formatted fields from the response and use any of the field names in your account [connection label](#label). You can also look at the _Bundle_ tab to see the data Zapier used in the API request, and the _HTTP_ tab to see the full request and response details.
+If the test call works as expected, Zapier will receive response data from the API call and display it in the _Response_ tab. You can look through the JSON-formatted fields from the response and use any of the field names in your account [connection label](#label). You can also look at the _Bundle_ tab to see the data Zapier used in the API request, and the _HTTP_ tab to see the full request and response details.
 
 ![Example Zapier authentication error](https://cdn.zapier.com/storage/photos/3337e520ebab7b09de282e598ea70cfd.png)
 
-If something didn't work, Zapier will show the error message in the _Response_ tab, with the full response content in the _HTTP_ tab if you need more detail. Update your authentication settings accordingly, click the _Save & Continue_ button, then try testing your connected account again. Repeat until your authentication cobbects and tests correctly.
+If the connection attempt fails, no account connection will be created. Zapier will show the error message in the _Response_ tab, with the full response content in the _HTTP_ tab if you need more detail. Update your authentication settings accordingly, click the _Save & Continue_ button, then try testing your connection account again. Repeat until your authentication connects and tests correctly.
 
 With that, your app authentication should be finished, and your integration ready to add triggers and actions.
 

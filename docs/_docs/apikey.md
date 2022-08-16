@@ -87,7 +87,9 @@ Finally, add a connection label to help users identify each account from your ap
 - Any input field from your authentication form
 - Output fields from your app's authentication test API call
 
-Do not use the API Key in the connection label, since the label appears in plain text on Zapier. Yse identifiable, but non-sensitive, information. Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
+Fields can be referenced using double curly braces. For example, a `username` field would look like {% raw %}`{{username}}`{% endraw %}. 
+
+Do not use the API Key in the connection label, since the label appears in plain text on Zapier. Use identifiable, but non-sensitive, information. Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 
 When you're finished, click _Save & Continue_ to save your authentication settings.
 

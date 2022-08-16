@@ -150,6 +150,8 @@ Finally add a connection label to help users identify each account that they add
 - Any input field from your authentication form (if present)
 - Output fields from your app's authentication test API call
 
+Fields can be referenced using double curly braces. For example, a `username` field would look like {% raw %}`{{username}}`{% endraw %}. 
+
 Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 
 Click _Save & Continue_ when finished to save your authentication settings.

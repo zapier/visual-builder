@@ -84,6 +84,8 @@ Finally, add a connection label to your Zapier integration. Zapier always includ
 - Any information that that users enter in the Zapier authentication form when adding your app, including the username
 - Output fields from your app's authentication test API call
 
+Fields can be referenced using double curly braces. For example, the `username` field would look like {% raw %}`{{username}}`{% endraw %}. 
+
 Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
 
 Click _Save & Continue_ when finished to save your authentication settings.
