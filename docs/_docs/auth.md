@@ -37,7 +37,7 @@ _→ [Add Basic Auth to your Zapier Integration](https://platform.zapier.com/doc
 
 ### [Session Auth](https://platform.zapier.com/docs/session)
 
-Session authentication also starts with users providing their app credentials. Using the credentials, Zapier makes an API call to a token exchange URL, and exchanges the credentials for an authentication token. The token is used to authenticate every subsequent API call.
+Session authentication also starts with users providing their app credentials, such as their username and password. Using the credentials, Zapier makes an API call to a token exchange URL, and exchanges the credentials for an authentication token. The token is used to authenticate every subsequent API call.
 
 _→ [Add Session Auth to your Zapier Integration](https://platform.zapier.com/docs/session)_
 
@@ -80,8 +80,8 @@ The _Connection Label_ field in your app's authentication options lets you custo
 Zapier always includes the app's name in each account label. You can add:
 
 - Plain text that will be included after your app's full name
-- Data that users entered in the authentication form.
-- Output fields from your app's authentication test API call.
+- Data that users entered in the authentication form
+- Output fields from your app's authentication test API call
 
 To add a field value to the connection label, enter the name of the field, surrounded by double curly braces, in the _Connection Label_ field.
 
@@ -122,10 +122,10 @@ Click the _Edit Code_ button to switch to [Code Mode](./faq#how-does-code-mode-w
 
 If you want to switch back to the regular field, click the _Delete Code_ button to delete your custom connection label code and revert to using the text entered in the _Connection Label_ field.
 
-When writing code for the connection label, fields are not pulled up to the top level - you must use `bundle.authData` for auth input fields, or `bundle.inputData` for fields returned from the test API request. For example, your code might look like this:
+When writing code for the connection label, fields are not pulled up to the top level of  the `bundle` object - you must use `bundle.authData` for auth input fields, or `bundle.inputData` for fields returned from the test API request. For example, your code might look like this:
 
 ```
-return `bundle.authData.username`;
+return bundle.authData.username;
 ```
 
 This is equivalent to using {% raw %}`{{username}}`{% endraw %} in the regular string mode.
