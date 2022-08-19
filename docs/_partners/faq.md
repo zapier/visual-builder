@@ -71,3 +71,7 @@ If you have issues with Zaps or core Zapier account, please reach out to [our su
 
 We're excited to help you with your Zapier integration, but we can't build it for you. If you're looking for someone to take over the technical reins, check our list of [Zapier Trusted App Developers
 ](/partners/trusted-developers) to find someone who can help develop a Zapier integration for you.
+
+### Our pledge to Zapier Platform partners
+
+At Zapier, our mission is to make automation work for everyone, so every person and business can move forward at growth speed. Our Zapier Platform partners and ecosystem are essential to achieving this mission. [Read more about how we support and grow our ecosystem of Platform partners](https://zapier.com/l/partner-pledge).
