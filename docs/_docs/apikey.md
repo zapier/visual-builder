@@ -81,14 +81,16 @@ If you need a custom API call, you can switch to code mode and write custom Java
 
 ![Zapier API Key auth connection label](https://cdn.zapier.com/storage/photos/f09f02450623750b70b67d0d7afa9e1c.png)
 
-Finally, add a connection label to help users identify each account that they add from your app to Zapier. Zapier includes your app's name in the connection label by default, followed by the version number, then any text you include in the connection label. You can include:
+Finally, add a connection label to help users identify each account from your app that they connect with Zapier. Zapier includes your app's name in the connection label by default, followed by any text you include in the connection label. You can add:
 
 - Plain text that will be included in every account connection
-- Any input field from your authentication form—enter {% raw %}`{{bundle.authData.field}}`{% endraw %}, replacing `field` with your input form field key
-- Output fields from your app's authentication test API call, referenced with {% raw %}`{{bundle.inputData.field}}`{% endraw %} variables, replacing `field` for your API output field name
+- Any input field from your authentication form
+- Output fields from your app's authentication test API call
 
-Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
+Fields can be referenced using double curly braces. For example, a `username` field would look like {% raw %}`{{username}}`{% endraw %}. 
 
-Click _Save & Continue_ when finished to save your authentication settings.
+**Do not use the API Key (or anything sensitive) in the connection label**, since the label appears in plain text on Zapier. Use identifiable, but non-sensitive, information. Learn more in our [Connection Label documentation](https://platform.zapier.com/docs/auth#label).
+
+When you're finished, click _Save & Continue_ to save your authentication settings.
 
 Then, test your authentication, adding a real account to ensure Zapier can successfully connect to your app and use your test API call. Check our [Authentication Testing docs](https://platform.zapier.com/docs/auth#test) for more details, common errors you may encounter, and how to resolve those.
