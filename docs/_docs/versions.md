@@ -35,7 +35,7 @@ A Zapier integration can be either _Private_, _Beta_, or _Public_. Private integ
 
 Newly published integrations will feature a _Beta_ tag when first published. While your integration is in Beta, we’ll monitor how it’s performing. When your integration reaches 50 users, our team will get in touch to invite you to start the [official partner program](https://zapier.com/platform/partner-program) launch process.
 
-To review your integration’s versions, open it in the Developer Platform and navigate to Manage then Versions. This page shows a list of all versions of the integration, along with status and the number of users of each.
+To review your integration’s versions, open it in the Visual Builder and navigate to Manage then Versions. This page shows a list of all versions of the integration, along with status and the number of users of each.
 
 ![The Versions page in the Zapier Developer Platform](https://cdn.zappy.app/220a5f0055ab88b41ec83bfa953db20b.png)
 
