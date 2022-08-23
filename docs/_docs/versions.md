@@ -65,7 +65,7 @@ _Cloning_ is a process in the Zapier Developer Platform Visual Builder that allo
 
 > **Note:** While the term “cloning” doesn’t appear in the Zapier CLI, this is equivalent to updating the version number in `package.json` and running `zapier push` to create a new version. 
 
-To clone a version of your integration, navigate to **Manage** then **Versions** in the Developer Platform, and select the **gear icon** next to the version you’d like to duplicate. 
+To clone a version of your integration, navigate to **Manage** then **Versions** in the Visual Builder, and select the **gear icon** next to the version you’d like to duplicate. 
 
 ![Selecting the 'Clone' option](https://cdn.zappy.app/6b8b23a4943bfe11c8dd4abd29bf8994.png)
 
