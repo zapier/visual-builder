@@ -41,7 +41,7 @@ To review your integration’s versions, open it in the Visual Builder and navig
 
 > **Note:** In the Zapier CLI, you can also run [`zapier versions`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#versions) to see the information in your terminal.
 
-For Public apps, which are searchable in the Zap Editor/App Directory, a user that selects your integration in the Zap Editor will be using the current Public version by default. Optionally, you can use the Sharing page to send users an invitation to a specific private version, which will allow them to select it in the Zap Editor. This is also how all users of Private integrations are added.
+For Public apps, which are searchable in the Zap Editor/App Directory, a user that selects your integration in the Zap Editor will be using the current Public version by default. Optionally, you can use the **Sharing** page to [send users an invitation](https://platform.zapier.com/docs/testing#how-to-invite-others-to-test-new-integrations) to a specific private version, which will allow them to select it in the Zap Editor. This is also how all users of Private integrations are added.
 
 ## Making Changes
 
