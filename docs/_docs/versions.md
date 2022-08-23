@@ -142,7 +142,7 @@ To deprecate a Private version, select the **gear icon** next to the version num
 
 > **Note:** You can also set a deprecation date using the CLI, with the `zapier deprecate` command. [More about that here](https://platform.zapier.com/cli_docs/docs#promoting-an-app-version).
 
-When a deprecation date is set, Zapier sends a notification to that version’s users, to let them know about the need to upgrade to the latest Public version. Users can then manually update their Zaps, and ensure that the new version fits their workflows.
+When a deprecation date is set, Zapier sends an email notification to that version’s users, to let them know about the need to upgrade to the latest Public version. Users can then manually update their Zaps, and ensure that the new version fits their workflows.
 
 After the deprecation date has passed, the version will still be available in the Versions page for future reference. You can (but should not) even invite users to it with the options in the Sharing page, like you would with a Private version.
 
