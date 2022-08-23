@@ -146,7 +146,7 @@ When a deprecation date is set, Zapier sends an email notification to that versi
 
 After the deprecation date has passed, the version will still be available in the Versions page for future reference. You can (but should not) even invite users to it with the options in the Sharing page, like you would with a Private version.
 
-### Should I deprecate or delete?
+### Should I Deprecate or Delete?
 
 It’s also possible to _Delete_ versions from the Versions page. That option will fully remove the version from your Zapier integration, meaning that neither you nor users will be able to access it from that time — so use it with caution! 
 
