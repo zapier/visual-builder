@@ -121,7 +121,7 @@ You can then repeat the Migration process later on, and migrate the rest of the 
 
 > **Note:** It is also possible to migrate a portion of users with the CLI using the `zapier migrate` command. [Read more about that here](https://platform.zapier.com/cli_docs/docs#deploying-an-app-version). 
 
-### What is a “breaking change”?
+### What Is a “Breaking Change”?
 
 Before performing a migration, it is important to consider all Zaps which are currently running on previous versions of your integration. The configuration of these Zaps will not be modified during the migration, so they will need to be capable of functioning correctly on both the old and new versions.
 
