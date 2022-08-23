@@ -103,7 +103,7 @@ If you’re working with an integration that’s currently private, the _Promote
 
 Once you’ve added all the changes needed to your integration, you can start rolling it out to users to update their existing Zaps and let users make new Zaps with your new integration features.
 
-If you made a new version with only minor, non-breaking changes, you can migrate existing users and Zaps to your new integration version. On the **Versions** page, select the **Migrate** option on your new integration version.
+If you made a new version with only minor, non-breaking changes ([read more about breaking changes here](#what-is-a-breaking-change)), you can migrate existing users and Zaps to your new integration version. On the **Versions** page, select the **Migrate** option on your new integration version.
 
 ![Selecting the 'Migrate' option on the Versions page](https://cdn.zappy.app/ee93e158cfe97f48a2cdc7b8881df405.png)
 
