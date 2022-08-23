@@ -81,7 +81,7 @@ Zapier uses semantic versioning numbers, which gives you three options to choose
 
 Select the version that feels correct based on your plans, then click **Clone** to create the new version and start editing it.
 
-## Promoting a version
+## Promoting a Version
 
 After your integration has entered the _Beta_ or _Public_ status, one of its versions also becomes _Public_, meaning users see and use it by default. The process of changing which version is Public is called _Promotion_, and can be done from either the CLI or the Versions page. 
 
