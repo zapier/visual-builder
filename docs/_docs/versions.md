@@ -152,7 +152,7 @@ It’s also possible to _Delete_ versions from the Versions page. That option wi
 
 In most cases, either deprecation or leaving a private version untouched are recommended, and deletion should only be used when absolutely necessary.
 
-## Can I start over?
+## Can I Start Over?
 
 In some cases, it may make sense to rebuild your integration from scratch. For example, if your company has introduced a new product, or if the API that was originally used with the integration is now considered “Legacy”. There’s also a chance that it’s just been a while since you’ve used Zapier, and you wish to refresh your knowledge of the Developer Platform.
 
