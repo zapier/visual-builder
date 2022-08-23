@@ -13,7 +13,7 @@ Over time, though, things will change. Users will request new triggers and actio
 
 That’s where versions come in. Zapier lets you create multiple versions of your integration to test and build new features without interrupting existing users. You can then release the new version to some users, ensure everything is working, and eventually migrate all of your users to the new version. After that, you can deprecate and remove the old version.
 
-This guide will cover the steps for _Cloning_, _Promoting_, _Migrating_, and _Deprecating_ integration versions in more detail. Put briefly, the process of creating a new version of your integration takes three steps in either the Developer Platform [Visual Builder](https://developer.zapier.com/) or [Zapier Command Line Interface](https://platform.zapier.com/docs/export) (CLI).
+This guide will cover the steps for _Cloning_, _Promoting_, _Migrating_, and _Deprecating_ integration versions in more detail. Put briefly, the process of creating a new version of your integration takes three steps in either the Developer Platform [Visual Builder](https://developer.zapier.com/) or [Zapier Command Line Interface](https://platform.zapier.com/cli_tutorials/getting-started) (CLI).
 
 In the Visual Builder:
 
