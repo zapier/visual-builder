@@ -111,7 +111,7 @@ That will reveal a screen that will allow you to move users between two versions
 
 ![After selecting 'Migrate', the Migration window allows you to select 'From' and 'To' versions](https://cdn.zappy.app/5d8d487544914ddaa1c72037b331aad1.png)
 
-When migrating users, you are also migrating their Zaps. This means that any active Zaps using the _From_ version will begin using the _To_ version as soon as the migration is complete. This makes it a great solution for Patch and Minor updates, but _not_ a recommended option for Major updates. For Major updates, review our section on Deprecation instead.
+When migrating users, you are also migrating their Zaps. This means that any active Zaps using the _From_ version will begin using the _To_ version as soon as the migration is complete. This makes it a great solution for Patch and Minor updates, but _not_ a recommended option for Major updates. For Major updates, review our section on [Deprecation](#deprecating-versions) instead.
 
 In some cases, it may be more useful to migrate only a portion of the current users, to ensure that the minor change did not accidentally introduce any unforeseen issues. You can do that using the **Percentage** option in the Migration window, or select **Email** to migrate only one user at a time.
 
