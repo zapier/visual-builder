@@ -73,7 +73,7 @@ _A Zapier integration with a custom connection label (above) and without one (be
 
 Zapier lets users authenticate multiple accounts for any app. By default, every new app account added to Zapier is identified by the app's name, followed by a number (#2, #3, ...) for accounts connected after the first.
 
-The _Connection Label_ field in your app's authentication options lets you customize the account connections for your integration to include a username, email address, name, or other identifiable information in the connection label. That helps users distinguish between their authenticated accounts.
+The _Connection Label_ field in your app's authentication options lets you add additional text to the name of the account connections for your integration. The text could include a username, email address, name, or other identifiable information in the users' accounts. That helps users distinguish between their authenticated accounts.
 
 ![Zapier Authentication Connection Label](https://cdn.zapier.com/storage/photos/f2c3d557023ce2a65b41122da34c1fdd.png)
 
