@@ -53,7 +53,7 @@ Clicking **Edit** will direct you to the page of that version. You can then make
 
 While using the Zapier CLI, you can change which version you are editing by updating the version number in your `package.json` file. When you run `zapier push` your code will overwrite the specified version. While optional, we also recommend using version control software, such as GitHub or GitLab, to keep track of previous versions of your code.
 
-## Why can’t I edit a particular version?
+## Why Can’t I Edit a Particular Version?
 
 To make sure that existing Zaps can continue to work consistently, the Zapier Developer Platform only allows you to edit versions that are Private and have fewer than 5 users. Versions that are Public or have more than 5 users will show a warning message prompting you to Clone the version instead.
 
