@@ -99,7 +99,7 @@ If you’re working with an integration that’s currently private, the _Promote
 * Any new triggers or actions will appear on your integration’s public app page
 * When a user selects your integration in a new Zap, they’ll use the promoted version by default
 
-## Migrating users
+## Migrating Users
 
 Once you’ve added all the changes needed to your integration, you can start rolling it out to users to update their existing Zaps and let users make new Zaps with your new integration features.
 
