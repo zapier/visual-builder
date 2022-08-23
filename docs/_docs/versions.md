@@ -148,7 +148,7 @@ After the deprecation date has passed, the version will still be available in th
 
 ### Should I deprecate or delete?
 
-You may have noticed that it’s also possible to _Delete_ versions from the Versions page. That option will fully remove the version from the Developer Platform, meaning that neither you nor users will be able to access it from that time — so use it with caution! 
+It’s also possible to _Delete_ versions from the Versions page. That option will fully remove the version from your Zapier integration, meaning that neither you nor users will be able to access it from that time — so use it with caution! 
 
 In most cases, either deprecation or leaving a private version untouched are recommended, and deletion should only be used when absolutely necessary.
 
