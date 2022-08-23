@@ -93,7 +93,7 @@ In the Visual Builder, head to **Manage** then **Versions**, and select the **ge
 
 If you’re working with an integration that’s currently private, the _Promote_ option won’t appear. Instead, make sure users you’d like to test or move to the new integration version are invited to that version, and encourage them to try it out.
 
-### What happens when a version is promoted?
+### What Happens When a Version Is Promoted?
 
 * Zap templates are updated to use the new Public version of your app
 * Any new triggers or actions will appear on your integration’s public app page
