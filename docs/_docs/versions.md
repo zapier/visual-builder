@@ -43,7 +43,7 @@ To review your integration’s versions, open it in the Visual Builder and navig
 
 For Public apps, which are searchable in the Zap Editor/App Directory, a user that selects your integration in the Zap Editor will be using the current Public version by default. Optionally, you can use the Sharing page to send users an invitation to a specific private version, which will allow them to select it in the Zap Editor. This is also how all users of Private integrations are added.
 
-## Making changes
+## Making Changes
 
 To make edits to a version of your integration in the Developer Platform Visual Builder, select it in the Version dropdown menu in the top right, or select **Edit** from the options menu on the Versions page.
 
