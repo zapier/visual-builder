@@ -95,7 +95,7 @@ If you’re working with an integration that’s currently private, the _Promote
 
 ### What Happens When a Version Is Promoted?
 
-* Zap templates are updated to use the new Public version of your app
+* Zap templates are updated to use the new Public version of your app if there are no breaking changes
 * Any new triggers or actions will appear on your integration’s public app page
 * When a user selects your integration in a new Zap, they’ll use the promoted version by default
 
