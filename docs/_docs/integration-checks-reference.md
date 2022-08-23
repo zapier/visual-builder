@@ -134,21 +134,21 @@ For instance, if a successful run of the auth test returns the following data:
 Your connection label could be the following:
 
 ```
-{{bundle.inputData.name}} - {{bundle.inputData.email}}
+{{name}} - {{email}}
 ```
 
 The most important role of the label is to uniquely identify the connection.
 
-âœ˜ an example of an **incorrect** connection label:
+✘ an example of an **incorrect** connection label:
 
 ```
 "Slack"
 ```
 
-âœ” an example of a **correct** connection label:
+✔ an example of a **correct** connection label:
 
 ```
-{{bundle.inputData.user}} @ {{bundle.inputData.team}}
+{{user}} @ {{team}}
 ```
 
 ---
