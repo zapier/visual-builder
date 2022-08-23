@@ -25,7 +25,7 @@ Using the Zapier CLI:
 
 1. Increment the version number in your app’s `package.json` file
 2. Make the necessary updates to the rest of the app’s resources
-3. Run `zapier push` to build and upload the new version to Zapier
+3. Run [`zapier push`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#push) to build and upload the new version to Zapier
 
 This guide is intended to cover version management in the Visual Builder. If you're using the CLI, we recommend reading the [CLI version tutorial](https://platform.zapier.com/cli_tutorials/versions).
 
@@ -39,7 +39,7 @@ To review your integration’s versions, open it in the Visual Builder and navig
 
 ![The Versions page in the Zapier Developer Platform](https://cdn.zappy.app/220a5f0055ab88b41ec83bfa953db20b.png)
 
-> **Note:** In the Zapier CLI, you can also run `zapier versions` to see the information in your terminal.
+> **Note:** In the Zapier CLI, you can also run [`zapier versions`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#versions) to see the information in your terminal.
 
 For Public apps, which are searchable in the Zap Editor/App Directory, a user that selects your integration in the Zap Editor will be using the current Public version by default. Optionally, you can use the Sharing page to send users an invitation to a specific private version, which will allow them to select it in the Zap Editor. This is also how all users of Private integrations are added.
 
@@ -51,7 +51,7 @@ To make edits to a version of your integration in the Developer Platform Visual 
 
 Clicking **Edit** will direct you to the page of that version. You can then make changes to any of the sections: _Authentication_, _Triggers_, _Actions_, and _Advanced_. Saving those changes will automatically apply them to the version (and by extension, any Zaps using it). 
 
-While using the Zapier CLI, you can change which version you are editing by updating the version number in your `package.json` file. When you run `zapier push` your code will overwrite the specified version. While optional, we also recommend using version control software, such as GitHub or GitLab, to keep track of previous versions of your code.
+While using the Zapier CLI, you can change which version you are editing by updating the version number in your `package.json` file. When you run [`zapier push`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#push) your code will overwrite the specified version. While optional, we also recommend using version control software, such as GitHub or GitLab, to keep track of previous versions of your code.
 
 ## Why Can’t I Edit a Particular Version?
 
@@ -63,7 +63,7 @@ To make sure that existing Zaps can continue to work consistently, the Zapier De
 
 _Cloning_ is a process in the Zapier Developer Platform Visual Builder that allows you to create a new version of your integration, based on a previous one. 
 
-> **Note:** While the term “cloning” doesn’t appear in the Zapier CLI, this is equivalent to updating the version number in `package.json` and running `zapier push` to create a new version. 
+> **Note:** While the term “cloning” doesn’t appear in the Zapier CLI, this is equivalent to updating the version number in `package.json` and running [`zapier push`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#push) to create a new version. 
 
 To clone a version of your integration, navigate to **Manage** then **Versions** in the Visual Builder, and select the **gear icon** next to the version you’d like to duplicate. 
 
@@ -85,7 +85,7 @@ Select the version that feels correct based on your plans, then click **Clone** 
 
 After your integration has entered the _Beta_ or _Public_ status, one of its versions also becomes _Public_, meaning users see and use it by default. The process of changing which version is Public is called _Promotion_, and can be done from either the CLI or the Versions page. 
 
-In the CLI, running `zapier promote [version]` will make the specified version number the new Public version. [Read more about that here](https://platform.zapier.com/cli_docs/docs#promoting-an-app-version).
+In the CLI, running [`zapier promote [version]`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#promote) will make the specified version number the new Public version. [Read more about that here](https://platform.zapier.com/cli_docs/docs#promoting-an-app-version).
 
 In the Visual Builder, head to **Manage** then **Versions**, and select the **gear icon** next to the version you’d like to make public. In the menu that appears, select **Promote**.
 
@@ -119,7 +119,7 @@ In some cases, it may be more useful to migrate only a portion of the current us
 
 You can then repeat the Migration process later on, and migrate the rest of the users once you are comfortable with how the new version is running in production.
 
-> **Note:** It is also possible to migrate a portion of users with the CLI using the `zapier migrate` command. [Read more about that here](https://platform.zapier.com/cli_docs/docs#deploying-an-app-version). 
+> **Note:** It is also possible to migrate a portion of users with the CLI using the [`zapier migrate`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#migrate) command. [Read more about that here](https://platform.zapier.com/cli_docs/docs#deploying-an-app-version). 
 
 ### What Is a “Breaking Change”?
 
@@ -140,7 +140,7 @@ To deprecate a Private version, select the **gear icon** next to the version num
 
 ![The window that opens when selecting 'Deprecate'](https://cdn.zappy.app/7e62435659f494a9143aa1602640ef97.png)
 
-> **Note:** You can also set a deprecation date using the CLI, with the `zapier deprecate` command. [More about that here](https://platform.zapier.com/cli_docs/docs#promoting-an-app-version).
+> **Note:** You can also set a deprecation date using the CLI, with the [`zapier deprecate`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#deprecate) command. [More about that here](https://platform.zapier.com/cli_docs/docs#promoting-an-app-version).
 
 When a deprecation date is set, Zapier sends an email notification to that version’s users, to let them know about the need to upgrade to the latest Public version. Users can then manually update their Zaps, and ensure that the new version fits their workflows.
 
