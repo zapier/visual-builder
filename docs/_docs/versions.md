@@ -132,7 +132,7 @@ Because of that, a “breaking change” can be defined as any modification to t
 * Making a previously optional input field “required”
 * Deleting a trigger/action
 
-## Deprecating versions
+## Deprecating Versions
 
 _Deprecation_ is an optional process that allows you to set a date from which a non-Public version of your integration will no longer be supported. This is usually recommended after promoting a major update which cannot support automatic migration of users due to breaking changes. It allows Zapier to notify all of that version's users that a new version is available, and that action is required on their part to update their Zaps manually.
 
