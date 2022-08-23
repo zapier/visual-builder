@@ -160,6 +160,8 @@ Because our mutual users see your Zapier integration as an extension of your bra
 
 Instead, we recommend cloning the latest version of your integration, and picking the **Major** version number change. The triggers, actions, and even authentication of the new version can be changed entirely, so that the update looks and feels like a brand new app, but maintains the brand consistency for our end users.
 
+> **Note:** With the Zapier CLI, you can start a brand new project and "link" the new code to your existing integration with the [`zapier link`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#link) command.
+
 It is also possible to change which development environment your integration is built in, to help make the experience of building the new version easier for your team:
 
 If your integration was built with our [Visual Builder](https://developer.zapier.com), you can export and convert it to the Zapier CLI using [the steps provided here](https://platform.zapier.com/docs/export). The CLI gives full control over your integration’s code, and is a great fit for teams of developers who are used to sharing code via tools like GitHub or GitLab.
