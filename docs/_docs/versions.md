@@ -49,7 +49,7 @@ To make edits to a version of your integration in the Developer Platform Visual 
 
 ![Highlighting the Version dropdown menu, and Edit option on the Versions page](https://cdn.zappy.app/bea20fbdee6ee96c6af4cf39261481a2.png)
 
-That will update the _Authentication_, _Triggers_, _Actions_, and _Advanced_ sections to reflect the latest changes to that version. You can then make changes in those sections as needed, and saving those changes will automatically apply them to the version (and by extension, any Zaps using it). 
+Clicking **Edit** will direct you to the page of that version. You can then make changes to any of the sections: _Authentication_, _Triggers_, _Actions_, and _Advanced_. Saving those changes will automatically apply them to the version (and by extension, any Zaps using it). 
 
 While using the Zapier CLI, you can change which version you are editing by updating the version number in your `package.json` file. When you run `zapier push` your code will overwrite the specified version. While optional, we also recommend using some form of versioning software, such as GitHub or GitLab, to keep track of previous versions of your code.
 
