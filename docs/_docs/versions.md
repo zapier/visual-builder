@@ -117,6 +117,8 @@ In some cases, it may be more useful to migrate only a portion of the current us
 
 ![Using the Percentage slider to migrate only 55% of users](https://cdn.zappy.app/5b3a6a1a49fbed8e22a4b423f72d35d0.png)
 
+> **Warning:** Migrating a single user with the "migrate by email" option will migrate that user *and all of their team members*! If your intention is to migrate a single user, make sure to use a user account that is not in a Teams account.
+
 You can then repeat the Migration process later on, and migrate the rest of the users once you are comfortable with how the new version is running in production.
 
 > **Note:** It is also possible to migrate a portion of users with the CLI using the [`zapier migrate`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#migrate) command. [Read more about that here](https://platform.zapier.com/cli_docs/docs#deploying-an-app-version). 
