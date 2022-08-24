@@ -114,15 +114,14 @@ Website Dashboard to find your API Key.
 
 ## D003 - Connection Label Should Be Set
 
-Connection Labels help customers understand and remember which account they
-connected for a given Connected Account. These should be short and something easily
-identifiable.
+A Connection Label helps a customer remember which account they connected.
+It should be short and easily identifiable.
 
 For both [Platform UI](https://platform.zapier.com/docs/auth#how-to-add-a-connection-label-to-authenticated-accounts)
 and [CLI](https://platform.zapier.com/cli_docs/docs#authentication), the connection
 label is a string. You can use any data returned by your test function.
 
-For instance, if a successful run of the auth test returns the following json:
+For instance, if a successful run of the auth test returns the following data:
 
 ```json
 {
@@ -135,11 +134,10 @@ For instance, if a successful run of the auth test returns the following json:
 Your connection label could be the following:
 
 ```
-"{{name}} - {{email}}"
+{{name}} - {{email}}
 ```
 
-The most important part of the label is that it uniquely identifies the auth it's
-labeling.
+The most important role of the label is to uniquely identify the connection.
 
 ✘ an example of an **incorrect** connection label:
 
@@ -150,7 +148,7 @@ labeling.
 ✔ an example of a **correct** connection label:
 
 ```
-"{{user}} @ {{team}}"
+{{user}} @ {{team}}
 ```
 
 ---
