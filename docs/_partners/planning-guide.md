@@ -91,7 +91,7 @@ You may update your app's category anytime if needed, so do not select a categor
 
 ### Colors
 
-![Zapier primary colors in App Directory](https://cdn.zappy.app/8f3bf082c4a9756b694cd1ff879d847f.png)
+![Zapier primary colors in App Directory](https://cdn.zappy.app/1c327d4bc8b0e194d181f26ef737673c.png)
 
 When you release your Zapier integration to the public, Zapier requires your app’s primary color. A secondary color is optional. 
 
@@ -183,7 +183,7 @@ Or imagine a “New Email” trigger in an email app. Users may want to watch fo
 
 **Include workflow scenarios**, where some action inside your app triggers a Zap. In an email or chat app, a “New Starred Email” trigger lets users do something in your app to trigger a Zap. This helps users build automated workflows that start with an action on their part.
 
-![Update filter in Zapier](https://cdn.zappy.app/7cd495af1533dc8ac601d586c3986044.png)
+![Update filter in Zapier](https://cdn.zappy.app/8be678d50b9f70668471d2b13fa8fbff.png)
 
 **Watch for specific updates**. Don't include a generic "Item Updated" trigger. Think instead about the scenario where users would want to watch for updated items. They may want to watch for deal status changes in a CRM, or email address changes from contacts. Include filters so users can watch for the specific updates that are important to their work.
 
@@ -199,7 +199,7 @@ Or imagine a “New Email” trigger in an email app. Users may want to watch fo
 
 ## Actions
 
-![Zapier Action steps](https://cdn.zappy.app/30f99806fe98887b0c0d7b09d87dd71a.png)
+![Zapier Action steps](https://cdn.zappy.app/c213812b74cddb5a79c42184e0803f93.png)
 _Actions add, update, or find items based on data from previous Zap steps_
 
 Actions let Zapier create or update items in your app, or find existing items with a _[Search](#searches)_ action. After a Zap's trigger has found new data, Zapier runs the Zap's subsequent action steps to add or update items with that data.
