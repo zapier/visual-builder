@@ -183,7 +183,7 @@ Or imagine a “New Email” trigger in an email app. Users may want to watch fo
 
 **Include workflow scenarios**, where some action inside your app triggers a Zap. In an email or chat app, a “New Starred Email” trigger lets users do something in your app to trigger a Zap. This helps users build automated workflows that start with an action on their part.
 
-![Update filter in Zapier](https://cdn.zappy.app/8be678d50b9f70668471d2b13fa8fbff.png)
+![Update filter in Zapier](https://cdn.zappy.app/5b64a9bcc1c2dc7dee00e81a9eb583ac.png)
 
 **Watch for specific updates**. Don't include a generic "Item Updated" trigger. Think instead about the scenario where users would want to watch for updated items. They may want to watch for deal status changes in a CRM, or email address changes from contacts. Include filters so users can watch for the specific updates that are important to their work.
 
@@ -199,7 +199,7 @@ Or imagine a “New Email” trigger in an email app. Users may want to watch fo
 
 ## Actions
 
-![Zapier Action steps](https://cdn.zappy.app/c213812b74cddb5a79c42184e0803f93.png)
+![Zapier Action steps](https://cdn.zappy.app/0e6827bb3b18643e4d95c916061c8c70.png)
 _Actions add, update, or find items based on data from previous Zap steps_
 
 Actions let Zapier create or update items in your app, or find existing items with a _[Search](#searches)_ action. After a Zap's trigger has found new data, Zapier runs the Zap's subsequent action steps to add or update items with that data.
