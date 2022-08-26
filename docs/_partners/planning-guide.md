@@ -58,7 +58,7 @@ Do not include the app name or other copy in the logo as it will not be legible 
 
 **Example**:
 
-![Evernote icon on Zapier](https://cdn.zappy.app/ecff9efa8311b40f5d24e44c35209649.png)
+![Evernote icon on Zapier](https://cdn.zappy.app/e1ac0809ac62bfd74330479dc22c9038.png)
 
 Evernote's elephant icon is included in a transparent square rectangle.
 
