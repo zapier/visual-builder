@@ -62,7 +62,7 @@ Do not include the app name or other copy in the logo as it will not be legible 
 
 Evernote's elephant icon is included in a transparent square rectangle.
 
-![Todoist icon on Zapier](https://cdn.zappy.app/1a5fff6ab42cd6b88f71bb5843ae8885.png)
+![Todoist icon on Zapier](https://cdn.zappy.app/47de5413e9b17530628040488ddd868c.png)
 
 Todoist's icon includes transparent, rounded corners.
 
