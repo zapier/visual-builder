@@ -345,7 +345,7 @@ Available parameters to the Zaps resource:
 
 | parameter                   | requirement | notes                                                                                                                                      |
 | --------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **params\_\_{KEY}={VALUE}** | Optional    | Return Zaps that have a specific key/value set in the params (settings) of the Zap. **It only supports filtering by trigger steps params** |
+| **params\_\_{KEY}={VALUE}** | Optional    | Return Zaps that have a specific key/value set in the params (settings) of the Zap. |
 | **limit** | Optional | (defaults to 5, max of 100) Limits the number of returned items |
 | **offset** | Optional | (defaults to 0) the number of Zaps to skip before beginning to return the Zaps. The default value of 0, which is the offset of the first item. |
 
@@ -666,6 +666,12 @@ All errors will be JSON object with a String array of errors:
 ```
 
 ## Changelog
+
+- 2022-08-29
+
+  - Removed restriction to `v1/zaps`
+
+    - The endpoint `/v1/zaps` now performs param filtering on both triggers and actions.
 
 - 2022-05-23
   
