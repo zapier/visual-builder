@@ -118,7 +118,7 @@ Each time, users expect consistent messaging and with the items they'd expect to
 
 ## Authentication
 
-![Example OAuth v2 Authentication Screen](https://cdn.zappy.app/7755d2ed759d2db71a65b121f31026ca.png)
+![Example OAuth v2 Authentication Screen](https://cdn.zappy.app/dc7fb0009c92defe559e5d3c3e8b92c7.png)
 
 _OAuth v2 authentication lets users authenticate accounts similar to how they would in other apps_
 
