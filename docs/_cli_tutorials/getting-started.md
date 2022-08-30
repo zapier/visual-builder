@@ -462,25 +462,32 @@ With that, we've successfully added authentication to our app!
 If you have at least one trigger or action, now would be a fine time to share your app with some of your users. Early feedback can help you make sure you’re building something they’ll use!
 
 From the Zapier CLI, run:
-`zapier users:add user@example.com 1.0.0` to email this user to let them view and use the app version 1.0.0 in their Zaps
+`zapier users:add user@example.com 1.0.0` to email this user to let them view and use the app version 1.0.0 in their Zaps.
+
+Replace the example email address with the user you want to invite. 
+
+Alternatively invite anyone to use your app in their Zaps via a link to the app by running `zapier users:links` The link should look something like https://zapier.com/platform/public-invite/1/222dcd03aed943a8676dc80e2427a40d/. You can put this in your help docs, post it to Twitter, add it to your email campaign, etc. You can choose an invite link specific to an app version or for the entire app (i.e. all app versions).
+
+Access the same sharing link from the [developer dashboard](https://developer.zapier.com/) Sharing tab:
+
+![Sharing](https://cdn.zappy.app/727cfdcdb197dd3ef7469df5de8ebd0a.png)
+
+## Invite Team Members to Help Manage Your App
+
+Share your app with co-workers and fellow developers so it shows up in their [developer dashboard](https://developer.zapier.com/).
+
+From the Zapier CLI, run:
+`zapier team:add user@example.com admin` to invite a team member to admin the app (edit everything and receive email updates).
 
 OR
 
-`zapier team:add user@example.com admin` to email this user to let them admin the app (edit everything and receive email updates)
-
-OR
-
-`zapier team:add user@example.com collaborator` to email this user to let them collaborate on the app (have read-access to the app and receive email updates.)
+`zapier team:add user@example.com collaborator` to invite a team member to collaborate on the app (have read-access to the app and receive email updates).
 
 Replace the example email address with the user you want to invite. 
 
 Alternatively, invite users to admin or collaborator roles from the Manage Team tab when accessing your app from the [developer dashboard](https://developer.zapier.com/):
+
 ![Invite Team Member](https://cdn.zappy.app/d7fdfe3ba0d17fbf94c330acc2d8d36a.png)
-
-OR invite anyone to use your app in their Zaps via a link to the app by running `zapier users:links` The link should look something like https://zapier.com/platform/public-invite/1/222dcd03aed943a8676dc80e2427a40d/. You can put this in your help docs, post it to Twitter, add it to your email campaign, etc. You can choose an invite link specific to an app version or for the entire app (i.e. all app versions).
-
-Access the same sharing link from the [developer dashboard](https://developer.zapier.com/) Sharing tab:
-![Sharing](https://cdn.zappy.app/727cfdcdb197dd3ef7469df5de8ebd0a.png)
 
 For more on inviting users, see our [detailed documentation.](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#sharing-an-app-version)
 
