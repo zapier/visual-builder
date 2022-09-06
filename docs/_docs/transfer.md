@@ -135,6 +135,10 @@ const getAthleteActivities = async (z, per_page, bundle) => {
       page: bundle.meta.page + 1, // Strava starts paging at 1
     },
   });
+
+  return response.data;
+
+};
 ```
 
 Example of a trigger `perform` from our Strava integration. The Strava API uses the page/offset approach to paging. Here we check `bundle.meta.x` properties to differentiate handling for the three different type of requests. The Transfer request is noted with the `bundle.meta.isBulkRead` property.
@@ -150,4 +154,4 @@ Example of a trigger `perform` from our Strava integration. The Strava API uses 
 - Currently Transfer will fetch every object from your endpoint before allowing the user to interact with the data. As a result if the endpoint for your trigger might return more than a few thousand objects it’s not a good fit to expose through transfer at this time.
 - If you are using hydration, be aware of the performance characteristics when your trigger is invoked from Transfer. If each row of data you return requires a separate API request to enrich that record’s data, Transfer will be making N+1 API requests for every page of data your trigger returns. The processing of each page must complete within ~60 seconds. The team is working on ways to improve this, but for now, tune the number of results you’re returning per request conservatively if you are relying on hydration.
 - We’ll be introducing a way for developers to identify, within the app definition, which triggers support Transfer. Today this is done manually by you working with the Transfer team or your Zapier Partnerships representative.
-- We recommend developing with the Zapier CLI. If you are adding pagination support when developing in the Platform UI, be aware that the built in API test component does not support z.cursor operations. You’ll need to test your trigger by making a Zap
+- We recommend developing with the Zapier CLI. If you are adding pagination support when developing in the Platform UI, be aware that the built in API test component does not support z.cursor operations. You’ll need to test your trigger by making a Zap.
