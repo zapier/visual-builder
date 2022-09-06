@@ -31,7 +31,7 @@ Now your CLI is installed and ready to go! Zapier writes your deploy key to `~/.
 
 ## Starting an App
 
-To begin building an app, use the `init` command to setup the [needed structure](https://github.com/zapier/zapier-platform-example-app-minimal).
+To begin building an app, use the `init` command to setup the [needed structure](https://github.com/zapier/zapier-platform/tree/master/example-apps/minimal).
 
 ```bash
 # create a directory with the minimum required files
@@ -59,11 +59,11 @@ You'll see a few things in `index.js`:
 - in `App` definition, `triggers` will describe ways to trigger off of data in your app
 - in `App` definition, `searches` will describe ways to find data in your app
 - in `App` definition, `creates` will describe ways to create data in your app
-- in `App` definition, `resources` are purely optional but convenient ways to describe CRUD-like objects in your app (see [example resources app](https://github.com/zapier/zapier-platform-example-app-resource))
+- in `App` definition, `resources` are purely optional but convenient ways to describe CRUD-like objects in your app (see [example resources app](https://github.com/zapier/zapier-platform/tree/master/example-apps/resource))
 
 ## Adding a Trigger
 
-Let's start by adding a [**trigger**](https://zapier.com/developer/documentation/v2/triggers/). We will configure it to read data from a mocked API (in the future - your real app will use a real API, of course :-):
+Let's start by adding a [**trigger**](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#triggerssearchescreates). We will configure it to read data from a mocked API (in the future - your real app will use a real API, of course :-):
 
 ```bash
 mkdir triggers
@@ -110,7 +110,7 @@ First, look first at the function definition for `listRecipes`. You see that it 
 
 > _Note_: If you're new to promises, they are essentially synchronous callbacks. The equivalent content of a callback should go inside the `.then()` portion of a promise.
 
-The `listReceipes` function receives two arguments, a `z` object and a `bundle` object.
+The `listRecipes` function receives two arguments, a `z` object and a `bundle` object.
 
 - The [Z Object](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#z-object) is a collection of utilities needed when working with APIs. In our snippet, we use `z.request` to make the HTTP call and `z.JSON` to parse the response.
 - The [Bundle Object](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#bundle-object) contains any data needed to make API calls, like authentication credentials or data for a POST body. In our snippet the Bundle is not used, since we don't require any of those to make our simple GET request.
@@ -342,10 +342,10 @@ Up to this point we've ignored something that is usually crucial to APIs: authen
 
 For different types of authentication, see these example apps:
 
-- [OAuth 2](https://github.com/zapier/zapier-platform-example-app-oauth2)
-- [Basic Auth](https://github.com/zapier/zapier-platform-example-app-basic-auth)
-- [Session Auth](https://github.com/zapier/zapier-platform-example-app-session-auth)
-- [API Key in query string](https://github.com/zapier/zapier-platform-example-app-custom-auth)
+- [OAuth 2](https://github.com/zapier/zapier-platform/tree/master/example-apps/oauth2)
+- [Basic Auth](https://github.com/zapier/zapier-platform/tree/master/example-apps/basic-auth)
+- [Session Auth](https://github.com/zapier/zapier-platform/tree/master/example-apps/session-auth)
+- [API Key in query string](https://github.com/zapier/zapier-platform/tree/master/example-apps/custom-auth)
 
 For this app, our API Key will go in the header. The first thing we need to do is define the `authentication` section on the app.
 
@@ -415,7 +415,7 @@ To check our progress, we need to re-push our app.
 zapier push
 ```
 
-Go back to your Zap at `https://zapier.com`. You'll see a new 'Connect Account' item in your 'New Recipe' trigger. Add an account for our app (enter any value you like for the API key, the mock API does not care).
+Go back to your Zap at `[https://zapier.com](https://zapier.com/app/zaps)`. You'll see a new 'Connect Account' item in your 'New Recipe' trigger. Add an account for our app (enter any value you like for the API key, the mock API does not care).
 
 As soon as you add the account, Zapier will run our app's `authentication.test` function to confirm the credentials are valid.
 
@@ -462,14 +462,34 @@ With that, we've successfully added authentication to our app!
 If you have at least one trigger or action, now would be a fine time to share your app with some of your users. Early feedback can help you make sure you’re building something they’ll use!
 
 From the Zapier CLI, run:
-`zapier invite email@example.com`
+`zapier users:add user@example.com 1.0.0` to email this user to let them view and use the app version 1.0.0 in their Zaps.
 
-Replace the example email address with the user you want to invite. Or run the command without an email address to get a URL you can put in your help pages or other messages to your users.
+Replace the example email address with the user you want to invite. 
 
-You can also invite users from the visibility tab of your [developer dashboard](https://zapier.com/developer/builder/):
-![Invite users to your app](https://cdn.zapier.com/storage/photos/6055c15a160d905e726e66e1ab24e389.png)
+Alternatively invite anyone to use your app in their Zaps via a link to the app by running `zapier users:links` The link should look something like https://zapier.com/platform/public-invite/1/222dcd03aed943a8676dc80e2427a40d/. You can put this in your help docs, post it to Twitter, add it to your email campaign, etc. You can choose an invite link specific to an app version or for the entire app (i.e. all app versions).
 
-For more on inviting users, see our [detailed documentation](https://zapier.github.io/zapier-platform-cli/#sharing-an-app-version)
+Access the same sharing link from the [developer dashboard](https://developer.zapier.com/) Sharing tab:
+
+![Sharing](https://cdn.zappy.app/727cfdcdb197dd3ef7469df5de8ebd0a.png)
+
+## Invite Team Members to Help Manage Your App
+
+Share your app with co-workers and fellow developers so it shows up in their [developer dashboard](https://developer.zapier.com/).
+
+From the Zapier CLI, run:
+`zapier team:add user@example.com admin` to invite a team member to admin the app (edit everything and receive email updates).
+
+OR
+
+`zapier team:add user@example.com collaborator` to invite a team member to collaborate on the app (have read-access to the app and receive email updates).
+
+Replace the example email address with the user you want to invite. 
+
+Alternatively, invite users to admin or collaborator roles from the Manage Team tab when accessing your app from the [developer dashboard](https://developer.zapier.com/):
+
+![Invite Team Member](https://cdn.zappy.app/d7fdfe3ba0d17fbf94c330acc2d8d36a.png)
+
+For more on inviting users, see our [detailed documentation.](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#sharing-an-app-version)
 
 ## Tutorial Next Steps
 
