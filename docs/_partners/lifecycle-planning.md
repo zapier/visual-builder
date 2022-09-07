@@ -127,43 +127,53 @@ Here are the steps to take to officially launch and join the program:
 
 <a id="wait"></a>
 
-### **1. Build, Test, and Publish Your Integration**
+### **1. Build, test, and publish your Beta integration**
 
 See previous section on building and publishing a new integration.
 
-### **2. Create 10 Zap Templates**
+As mentioned above, you’ll need to complete the following tasks before the Beta tag is removed from your app listing:
 
-As soon as your app is published and in beta you can and should begin creating and sharing Zap Templates. This is a great way to help your users discover specific, useful things they can do with your integration. We'll look for a least 10 of these in place before an official partnership launch.
+- Create at least 10 Zap Templates
+- Submit Help Docs
+- Reach 50 users OR embed your Zap Templates into your own product
 
-_Estimated time to complete: 1-2 hours_
+Remember, once you fulfill the criteria above, you’ll automatically join the free Zapier Partner Program to earn co-marketing benefits as your integration grows.
 
-_Who to involve: Your product or marketing team_
+Up next, we’ll dive into these requirements more.
 
-Zap Templates are readymade integrations or Zaps with the apps and core fields pre-selected. In a few clicks, they help people discover a use case, connect apps, and turn on the Zap. Zap Templates are the fastest way for your users to automate workflows. Think of 10 use cases for your integration, and [get started](https://zapier.com/developer/zap-templates) creating 10 Zap Templates for your users.
+### Create 10 Zap Templates
 
-### **3. Help Our Team Create Help Docs on Zapier.com**
+***Estimated time to complete:*** _1-2 hours_
 
-_Estimated time to complete: 5 minutes_
+***Who to involve:*** _Your product or marketing team_
 
-_Who to involve: Your product or marketing team_
+As soon as your app is published and in beta you can begin creating and sharing [Zap Templates](https://zapier.com/developer/zap-templates). Zap Templates are readymade integrations or Zaps with the apps and core fields pre-selected. In a few clicks, they help people discover a use case, connect apps, and turn on the Zap. We’ll look for a least 10 of these in place before an official partnership launch.
+
+### Help our team create Help Docs on Zapier.com
+
+***Estimated time to complete:*** _5 minutes_
+
+***Who to involve:*** _Your product or marketing team_
 
 The Zapier team provides frontline support for your integration and, in order to provide the best experience for your users, we also host help documentation about your integration on our site. Help our support team create accurate documentation by filling out [this form](https://eu.jotform.com/form/202233475923352).
 
-### **4. Reach 50 Users to Receive an Invite from the Zapier Team**
+### Reach 50 users
 
 While your integration is in beta, we'll monitor how it's performing. When your integration reaches 50 users, our team will get in touch to invite you to start the official partner program launch process.
 
 <a id="beta"></a>
 
-### **5. Surface Your Zap Templates In Your Product and On _Your_ Site**
+### Easily embed your Zapier integration into your product
 
-_Estimated time to complete: 5-10 minutes for an engineering or technical resource_
+***Estimated time to complete:*** _5-10 minutes for an engineering or technical resource_
 
-_Who to involve: Your product and development team_
+***Who to involve:*** _Your product and development team_
 
-The best way to ensure users are able to discover how to connect your app to {{ site.partner_count }} other apps is to surface your integration where your users are looking for it. Using Zapier’s embedding technology, you can present your most popular Zap Templates to your users in your app’s UI, help docs, FAQs, blog posts, and more
+The best way to ensure users are able to discover how to connect your app to {{ site.partner_count }} other apps is to surface your integration where your users are looking for it. Using Zapier’s embedding technology, you can present your most popular Zap Templates to your users in your app’s UI, help docs, FAQs, blog posts, and more.
 
-There are two ways to add embed your Zap Templates on your site:
+There are lots of ways to embed Zapier workflows into your product. Jump into the Embed section of your developer dashboard for an interactive sandbox, but the high-level breakdown is below.
+
+> **Tip:** Looking for buy-in from your team on embedding Zapier into your product? Share examples and how it’ll make your customers happier, more loyal, and more successful with [this resource](https://zapier.com/partner/solutions). 
 
 **Option 1**
 The Embed Widget: Embed quickly by copying and pasting a simple line of code
@@ -183,11 +193,11 @@ Here is an example of how our partner Unbounce implemented the Partner API insid
 
 ![](https://cdn.zapier.com/storage/photos/9e769e34030c2bbcf2fb80b827d69c22.png)
 
-### **6. Create Help Documentation for The Integration on Your Site**
+### Create help documentation for the integration on your site
 
-_Estimated time to complete: 1 day_
+***Estimated time to complete:*** _1 day_
 
-_Who to involve: Your support or marketing team_
+***Who to involve:*** _Your support or marketing team_
 
 Make sure your users of your Zapier integration can get their questions answered easily. Create help documentation on your site like our partner Autopilot did:
 
@@ -195,13 +205,13 @@ Make sure your users of your Zapier integration can get their questions answered
 
 We've put together [this template](https://docs.google.com/document/d/1eg3CaU9ytf5QH38FuaxAyQgmFN2HYZFbBN7E3l9kZZg/edit) to help you get your page up quickly.
 
-### **7. Create a Marketing Campaign for The Integration's Launch**
+### **2. Create a marketing campaign for your integration’s full launch**
 
-_Estimated time to complete: 1-2 weeks_
+***Estimated time to complete:*** _1-2 weeks_
 
-_Who to involve: Your marketing team_
+***Who to involve:*** _Your marketing team_
 
-Work with your marketing team to create a launch campaign to let your users know that they can now connect your product to {{ site.partner_count }} web apps. Marketing campaigns help you get more users on your integration right away, so you can rise the ranks of the Zapier Partner Program more quickly.
+After you've passed the Beta phase, work with your marketing team to create a launch campaign to let your users know that they can now connect your product to {{ site.partner_count }} web apps. Marketing campaigns help you get more users on your integration right away, so you can rise the ranks of the Zapier Partner Program more quickly.
 
 Here's some inspiration from some of our most successful partners:
 
@@ -212,7 +222,7 @@ Here's some inspiration from some of our most successful partners:
 - Feature your Zapier integration in your product's onboarding sequence like [Base CRM](https://cdn.zapier.com/storage/photos/9b1c3ac4d870456e5f4ceedc85159878.png) does
 - Add your Zapier integration to your website's [integration directory](https://cdn.zapier.com/storage/photos/edaae7a3799ad14ecc970daa0ea49b8f.gif) like Zoho Connect
 
-Make sure to check out [Zapier's brand guidelines](https://zapier.com/brand/) as you're planning!
+Make sure to check out [Zapier's brand guidelines](https://zapier.com/resources/partner-marketing) as you're planning!
 
 ## 5. Get Zapier Integration Support
 
