@@ -647,6 +647,16 @@ This could happen if you're promoting a version that is already production.
 
 ---
 
+<a name="L004"></a><a name="L00004"></a>
+
+## L004 - Changes From Partners Are Blocked
+
+This is necessary when Zapier team pushes changes to a partner-owned integration.
+Partners would have to coordinate with Zapier team via partners@zapier.com
+to lift the restriction for subsequent changes from them.
+
+---
+
 <a name="M001"></a><a name="M00001"></a>
 
 ## M001 - App Category Is Required
