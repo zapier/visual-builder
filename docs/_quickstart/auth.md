@@ -1,6 +1,6 @@
 ---
 title: Handle Authentication
-order: 5
+order: 6
 layout: post-toc
 redirect_from: /quick-start/
 ---
