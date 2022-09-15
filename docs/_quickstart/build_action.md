@@ -1,6 +1,6 @@
 ---
 title: Add an Action
-order: 7
+order: 8
 layout: post-toc
 redirect_from: /quick-start/
 ---
