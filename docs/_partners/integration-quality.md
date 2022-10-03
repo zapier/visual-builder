@@ -35,7 +35,7 @@ We don’t want integrations throwing errors unnecessarily, but not all errors a
 
 ### What we have learned
 
-Spikes in errors should be monitored as leading indicators of problems users are facing within your integration. The more descript and thorough [error handling](https://platform.zapier.com/cli_docs/docs#error-handling) your API and integration have in place, the easier it will be for users to resolve their own issues and for Zapier’s support team to assist with debugging.
+Spikes in errors should be monitored as leading indicators of problems users are facing within your integration. The more descriptive and thorough [error handling](https://platform.zapier.com/cli_docs/docs#error-handling) your API and integration have in place, the easier it will be for users to resolve their own issues and for Zapier’s support team to assist with debugging.
 
 ### Best Practices
 
