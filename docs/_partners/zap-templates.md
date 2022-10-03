@@ -1,6 +1,6 @@
 ---
 title: Zap Templates
-order: 4
+order: 11
 layout: post-toc
 redirect_from: /partners/
 ---
