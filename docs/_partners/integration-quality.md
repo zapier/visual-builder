@@ -98,7 +98,6 @@ Regardless of the size of your integration’s user base, keeping the percent of
 
 * Instead of a “set-it-and-forget-it” mentality, allocate ongoing resources in your team's product roadmap for the maintenance of your Zapier integration to avoid surprise work or gaps in functionality.
 * Can’t keep up with maintenance? Hire a Zapier expert to help you fix on-off bugs or maintain your integration.
-* Make sure the right people on your team are getting issue notifications. You can add emails to receive these under the [“Notification Settings”](https://cdn.zappy.app/1b35f51a79c3caead06fedeb1fe0cffb.png) of the Bugs & Feature Requests tab in the integration’s developer platform.
 
 
 ## Active Users Retention
