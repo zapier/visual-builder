@@ -114,7 +114,7 @@ But, it could also mean they got so frustrated with the experience of trying to 
 
 Lowered active user retention rates don’t necessarily mean poor integration health. Some apps lend themselves to use-cases with shorter life-spans than others. That said, spikes in churn rate not related to seasonal variations in usage could be indicators of a problem with something not functioning as expected.
 
-Active user retention is not a leading indicator. In fact, it’s quite a lagging one that may only start indicating a problem up to 28 days after it has been an issue. That doesn’t deem it useless, we just have to know how to make full use of it
+Active user retention is not a leading indicator. In fact, it’s quite a lagging one that may only start indicating a problem up to 28 days after it has been an issue. That doesn’t deem it useless, we just have to know how to make full use of it.
 
 ### Best Practices
 
@@ -122,4 +122,4 @@ Approaching active user retention with a long-term strategy can help maintain a 
  
 * [Embed](https://platform.zapier.com/embed/overview) the Zapier experience with copy-and-paste and customizable code within your platform to provide automation value directly to users. Embeds have proven to [reduce churn](https://platform.zapier.com/partner_success_stories/all) on Partners’ platforms. Find live embed examples under the ‘Embed’ tab of the integration’s developer platform.
 * [Share use cases](https://platform.zapier.com/partners/partner-faq#tip-3-share-zapier-use-cases-in-your-onboarding) widely during your platform’s onboarding process. Having multiple Zaps using your integration increases stickiness of users not only to the Zapier integration, but also to your platform.
-* Update the integration regularly with features as your platform evolves. Invite stakeholders as [Collaborators](https://platform.zapier.com/partners/faq#add-collaborators-to-your-team) to your integration to give them read-only access to insights, metrics, and feedback to prioritize and align improvements. 
+* Update the integration regularly with features as your platform evolves. [Invite stakeholders to your integration](https://platform.zapier.com/quickstart/invite-team-member) to give them admin or read-only access to insights, metrics, and feedback to prioritize and align improvements. 
