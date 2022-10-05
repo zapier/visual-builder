@@ -7,6 +7,8 @@ redirect_from: /docs/
 
 # Adding Support for Transfer
 
+**Transfer is a beta feature and is subject to changes prior to launch.**
+
 > ## Intended Audience
 >
 > This is a quick guide for development teams who:
@@ -23,6 +25,7 @@ Some example usage scenarios:
 - A user has new email campaign software and they want to load all the leads from their CRM into it.
 - A user ran a survey, but didn't build a Zap ahead of time to move those responses to their email marketing tool. They can use Transfer to reach back and pull those responses into their software of choice.
 - A user wants to choose specific leads that previously ran through a Zap, and send them to a different tool.
+- A user has a one-off data migration where the source has a paginated API endpoint and the destination has a Zapier integration
 
 ## How Transfer Works
 
@@ -42,14 +45,14 @@ A new feature of Transfer is the ability for a user to put their transfer on a s
 1. Choose which triggers to add to Transfer
 1. For each trigger, make sure you have a defined `noun` property, and it is distinct from other triggers
 1. Identify whether your endpoint uses a page/limit approach or cursor to allow the API client to ask for more data.
-1. Write code to check whether the request is coming from Transfer, and configure a paginated API request accordingly. Use page sizes that are easily processed in less than 60 seconds.
+1. Write code to check whether the request is coming from Transfer, and configure a paginated API request accordingly. Use page sizes that are easily processed in less than 30 seconds.
 1. Review and implement the best practices
-1. Test your trigger using Transfer, tuning your page size to deliver the greatest number of records per 60 seconds
+1. Test your trigger using Transfer, tuning your page size to deliver the greatest number of records per 30 seconds
 1. Send an email to the team to get your trigger included in Transfer Beta
 
 ### Requirements
 
-- You’ll need to have a Zapier integration published before your trigger can be made available within the Transfer tool.
+- For public integrations, we'll need to review your trigger to make it available in the Transfer menu (details below).
 - To make this work your API needs an endpoint that allows the client to fetch a large number of records. For most APIs, this means supporting paginated requests - the ability for the API client to fetch a set, or “page”, of data, then request the next set, the next set, until the end of the data set is reached.
 - You’ll need to publish a trigger in your integration that is able to make paginated requests when invoked from Transfer, but also returns the most recent page of data otherwise. Transfer will not work for triggers that can only deliver data via a RESThook subscription - you must also have a performList method that can provide paginated results.
 - Your integration will need to be running on the current Developer Platform, whether it’s built with the Platform UI or the Zapier CLI (recommended).
@@ -152,6 +155,7 @@ Example of a trigger `perform` from our Strava integration. The Strava API uses 
 ## Considerations & Known Limitations
 
 - Currently Transfer will fetch every object from your endpoint before allowing the user to interact with the data. As a result if the endpoint for your trigger might return more than a few thousand objects it’s not a good fit to expose through transfer at this time.
-- If you are using hydration, be aware of the performance characteristics when your trigger is invoked from Transfer. If each row of data you return requires a separate API request to enrich that record’s data, Transfer will be making N+1 API requests for every page of data your trigger returns. The processing of each page must complete within ~60 seconds. The team is working on ways to improve this, but for now, tune the number of results you’re returning per request conservatively if you are relying on hydration.
+- If you are using hydration, be aware of the performance characteristics when your trigger is invoked from Transfer. If each row of data you return requires a separate API request to enrich that record’s data, Transfer will be making N+1 API requests for every page of data your trigger returns. The processing of each page must complete within ~30 seconds. The team is working on ways to improve this, but for now, tune the number of results you’re returning per request conservatively if you are relying on hydration.
+- If you are listed as an admin of a private integration (or a private version of a public integration), the most recent version of that integration and its trigger nouns will be shown in the Transfer source menu, even if it does not have a trigger that supports pagination.
 - We’ll be introducing a way for developers to identify, within the app definition, which triggers support Transfer. Today this is done manually by you working with the Transfer team or your Zapier Partnerships representative.
 - We recommend developing with the Zapier CLI. If you are adding pagination support when developing in the Platform UI, be aware that the built in API test component does not support z.cursor operations. You’ll need to test your trigger by making a Zap.
