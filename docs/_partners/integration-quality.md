@@ -97,7 +97,7 @@ Regardless of the size of your integration’s user base, keeping the percent of
 ### Best Practices
 
 * Instead of a “set-it-and-forget-it” mentality, allocate ongoing resources in your team's product roadmap for the maintenance of your Zapier integration to avoid surprise work or gaps in functionality.
-* Can’t keep up with maintenance? Hire a Zapier expert to help you fix on-off bugs or maintain your integration.
+* Need help with maintenance? [Match with a Zapier Expert](https://zapier.com/experts/matchmaking) to help you fix on-off bugs or maintain your integration.
 
 
 ## Active Users Retention
