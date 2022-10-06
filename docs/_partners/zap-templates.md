@@ -251,3 +251,15 @@ Filter through your Zap Templates by status on the left sidebar, click a Zap Tem
 If you have any Zap Templates in your _Rejected_ list, edit them to fix the issues then re-submit them. You cannot edit public Zap Templates, but if you notice something that you need to change in your existing Zap Templates, please email [partners@zapier.com](mailto:partners@zapier.com) with the link to the Zap Template, and we can set the Zap as _Draft_ again so you can edit and re-submit it with any changes.
 
 Then start again. Whenever you think of something that’s the _perfect_ use case for your Zapier integration, turn it into a Zap Template with the [Zap Template Creator](https://zapier.com/zap-templates/create). As soon as it’s approved, it’ll show up everywhere your Zapier integration is promoted, spreading your use case to the people who will benefit from it most.
+
+### Promoting New Versions of your Integration
+
+When promoting a new version of your integration, all Zap Templates using the integration and having no breaking changes with the existing version will be updated to use the promoted version. The following are considered breaking changes:
+
+* A trigger/action is hidden or deleted.
+
+* A trigger/action input field key is changed or removed.
+
+* A trigger/action output field key is changed or removed.
+
+If breaking changes exist between the previous and newly promoted integration versions, Zap Templates will not be automatically updated and will continue to use the previous version.
