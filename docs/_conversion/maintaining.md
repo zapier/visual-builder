@@ -40,10 +40,11 @@ _To make a change to your integration._
 
 A breaking change happens when you need to change something that prevents us from being able to switch users' Zaps to the new version without their interaction.  Breaking changes include:
 
-- Changing authentication
-- Adding a new required field
-- Removing a trigger/action/search
+- Changing the authentication scheme
+- Adding a new "required" input field or making a previously optional input field “required”
+- Removing or hiding a trigger/action/search
 - Changing the key of a trigger/search/action or any inputField
+- Removing an input or output field on a trigger/action
 
 ## Deprecation
 
