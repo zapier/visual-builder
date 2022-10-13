@@ -53,7 +53,7 @@ Versions that have been made public, or those with more than 5 users, cannot be 
 
 It's still best to include non-breaking changes in a new integration version, so you can test the changes and roll them out to a smaller subset of your Zapier integration users. Once you've made sure the new version works well, you can roll it out to all of your users.
 
-Breaking or major changes, such as switching to a new API endpoint, changing authentication type, or rewriting an integration, require a new major version of your integration, and users will need to re-create their Zaps with the new version of your integration.
+[Breaking or major changes](https://platform.zapier.com/docs/versions#what-is-a-breaking-change), such as switching to a new API endpoint, changing authentication type, or rewriting an integration, require a new major version of your integration, and users will need to re-create their Zaps with the new version of your integration.
 
 You can test the new version privately, as when you first built your Zapier integration. Once it's ready for wider use, you can promote the new integration version, and deprecate the older version if you want to. Zapier will then mark the integration as having newer versions available, and will show the new version instead of the earlier version when users make new Zaps.
 
