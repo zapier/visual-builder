@@ -131,7 +131,7 @@ Because of that, a “breaking change” can be defined as any modification to t
 
 * Changing the Authentication scheme
 * Adding a new "required" input field or making a previously optional input field “required”
-* Removing or hiding a trigger/action
+* Removing a trigger/action
 * Changing the key of a trigger/action or any input field
 * Removing an input or output field on a trigger/action
 
