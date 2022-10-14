@@ -42,7 +42,7 @@ A breaking change happens when you need to change something that prevents us fro
 
 - Changing the authentication scheme
 - Adding a new "required" input field or making a previously optional input field “required”
-- Removing or hiding a trigger/action/search
+- Removing a trigger/action/search
 - Changing the key of a trigger/search/action or any inputField
 - Removing an input or output field on a trigger/action
 
