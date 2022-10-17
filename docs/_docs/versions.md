@@ -129,10 +129,11 @@ Before performing a migration, it is important to consider all Zaps which are cu
 
 Because of that, a “breaking change” can be defined as any modification to the integration which renders existing Zaps incompatible with the new version. Examples include:
 
-* Removing an input or output field on a trigger/action
 * Changing the Authentication scheme
-* Making a previously optional input field “required”
-* Deleting a trigger/action
+* Adding a new "required" input field or making a previously optional input field “required”
+* Removing a trigger/action
+* Changing the key of a trigger/action or any input field
+* Removing an input or output field on a trigger/action
 
 ## Deprecating Versions
 
