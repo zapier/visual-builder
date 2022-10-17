@@ -13,7 +13,7 @@ Zapier offers a relatively unique run-time environment for your integration and 
 - Zap startup
 - Zap step execution when a Zap runs
 
-This document exposes various operating constraints of these run-time modes, errors users and your integration could run into, and best practices. This information is targeted towards users of our CLI development environment, but many of the strategies can be used in code mode in our Platform UI.
+This document exposes various operating constraints of these run-time modes, errors users and your integration could run into, and best practices. This information is targeted towards users of our CLI development environment, but many of the strategies can be used in [Code Mode](./faq#codemode) in our Platform UI.
 
 Many errors can be viewed in your integration's log monitoring in the [Platform UI](https://platform.zapier.com/docs/testing#monitoring), or if using the [CLI](https://platform.zapier.com/cli_docs/docs#handling-throttled-requests#logs), using `zapier logs`.
 
@@ -39,7 +39,7 @@ When users add steps to their Zaps using your integration, they have the opportu
 - _"Problem creating Sample: Our computers ran into a problem"_
 - _“We couldn't find any more x. Create a new x in your account and try again.”_
 
-**Best practice:** **Best practice:** The Zap editor will only process three new records at a time for sample data, so one way of speeding up the response is by limiting your results to three records. To determine when the request is for sample data, use the bundle meta parameter `bundle.meta.isLoadingSample`. When that is set to `true`, the user is testing in the Zap editor, and your integration can respond with a limited payload. More on `bundle.meta` properties [here](https://platform.zapier.com/cli_docs/docs#bundlemeta).
+**Best practice:** The Zap editor will only process three new records at a time for sample data, so one way of speeding up the response is by limiting your results to three records. To determine when the request is for sample data, use the bundle meta parameter `bundle.meta.isLoadingSample`. When that is set to `true`, the user is testing in the Zap editor, and your integration can respond with a limited payload. More on `bundle.meta` properties [here](https://platform.zapier.com/cli_docs/docs#bundlemeta).
 
 ## Payload size (triggers)
 
@@ -194,7 +194,7 @@ More on dehydration again [here](https://platform.zapier.com/cli_docs/docs#dehyd
 
 **Constraint:** Each time a Zap step requests a file from your API, it will be accessed and downloaded.
 
-**Best practice:** Much like data dehydration, you can implement a file request using [dehydration](https://platform.zapier.com/cli_docs/docs#zgeneratecallbackurl#file-dehydration), so the file will only be accessed and downloaded when a later Zap step asks for it.
+**Best practice:** Much like data dehydration, you can implement a file request using [dehydration](https://platform.zapier.com/cli_docs/docs#file-dehydration), so the file will only be accessed and downloaded when a later Zap step asks for it.
 
 To make this even more efficient, you can [stash the file](https://platform.zapier.com/cli_docs/docs#stashing-files) at Zapier. Rather than provide the file to the requesting step, Zapier will stash the file (under a dehydrated URL), so that only one request will ever be made for the file from your API.
 
@@ -242,6 +242,16 @@ There are a number of throttles that a Zapier user could encounter when using yo
 When writing user-facing error messages, keep the message below 250 characters total. Zapier truncates errors from integrations at 250 characters when displaying them to users.
 
 As an integration developer, you'll be able to see more detail in your [Monitoring](https://platform.zapier.com/docs/testing#monitoring) page, including the error stacktrace.
+
+# Hydration/Dehydration
+
+[File dehydration](https://platform.zapier.com/cli_docs/docs#file-dehydration) is an extremely useful tool to remain within time and size constraints for Zapier triggers and actions. However, it does have its own limits.
+
+**Constraint**: There is a hard limit of 150MB on the size of dehydrated files. Depending on the complexity of the app, issues can also occur for files over ~100MB.
+
+**What errors a user will see if constraint hit:** In their Zap history, the user will see an error like "Runtime exited with error: signal: killed".
+
+**Best practice**: If your integration regularly loads large files, provide checks on file size and don't perform hydration for files that are larger than ~100MB. Include messaging for users letting them know of the limit.
 
 # Important Zapier constraints summary
 
