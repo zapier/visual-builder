@@ -56,7 +56,9 @@ This setting allows anyone with an email address associated with an approved ema
 
 If you entered a Homepage URL in the Integration Settings page, that URL is used as an approved email domain. You can then edit, delete, or add more approved email domains. If there are no approved email domains, your team members cannot join your integration on their own, even if this setting has been enabled.
 
-![Screenshot](https://cdn.zappy.app/d6e565c21b58a7731a5b0b4311ceb201.png)
+![ManageTeamSettings](https://cdn.zappy.app/9896ca0b60fc5b31a08bd49ea1d6ea2e.png)
+
+![EmailDomains](https://cdn.zappy.app/d6e565c21b58a7731a5b0b4311ceb201.png)
 
 ## Join as a collaborator
 
