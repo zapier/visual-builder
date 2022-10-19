@@ -228,7 +228,7 @@ There are a number of throttles that a Zapier user could encounter when using yo
 
 **Constraint:** There is a default limit of 100 new items/poll after deduplication. More on that [here](https://zapier.com/help/manage/history/view-and-manage-your-zap-history#holding).
 
-**What errors a user will see if constraint hit:**
+**Errors a user will see if constraint is hit:**
 
 - The user will receive an email about held Zap runs, as well as a banner with the same information in their Zap history.
 
@@ -249,7 +249,7 @@ As an integration developer, you'll be able to see more detail in your [Monitori
 
 **Constraint**: There is a hard limit of 150MB on the size of dehydrated files. Depending on the complexity of the app, issues can also occur for files over ~100MB.
 
-**What errors a user will see if constraint hit:** In their Zap history, the user will see an error like "Runtime exited with error: signal: killed".
+**Errors a user will see if constraint is hit:** In their Zap history, the user will see an error like "Runtime exited with error: signal: killed".
 
 **Best practice**: If your integration regularly loads large files, provide checks on file size and don't perform hydration for files that are larger than ~100MB. Include messaging for users letting them know of the limit.
 
