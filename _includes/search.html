@@ -1,0 +1,102 @@
+<script>
+const jsonPath = '/search/content.json';
+const searchResultsElement = document.querySelector("#search-results");
+const searchInputElement = document.querySelector(".content .search .search-input");
+const searchDetailsElement = document.querySelector("#search-details");
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+
+/**
+* Helper functions
+*/
+
+const getAllContent = () => {
+    return fetch(jsonPath)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    });
+}
+
+const prettifyCollectionName = (name) => {
+    return name
+        .replace(/[\+\-\_]/g, ' ')
+        .replace(/^(\w)|\s(\w)/g, (w) => w.toUpperCase())
+        .replace(/cli/gi, 'CLI');
+}
+
+const prettifyExcerpt = (page, query) => {
+    let excerpt = "";
+    const firstAppearanceOfQuery = page.content.search(query);
+    let startOfExcerpt = page.content.indexOf(". ", Math.max(0, firstAppearanceOfQuery - 100)) + 1;
+    if (startOfExcerpt > firstAppearanceOfQuery) {
+        excerpt = "...";
+        startOfExcerpt = page.content.indexOf(" ", Math.max(0, firstAppearanceOfQuery - 100)) + 1;
+    }
+    let endOfExcerpt = page.content.indexOf(".", firstAppearanceOfQuery + 100) + 1;
+    
+    const fullWord = new RegExp(`(\\w*(?:${query})\\w*)`, 'gi');
+    excerpt += page.content
+        .slice(startOfExcerpt, endOfExcerpt)
+        .replace(fullWord, "<b>$1</b>");
+    
+    return excerpt;
+}
+
+const getPageTitle = (page) => {
+    /**
+    * Our docs technically have two titles:
+    * 1. The one set in each file's frontmatter
+    * 2. The first line of the content (usually an H1)
+    * Usually these are the same, but sometimes the second option
+    * provides more detail. This function tries to return the
+    * second option to display to the user.
+    */
+    const regex = /^(\w.+)\n/;
+    try {
+        return regex.exec(page.content)[0];
+    } catch {
+        return page.title;
+    }
+}
+
+/**
+* Search functions
+*/
+
+const search = async (query) => {
+    const content = await getAllContent();
+    const regex = new RegExp(query.trim(), "gi");
+    // TO-DO: Split the query and provide partial matches
+    const searchResults = content
+        .filter((item) => {
+            return item.search_omit != "true" && (regex.test(item.title) || regex.test(item.content));
+        })
+        .sort((a, b) => {
+            const relevanceA = a.title.matchAll(regex).length + a.content.matchAll(regex).length;
+            const relevanceB = b.title.matchAll(regex).length + b.content.matchAll(regex).length;
+            return relevanceB - relevanceA;
+        });
+
+    searchDetailsElement.innerHTML = `Found <b>${searchResults.length}</b> results for <b>${query}</b>`;
+    // TO-DO: Provide suggestions when no matches found
+
+    for (const result of searchResults) {
+        const div = document.createElement("div");
+        div.classList.add("result");
+        div.innerHTML = `<h2 class="search-result-title"><a href="${result.link}">${getPageTitle(result)}</a></h2><div class="search-result-details"><a class="search-result-collection" href="${result.collection}">${prettifyCollectionName(result.collection)}</a><blockquote class="search-result-text">${prettifyExcerpt(result, query)}</blockquote></div>`;
+        searchResultsElement.appendChild(div);
+    }
+}
+
+/**
+* Run the search
+*/
+
+if (params.q) {
+    searchInputElement.value = params.q;
+    search(params.q);
+}
+</script>

@@ -1,0 +1,23 @@
+---
+layout: null
+---
+{% assign first = true %}
+[
+{% for dir in site.collections %}
+    {% assign collection = dir.label %}
+    {% for post in site[collection] %}
+        {% if post.title != null and post.title != empty %}
+        {% unless first %},{% endunless %}{
+            "title": {{post.title | jsonify}},
+            "content": {{post.content | markdownify | strip_html | jsonify}},
+            "link": "{{ site.baseurl }}{{ post.url }}",
+            "date": "{{ post.date }}",
+            "excerpt": "{{ post.snippet }}",
+            "search_omit": "{{ post.search_omit }}",
+            "collection": "{{ collection }}"
+        }
+        {% assign first = false %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+]

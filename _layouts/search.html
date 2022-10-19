@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+  <body>
+    {% include header.html %}
+    <main class="split-layout">
+      {% include side-nav.html %}
+      <div class="container">
+        <section class="content">{{ content }}</section>
+        <section class="content">
+            <div class="search">
+                <form method="get" action="/search" autocomplete="off">
+                    <input type="text" name="q" class="search-input" placeholder="Search..." autofill="off" />
+                </form>
+                <span id="search-details"></span>
+            </div>
+        </section>
+        <section class="content" id="search-results"></section>
+      </div>
+    </main>
+  {% include javascript.html %}
+  {% include events-toolkit.html %}
+  {% include search.html %}
+  </body>
+</html>
