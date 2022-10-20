@@ -138,7 +138,7 @@ Many API calls will need additional configuration to pull in data in the order t
 
 Additionally, most dynamic menus should let users load additional data if your API supports pagination. The first API call might pull in 20 items for example; if they request additional items, Zapier would call the API again and request the second page for the next 20 items.
 
-To add that, check the _Support Paging_ box, then in your API call include your API's pagination key and the {% raw %}`{{bundle.meta.page}}`{% endraw %} value to pull in a page value. Zapier will call page `0` first, then page `1` when users request additional entries, using zero-based numbering. You can customize the pagination from the _Code Mode_ button as well. Check our _[Pagination Triggers guide](http://zapier.github.io/visual-builder/docs/triggers#pagination)_ for more details.
+To add that, check the _Support Paging_ box, then in your API call include your API's pagination key and the {% raw %}`{{bundle.meta.page}}`{% endraw %} value to pull in a page value. Zapier will call page `0` first, then page `1` when users request additional entries, using zero-based numbering. You can customize the pagination from the _Code Mode_ button as well. Check our _[Pagination Triggers guide](https://platform.zapier.com/docs/triggers#how-to-use-pagination)_ for more details.
 
 <a id="order"></a>
 
@@ -289,7 +289,7 @@ Dynamic Fields let Zapier build custom fields from an API call, and run code tha
 
 To add a custom field, open your integration's _Input Designer_, add a new, field and choose _Dynamic Field_.
 
-In the code box, add custom code to make an API call and fetch the fields from your app. Use Zapier's `z.request` to make the API call; see our [Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for more details. Then have your code return the field key and names to Zapier in an array, to display in the user's Zap.
+In the code box, add custom code to make an API call and fetch the fields from your app. Use Zapier's `z.request` to make the API call; see our [Z Object docs](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#z-object) for more details. Then have your code return the field key and names to Zapier in an array, to display in the user's Zap.
 
 When using dynamic fields, the fields will be retrieved in three different contexts:
 
