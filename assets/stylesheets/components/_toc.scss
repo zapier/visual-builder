@@ -21,6 +21,16 @@
     }
 
     strong { font-weight: 400; }
+
+    ul {
+      padding-left: 15px;
+      margin: 5px;
+
+      li::before {
+        content: "— ";
+      }
+
+    }
   }
 }
 
