@@ -1,0 +1,47 @@
+img.zoom {
+    z-index: 998;
+    transform: translate(-50%,-50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 85vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+
+.zoom-close {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.zoom-close img {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.page-blur {
+    display: none;
+    position: fixed;
+    z-index: 997;
+    background: rgba(0,0,0,0.75);
+    width: 100vw;
+    height: 100vh;
+}
+
+.visible {
+    display: block;
+}
