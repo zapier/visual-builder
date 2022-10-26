@@ -13,13 +13,13 @@ The Platform UI helps you test your integration's authentication, triggers, and 
 
 ## How to Test Authentication
 
-![Add testing account in Zapier visual builder](https://cdn.zapier.com/storage/photos/5cf2d6babbcb4352e00db0d078d4f14a.png)
+![Add testing account in Zapier visual builder](https://cdn.zappy.app/b6c25d955929856cac02fa4b44818dac.png)
 
 Authentication testing in Zapier is crucially important, as this is where you first connect an account from your app to Zapier, which you will then use to test subsequent trigger and action steps as they're built. Once you've added your app's authentication settings and saved them, click _Connect an Account_ in the final Testing step to connect your account to Zapier.
 
-Then, click the _Test Connected Account_ to make the test API call you added to your app authentication. If it's successful, Zapier will show a green check and a _Request Successful_ message on the top right of the dialog.
+Then, click the _Test Connected Account_ to make the test API call you added to your app authentication. If it's successful, Zapier will show a green check and a _Request Successful_ message at the top of the dialog.
 
-![Check output from trigger or action in Zapier visual builder](https://cdn.zapier.com/storage/photos/c5dfa2f8ce56471ff1af456a747f6c99.png)
+![Check output from trigger or action in Zapier visual builder](https://cdn.zappy.app/f6e6f1013f4071a9d9e64c27bcbc937c.png)
 
 You can then explore the data Zapier sent to and received from your app. The _Response_ tab shows the JSON data response from your API, with each field and its data listed. The _Bundle_ tab shows the data Zapier stores about your authentication. The _HTTP_ tab shows the full request details for each API call Zapier made during the test. And the _Console_ shows any additional data your API calls logged in Zapier if you use custom code for any part of your authentication.
 
@@ -29,7 +29,7 @@ While building your integration, it's often best to use a new account specifical
 
 ## How to Test Triggers and Actions
 
-![Test new Trigger or Action in Zapier](https://cdn.zapier.com/storage/photos/08abf6c9d3eade40363fdd5cc8743ef2.png)
+![Test new Trigger or Action in Zapier](https://cdn.zappy.app/9d80fc59de9af3824e59d7557f2f5cd3.png )
 
 Once you've tested authentication, trigger and action steps are easy to test inside Zapier visual builder. Set up the trigger or action settings and API calls, then as the last step the familiar _Test Your API Response_ box appears. It will show any accounts you added to your integration previously while during authentication testing.
 
@@ -41,7 +41,7 @@ Then click _Test Your Request_ to run the trigger or action step. Zapier will no
 
 ## How to Test New Integrations Inside Zapier
 
-![Test new integration inside Zapier](https://cdn.zapier.com/storage/photos/c288a4e327ca0506da1a93e56c580e6d.png)
+![Test new integration inside Zapier](https://cdn.zappy.app/9d85647291b01a3b35c88d44cf216b7e.png)
 
 Testing inside the Platform UI is crucial to building functioning integrations. But to ensure people can easily use your integration, it's equally crucial to test your integration inside Zapier with live Zaps.
 
@@ -63,7 +63,7 @@ Using your integration inside Zapier's core editor is the best way to notice det
 
 ### Monitoring
 
-![Monitoring Zapier integration](https://cdn.zapier.com/storage/photos/9797530c2c6c7d5ea56dbc3d43e1ffaa.png)
+![Monitoring Zapier integration](https://cdn.zappy.app/cc534339444b8409fd6fcef8f293bed7.png)
 
 When testing in the editor, use your integration's _Monitoring_ page to ensure that test Zaps are running without errors. This tab shows every action taken by your integration within the Zapier platform, and you can filter it by timeframe and log type. This provides you with more details to diagnose any issues that occur.
 
@@ -71,17 +71,18 @@ When testing in the editor, use your integration's _Monitoring_ page to ensure t
 
 It's crucial to have as many people test your integration as possible before launching it to the public. Integrations are required to have at least 3 users with live Zaps before they can be released. Each additional tester helps ensure that your app doesn't ship with usability problems or bugs.
 
-![Zapier integration admins](https://cdn.zapier.com/storage/photos/5db3a5364349cbb17812e02e1eeddf11_2.png)
+![Zapier integration admins](https://cdn.zappy.app/369b879a556d6861570dc76ca720ac10.png)
 
 While developing your app integration, invite additional admins from your integration's _Manage Team_ page. These users will have full access to the Platform UI to edit the app details, authentication, triggers, actions, and versions. This is the best way to add additional developers to your project.
 
 > **Reminder:** You can also invite other team members as _collaborators_, which gives them view-only access. Collaborators can view performance data, view feature requests and bugs, and access tools to embed Zapier integrations inside your UI. 
 Collaborator access is recommended for marketers, product managers, and others not contributing directly to the creation and maintenance of the integration.
 
-
-![Zapier integration visibility](https://cdn.zapier.com/storage/photos/c818563358f8566d969e9be09a560220.png)
+![Inviting a Contributor](https://cdn.zappy.app/8364cbc20b9ae9bf394810015e2a72e4.png)
 
 When your integration is nearly finished and ready for wider testing, you can invite testers from your integration's _Sharing_ page. These testers will be able to use your integration inside the Zapier editor, but cannot see or change your app's core settings and functionality in the Platform UI.
+
+![Zapier integration Sharing page](https://cdn.zappy.app/4a3d59a39aab40af3970ec3107e47c7c.png)
 
 Using the invite link on the _Sharing_ page to invite testers will give them access to all versions of your integration. If you'd like to manage access by version, invite your users by email, and select the version(s) to give them access to.
 
