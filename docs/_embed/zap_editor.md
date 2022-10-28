@@ -81,7 +81,7 @@ You can provide a label for prefill dropdowns as we won't fetch all of the pages
 
 ## `postMessage` events
 
-If you decide to embed the Zapier Editior within your product you can listen to [message events from `postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event) which can help you improve the interactivity with the iframe (e.g. automatically close the iframe modal.)
+If you decide to embed the Zapier Editor within your product you can listen to [message events from `postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event) which can help you improve the interactivity with the iframe (e.g. automatically close the iframe modal.)
 
 The messages available include:
 
