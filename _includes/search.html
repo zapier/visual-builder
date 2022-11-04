@@ -1,0 +1,194 @@
+<script>
+const jsonPath = '/search/content.json';
+const searchResultsElement = document.querySelector("#search-results");
+const searchInputElement = document.querySelector(".content .search .search-input");
+const searchDetailsElement = document.querySelector("#search-details");
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+
+/**
+* Helper functions
+*/
+
+const getAllContent = () => {
+    return fetch(jsonPath)
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    });
+}
+
+const prettifyCollectionName = (name) => {
+    return name
+        .replace(/[\+\-\_]/g, ' ')
+        .replace(/^(\w)|\s(\w)/g, (w) => w.toUpperCase())
+        .replace(/cli/gi, 'CLI');
+}
+
+const prettifyExcerpt = (post, query) => {
+    let excerpt = "";
+    let foundPartOfQuery = query;
+    let firstAppearanceOfQuery = 0;
+
+    const trimmedQuery = removeFillerWords(query.trim());
+    const queryTerms = trimmedQuery.split(' ');
+
+    /**
+    * Search for the first time our search query appears in
+    * the post content. If the whole query doesn't appear, 
+    * shorten the query until a part of it does.
+    */
+
+    const forwardSearch = queryTerms;
+    while (forwardSearch.length > 0) {
+        const searchFor = forwardSearch.join(' ');
+        const regex = new RegExp(searchFor, 'gi');
+        const searchPosition = post.content.search(regex);
+        if (searchPosition > -1) {
+            firstAppearanceOfQuery = searchPosition;
+            foundPartOfQuery = searchFor;
+            break;
+        }
+        forwardSearch.splice(0, 1);
+    }
+
+    /**
+    * Find the paragraph around the query, so we can show it in context.
+    */ 
+    let startOfExcerpt = post.content.indexOf(". ", Math.max(0, firstAppearanceOfQuery - 100)) + 1;
+    if (startOfExcerpt > firstAppearanceOfQuery) {
+        excerpt = "... ";
+        startOfExcerpt = post.content.indexOf(" ", Math.max(0, firstAppearanceOfQuery - 100)) + 1;
+    }
+    let endOfExcerpt = post.content.indexOf(".", firstAppearanceOfQuery + 100) + 1;
+    excerpt += post.content.slice(startOfExcerpt, endOfExcerpt);
+
+    /**
+    * Bold the relevant words in the resulting excerpt, to make them stand out.
+    */ 
+    const completedWords = new RegExp(`(\\w*(?:${foundPartOfQuery})\\w*)`, 'gi');
+    excerpt = excerpt.replace(completedWords, "<b>$1</b>");
+    
+    return excerpt;
+}
+
+const getPageTitle = (page) => {
+    /**
+    * Our docs technically have two titles:
+    * 1. The one set in each file's frontmatter
+    * 2. The first line of the content (usually an H1)
+    * Usually these are the same, but sometimes the second option
+    * provides more detail. This function tries to return the
+    * second option to display to the user.
+    */
+    const regex = /^(\w.+)\n/;
+    try {
+        return regex.exec(page.content)[0];
+    } catch {
+        return page.title;
+    }
+}
+
+const removeFillerWords = (string) => {
+    /**
+    * Terms that might be searched for, but are so common in English that
+    * they'd return too many false positives.
+    */
+    const fillerTerms = ["and", "or", "for", "the", "but", "not", "is", "to", "how", "you", "my", "i", "a", "an"];
+    let newString = "";
+
+    for (const word of string.toLowerCase().split(' ')) {
+        if (fillerTerms.indexOf(word) == -1) {
+            newString += word + " ";
+        }
+    }
+
+    return newString.trim();
+}
+
+/**
+* Search functions
+*/
+
+const matchStrength = (query, post) => {
+    /** 
+    * Returns a number representing the "strength" or "relevance"
+    * of a given search result, based on the number of times each
+    * word from the query appears in the post, with added points for 
+    * whole matches and matches in the post title.
+    */
+    let strength = 0;
+    const trimmedQuery = removeFillerWords(query.trim());
+    const queryTerms = trimmedQuery.split(' ');
+
+    /**
+    * Search through the content and title with the whole query,
+    * then remove the first term, repeating until there are no more terms.
+    */ 
+    const forwardSearch = queryTerms;
+    while (forwardSearch.length > 0) {
+        const regex = new RegExp(forwardSearch.join(' '), 'gi');
+        strength += [...post.content.matchAll(regex)].length * forwardSearch.length;
+        strength += [...post.title.matchAll(regex)].length * forwardSearch.length * 10;
+        forwardSearch.splice(0, 1);
+    }
+
+    /**
+    * Search through the content and title with the whole query,
+    * then remove the last term, repeating until there are no more terms.
+    */ 
+    const backwardSearch = queryTerms;
+    while (backwardSearch.length > 0) {
+        const regex = new RegExp(backwardSearch.join(' '), 'gi');
+        strength += [...post.content.matchAll(regex)].length * backwardSearch.length;
+        strength += [...post.title.matchAll(regex)].length * backwardSearch.length * 10;
+        backwardSearch.splice(-1, 1);
+    }
+
+    return strength;
+}
+
+const isMatch = (query, post) => {
+    const queryTerms = removeFillerWords(query.trim()).split(' ');
+    for (const term of queryTerms) {
+        const regex = new RegExp(term, "gi");
+        if (regex.test(post.content) || regex.test(post.title)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+const search = async (query) => {
+    const content = await getAllContent();
+    const searchResults = content
+        .filter((post) => {
+            return post.search_omit != "true" && isMatch(query, post);
+        })
+        .sort((a, b) => {
+            return matchStrength(query, b) - matchStrength(query, a);
+        });
+
+    searchDetailsElement.innerHTML = `Found <b>${searchResults.length}</b> results for <b>${query}</b>`;
+    // TO-DO: Provide suggestions when no matches found
+
+    for (const result of searchResults) {
+        const div = document.createElement("div");
+        div.classList.add("result");
+        div.innerHTML = `<h2 class="search-result-title"><a href="${result.link}">${getPageTitle(result)}</a></h2><div class="search-result-details"><a class="search-result-collection" href="${result.collection}">${prettifyCollectionName(result.collection)}</a><blockquote class="search-result-text">${prettifyExcerpt(result, query)}</blockquote></div>`;
+        searchResultsElement.appendChild(div);
+    }
+}
+
+/**
+* Run the search
+*/
+
+if (params.q) {
+    searchInputElement.value = params.q;
+    search(params.q);
+}
+</script>

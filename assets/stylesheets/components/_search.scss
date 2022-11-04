@@ -1,0 +1,69 @@
+.search {
+    padding: 0;
+    margin: 0;
+
+    input {
+        font-size: 1.2rem;
+        height: 40px;
+    }
+    
+    input[type="text"] {
+        padding: 5px 10px 5px 35px;
+        width: 100%;
+        outline: none;
+        border: 1px solid #2d2e2e;
+        border-radius: 5px;
+        background: #ffffff url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M5.134 17.452l-2.843 2.842 1.415 1.415 2.842-2.843-1.414-1.414zM13 3c-4.41 0-8 3.59-8 8 0 3.75 2.98 8 8 8 4.41 0 8-3.59 8-8s-3.59-8-8-8zm0 14c-3.8 0-6-3.21-6-6 0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 6-6 6z' fill='%23a8a5a0'></path></svg>") no-repeat 6px center;
+    }
+}
+
+.content .search {
+    width: 100%;
+}
+
+.sidebar .search {
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+
+.search-details {
+    color: $batmobile;
+    margin-left: 10px;
+}
+
+.platform-header .search {
+    text-align: right;
+}
+
+.platform-header .search input {
+    font-size: 14px;
+}
+
+.platform-header .search input[type="text"] {
+    max-width: 200px;
+}
+
+#search-results {
+    padding-left: 10px;
+}
+
+.result {
+    margin-bottom: 30px;
+}
+
+.search-result-title {
+    margin-bottom: 5px;
+}
+
+.search-result-details {
+    padding-left: 10px;
+}
+
+.search-result-collection {
+    color: $batmobile;
+    font-weight: bold;
+}
+
+.search-result-text {
+    margin: 10px 0;
+}

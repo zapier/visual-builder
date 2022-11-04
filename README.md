@@ -120,6 +120,7 @@ title: name
 order: 1
 layout: post
 redirect_from: /name/
+search_omit: false
 ---
 ```
 
@@ -128,7 +129,7 @@ Here's what this information means:
 - The `order: (number)` determines placement in the left navigation.
 - The `layout: post` is default, but you can add `layout: post-toc` which will add the table of contents on the right based on the `h2` you use.
 - The `redirect_from:` just put the name of the collection (e.g. _updates).
-
+- The `search_omit:` toggle tells the Search page whether this page should be excluded from results.
 #### Step 3
 Repeat to add more posts.
 
