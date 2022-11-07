@@ -16,6 +16,7 @@ $baseurl: "{{ site.baseurl }}";
 @import "elements/lists";
 @import "elements/button";
 @import "elements/tables";
+@import "elements/image-zoom";
 
 // Components
 @import "components/header";

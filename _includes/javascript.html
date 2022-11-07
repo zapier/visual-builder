@@ -82,3 +82,42 @@ menuToggle.addEventListener('click', function(event) {
 
   _st('install', 'ZEr4Hw56b1TGkz2qViWp', '2.0.0');
 </script>
+
+<script>
+/* Image Zoom Feature */
+(() => {
+  const images = document.querySelectorAll(".content img");
+  const zoomClose = document.querySelector(".zoom-close");
+  const pageBlur = document.querySelector(".page-blur");
+
+  const toggleImageFocus = (e) => {
+    for (const image of images) {
+      if (image !== e.target) image.classList.remove("zoom");
+    }
+    e.target.classList.toggle("zoom");
+    zoomClose.classList.toggle("visible");
+    pageBlur.classList.toggle("visible");
+  }
+
+  const removeImageFocus = () => {
+    for (const image of images) {
+        image.classList.remove("zoom");
+    }
+    zoomClose.classList.remove("visible");
+    pageBlur.classList.remove("visible");
+  }
+
+  const keyDownHandler = (e) => {
+    if (e.key == "Escape") {
+      removeImageFocus();
+    }
+  }
+
+  for(const image of images) {
+    image.addEventListener("click", toggleImageFocus);
+  }
+  
+  zoomClose.addEventListener("click", removeImageFocus);
+  document.addEventListener("keydown", keyDownHandler);
+})();
+</script>
