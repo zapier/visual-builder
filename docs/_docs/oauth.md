@@ -57,7 +57,7 @@ Zapier includes two types of fields: standard fields, which work much like other
 
 For input fields, select the default _Field_ type, then add:
 
-- **Key**: The internal name for your field, used to reference this field in Zapier API calls. For convenience, use the same key as your API uses for this field.
+- **Key**: The internal name for your field, used to reference this field in Zapier API calls. For convenience, use the same key as your API uses for this field. Note: `client_id` and `client_secret` are reserved and cannot be used as keys for input form fields.
 - **Label**: A human-friendly name for this field that will be shown to users in the authentication form.
 - **Required? (checkbox)**: Check if this field is required for successful authentication.
 - **Type**: (optional) Usually String, but select "Password" to obscure text for secret values.
