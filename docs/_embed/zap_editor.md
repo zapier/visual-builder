@@ -1,6 +1,6 @@
 ---
 title: Zap Editor
-order: 2
+order: 4
 layout: post
 redirect_from:
   - /embed/

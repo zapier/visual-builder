@@ -1,6 +1,6 @@
 ---
 title: Partner API
-order: 4
+order: 5
 layout: post-toc
 redirect_from:
   - /partner_api/authentication
