@@ -15,3 +15,6 @@ Zap Templates are pre-made Zaps that help users discover popular use cases for a
 Open the Zap Template generator and type in your app’s name. Using the sidebar panel in the tool, you can change the theme, display Zap Templates based on app pairings, display (or exclude) popular apps and categories, and more! When it’s ready, you generate the correct code and add it anywhere on your site.
 
 Want to embed specific Zap Templates instead? Simply select the Custom selected tab where you can search and select one or multiple Zap Templates.
+
+
+Find the Zap Templates generator under Embed on the left-hand menu in the [Developer Platform](https://developer.zapier.com/).
