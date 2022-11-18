@@ -15,7 +15,10 @@ With the Full Zapier Experience, you can create a seamless experience for your u
 
 ## Customize
 ![Customize](https://cdn.zappy.app/2f5e6152ad6c3a807d210f0c6746c890.png)
+
 Our generator lets you customize the visual design and features of Zapier you want to include, and generate code snippets that can be copied and pasted directly into your site. No engineering resources are required!
+
+Find the Full Zapier Experience under Embed on the left-hand menu in the [Developer Platform](https://developer.zapier.com/).
 
 ## User Features
 
