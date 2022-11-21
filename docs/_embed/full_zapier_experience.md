@@ -4,7 +4,7 @@ order: 2
 layout: post-toc
 redirect_from: 
   - /partner_api/embedding
-  - /elements
+  - /embed/elements
 ---
 
 # Full Zapier Experience
