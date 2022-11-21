@@ -110,6 +110,8 @@ Most Zap Templates only need two steps, with a Trigger to watch for data from an
 
 To add another search or create action to your Zap, click the _Add a Step_ button after setting up your action above, then repeat step 2 and set up the additional action. To add a _delay_ action, select the _Delay by Zapier_ app when adding a new action.
 
+> **Note**: Code, custom webhook and custom Formatter steps are not allowed in Zap Templates. 
+
 ![Add Filter step to Zap Template](https://cdn.zappy.app/23309a53e37648bd8547e0a7ec0c993e.png)
 
 To add a filter, click the `+` button and select _Filter_. You could add it between the trigger and action step to have the Zap only run when specific items come in from the trigger app, or you can add it after the action to watch for particular results (then add subsequent action steps to do more with data if it passes the filter criteria).
