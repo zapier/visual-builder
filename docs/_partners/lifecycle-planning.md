@@ -176,13 +176,13 @@ There are lots of ways to embed Zapier workflows into your product. Jump into th
 > **Tip:** Looking for buy-in from your team on embedding Zapier into your product? Share examples and how it’ll make your customers happier, more loyal, and more successful with [this resource](https://zapier.com/partner/solutions). 
 
 **Option 1**
-The Embed Widget: Embed quickly by copying and pasting a simple line of code
+The Full Zapier Experience and embedding Zap Templates: Embed quickly by copying and pasting a few simple lines of code
 
-Use our [Embed Widget Generator](https://zapier.com/partner/embed/) to generate your own Embed Widget that features your app. This small snippet of Javascript allows you to quickly and easily embed your Zap templates on your site and in your product.
+Use our [plug and play solutions](https://zapier.com/partner/solutions/plug-and-play) to generate your own Full Zapier Experience or embed Zap Templates that features your app. This small snippet of code allows you to quickly and easily embed the Full Zapier Experience and/or your Zap Templates on your site and in your product.
 
 Here is an example of what it looks like for MailChimp:
 
-<script src="https://zapier.com/zapbook/embed/widget.js?services=mailchimp&container=true&limit=5"></script>
+<zapier-zap-templates theme="light" apps="mailchimp" create-without-template="hide" limit="5" use-this-zap="show"></zapier-zap-templates>
 
 **Option 2**
 The Partner API: Embed in a customized way to fit the style of your product
