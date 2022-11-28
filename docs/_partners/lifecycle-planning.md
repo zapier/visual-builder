@@ -180,9 +180,10 @@ The Full Zapier Experience and embedding Zap Templates: Embed quickly by copying
 
 Use our [plug and play solutions](https://zapier.com/partner/solutions/plug-and-play) to generate your own Full Zapier Experience or embed Zap Templates that features your app. This small snippet of code allows you to quickly and easily embed the Full Zapier Experience and/or your Zap Templates on your site and in your product.
 
-Here is an example of what it looks like for MailChimp:
+Here is an example of what embedded Zap Templates look like for MailChimp:
 
 <zapier-zap-templates theme="light" apps="mailchimp" create-without-template="hide" limit="5" use-this-zap="show"></zapier-zap-templates>
+<br /><br />
 
 **Option 2**
 The Partner API: Embed in a customized way to fit the style of your product
