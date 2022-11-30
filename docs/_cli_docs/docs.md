@@ -3278,6 +3278,6 @@ You can get help by either emailing `partners@zapier.com` or by [joining our dev
 
 ## Developing on the CLI
 
-For Zapier employees, see [this quip doc](https://zapier.quip.com/bns4AxqwaMIm/Working-on-the-CLI-Platform-CoreSchemaCLI) for info about creating releases.
+For Zapier employees, see [this Coda doc](https://coda.io/d/Team-Developer-Platform_di0MgBhlCWf/Releasing-a-New-zapier-platform-Version_su5eD#_luL_l) for info about creating releases.
 
 {% endraw %}
