@@ -65,7 +65,9 @@ The Zapier team verifies each trigger, action,and search in the integration to v
 * Supply any other necessary credentials/resources and configure the test account so it’s ready to test. For example,  providing dummy payment data if your integration requires making payments, or configuring your plugin/embed on a test site to send us. Do not give super admin access or enable any features or settings on the test account that are only available to internal employees, and not available to users.
 
 ### 1.6 Completeness and Platform Consistency
-Submit your integration for review only when it is complete and ready to be published. Make sure it is thoroughly tested for edge cases, and does not have any bugs when submitting. Both your product and integration need to work consistently without errors. See the following guideline regarding “Repeated Submission” for more information. We will not allow incomplete or error-ridden integration integrations to become public.
+Submit your integration for review only when it is complete and ready to be published. Make sure it is thoroughly tested for edge cases, and does not have any bugs when submitting. Both your product and integration need to work consistently without errors. Products not yet fully launched to the public (app is invite-only or for beta users only) and integrations using sandbox/test/dev environments or endpoints will be asked to remain private until they are ready to be publicly available. Once the app is published, it is visible in the Zapier App Directory and it would be expected that any of our mutual users would be able to connect the application to Zapier.
+
+See the following guideline regarding “Repeated Submission” for more information. We will not allow incomplete or error-ridden integrations to become public.
 
 ### 1.7 Repeated Submission
 Submitting multiple integrations that are essentially the same ties up the Zapier process and risks the rejection of all the integrations. Please be thoughtful and consider combining your integrations into one where it makes sense. Also, please do not flood the Zapier team with multiple, consecutive submissions of the same integration while going through the review process. Violating this policy will result in slower review times for your integration or further penalties.
@@ -85,10 +87,11 @@ Here are some further scenarios of what integrations are permitted on the Zapier
 
 * Anyone can build a private integration.
 * Integrations by developers who work for or third-party developers (preferably a [Trusted Developer](https://zapier.com/developer/documentation/v2/integration-developers-partners/)) hired by the company owning the API and intended to go public are permitted to the invite-only status as a stepping stone before going public. 
+* Integrations by developers who work for the company owning the API or have been contracted by the API owner can go public.
 * Integrations by developers who are building on a private API and have no intension of taking their integration public are permitted to remain invite-only indefinitely.
 * Integrations by developers who are building on a public API they do not own and only intend to share with their team (within their company or organization, family and friends, etc.) are permitted to be in invite-only.
 * Integrations by developers who are building on a public API they do not own and intend to sell access to the integration are permitted to remain in invite-only.
-* Integrations by developers who work for the company owning the API or have been contracted by the API owner can go public.
+* Integrations by developers who are building with sandbox/test/dev environments or endpoints are permitted to remain in invite-only.
 
 Here are some further scenarios of what integrations are prohibited from the Zapier Platform by integration status, ownership, and intention:
 
