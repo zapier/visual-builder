@@ -9,7 +9,7 @@ redirect_from: /quick-start/
 
 [Zapier](https://zapier.com/){:target="_blank"} is an app automation platform where over 2 million people connect apps into customized workflows—what we call Zaps. A Zapier integration can connect your app's API to the Zapier platform and let it integrate with {{ site.partner_count }} other popular apps to watch for new or updated data, find existing data, or create and update data.
 
-![Example Zap](https://cdn.zappy.app/8b150616c3e7a813317cdd7a180336f8.gif)
+![Example Zap](https://cdn.zappy.app/eeff50e2737492689f688c379c1db65a.gif)
 
 _Building an example Google Forms to GitHub Zap in Zapier's editor._
 
@@ -21,7 +21,7 @@ Each Zap created starts with a trigger (something that happens in one app) and t
 
 The first step is always the trigger, that watches for new or updated data every few minutes (with polling triggers) or when your APIs tells us to (with subscription triggers), and starts the Zap. Subsequent steps—or actions—then use that data to find or add items to an app, with search actions to find data with GET calls or create actions to add new or update existing items with POST or PUT calls.
 
-![Zapier Fields](https://cdn.zappy.app/6267110113253366426be1cdc86aab6e.gif)
+![Zapier Fields](https://cdn.zappy.app/494bbd089cb1c74b65c8da7ea42b27a0.gif)
 
 _Each step of a Zap returns data that can be used in subsequent steps_
 
