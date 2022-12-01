@@ -67,7 +67,7 @@ The Zapier team verifies each trigger, action,and search in the integration to v
 ### 1.6 Completeness and Platform Consistency
 Submit your integration for review only when it is complete and ready to be published. Make sure it is thoroughly tested for edge cases, and does not have any bugs when submitting. Both your product and integration need to work consistently without errors. Products not yet fully launched to the public (app is invite-only or for beta users only) and integrations using sandbox/test/dev environments or endpoints will be asked to remain private until they are ready to be publicly available. Once the app is published, it is visible in the Zapier App Directory and it would be expected that any of our mutual users would be able to connect the application to Zapier.
 
-See the following guideline regarding “Repeated Submission” for more information. We will not allow incomplete or error-ridden integration integrations to become public.
+See the following guideline regarding “Repeated Submission” for more information. We will not allow incomplete or error-ridden integrations to become public.
 
 ### 1.7 Repeated Submission
 Submitting multiple integrations that are essentially the same ties up the Zapier process and risks the rejection of all the integrations. Please be thoughtful and consider combining your integrations into one where it makes sense. Also, please do not flood the Zapier team with multiple, consecutive submissions of the same integration while going through the review process. Violating this policy will result in slower review times for your integration or further penalties.
