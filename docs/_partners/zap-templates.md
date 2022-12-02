@@ -265,4 +265,4 @@ If breaking changes exist between the previous and newly promoted integration ve
 
 When deprecating a version of your integration, any Zap Templates using the integration will automatically be marked as _Invalid_ within 24 hours of the deprecation.
 
-While invalid, the Zap Template can still be edited to be fixed, but will not be _Public_ until then. This ensures users won’t use deprecated and broken Zap Templates to make Zaps.
+While invalid, the Zap Template will not be _Public_ until it is adjusted to use a non-deprecated version, re-submitted for review and approved. This ensures users won’t use deprecated and broken Zap Templates to make Zaps.
