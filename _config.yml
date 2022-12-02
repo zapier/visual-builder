@@ -6,7 +6,6 @@ markdown: kramdown
 baseurl: "" # intentionally left blank, site is served at root
 partner_api_invite_url: "https://zapier.typeform.com/to/atnWuF"
 partner_count: "5,000+"
-cli_version: "12.2.0"
 
 plugins:
   - jekyll-redirect-from
