@@ -183,7 +183,7 @@ Use our [plug and play solutions](https://zapier.com/partner/solutions/plug-and-
 Here is an example of what embedded Zap Templates look like for MailChimp:
 
 <zapier-zap-templates theme="light" apps="mailchimp" create-without-template="hide" limit="5" use-this-zap="show"></zapier-zap-templates>
-<br /><br />
+<br />
 
 **Option 2**
 The Partner API: Embed in a customized way to fit the style of your product
