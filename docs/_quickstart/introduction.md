@@ -43,6 +43,6 @@ To enable those workflows for your app's API, you need to build a Zapier integra
 
 If you haven't used Zapier before, sign up for a free [Zapier](https://zapier.com/){:target="_blank"} account and check our [Zapier Getting Started guide](https://zapier.com/learn/zapier-quick-start-guide/ ){:target="_blank"} to learn the basics about using Zapier.
 
-Then follow this guide to learn how to create an example GitHub integration in 15 minutes or less with Zapier Platform UI. Explore Zapier's core features, learn how to add basic authentication, triggers, and actions to an integration, and build a working integration. You'll then be ready to use Zapier Visual Builder to make an integration for your app.
+Then follow this guide to learn how to create an example GitHub integration in 15 minutes or less with Zapier Platform UI. Explore Zapier's core features, learn how to add OAuth v2 authentication, triggers, and actions to an integration, and build a working integration. You'll then be ready to use Zapier Visual Builder to make an integration for your app.
 
 Let's get started.

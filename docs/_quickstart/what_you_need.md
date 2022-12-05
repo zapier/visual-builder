@@ -17,6 +17,6 @@ If you haven’t used Zapier before, create a free [Zapier](https://zapier.com/)
 
 You also need a [GitHub](https://github.com/){:target="_blank"} account with at least one repo and issue. Since this tutorial will walk you through building an example GitHub integration, you need a GitHub account to test the integration. Have your GitHub username and password handy to authenticate your GitHub integration on Zapier once we’ve set up the authentication method, along with the name of the repo you will use to test the integration.
 
-You may also want to keep the [GitHub API](https://developer.github.com/v3/){:target="_blank"} open in another tab for reference—though we’ll guide you through everything you need to build the integration.  
+You may also want to keep the [GitHub API documentation](https://developer.github.com/v3/){:target="_blank"} open in another tab for reference—though we’ll guide you through everything you need to build the integration.  
 
 Now you’re ready to build a Zapier integration!

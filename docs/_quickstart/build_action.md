@@ -13,11 +13,11 @@ redirect_from: /quick-start/
 
 _The input form in Zapier actions let users map fields from trigger and previous action steps to your app_
 
-Zapier actions push or put new data into your API from input fields that users set in their Zaps. Zapier includes *search* actions to find data in an app, and *create* actions to add new items via API calls.
+Zapier actions push new data or update existing data into your API from input fields that users set in their Zaps. Zapier includes *search* actions to find data in an app, and *create* actions to add new items via API calls.
 
 Adding an action to your Zapier integration works much like building a trigger. Only here with *create* actions, Zapier will `POST` or `PUT` the data users enter in the input fields to your API—and *every* action needs an input form to gather data and send to your app.
 
-Let’s add an _Action_ to our example GitHub integration so Zapier can send data to GitHub. This tells the Zapier platform how to create the Zap Editor form where users can configure their Zaps and map data to and from the API, then tells it how to make calls to the API endpoint.
+Let’s add an _Action_ to our example GitHub integration so Zapier can send data to GitHub. This tells the Zapier Platform how to create the Zap Editor form where users can configure their Zaps and map data to and from the API, then tells it how to make calls to the API endpoint.
 
 ## 1. Configure Action Settings
 
@@ -25,7 +25,7 @@ Let’s add an _Action_ to our example GitHub integration so Zapier can send dat
 
 _Each action starts with adding details to a form._
 
-Enter your new action settings, as with your trigger. Select a _Create_ action since this action will create new issues, then include a key, name, noun, and description for an issue. The type of action cannot be changed once created, so decide whether the [response type you expect to use](https://platform.zapier.com/docs/faq#what-response-type-does-zapier-expect) for your action better meets a _Search_ or _Create_. 
+Enter your new action settings, as with your trigger. Select a _Create_ action since this action will create new issues; then include a key, name, noun, and description for an issue. The type of action cannot be changed once created, so decide whether the [response type you expect to use](https://platform.zapier.com/docs/faq#what-response-type-does-zapier-expect) for your action better meets a _Search_ or _Create_. 
 
 ## 2. Design an Action Input Field Form
 

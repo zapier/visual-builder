@@ -15,7 +15,7 @@ _In the Zap Editor, users can set triggers to watch for the precise data they wa
 
 Zapier triggers get new data from your API, parse individual data fields, and let users include that data in subsequent Zap action steps. Triggers can run every time something new is added to an API endpoint or pushed to Zapier via a Webhook, or they can use filters to watch for specific items.
 
-To add a trigger to your integration, Zapier Visual Builder will first have you add details in a form. You will then build an input form to request data from users if your trigger needs filtering—or you can skip that if you want Zapier to run your Trigger every time something new is added to your app. Finally, set your API settings with a `GET` HTTP verb or REST Hook to let Zapier receive data from your API.
+To add a trigger to your integration, Zapier Visual Builder will first have you add details in a form. You will then build an input form to request data from users if your trigger needs filtering—or you can skip that if you want Zapier to run your trigger every time something new is added to your app. Finally, set your API settings with a `GET` HTTP method or REST Hook to let Zapier receive data from your API.
 
 Let's have our example GitHub integration poll for new GitHub issues in a specified repo, and trigger Zaps if it finds new issues in that repo. We’ll use a `GET` HTTP method, which is called a polling trigger. Zapier will call this every few minutes for each Zap and check for new data.
 
@@ -48,13 +48,13 @@ To make this example integration simple, use a `string` field type where the use
 
 > Learn more about Input Field forms and dynamic dropdowns in our detailed [input designer docs](https://platform.zapier.com/docs/input-designer).
 
-Your GitHub integration needs an additional input field: a _Owner_ field for users to enter the username of the owner of that repository.
+Your GitHub integration needs an additional input field: an _Owner_ field for users to enter the username of the owner of that repository.
 
 ![Zapier Visual Builder dropdown](https://cdn.zapier.com/storage/photos/992bbec7742b65a3b48df6c981e58610.png)
 
 _You can also build a dropdown menu with dynamic or static options_
 
-Since _State_ is an available parameter for this endpoint, let’s add that too as it will be useful to be able to choose which type of issues to trigger the Zap. Repeat the steps to add the _Owner_ field then the _State_ field, and with the _State_, add a default value of _open_ and check the _Dropdown_ box and the _Static_ option. Enter the following in the code box to build your menu, then save your field:
+Since _State_ is an available parameter for this endpoint, let’s add that too as it will be useful to be able to choose which type of issues should trigger the Zap. Repeat the steps to add the _Owner_ field then the _State_ field, and with the _State_, add a default value of _open_ and check the _Dropdown_ box and the _Static_ option. Enter the following in the code box to build your menu, then save your field:
 
 `["open","closed","all"]`
 
@@ -107,7 +107,7 @@ In the _Sample Data_ field, add fields and example data for those fields with JS
 	  "title": "New Issue"
 	}
 
-Alternatively, you can use the Use Response from Test Data button, but only if your test is expected to contain the same fields as any user would see.
+Alternatively, you can use the Use Response from Test Data button, but only if your test is expected to contain the same field keys as any user would see.
 
 Then click _Generate Output Field Definitions_ to turn your sample data into output fields, and add a friendly, easy-to-read title to each field.
 

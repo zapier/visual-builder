@@ -15,7 +15,7 @@ _Build and manage your app's integration in the Zapier Platform UI_
 
 [Zapier's Platform Visual Builder](https://developer.zapier.com/){:target="_blank"} includes everything needed to build a new Zapier integration. The left sidebar outlines the core project structure. Each part of your integration definition for the Zapier platform is in the _Build_ tabs:
 
-- _Authentication_ sets how users authenticate with your API, using basic, API key, digest, session, or OAuth2 authentication.
+- _Authentication_ sets how users authenticate with your API, using basic, API key, digest, session, or OAuth v2 authentication.
 - _Triggers_ control how Zapier gets data from your API into a Zap, with `GET` HTTP calls or webhooks.
 - _Actions_ control how Zapier sends data to your API, including:
 	- _Create Actions_  to send new data from a Zap to your API, with `POST` or `PUT` HTTP calls to create or update items.

@@ -11,7 +11,7 @@ redirect_from: /quick-start/
 
 ![Zapier Example OAuth Authentication](https://cdn.zappy.app/d57f6aee066334937f1b8f7ed7cb956e.gif)
 
-_Many Zapier integrations use OAuth2 authentication to connect user accounts, including Zapier's built-in GitHub integration_
+_Many Zapier integrations use OAuth v2 authentication to connect user accounts, including Zapier's built-in GitHub integration_
 
 The first thing to set up is authentication. Your integration defines how Zapier’s platform authenticates with the API and what data needs to be collected from users to allow access to their accounts. Zapier supports most popular authentication schemes, including basic auth with username and password, API key auth, digest, session, and OAuth v2.
 
@@ -32,6 +32,8 @@ We'll use OAuth v2 in this example GitHub integration, following the steps [here
 ![Zapier Visual Builder Oauth v2](https://cdn.zappy.app/13034a55ecf3fb0c9a7ed982219f9746.png)
 
 _If your OAuth v2 implementation is standard and users don’t need to input any additional fields such as sub domain to access the authorization url, you don’t need to make any changes in this section_
+
+If you do add input fields in this section, this will show a form to users with the fields you’ve added before redirecting them to your authorization URL. More on adding an OAuth v2 input form [here](https://platform.zapier.com/docs/oauth#add-an-oauth-input-form-optional). For our example GitHub integration, we will not make any changes to this section. 
 
 ## 2. OAuth Redirect URL
 
@@ -61,7 +63,7 @@ Click Save & Continue to save your progress so far.
 
 Add the Authorization URL `https://github.com/login/oauth/authorize` from GitHub’s documentation with the specified GET method. 
 
-Selecting Show Options allows you to further specify url parameters and HTTP headers as needed for the authorization request. By default, Zapier includes client_id, state, redirect_uri and response_type as URL Params, which you can edit as needed based on your API’s documentation. 
+Selecting _Show Options_ allows you to further specify url parameters and HTTP headers as needed for the authorization request. By default, Zapier includes `client_id`, `state`, `redirect_uri` and `response_type` as URL Params, which you can edit as needed based on your API’s documentation. 
 
 For GitHub, we’ll keep the default settings. 
 
@@ -71,15 +73,15 @@ For GitHub, we’ll keep the default settings.
 
 An app’s API documentation will include the available scopes. For this example, we’ll give our app `repo` and `user` scopes. You can see all the available scopes for GitHub [here](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps).
 
+![OAuth Authorize screenshot](https://cdn.zappy.app/9bc2db9a069c757c58d76a54f626bc70.png) 
+
 ### Access Token Request
 
 Next add the Access Token Request URL `https://github.com/login/oauth/access_token` as a POST call.
 
-![Zapier Visual Builder OAuth v2 Access Token Request](https://cdn.zappy.app/5d77f9e14c5c955d839dec56aff6fe0f.png )
+![Zapier Visual Builder OAuth v2 Access Token Request](https://cdn.zappy.app/836e9356a2b2eef3cfc983577640ad3f.png)
 
-By default, Zapier will pass the client ID, client secret, authorization code, redirect URI, and a standard authorization_code grant type in the API request body. If you need to change that, click the Show Options button and add any additional call details needed.
-
-![OAuth Authorize screenshot](https://cdn.zappy.app/9bc2db9a069c757c58d76a54f626bc70.png) 
+By default, Zapier will pass the `client ID`, `client secret`, `authorization code`, `redirect URI`, and a standard authorization_code `grant type` in the API request body. If you need to change that, click the Show Options button and add any additional call details needed.
 
 ### Refresh Token Request
 
@@ -97,6 +99,8 @@ Add an endpoint URL to test the user’s credentials and return a successful aut
 
 ### Connection Label
 
+![Zapier Visual Builder Connection Label](https://cdn.zappy.app/a365f21caa5a98fdcf9da202cee10c43.png)
+
 _Add a connection label, and users' accounts in Zapier will be personalized to easily distinguish between multiple accounts._
 
 You can also add details to the account. Whenever a new account is authenticated with Zapier, Zapier adds a _Connection Label_ so users can identify accounts and add multiple accounts if desired. Customize this label with output fields from the API call (learn more in our [connection label docs](https://platform.zapier.com/docs/auth#how-to-add-a-connection-label-to-authenticated-accounts)).
@@ -108,8 +112,8 @@ For GitHub, add {% raw %}`{{bundle.inputData.login}}`{% endraw %} to the _Connec
 
 ![OAuth Test example](https://cdn.zappy.app/758e7869b78d463ddd18e18ef5e47ffc.gif)
 
-_OAuth2 sends users from Zapier to your site to authenticate_
+_OAuth v2 sends users from Zapier to your site to authenticate_
 
-Then test the authentication. Click _Sign in_, and authorize. If you’re already logged in, the OAuth 2 window will briefly appear and authenticate the app. You can now use this GitHub account to test triggers and actions as you build them into your integration. 
+Then test the authentication. Click _Sign in_, and authorize. If you’re already logged in, the OAuth window will briefly appear and authenticate the app. You can now use this GitHub account to test triggers and actions as you build them into your integration. 
 
 When others use your integration, they'll see a similar login flow to connect their GitHub account to Zapier—only there, the popup window will open from the Zap Editor.
