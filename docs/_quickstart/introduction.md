@@ -19,7 +19,7 @@ A Zapier integration for your app lets your users build workflows like that and 
 
 Each Zap created starts with a trigger (something that happens in one app) and then one or more actions (something else that happens in another app). These triggers and actions take input, communicate with an API, and return output. 
 
-The first step is always the trigger, that watches for new or updated data every few minutes (with polling triggers) or when your APIs tells us to (with subscription triggers), and starts the Zap. Subsequent steps—or actions—then use that data to find or add items to an app, with search actions to find data with GET calls or create actions to add new or update existing items with POST or PUT calls.
+The first step is always the trigger, that watches for new or updated data every few minutes (with polling triggers) or when your API tells us to (with subscription triggers), and starts the Zap. Subsequent steps—or actions—then use that data to find or add items to an app, with search actions to find data with GET calls or create actions to add new or update existing items with POST or PUT calls.
 
 ![Zapier Fields](https://cdn.zappy.app/494bbd089cb1c74b65c8da7ea42b27a0.gif)
 
