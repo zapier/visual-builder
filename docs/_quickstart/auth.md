@@ -85,7 +85,7 @@ By default, Zapier will pass the `client ID`, `client secret`, `authorization co
 
 ### Refresh Token Request
 
-If your API supports automated token refresh, you would add your API’s Refresh Token Request endpoint here, and check the Automatically Refresh Token box to automatically request a refreshed token if any request receives a 401 from your app. This will help Zapier stay connected to your users’ accounts and enable Zaps to run in the background without interrupting users as long as possible.
+If your API supports automated token refresh, you would add your API’s Refresh Token Request endpoint here, and check the _Automatically Refresh Token_ box to automatically request a refreshed token if any request receives a 401 from your app. This will help Zapier stay connected to your users’ accounts and enable Zaps to run in the background without interrupting users as long as possible.
 
 ![OAuth Refresh screenshot](https://cdn.zappy.app/4fd972e060e73c2f3520e10d7cd5b55f.png) 
 
