@@ -11,7 +11,7 @@ redirect_from: /quick-start/
 
 ![Zapier Action Demo Animation](https://cdn.zappy.app/7160a6ce9b11c9427cceb1b7241016cc.gif)
 
-_The input form in Zapier actions let users map fields from trigger and previous action steps to your app_
+_The input form in Zapier actions lets users map fields from trigger and previous action steps to your app_
 
 Zapier actions push new data or update existing data into your API from input fields that users set in their Zaps. Zapier includes *search* actions to find data in an app, and *create* actions to add new items via API calls.
 
