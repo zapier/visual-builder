@@ -17,7 +17,7 @@ Open Zapier, click _[Create Zap](https://zapier.com/editor/){:target="\_blank"}_
 
 ![Zapier Sharing Page](https://cdn.zappy.app/af0cdd828e3cc8fcf80b17f9c7fd19b2.png)
 
-You could also invite others to help test your app—something you won't need with your example GitHub integration, but that will be helpful when you build a new integration with your API. Click the _Sharing_ tab, then copy the link on that page to invite a contact to have access to **all** versions or enter a contact's email address to send them an invite to try a **particular** version of your app. Once they accept, they'll be able to search for your integration inside their Zap Editor, ready to use in any Zaps they build.
+You could also invite others to help test your app—something you won't need with your example GitHub integration, but that will be helpful when you build a new integration with your API. Click the _Sharing_ tab, then copy the link on that page to invite a contact to have access to **all** versions or enter a contact's email address to send them an invite to try a **particular** version of your app. Once they accept, they'll be able to search for your integration inside their Zap Editor, and the integration will be ready for use in any Zaps they build.
 
 ---
 
