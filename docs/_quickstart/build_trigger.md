@@ -54,7 +54,7 @@ Your GitHub integration needs an additional input field: an _Owner_ field for us
 
 _You can also build a dropdown menu with dynamic or static options_
 
-Since _State_ is an available parameter for this endpoint, let’s add that too as it will be useful to be able to choose which type of issues should trigger the Zap. Repeat the steps to add the _Owner_ field then the _State_ field, and with the _State_, add a default value of _open_ and check the _Dropdown_ box and the _Static_ option. Enter the following in the code box to build your menu, then save your field:
+Since _State_ is an available parameter for this endpoint, let’s add that too as it will be useful to be able to choose which type of issues should trigger the Zap. Repeat the steps to add the _Owner_ field then the _State_ field. For the _State_ field, add a default value of _open_ and check the _Dropdown_ box and the _Static_ option. Enter the following in the code box to build your menu, then save your field:
 
 `["open","closed","all"]`
 
