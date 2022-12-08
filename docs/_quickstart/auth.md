@@ -81,7 +81,7 @@ Next add the Access Token Request URL `https://github.com/login/oauth/access_tok
 
 ![Zapier Visual Builder OAuth v2 Access Token Request](https://cdn.zappy.app/836e9356a2b2eef3cfc983577640ad3f.png)
 
-By default, Zapier will pass the `client ID`, `client secret`, `authorization code`, `redirect URI`, and a standard authorization_code `grant type` in the API request body. If you need to change that, click the Show Options button and add any additional call details needed.
+By default, Zapier will pass the `client ID`, `client secret`, `authorization code`, `redirect URI`, and a standard authorization_code `grant type` in the API request body. If you need to change that, click the _Show Options_ button and add any additional call details needed.
 
 ### Refresh Token Request
 
