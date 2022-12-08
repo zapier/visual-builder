@@ -107,7 +107,7 @@ In the _Sample Data_ field, add fields and example data for those fields with JS
 	  "title": "New Issue"
 	}
 
-Alternatively, you can use the Use Response from Test Data button, but only if your test is expected to contain the same field keys as any user would see.
+Alternatively, you can use the _Use Response from Test Data_ button, but only if your test is expected to contain the same field keys as any user would see.
 
 Then click _Generate Output Field Definitions_ to turn your sample data into output fields, and add a friendly, easy-to-read title to each field.
 
