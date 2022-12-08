@@ -63,7 +63,7 @@ Click Save & Continue to save your progress so far.
 
 Add the Authorization URL `https://github.com/login/oauth/authorize` from GitHub’s documentation with the specified GET method. 
 
-Selecting _Show Options_ allows you to further specify url parameters and HTTP headers as needed for the authorization request. By default, Zapier includes `client_id`, `state`, `redirect_uri` and `response_type` as URL Params, which you can edit as needed based on your API’s documentation. 
+Selecting _Show Options_ allows you to further specify URL parameters and HTTP headers as needed for the authorization request. By default, Zapier includes `client_id`, `state`, `redirect_uri` and `response_type` as URL parameters, which you can edit as needed based on your API’s documentation. 
 
 For GitHub, we’ll keep the default settings. 
 
