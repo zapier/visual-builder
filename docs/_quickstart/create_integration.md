@@ -7,12 +7,12 @@ redirect_from: /quick-start/
 
 # Create a New Integration
 
-![Zapier visual builder add integration](https://cdn.zapier.com/storage/photos/8e5c58e33571cecab478d5c7930128d5.png)
+![Zapier Visual Builder add integration](https://cdn.zappy.app/da18495e7c6c61c648944a94ce34bb7a.png)
 
 _Add your app's name, logo, description, and category before building a Zapier integration_
 
 Start by making a new integration.
 
-Open Zapier Platform UI's [visual builder](https://zapier.com/app/developer/){:target="_blank"} and click _[Start a Zapier Integration](https://zapier.com/app/developer/app/new){:target="_blank"}_. Add a name for this sample integration like `My GitHub Example`, then add a description and and logo, perhaps's GitHub’s for this example integration. Below that, answer a few questions about the integration, then click create.
+Open the [Zapier Platform Visual Builder](https://developer.zapier.com/){:target="_blank"} and click _[Start a Zapier Integration](https://developer.zapier.com/app/new){:target="_blank"}_. Add a name for this example integration like `My GitHub Example`, then add a description and a logo, perhaps GitHub’s for this example integration. Below that, answer a few questions about the integration, then click create.
 
 Well done! Now, let's make this new integration do some stuff.
