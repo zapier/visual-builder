@@ -142,3 +142,4 @@ A short while later, ngrok receives three new requests:
 ![](https://zappy.zapier.com/0F46EF11-B50F-4EE1-A8C7-FDC82A743407.png)
 
 Now is the time that the `downloadFile` function was evaluated, and the file was downloaded (in order to be uploaded again!). One final point that you may notice is that `downloadFile` was only called once; we did not call it again after the upload, despite adding a dehydrated call to it. That's what's great about `z.dehydrateFile`, we only use it when necessary!
+Your code can use [z.dehydrate](https://platform.zapier.com/cli_docs/docs#zdehydratefunc-inputdata) and [z.dehydrateFile](https://platform.zapier.com/cli_docs/docs#zdehydratefilefunc-inputdata) to create a "pointer string" that will be "hydrated" during a Zap Run. More on [Dehydration](https://platform.zapier.com/cli_docs/docs#dehydration) and [File Dehydration](https://platform.zapier.com/cli_docs/docs#file-dehydration) can be found in our CLI Docs.
