@@ -16,7 +16,7 @@ With {{ site.partner_count }} integration partners on Zapier, we have the inside
 > 5. [Power up your app marketplace with Zapier-enabled listings](#tip-5-power-up-your-app-marketplace-with-zapier-enabled-listings)
 > 6. [Point empty marketplace search results to Zapier](#tip-6-point-empty-marketplace-search-results-to-zapier)
 > 7. [Surface Zapier in your website footer](#tip-7-surface-zapier-in-your-website-footer)
-> 8. [Seamlessly surface Zapier integrations within your app](#tip-8-seamlessly-surface-zapier-integrations-within-your-app)
+> 8. [Seamlessly surface Zapier within your platform](#tip-8-seamlessly-surface-zapier-within-your-platform)
 > 9. [Leverage marketing automation](#tip-9-leverage-marketing-automation)
 > 10. [Add new features to your Zapier integration](#tip-10-add-new-features-to-your-zapier-integration)
 
@@ -87,18 +87,18 @@ Help your users find what they're looking for by linking to your Zapier integrat
 
 **Steal this from Close.io:** Close.io helps users discover their Zapier integration by linking to Zapier topics from their footer. This helps new users find out about Zapier and keeps Close.io as a top Zapier integration.
 
-## Tip 8: Seamlessly surface Zapier integrations within your app
+## Tip 8: Seamlessly surface Zapier within your platform
 
-Rather than sending your users over to Zapier, keep them engaged inside your product. Help users discover and set up pre-made Zaps at the point where they want to connect data to another tool, so there's no need to leave your app.
+Keep users engaged inside your own platform by embedding the Zapier experience. Help users easily discover, build, and manage Zaps with our prebuilt, plug-and-play [Full Zapier Experience](https://platform.zapier.com/embed/full-zapier-experience), or utilize our [Partner API](https://platform.zapier.com/embed/partner-api) to create a seamless, custom solution.
 
-**Steal this from Facebook:** Facebook makes it easy for their Lead Ads users to add lead data to their email lists and CRMs. Every time an ad publisher creates a new ad, they are prompted to search for the app they want to send lead data to, and can build the Zap from right inside of Facebook.
+**Steal this from Jotform:** Jotform makes it easy for users to connect their forms to other apps to send form responses. Within every form builder, users have the ability to search for integrations, discover popular use cases, and build and edit Zaps all without leaving Jotform.
 
-![](https://cdn.zapier.com/storage/photos/0ad5c62d1bfc152ec685d9f5c1dcc3c7.png)
+![jotform embed demo gif](https://cdn.zappy.app/bc91c44477f97c9f7104b9ca690cd7cf.gif)
 
 > **Do this yourself by:**
 
-> + Using our [widget](https://zapier.com/partner/embed/) to embed popular Zaps in just a few minutes.
-> + Or designing a custom experience via our [Partner API](https://zapier.com/developer/documentation/v2/partner-api/)
+> + Using the [Full Zapier Experience](https://platform.zapier.com/embed/full-zapier-experience) or [Zap Templates](https://platform.zapier.com/embed/zap-templates) to embed popular Zaps in just a few minutes.
+> + Or designing a custom experience like Jotform did via our [Partner API](https://platform.zapier.com/embed/partner-api)
 
 ## Tip 9: Leverage marketing automation
 
