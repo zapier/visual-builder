@@ -142,7 +142,7 @@ Do not use this if you have non-breaking changes, such as fixing help text.
 
 ## describe
 
-> Describe the current integraiton.
+> Describe the current integration.
 
 **Usage**: `zapier describe`
 
@@ -267,6 +267,30 @@ This command also checks the current directory for a linked integration.
 * `apps`
 
 
+## jobs
+
+> Lists ongoing migration or promotion jobs for the current integration.
+
+**Usage**: `zapier jobs`
+
+A job represents a background process that will be queued up when users execute a "migrate" or "promote" command for the current integration.
+
+Each job will be added to the end of a queue of "promote" and "migration" jobs where the "Job Stage" will then be initialized with "requested".
+
+Job stages will then move to "estimating", "in_progress" and finally one of four "end" stages: "complete", "aborted", "errored" or "paused".
+
+Job times will vary as it depends on the size of the queue and how many users your integration has.
+
+Jobs are returned from oldest to newest.
+
+**Flags**
+* `-f, --format` | Change the way structured data is presented. If "json" or "raw", you can pipe the output of the command into other tools, such as jq. One of `[plain | json | raw | row | table]`. Defaults to `table`.
+* `-d, --debug` | Show extra debugging output.
+
+**Examples**
+* `zapier jobs`
+
+
 ## link
 
 > Link the current directory with an existing integration.
@@ -325,21 +349,35 @@ This won't show logs from running locally with `zapier test`, since those never 
 
 ## migrate
 
-> Migrate users from one version of your integration to another.
+> Migrate a percentage of users or a single user from one version of your integration to another.
 
 **Usage**: `zapier migrate FROMVERSION TOVERSION [PERCENT]`
 
 Start a migration to move users between different versions of your integration. You may also "revert" by simply swapping the from/to verion strings in the command line arguments (i.e. `zapier migrate 1.0.1 1.0.0`).
 
-Only use this command to migrate users between non-breaking versions, use `zapier deprecate` if you have breaking changes!
+**Only use this command to migrate users between non-breaking versions, use `zapier deprecate` if you have breaking changes!**
 
-Migration time varies based on the number of affected Zaps. Be patient and check `zapier history` to track the status.
+Migration time varies based on the number of affected Zaps. Be patient and check `zapier jobs` to track the status. Or use `zapier history` if you want to see older jobs.
 
 Since a migration is only for non-breaking changes, users are not emailed about the update/migration. It will be a transparent process for them.
 
-We recommend migrating a small subset of users first, then watching error logs of the new version for any sort of odd behavior. When you feel confident there are no bugs, go ahead and migrate everyone. If you see unexpected errors, you can revert.
+We recommend migrating a small subset of users first, via the percent argument, then watching error logs of the new version for any sort of odd behavior. When you feel confident there are no bugs, go ahead and migrate everyone. If you see unexpected errors, you can revert.
 
-You can migrate a single user by using `--user` (i.e. `zapier migrate 1.0.0 1.0.1 --user=user@example.com`).
+You can migrate a specific user's Zaps by using `--user` (i.e. `zapier migrate 1.0.0 1.0.1 --user=user@example.com`). This will migrate Zaps in any account the user is a member of where the following criteria is met.
+
+  - The Zap is owned by the user.
+
+  - The Zap is not shared.
+
+  - The integration auth used is not shared.
+
+Alternatively, you can pass the `--account` flag, (i.e. `zapier migrate 1.0.0 1.0.1 --account=account@example.com`). This will migrate all users' Zaps, Private & Shared, within all accounts for which the specified user is a member.
+
+**The `--account` flag should be used cautiously as it can break shared Zaps for other users in Team or Company accounts.**
+
+You cannot pass both `PERCENT` and `--user` or `--account`.
+
+You cannot pass both `--user` and `--account`.
 
 **Arguments**
 * (required) `fromVersion` | The version FROM which to migrate users.
@@ -347,13 +385,15 @@ You can migrate a single user by using `--user` (i.e. `zapier migrate 1.0.0 1.0.
 * `percent` | Percentage (between 1 and 100) of users to migrate.
 
 **Flags**
-* `--user` | Migrate only this user
+* `--user` | Migrates all of a users' Private Zaps within all accounts for which the specified user is a member
+* `--account` | Migrates all of a users' Zaps, Private & Shared, within all accounts for which the specified user is a member
 * `-d, --debug` | Show extra debugging output.
 
 **Examples**
 * `zapier migrate 1.0.0 1.0.1`
 * `zapier migrate 1.0.1 2.0.0 10`
 * `zapier migrate 2.0.0 2.0.1 --user=user@example.com`
+* `zapier migrate 2.0.0 2.0.1 --account=account@example.com`
 
 
 ## promote
@@ -376,10 +416,13 @@ Promotes are an inherently safe operation for all existing users of your integra
 
 If your integration is private and passes our integration checks, this will give you a URL to a form where you can fill in additional information for your integration to go public. After reviewing, the Zapier team will approve to make it public if there are no issues or decline with feedback.
 
+Check `zapier jobs` to track the status of the promotion. Or use `zapier history` if you want to see older jobs.
+
 **Arguments**
-* (required) `version` | The version you want promote.
+* (required) `version` | The version you want to promote.
 
 **Flags**
+* `-y, --yes` | Automatically answer "yes" to any prompts. Useful if you want to avoid interactive prompts to run this command in CI.
 * `-d, --debug` | Show extra debugging output.
 
 **Examples**
@@ -461,19 +504,19 @@ You can mix and match several options to customize the created scaffold for your
 
 **Usage**: `zapier team:add EMAIL ROLE [MESSAGE]`
 
-There are three types of user:
+These users come in three levels:
 
   * `admin`, who can edit everything about the integration
 
-  * `collaborator`, who has view-only access and can see performance data, view feature requests and bugs, and access tools to embed Zapier integrations inside your UI.
+  * `collaborator`, who has read-only access for the app, and will receive periodic email updates. These updates include quarterly health scores and more.
 
-  * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health socores and more.
+  * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health scores and more.
 
 Team members can be freely added and removed.
 
 **Arguments**
 * (required) `email` | The user to be invited. If they don't have a Zapier account, they'll be prompted to create one.
-* (required) `role` | The level the invited team member should be at. Admins can edit everything and get email updates. Collaborators can view the integration and get email updates. Subscribers only get email updates.
+* (required) `role` | The level the invited team member should be at. Admins can edit everything and get email updates. Collaborators have read-access to the app and get email updates. Subscribers only get email updates.
 * `message` | A message sent in the email to your team member, if you need to provide context. Wrap the message in quotes to ensure spaces get saved.
 
 **Flags**
@@ -481,6 +524,7 @@ Team members can be freely added and removed.
 
 **Examples**
 * `zapier team:add bruce@wayne.com admin`
+* `zapier team:add robin@wayne.com collaborator "Hey Robin, check out this app."`
 * `zapier team:add alfred@wayne.com subscriber "Hey Alfred, check out this app."`
 
 **Aliases**
@@ -493,13 +537,13 @@ Team members can be freely added and removed.
 
 **Usage**: `zapier team:get`
 
-There are three types of user:
+These users come in three levels:
 
   * `admin`, who can edit everything about the integration
 
-  * `collaborator`, who has view-only access and can see performance data, view feature requests and bugs, and access tools to embed Zapier integrations inside your UI. 
+  * `collaborator`, who has read-only access for the app, and will receive periodic email updates. These updates include quarterly health scores and more.
 
-  * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health scores and more. This is a legacy role that was replaced by collaborator for new team members.
+  * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health scores and more.
 
 Use the `zapier team:add` and `zapier team:remove` commands to modify your team.
 
@@ -517,7 +561,11 @@ Use the `zapier team:add` and `zapier team:remove` commands to modify your team.
 
 **Usage**: `zapier team:remove`
 
-Admins will immediately lose write access to the integration. Subscribers won't receive future email updates. Collaborators won't be able to view the integration. 
+Admins will immediately lose write access to the integration.
+
+Collaborators will immediately lose read access to the integration.
+
+Subscribers won't receive future email updates.
 
 **Flags**
 * `-d, --debug` | Show extra debugging output.
@@ -539,6 +587,7 @@ You can pass any args/flags after a `--`; they will get forwarded onto your test
 **Flags**
 * `--skip-validate` | Forgo running `zapier validate` before tests are run. This will speed up tests if you're modifying functionality of an existing integration rather than adding new actions.
 * `--yarn` | Use `yarn` instead of `npm`. This happens automatically if there's a `yarn.lock` file, but you can manually force `yarn` if you run tests from a sub-directory.
+* `--pnpm` | Use `pnpm` instead of `npm`. This happens automatically if there's a `pnpm-lock.yaml` file, but you can manually force `pnpm` if you run tests from a sub-directory.
 * `-d, --debug` | Show extra debugging output.
 
 **Examples**
