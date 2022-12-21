@@ -11,7 +11,7 @@ With {{ site.partner_count }} integration partners on Zapier, we have the inside
 
 > 1. [Level up your team](#tip-1-level-up-your-team)
 > 2. [Track your Zapier users' retention and activity](#tip-2-track-your-zapier-users-retention-and-activity)
-> 3. [Seamlessly surface Zapier within your platform](#tip-3-seamlessly-surface-zapier-within-your-platform)
+> 3. [Boost user adoption by seamlessly embedding Zapier](#tip-3-boost-user-adoption-by-seamlessly-embedding-Zapier)
 > 4. [Share Zapier use cases in your onboarding](#tip-4-share-zapier-use-cases-in-your-onboarding)
 > 5. [Add new features to your Zapier integration](#tip-5-add-new-features-to-your-zapier-integration)
 > 6. [Power up your app marketplace with Zapier-enabled listings](#tip-6-power-up-your-app-marketplace-with-zapier-enabled-listings)
@@ -30,7 +30,7 @@ We routinely hear from our partners that Zapier users are higher-value, sticky u
 
 **Steal this from Clearbit:** Clearbit carefully tracks the success of their users and discovered Zapier users are 20% less likely to churn. Armed with this data, their team prioritizes promotion and development strategies that encourage more of their users to try integrations.
 
-## Tip 3: Seamlessly surface Zapier within your platform
+## Tip 3: Boost user adoption by seamlessly embedding Zapier
 
 Keep users engaged inside your own platform by embedding the Zapier experience. Help users easily discover, build, and manage Zaps with our prebuilt, plug-and-play [Full Zapier Experience](https://platform.zapier.com/embed/full-zapier-experience), or utilize our [Partner API](https://platform.zapier.com/embed/partner-api) to create a seamless, custom solution.
 
