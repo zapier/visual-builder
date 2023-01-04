@@ -7,7 +7,7 @@ redirect_from: /docs/
 
 # Actions
 
-![Zapier Action Visual Builder](https://cdn.zapier.com/storage/photos/f4fba922b339ce68376e38b751bc79f1.png)
+![Zapier Action Visual Builder](https://cdn.zappy.app/8b5a6ba27686f0aa783c97949da0dee3.png)
 
 All Zaps start with a trigger that watches for new or updated data. They get the ball rolling. Everything a Zap does with that data, though, is done by actions.
 
@@ -25,7 +25,7 @@ Zapier strongly recommends against action steps that delete or remove data. To p
 
 ## 1. Configure Action Settings
 
-![Zapier visual builder action settings](https://cdn.zapier.com/storage/photos/6774970e27535cea5db5f58bee6fa1b8.png)
+![Zapier visual builder action settings](https://cdn.zappy.app/10d48377c1b0020384db1d1029ba8fc6.png)
 
 To add a new action step to a Zapier integration, open the _Actions_ page in Zapier visual builder from the sidebar on the left, and select _Add Action_. Start by selecting your action type. New actions are _Create_ type by default, and will add new data to your app. If your action should lookup existing items instead, select _Search_—then jump to the [Search](#search) section below for details on setting up a search action.
 
@@ -45,7 +45,7 @@ Once the action settings are added, click _Save and Continue_ to add the new act
 
 ## 2. Build Action Input Form
 
-![Zapier input designer](https://cdn.zapier.com/storage/photos/31dfcf36c01b0ee0db946a6a46c3de8c.png)
+![Zapier input designer](https://cdn.zappy.app/366cb5a08cef7e31cfc49758cf935478.png)
 
 Then, the _Input Designer_ will open to build the input form field for your action. All action steps _must_ include an input form for Zapier to gather the data needed to create or find items in your app. Add at least one input field to your action before switching to the final _API Configuration_ tab.
 
@@ -57,7 +57,7 @@ Add action fields for each piece of data your app needs to create or find this i
 
 ## 3. Enter API Configuration
 
-![Zapier action API configuration](https://cdn.zapier.com/storage/photos/09bf074db0b6e8e02c049e2fed3983a9.png)
+![Zapier action API configuration](https://cdn.zappy.app/1b33f697838f7a4e160d4aa8ef3c6d93.png)
 
 The last part of building a Zapier action is the most crucial: tell Zapier how to send the data to your API.
 
@@ -73,7 +73,7 @@ If your API call expects input data in the core URL, you can reference any input
 
 The defaults on all other settings work for most basic API calls. If you need to configure more options, though, click _Show options_ to add URL Params, HTTP Headers, set your action to omit empty parameters, or customize the request body. Alternately, switch to [code mode](#code) to write custom JavaScript code for your action.
 
-![Test Zapier API Call](https://cdn.zapier.com/storage/photos/08da97b61a7f3cdbdd5335ba5a03f906.png)
+![Test Zapier API Call](https://cdn.zappy.app/800d5dc90285243ce473c0ca6d2087e0.png)
 
 Once your API call is added, test it inside the Zapier visual builder with testing data. Authenticate with your app if you haven't already, then fill in each input field under the _Configure Test Data_ section with data that will work in your app. Click _Test Your Result_ to have Zapier run the action as it would inside a Zap—and see the results instantly.
 
@@ -86,7 +86,7 @@ If your app returns an error, be sure to check:
 
 ### Define Sample Data and Output Fields
 
-![Zapier Define Output Fields](https://cdn.zapier.com/storage/photos/ae070045d9e23b162f1b0a0a1507b029.png)
+![Zapier Define Output Fields](https://cdn.zappy.app/6c7d6b82dc27d49959d7390682405922.png)
 
 Every time your action step runs, your API will return data to Zapier—ideally detailing the item that was added to your app or found via a search. Each item includes multiple details, including any attribute users would add via the Zap input form, along with other attributes or details that users may not care about as much.
 
@@ -99,7 +99,7 @@ Then click _Generate Output Field Definitions_ and Zapier will list a table of t
 <a id="code"></a>
 ## How to Use Custom Code in Zapier Actions
 
-![Zapier visual builder code mode](https://cdn.zapier.com/storage/photos/0e52a1110b0f6cd37afd4c005e97dfa0.png)
+![Zapier visual builder code mode](https://cdn.zappy.app/c8887685a87f49f8bcc1dca815214334.png)
 
 The default API settings form is the best option for most actions. If your action needs customized API calls, scripting to manipulate input field data, or other unique features, you can add custom JavaScript code for your API request.
 
@@ -108,7 +108,7 @@ To use custom code, click the _Switch to Code Mode_ button. Zapier will translat
 <a id="search"></a>
 ## How to Add a Search Action
 
-![Zapier Search action settings](https://cdn.zapier.com/storage/photos/04d630c5f8019930d0cad5098ac819b9.png)
+![Zapier Search action settings](https://cdn.zappy.app/8aa8bbe51aae1dc502ca46ef0a00396b.png)
 
 Building a search action is much the same as building a create action, only with a couple extra steps. Select *Search* as your action type, then fill in the core action settings as normal.
 
@@ -122,13 +122,13 @@ The remainder of your action setup is much like building a Zapier trigger. You w
 
 Finally, in the API configuration, add your API endpoint where Zapier will by default pass the search query in a `GET` call, then test the request and define output fields as with other actions.
 
-![Example Search action in Zapier](https://cdn.zapier.com/storage/photos/748b1c164b0a310126a1807a706295aa.gif)
+![Example Search action in Zapier](https://cdn.zappy.app/32ba8f867d02cf60cb6c344a0447b5a5.png)
 
 When users use the search action in a Zap, Zapier will show your core search action settings that you set in the input designer by default. Then, if users check to create an item if nothing is found, Zapier will load the create action's input fields inside the search action so users can fill both out.
 
 ## How to Reorder Actions in a Zapier Integration
 
-![Actions inside Zapier](https://cdn.zapier.com/storage/photos/8dc1f3517e530fd079b9f8107e5e993d.png)
+![Actions inside Zapier](https://cdn.zappy.app/5d3c2e8f9f6cf0f6daadd3ee97fa5e80.png)
 
 Whenever a user selects your app's integration in a Zapier action step, they'll see every create and search action in your integration. Zapier shows create actions first, followed by search actions.
 
@@ -138,7 +138,7 @@ You change actions' visibility at any time, if you don't want an action to show 
 
 ## How to Remove an Existing Action
 
-![Remove Zapier action](https://cdn.zapier.com/storage/photos/8e220c4270159ca43b7c1e02036f4a04.png)
+![Remove Zapier action](https://cdn.zappy.app/809321da0cd78edef6f464eb1f803855.png)
 
 You can remove an action from Zapier visual builder's _Actions_ page. Click _Actions_ in the left sidebar, then click the gear beside any action you wish to remove. Select _Delete_, then confirm to remove the action fully.
 

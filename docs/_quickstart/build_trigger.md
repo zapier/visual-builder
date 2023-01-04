@@ -21,7 +21,7 @@ Let's have our example GitHub integration poll for new GitHub issues in a specif
 
 ## 1. Configure Trigger Settings
 
-![Zapier Visual Builder Trigger Settings](https://cdn.zappy.app/7c04abdd31c1cf3ef0200308b3ddc54e.png)
+![Zapier Visual Builder trigger settings](https://cdn.zappy.app/1acb400e936c56c2c021d3bc38af5790.png)
 
 _Each trigger starts with adding details to a form._
 
@@ -36,7 +36,7 @@ Add those details to your GitHub new issue trigger, then save and continue.
 
 ## 2. Design an Input Field Form
 
-![Zapier Visual Builder input field details](https://cdn.zappy.app/f6826e50873c92618df64a8b797e49e2.png)
+![Zapier Visual Builder trigger input designer](https://cdn.zappy.app/a3e8a454ede58f6f69abc88edc277256.png)
 
 _Need to gather data from users for your trigger? Add input form fields to your integration to do so._
 
@@ -50,7 +50,7 @@ To make this example integration simple, use a `string` field type where the use
 
 Your GitHub integration needs an additional input field: an _Owner_ field for users to enter the username of the owner of that repository.
 
-![Zapier Visual Builder dropdown](https://cdn.zapier.com/storage/photos/992bbec7742b65a3b48df6c981e58610.png)
+![Zapier Visual Builder trigger input Designer dropdown](https://cdn.zappy.app/003a44b3652726572d3ff5d31a137c88.png)
 
 _You can also build a dropdown menu with dynamic or static options_
 
@@ -58,11 +58,11 @@ Since _State_ is an available parameter for this endpoint, let’s add that too 
 
 `["open","closed","all"]`
 
-![Zapier Visual Builder state](https://cdn.zappy.app/cc30f6aeddf6404b4539d06453a637c5.png)
+![Zapier Visual Builder trigger input designer a state field](https://cdn.zappy.app/1446ddb567eef0941310f2ac77a05e97.png)
 
 ## 3. Configure Your API
 
-![Zapier Visual Builder API configuration](https://cdn.zappy.app/295bcc4897c7db4783592ef1b2a06abf.png)
+![Zapier Visual Builder trigger API configuration](https://cdn.zappy.app/07662723850787806694485fa09440d4.png)
 
 _Add the URL where Zapier can request data from your app, Zapier will configure some fields automatically_
 
@@ -79,13 +79,13 @@ There is also the option to switch to Code Mode to see the specifics of the requ
 
 ## 4. Test Your Trigger
 
-![Zapier Visual Builder test trigger](https://cdn.zappy.app/a8aeb509716c7b10968c6a2f2a98ec3c.png)
+![Zapier Visual Builder test trigger](https://cdn.zappy.app/5b80de656d9003107c8b12ff753558fc.png)
 
 _The test step ensures your trigger works as expected_
 
 Now test your trigger. Click the *Test your API Request* step to see the GitHub account you added in the Authentication step ready to use (if not, connect your account first here). Underneath, the _Configure Test Data_ section includes form fields to test your trigger. Enter a real GitHub repository name, the username of the owner of that repository, and optionally a state, then click *Test Your Request*.
 
-![Example Zapier Response](https://cdn.zappy.app/bac887c6a564ca545b9e40b05a03064b.png)
+![Zapier Visual Builder example response](https://cdn.zappy.app/5ab721f6e4b5de01e90080c95dffd24f.png)
 
 _See the data that your API call returns to Zapier_
 
@@ -93,7 +93,7 @@ Zapier will find a recent issue from your repo with the matching state and show 
 
 ## 5. Add Sample Data
 
-![Zapier Sample Data](https://cdn.zappy.app/8c804195ed32e50bf55da5cf14aea9e8.png)
+![Zapier Sample Data](https://cdn.zappy.app/6d4f18f174ec438afd6de91fea14ddb9.png)
 
 _Zapier Triggers should always include sample data_
 
@@ -111,6 +111,6 @@ Alternatively, you can use the _Use Response from Test Data_ button, but only if
 
 Then click _Generate Output Field Definitions_ to turn your sample data into output fields, and add a friendly, easy-to-read title to each field.
 
-![Zapier Output Fields](https://cdn.zappy.app/04af774426d745b5b20a22f31fdb5f03.png) 
+![Zapier Output Fields](https://cdn.zappy.app/b6f4759016281ee787d2a63faf5f2536.png) 
 
 Save your completed trigger, and you can now use your new Zapier GitHub integration to watch for new issues in a Zap.

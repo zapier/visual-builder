@@ -16,14 +16,14 @@ Zapier’s environment variables let you set these on a per-version basis for yo
 
 ### How to Add Environment Variables
 
-![Zapier Environment Variables](https://cdn.zapier.com/storage/photos/031d216898813b0d07c5d3936f075e51.png)
+![Zapier Environment Variables](https://cdn.zappy.app/52c80699c321084eaaf7b387c47bd438.png)
 _Add any environment variables you need in key and value pairs_
 
 To add environment variables, open your integration in Zapier visual editor and select the _Advanced_ tab in the left sidebar. There you can add your environment variables including a key and a value for each. Click _Add_ to include additional environment variables, or click the `x` icon to remove variables if needed.
 
 ### How to Reference Environment Variables
 
-![Use Zapier Environment Variable](https://cdn.zapier.com/storage/photos/0b8ad13d723229c67df03ad1c114dd91.png)
+![Use Zapier Environment Variable](https://cdn.zappy.app/226591ede97cbcde75481b38fa0cd64f.png)
 _Use environment variables in Zapier’s API call forms or in custom code_
 
 The easiest way to use environment variables in any Zapier integration API call is through the _Request Body_ form. Add your API URL, then click the _Show Options_ link and select _Request Body_ to see the data Zapier will send to your API. Add a new row, then enter your environment variable key as your API expects, then reference the environment variable in Zapier with the following text, replacing `YOUR_KEY` with your actual key:
@@ -36,7 +36,7 @@ You can reference environment variables directly in your API calls the same way�
 
 ### How to Change Environment Variables
 
-![Edit Zapier Environment Variables](https://cdn.zapier.com/storage/photos/b3273bf07dc46636595fd11edee1da1f.png)
+![Edit Zapier Environment Variables](https://cdn.zappy.app/2bbe32e1bcfd77c62a75fce5be6eb03a.png)
 _You can change environment variable values, but not the original keys_
 
 Need to change your environment variables for a new version of your integration, or before releasing your beta integration to the public? Open the _Advanced_ page in Zapier visual editor, and this time edit the text in the _Values_ column with the new variable values. You cannot edit the keys.
@@ -46,7 +46,7 @@ If you need to change a key and its value, first delete the old key, then add a 
 <a id="computed"></a>
 ## Computed Fields
 
-![Zapier Computed Fields](https://cdn.zapier.com/storage/photos/b82edea722597f88f5c0d21a46d6c847.png)
+![Zapier Computed Fields](https://cdn.zappy.app/f1871d440aeaa77b66a52a2e42d48d98.png)
 
 When adding an input field in your integration's authentication, Zapier includes a _Field Type_ option with two field options: _Field_ and _Computed Field_. The former is a standard input field much like those in the trigger and action [input designer](https://platform.zapier.com/docs/input-designer), where users enter info needed for authentication.
 

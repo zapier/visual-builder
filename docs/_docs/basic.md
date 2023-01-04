@@ -19,11 +19,11 @@ When you add Basic Auth to your integration, Zapier adds a pre-built form that r
 <a id="add"></a>
 ## How to Add Basic Auth to a Zapier Integration
 
-![Add Basic Auth to Zapier integration](https://cdn.zapier.com/storage/photos/d5f4146ecea9123de570743234478dfa.png)
+![Add Basic Auth to Zapier integration](https://cdn.zappy.app/a8f5698b7c1fd2556eb6b6dc0a983155.png)
 
 To add Basic Auth to your Zapier integration, open the _Authentication_ tab in Zapier visual builder and select _Basic Auth_.
 
-![Basic Auth settings](https://cdn.zapier.com/storage/photos/f29b99f3c22fa166852086d76e484774.png)
+![Basic Auth settings](https://cdn.zappy.app/84f49570f1a21f2304d1f6dbcc9bbfc9.png)
 
 Zapier automatically adds a form where users will enter their username and password, so you don't need to configure anything for core basic auth. 
 
@@ -33,13 +33,13 @@ All you need to add is a test API call where Zapier can verify that the credenti
 
 ## Add More Fields to a Basic Auth Input Form
 
-![Add fields to Basic Auth Zapier](https://cdn.zappy.app/7b0b5bbe2af09cb2829bcd10ab3b2267.png)
+![Add fields to Basic Auth Zapier](https://cdn.zappy.app/c17e6838cf27ed5704f561c75625864f.png)
 
 In addition to the username and password on the pre-built form, you can add more fields if your API documentation requires it.
 
 For each field that you need, click the _Add Fields_ button and fill in the details for your field.
 
-![Zapier Basic Auth Input Form](https://cdn.zappy.app/e5cb345fe7ecbe01d854205ece4d6a47.png)
+![Zapier Basic Auth Input Form](https://cdn.zappy.app/f4346b3456ea0080862db2eae7108050.png)
 
 Every input field requires a _Key_, the name your API uses to reference this field. Enter the same key name that your API uses.
 
@@ -56,7 +56,7 @@ Then fill in the optional fields, as appropriate, especially the _Label_:
 
 Once you've added your input fields, Zapier lists each input field with its label, key, type, and required status on your authentication settings. Click the field to edit it, or click the gear icon and select _Delete_ to remove a field.
 
-![Edit Basic Auth input fields](https://cdn.zappy.app/0d2c4f86b9ccd3ea45c55b93bb52f97d.png)
+![Edit Basic Auth input fields](https://cdn.zappy.app/a207e9be179e401dadfa9d5422e4df5c.png)
 
 When you've added the needed fields, click _Continue_ to Configure a Test Request & Connection Label and continue setting up your app's authentication.
 
@@ -65,18 +65,18 @@ When you've added the needed fields, click _Continue_ to Configure a Test Reques
 
 For the test API call, enter an API endpoint under the _Test_ header where Zapier can test users' credentials for your app, and set the correct call method (typically `GET`). Use an API endpoint that does not require any additional details or configuration, such as `/me` or `/user` to simply check the app authentication and retrieve details about the user.
 
-![Basic Auth configuration in Zapier](https://cdn.zapier.com/storage/photos/6a872d65924adb5c12afe54589f387f7.png)
+![Basic Auth configuration in Zapier](https://cdn.zappy.app/a910a8114e18b545a93bf1e2e735e5a1.png)
 
 If your API requires any custom details in the API call, click the _Show Options_ link in the lower right, then add URL params or HTTP headers if needed.
 
-![Zapier Basic Auth code mode](https://cdn.zapier.com/storage/photos/16d02986ea3fda8bcae045604df3872e.png)
+![Zapier Basic Auth code mode](https://cdn.zappy.app/6ec17f1acd3def0addad6dfc9167acec.png)
 
 If you need more customization, you can write custom JavaScript code to call your API and parse the output data. To do that, click the _Switch to Code Mode_ toggle. The first time you click the toggle, Zapier will convert the data from your API call form to JavaScript. If you switch back to form mode, Zapier will save your custom code but will not use it in the API call. Additionally, if you switch back to code mode again later, Zapier will not add any changes from the API call form to your code.
 
 <a id="label"></a>
 ## Configure a Connection Label
 
-![Zapier Basic Auth connection label](https://cdn.zapier.com/storage/photos/196e9987836a34e4528a0b8ebd9dbd25.png)
+![Zapier Basic Auth connection label](https://cdn.zappy.app/59307becaf617dca08115fa55477dffb.png)
 
 Finally, add a connection label to your Zapier integration. Zapier always includes the app's name in each account label. You can additionally include:
 

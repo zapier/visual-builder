@@ -7,7 +7,9 @@ redirect_from: /docs/
 
 # What You Need to Build a Zapier Integration
 
-![Zapier Integration Details](https://cdn.zapier.com/storage/photos/5dbd9083f415c68c2280633561f9658a.png)
+![Start a Zapier Interation from Dashboard](https://cdn.zappy.app/a31e9a194d4a6ec5b25b7709b84065d5.png)
+
+![Add Zapier Integration Details](https://cdn.zappy.app/7994217992422ab1ee104c5a118141a6.png)
 
 Every new Zapier integration starts with details about the app. Zapier integrates with {{ site.partner_count }} apps, and counting. That makes it crucial to help people find your app among all the others on the platform. With a clear description and logo, and placement in the category that best represents your app, your users will be able to easily find your app and new users will likely discover your app as they search for tools that fit their needs.
 
@@ -44,7 +46,7 @@ Zapier will use your logo full-size in the Zapier App Directory to promote the i
 
 ## Answer Questions About Your App
 
-![Zapier integration questions](https://cdn.zapier.com/storage/photos/a8fd66dc5452ec2e13a7d264201d4921.png)
+![Zapier integration questions](https://cdn.zappy.app/866d14e8188c097b797072d743ab8f7a.png)
 
 Then, Zapier asks a few questions about your integration:
 
@@ -56,7 +58,7 @@ Save your integration, then you're ready to [add your API authentication details
 
 ## Edit Your Zapier Integration Info
 
-![Edit Zapier integration info](https://cdn.zapier.com/storage/photos/b4d66facfb3b58b9705356aaf381130b.png)
+![Edit Zapier integration info](https://cdn.zappy.app/79d7d52e782b54bed634e0694bb91470.png)
 
 Need to update your app's description or branding? You can do that anytime from your Zapier integration settings.
 

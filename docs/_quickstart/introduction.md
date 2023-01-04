@@ -37,7 +37,7 @@ Each step in a Zap returns data. Triggers return individual details from the new
 
 When you add an action step to a Zap, you can map the data from any previous step to find or create new items in that action. That's how Zapier is used to build workflows between two or more apps. 
 
-![Zapier Platform UI](https://cdn.zappy.app/7867bacc33c2eab4b4147d65d5e5171d.png)
+![Zapier Platform UI](https://cdn.zappy.app/86ebc2be692ec2f0ca729b92667ee74b.png)
 
 To enable those workflows for your app's API, you need to build a Zapier integration. The easiest way to do that is with [Zapier Platform UI](https://developer.zapier.com/){:target="_blank"}, a new tool to build complete Zapier integrations online in minutes. Add your app's authentication scheme, turn your API calls into triggers, search or create actions, and build forms where users can input the data your app needs—then release your new integration to let users connect it to {{ site.partner_count }} apps with Zapier.
 

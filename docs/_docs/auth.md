@@ -18,7 +18,7 @@ When building a Zapier integration, you define how the Zapier platform connects 
 <a id="schemes"></a>
 ## Zapier Supported Authentication Schemes
 
-![Zapier Authentication](https://cdn.zappy.app/728be35e4c32c7455185f582c60b059c.png)
+![Zapier Authentication](https://cdn.zappy.app/37e7829169eb2e07278d512c174cd708.png)
 
 All Zapier integrations that can access or add private data for users require authentication. The only apps that don't require authentication include data feeds (such as news or weather updates) or utilities (such as file format conversion tools or public search engines). If you're building an integration for any app that stores private data and requires an account to use, your integration will require authentication.
 
@@ -68,14 +68,14 @@ _→ [Add Digest Auth to your Zapier Integration](https://platform.zapier.com/do
 <a id="label"></a>
 ## How to Add a Connection Label to Authenticated Accounts
 
-![Zapier connection labels](https://cdn.zapier.com/storage/photos/ed16e77428f17e869e25d4f2111df1c9.png)
+![Zapier connection labels](https://cdn.zappy.app/ba08dccacb2a91f648506438040f0cec.png)
 _A Zapier integration with a custom connection label (above) and without one (below)_
 
 Zapier lets users authenticate multiple accounts for any app. By default, every new app account added to Zapier is identified by the app's name, followed by a number (#2, #3, ...) for accounts connected after the first.
 
 The _Connection Label_ field in your app's authentication options lets you add additional text to the name of the account connections for your integration. The text could include a username, email address, name, or other identifiable information in the users' accounts. That helps users distinguish between their authenticated accounts.
 
-![Zapier Authentication Connection Label](https://cdn.zapier.com/storage/photos/f2c3d557023ce2a65b41122da34c1fdd.png)
+![Zapier Authentication Connection Label](https://cdn.zappy.app/b2612dc2bf60454eea4ae37335638bf5.png)
 
 Zapier always includes the app's name in each account label. You can add:
 
@@ -108,7 +108,7 @@ You can include any field your authentication test API call returns in the conne
 <a id="connection-code"></a>
 ### How to Customize Connection Label with Code
 
-![Zapier connection label with code](https://cdn.zapier.com/storage/photos/e9bf3fdaabe078e43b38a402106c1456.png)
+![Zapier connection label with code](https://cdn.zappy.app/c099e1aaa7a6bbe1674cc830aed68573.png)
 
 You can customize your connection label further with JavaScript code if needed. Zapier will always include your app's name first, followed by any text returned by your connection label code.
 
@@ -135,21 +135,21 @@ You can also add custom data to Zapier's console log with the `z.console.log` fu
 <a id="test"></a>
 ## How to Test Authentication
 
-![Test Zapier authentication](https://cdn.zapier.com/storage/photos/37a59dae4fe33ffc4894b1df23e7be83.png)
+![Test Zapier authentication](https://cdn.zappy.app/d8aab4144694a3646732955601841a3e.png)
 
-Once you've added the core details of how Zapier can authenticate users and test the connection, you need to try it out to set the final options. Click the _Connect an Account_ button to add your account with this app to Zapier.
+Once you've added the core details of how Zapier can authenticate users and test the connection, you need to try it out to set the final options. Click the _Sign in_ button to add your account with this app to Zapier.
 
 Zapier will open a popup window (the same one your users will see) to prompt you to enter the necessary information. Enter your account info or API key, or authenticate through your app's site, using real account details for a personal or testing account.
 
 > **Tip**: The account you add here will be the one you use to test any triggers and actions you add to Zapier. It can also be used in live Zaps in Zapier, if you wish. These account details are not tied to your app definition, though -- they're tied to your user account. If you add a collaborator to your Zapier integration, they will need to connect their own account for testing.
 
-If the connection attempt succeeds, you'll see the new account connection, with any connection label detail you added, under the setup box. Click _Test Connected Account_ to have Zapier run your testing API call and show the results.
+If the connection attempt succeeds, you'll see the new account connection, with any connection label detail you added, under the setup box. Click _Test Authentication_ to have Zapier run your testing API call and show the results.
 
-![Example Zapier authentication test response](https://cdn.zapier.com/storage/photos/d5cf1a5cbc5a8389ad3272d01ef71c06.png)
+![Example Zapier authentication test response](https://cdn.zappy.app/f6f70c7b655e99fd8812dfb9173d8d93.png)
 
 If the test call works as expected, Zapier will receive response data from the API call and display it in the _Response_ tab. You can look through the JSON-formatted fields from the response and use any of the field names in your account [connection label](#label). You can also look at the _Bundle_ tab to see the data Zapier used in the API request, and the _HTTP_ tab to see the full request and response details.
 
-![Example Zapier authentication error](https://cdn.zapier.com/storage/photos/3337e520ebab7b09de282e598ea70cfd.png)
+![Example Zapier authentication error](https://cdn.zappy.app/9892012662de1492bc4032d8eaa91763.png)
 
 If the connection attempt fails, no account connection will be created. Zapier will show the error message in the _Response_ tab, with the full response content in the _HTTP_ tab if you need more detail. Update your authentication settings accordingly, click the _Save & Continue_ button, then try testing your connection account again. Repeat until your authentication connects and tests correctly.
 
@@ -158,7 +158,7 @@ With that, your app authentication should be finished, and your integration read
 <a id="change"></a>
 ## How to Remove or Change Zapier Integration Authentication Scheme
 
-![Zapier Remove Authentication Scheme](https://cdn.zapier.com/storage/photos/a84d330dce6ccc18cbdeb12ca555b12d.png)
+![Zapier Remove Authentication Scheme](https://cdn.zappy.app/a616ced2f22bdf0873b0f910fc238424.png)
 
 You cannot change an integration’s authentication scheme. Instead, remove an existing integration’s authentication, then add a new authentication scheme.
 
@@ -171,11 +171,11 @@ Then add your app’s new authentication scheme to the Zapier integration instea
 <a id="error"></a>
 ## Common Authentication Error Messages
 
-![404 error in Zapier basic auth](https://cdn.zapier.com/storage/photos/88b058e13a0321efdbdab3e0a046dfa5.png)
+![404 error in Zapier basic auth](https://cdn.zappy.app/f6e4616d8e457f2ccf8dd872b2a15aac.png)
 
-If Zapier cannot successfully make the test API call to verify users' credentials, you may see an error message in the Test section of your Zapier integration. Zapier shows a simplified error message in the _Response_ tab by default, along with a red x and a _Request Failed_ message in the top right.
+If Zapier cannot successfully make the test API call to verify users' credentials, you may see an error message in the Test section of your Zapier integration. Zapier shows a simplified error message in the _Response_ tab by default.
 
-![Zapier Error Response Content](https://cdn.zapier.com/storage/photos/2511421236621c8c5ea7c160f2a2ca7e.png)
+![Zapier Error Response Content](https://cdn.zappy.app/2598ca338518d55cb41cebc2116bd1af.png)
 
 You can find the original API response with the full error message in the _HTTP_ tab under _Response Content_.
 
@@ -183,7 +183,7 @@ The most common errors include:
 
 ### 404
 
-![404 error in Zapier basic auth](https://cdn.zapier.com/storage/photos/88b058e13a0321efdbdab3e0a046dfa5.png)
+![404 error in Zapier basic auth](https://cdn.zappy.app/4b268ddfa326ee23cb902d05acc6ac10.png)
 
 The standard HTTP 404 `Not Found` error is commonly returned when:
 
@@ -194,7 +194,7 @@ If you encounter this error, double-check both the API endpoint URL and the call
 
 ### 401 or 403
 
-![401 error in Zapier basic auth](https://cdn.zapier.com/storage/photos/d13a9b1ff308b520ae4b29461cc754d6.png)
+![401 error in Zapier basic auth](https://cdn.zappy.app/e8dd16ccd395d9c466d81ce669510296.png)
 
 The standard HTTP 401 `Unauthorized` or HTTP 403 `Forbidden` error is commonly returned when:
 
@@ -215,7 +215,7 @@ Check the full error message from the error or Zapier's testing logs to see if i
 
 ### Error Parsing Response
 
-![Error Parsing Response in Zapier Basic Auth](https://cdn.zapier.com/storage/photos/deebd9e07497a209479a66e7f1d465b0.png)
+![Error Parsing Response in Zapier Basic Auth](https://cdn.zappy.app/7dc661d47076c1114b2581289646de48.png)
 
 The _Error Parsing Response_ error is commonly returned when:
 

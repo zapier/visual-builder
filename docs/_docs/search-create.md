@@ -7,7 +7,7 @@ redirect_from: /docs/
 
 ## Zapier Action Types: Searches and Creates
 
-![Zapier Action Options](https://cdn.zapier.com/storage/photos/d29ad3418c8780c28906716d09ad47b3.png)
+![Zapier Action Options](https://cdn.zappy.app/3d803056c12640c99af4bd79add42a4c.png)
 
 Zaps start with a trigger, a Zapier step that watches for new data from an API and starts the Zap workflow. Then it’s up to action steps to make use of that data.
 
