@@ -21,7 +21,7 @@ You can accomplish the same goals and build equally powerful Zapier integrations
 
 ## Zapier Platform UI
 
-![Zapier Platform UI](https://cdn.zapier.com/storage/photos/26cc01881a504fa51d81dea890fde1e5.png)
+![Zapier Platform UI](https://cdn.zappy.app/a8c009d1109749b44052922f2a6ec9bc.png)
 
 **Best for:** Building new integrations quickly in a team with a range of development experience
 

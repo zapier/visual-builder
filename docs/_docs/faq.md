@@ -13,15 +13,15 @@ redirect_from: /docs/
 
 _No_. Always remember to save your work when building integrations. Zapier asks you to save and continue in several spots while building integrations, so be sure to save at each point:
 
-![Save auth and API calls](https://cdn.zapier.com/storage/photos/a0bfc995ebb8c292c4329ee9c4e4b485.png)
+![Save auth and API calls](https://cdn.zappy.app/197afa28db0a58da34f339553ea4631f.png)
 
 When adding authentication and API calls for triggers or actions, there are _Save & Continue_ buttons between each step. Click each one when you are finished adding details to your API call form or code mode editor.
 
-![Save triggers and actions](https://cdn.zapier.com/storage/photos/dba285167f1d4557023803dcb5d54dc8.png)
+![Save triggers and actions](https://cdn.zappy.app/57809cc1b678825d0f2e96909270d3d8.png)
 
 When adding a new trigger or action, there is a _Save_ button after the Zap step details. Click that to save your new trigger or action step, before adding the input form and API configuration.
 
-![Save input fields](https://cdn.zapier.com/storage/photos/6684ecfcfab99cb4573d1ba2b23b4966.png)
+![Save input fields](https://cdn.zappy.app/84ae560095048083c876d3a2274743f4.png)
 
 When adding a new field to an authentication, trigger, or action step's input field, click _Save_ after adding the field details.
 
@@ -29,7 +29,7 @@ When adding a new field to an authentication, trigger, or action step's input fi
 
 ## How does Code Mode work?
 
-![Zapier visual builder code mode](https://cdn.zapier.com/storage/photos/5abf045cf0b8f3cce37d05d51071d6e9.png)
+![Zapier visual builder code mode](https://cdn.zappy.app/17f0890ad5856b53d61e32b26fbb1070.png)
 _Each API call pane in Zapier visual builder includes a code mode toggle_
 
 The Zapier visual builder includes a form to add API endpoint URLs and choose the API call type, then automatically includes any authentication details and input form data with the API call. You can also set any custom options your API may need, including custom URL params, HTTP headers, and request body items. Zapier then parses JSON-encoded responses into individual output fields to use in subsequent Zap steps.
@@ -54,7 +54,7 @@ There is a time limit of 30 seconds for each trigger and action, so keep your cu
 
 Do note that changes are not saved automatically. Once you have added the code you want, click _Save & Continue_ to add the changes to your integration.
 
-![Zapier code mode switch to form mode](https://cdn.zapier.com/storage/photos/ea2eb690bf92b55fab0bbad290107a97.png)
+![Zapier code mode switch to form mode](https://cdn.zappy.app/1fa2f12c1c41a49f3d7aeff4d2706f7c.png)
 _Switch back to form mode to use the form mode settings instead of your custom code_
 
 Once you switch to code mode, Zapier uses your custom code for that API call, and does not use the data you previously entered in the form.
@@ -86,7 +86,7 @@ To check which mode and settings Zapier is using for each API call, open that pa
 
 ## Why are options grayed out for my CLI-built integration?
 
-![Zapier CLI integration in visual builder](https://cdn.zapier.com/storage/photos/c631ca2cd91ab43b0bc4d22f641eb4d6.png)
+![Zapier CLI integration in visual builder](https://cdn.zappy.app/1bf0fc78333fa9a48d6ed3b234f3e717.png)
 
 The Zapier Command Line Interface (CLI) is a separate SDK available to install on your local development machine to create Zapier integrations. It lets you work in code rather than a web based UI for more advanced integrations.
 
@@ -128,48 +128,37 @@ Zapier additionally expects different data for different API calls:
 
 With you add a polling trigger or search action to a Zap, the Zapier platform expects to get a bare array of the new or found items, sorted in reverse chronological order. APIs will instead return a result _object_ that contains the array of items the trigger needs.
 
-For example, for a "New Channel" trigger with Slack's API, we might start with a `http://slack.com/api/channels.list` request:
+{% raw %}
+For example, for a "Find Issue" search action with GitHub's API, we might start with a `https://api.github.com/repos/{{bundle.inputData.owner}}/ {{bundle.inputData.repo}}/issues/{{bundle.inputData.issue_number}}` request:
+{% endraw %}
 
-![](https://cdn.zapier.com/storage/photos/1f84a3519ad4e78c3567cdbff8a4c1d3.png)
+![](https://cdn.zappy.app/a5516cc30abee4f84a58ac5b7b3dfc76.png)
 
 Test it, though, and Zapier will show an error message like the one below:
 
-![](https://cdn.zapier.com/storage/photos/55f500a240d571c5d81be4a28fff109b.png)
+![](https://cdn.zappy.app/2461b0e7f49ecf5aed90d429a59ad2bf.png)
 
-Dig into the API response, and you'll see that what was returned was an _object_ that contains the array of items we need, not the array itself:
+Dig into the API response in the HTTP tab, and you'll see that what was returned was an _object_ that contains the array of items we need, not the array itself:
 
-```
-{
-    "ok": true,
-    "channels": [
-        {
-            "id": "01234",
-            "name": "general",
-            "is_channel": true,
-            "created": 1390943394,
-            "is_archived": false,
-            "is_general": true,
-            "unlinked": 0,
-            ....
-```
+![](https://cdn.zappy.app/d569e3a05f643a9a199b5d85dc4a4fc2.png)
 
 What we need to return to Zapier is that array of channels. To do that we need to switch to "Code Mode" in our request. That lets us provide a JavaScript function to handle our request, where we can make needed changes to the structure or content of the result before we return data to the Zapier platform.
 
-For this request, use `return results.channels` in line 18, instead of the default `return results`, to have Zapier return the array of results from `channels`.
+For this request, wrap the response with an array instead of the default `return results`, to have Zapier return an array of issues.
 
-![](https://cdn.zapier.com/storage/photos/e1d09e9fdf952ef5f5b031bd705e5802.png)
+![](https://cdn.zappy.app/3bec13fa502f47ff1e5f9bfded052b4d.png)
 
 > Remember: "Code Mode" is a toggle; if you switch back to Form Mode your code will be ignored! [Learn more](#code).
 
-Now, retest the request and it should run successfully. Note the response this time is a bare array:
+Now, retest the request and it should run successfully.
 
-![](https://cdn.zapier.com/storage/photos/33098c9f9c1584295e074c1dc8a40e72.png)
+![](https://cdn.zappy.app/af56c7fed5183aed462d2e7efbf78f8c.png)
 
 <a id="censored"></a>
 
 ## Why does Zapier show `censored` fields in request and response data?
 
-![Example censored fields in Zapier](https://cdn.zapier.com/storage/photos/9356f3af9c0a844a652868d877e22486.png)
+![Example censored fields in Zapier](https://cdn.zappy.app/1ace9c1a32b101b30d8600db73c5dd10.png)
 
 When testing Authentication, Triggers, or Actions in Zapier visual builder, you can see the raw data Zapier sends to your API call and receives from it in the _Bundle_ and _HTTP_ tabs of the testing pane. Some of those values may not be shown; instead, you'll see a value like `:censored:6:82a3be9927:` as in the screenshot above.
 
@@ -179,11 +168,11 @@ Zapier automatically censors sensitive values at runtime, including all input fi
 
 ## How do I clean up test authentication accounts?
 
-![Example account with multiple test accounts](https://cdn.zapier.com/storage/photos/7fe9f9155dafbcc5d9b461720d664d4d.png)
+![Example account with multiple test accounts](https://cdn.zappy.app/943cd7b0ee2ada32492c834157a2eccb.png)
 
 While building your integration, testing authentication, and customizing your app's connection label, you may quickly end up with a list of broken or old app authentications. You can clean those up and remove older accounts from your core Zapier account.
 
-![Remove authed accounts](https://cdn.zapier.com/storage/photos/c7fe45e90f7c4c00f6ffd938d417cdd0.png)
+![Remove authed accounts](https://cdn.zappy.app/b31f5c7f712c1a585e727b729248615a.png)
 
 Open your [Zapier _Connected Accounts_](https://zapier.com/app/connections) page, and find your app's name (you may need to use the search box or `CMD`+`F` (Mac) or `Ctrl`+`F` (PC)). Click the app name. Once on the app's connections page, identify the connection to remove and click the three dots, then _Delete_, and confirm the deletion. Repeat for each subsequent testing account you added to clean up your authentication list.
 
@@ -193,14 +182,15 @@ Then refresh your integration page in the Visual Builder, and you'll only see th
 
 ## How do Sample Data and Output Fields work?
 
-![Adding Sample Data to Zapier integration](https://cdn.zapier.com/storage/photos/8ab32f061aa89f3b57e8f4a5ea16a9d9.png)
+![Adding Sample Data to Zapier integration](https://cdn.zappy.app/293b09e9593b591de3c735988f1a5f19.png)
 _Sample Data gives Zapier example data if users don't test the trigger or action. Output Fields give your API data user-friendly names in subsequent Zap steps._
 
 The last step in creating a new Trigger or Action for a Zapier integration is to _Define your Output_. Zapier asks both for Sample Data and Output Fields. Sample Data is especially important for Triggers, and useful with Actions as well. Output Fields are equally important for both triggers and actions, as the output data from both may be used in subsequent Zap steps.
 
 ### Sample Data
 
-![Sample Data in a Zap Step](https://cdn.zapier.com/storage/photos/d4e5d47c461efa897a907c2806aecc1d.png)
+![Sample Data in a Trigger step with no available data](https://cdn.zappy.app/87817f335cadcda650a30547262c3636.png)
+![Sample Data in an Action step](https://cdn.zappy.app/42353c3702ca94af6000e3efb926a3f2.png)
 
 In the Zap Editor, Zapier will attempt to retrieve or create existing data to test Triggers and Actions. If users are in a hurry when building a Zap, or don't have any data available, they can skip these test steps. Zapier will then show the sample data instead, so they can map fields correctly in subsequent Zap steps without seeing their account's live data.
 

@@ -20,7 +20,7 @@ When a user adds an app account to Zapier with Session auth, they first fill out
 <a id="add"></a>
 # How to Add Session Auth to a Zapier Integration
 
-![Add Session Auth to Zapier integration](https://cdn.zapier.com/storage/photos/79ae883b7a164a0747d273f708f16c57.png)
+![Add Session Auth to Zapier integration](https://cdn.zappy.app/2453d5aa12c5aa4fe02beae9d85f6786.png)
 
 To add Session Auth to a Zapier integration, open your app's _Authentication_ page in Zapier visual builder then select _Session Auth_ in the drop-down.
 
@@ -59,7 +59,7 @@ Save each field after adding it, then click _Continue_ when every field your API
 <a id="access"></a>
 ## Add a Token Exchange Request
 
-![Zapier Session token exchange](https://cdn.zapier.com/storage/photos/b3c2c104aceb7e83965708f26ef47da8.png)
+![Zapier Session token exchange](https://cdn.zappy.app/70908a4341146b3df38c9a3169f68cfb.png)
 
 After collecting the credentials users enter in your input form, Zapier then needs to make an API call to exchange them for a session or access token.
 
@@ -72,7 +72,7 @@ Click _Save & Continue_ once finished to store your API call settings.
 <a id="test"></a>
 ## Add a Test API Call
 
-![Session auth test API request](https://cdn.zapier.com/storage/photos/1eadc273b3bef2c1ab584f4412acd39a.png)
+![Session auth test API request](https://cdn.zappy.app/bf9711293b10af85200fb8d7bfe21e39.png)
 
 Zapier then needs a Test API call—typically to a `/user` or `/me` endpoint that returns details about the user and needs no additional configuration—to test account authentication and ensure the access token works.
 
@@ -83,7 +83,7 @@ As Session Auth doesn't include a defined standard for how access tokens are inc
 <a id="label"></a>
 ## Add a Connection Label
 
-![Example Session auth connection label](https://cdn.zapier.com/storage/photos/541510fff1e01b358f898b33f0ced5c2.png)
+![Example Session auth connection label](https://cdn.zappy.app/78a9dfc11297897370573919ab4e6892.png)
 
 Finally, add a connection label to uniquely identify each account users add from your app to Zapier. Zapier includes your app's name in the connection label by default, then any text you include in the connection label. You can include:
 

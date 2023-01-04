@@ -37,7 +37,7 @@ Newly published integrations will feature a _Beta_ tag when first published. Whi
 
 To review your integration’s versions, open it in the Visual Builder and navigate to Manage then Versions. This page shows a list of all versions of the integration, along with status and the number of users of each.
 
-![The Versions page in the Zapier Developer Platform](https://cdn.zappy.app/220a5f0055ab88b41ec83bfa953db20b.png)
+![The Versions page in the Zapier Developer Platform](https://cdn.zappy.app/b443129368e61bdaa86c6f5a741fbe8a.png)
 
 > **Note:** In the Zapier CLI, you can also run [`zapier versions`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#versions) to see the information in your terminal.
 
@@ -47,7 +47,8 @@ For Public apps, which are searchable in the Zap Editor/App Directory, a user th
 
 To make edits to a version of your integration in the Developer Platform Visual Builder, select it in the Version dropdown menu in the top right, or select **Edit** from the options menu on the Versions page.
 
-![Highlighting the Version dropdown menu, and Edit option on the Versions page](https://cdn.zappy.app/bea20fbdee6ee96c6af4cf39261481a2.png)
+![Highlighting the Version dropdown menu](https://cdn.zappy.app/61956b1f6879fc95f6cd421d02ec45ef.png)
+![Edit option on the Versions page](https://cdn.zappy.app/dcad96f8ee8e2751829cbf42504aa974.png)
 
 Clicking **Edit** will direct you to the page of that version. You can then make changes to any of the sections: _Authentication_, _Triggers_, _Actions_, and _Advanced_. Saving those changes will automatically apply them to the version (and by extension, any Zaps using it). 
 
@@ -67,11 +68,11 @@ _Cloning_ is a process in the Zapier Developer Platform Visual Builder that allo
 
 To clone a version of your integration, navigate to **Manage** then **Versions** in the Visual Builder, and select the **gear icon** next to the version you’d like to duplicate. 
 
-![Selecting the 'Clone' option](https://cdn.zappy.app/6b8b23a4943bfe11c8dd4abd29bf8994.png)
+![Selecting the 'Clone' option](https://cdn.zappy.app/46ff6be376f18abc74cbf3ed3836b28e.png)
 
 That will open a window that prompts you to select a number for the new version, to help represent the kinds of changes you plan on making.
 
-![The 'Clone Version' window, showing the options for a new version number](https://cdn.zappy.app/7cd3bf761bb35529c33d5bd5c9c376db.png)
+![The 'Clone Version' window, showing the options for a new version number](https://cdn.zappy.app/b4b841aa1dccab5a87854ae815418de5.png)
 
 Zapier uses semantic versioning numbers, which gives you three options to choose from:
 
@@ -89,7 +90,7 @@ In the CLI, running [`zapier promote [version]`](https://github.com/zapier/zapie
 
 In the Visual Builder, head to **Manage** then **Versions**, and select the **gear icon** next to the version you’d like to make public. In the menu that appears, select **Promote**.
 
-![Selecting 'Promote' on the Versions page](https://cdn.zappy.app/dd4fccc5acb2beb2194ca448871c0d4d.png)
+![Selecting 'Promote' on the Versions page](https://cdn.zappy.app/bb69d022902a74466427d24a67c6a8a3.png)
 
 If you’re working with an integration that’s currently private, the _Promote_ option won’t appear. Instead, make sure users you’d like to test or move to the new integration version are invited to that version, and encourage them to try it out.
 
@@ -105,17 +106,17 @@ Once you’ve added all the changes needed to your integration, you can start ro
 
 If you made a new version with only minor, non-breaking changes ([read more about breaking changes here](#what-is-a-breaking-change)), you can migrate existing users and Zaps to your new integration version. On the **Versions** page, select the **Migrate** option on your new integration version.
 
-![Selecting the 'Migrate' option on the Versions page](https://cdn.zappy.app/ee93e158cfe97f48a2cdc7b8881df405.png)
+![Selecting the 'Migrate' option on the Versions page](https://cdn.zappy.app/90f865924add0a028c8300d33dba09e6.png)
 
 That will reveal a screen that will allow you to move users between two versions. Select the _From_ and _To_ versions, then select **Migrate** to begin moving users to the selected version.
 
-![After selecting 'Migrate', the Migration window allows you to select 'From' and 'To' versions](https://cdn.zappy.app/5d8d487544914ddaa1c72037b331aad1.png)
+![After selecting 'Migrate', the Migration window allows you to select 'From' and 'To' versions](https://cdn.zappy.app/39081a9504f64333e48bd9d84e6c758e.png)
 
 When migrating users, you are also migrating their Zaps. This means that any active Zaps using the _From_ version will begin using the _To_ version as soon as the migration is complete. This makes it a great solution for Patch and Minor updates, but _not_ a recommended option for Major updates. For Major updates, review our section on [Deprecation](#deprecating-versions) instead.
 
 In some cases, it may be more useful to migrate only a portion of the current users, to ensure that the minor change did not accidentally introduce any unforeseen issues. You can do that using the **Percentage** option in the Migration window, or select **Email** to migrate only one user at a time.
 
-![Using the Percentage slider to migrate only 55% of users](https://cdn.zappy.app/5b3a6a1a49fbed8e22a4b423f72d35d0.png)
+![Using the Percentage slider to migrate only 55% of users](https://cdn.zappy.app/68a6701f418dbda95771258703cc609a.png)
 
 > **Warning:** Migrating a single user with the "migrate by email" option will migrate that user *and all of their team members*! If your intention is to migrate a single user, make sure to use a user account that is not in a Teams account.
 
@@ -141,7 +142,7 @@ _Deprecation_ is an optional process that allows you to set a date from which a 
 
 To deprecate a Private version, select the **gear icon** next to the version number on the Versions page, then select **Deprecate**.
 
-![The window that opens when selecting 'Deprecate'](https://cdn.zappy.app/7e62435659f494a9143aa1602640ef97.png)
+![The window that opens when selecting 'Deprecate'](https://cdn.zappy.app/948f09e34a01aca849952b71474a522b.png)
 
 > **Note:** You can also set a deprecation date using the CLI, with the [`zapier deprecate`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#deprecate) command. [More about that here](https://platform.zapier.com/cli_docs/docs#promoting-an-app-version).
 

@@ -21,7 +21,7 @@ Let’s add an _Action_ to our example GitHub integration so Zapier can send dat
 
 ## 1. Configure Action Settings
 
-![Zapier Visual Builder action settings](https://cdn.zappy.app/35d98d82cc88d3dc5451f07f14143e34.png)
+![Zapier Visual Builder action settings](https://cdn.zappy.app/10d48377c1b0020384db1d1029ba8fc6.png)
 
 _Each action starts with adding details to a form._
 
@@ -29,13 +29,13 @@ Enter your new action settings, as with your trigger. Select a _Create_ action s
 
 ## 2. Design an Action Input Field Form
 
-![Zapier Visual Builder action input fields](https://cdn.zappy.app/2726149681f334bf2f8822a1ed7a0c14.png)
+![Zapier Visual Builder action input fields](https://cdn.zappy.app/7f56cceae7d3d47a2c10bd040dc03a86.png)
 
 _Add a new field for every piece of data users need to send to your app for this action_
 
 Then add the input fields from the _Input Designer_ tab. Select from _Input Field_ that let users enter static text, _Dynamic Fields_ that pull in data from triggers, and _Line Item Groups_ to include line item data.
 
-![Zapier Visual Builder action input designer](https://cdn.zappy.app/3ebd6387ae198e7c9d30e758809fa81c.png)
+![Zapier Visual Builder action input designer](https://cdn.zappy.app/3acb59af771b5999b8d3c57472769192.png)
 
 _Each field type includes its own settings—and you can preview the finished input form on the right_
 
@@ -45,7 +45,7 @@ For our example GitHub integration, we need 4 input fields: `owner` to add the r
 
 ## 3. Configure Your API
 
-![Zapier Visual Builder input API](https://cdn.zappy.app/b797baa659d703d3d029b82619e08edd.png)
+![Zapier Visual Builder action API](https://cdn.zappy.app/6b0317389c1a08003db207cfcd732dd3.png)
 
 _Add the URL where Zapier will send data to your app_
 
@@ -57,7 +57,7 @@ Zapier will automatically include the `owner` and `repo` from the input fields i
 
 ## 4. Test Your Action
 
-![Zapier Visual Builder input test](https://cdn.zappy.app/b678a3d2400780a31091c28d31d0e3cf.png)
+![Zapier Visual Builder action test](https://cdn.zappy.app/73cbb372bd51bc99d526c2f156de4b42.png)
 
 _Test your action by sending data to it as users will in their Zaps_
 
@@ -65,18 +65,24 @@ Then test the API request. As with the trigger, add sample data  in the *Configu
 
 ## 5. Define Your Action Output Fields
 
-![Zapier Visual Builder output fields](https://cdn.zappy.app/6056088fe66e6fd0264f9c7db0f089f5.png)
+![Zapier Visual Builder output fields](https://cdn.zappy.app/2bff8f873b1d2333c2dc580a18005a15.png)
 
 _Add example data and user friendly names to your app's most popular fields, especially those that users set in the input form for this action_
 
 Finally define sample data and output fields, as in the trigger setup, including example JSON data with the most popular fields, and reader-friendly names so users can easily identify which fields to map in subsequent actions. If a label is not specified, the JSON field name on the left will be used. 
 
-![Zapier Visual Builder output field labels](https://cdn.zappy.app/ce33633bc7d987f701d1ae838d8ad70f.png)
+![Zapier Visual Builder output field labels](https://cdn.zappy.app/198b5862b9311e71cdfb1e3fa1d344ab.png)
 
 Save your action, and you now have a complete Zapier integration with authentication, a trigger, and an action!
 
-## Your Action in Action
+## Your Action in Zap Editor
 
-![Mapping Fields in Zapier](https://cdn.zappy.app/6bd1765cafb09592dbfe73f306840437.gif)
+![Action Step Zap Editor 1](https://cdn.zappy.app/84c5b5ee42862728f2d443e14e7d90c1.png)
+
+![Action Step Zap Editor 2](https://cdn.zappy.app/f2dee890e67998edde96894c6e2f8a10.png)
+
+![Action Step Zap Editor 3](https://cdn.zappy.app/acd2a7263a190700312b71de30ea088f.png)
+
+![Action Step Zap Editor 4](https://cdn.zappy.app/1821f9ce96a9f224d7e353a21643e2cd.png)
 
 Your GitHub Action's fields let you type in text or map data from previous steps in your Zap so Zapier can copy it into the app. Users clicking into a field can select data from previous steps to use in that field. Then, when the Zap runs, Zapier copies the data that triggered the Zap run and/or any previous steps, and uses it to make the new item in your app—a new GitHub issue in this case.

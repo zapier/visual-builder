@@ -9,7 +9,7 @@ redirect_from: /quick-start/
 
 ## Project Structure
 
-![Zapier Visual Builder new integration](https://cdn.zappy.app/7867bacc33c2eab4b4147d65d5e5171d.png)
+![Zapier Visual Builder new integration](https://cdn.zappy.app/86ebc2be692ec2f0ca729b92667ee74b.png)
 
 _Build and manage your app's integration in the Zapier Platform UI_
 

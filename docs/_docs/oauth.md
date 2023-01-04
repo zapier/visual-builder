@@ -26,7 +26,7 @@ Not within the Platform UI. If your integration requires OAuth v1 authentication
 <a id="add"></a>
 ## How to Add OAuth v2 to a Zapier Integration
 
-![Add OAuth to Zapier Integration](https://cdn.zapier.com/storage/photos/6284f5603abd6259759b8698f5fea85e.png)
+![Add OAuth to Zapier Integration](https://cdn.zappy.app/e89518edce251293ff42ae0f186c0efb.png)
 
 To add OAuth authentication to a Zapier integration, open your app's _Authentication_ page in Zapier's visual builder, then select _OAuth v2_ from the authentication scheme drop-down.
 
@@ -47,7 +47,7 @@ You'll need the following items to add OAuth authentication:
 
 > **Note**: Most apps with OAuth v2 authentication do not need an input form, so unless your API requires data from the user before contacting the authorization URL, or requires URL details to create the authorization URL, you should likely not include an input form.
 
-![Zapier OAuth input form](https://cdn.zapier.com/storage/photos/739190c32c449a03e415ccaa83960a6f.png)
+![Zapier OAuth input form](https://cdn.zappy.app/3603f9715129250a93ecfcf78d4b5f17.png)
 
 If your API's OAuth authentication needs additional details from users before it can display the authorization URL, or Zapier needs to store fields received from your server to use in subsequent API calls, you can add an input form as the first step in your authentication. This will show a form to users with the fields you've added before redirecting them to your authorization URL.
 
@@ -65,7 +65,7 @@ For input fields, select the default _Field_ type, then add:
 - **Input Format**: (optional) Help users figure out exactly what piece of data you need them to enter. For example, for a subdomain, https://{{input}}.yourdomain.com/.
 - **Default Value**: (optional) If appropriate, for optional fields, enter text that can be used by default if users don't enter a value. For required fields, enter text that can be used for authentication, but that won't be used in subsequent Zap steps.
 
-![Edit or delete input fields](https://cdn.zapier.com/storage/photos/a5660976799c62274adfd7fe620fe96c.png)
+![Edit or delete input fields](https://cdn.zappy.app/573a3eb19a884c44fd67b9fa421c3bf4.png)
 
 Add the fields in the order users would expect to see them. You cannot reorder fields, though you can delete fields and add them again if needed.
 
@@ -80,7 +80,7 @@ Once completed, click _Continue_ to save your form and setup OAuth authenticatio
 <a id="redirect"></a>
 ## Add Zapier Redirect URL to Your App
 
-![Zapier Redirect URI](https://cdn.zapier.com/storage/photos/0e981d8a8f61a0da112bfe83a526cec8.png)
+![Zapier Redirect URI](https://cdn.zappy.app/e611fc0a65b3cee099fcf99dbd6f16b0.png)
 
 If you haven't already, in a different tab or window open your app's application, integration, or API settings, and add a new application for your OAuth integration with Zapier. From Zapier's visual builder, copy the OAuth Redirect URL, similar to the one shown above, and add it to your application's integration settings.
 
@@ -91,7 +91,7 @@ If you ever need to reference Zapier's redirect URL inside your Zapier integrati
 <a id="credentials"></a>
 ## Add Application Credentials to Zapier
 
-![Add application credentials to Zapier](https://cdn.zapier.com/storage/photos/528a6aa1c1be8204876f30f1e6276f82.png)
+![Add application credentials to Zapier](https://cdn.zappy.app/143501610dce552f7ce003dc6632dc2b.png)
 
 In your application's settings, you'll receive credentials that Zapier will use to verify itself to your app—typically called a _Client ID_ and _Client Secret_, though they may have a slightly different name. Copy that data from your app, then in Step 3 of your Zapier OAuth configuration, paste those items in their respective fields. Zapier will use that data along with the authorization URL to receive the request token.
 
@@ -105,7 +105,7 @@ Zapier will automatically include the Client ID and Secret in authentication API
 <a id="authorization"></a>
 ## Add OAuth Endpoint Configuration
 
-![Add Authorization URL to Zapier](https://cdn.zapier.com/storage/photos/6c41fec63315bd3770c5875799201b43.png)
+![Add Authorization URL to Zapier](https://cdn.zappy.app/1920c552acfc0cc03089feb2e9ada029.png)
 
 Now it's time to configure how Zapier sends users to your API to allow access to their account in your app, and how Zapier gets the credentials it needs for future API calls.
 
@@ -116,7 +116,7 @@ Optionally, if you wish to limit Zapier's scope to let it only access specific d
 <a id="access"></a>
 ## Add Access Token Request and Refresh Token Request URLs
 
-![Access Token Zapier](https://cdn.zapier.com/storage/photos/386f1392718dea32025edf72ca21fae0.png)
+![Access Token Zapier](https://cdn.zappy.app/517f20c1a33012af96b18036332371eb.png)
 
 Next, add your app's Access Token Request URL, typically with a `POST` call and the default settings Zapier uses if your app uses a standard OAuth configuration. You can find this URL in your application's API documentation.
 
@@ -131,13 +131,13 @@ Zapier will automatically include the access token in subsequent API requests, b
 <a id="test"></a>
 ## Add a Test API Call
 
-![Test API Call Zapier OAuth](https://cdn.zapier.com/storage/photos/f31d8d06adfbf15a9da2e98ad7690021.png)
+![Test API Call Zapier OAuth](https://cdn.zappy.app/48cdb444eab9a329023b3e991bfa0da9.png)
 
 Zapier then needs a Test API call—typically to a `/user` or `/me` endpoint that returns details about the user and needs no additional configuration—to test account authentication and ensure the access token works.
 
 Zapier will pass the access token with the API call by default, as it will with all subsequent API calls, but if your API requires any additional configuration, click the _Show Options_ button and add any options needed for a successful API call.
 
-![Zapier Code Mode OAuth](https://cdn.zapier.com/storage/photos/09bda4bee7f6e064c10048c03f640359.png)
+![Zapier Code Mode OAuth](https://cdn.zappy.app/f9d47ff9bd4af168dcb4c4811a1e184d.png)
 
 If you need a specialized API call or response parsing on this or other API call steps, click _Switch to Code Mode_. The first time you click this, Zapier will convert the data in the form to JavaScript code that you can customize or replace. See [How does Code Mode work?](./faq#how-does-code-mode-work) for more details.
 

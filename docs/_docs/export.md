@@ -37,11 +37,11 @@ Create a new directory for your Zapier project and from the command line `cd` in
 
 Your integration ID can be found in the browser location bar:
 
-![](https://zappy.zapier.com/4452B664-3C68-4762-A85A-4AF75DAB0E62.png)
+![](https://cdn.zappy.app/c5e0c7f17a5ab52d9661e134394e9cc7.png)
 
 Similarly, your version can be found there, and elsewhere throughout the UI:
 
-![](https://zappy.zapier.com/ECE260EE-8B9D-46B7-B6AD-6BEA5078EEDF.png)
+![](https://cdn.zappy.app/e31dd202b5e64bbcb13fc8b200518d17.png)
 
 Using this example to create our project in the current directory our command would be:
 

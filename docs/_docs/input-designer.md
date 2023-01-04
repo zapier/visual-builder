@@ -29,7 +29,7 @@ Zapier integrations can use three types of fields:
 
 Most Zapier integrations rely on input fields. Integrations only need dynamic fields if users would need to select data from your app in the form, and would only need line items if users commonly add multiple lines of similar details to your app.
 
-![Example Input Editor](https://cdn.zapier.com/storage/photos/637ad915851e73847e1bdacdd5fea09d.png)
+![Example Input Editor](https://cdn.zappy.app/524b9300c044809eb13eb732d7a50f9d.png)
 
 To add a field, click the _Add_ button and select the field type. Enter the field details, including:
 
@@ -90,7 +90,7 @@ Enter the fields as used in your API, as Zapier will pass the exact value users 
 <a id="keyvalue"></a>
 **Static Dropdown with Key Value Pairs**
 
-![Zapier dropdown with key value pairs](https://cdn.zapier.com/storage/photos/949f2aff9847ac14199f4884d0f4b861.png)
+![Zapier dropdown with key value pairs](https://cdn.zappy.app/101618614c22bd4bd453c365db753db9.png)
 
 If your API requires different values for the field than the text you want to show to users inside the dropdown menu in Zapier, you can make a key value pair that includes the value to send to your API, the sample value to show users ([should be the same as the value](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md#fieldchoicewithlabelschema)), and a user-friendly label.
 
@@ -122,17 +122,17 @@ Zapier uses triggers to fetch the values for dynamic dropdown menus. The best wa
 
 **_Build a Trigger to Fetch Dynamic Dropdown Data_**
 
-![Zapier hidden trigger setting](https://cdn.zapier.com/storage/photos/da0b142705534296dd1d2113c35b4f64.png)
+![Zapier hidden trigger setting](https://cdn.zappy.app/fc6965bd8bfd1aa64cd5c1f75206ed3f.png)
 
 First make a trigger as normal, with a key, name, and noun, though feel free to leave the description free as this trigger won't be seen by users. In the _Visibility Options_ field, select `Hidden` to hide this trigger from your app's trigger list in Zapier.
 
 Skip the _Input Designer_ tab as the dynamic dropdown does not need any input data.
 
-![Zapier hidden trigger API setting](https://cdn.zapier.com/storage/photos/4a64a727bc4301337acc72bc33edbad6.png)
+![Zapier hidden trigger API setting](https://cdn.zappy.app/06a95ff12355256500957dee6aa007d0.png)
 
 Then select the _API Configuration_ tab, and add the API call where Zapier can fetch the data from your API. In standard Zapier triggers, you would use an API call that fetches new or newly updated items. Here, though, use an API call that pulls in a list of the data that you need for your dynamic dropdown.
 
-![Zapier hidden trigger API options](https://cdn.zapier.com/storage/photos/f9edb67b0c9be0378fd4ec1e9e4f3e79.png)
+![Zapier hidden trigger API options](https://cdn.zappy.app/81be9d8ede3b19a8d4b5f58125575076.png)
 
 Many API calls will need additional configuration to pull in data in the order that makes most sense in your menu. You may want to sort options in the order they were added or updated, and could want to have the API fetch more items at once than the default. Set these from the _Show Options_ menu.
 
@@ -144,13 +144,13 @@ To add that, check the _Support Paging_ box, then in your API call include your 
 
 > **Ordering Your Dropdown Menu Items**: Zapier will show the data in the dropdown menu in the order your API sends it to Zapier. If your API sends the data in alphabetical order, or numerical order, it will show as such in your drop-down menu. If your API call supports sorting, be sure to include the sorting parameter in your API call that would return data in the order you want it to show in your drop-down.
 
-![Set output fields from dynamic dropdown](https://cdn.zapier.com/storage/photos/10eec1daf419738bee3dd8c9526dd443.png)
+![Set output fields from dynamic dropdown](https://cdn.zappy.app/3023ea97191fbcf90222dcf42a46035d.png)
 
 Finally, you need to define the fields from your trigger that you need to use in the action input field. Test your trigger, then find the output fields needed, and add them to the _Output Fields_ list at the end of your settings page. Include at least a field with the data that Zapier needs to send to your API in the action, along with a field that includes a human friendly name for the data in that field.
 
 **_Add an Input Field with Dynamic Fields_**
 
-![Select Trigger for Dynamic Fields](https://cdn.zapier.com/storage/photos/10eec1daf419738bee3dd8c9526dd443.png)
+![Select Trigger for Dynamic Fields](https://cdn.zappy.app/f2a8c7071bf4e96e5a44073999b4ccf5.png)
 
 Then, to use that data, add a new input field to your integration, set the label, key, and other details as normal, then check the _Dropdown_ box and select the _Dynamic_ toggle. Choose the trigger with the data needed for this menu in the _Dropdown Source_ option.
 
@@ -171,7 +171,7 @@ If you're creating dynamic dropdowns, via code, there's a few structures based o
 <a id="dropdown-search"></a>
 **_Add Search to a Dynamic Field (Optional)_**
 
-![Zapier Dynamic Dropdown Search](https://cdn.zapier.com/storage/photos/6e358b96fa8e28d43e3f50d9cb945d01.png)
+![Zapier Dynamic Dropdown Search](https://cdn.zappy.app/51ef24ac9ee90dd393e695ec75601532.png)
 
 Dynamic Dropdown menus can also include an additional _Add a Search Step_ button beside the dropdown menu. This lets users dynamically select the correct item from a dynamic field based on input from previous Zap steps.
 
@@ -190,7 +190,7 @@ It’s worth thinking through your form field order to make your integration as 
 
 ## Remove Fields
 
-![Delete Input Fields][image-7]
+![Delete Input Fields](https://cdn.zappy.app/feb4d72b10a16ae14b57ce8fe542b7a8.png)
 _Delete any fields that aren’t needed in your integration_
 
 Add too many fields, and decide you don’t need one? Or want to start over with a new field?
@@ -205,37 +205,37 @@ Zapier includes ten different input field types to gather the specific data your
 
 ### String
 
-![Zapier String Field][image-8]
+![Zapier String Field](https://cdn.zappy.app/b6abd9f3b9048e4a0b8010c79ac78ca7.png)
 
 The default Zapier input field, a String field shows a blank line for text. Typically used to gather individual text values such as a name, email address, or other details.
 
 ### Text
 
-![Zapier Text Field][image-9]
+![Zapier Text Field](https://cdn.zappy.app/6936573528e1c7dc72b33e5b8178aac7.png)
 
 Text fields are for longer text. Users can easily write a few lines of text, often used to enter email messages, notes, and other longer info.
 
 ### Integer
 
-![Zapier Integer Field][image-10]
+![Zapier Integer Field](https://cdn.zappy.app/4c3d21a485c1329720209fa9ee1664f7.png)
 
 Integer fields are designed to gather integer number values, with a `1 2 3` tag beside the field in Zaps. They’re often used in Zapier along with a Dropdown field to select ID numbers for users, projects, and other internal data from apps, but can also be used to gather numbers.
 
 ### Number
 
-![Zapier Number Field][image-11]
+![Zapier Number Field](https://cdn.zappy.app/0d149da9dd979e6aa0a628a1a4abf2b7.png)
 
 Number fields can gather numbers with any value, including decimal points, and show a `1.0` tag beside the field in Zaps. They’re most commonly used to gather numbers for integrations.
 
 ### Boolean
 
-![Zapier Boolean Field][image-12]
+![Zapier Boolean Field](https://cdn.zappy.app/da36e8486e9aec5d685650be5c5b194d.png)
 
 Boolean fields let users select between `yes` and `no` values to set default settings in integrations, and return a corresponding `1` or `0` to your app. These are the simplest dropdown menus in Zaps.
 
 ### DateTime
 
-![Zapier DateTime Field][image-13]
+![Zapier DateTime Field](https://cdn.zappy.app/68097e2927567b360f9fb9b65647369c.png)
 
 DateTime fields let users enter dates and times, using their human readable values, machine readable datetimes, or standard English words for time like `tomorrow`. Zapier interperpates the date input from users and outputs a standard [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) datetime to your API.
 
@@ -243,19 +243,19 @@ DateTime fields let users enter dates and times, using their human readable valu
 
 ### Password
 
-![Zapier Password Field][image-15]
+![Zapier Password Field](https://cdn.zappy.app/872c6d1ce250bb054460643701df646a.png)
 
 Password fields work the same as standard string fields, except they hide the text entered in the field. They’re most commonly used in Authentication fields, especially for Basic Auth, but can be used in an integration if your app asks users to enter sensitive data.
 
 ### Dictionary
 
-![Zapier Dictionary Field][image-16]
+![Zapier Dictionary Field](https://cdn.zappy.app/74689dc7f73a75c3cf5ab9b858f651b1.png)
 
 Dictionary fields let users enter their own value sets, with a plain text name followed by a String field to enter or map data from previous Zap steps. Users can click the `+` button on the right to add additional dictionary field entries as well.
 
 ### Copy
 
-![Zapier Copy field][image-17]
+![Zapier Copy field](https://cdn.zappy.app/eebc20fad3362197a0448edd8a52e27e.png)
 
 The Copy field is the only field that does not let users enter data, and it is not passed along to your API. Instead, this field shows the _Help Text_ field’s Markdown formatted text as a rich text note inside the Zap step. It’s a handy way to share additional details about what to enter in the integration or link to external documentation if users would need more help.
 
@@ -269,21 +269,21 @@ Normal input fields in Zapier add one item each time the Zap runs. Fields inside
 
 > Learn more about line items from Zapier’s [Line Item Guide][4]{:target="\_blank"} and our [Line Item Help Docs][5]{:target="\_blank"}.
 
-![Add Zapier Line Item Group][image-18]
+![Add Zapier Line Item Group](https://cdn.zappy.app/3c01a29c37a0e19c235bf3f7533ddd00.png)
 
 If your app’s action step needs line items, select _Line Item Group_ when adding a new field in the Input Designer. Add a name for the group of fields, something users would recognize as being a set of values where each one would be added individually. Also add a key for the group so Zapier can identify it internally.
 
-![Zapier Line Item Input Fields][image-19]
+![Zapier Line Item Input Fields](https://cdn.zappy.app/b79deb11838a61a01b9697a12e6eb655.png)
 
 Then add input fields for each item to include in your line item group. Click _Add Line Item_, then add the input field details as with other input fields. The only differences are that these fields will show inside the Line Item field block in Zapier, and you can’t set these fields as allowing multiples or altering dynamic fields.
 
-![Edit or remove Zapier line item group fields][image-20]
+![Edit or remove Zapier line item group fields](https://cdn.zappy.app/6d272ee6df83ba0ec7923c07e828867c.png)
 
 Need to remove or reorder line item input fields? Open your Line Item Group field, and each input field has a gear icon beside it to edit or delete the field. You can’t move fields up or down, but you could delete fields then re-add them at the end of the list to get achieve the field order your integration needs.
 
 ## How to Add Dynamic and Custom Fields
 
-![Add Zapier Dynamic Field](https://cdn.zapier.com/storage/photos/948e0f043198674b6d7730dc457ff4ea.png)
+![Add Zapier Dynamic Field](https://cdn.zappy.app/8177dce9ee77e014b8fe65f4f6d6e5ba.png)
 
 Dynamic Fields let Zapier build custom fields from an API call, and run code that shows fields based on other input field data. Dynamic and custom fields are used to show user-defined fields from apps that must be fetched from the app when users build Zaps to let them use those fields. These are especially useful with project management apps, CRM apps, databases, and any other app where users can add custom, user-defined fields.
 
@@ -319,11 +319,11 @@ To use the custom fields in your API call, you must switch to _Code Mode_ and ma
 
 When you add a dynamic field, it will not show in the Zap step preview on the right side of your input designer. That is expected, as Zapier will not run `z.request` call inside the Input Designer, so your custom fields will not show up in the preview.
 
-![Dynamic field inside Zapier](https://cdn.zapier.com/storage/photos/d9a14810cf192033bc85c1ad18a35c09.png)
+![Dynamic field inside a Zap](https://cdn.zappy.app/e0fa238803c997671ebed78320c65bee.png)
 
 To test a dynamic field, [create a new Zap](https://zapier.com/app/editor/) and use the trigger or action that includes your dynamic step. You will then see the dynamic fields load inside your Zap as expected.
 
-![See Zapier dynamic field data from Monitoring tab](https://cdn.zapier.com/storage/photos/45ec3a1bdbd0256d9b17d798621f7efa.png)
+![See Zapier dynamic field data from Monitoring tab](https://cdn.zappy.app/4f570a8e8dc18d9e6ef4edfd0184b76f.png)
 
 You can then see details about the dynamic field in the _Monitoring_ tab in your integration's Zapier Platform UI details editor. Click the _Monitoring_ tab, then look through the API call details to find the details about the API call that fetched the dynamic fields.
 
@@ -332,24 +332,11 @@ You can then see details about the dynamic field in the _Monitoring_ tab in your
 [3]: https://zapier.com/blog/beginner-ultimate-guide-markdown/
 [4]: https://zapier.com/blog/formatter-line-item-automation/
 [5]: https://zapier.com/help/line-items/
-[image-1]: https://cdn.zapier.com/storage/photos/31dfcf36c01b0ee0db946a6a46c3de8c.png
-[image-2]: https://cdn.zapier.com/storage/photos/aba4afb45bd9dbd5ec8c5e4a4137636d.png
-[image-3]: https://cdn.zapier.com/storage/photos/842d24708f402853e08ce6fbc06d650c.png
-[image-4]: https://cdn.zapier.com/storage/photos/0cf01c1dd6923b09cbb2cff97f0d6906.png
+[image-1]: https://cdn.zappy.app/9bc3d3da90a966eef740115c3a11d08f.png
+[image-2]: https://cdn.zappy.app/f8d0fd74582dc7c5997248516ad50d4f.png
+[image-3]: https://cdn.zappy.app/bf4c2a6ad55c12f6e3079e50f5d38e6c.png
+[image-4]: https://cdn.zappy.app/4f65bd28634d7709cac0ba84f2fa73d3.png
 [image-5]: https://cdn.zapier.com/storage/photos/f70686a8b053b541388da667e602f5b5.png
-[image-6]: https://cdn.zapier.com/storage/photos/2e73521bfc2f99ff43e12b444226421b.gif
-[image-7]: https://cdn.zapier.com/storage/photos/f065e57e78c2c57c65827a611a3a3fb1.gif
-[image-8]: https://cdn.zapier.com/storage/photos/14d9254a5e1195d6fc8bf03743e35aba.png
-[image-9]: https://cdn.zapier.com/storage/photos/4a2561c266257c72f20acbf35bdadbbb.png
-[image-10]: https://cdn.zapier.com/storage/photos/5f172119f8e4c28cef88cc0b01e78539.png
-[image-11]: https://cdn.zapier.com/storage/photos/fdcbd1c11d748a58a88598c635705ec2.png
-[image-12]: https://cdn.zapier.com/storage/photos/abc4b4149e7768680910607a708e6c2a.png
-[image-13]: https://cdn.zapier.com/storage/photos/cafd896bfcf92977464de936bdb4049b.png
+[image-6]: https://cdn.zappy.app/86a8c7d7895f2d7d7d196d7b58bc3581.png
 [image-14]: https://cdn.zapier.com/storage/photos/d6198c63b6adfd6d2d36ddcc49118acf.png
-[image-15]: https://cdn.zapier.com/storage/photos/ba63e87ff25ed2f16eb2bf538ad3ec48.png
-[image-16]: https://cdn.zapier.com/storage/photos/184904cd7048a06caed45b9575565096.png
-[image-17]: https://cdn.zapier.com/storage/photos/997589da843fbd06f89c18beb9e9ae02.png
-[image-18]: https://cdn.zapier.com/storage/photos/39e7e2296b66de0a9edea5ccef08c505.png
-[image-19]: https://cdn.zapier.com/storage/photos/5dcf22f358eb16c18abea7e532137269.png
-[image-20]: https://cdn.zapier.com/storage/photos/abf8f19ef35997b8919888da91b88590.png
 [image-21]: https://cdn.zapier.com/storage/photos/fdfe0ef4278760b1c22b47b6b66cb290.png
