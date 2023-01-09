@@ -30,7 +30,7 @@ The second reason is time. Your app's integration gets 30 seconds to run its API
 
 ## How Do I use Dehydration?
 
-Check out our example files app (https://github.com/zapier/zapier-platform-example-app-files) for an example of file dehydration in action with a working Zapier demo integration. You can even initialize a Zapier app based on that repo by entering ``zapier init . --template=files`` in Terminal.
+Check out our [example files app](https://github.com/zapier/zapier-platform-example-app-files) for an example of file dehydration in action with a working Zapier demo integration. You can even initialize a Zapier app based on that repo by entering ``zapier init . --template=files`` in Terminal.
 
 ***
 
@@ -38,7 +38,7 @@ Check out our example files app (https://github.com/zapier/zapier-platform-examp
 
 ## The Server
 
-We've got a very simple file server set up with Express at https://github.com/codebycaleb/express-files-example. The whole thing fits in one (hopefully) easy-to-read file, `index.js`. Let's take a quick look at what the API offers:
+We've got a very simple file server set up with Express at [https://github.com/codebycaleb/express-files-example](https://github.com/codebycaleb/express-files-example). The whole thing fits in one (hopefully) easy-to-read file, `index.js`. Let's take a quick look at what the API offers:
 
 * GET `/files` - list filenames for the directory (only filenames!)
 * GET `/files/:name` - download the file with the given filename or return a 404 if it's not found
@@ -49,7 +49,7 @@ The README in that repo offers installation instructions (the server can be up a
 
 ## The App
 
-What would an example be without an example app? Check out https://github.com/codebycaleb/zapier-hydration-example/ to see what is available to get started with. Some key areas include `index.js`, `hydrators.js`, `triggers/newFile.js`, and `creates/uploadFile.js`.
+What would an example be without an example app? Check out [https://github.com/codebycaleb/zapier-hydration-example/](https://github.com/codebycaleb/zapier-hydration-example/) to see what is available to get started with. Some key areas include `index.js`, `hydrators.js`, `triggers/newFile.js`, and `creates/uploadFile.js`.
 
 The sole Trigger for this app will check our server's `/files` endpoint every time the Zap runs. As you may recall, the `/files` endpoint only returns filenames, but we want to offer the extra meta info (and the file itself!) to Zaps so that they can be passed to other apps in Actions. To achieve this, we reference `hydrators.fileMeta`, our function for hydrating metadata given a filename.
 

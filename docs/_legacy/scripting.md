@@ -27,7 +27,7 @@ Scripting works by giving you places to add your own code to the request-respons
 
 Alternately, if you've already imported your integration to the new Zapier Platform UI, click the _Advanced_ tab, select _Legacy Web Builder_, and add your custom code to the editor there:
 
-![Platform UI code editor](https://cdn.zapier.com/storage/photos/75e6b3290b00eaa8a83f39f10902dab6.png)
+![Platform UI code editor](https://cdn.zappy.app/e776d2b6349552e6347ca2757f4d06c1.png)
 
 Inside the editor, you will create the root module `Zap`. By default it is a blank JavaScript object. You add to it by defining one or more of the [available methods](https://platform.zapier.com/legacy/scripting/#available-methods). Each method accepts a single variable called `bundle`, which is a JSON serializable object. The content of the bundle varies depending on the method you are implementing. The output of your method must also be a serializable object.
 
