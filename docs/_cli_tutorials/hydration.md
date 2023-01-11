@@ -30,7 +30,7 @@ The second reason is time. Your app's integration gets 30 seconds to run its API
 
 ## How Do I use Dehydration?
 
-Check out our [example files app](https://github.com/zapier/zapier-platform-example-app-files) for an example of file dehydration in action with a working Zapier demo integration. You can even initialize a Zapier app based on that repo by entering ``zapier init . --template=files`` in Terminal.
+Check out our [example "files" app](https://github.com/zapier/zapier-platform/tree/master/example-apps/files) for an example of file dehydration in action with a working Zapier demo integration. You can even initialize a Zapier app based on that repo by entering ``zapier init . --template=files`` in Terminal.
 
 ***
 
@@ -38,7 +38,7 @@ Check out our [example files app](https://github.com/zapier/zapier-platform-exam
 
 ## The Server
 
-We've got a very simple file server set up with Express at [https://github.com/codebycaleb/express-files-example](https://github.com/codebycaleb/express-files-example). The whole thing fits in one (hopefully) easy-to-read file, `index.js`. Let's take a quick look at what the API offers:
+We've got a very simple file server set up with Express in this [Github repository](https://github.com/codebycaleb/express-files-example). The whole thing fits in one (hopefully) easy-to-read file, `index.js`. Let's take a quick look at what the API offers:
 
 * GET `/files` - list filenames for the directory (only filenames!)
 * GET `/files/:name` - download the file with the given filename or return a 404 if it's not found
