@@ -41,9 +41,9 @@ When you create a Zapier integration, you’ll be asked to add your app’s name
 
 ### App Name
 
-Use the actual, unique name of your app with the same capitalization your company uses in your core branding.
+Use the actual, unique name of your app with the same capitalization your company uses in your core branding. Trademark/copyright identifiers such as a TM suffix aren't allowed in the app name, though they can be added to the [Description](https://platform.zapier.com/partners/planning-guide#app-description-copy).
 
-Do not add adjectives or phrases to your app name, and only include your company name if the company and app name are always used together in your branding. Do not include the word _app_ unless you always include that in your app’s branding.
+Do not add adjectives or phrases to your app name, and only include your company name if the company and app name are always used together in your branding. Do not include the word _app_ unless you always include that in your app’s branding. 
 
 **Example**:
 
