@@ -20,7 +20,7 @@ API Key authentication works similarly to Zapier's [Basic Auth](https://platform
 
 ## How to Add API Key Auth to a Zapier Integration
 
-![Add API Key Auth to Zapier Integration](https://cdn.zapier.com/storage/photos/b364e321d1a02fc607d9d360679d6b64.png)
+![Add API Key Auth to Zapier Integration](https://cdn.zappy.app/283f4595d4e25caee8256b2727eebb6d.png)
 
 To add API Key Auth to your Zapier integration, open the _Authentication_ tab in Zapier visual builder and select _API key_.
 
@@ -35,13 +35,13 @@ You then need to:
 
 ## Add an API Key Input Form
 
-![Add fields to API key auth Zapier](https://cdn.zapier.com/storage/photos/0ecfa173843efc628fe1407a9346e0ea.png)
+![Add fields to API key auth Zapier](https://cdn.zappy.app/8de37a192b7d50162a7a115281d4a388.png)
 
 Start by adding a form where users will enter their API key and other authentication details when connecting their app account to Zapier. Check your API documentation for what fields are required, including user or account names, domains, and more. Additionally, note any details users may need on how to find that data since API keys especially are often hidden under settings menus and you'll need to include those details in your input form's help text.
 
 For each field that you need, click the _Add Fields_ button and fill in the details for your field. Be sure to add the most commonly needed fields first, in the order users expect, as you cannot reorder fields once added.
 
-![Zapier API Key Input Form](https://cdn.zapier.com/storage/photos/efe397d89f0cf26122513b9d3c2ea2f4.png)
+![Zapier API Key Input Form](https://cdn.zappy.app/d122ac64a68b926bacd5b4e0954ead2c.png)
 
 Every input field requires a _Key_, the name your API uses to reference this field. Enter the same key name that your API uses.
 
@@ -55,7 +55,7 @@ Then fill in the optional fields, as appropriate, especially the _Label_:
 
 > **Note:** The input field designer also includes an option for computed fields; those are not applicable to API key login and are only used with OAuth v2 and Session auth.
 
-![Edit API key input fields](https://cdn.zapier.com/storage/photos/b3d0bf644fd562435e5099083b8b66a2.png)
+![Edit API key input fields](https://cdn.zappy.app/b27d364f2dd6ef2c1701c8b094a7ada0.png)
 
 Once you've added your input fields, Zapier lists each input field with its label, key, type, and required status on your authentication settings. Click the field to edit it, or click the gear icon and select _Delete_ to remove a field.
 
@@ -65,13 +65,13 @@ When you've added the needed forms, click _Continue_ to add a test API call and 
 
 ## Add a Test API Request
 
-![Zapier test request API Key authentication](https://cdn.zapier.com/storage/photos/3130a3ad4c5b211de33886d4eff2abc0.png)
+![Zapier test request API Key authentication](https://cdn.zappy.app/c4c58979ddcf7eb8a462ac5ff7a37348.png)
 
 Zapier then needs a way to test the API key and other input field data users enter and ensure it enables a successful API call. For that, in step two, add an API call to your API that requires no configuration, typically a `/user` or `/me` call. Add the URL for the API call, and set the call type.
 
 Zapier automatically includes the API key and any additional input fields you added to your input form in the URL Params. If your API needs that data as headers instead, click _Show Options_ and add the details there instead.
 
-![Zapier code mode API Key auth](https://cdn.zapier.com/storage/photos/a9a100a074dd9b0a9605464d21158268.png)
+![Zapier code mode API Key auth](https://cdn.zappy.app/b5f336f8d8642f04d99d584f04c4e334.png)
 
 If you need a custom API call, you can switch to code mode and write custom JavaScript code to handle your test API call and the response parsing, if needed. Click the _Switch to Code Mode_ toggle to enable it. The first time you click the toggle, Zapier will convert your API call to code. If you switch back to Form mode, though, Zapier will not convert your code changes to the form mode, nor will any subsequent changes in form mode be added to your code.
 
@@ -79,7 +79,7 @@ If you need a custom API call, you can switch to code mode and write custom Java
 
 ## Configure a Connection Label
 
-![Zapier API Key auth connection label](https://cdn.zapier.com/storage/photos/f09f02450623750b70b67d0d7afa9e1c.png)
+![Zapier API Key auth connection label](https://cdn.zappy.app/0be1ac5639e1e6cf2366474b0c40910c.png)
 
 Finally, add a connection label to help users identify each account from your app that they connect with Zapier. Zapier includes your app's name in the connection label by default, followed by any text you include in the connection label. You can add:
 

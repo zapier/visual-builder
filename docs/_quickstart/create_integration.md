@@ -7,7 +7,7 @@ redirect_from: /quick-start/
 
 # Create a New Integration
 
-![Zapier Visual Builder add integration](https://cdn.zappy.app/da18495e7c6c61c648944a94ce34bb7a.png)
+![Zapier Visual Builder add integration](https://cdn.zappy.app/a09ac2b43db4173b86c2c9802a472114.png)
 
 _Add your app's name, logo, description, and category before building a Zapier integration_
 

@@ -18,7 +18,7 @@ When users add a new app account with Digest Auth to Zapier, they'll see an inpu
 <a id="add"></a>
 ## How to Add Digest Auth to a Zapier Integration
 
-![Add Digest Auth to Zapier Integration](https://cdn.zapier.com/storage/photos/518669ef2b833a4ba496d5d294c272f0.png)
+![Add Digest Auth to Zapier Integration](https://cdn.zappy.app/fccd6ab8ba9c837158907d39eef1f288.png)
 
 To add Digest Auth to a Zapier integration, open your integration's _Authentication_ page in Zapier visual builder, and select _Digest Auth_ from the dropdown.
 
@@ -31,7 +31,7 @@ You will then need the following to add Digest Auth to your integration:
 <a id="form"></a>
 ## Add a Digest Auth Input Form
 
-![Zapier Digest Auth Input Form](https://cdn.zapier.com/storage/photos/cb1a3407e4e02e89bf0e020882d49331.png)
+![Zapier Digest Auth Input Form](https://cdn.zappy.app/680696e6c2d79b837600c5d1e32c9d40.png)
 
 By default, Zapier includes an input form with Digest auth that requests a username and password. You can then add additional fields if your API requires them for authentication.
 
@@ -50,7 +50,7 @@ Save each field after adding it, then click _Continue_ when every field your API
 <a id="test"></a>
 ## Add a Test API Call
 
-![Digest Auth Test API Call](https://cdn.zapier.com/storage/photos/e0828377cca5952950344dffaebdc8fe.png)
+![Digest Auth Test API Call](https://cdn.zappy.app/503eeb14514aa854ae06ba956b6c572c.png)
 
 Digest Auth doesn't require any special API calls for authentication, so the only other details you need to add is a test API call. Zapier will use this test API call to verify that your user's credentials work—and will then use them to authenticate every subsequent API call.
 
@@ -59,7 +59,7 @@ Enter an API endpoint that doesn't require additional detail or configuration, s
 <a id="label"></a>
 ## Add a Connection Label
 
-![Zapier API Key auth connection label](https://cdn.zapier.com/storage/photos/f09f02450623750b70b67d0d7afa9e1c.png)
+![Zapier API Key auth connection label](https://cdn.zappy.app/0526347a17577147c712d0814b4995d5.png)
 
 Finally add a connection label to identify each account users add from your app to Zapier. Zapier includes your app's name in the connection label by default, followed by the version number, then any text you include in the connection label. You can include:
 

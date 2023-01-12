@@ -78,7 +78,7 @@ When you add support for pagination to your trigger, be sure to set the canPagin
 
 ![](https://cdn.zappy.app/c187390d43cc943999332f89cdc28b82.png)
 
-![](https://cdn.zappy.app/8fa6ccf28e6cd5e4fafa71cfbb439ed0.png)
+![](https://cdn.zappy.app/47690ec6cc097eb700990a129064e8dd.png)
 
 ### `bundle.meta.isBulkRead`
 
