@@ -15,7 +15,7 @@ Focus first on building your integration. When you've added your app's core deta
 
 Then, before launching your integration, add your app's branding via Zapier's Platform UI at [zapier.com/app/developer](https://zapier.com/app/developer). There you will see every Zapier integration you've built. The top _Integrations_ section includes every app you've added via Zapier's Platform UI or CLI. Look for the integration you built with Zapier CLI and click its name.
 
-![Edit Zapier integration branding](https://cdn.zapier.com/storage/photos/64ca9b7b8097913635874e26e8a35737.png)
+![Edit Zapier integration branding](https://cdn.zappy.app/21501f70d3d15a341e6dc7ea90690ee6.png)
 
 You can't edit authentication, triggers, and actions in Zapier's Platform UI for integrations built with Zapier's CLI. But you can edit branding.
 

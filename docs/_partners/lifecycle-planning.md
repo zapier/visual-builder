@@ -101,7 +101,7 @@ Read our [App Review Guidelines](https://platform.zapier.com/partners/integratio
 
 Then, navigate to the Publishing page for your app, fill out the form, and click _Submit for Review_.
 
-![](https://cdn.zappy.app/0055e6014cceb63fdb90ad671eb13229.png)
+![Publishing integration page](https://cdn.zappy.app/5717927f617ec65928b00b23459365fe.png)
 
 Expect to hear from us within a week.
 
