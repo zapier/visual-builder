@@ -93,13 +93,11 @@ You may update your app's category anytime if needed, so do not select a categor
 
 ![Zapier primary colors in App Directory](https://cdn.zappy.app/1c327d4bc8b0e194d181f26ef737673c.png)
 
-When you release your Zapier integration to the public, Zapier requires your app’s primary color. A secondary color is optional. 
-
-The Primary color is the main color used in your app’s logo or branding. The secondary color is a complementary color from your CTAs or as an accent to your primary color.
+When you release your Zapier integration to the public, Zapier requires your app’s primary color. The primary color is the main color used in your app’s logo or branding.
 
 Do not use pure white (`#FFFFFF`) for either color, as overlaid text would be unreadable. If your logo is black and white, use the next most common color from your branding.
 
-Zapier uses the primary color as the background color in your app’s Zapier App Directory listing, and may additionally use it and the secondary color in the Zapier app dashboard, Zapier blog marketing materials, and other parts of Zapier’s app and content that promote your app’s integrations.
+Zapier uses the primary color as the background color in your app’s Zapier App Directory listing, and may additionally use it in the Zapier app dashboard, Zapier blog marketing materials, and other parts of Zapier’s app and content that promote your app’s integrations.
 
 ## How to Design Successful Zapier Integrations
 
