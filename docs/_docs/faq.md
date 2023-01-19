@@ -189,7 +189,7 @@ The last step in creating a new Trigger or Action for a Zapier integration is to
 
 ### Sample Data
 
-![Sample Data in a Trigger step with no available data](https://cdn.zappy.app/87817f335cadcda650a30547262c3636.png)
+![Sample Data in a Trigger step with no available data](https://cdn.zappy.app/05e9be8a62a663f42ab25cf2b17591b8.png)
 ![Sample Data in an Action step](https://cdn.zappy.app/42353c3702ca94af6000e3efb926a3f2.png)
 
 In the Zap Editor, Zapier will attempt to retrieve or create existing data to test Triggers and Actions. If users are in a hurry when building a Zap, or don't have any data available, they can skip these test steps. Zapier will then show the sample data instead, so they can map fields correctly in subsequent Zap steps without seeing their account's live data.
