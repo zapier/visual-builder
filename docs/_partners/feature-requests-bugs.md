@@ -45,7 +45,7 @@ If you want others on your team to receive the issue notifications, or would lik
 
 ## How to Monitor Integration Insights
 
-As you launch and maintaing your integration, you should monitor and review the integration's insights on a regular cadence. Insights include important data on both the integration's growth and usage. You can [see the metrics tracked](https://platform.zapier.com/partners/integration-quality#integration-insights-definitions) in this table, or access them for any integration you are an admin or collaborator on from the "Dashboard" tab of the developer platform.
+As you launch and maintain your integration, you should monitor and review the integration insights on a regular cadence. Insights include important data on both the integration's growth and usage, such as monthly active users, retention rates, and Zap usage by triggers and actions. You can [see all the metrics tracked](https://platform.zapier.com/partners/integration-quality#integration-insights-definitions) in this table, or access them for any integration you are an admin or collaborator on from the "Dashboard" tab of the developer platform.
 
 ![Screenshot of Dashboard tab in left sidebar of Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
 
