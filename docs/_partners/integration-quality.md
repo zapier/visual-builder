@@ -147,7 +147,7 @@ The following includes definitions for each of the metrics provided in the integ
 | **Daily active Zaps**       | Number of *active Zaps in a day.<br><br> *Active Zaps = number of Zaps currently on and using the integration. | <ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul>                   |
 | **Active users retention**  | The percentage of active users *retained each month.<br><br> *Retention = users who have at least one successful task executed in a given month.                  |                              |
 | **Usage by Trigger**        | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each trigger.  | By integration version                       |
-| **Usage by Action**         | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each action.   | By integration version
+| **Usage by Action**         | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each action.   | By integration version                       |
 
 ## Practical Applications of Integration Insights
 
