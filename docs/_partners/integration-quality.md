@@ -137,58 +137,17 @@ Approaching active user retention with a long-term strategy can help maintain a 
 
 The following includes definitions for each of the metrics provided in the integration Dashboard:
 
-<table>
-  <tr>
-    <th><b>Metric</br></th>
-    <th>Definition</th>
-    <th>Available Filters</th>
-  </tr>
-  <tr>
-    <td><b>New users</br></td>
-    <td>Total number of *new users using the integration over a selected period of time.<br><br> *A new user = first time a user creates and activates a Zap with this integration.</td>
-    <td><ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul></td>
-  </tr>
-  <tr>
-    <td><b>Bugs & feature requests</br></td>
-    <td>Total number of open bugs and feature requests for the integrations.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>Daily active users</br></td>
-    <td>Number of users who had a Zap *activated in a day.<br><br> *Activated = Zap is on and successfully ran at least one task.</td>
-    <td><ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul></td>
-  </tr>
-  <tr>
-    <td><b>Monthly active users</br></td>
-    <td>Total number of users who had a Zap *activated in a given month.<br><br> *Activated = Zap is on and successfully ran at least one task.</td>
-    <td>By year</td>
-  </tr>
-  <tr>
-    <td><b>Active Zaps</br></td>
-    <td>Total number of *active Zaps over a selected period of time.<br><br> *Active Zaps = number of Zaps currently on and using the integration.</td>
-    <td><ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul></td>
-  </tr>
-  <tr>
-    <td><b>Daily Active Zaps</br></td>
-    <td>Number of *active Zaps in a day.<br><br> *Active Zaps = number of Zaps currently on and using the integration.</td>
-    <td><ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul></td>
-  </tr>
-  <tr>
-    <td><b>Active users retention</br></td>
-    <td>The percentage of active users *retained each month.<br><br> *Retention = users who have at least one successful task executed in a given month.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>Usage by trigger</br></td>
-    <td>Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each trigger.</td>
-    <td>By integration version</td>
-  </tr>
-  <tr>
-    <td><b>Usage by action</br></td>
-    <td>Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each action.</td>
-    <td>By integration version</td>
-  </tr>
-</table>
+| **Metric**                  | Definition                                                                              | Available Filters   |
+|-----------------------------|-----------------------------------------------------------------------------------------|---------------------|
+| **New users**               | Total number of *new users using the integration over a selected period of time.<br><br> *A new user = first time a user creates and activates a Zap with this integration. | <ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul> |
+| **Bugs & feature requests** | Total number of open bugs and feature requests for the integrations.                    |                     |
+| **Daily active users**      | Number of users who had a Zap *activated in a day.<br><br> *Activated = Zap is on and successfully ran at least one task. | <ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul> |
+| **Monthly active users**    | Total number of users who had a Zap *activated in a given month.<br><br> *Activated = Zap is on and successfully ran at least one task.                         | By year                  |
+| **Active Zaps**             | Total number of *active Zaps over a selected period of time.<br><br> *Active Zaps = number of Zaps currently on and using the integration.                  | <ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul>  |
+| **Daily active Zaps**       | Number of *active Zaps in a day.<br><br> *Active Zaps = number of Zaps currently on and using the integration. | <ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul>                   |
+| **Active users retention**  | The percentage of active users *retained each month.<br><br> *Retention = users who have at least one successful task executed in a given month.                  |                              |
+| **Usage by trigger**        | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each trigger.  | By integration version                       |
+| **Usage by action**         | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each action.   | By integration version                       |
 
 
 ## Practical Applications of Integration Insights
