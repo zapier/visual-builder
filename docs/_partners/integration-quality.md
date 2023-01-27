@@ -23,10 +23,10 @@ Utilize the various tools and resources available in the developer platform, suc
 
 ## How to view insights
 
-1. Go to the [Zapier Developer Platform](https://developer.zapier.com/) through your Zapier account to see integrations you can access.
+1. Sign into [Zapier Developer Platform](https://developer.zapier.com/) through your Zapier account to see integrations you can access.
 2. Select an integration to view its insights. You **MUST** be an admin or collaborator to view an integration’s Dashboard.
-    * If an integration isn’t listed, ask an admin to invite you or try adding yourself as a collaborator [here](https://developer.zapier.com/join-integration).
-3. Click on “Dashboard” in the lefthand sidebar to view growth and usage insights.
+    * If an integration isn’t listed, ask an admin to invite you or try [adding yourself as a collaborator](https://developer.zapier.com/join-integration).
+3. Navigate to “Dashboard” in the lefthand sidebar to view growth and usage insights.
 
 ![Screenshot of Dashboard tab in Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
 
@@ -153,4 +153,4 @@ The following includes definitions for each of the metrics provided in the integ
 
 * Launching a co-marketing campaign or running ads? Track daily and monthly MAU over the launch period to track changes in usage.
 * Noticing certain Triggers and Actions with higher activations? Create additional Zap Templates to expand usage further since you know they are popular functionality.
-* Noticing certain Triggers and Actions with lower activation? Hop into the Zap Editor and test them out yourself. Are there any technical or usability issues you experience? How do other top app’s in your category implement similar functionality?
+* Noticing certain Triggers and Actions with lower activation? Hop into the Zap Editor and test them out yourself. Are there any technical or usability issues you experience? How do other top apps in your category implement similar functionality?
