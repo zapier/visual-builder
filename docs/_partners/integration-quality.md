@@ -21,6 +21,14 @@ We’ll examine the main metrics around integration health and explore what they
 
 Utilize the various tools and resources available in the developer platform, such as [Bugs and Feature Requests](https://platform.zapier.com/partners/feature-requests-bugs#how-to-monitor-feature-requests-and-bugs), [Monitoring](https://platform.zapier.com/docs/testing#monitoring), and your integration’s Dashboard to monitor and analyze these metrics and your integration’s health. Let’s dig in!
 
+## How to view insights
+
+1. Sign into [Zapier Developer Platform](https://developer.zapier.com/) through your Zapier account to see integrations you can access.
+2. Select an integration to view its insights. You **MUST** be an admin or collaborator to view an integration’s Dashboard.
+    * If an integration isn’t listed, ask an admin to invite you or try [adding yourself as a collaborator](https://developer.zapier.com/join-integration).
+3. Navigate to “Dashboard” in the lefthand sidebar to view growth and usage insights.
+
+![Screenshot of Dashboard tab in Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
 
 ## Errors
 
@@ -123,3 +131,68 @@ Approaching active user retention with a long-term strategy can help maintain a 
 * [Embed](https://platform.zapier.com/embed/overview) the Zapier experience with copy-and-paste and customizable code within your platform to provide automation value directly to users. Embeds have proven to [reduce churn](https://platform.zapier.com/partner_success_stories/all) on Partners’ platforms. Find live embed examples under the ‘Embed’ tab of the integration’s developer platform.
 * [Share use cases](https://platform.zapier.com/partners/partner-faq#tip-3-share-zapier-use-cases-in-your-onboarding) widely during your platform’s onboarding process. Having multiple Zaps using your integration increases stickiness of users not only to the Zapier integration, but also to your platform.
 * Update the integration regularly with features as your platform evolves. [Invite stakeholders to your integration](https://platform.zapier.com/quickstart/invite-team-member) to give them admin or read-only access to insights, metrics, and feedback to prioritize and align improvements. 
+
+
+## Integration Insights Definitions
+
+The following includes definitions for each of the metrics provided in the integration Dashboard:
+
+<table>
+  <tr>
+    <th><b>Metric</br></th>
+    <th>Definition</th>
+    <th>Available Filters</th>
+  </tr>
+  <tr>
+    <td><b>New users</br></td>
+    <td>Total number of *new users using the integration over a selected period of time.<br><br> *A new user = first time a user creates and activates a Zap with this integration.</td>
+    <td><ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul></td>
+  </tr>
+  <tr>
+    <td><b>Bugs & feature requests</br></td>
+    <td>Total number of open bugs and feature requests for the integrations.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><b>Daily active users</br></td>
+    <td>Number of users who had a Zap *activated in a day.<br><br> *Activated = Zap is on and successfully ran at least one task.</td>
+    <td><ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul></td>
+  </tr>
+  <tr>
+    <td><b>Monthly active users</br></td>
+    <td>Total number of users who had a Zap *activated in a given month.<br><br> *Activated = Zap is on and successfully ran at least one task.</td>
+    <td>By year</td>
+  </tr>
+  <tr>
+    <td><b>Active Zaps</br></td>
+    <td>Total number of *active Zaps over a selected period of time.<br><br> *Active Zaps = number of Zaps currently on and using the integration.</td>
+    <td><ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul></td>
+  </tr>
+  <tr>
+    <td><b>Daily Active Zaps</br></td>
+    <td>Number of *active Zaps in a day.<br><br> *Active Zaps = number of Zaps currently on and using the integration.</td>
+    <td><ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul></td>
+  </tr>
+  <tr>
+    <td><b>Active users retention</br></td>
+    <td>The percentage of active users *retained each month.<br><br> *Retention = users who have at least one successful task executed in a given month.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><b>Usage by trigger</br></td>
+    <td>Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each trigger.</td>
+    <td>By integration version</td>
+  </tr>
+  <tr>
+    <td><b>Usage by action</br></td>
+    <td>Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each action.</td>
+    <td>By integration version</td>
+  </tr>
+</table>
+
+
+## Practical Applications of Integration Insights
+
+* Launching a co-marketing campaign or running ads? Track daily and monthly MAU over the launch period to track changes in usage.
+* Noticing certain triggers and actions with higher activations? Create additional Zap Templates to expand usage further since you know they are popular functionality.
+* Noticing certain triggers and actions with lower activation? Hop into the Zap Editor and test them out yourself. Are there any technical or usability issues you experience? How do other top apps in your category implement similar functionality?
