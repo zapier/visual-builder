@@ -43,6 +43,14 @@ You can see additional details about the issue, along with the trigger or action
 
 If you want others on your team to receive the issue notifications, or would like to route them to your support or developer team inbox, you can add additional notification email addresses from the bottom of the _Issues_ tab. You may also remove the original developer from the issue after you've added an additional contact.
 
+## How to Monitor Integration Insights
+
+As you launch and maintaing your integration, you should monitor and review the integration's insights on a regular cadence. Insights include important data on both the integration's growth and usage. You can [see the metrics tracked](https://platform.zapier.com/partners/integration-quality#integration-insights-definitions) in this table, or access them for any integration you are an admin or collaborator on from the "Dashboard" tab of the developer platform.
+
+![Screenshot of Dashboard tab in left sidebar of Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
+
+You can filter most growth metrics by the last X number of days to identify trends and changes in user activity in correlation to marketing initiatives, integration changes, and product updates like embedding. Usage details for each trigger and action will show which functionalities are the most popular and being effectively utilized. You can easily and safely share access to the insights by [inviting collaborators](https://platform.zapier.com/quickstart/invite-team-member#collaborator) to the integration without giving them permissions to make changes to it.
+
 ## How to Make a New Version of Your Integration
 
 Sometimes you may want to add something new to your integration. You may need to fix bugs in your integration, or add additional details to resolve user issues. You might want to add additional triggers, actions, or searches to your integration as uses request them. Or, over time, you may need to change your app's authentication and API calls.
