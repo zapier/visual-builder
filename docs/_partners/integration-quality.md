@@ -179,13 +179,13 @@ The following includes definitions for each of the metrics provided in the integ
     <td></td>
   </tr>
   <tr>
-    <td><b>Usage by Trigger</br></td>
-    <td>Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each Trigger.</td>
+    <td><b>Usage by trigger</br></td>
+    <td>Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each trigger.</td>
     <td>By integration version</td>
   </tr>
   <tr>
-    <td><b>Usage by Action</br></td>
-    <td>Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each Action.</td>
+    <td><b>Usage by action</br></td>
+    <td>Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each action.</td>
     <td>By integration version</td>
   </tr>
 </table>
@@ -194,5 +194,5 @@ The following includes definitions for each of the metrics provided in the integ
 ## Practical Applications of Integration Insights
 
 * Launching a co-marketing campaign or running ads? Track daily and monthly MAU over the launch period to track changes in usage.
-* Noticing certain Triggers and Actions with higher activations? Create additional Zap Templates to expand usage further since you know they are popular functionality.
-* Noticing certain Triggers and Actions with lower activation? Hop into the Zap Editor and test them out yourself. Are there any technical or usability issues you experience? How do other top apps in your category implement similar functionality?
+* Noticing certain triggers and actions with higher activations? Create additional Zap Templates to expand usage further since you know they are popular functionality.
+* Noticing certain triggers and actions with lower activation? Hop into the Zap Editor and test them out yourself. Are there any technical or usability issues you experience? How do other top apps in your category implement similar functionality?
