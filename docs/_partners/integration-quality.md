@@ -21,7 +21,7 @@ We’ll examine the main metrics around integration health and explore what they
 
 Utilize the various tools and resources available in the developer platform, such as [Bugs and Feature Requests](https://platform.zapier.com/partners/feature-requests-bugs#how-to-monitor-feature-requests-and-bugs), [Monitoring](https://platform.zapier.com/docs/testing#monitoring), and your integration’s Dashboard to monitor and analyze these metrics and your integration’s health. Let’s dig in!
 
-## How to view insights
+## How to View Insights
 
 1. Sign into [Zapier Developer Platform](https://developer.zapier.com/) through your Zapier account to see integrations you can access.
 2. Select an integration to view its insights. You **MUST** be an admin or collaborator to view an integration’s Dashboard.
