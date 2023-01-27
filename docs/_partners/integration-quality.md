@@ -131,3 +131,27 @@ Approaching active user retention with a long-term strategy can help maintain a 
 * [Embed](https://platform.zapier.com/embed/overview) the Zapier experience with copy-and-paste and customizable code within your platform to provide automation value directly to users. Embeds have proven to [reduce churn](https://platform.zapier.com/partner_success_stories/all) on Partners’ platforms. Find live embed examples under the ‘Embed’ tab of the integration’s developer platform.
 * [Share use cases](https://platform.zapier.com/partners/partner-faq#tip-3-share-zapier-use-cases-in-your-onboarding) widely during your platform’s onboarding process. Having multiple Zaps using your integration increases stickiness of users not only to the Zapier integration, but also to your platform.
 * Update the integration regularly with features as your platform evolves. [Invite stakeholders to your integration](https://platform.zapier.com/quickstart/invite-team-member) to give them admin or read-only access to insights, metrics, and feedback to prioritize and align improvements. 
+
+
+## Integration Insights Definitions
+
+The following includes definitions for each of the metrics provided in the integration Dashboard:
+
+| **Metric**                  | Definition                                                                              | Available Filters   |
+|-----------------------------|-----------------------------------------------------------------------------------------|---------------------|
+| **New users**               | Total number of *new users using the integration over a selected period of time.<br><br> *A new user = first time a user creates and activates a Zap with this integration. | <ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul> |
+| **Bugs & feature requests** | Total number of open bugs and feature requests for the integrations.                    |                     |
+| **Daily active users**      | Number of users who had a Zap *activated in a day.<br><br> *Activated = Zap is on and successfully ran at least one task. | <ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul> |
+| **Monthly active users**    | Total number of users who had a Zap *activated in a given month.<br><br> *Activated = Zap is on and successfully ran at least one task.                         | By year                  |
+| **Active Zaps**             | Total number of *active Zaps over a selected period of time.<br><br> *Active Zaps = number of Zaps currently on and using the integration.                  | <ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul>  |
+| **Daily active Zaps**       | Number of *active Zaps in a day.<br><br> *Active Zaps = number of Zaps currently on and using the integration. | <ul><li>Last 7 days</li><li>Last 30 days</li><li>Last 90 days</li></ul>                   |
+| **Active users retention**  | The percentage of active users *retained each month.<br><br> *Retention = users who have at least one successful task executed in a given month.                  |                              |
+| **Usage by Trigger**        | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each trigger.  | By integration version                       |
+| **Usage by Action**         | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each action.   | By integration version
+
+## Practical Applications of Integration Insights
+
+* Launching a co-marketing campaign or running ads? Track daily and monthly MAU over the launch period to track changes in usage.
+* Noticing certain Triggers and Actions with higher activations? Create additional Zap Templates to expand usage further since you know they are popular functionality.
+* Noticing certain Triggers and Actions with lower activation? Hop into the Zap Editor and test them out yourself. Are there any technical or usability issues you experience? How do other top app’s in your category implement similar functionality?
+
