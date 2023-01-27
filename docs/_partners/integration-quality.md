@@ -154,4 +154,3 @@ The following includes definitions for each of the metrics provided in the integ
 * Launching a co-marketing campaign or running ads? Track daily and monthly MAU over the launch period to track changes in usage.
 * Noticing certain Triggers and Actions with higher activations? Create additional Zap Templates to expand usage further since you know they are popular functionality.
 * Noticing certain Triggers and Actions with lower activation? Hop into the Zap Editor and test them out yourself. Are there any technical or usability issues you experience? How do other top app’s in your category implement similar functionality?
-
