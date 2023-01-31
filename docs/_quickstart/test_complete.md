@@ -7,7 +7,7 @@ redirect_from: /quick-start/
 
 # Test Your Integration
 
-![Testing Zapier Integration](https://cdn.zappy.app/eeff50e2737492689f688c379c1db65a.gif)
+![Test Zapier Integration](https://cdn.zappy.app/eeff50e2737492689f688c379c1db65a.gif)
 
 _Here's how your example GitHub integration looks inside Zapier_
 
