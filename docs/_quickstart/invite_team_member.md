@@ -25,27 +25,27 @@ Subscribers receive monthly email updates only. This is a legacy role that is no
 
 | **Permission**                                                    	| **Admin** 	| **Collaborator** 	| **Subscriber** (Legacy) 	|
 |-------------------------------------------------------------------	|-----------	|------------------	|-------------------------	|
-| View Partner Program                                              	| ✓         	| ✓                	| X                       	|
-| View Integration Settings                                         	| ✓         	| ✓                	| X                       	|
-| Edit Integration Settings (private integrations only)             	| ✓         	| ✓                	| X                       	|
-| Validate Integration                                              	| ✓         	| ✓                	| X                       	|
-| Publish Integration (private integrations only)                   	| ✓         	| X                	| X                       	|
-| View Authentication, Trigger and Action pages (no sensitive info) 	| ✓         	| ✓                	| X                       	|
-| Edit Integration                                                  	| ✓         	| X                	| X                       	|
-| View Integration Versions                                         	| ✓         	| ✓                	| X                       	|
-| Manage Integration Versions                                       	| ✓         	| X                	| X                       	|
-| View and Comment on Bug and Feature Requests                      	| ✓         	| ✓                	| X                       	|
-| Invite Users to Use Integration                                   	| ✓         	| ✓                	| X                       	|
-| View Team Members                                                 	| ✓         	| ✓                	| X                       	|
-| Add Admins as Team Members                                        	| ✓         	| X                	| X                       	|
-| Add Collaborators as Team Members                                 	| ✓         	| ✓                	| X                       	|
-| Remove Team Members                                               	| ✓         	| X                	| X                       	|
-| View Analytics                                                    	| ✓         	| ✓                	| X                       	|
-| Monitor Events and Logs                                           	| ✓         	| X                	| X                       	|
-| View Historical Audit Logs                                        	| ✓         	| ✓                	| X                       	|
-| Zapier Command Line Interface (CLI)                               	| ✓         	| X                	| X                       	|
-| Embed Zapier Partner Tools                                        	| ✓         	| ✓                	| X                       	|
-| Receive Integration Issue Notification Email                      	| ✓         	| X                	| X                       	|
+| View Partner Program                                              	| ✓         	| ✓                	| -                       	|
+| View Integration Settings                                         	| ✓         	| ✓                	| -                       	|
+| Edit Integration Settings (private integrations only)             	| ✓         	| ✓                	| -                       	|
+| Validate Integration                                              	| ✓         	| ✓                	| -                       	|
+| Publish Integration (private integrations only)                   	| ✓         	| -                	| -                       	|
+| View Authentication, Trigger and Action pages (no sensitive info) 	| ✓         	| ✓                	| -                       	|
+| Edit Integration                                                  	| ✓         	| -                	| -                       	|
+| View Integration Versions                                         	| ✓         	| ✓                	| -                       	|
+| Manage Integration Versions                                       	| ✓         	| -                	| -                       	|
+| View and Comment on Bug and Feature Requests                      	| ✓         	| ✓                	| -                       	|
+| Invite Users to Use Integration                                   	| ✓         	| ✓                	| -                       	|
+| View Team Members                                                 	| ✓         	| ✓                	| -                       	|
+| Add Admins as Team Members                                        	| ✓         	| -                	| -                       	|
+| Add Collaborators as Team Members                                 	| ✓         	| ✓                	| -                       	|
+| Remove Team Members                                               	| ✓         	| -                	| -                       	|
+| View Analytics                                                    	| ✓         	| ✓                	| -                       	|
+| Monitor Events and Logs                                           	| ✓         	| -                	| -                       	|
+| View Historical Audit Logs                                        	| ✓         	| ✓                	| -                       	|
+| Zapier Command Line Interface (CLI)                               	| ✓         	| -                	| -                       	|
+| Embed Zapier Partner Tools                                        	| ✓         	| ✓                	| -                       	|
+| Receive Integration Issue Notification Email                      	| ✓         	| ✓                	| -                       	|
 | Receive Monthly Partner Newsletter Email                          	| ✓         	| ✓                	| ✓                       	|
 
 ## Manage Team - Settings
