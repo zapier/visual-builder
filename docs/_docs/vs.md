@@ -17,55 +17,55 @@ Zapier CLI is the most advanced way to build integrations in your local developm
 
 | Authentication | UI | CLI |
 |----------------|----|-----|
-| Basic Auth | :heavy_check_mark: | :heavy_check_mark: |
-| Session Auth | :heavy_check_mark:  | :heavy_check_mark:  |
-| Custom / "API Key" | :heavy_check_mark: | :heavy_check_mark: |
-| OAuth v1 | - | :heavy_check_mark: |
-| OAuth v2 | :heavy_check_mark: | :heavy_check_mark: |
+| Basic Auth | ✓ | ✓ |
+| Session Auth | ✓  | ✓  |
+| Custom / "API Key" | ✓ | ✓ |
+| OAuth v1 | - | ✓ |
+| OAuth v2 | ✓ | ✓ |
 
 
 | Triggers | UI | CLI |
 |----------|----|-----|
-| REST Hooks | :heavy_check_mark: | :heavy_check_mark: |
-| Polling Triggers | :heavy_check_mark:  | :heavy_check_mark:  |
+| REST Hooks | ✓ | ✓ |
+| Polling Triggers | ✓  | ✓  |
 | Support for _Static_ Web Hooks | - | - |
-| Customize request handling with JavaScript | :heavy_check_mark: | :heavy_check_mark: |
+| Customize request handling with JavaScript | ✓ | ✓ |
 
 
 | Search Actions | UI | CLI |
 |----------------|----|-----|
-| Search or Create functionality | :heavy_check_mark: | :heavy_check_mark: |
-| Customize request handling with JavaScript | :heavy_check_mark:  | :heavy_check_mark:  |
+| Search or Create functionality | ✓ | ✓ |
+| Customize request handling with JavaScript | ✓  | ✓  |
 
 
 
 | Create Actions | UI | CLI |
 |----------------|----|-----|
-| Customize request handling with JavaScript | :heavy_check_mark:  | :heavy_check_mark:  |
+| Customize request handling with JavaScript | ✓  | ✓  |
 
 
 | Advanced | UI | CLI |
 |----------------|----|-----|
-| Custom middleware | -  | :heavy_check_mark:  |
-| Resources | -  | :heavy_check_mark:  |
-| File support | -  | :heavy_check_mark:  |
-| Hydration | -  | :heavy_check_mark:  |
-| Import and use NPM modules  | -  | :heavy_check_mark:  |
-| Organize code with common functions  | -  | :heavy_check_mark:  |
+| Custom middleware | -  | ✓  |
+| Resources | -  | ✓  |
+| File support | -  | ✓  |
+| Hydration | -  | ✓  |
+| Import and use NPM modules  | -  | ✓  |
+| Organize code with common functions  | -  | ✓  |
 
 
 | Testing & Workflow | UI | CLI |
 |--------------------|----|-----|
-| GUI with form-based editor | :heavy_check_mark:  | -  |
-| WYSIWYG form preview | :heavy_check_mark:  | -  |
-| Write custom automated test suites | -  | :heavy_check_mark:  |
-| Add team members to project | :heavy_check_mark:*  | :heavy_check_mark:  |
-| Manage testers  | :heavy_check_mark:  | :heavy_check_mark:  |
-| Monitor usage  | :heavy_check_mark:  | :heavy_check_mark:  |
-| View logs  | :heavy_check_mark:  | :heavy_check_mark:  |
-| Manage versions  | :heavy_check_mark:  | :heavy_check_mark:  |
-| Use custom source code manager  | -  | :heavy_check_mark:  |
-| Export CLI project  | :heavy_check_mark:  | N/A  |
+| GUI with form-based editor | ✓  | -  |
+| WYSIWYG form preview | ✓  | -  |
+| Write custom automated test suites | -  | ✓  |
+| Add team members to project | ✓*  | ✓  |
+| Manage testers  | ✓  | ✓  |
+| Monitor usage  | ✓  | ✓  |
+| View logs  | ✓  | ✓  |
+| Manage versions  | ✓  | ✓  |
+| Use custom source code manager  | -  | ✓  |
+| Export CLI project  | ✓  | N/A  |
 
 
 Zapier Platform UI and CLI both include the same core authentication, trigger, action and most testing features. The CLI additionally lets you add advanced features including resources, middleware, files, hydration, and NPM modules, along with options to write custom test suites. The UI gives you an easier way to build integrations with a form-based editor and WYSIWYG preview of your integration in Zapier, with the option to [export projects to the CLI](/docs/export) if your needs change.
