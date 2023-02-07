@@ -13,7 +13,60 @@ Zapier Platform UI is the easiest way to build new integrations in a web app. Ad
 
 Zapier CLI is the most advanced way to build integrations in your local development environment. Zapier CLI is a terminal-based app that helps you scaffold new integrations then code them in JavaScript using your local development environment and code editor. Once you've coded your app details, authentication, triggers, and actions into the Zapier app package, you can push your Zapier integration to Zapier's server, manage new versions, and invite collaborators all from the command line. It's a powerful way for engineers to build Zapier integrations in their standard development workflow.
 
-![Zapier Platform UI and CLI comparison table](https://cdn.zapier.com/storage/photos/f79f4f8387cd0291d9bf9b0a74c82088.png)
+### Zapier Platform UI and CLI comparison tables
+
+| Authentication | UI | CLI |
+|----------------|----|-----|
+| Basic Auth | :heavy_check_mark: | :heavy_check_mark: |
+| Session Auth | :heavy_check_mark:  | :heavy_check_mark:  |
+| Custom / "API Key" | :heavy_check_mark: | :heavy_check_mark: |
+| OAuth v1 | - | :heavy_check_mark: |
+| OAuth v2 | :heavy_check_mark: | :heavy_check_mark: |
+
+
+| Triggers | UI | CLI |
+|----------|----|-----|
+| REST Hooks | :heavy_check_mark: | :heavy_check_mark: |
+| Polling Triggers | :heavy_check_mark:  | :heavy_check_mark:  |
+| Support for _Static_ Web Hooks | - | - |
+| Customize request handling with JavaScript | :heavy_check_mark: | :heavy_check_mark: |
+
+
+| Search Actions | UI | CLI |
+|----------------|----|-----|
+| Search or Create functionality | :heavy_check_mark: | :heavy_check_mark: |
+| Customize request handling with JavaScript | :heavy_check_mark:  | :heavy_check_mark:  |
+
+
+
+| Create Actions | UI | CLI |
+|----------------|----|-----|
+| Customize request handling with JavaScript | :heavy_check_mark:  | :heavy_check_mark:  |
+
+
+| Advanced | UI | CLI |
+|----------------|----|-----|
+| Custom middleware | -  | :heavy_check_mark:  |
+| Resources | -  | :heavy_check_mark:  |
+| File support | -  | :heavy_check_mark:  |
+| Hydration | -  | :heavy_check_mark:  |
+| Import and use NPM modules  | -  | :heavy_check_mark:  |
+| Organize code with common functions  | -  | :heavy_check_mark:  |
+
+
+| Testing & Workflow | UI | CLI |
+|--------------------|----|-----|
+| GUI with form-based editor | :heavy_check_mark:  | -  |
+| WYSIWYG form preview | :heavy_check_mark:  | -  |
+| Write custom automated test suites | -  | :heavy_check_mark:  |
+| Add team members to project | :heavy_check_mark:*  | :heavy_check_mark:  |
+| Manage testers  | :heavy_check_mark:  | :heavy_check_mark:  |
+| Monitor usage  | :heavy_check_mark:  | :heavy_check_mark:  |
+| View logs  | :heavy_check_mark:  | :heavy_check_mark:  |
+| Manage versions  | :heavy_check_mark:  | :heavy_check_mark:  |
+| Use custom source code manager  | -  | :heavy_check_mark:  |
+| Export CLI project  | :heavy_check_mark:  | N/A  |
+
 
 Zapier Platform UI and CLI both include the same core authentication, trigger, action and most testing features. The CLI additionally lets you add advanced features including resources, middleware, files, hydration, and NPM modules, along with options to write custom test suites. The UI gives you an easier way to build integrations with a form-based editor and WYSIWYG preview of your integration in Zapier, with the option to [export projects to the CLI](/docs/export) if your needs change.
 
