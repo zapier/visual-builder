@@ -20,7 +20,7 @@ Zapier CLI is the most advanced way to build integrations in your local developm
 | Basic Auth | ✓ | ✓ |
 | Session Auth | ✓  | ✓  |
 | Custom / "API Key" | ✓ | ✓ |
-| OAuth v1 | - | ✓ |
+| OAuth v1 | X | ✓ |
 | OAuth v2 | ✓ | ✓ |
 
 
@@ -28,7 +28,7 @@ Zapier CLI is the most advanced way to build integrations in your local developm
 |----------|----|-----|
 | REST Hooks | ✓ | ✓ |
 | Polling Triggers | ✓  | ✓  |
-| Support for _Static_ Web Hooks | - | - |
+| Support for _Static_ Web Hooks | X | X |
 | Customize request handling with JavaScript | ✓ | ✓ |
 
 
@@ -46,25 +46,25 @@ Zapier CLI is the most advanced way to build integrations in your local developm
 
 | Advanced | UI | CLI |
 |----------------|----|-----|
-| Custom middleware | -  | ✓  |
-| Resources | -  | ✓  |
-| File support | -  | ✓  |
-| Hydration | -  | ✓  |
-| Import and use NPM modules  | -  | ✓  |
-| Organize code with common functions  | -  | ✓  |
+| Custom middleware | X  | ✓  |
+| Resources | X  | ✓  |
+| File support | X  | ✓  |
+| Hydration | X  | ✓  |
+| Import and use NPM modules  | X  | ✓  |
+| Organize code with common functions  | X  | ✓  |
 
 
 | Testing & Workflow | UI | CLI |
 |--------------------|----|-----|
-| GUI with form-based editor | ✓  | -  |
-| WYSIWYG form preview | ✓  | -  |
-| Write custom automated test suites | -  | ✓  |
+| GUI with form-based editor | ✓  | X  |
+| WYSIWYG form preview | ✓  | X  |
+| Write custom automated test suites | X  | ✓  |
 | Add team members to project | ✓*  | ✓  |
 | Manage testers  | ✓  | ✓  |
 | Monitor usage  | ✓  | ✓  |
 | View logs  | ✓  | ✓  |
 | Manage versions  | ✓  | ✓  |
-| Use custom source code manager  | -  | ✓  |
+| Use custom source code manager  | X  | ✓  |
 | Export CLI project  | ✓  | N/A  |
 
 
