@@ -75,7 +75,7 @@ If you check the _Alters Dynamic Fields_ option on a field, Zapier will automati
 ### Dropdown
 
 <a id="static"></a>
-**Static Dropdown**
+#### Static Dropdown
 
 ![Zapier form field dropdown][image-4]
 
@@ -114,9 +114,9 @@ For example, if our API expected a value of `1` or `2`, but `1` actually means `
 ```
 
 <a id="dynamic"></a>
-**Dynamic Dropdown**
+#### Dynamic Dropdown
 
-If users need to select data from their account in your app—such as a project, folder, team member, or other user-specific detail—then you will want to use a dynamic dropdown. That will show a dropdown menu that has Zapier first fetch data from your API and display it in the menu, with a friendly name for the item and the raw data from your API.
+If users need to select data from their account in your app—such as a project, folder, team member, or other user-specific detail—then you can use a dynamic dropdown. For dynamic dropdowns, Zapier first fetches data from your API and then displays it in the menu.
 
 Zapier uses triggers to fetch the values for dynamic dropdown menus. The best way to make a dropdown is to make a dedicated trigger specifically for the dropdown data.
 
@@ -124,21 +124,21 @@ Zapier uses triggers to fetch the values for dynamic dropdown menus. The best wa
 
 ![Zapier hidden trigger setting](https://cdn.zappy.app/fc6965bd8bfd1aa64cd5c1f75206ed3f.png)
 
-First make a trigger as normal, with a key, name, and noun, though feel free to leave the description free as this trigger won't be seen by users. In the _Visibility Options_ field, select `Hidden` to hide this trigger from your app's trigger list in Zapier.
+First, create a trigger as normal, with a key, name, and noun. Feel free to leave the description empty, as this trigger won't be seen by users. In the _Visibility Options_ field, select `Hidden` to hide this trigger from your app's trigger list in Zapier.
 
-Skip the _Input Designer_ tab as the dynamic dropdown does not need any input data.
+Skip the _Input Designer_ tab, as the dynamic dropdown cannot require any user input.
 
 ![Zapier hidden trigger API setting](https://cdn.zappy.app/06a95ff12355256500957dee6aa007d0.png)
 
-Then select the _API Configuration_ tab, and add the API call where Zapier can fetch the data from your API. In standard Zapier triggers, you would use an API call that fetches new or newly updated items. Here, though, use an API call that pulls in a list of the data that you need for your dynamic dropdown.
+Then select the _API Configuration_ tab, and add the API call where Zapier can fetch the data from your API. For standard Zapier triggers, you would use an API call that fetches new or newly updated items. For dynamic dropdowns, instead use an API call that pulls in a list of the items that the user can select from.
 
 ![Zapier hidden trigger API options](https://cdn.zappy.app/81be9d8ede3b19a8d4b5f58125575076.png)
 
-Many API calls will need additional configuration to pull in data in the order that makes most sense in your menu. You may want to sort options in the order they were added or updated, and could want to have the API fetch more items at once than the default. Set these from the _Show Options_ menu.
+Many API calls will need additional configuration to pull in data in the order that makes most sense in your menu. You may want to sort options in the order they were added or updated, or want to have the API fetch more items at once than the default. Set these parameters from the _Show Options_ menu.
 
-Additionally, most dynamic menus should let users load additional data if your API supports pagination. The first API call might pull in 20 items for example; if they request additional items, Zapier would call the API again and request the second page for the next 20 items.
+Additionally, most dynamic menus should let users load additional data if your API supports pagination. The first API call might pull in 20 items; if the user requests additional items, Zapier would call the API again and request the second page for the next 20 items.
 
-To add that, check the _Support Paging_ box, then in your API call include your API's pagination key and the {% raw %}`{{bundle.meta.page}}`{% endraw %} value to pull in a page value. Zapier will call page `0` first, then page `1` when users request additional entries, using zero-based numbering. You can customize the pagination from the _Code Mode_ button as well. Check our _[Pagination Triggers guide](https://platform.zapier.com/docs/triggers#how-to-use-pagination)_ for more details.
+To allow loading additional data with pagination, check the _Support Paging_ box. In your API call, include your API's pagination key and the {% raw %}`{{bundle.meta.page}}`{% endraw %} value to pull in a page value. Zapier will call page `0` first, then page `1` when users request additional entries, using zero-based numbering. You can customize the pagination using [Code Mode](./faq#code-mode). Check the _[Pagination Triggers guide](./triggers#how-to-use-pagination)_ for more details.
 
 <a id="order"></a>
 
@@ -146,21 +146,21 @@ To add that, check the _Support Paging_ box, then in your API call include your 
 
 ![Set output fields from dynamic dropdown](https://cdn.zappy.app/3023ea97191fbcf90222dcf42a46035d.png)
 
-Finally, you need to define the fields from your trigger that you need to use in the action input field. Test your trigger, then find the output fields needed, and add them to the _Output Fields_ list at the end of your settings page. Include at least a field with the data that Zapier needs to send to your API in the action, along with a field that includes a human friendly name for the data in that field.
+Finally, define the fields from your trigger that you need to use in the action input field. Test your trigger and identify the output fields needed, and add them to the _Output Fields_ list at the end of your settings page. Include at least a field with the data that Zapier needs to send to your API in the action, along with a field that includes a human-friendly name for the data in that field.
 
 **_Add an Input Field with Dynamic Fields_**
 
 ![Select Trigger for Dynamic Fields](https://cdn.zappy.app/f2a8c7071bf4e96e5a44073999b4ccf5.png)
 
-Then, to use that data, add a new input field to your integration, set the label, key, and other details as normal, then check the _Dropdown_ box and select the _Dynamic_ toggle. Choose the trigger with the data needed for this menu in the _Dropdown Source_ option.
+To use that data, add a new input field to your integration, and set the label, key, and other details as normal. Then, check the _Dropdown_ box and select the _Dynamic_ toggle. Choose the trigger with the data needed for this menu in the _Dropdown Source_ option.
 
-Select the field with the data your API needs for this action in the _Field Name_ menu, and the field with a human-friendly name for the data in the _Field Label_ menu. In the preview, your field will show as a dropdown menu, though you will need to use your action in a Zap to test the menu and pull in real data.
+Select the field with the data your API needs for this action in the _Field Name_ menu, and the field with a human-friendly name for the data in the _Field Label_ menu. The preview will indicate the presence of the field, but you will need to use your action in a Zap to test the menu and pull in real data.
 
-Whenever someone uses this input field in a Zap and selects this dynamic dropdown field, Zapier will poll your API for the data from that trigger, parse the entries from that field name, and show them in a user friendly dropdown menu.
+Whenever someone uses this input field in a Zap and opens the dropdown, Zapier will poll your API for the data from that trigger, parse the entries and extract the fields you specified, then show them in a user-friendly dropdown menu. The human-friendly name will be in larger, darker text, and the value to be sent to the API in smaller, lighter text.
 
-Do note that users can always choose to enter a custom value as the final option in dropdown fields, to map data from other Zap steps into this field.
+Even though the API value isn't as friendly for users as the name, it's still important to provide it so that users know what type of data the field expects. Users can always choose to enter a custom value as an alternative to using the dropdown in order to map data from other Zap steps into this field. Being able to see what type of value to map is extremely helpful to them.
 
-If you're creating dynamic dropdowns, via code, there's a few structures based on whether the order matters and you need lables. They're outlined in more detail [in the schema](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md#fieldchoicesschema), but the sparknotes is:
+If you're creating dynamic dropdowns via code, there are a few valid return types from your trigger based on whether the order matters and whether you need labels. These are outlined in more detail [in the schema](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md#fieldchoicesschema), but the short version is:
 
 | Need a Label? | Does Order Matter? | Type to Use                                                                                                                                            |
 | ------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
