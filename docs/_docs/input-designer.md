@@ -116,7 +116,7 @@ For example, if our API expected a value of `1` or `2`, but `1` actually means `
 <a id="dynamic"></a>
 #### Dynamic Dropdown
 
-If users need to select data from their account in your app—such as a project, folder, team member, or other user-specific detail—then you can use a dynamic dropdown. For dynamic dropdowns, Zapier first fetches data from your API and then displays it in the menu.
+If users need to select data from their account in your app—such as a project, folder, team member, or other user-specific detail—then you can use a dynamic dropdown. For dynamic dropdowns, Zapier first fetches data from your API and then displays it in a menu.
 
 Zapier uses triggers to fetch the values for dynamic dropdown menus. The best way to make a dropdown is to make a dedicated trigger specifically for the dropdown data.
 
@@ -158,7 +158,7 @@ Select the field with the data your API needs for this action in the _Field Name
 
 Whenever someone uses this input field in a Zap and opens the dropdown, Zapier will poll your API for the data from that trigger, parse the entries and extract the fields you specified, then show them in a user-friendly dropdown menu. The human-friendly name will be in larger, darker text, and the value to be sent to the API in smaller, lighter text.
 
-Even though the API value isn't as friendly for users as the name, it's still important to provide it so that users know what type of data the field expects. Users can always choose to enter a custom value as an alternative to using the dropdown in order to map data from other Zap steps into this field. Being able to see what type of value to map is extremely helpful to them.
+Even though the API value isn't as friendly for users as the name or label, it's still important to provide it so that users know what type of data the field expects. Users can always choose to enter a custom value as an alternative to using the dropdown in order to map data from other Zap steps into this field. Being able to see what type of value to map is extremely helpful to them.
 
 If you're creating dynamic dropdowns via code, there are a few valid return types from your trigger based on whether the order matters and whether you need labels. These are outlined in more detail [in the schema](https://github.com/zapier/zapier-platform/blob/master/packages/schema/docs/build/schema.md#fieldchoicesschema), but the short version is:
 
