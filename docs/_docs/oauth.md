@@ -80,7 +80,7 @@ Once completed, click _Continue_ to save your form and setup OAuth authenticatio
 <a id="redirect"></a>
 ## Add Zapier Redirect URL to Your App
 
-![Zapier Redirect URI](https://cdn.zappy.app/e611fc0a65b3cee099fcf99dbd6f16b0.png)
+![Zapier Redirect URI](https://cdn.zappy.app/b3e6b9ca7657ba02e4864ec28ab74951.png)
 
 If you haven't already, in a different tab or window open your app's application, integration, or API settings, and add a new application for your OAuth integration with Zapier. From Zapier's visual builder, copy the OAuth Redirect URL, similar to the one shown above, and add it to your application's integration settings.
 
