@@ -119,8 +119,9 @@ As your integration continues to accumulate users, our team will watch the growt
 
 We may invite your company to officially launch your Zapier integration and join the [Zapier Integration Partner Program](https://zapier.com/platform/partner-program). Once you launch, you will automatically join the free **Zapier Integration Partner Program** and can access the program's [many co-marketing benefits](https://zapier.com/platform/partner-program) including:
 
-- A [dedicated blog post](https://cdn.zapier.com/storage/photos/208bc1f088e3f2153b4631b6896f8cfe.png), [email](https://cdn.zapier.com/storage/photos/c7f8293e9d9cbc5b64051ae6ecca1b8c.png), and social media campaign about the launch of your integration
-- [Get leads](https://cdn.zapier.com/storage/photos/961169e674f45d11ff50e2c0510ff200.png) from your page in [Zapier's App Directory](https://zapier.com/apps)
+- A shoutout about the launch of your integration in our [updates blog post](https://zapier.com/blog/all-articles/product-news/)
+- Access to your [integration health data](https://platform.zapier.com/partners/feature-requests-bugs#how-to-monitor-integration-insights)
+- A dedicated page in [Zapier’s App Directory](https://zapier.com/apps)
 - Exposure within Zapier's product and on the sites of Zapier's {{ site.partner_count }} integration partners
 
 Here are the steps to take to officially launch and join the program:
