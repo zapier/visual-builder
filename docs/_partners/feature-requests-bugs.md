@@ -39,9 +39,7 @@ Whenever a new issue is added or updated, Zapier will log it in the _Issues_ tab
 
 You can see additional details about the issue, along with the trigger or action it affects and how many users have encountered the issue, in Zapier's issue tracker. You can reply to the Zapier team about the issue there, or can simply reply to the notification email to add a response to the issue.
 
-![Get Zapier Integration Issue Notification Emails](https://cdn.zappy.app/fcfd9a91df6a9169e33369b49f616855.png)
-
-If you want others on your team to receive the issue notifications, or would like to route them to your support or developer team inbox, you can add additional notification email addresses from the bottom of the _Issues_ tab. You may also remove the original developer from the issue after you've added an additional contact.
+Issue notifications are automatically sent to all confirmed Administrators and Collaborators on the integration team. If an Administrator or Collaboroator is listed as `Invitation Pending`, they will need to accept the invite before they start to receive issue notifications.
 
 ## How to Monitor Integration Insights
 
