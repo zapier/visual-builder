@@ -22,13 +22,15 @@ Zapier Issue Manager is available to all beta and public Zapier partners who own
 Zapier Issue Manager offers the following features:
 
 ### Triggers:
-New Issue
-Issue Closed
-New Comment
-Affected User Added
+
+* New Issue
+* Issue Closed
+* New Comment
+* Affected User Added
 
 ### Actions:
-Create Comment
-List Issues
-Find Issue
-Generate Report
+
+* Create Comment
+* List Issues
+* Find Issue
+* Generate Report
