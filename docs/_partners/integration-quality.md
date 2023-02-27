@@ -89,7 +89,9 @@ Give users the best chance to successfully activate their Zaps by making the int
 
 ## Bugs
 
-As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. Here are a couple things to note about bugs:
+As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using Zapier Issue Manager. [Learn more and request access to Zapier Issue Manager here.](https://platform.zapier.com/partners/zim)
+
+Here are a couple things to note about bugs:
 
 1. _When the number of open bugs goes above zero, it doesn’t really matter how many bugs you have._ The important datapoint is how many of your users are affected overall and what percentage of the app’s overall monthly active users that impacts.
 2. _Your past history on closing bugs doesn’t influence your current health score._ Running track in college doesn’t mean a darn thing to your doctor thirty years later if you roll in with high cholesterol because of your penchant for McDonalds and KFC. Same with bugs and integration health.
