@@ -60,7 +60,7 @@ Be sure to include a description on required fields to let users know exactly wh
 
 Have a field where users could add multiple entries in the same field? For example, Gmail’s integration lets users add multiple tags to email messages. For fields like this, check the _Allows Multiples_ box.
 
-That adds a `+` button on the far right side of your field inside Zaps; users can click that to add another entry to the field. Zapier’s platform then delivers each entry in a comma separated list to your API.
+That will add another entry row to allow the user to input another entry for that field. Zapier’s platform then delivers each entry in a comma separated list to your API.
 
 ### Alters Dynamic Fields
 
