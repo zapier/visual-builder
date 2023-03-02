@@ -297,7 +297,7 @@ So far, everything we have done has been local, on your machine. It's been fun, 
 
 Let's push a version of your app! You can have many versions of an app, which simplifies making breaking changes and testing in the future. For now, we just need a single version pushed.
 
-> If this is your first time pushing your app version - we will ask you to provide a name so we can register your app - this is a one time thing!
+> If this is your first time pushing your app version - we will ask you to provide a name and some details about your app so we can register your it - this is a one time thing!
 
 ```bash
 zapier push
