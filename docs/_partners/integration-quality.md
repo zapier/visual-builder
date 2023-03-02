@@ -15,9 +15,9 @@ Integration quality on Zapier boils down to two main pillars: **Health** and **D
 We’ll examine the main metrics around integration health and explore what they could be telling us about an integration’s quality level:
 
 * **Errors** 
-* **Zap Activation Rate**
+* **Zap activation rate**
 * **Bugs**
-* **Active User Retention**
+* **Active users retention**
 
 Utilize the various tools and resources available in the developer platform, such as [Bugs and Feature Requests](https://platform.zapier.com/partners/feature-requests-bugs#how-to-monitor-feature-requests-and-bugs), [Monitoring](https://platform.zapier.com/docs/testing#monitoring), and your integration’s Dashboard to monitor and analyze these metrics and your integration’s health. Let’s dig in!
 
@@ -58,11 +58,11 @@ If you don’t have control to make changes to the API itself, utilize custom er
     * `throw new z.errors.Error('Contact name exceeds character limit.', 'InvalidData', 400);`
 
 
-## Zap Activation Rates
+## Zap activation rates
 
-### What is Zap Activation Rate?
+### What is Zap activation rate?
 
-Consider all of the Zaps users try to create with a trigger, action, or search from your integration. Then look at the percentage of those Zaps that actually activated within 24 hours of creation, meaning the Zap ran at least one successful task. _That’s the Zap Activation Rate._
+Consider all of the Zaps users try to create with a trigger, action, or search from your integration. Then look at the percentage of those Zaps that actually activated within 24 hours of creation, meaning the Zap ran at least one successful task. _That’s the Zap activation rate._
 
 ### Does low activation mean something is broken?
 
@@ -72,7 +72,7 @@ It can also highlight that certain triggers or actions are proving challenging t
 
 ### What we have learned
 
-Zap Activation Rates at the individual trigger and action level are a great leading indicator of performance and usability. Don’t forget about the authentication step in your integration too! If users can't authenticate or get their Zaps enabled and activated, they stand little chance of ongoing success.
+Zap activation rates at the individual trigger and action level are a great leading indicator of performance and usability. Don’t forget about the authentication step in your integration too! If users can't authenticate or get their Zaps enabled and activated, they stand little chance of ongoing success.
 
 ### Best Practices
 
@@ -110,7 +110,7 @@ Regardless of the size of your integration’s user base, keeping the percent of
 * Need help with maintenance? [Match with a Zapier Expert](https://zapier.com/experts/matchmaking) to help you fix one-off bugs or maintain your integration.
 
 
-## Active Users Retention
+## Active users retention
 
 At Zapier, churn means a user used your integration in their Zaps 29 - 56 days ago, but hasn’t run a successful task in one of those Zaps in the past 28 days. This user is considered to have churned from the integration. From the opposite perspective, we can look at active users retention, or the percentage of users who haven’t churned.
 
