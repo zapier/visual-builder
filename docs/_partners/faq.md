@@ -37,7 +37,7 @@ Connecting to Zapier must be easy for the user. OAuth v2 is the preferred authen
 
 Only submit your integration for review when it is complete and ready to be published. Make sure to thoroughly test your integration for edge cases, fix all bugs, and address [integration checks](https://platform.zapier.com/docs/integration-checks-reference) before submitting. Confirm your integration adheres to our [Integration Review Guidelines](https://platform.zapier.com/partners/integration-review-guidelines) thoroughly. Please ensure both your platform and integration work consistently without errors.
 
-## User Zapier Issue Manager
+## Use Zapier Issue Manager
 
 Use Zapier Issue Manager to sync and manage issues for your Zapier integration from your own issue-tracking tools (such as Jira or Trello). [Learn more and request access to Zapier Issue Manager here.](https://platform.zapier.com/partners/zim)
 

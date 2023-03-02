@@ -35,7 +35,7 @@ Problems and issues with your integration, authentication, API calls, and more w
 
 ![Reply to Zapier Integration Issue](https://cdn.zappy.app/a5808bdc70214728d0eac9f569f2d2e7.png)
 
-Whenever a new issue is added or updated, Zapier will log it in the _Bugs & Feature Requests_ page of your app's Zapier Developer Platform page. You can reply to the Zapier team about the issue there, or reply to the notification email to add a response to the issue. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using Zapier Issue Manager. [Learn more and request access to Zapier Issue Manager here.](https://platform.zapier.com/partners/zim)
+Whenever a new issue is added or updated, Zapier will log it in the _Bugs & Feature Requests_ page of your app's Zapier Developer Platform page. You can reply to the Zapier team about the issue there, or reply to the notification email to add a response to the issue. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim).
 
 Issue notifications are automatically sent to all confirmed Administrators and Collaborators on the integration team. If an Administrator or Collaboroator is listed as `Invitation Pending`, they will need to accept the invite before they start to receive issue notifications.
 
