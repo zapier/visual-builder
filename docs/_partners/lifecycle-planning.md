@@ -4,6 +4,7 @@ order: 1
 layout: post-toc
 redirect_from: /partners/
 ---
+# How to Build and Publish a Zapier Integration
 
 ## 1. Plan Your Zapier Integration
 
@@ -93,7 +94,7 @@ The intention of this step is to ensure any show-stopping bugs are worked out an
 
 ### **3. Prepare your team to support and maintain your integration**
 
-Zapier's support team serves as frontline support for your Zapier integration. As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using Zapier Issue Manager. [Learn more and request access to Zapier Issue Manager here.](https://platform.zapier.com/partners/zim) We expect your team to promptly reply to those requests and to maintain your integration.
+Zapier's support team serves as frontline support for your Zapier integration. As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim). We expect your team to promptly reply to those requests and to maintain your integration.
 
 ### **4. Submit your integration for review by the Zapier team**
 

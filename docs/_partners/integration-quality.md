@@ -89,7 +89,7 @@ Give users the best chance to successfully activate their Zaps by making the int
 
 ## Bugs
 
-As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using Zapier Issue Manager. [Learn more and request access to Zapier Issue Manager here.](https://platform.zapier.com/partners/zim)
+As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim).
 
 Here are a couple things to note about bugs:
 
