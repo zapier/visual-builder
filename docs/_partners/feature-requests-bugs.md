@@ -29,19 +29,19 @@ Please make sure to follow [Zapier's branding guidelines](https://platform.zapie
 
 ![Issues in Zapier Integration](https://cdn.zappy.app/b986eef73a1558ee3e121cf5d985339a.png)
 
-As people use your Zapier integration, they may encounter bugs and problems with your integration, or think of new ways they'd like to use your app with Zapier, and send them to the Zapier support team. We log those in Zapier's issue tracker, which you can see from the _Bug & Feature Requests_ page in the Manage section of your integration's sidebar.
+As people use your Zapier integration, they may encounter bugs and problems with your integration, or think of new ways they'd like to use your app with Zapier, and send them to the Zapier support team. We log those in Zapier's issue tracker, which you can see from the _Bug & Feature Requests_ page in the Manage section of your integration's sidebar. 
 
-Problems and issues with your integration, authentication, API calls, and more will be logged as `bug`, while new things users require from your integration will be logged as `feature request`.
+Problems and issues with your integration, authentication, API calls, and more will be logged as `bug`, while new things users require from your integration will be logged as `feature request`. You also have the ability to filter open `bugs` and `feature requests` to view issues by individual Trigger or Action.
 
 ![Reply to Zapier Integration Issue](https://cdn.zappy.app/a5808bdc70214728d0eac9f569f2d2e7.png)
 
-Whenever a new issue is added or updated, Zapier will log it in the _Bugs & Feature Requests_ page of your app's Zapier Developer Platform page. You can reply to the Zapier team about the issue there, or reply to the notification email to add a response to the issue. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim).
+Whenever a new issue is added or updated, Zapier will log it in the _Bugs & Feature Requests_ page of your app's Zapier Developer Platform page. You can reply to the Zapier team about the issue there. These issues and comments are not visible to affected users; and users will only be notified when an issue is verified as closed/resolved by the Zapier support team. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim).
 
-Issue notifications are automatically sent to all confirmed Administrators and Collaborators on the integration team. If an Administrator or Collaboroator is listed as `Invitation Pending`, they will need to accept the invite before they start to receive issue notifications.
+Issue notifications are automatically sent to all confirmed Administrators and Collaborators on the integration team. If an Administrator or Collaborator is listed as `Invitation Pending`, they will need to accept the invite before they start to receive issue notifications.
 
 ## How to Monitor Integration Insights
 
-As you launch and maintain your integration, you should monitor and review the insights in the dashboard on a regular cadence. Insights include important data on both the integration's growth and usage, such as monthly active users, retention rates, and Zap usage by triggers and actions. You can [see all the metrics tracked](https://platform.zapier.com/partners/integration-quality#integration-insights-definitions) in this table, or access them for any integration you are an admin or collaborator on from the "Dashboard" tab of the developer platform.
+As you launch and maintain your integration, you should monitor and review the insights in the dashboard on a regular cadence. Insights include important data on both the integration's growth and usage, such as monthly active users, retention rates, and Zap usage by triggers and actions. You can [see all the metrics tracked](https://platform.zapier.com/partners/integration-quality#integration-insights-definitions) in this table, or access them for any integration you are an Admin or Collaborator on from the "Dashboard" tab of the developer platform.
 
 ![Screenshot of Dashboard tab in left sidebar of Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
 
