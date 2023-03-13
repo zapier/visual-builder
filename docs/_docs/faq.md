@@ -42,11 +42,11 @@ If your API calls need more customization, however, or your API response is in a
 
 The first time you switch to code mode, Zapier copies everything entered in the API request form, including any custom options added, and converts them to JavaScript code. It then changes the UI to code mode, where you can add code for your API call.
 
-In code mode, you can write JavaScript code, using Zapier's default code as a base or writing custom code. Use the `z.object` for Zapier specific features, including `z.console` to write to the console log, `z.JSON` to parse JSON, `z.errors` to take action on errors, and more. Check [Zapier's CLI Z Object docs](https://zapier.github.io/zapier-platform-cli/#z-object) for details.
+In code mode, you can write JavaScript code, using Zapier's default code as a base or writing custom code. Use the `z.object` for Zapier specific features, including `z.console` to write to the console log, `z.JSON` to parse JSON, `z.errors` to take action on errors, and more. Check [Zapier's CLI Z Object docs](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#z-object) for details.
 
 Additionally, use Zapier bundles to access auth data, data from user input forms, request data, and more. Learn more in our [Zapier bundle docs](https://platform.zapier.com/docs/advanced#bundle).
 
-> **Note**: If you were familiar with our legacy Web Builder environment, we used to include several 3rd party libraries, like lodash, and made them available on the z object. Those libraries are not included in the new version of the UI tool. If you need access to additional modules you can easily move your project to the [Zapier CLI](https://zapier.github.io/zapier-platform-cli) and take advantage of npm to bring in any additional libraries you need.
+> **Note**: If you were familiar with our legacy Web Builder environment, we used to include several 3rd party libraries, like lodash, and made them available on the z object. Those libraries are not included in the new version of the UI tool. If you need access to additional modules you can easily move your project to the [Zapier CLI](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md) and take advantage of npm to bring in any additional libraries you need.
 
 > Note that, in Code Mode you can import from Node's standard library with `z.require`, for example, `z.require('querystring')` or `z.require('crypto')`. We strongly recommend you keep it simple when coding in the UI tool. The CLI is much better suited to building and testing complex code. And be sure you know what you're doing - we can't guarantee that everything you might use from the standard library will be supported in our platform's runtime.
 
@@ -74,7 +74,7 @@ Here are some resources that will be helpful when using the Code Mode:
 - [When to use placeholders or curlies vs template literals](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#when-to-use-placeholders-or-curlies)
 - [Error Handling](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#error-handling)
 - [Error Response Handling](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#error-response-handling)
-- Schema Docs: [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-schema@10.2.0/packages/schema/docs/build/schema.md), [9.6.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-schema@9.6.0/packages/schema/docs/build/schema.md), [8.4.2](https://github.com/zapier/zapier-platform/blob/zapier-platform-schema@8.4.2/packages/schema/docs/build/schema.md)
+- Schema Docs: [11.3.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-schema@11.3.3/packages/schema/docs/build/schema.md), [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-schema@10.2.0/packages/schema/docs/build/schema.md), [9.7.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-schema@9.7.3/packages/schema/docs/build/schema.md)
 
 ## Is my Zapier integration using the Form or Code Mode settings?
 
