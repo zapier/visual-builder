@@ -26,7 +26,7 @@ Optionally, you can add additional parameters to the `create_url` to prefill the
 
 ## Creating Zaps without Zap Templates
 
-You can also facilitate a user's Zap creation via URL parameters instead of an existing Zap Template. This provides flexibility to redirect users to a pre-populated Zap Editor with known context from your app without publishing a Zap Template for each specific use case. Similar to the [prefill](https://platform.zapier.com/embed/zap-editor#prefill-options) options for automatically defining field values for users, you can prefill apps, events, and input field values in the Zap Editor with the following URL syntax:
+You can also facilitate a user's Zap creation via URL parameters instead of an existing Zap Template. This provides flexibility to redirect users to a pre-populated Zap Editor with known context from your app without publishing a Zap Template for each specific use case. Use this URL schema for your embedded editor experience or as lightweight entry point into the Zap Editor from your app. Similar to the [prefill](https://platform.zapier.com/embed/zap-editor#prefill-options) options for automatically defining field values for users, you can prefill apps, events, and input field values in the Zap Editor with the following URL schema:
 
 Base URL: `https://zapier.com/webintent/create-zap?`
 
@@ -42,9 +42,8 @@ URL parameters (with example values):
 Requirements:
 
 - A trigger app is required. The `steps` index for a trigger is always `0`.
-- An app is a prerequisite to including an event or field prefill for any step.
-- An app must be defined by `SelectedAPI@version` where SelectedAPI generally equals a titleized string of the app name + "CLIAPI" (e.g., MailchimpCLIAPI, GoogleAdsCLIAPI, FacebookLeadAdsCLIAPI). This value is case-sensitive.
-- The version for the app can be specified or set to "latest" to automatically point to the current production version (e.g., MailchimpCLIAPI@latest, MailchimpCLIAPI@1.0.0). We highly suggest using "latest" for this parameter.
+- An app is defined by `SelectedAPI@version` where SelectedAPI generally equals a titleized string of the app name + `CLIAPI` (e.g., MailchimpCLIAPI, GoogleAdsCLIAPI, FacebookLeadAdsCLIAPI). This value is case-sensitive.
+- The version for the app can be specified or set to `latest` (highly suggested) to automatically point to the current production version (e.g., MailchimpCLIAPI@latest, MailchimpCLIAPI@1.0.0).
 - You can define 0 to many subsequent action steps. The `steps` index for actions will be `1` or greater. Please note, only users on a paid Zapier plan have access to multi-step Zaps.
 - Events are defined by the `key` of the trigger, action, or search.
 - Field prefills are defined by the `key` of the input field. See the below [Prefill Options](https://platform.zapier.com/embed/zap-editor#prefill-options) for more details on prefilling fields.
@@ -57,11 +56,11 @@ Defining a trigger and action app
 Defining a trigger and trigger event with no action:
 > `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member`
 
-Defining a trigger and trigger event with a prefilled value for the "List" input field:
+Defining a trigger and trigger event with a prefilled value for the "Audience" input field:
 > `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member&steps[0][params][list_id]=123`
 
-Defining a trigger, trigger event, action, and action event with prefilled values for both "list" input fields:
-> `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member&steps[0][params][list_id]=123&steps[1][app]=GoogleAdsCLIAPI@latest&steps[1][action]=add_to_customer_list_v2&steps[1][params][list_id]=234`
+Defining a trigger, trigger event, action, and action event with prefilled values for "Audience" and "Customer List" input fields:
+> `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member&steps[0][params][list_id]=123&steps[1][app]=GoogleAdsCLIAPI@latest&steps[1][action]=add_to_customer_list_v2&steps[1][params][customer_list_id]=234`
 
 Defining a trigger and two actions:
 > `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[1][app]=GoogleAdsCLIAPI@latest&steps[2][app]=FacebookLeadAdsCLIAPI@latest`
