@@ -47,7 +47,7 @@ Requirements:
 - The version for the app can be specified or set to "latest" to automatically point to the current production version (e.g., MailchimpCLIAPI@latest, MailchimpCLIAPI@1.0.0). We highly suggest using "latest" for this parameter.
 - You can define 0 to many subsequent action steps. The `steps` index for actions will be `1` or greater. Please note, only users on a paid Zapier plan have access to multi-step Zaps.
 - Events are defined by the `key` of the trigger, action, or search.
-- Field params are defined by the `key` of the input field.
+- Field prefills are defined by the `key` of the input field. See the below [Prefill Options](https://platform.zapier.com/embed/zap-editor#prefill-options) for more details on prefilling fields.
 
 Examples:
 
