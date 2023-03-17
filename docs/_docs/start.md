@@ -50,8 +50,8 @@ Zapier will use your logo full-size in the Zapier App Directory to promote the i
 
 Then, Zapier asks a few questions about your integration:
 
-- **Intended Audience**: In the dropdown menu, select the type of your
-integration building:
+- **Intended Audience**: In the dropdown menu, select the type of integration
+you’re building:
   - Private: I’m building an integration for personal use or to explore the Zapier platform.
   - Public: I’m evaluating making my app available to the entire Zapier ecosystem.
   - **Note:** If you select private, [public](https://platform.zapier.com/partners/lifecycle-planning#3-publish-your-integration-to-the-app-directory) and [embed](https://platform.zapier.com/embed/overview) features will be hidden as they are only available for public integrations.
