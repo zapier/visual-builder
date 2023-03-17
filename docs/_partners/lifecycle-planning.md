@@ -80,6 +80,8 @@ Find out more in our _[How to Maintain Your Zapier Integration](https://platform
 
 Now that you're finished developing and testing your Zapier integration, it's time to share it with the world! When you publish your integration, your product will get a dedicated page in [Zapier's App Directory](https://zapier.com/apps). Just follow these steps:
 
+> If you’re not seeing the publishing features, check your [integration settings are set to public](https://platform.zapier.com/docs/start#edit-your-zapier-integration-info).
+
 ### **1. Ensure your integration follows the Zapier Integration Development Guide**
 
 The [Integration Development Guide](https://platform.zapier.com/partners/planning-guide) is written with the user in mind, ensuring a consistent experience across Zapier. Hundreds of companies have launched Zapier integrations and the Integration Development Guide is a list of best practices learned, so your users have the best experience with your Zapier integration.

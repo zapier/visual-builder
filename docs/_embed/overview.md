@@ -12,6 +12,8 @@ redirect_from:
 
 By embedding Zapier in your product, you can create a simple end-to-end user experience, helping your customers discover available integrations within your product and letting them manage their workflows over time—without ever having to leave your app.
 
+> Embed features are available for public integrations. To enable embed features, [update your integration settings](https://platform.zapier.com/docs/start#edit-your-zapier-integration-info) to public.
+
 Essentially, users can extend the power of your app when Zapier looks like an extension of your product, not a separate service with a separate sign-up page. The tools we offer let you create an integrated journey from start to finish.   
 
 > If you prefer to have a video overview of embedding Zapier in your product, see below
