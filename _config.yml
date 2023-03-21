@@ -31,6 +31,9 @@ collections:
   cli_tutorials:
     output: true
     permalink: /:collection/:name
+  private_integrations:
+    output: true
+    permalink: /:collection/:name       
   legacy:
     output: true
     permalink: /:collection/:name
@@ -45,7 +48,7 @@ collections:
     permalink: /:collection/:name
   conversion:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:name   
 
 defaults:
   - scope:
@@ -97,4 +100,10 @@ defaults:
       path: ""
       type: "embed"
     values:
+      layout: default  
+  - scope:
+      path: ""
+      type: "private_integrations"
+    values:
       layout: default
+
