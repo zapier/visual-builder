@@ -41,9 +41,9 @@ When you create a Zapier integration, you’ll be asked to add your app’s name
 
 ### App Name
 
-Use the actual, unique name of your app with the same capitalization your company uses in your core branding.
+Use the actual, unique name of your app with the same capitalization your company uses in your core branding. Trademark/copyright identifiers such as a TM suffix aren't allowed in the app name, though they can be added to the [Description](https://platform.zapier.com/partners/planning-guide#app-description-copy).
 
-Do not add adjectives or phrases to your app name, and only include your company name if the company and app name are always used together in your branding. Do not include the word _app_ unless you always include that in your app’s branding.
+Do not add adjectives or phrases to your app name, and only include your company name if the company and app name are always used together in your branding. Do not include the word _app_ unless you always include that in your app’s branding. 
 
 **Example**:
 
@@ -93,13 +93,11 @@ You may update your app's category anytime if needed, so do not select a categor
 
 ![Zapier primary colors in App Directory](https://cdn.zappy.app/1c327d4bc8b0e194d181f26ef737673c.png)
 
-When you release your Zapier integration to the public, Zapier requires your app’s primary color. A secondary color is optional. 
-
-The Primary color is the main color used in your app’s logo or branding. The secondary color is a complementary color from your CTAs or as an accent to your primary color.
+When you release your Zapier integration to the public, Zapier requires your app’s primary color. The primary color is the main color used in your app’s logo or branding.
 
 Do not use pure white (`#FFFFFF`) for either color, as overlaid text would be unreadable. If your logo is black and white, use the next most common color from your branding.
 
-Zapier uses the primary color as the background color in your app’s Zapier App Directory listing, and may additionally use it and the secondary color in the Zapier app dashboard, Zapier blog marketing materials, and other parts of Zapier’s app and content that promote your app’s integrations.
+Zapier uses the primary color as the background color in your app’s Zapier App Directory listing, and may additionally use it in the Zapier app dashboard, Zapier blog marketing materials, and other parts of Zapier’s app and content that promote your app’s integrations.
 
 ## How to Design Successful Zapier Integrations
 

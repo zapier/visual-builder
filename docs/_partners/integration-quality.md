@@ -15,12 +15,20 @@ Integration quality on Zapier boils down to two main pillars: **Health** and **D
 We’ll examine the main metrics around integration health and explore what they could be telling us about an integration’s quality level:
 
 * **Errors** 
-* **Zap Activation Rate**
+* **Zap activation rate**
 * **Bugs**
-* **Active User Retention**
+* **Active users retention**
 
 Utilize the various tools and resources available in the developer platform, such as [Bugs and Feature Requests](https://platform.zapier.com/partners/feature-requests-bugs#how-to-monitor-feature-requests-and-bugs), [Monitoring](https://platform.zapier.com/docs/testing#monitoring), and your integration’s Dashboard to monitor and analyze these metrics and your integration’s health. Let’s dig in!
 
+## How to View Insights
+
+1. Sign into [Zapier Developer Platform](https://developer.zapier.com/) through your Zapier account to see integrations you can access.
+2. Select an integration to view its insights. You **MUST** be an admin or collaborator to view an integration’s Dashboard.
+    * If an integration isn’t listed, ask an admin to invite you or try [adding yourself as a collaborator](https://developer.zapier.com/join-integration).
+3. Navigate to “Dashboard” in the lefthand sidebar to view growth and usage insights.
+
+![Screenshot of Dashboard tab in Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
 
 ## Errors
 
@@ -50,11 +58,11 @@ If you don’t have control to make changes to the API itself, utilize custom er
     * `throw new z.errors.Error('Contact name exceeds character limit.', 'InvalidData', 400);`
 
 
-## Zap Activation Rates
+## Zap activation rates
 
-### What is Zap Activation Rate?
+### What is Zap activation rate?
 
-Consider all of the Zaps users try to create with a trigger, action, or search from your integration. Then look at the percentage of those Zaps that actually activated within 24 hours of creation, meaning the Zap ran at least one successful task. _That’s the Zap Activation Rate._
+Consider all of the Zaps users try to create with a trigger, action, or search from your integration. Then look at the percentage of those Zaps that actually activated within 24 hours of creation, meaning the Zap ran at least one successful task. _That’s the Zap activation rate._
 
 ### Does low activation mean something is broken?
 
@@ -64,7 +72,7 @@ It can also highlight that certain triggers or actions are proving challenging t
 
 ### What we have learned
 
-Zap Activation Rates at the individual trigger and action level are a great leading indicator of performance and usability. Don’t forget about the authentication step in your integration too! If users can't authenticate or get their Zaps enabled and activated, they stand little chance of ongoing success.
+Zap activation rates at the individual trigger and action level are a great leading indicator of performance and usability. Don’t forget about the authentication step in your integration too! If users can't authenticate or get their Zaps enabled and activated, they stand little chance of ongoing success.
 
 ### Best Practices
 
@@ -81,7 +89,9 @@ Give users the best chance to successfully activate their Zaps by making the int
 
 ## Bugs
 
-As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. Here are a couple things to note about bugs:
+As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim).
+
+Here are a couple things to note about bugs:
 
 1. _When the number of open bugs goes above zero, it doesn’t really matter how many bugs you have._ The important datapoint is how many of your users are affected overall and what percentage of the app’s overall monthly active users that impacts.
 2. _Your past history on closing bugs doesn’t influence your current health score._ Running track in college doesn’t mean a darn thing to your doctor thirty years later if you roll in with high cholesterol because of your penchant for McDonalds and KFC. Same with bugs and integration health.
@@ -100,7 +110,7 @@ Regardless of the size of your integration’s user base, keeping the percent of
 * Need help with maintenance? [Match with a Zapier Expert](https://zapier.com/experts/matchmaking) to help you fix one-off bugs or maintain your integration.
 
 
-## Active Users Retention
+## Active users retention
 
 At Zapier, churn means a user used your integration in their Zaps 29 - 56 days ago, but hasn’t run a successful task in one of those Zaps in the past 28 days. This user is considered to have churned from the integration. From the opposite perspective, we can look at active users retention, or the percentage of users who haven’t churned.
 
@@ -123,3 +133,29 @@ Approaching active user retention with a long-term strategy can help maintain a 
 * [Embed](https://platform.zapier.com/embed/overview) the Zapier experience with copy-and-paste and customizable code within your platform to provide automation value directly to users. Embeds have proven to [reduce churn](https://platform.zapier.com/partner_success_stories/all) on Partners’ platforms. Find live embed examples under the ‘Embed’ tab of the integration’s developer platform.
 * [Share use cases](https://platform.zapier.com/partners/partner-faq#tip-3-share-zapier-use-cases-in-your-onboarding) widely during your platform’s onboarding process. Having multiple Zaps using your integration increases stickiness of users not only to the Zapier integration, but also to your platform.
 * Update the integration regularly with features as your platform evolves. [Invite stakeholders to your integration](https://platform.zapier.com/quickstart/invite-team-member) to give them admin or read-only access to insights, metrics, and feedback to prioritize and align improvements. 
+
+
+## Integration Insights Definitions
+
+The following includes definitions for each of the metrics provided in the integration Dashboard:
+
+| **Metric**                  | Definition                                                                              | Available Filters   |
+|-----------------------------|-----------------------------------------------------------------------------------------|---------------------|
+| **New users**               | Total number of new users using the integration over a selected period of time.<br><br> A new user = first time a user creates and activates a Zap with this integration. | Last 7 days<br>Last 30 days<br>Last 90 days |
+| **Bugs & feature requests** | Total number of open bugs and feature requests for the integrations.                    |              |
+| **Daily active users**      | Number of users who had a Zap activated in a day.<br><br> Activated = Zap is on and successfully ran at least one task. | Last 7 days<br>Last 30 days<br>Last 90 days |
+| **Monthly active users**    | Total number of users who had a Zap activated in a given month.<br><br> Activated = Zap is on and successfully ran at least one task.                         | By year                  |
+| **Active Zaps**             | Total number of active Zaps over a selected period of time.<br><br> Active Zaps = number of Zaps currently on and using the integration.                  | Last 7 days<br>Last 30 days<br>Last 90 days |
+| **Daily active Zaps**       | Number of active Zaps in a day.<br><br> Active Zaps = number of Zaps currently on and using the integration. | Last 7 days<br>Last 30 days<br>Last 90 days|
+| **Active users retention**  | The percentage of active users retained each month.<br><br> Retention = users who have at least one successful task executed in a given month.                  |                              |
+| **Zap activation rate by trigger**       | For a given trigger, the percentage of Zaps using the trigger and the rate of the ones that activated within 24 hours of creation. The higher the rate, the better the trigger is performing.<br><br> Activated = Zap is on and successfully ran at least one task. | Last 7 days<br>Last 30 days<br>Last 90 days|
+| **Zap activation rate by action**       | For a given action, the percentage of Zaps using the action and the rate of the ones that activated within 24 hours of creation. The higher the rate, the better the action is performing.<br><br> Activated = Zap is on and successfully ran at least one task. | Last 7 days<br>Last 30 days<br>Last 90 days|
+| **Usage by trigger**        | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each trigger.  | By integration version                       |
+| **Usage by action**         | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each action.   | By integration version                       |
+
+
+## Practical Applications of Integration Insights
+
+* Launching a co-marketing campaign or running ads? Track daily and monthly MAU over the launch period to track changes in usage.
+* Noticing certain triggers and actions with higher activations? Create additional Zap Templates to expand usage further since you know they are popular functionality.
+* Noticing certain triggers and actions with lower activation? Hop into the Zap Editor and test them out yourself. Are there any technical or usability issues you experience? How do other top apps in your category implement similar functionality?

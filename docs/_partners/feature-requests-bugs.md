@@ -15,7 +15,7 @@ Keep these guidelines in mind as you maintain your Zapier integration:
 
 ## How to Update App Branding in Zapier
 
-![Update Zapier integration details](https://cdn.zapier.com/storage/photos/1075ef17df9d18db368adaed7e1d24bc.png)
+![Update Zapier integration details](https://cdn.zappy.app/21501f70d3d15a341e6dc7ea90690ee6.png)
 
 You can update your app's name, description, logo, and category anytime in the [Zapier Platform site](https://zapier.com/app/developer). Select your app integration, click the gear icon near its name, then update the app details as needed.
 
@@ -27,21 +27,25 @@ Please make sure to follow [Zapier's branding guidelines](https://platform.zapie
 
 ## How to Monitor Feature Requests and Bugs
 
-![Issues in Zapier Integration](https://cdn.zapier.com/storage/photos/7e214665d64998a7cc8c3276e5b8f86f.png)
+![Issues in Zapier Integration](https://cdn.zappy.app/b986eef73a1558ee3e121cf5d985339a.png)
 
-As people use your Zapier integration, they may encounter bugs and problems with your integration, or think of new ways they'd like to use your app with Zapier, and send them to the Zapier support team. We log those in Zapier's issue tracker, which you can see from the _Bug & Feature Requests_ page in the Manage section of your integration's sidebar.
+As people use your Zapier integration, they may encounter bugs and problems with your integration, or think of new ways they'd like to use your app with Zapier, and send them to the Zapier support team. We log those in Zapier's issue tracker, which you can see from the _Bug & Feature Requests_ page in the Manage section of your integration's sidebar. 
 
-Problems and issues with your integration, authentication, API calls, and more will be logged as `bug`, while new things users require from your integration will be logged as `feature request`.
+Problems and issues with your integration, authentication, API calls, and more will be logged as `bug`, while new things users require from your integration will be logged as `feature request`. You also have the ability to filter open `bugs` and `feature requests` to view issues by individual Trigger or Action.
 
-![Reply to Zapier Integration Issue](https://cdn.zapier.com/storage/photos/a793bc2741fd1c82159c01d0a59fe735.png)
+![Reply to Zapier Integration Issue](https://cdn.zappy.app/a5808bdc70214728d0eac9f569f2d2e7.png)
 
-Whenever a new issue is added or updated, Zapier will log it in the _Issues_ tab of your app's Zapier Developer Platform settings page. Zapier will also send an email notification about the issue to your integration's original developer.
+Whenever a new issue is added or updated, Zapier will log it in the _Bugs & Feature Requests_ page of your app's Zapier Developer Platform page. You can reply to the Zapier team about the issue there. These issues and comments are not visible to affected users; and users will only be notified when an issue is verified as closed/resolved by the Zapier support team. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim).
 
-You can see additional details about the issue, along with the trigger or action it affects and how many users have encountered the issue, in Zapier's issue tracker. You can reply to the Zapier team about the issue there, or can simply reply to the notification email to add a response to the issue.
+Issue notifications are automatically sent to all confirmed Administrators and Collaborators on the integration team. If an Administrator or Collaborator is listed as `Invitation Pending`, they will need to accept the invite before they start to receive issue notifications.
 
-![Get Zapier Integration Issue Notification Emails](https://cdn.zapier.com/storage/photos/3ac5c7bc98568aac786a7b87fc2695ef.png)
+## How to Monitor Integration Insights
 
-If you want others on your team to receive the issue notifications, or would like to route them to your support or developer team inbox, you can add additional notification email addresses from the bottom of the _Issues_ tab. You may also remove the original developer from the issue after you've added an additional contact.
+As you launch and maintain your integration, you should monitor and review the insights in the dashboard on a regular cadence. Insights include important data on both the integration's growth and usage, such as monthly active users, retention rates, and Zap usage by triggers and actions. You can [see all the metrics tracked](https://platform.zapier.com/partners/integration-quality#integration-insights-definitions) in this table, or access them for any integration you are an Admin or Collaborator on from the "Dashboard" tab of the developer platform.
+
+![Screenshot of Dashboard tab in left sidebar of Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
+
+You can filter most growth metrics by the last X number of days to identify trends and changes in user activity in correlation to marketing initiatives, integration changes, and product updates like [embedding Zapier](https://platform.zapier.com/embed/full-zapier-experience). Usage details for each trigger and action will show which functionalities are the most popular and being effectively utilized. You can easily and safely share access to the insights by [inviting collaborators](https://platform.zapier.com/quickstart/invite-team-member#collaborator) to the integration without giving them permissions to make changes to it.
 
 ## How to Make a New Version of Your Integration
 

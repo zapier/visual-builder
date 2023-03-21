@@ -50,7 +50,12 @@ Zapier will use your logo full-size in the Zapier App Directory to promote the i
 
 Then, Zapier asks a few questions about your integration:
 
-- **Intended Audience**: If you're building an integration to use on your own or inside your company, select _Private_. Otherwise, always select _Public_ if you intend to share this integration with third parties.
+- **Intended Audience**: In the dropdown menu, select the type of integration
+you’re building:
+  - Private: I’m building an integration for personal use or to explore the Zapier platform.
+  - Public: I’m evaluating making my app available to the entire Zapier ecosystem.
+  - **Note:** If you select private, [public](https://platform.zapier.com/partners/lifecycle-planning#3-publish-your-integration-to-the-app-directory) and [embed](https://platform.zapier.com/embed/overview) features will be hidden as they are only available for public integrations.
+
 - **Role**: Select your relationship to this app. Most public app integrations are built by their internal development teams, but if you want to build an integration for an app you're not affiliated with, you can still build a private integration.
 - **Category**: Choose the category that fits your app best. Always select the most appropriate, specific category for the features your app supports today. If your app covers multiple categories (for example, if it has both project management tools and social media management tools), choose the category that fits your app's primary use-case and selling point.
 

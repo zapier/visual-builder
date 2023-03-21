@@ -470,7 +470,7 @@ Alternatively invite anyone to use your app in their Zaps via a link to the app 
 
 Access the same sharing link from the [developer dashboard](https://developer.zapier.com/) Sharing tab:
 
-![Sharing](https://cdn.zappy.app/727cfdcdb197dd3ef7469df5de8ebd0a.png)
+![Sharing](https://cdn.zappy.app/70a474decee97b345640b75c66497581.png)
 
 ## Invite Team Members to Help Manage Your App
 
@@ -487,7 +487,7 @@ Replace the example email address with the user you want to invite.
 
 Alternatively, invite users to admin or collaborator roles from the Manage Team tab when accessing your app from the [developer dashboard](https://developer.zapier.com/):
 
-![Invite Team Member](https://cdn.zappy.app/d7fdfe3ba0d17fbf94c330acc2d8d36a.png)
+![Invite Team Member](https://cdn.zappy.app/6d084d0509ee8682d73e2064106b711d.png)
 
 For more on inviting users, see our [detailed documentation.](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#sharing-an-app-version)
 

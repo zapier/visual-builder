@@ -10,7 +10,7 @@ redirect_from: /partners/
 With {{ site.partner_count }} integration partners on Zapier, we have the inside scoop on the activities that can skyrocket your growth and earn you more [benefits from the Partner Program](https://zapier.com/platform/partner-program). Steal these 10 tried-and-true tactics from our top partners and you'll be on your way to the Platinum level.
 
 > 1. [Level up your team](#tip-1-level-up-your-team)
-> 2. [Track your Zapier users' retention and activity](#tip-2-track-your-zapier-users-retention-and-activity)
+> 2. [Monitor your integration insights on growth and usage](#tip-2-monitor-your-integration-insights-on-growth-and-usage)
 > 3. [Boost user adoption by seamlessly embedding Zapier](#tip-3-boost-user-adoption-by-seamlessly-embedding-zapier)
 > 4. [Share Zapier use cases in your onboarding](#tip-4-share-zapier-use-cases-in-your-onboarding)
 > 5. [Add new features to your Zapier integration](#tip-5-add-new-features-to-your-zapier-integration)
@@ -24,9 +24,9 @@ With {{ site.partner_count }} integration partners on Zapier, we have the inside
 
 Make sure your sales and support teams say "yes!" when asked about an integration. Share these bite-sized [Zapier 101 videos](https://www.youtube.com/playlist?list=PLqzJRGwum4KO2ISMYKmK0Ci7hm_508NfO) to get them up-to-speed on Zapier.
 
-## Tip 2: Track your Zapier users' retention and activity
+## Tip 2: Monitor your integration insights on growth and usage
 
-We routinely hear from our partners that Zapier users are higher-value, sticky users. Check to confirm tracking is in place so you can benchmark your Zapier users and easily report ROI to your team.
+Make time to review your integration insights on a regular cadence to guide making decisions and [inform you on the quality](https://platform.zapier.com/partners/integration-quality) of your integration. We routinely hear from our partners that Zapier users are higher-value, sticky users. So, it's important to keep a pulse on how the integration is doing.
 
 **Steal this from Clearbit:** Clearbit carefully tracks the success of their users and discovered Zapier users are 20% less likely to churn. Armed with this data, their team prioritizes promotion and development strategies that encourage more of their users to try integrations.
 

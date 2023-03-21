@@ -4,6 +4,7 @@ order: 1
 layout: post-toc
 redirect_from: /partners/
 ---
+# How to Build and Publish a Zapier Integration
 
 ## 1. Plan Your Zapier Integration
 
@@ -79,6 +80,8 @@ Find out more in our _[How to Maintain Your Zapier Integration](https://platform
 
 Now that you're finished developing and testing your Zapier integration, it's time to share it with the world! When you publish your integration, your product will get a dedicated page in [Zapier's App Directory](https://zapier.com/apps). Just follow these steps:
 
+> If you’re not seeing the publishing features, check your [integration settings are set to public](https://platform.zapier.com/docs/start#edit-your-zapier-integration-info).
+
 ### **1. Ensure your integration follows the Zapier Integration Development Guide**
 
 The [Integration Development Guide](https://platform.zapier.com/partners/planning-guide) is written with the user in mind, ensuring a consistent experience across Zapier. Hundreds of companies have launched Zapier integrations and the Integration Development Guide is a list of best practices learned, so your users have the best experience with your Zapier integration.
@@ -93,7 +96,7 @@ The intention of this step is to ensure any show-stopping bugs are worked out an
 
 ### **3. Prepare your team to support and maintain your integration**
 
-Zapier's support team serves as frontline support for your Zapier integration. If your users find bugs with your integration, we will surface them to your team. We expect your team to promptly reply to those requests from your users and to maintain your integration.
+Zapier's support team serves as frontline support for your Zapier integration. As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim). We expect your team to promptly reply to those requests and to maintain your integration.
 
 ### **4. Submit your integration for review by the Zapier team**
 
@@ -101,7 +104,7 @@ Read our [App Review Guidelines](https://platform.zapier.com/partners/integratio
 
 Then, navigate to the Publishing page for your app, fill out the form, and click _Submit for Review_.
 
-![](https://cdn.zappy.app/0055e6014cceb63fdb90ad671eb13229.png)
+![Publishing integration page](https://cdn.zappy.app/5717927f617ec65928b00b23459365fe.png)
 
 Expect to hear from us within a week.
 
@@ -119,8 +122,9 @@ As your integration continues to accumulate users, our team will watch the growt
 
 We may invite your company to officially launch your Zapier integration and join the [Zapier Integration Partner Program](https://zapier.com/platform/partner-program). Once you launch, you will automatically join the free **Zapier Integration Partner Program** and can access the program's [many co-marketing benefits](https://zapier.com/platform/partner-program) including:
 
-- A [dedicated blog post](https://cdn.zapier.com/storage/photos/208bc1f088e3f2153b4631b6896f8cfe.png), [email](https://cdn.zapier.com/storage/photos/c7f8293e9d9cbc5b64051ae6ecca1b8c.png), and social media campaign about the launch of your integration
-- [Get leads](https://cdn.zapier.com/storage/photos/961169e674f45d11ff50e2c0510ff200.png) from your page in [Zapier's App Directory](https://zapier.com/apps)
+- A shoutout about the launch of your integration in our [updates blog post](https://zapier.com/blog/all-articles/product-news/)
+- Access to your [integration health data](https://platform.zapier.com/partners/feature-requests-bugs#how-to-monitor-integration-insights)
+- A dedicated page in [Zapier’s App Directory](https://zapier.com/apps)
 - Exposure within Zapier's product and on the sites of Zapier's {{ site.partner_count }} integration partners
 
 Here are the steps to take to officially launch and join the program:

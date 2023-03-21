@@ -37,6 +37,10 @@ Connecting to Zapier must be easy for the user. OAuth v2 is the preferred authen
 
 Only submit your integration for review when it is complete and ready to be published. Make sure to thoroughly test your integration for edge cases, fix all bugs, and address [integration checks](https://platform.zapier.com/docs/integration-checks-reference) before submitting. Confirm your integration adheres to our [Integration Review Guidelines](https://platform.zapier.com/partners/integration-review-guidelines) thoroughly. Please ensure both your platform and integration work consistently without errors.
 
+## Use Zapier Issue Manager
+
+Use Zapier Issue Manager to sync and manage issues for your Zapier integration from your own issue-tracking tools (such as Jira or Trello). [Learn more and request access to Zapier Issue Manager here.](https://platform.zapier.com/partners/zim)
+
 ## Provide a Valid Test Account
 
 When submitting your integration for review, we require a valid, non-expiring test account under `integration-testing@zapier.com`. During the review and going forward after launch, our team may need occasional access for troubleshooting support issues. Please ensure the account is not under a trial and all necessary paid/premium features are unlocked.
@@ -47,9 +51,9 @@ Your integration must perform as advertised and must not give users a false impr
 
 Violations of the review process or guidelines can have your integration removed from Zapier, and you could be banned from submitting more in the future.
 
-## Add collaborators to your team
+## Add Collaborators to your team
 
-Bring your team onboard by inviting other team members to your integration as collaborators. Collaborators can log into your Zapier dashboard and gain valuable insights into your integration—including what your customers are saying about it. They can view performance data, see feature requests and bugs, and access tools to embed Zapier integrations inside your UI to rack up user adoption. 
+Bring your team onboard by inviting other team members to your integration as Collaborators. Collaborators can log into your Zapier dashboard and gain valuable insights into your integration—including what your customers are saying about it. They can view performance data, see feature requests and bugs, and access tools to embed Zapier integrations inside your UI to rack up user adoption. 
 
 ---
 
@@ -61,11 +65,27 @@ Can't find the answer you need here or in Zapier's [integration planning guide](
 
 Zapier's Platform team has a [community](https://community.zapier.com/developer-discussion-13) dedicated to helping developers with new and existing integrations. We're a worldwide team, so there's usually someone around to answer your questions. We'd love to hear about your experience building on Zapier.
 
-### Contact Zapier's Platform Team
+### Contact Zapier's Platform and Partner Support Teams
 
-For questions about the developer platform and partnerships, [contact us through our help center](https://developer.zapier.com/contact), where our Platform Support team can help resolve issues you encounter while building Zapier integrations, and our Partnerships team can help with any launch questions.
+Partnerships at Zapier has 2 incredible support teams to help answers your questions. Have questions? [Get in touch!](https://developer.zapier.com/contact)
 
-If you have issues with Zaps or core Zapier account, please reach out to [our support team](https://zapier.com/app/get-help). Our support team is best equipped with the most recent logs and other details to assist you.
+Need Developer assistance? Our Platform Support team offers developer support to your most common questions about:
+
+- maintaining integrations and launching new versions
+- setting up triggers and actions
+- handling errors
+- troubleshooting
+- and more!
+
+Connect with our Partner Support team! Helping you answer your most common questions about:
+
+- launching an integration (and moving out of beta)
+- the Partner Program (including redeeming perks)
+- updating your integration's branding
+- Zap templates
+- and more!
+
+If you have issues with Zaps or your Zapier account, please reach out to [our customer support team](https://zapier.com/app/get-help). Our customer support team is best equipped with the most recent logs and other details to assist you.
 
 ### Find a Zapier Integration Partner
 
