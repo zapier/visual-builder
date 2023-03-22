@@ -21,7 +21,7 @@ You may find docs duplicate or outdated across the Zapier site. The most up-to-d
 
 Our code is updated frequently. To see a full list of changes, look no further than [the CHANGELOG](https://github.com/zapier/zapier-platform/blob/main/CHANGELOG.md).
 
-This doc describes the latest CLI version (**13.0.0**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc describes the latest CLI version (**14.0.0**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [11.3.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@11.3.3/packages/cli/README.md), [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/README.md), [9.7.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.7.3/packages/cli/README.md)
 - CLI Reference: [11.3.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@11.3.3/packages/cli/docs/cli.md), [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/docs/cli.md), [9.7.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.7.3/packages/cli/docs/cli.md)
@@ -54,6 +54,7 @@ This doc describes the latest CLI version (**13.0.0**), as of this writing. If y
   * [Session](#session)
   * [OAuth1](#oauth1)
   * [OAuth2](#oauth2)
+  * [OAuth2 with PKCE](#oauth2-with-pkce)
   * [Connection Label](#connection-label)
 - [Resources](#resources)
   * [Resource Definition](#resource-definition)
@@ -285,15 +286,15 @@ $ tree .
 ├── index.js
 ├── package.json
 ├── triggers
-│   └── contact-by-tag.js
+│   └── contact-by-tag.js
 ├── resources
-│   └── Contact.js
+│   └── Contact.js
 ├── test
-│   ├── basic.js
-│   ├── triggers.js
-│   └── resources.js
+│   ├── basic.js
+│   ├── triggers.js
+│   └── resources.js
 ├── build
-│   └── build.zip
+│   └── build.zip
 └── node_modules
     ├── ...
     └── ...
@@ -860,6 +861,99 @@ For OAuth2, `authentication.oauth2Config.authorizeUrl`, `authentication.oauth2Co
 Also, `authentication.oauth2Config.getAccessToken` has access to the additional return values in `rawRequest` and `cleanedRequest` should you need to extract other values (for example, from the query string).
 
 If you define `fields` to collect additional details from the user, please note that `client_id` and `client_secret` are reserved keys and cannot be used as keys for input form fields.
+
+
+### OAuth2 with PKCE
+
+*Added in v14.0.0.*
+
+Zapier's OAuth2 implementation also supports [PKCE](https://oauth.net/2/pkce/). This implementation is an extension of the OAuth2 `authorization_code` flow described above. 
+
+To use PKCE in your OAuth2 flow, you'll need to set the following variables:
+  1. `enablePkce: true`
+  2. `getAccessToken.body` to include `code_verifier: "{{bundle.inputData.code_verifier}}"`
+
+The OAuth2 PKCE flow uses the same flow as OAuth2 but adds a few extra parameters:
+
+  1. Zapier computes a `code_verifier` and `code_challenge` internally and stores the `code_verifier` in the Zapier bundle.
+  2. Zapier sends the user to the authorization URL defined by your app, passing along the computed `code_challenge`.
+  3. Once authorized, your website sends the user to the `redirect_uri` Zapier provided.
+  4. Zapier makes a call to your API to exchange the `code` and the computed `code_verifier` for an `access_token`.
+  5. Zapier stores the `access_token` and uses it to make calls on behalf of the user.
+
+Your auth definition would look something like this:
+
+```js
+const authentication = {
+  type: 'oauth2',
+  test: {
+    url: 'https://{{bundle.authData.subdomain}}.example.com/api/accounts/me.json',
+  },
+  // you can provide additional fields for inclusion in authData
+  oauth2Config: {
+    // "authorizeUrl" could also be a function returning a string url
+    authorizeUrl: {
+      method: 'GET',
+      url: 'https://{{bundle.inputData.subdomain}}.example.com/api/oauth2/authorize',
+      params: {
+        client_id: '{{process.env.CLIENT_ID}}',
+        state: '{{bundle.inputData.state}}',
+        redirect_uri: '{{bundle.inputData.redirect_uri}}',
+        response_type: 'code',
+      },
+    },
+    // Zapier expects a response providing {access_token: 'abcd'}
+    // "getAccessToken" could also be a function returning an object
+    getAccessToken: {
+      method: 'POST',
+      url: 'https://{{bundle.inputData.subdomain}}.example.com/api/v2/oauth2/token',
+      body: {
+        code: '{{bundle.inputData.code}}',
+        client_id: '{{process.env.CLIENT_ID}}',
+        client_secret: '{{process.env.CLIENT_SECRET}}',
+        redirect_uri: '{{bundle.inputData.redirect_uri}}',
+        grant_type: 'authorization_code',
+        code_verifier: '{{bundle.inputData.code_verifier}}', // Added for PKCE
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    },
+    scope: 'read,write',
+    enablePkce: true, // Added for PKCE
+  },
+  // If you need any fields upfront, put them here
+  fields: [
+    { key: 'subdomain', type: 'string', required: true, default: 'app' },
+    // For OAuth2 we store `access_token` and `refresh_token` automatically
+    // in `bundle.authData` for future use. If you need to save/use something
+    // that the user shouldn't need to type/choose, add a "computed" field, like:
+    // {key: 'user_id': type: 'string', required: false, computed: true}
+    // And remember to return it in oauth2Config.getAccessToken/refreshAccessToken
+  ],
+};
+
+const addBearerHeader = (request, z, bundle) => {
+  if (bundle.authData && bundle.authData.access_token) {
+    request.headers.Authorization = `Bearer ${bundle.authData.access_token}`;
+  }
+  return request;
+};
+
+const App = {
+  // ...
+  authentication,
+  beforeRequest: [addBearerHeader],
+  // ...
+};
+
+module.exports = App;
+
+```
+
+The computed `code_verifier` uses this standard: [RFC 7636 Code Verifier](https://www.rfc-editor.org/rfc/rfc7636#section-4.1)
+
+The computed `code_challenge` uses this standard: [RFC 7636 Code Challenge](https://www.rfc-editor.org/rfc/rfc7636#section-4.2)
 
 ### Connection Label
 
@@ -2291,7 +2385,7 @@ This behavior has changed periodically across major versions, which changes how/
 
 ![](https://cdn.zappy.app/e835d9beca1b6489a065d51a381613f3.png)
 
-Ensure you're handling errors correctly for your platform version. The latest released version is **13.0.0**.
+Ensure you're handling errors correctly for your platform version. The latest released version is **14.0.0**.
 
 ### HTTP Request Options
 
@@ -2728,15 +2822,12 @@ Example: `throw new z.errors.RefreshAuthError();`
 ### Handling Throttled Requests
 
 Since v11.2.0, there are two types of errors that can cause Zapier to throttle an operation and retry at a later time.
-This is useful if the API you're interfacing with is reports it is receiving too many requests, often indicated by
+This is useful if the API you're interfacing with reports it is receiving too many requests, often indicated by
 receiving a response status code of 429.
 
 If a response receives a status code of 429 and is not caught, Zapier will re-attempt the operation after a delay.
-The delay can be customized by the server response containing a
-[Retry-After](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After) header.
-
-Another way to request Zapier retry an operation is to throw a `ThrottledError`, which may also optionally specify a
-delay in seconds:
+The delay can be customized by the server response containing a specific
+[Retry-After](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After) header in your error response or with a specified time delay in seconds using a `ThrottledError`:
 
 ```js
 const yourAfterResponse = (resp) => {
@@ -2746,6 +2837,9 @@ const yourAfterResponse = (resp) => {
   return resp;
 };
 ```
+Instead of a user’s Zap erroring and halting, the request will be repeatedly retried at the specified time.
+
+For throttled requests that occur during processing of a webhook trigger's perform, before results are produced; there is a max retry delay of 300 seconds and a default delay of 60 seconds if none is specified. For webhook processing only, if a request during the retry attempt is also throttled, it will not be re-attempted again. 
 
 ## Testing
 
@@ -3484,7 +3578,7 @@ Broadly speaking, all releases will continue to work indefinitely. While you nev
 For more info about which Node versions are supported, see [the faq](#how-do-i-manually-set-the-nodejs-version-to-run-my-app-with).
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **13.0.0**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **14.0.0**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
