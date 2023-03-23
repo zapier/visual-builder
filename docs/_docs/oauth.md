@@ -88,10 +88,17 @@ If you ever need to reference Zapier's redirect URL inside your Zapier integrati
 
 {% raw %}`{{bundle.inputData.redirect_uri}}`{% endraw %}
 
+<a id="PKCE"></a>
+## Add PKCE Support
+
+![Zapier OAuth v2 with PKCE Extension])(https://cdn.zappy.app/124a3c00d8bc37dadd953f19451205a5.png)
+
+Zapier provides built-in support for [PKCE](https://oauth.net/2/pkce/#credentials) (Proof Key for Code Exchange and pronounced "pick-see"), an extension to the authorization code flow that adds a layer of protection against security vulnerabilities. The code generation and exchange steps of the flow occur automatically by Zapier when enabled.
+
 <a id="credentials"></a>
 ## Add Application Credentials to Zapier
 
-![Add application credentials to Zapier](https://cdn.zappy.app/143501610dce552f7ce003dc6632dc2b.png)
+![Add application credentials to Zapier](https://cdn.zappy.app/1664c3f9e9005d83b9fcfc3f6c5e7ecc.png)
 
 In your application's settings, you'll receive credentials that Zapier will use to verify itself to your app—typically called a _Client ID_ and _Client Secret_, though they may have a slightly different name. Copy that data from your app, then in Step 3 of your Zapier OAuth configuration, paste those items in their respective fields. Zapier will use that data along with the authorization URL to receive the request token.
 
