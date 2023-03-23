@@ -23,4 +23,3 @@ Natural Language Actions API is available for any Zapier partner or developer to
 It’s free to use by visiting our [Getting Started with Natural Language Actions page](https://nla.zapier.com/get-started/). For OAuth credentials, [sign up for access via our form](https://zapier.com/l/natural-language-actions). You’ll receive access once your application is reviewed.
 
 > **Note**: By signing up for API access, you agree to [Zapier’s Platform Agreement](https://zapier.com/platform/tos) and [Privacy Policy](https://zapier.com/privacy).
-✕
