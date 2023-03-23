@@ -49,6 +49,9 @@ collections:
   conversion:
     output: true
     permalink: /:collection/:name
+  zapier_products:
+    output: true
+    permalink: /:collection/:name
 
 defaults:
   - scope:
@@ -104,5 +107,10 @@ defaults:
   - scope:
       path: ""
       type: "private_integrations"
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "zapier_products"
     values:
       layout: default
