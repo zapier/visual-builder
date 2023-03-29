@@ -91,7 +91,7 @@ If you ever need to reference Zapier's redirect URL inside your Zapier integrati
 <a id="PKCE"></a>
 ## Add PKCE Support
 
-![Zapier OAuth v2 with PKCE Extension])(https://cdn.zappy.app/124a3c00d8bc37dadd953f19451205a5.png)
+![Zapier OAuth v2 with PKCE Extension](https://cdn.zappy.app/124a3c00d8bc37dadd953f19451205a5.png)
 
 Zapier provides built-in support for [PKCE](https://oauth.net/2/pkce/#credentials) (Proof Key for Code Exchange and pronounced "pick-see"), an extension to the authorization code flow that adds a layer of protection against security vulnerabilities. The code generation and exchange steps of the flow occur automatically by Zapier when enabled.
 
