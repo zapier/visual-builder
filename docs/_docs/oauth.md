@@ -98,7 +98,7 @@ Zapier provides built-in support for [PKCE](https://oauth.net/2/pkce/#credential
 <a id="credentials"></a>
 ## Add Application Credentials to Zapier
 
-![Add application credentials to Zapier](https://cdn.zappy.app/1664c3f9e9005d83b9fcfc3f6c5e7ecc.png)
+![Add application credentials to Zapier](https://cdn.zappy.app/ba093465f009bf6b417d55b2166c4324.png)
 
 In your application's settings, you'll receive credentials that Zapier will use to verify itself to your app—typically called a _Client ID_ and _Client Secret_, though they may have a slightly different name. Copy that data from your app, then in Step 3 of your Zapier OAuth configuration, paste those items in their respective fields. Zapier will use that data along with the authorization URL to receive the request token.
 
