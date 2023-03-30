@@ -191,7 +191,8 @@ curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&per_page=5"
         "url_32x32": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
         "url_64x64": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
         "url_128x128": "https://zapier-images.imgix.net/storage/services/6cf3f5a461feadfba7abc93c4c395b33_2.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
-      }
+      },
+      "app_latest": "SlackAPI"
     },
     {
       "uuid": "d74234df-0045-436e-bd5b-ee577e74e6b8",
@@ -216,7 +217,8 @@ curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&per_page=5"
         "url_32x32": "https://zapier-images.imgix.net/storage/services/62c82a7958c6c29736f17d0495b6635c.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
         "url_64x64": "https://zapier-images.imgix.net/storage/services/62c82a7958c6c29736f17d0495b6635c.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
         "url_128x128": "https://zapier-images.imgix.net/storage/services/62c82a7958c6c29736f17d0495b6635c.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
-      }
+      },
+      "app_latest": "GoogleCalendarAPI"
     }
   ],
   "prev_url": "https://api.zapier.com/v1/apps?per_page=2&page=1",
@@ -511,15 +513,16 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 
 | attribute       | type   | notes                                                                                                                                                 |
 | --------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **uuid**        | String | The unique canonical identifier to the app                                                                                                             |
+| **uuid**        | String | The unique canonical identifier to the app.                                                                                                           |
 | **description** | String | Plain text description of the app.                                                                                                                    |
-| **links**       | Object | Link to get mutual Zap templates from Zapier's Partner API                                                                                            |
+| **links**       | Object | Link to get mutual Zap templates from Zapier's Partner API.                                                                                           |
 | **title**       | String | The name of the app.                                                                                                                                  |
 | **url**         | String | An absolute url to the Zapbook Apps page.                                                                                                             |
 | **image**       | String | The app's logo in large format.                                                                                                                       |
 | **images**      | Object | Thumbnails for the app image. <br><small>Available sizes (and respective keys):<br> `url_128x128`, `url_64x64`, `url_32x32`, and `url_16x16`.</small> |
 | **slug**        | String | A URL/SEO friendly ID for the app.                                                                                                                    |
 | **categories**  | Object | A list of categories this app belongs to.                                                                                                             |
+| **app_latest**  | String | An identifier for the app's production version.                                                                                                       |
 
 ```json
 {
@@ -666,6 +669,12 @@ All errors will be JSON object with a String array of errors:
 ```
 
 ## Changelog
+
+- 2023-03-30
+
+  - Added attribute to `v1/apps`
+
+    - The endpoint `/v1/apps` exposes the `app_latest` string attribute representing the SelectedAPI and production version for each app.
 
 - 2022-08-29
 
