@@ -7,7 +7,7 @@ redirect_from: /docs/
 
 # Adding Support for Transfer
 
-> **Note**: As of 1st April 2023, we no longer accept reviews for new [Transfer](https://transfer.zapier.com/) source apps. We’re currently evaluating our process for building new sources for Transfer. During this period we aren’t accepting new Transfer sources built by partners for review. We don't have an expected timeframe of when we're opening reviews for new Transfer source apps.
+> **Note**: As of 1st April 2023, we no longer accept reviews for new Transfer source apps. We’re currently evaluating our process for building new sources for Transfer. During this period we aren’t accepting new Transfer sources built by partners for review. We don't have an expected timeframe of when we're opening reviews for new Transfer source apps.
 
 ## What is Transfer?
 
