@@ -39,7 +39,7 @@ You can invite new users by emailing them. You also have the option to select wh
  <li><a href="https://zapier.com/app/developer">Log into the Zapier Platform UI</a> or refer to the <a href="https://platform.zapier.com/cli_tutorials/getting-started#invite-users-to-your-app">Zapier Platform CLI documentation</a>.</li>
  <li>Select <b>My Integration</b>.</li>
  <li>In the <i>Integrations</i> section, select your <b>integration</b>.</li>
- <li> In the left sidebar, under <i>Manage</i> click <b>Sharing</b>.</li>
+ <li>In the left sidebar, under <i>Manage</i> click <b>Sharing</b>.</li>
  <li>In the <i>Email</i> field, insert the <b>user’s email</b>.</li>
  <li> [Optional] In the <i>Versions</i> dropdown menu, select what <b>version</b> of your private integration you want your user to access.</li>
 <li>Click <b>Invite</b>. This will instantly send the user an email from notifications@mail.zapier.com.</li>
