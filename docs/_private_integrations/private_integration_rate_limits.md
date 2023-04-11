@@ -1,6 +1,6 @@
 ---
 title: Private integration rate limits
-order: 1
+order: 4
 layout: post-toc
 redirect_from: /private_integrations/
 ---
@@ -10,6 +10,8 @@ Private integration rate limits are based on your current Zapier plan. When user
 
 - Free, Starter, and Professional plans: 100 calls every 60 seconds.
 - Team, or Company plans: 5000 calls every 60 seconds.
+
+This rate limit is cumulative across all users of your private integration.
 
 ## Increasing private integration rate limits
 
