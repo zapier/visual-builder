@@ -22,7 +22,7 @@ You can share a link with users to all versions of your integration.
  <li>Select <b>My Integration</b>.</li>
  <li>In the <i>Integrations</i> section, select your <b>integration</b>.</li>
  <li>In the left sidebar, under <i>Manage</i> click <b>Sharing</b>.</li>
- <li> Click <img style="vertical-align: middle;" src="https://res.cloudinary.com/zapier-media/image/upload/zinnia-icons/actionCopy.svg" alt="ICON NAME icon" width="24"> to copy the invite public link.</li>
+ <li>Click <img style="vertical-align: middle;" src="https://res.cloudinary.com/zapier-media/image/upload/zinnia-icons/actionCopy.svg" alt="ICON NAME icon" width="24"> to copy the invite public link.</li>
 </ol>
 
 
