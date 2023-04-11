@@ -20,7 +20,7 @@ You can share a link with users to all versions of your integration.
 2. Select **My Integration**.
 3. In the *Integrations* section, select your **integration**.
 4. In the left sidebar, under *Manage* click **Sharing**.
-5. Click <img style="vertical-align: middle;" src="https://res.cloudinary.com/zapier-media/image/upload/zinnia-icons/actionCopy.svg" alt="ICON NAME icon" width="24"> to copy the invite public link. 
+5. Click <img style="vertical-align: middle; width:24px;" src="https://res.cloudinary.com/zapier-media/image/upload/zinnia-icons/actionCopy.svg" alt="ICON NAME icon"> to copy the invite public link. 
 
 Now you can share the invite link with users. The link will take users to your private integration landing page where they can follow the on-screen instructions to accept your invite. 
 <br>
