@@ -67,7 +67,7 @@ There are two ways to revoke email invites using either the Zapier Platform UI o
  <li><a href="https://zapier.com/app/developer">Log into the Zapier Platform UI</a> </li>
  <li>Select <b>My Integrations</b>. </li>
  <li>In the <i>Integrations</i> section, select your <b>integration</b>.</li>
- <li> In the left sidebar, under <i>Manage</i> click <b>Sharing</b>.</li>
+ <li>In the left sidebar, under <i>Manage</i> click <b>Sharing</b>.</li>
  <li>In the row for your user, click <b>Delete</b>.</li>
  <li>Click <b>Really?</b>. This will revoke the invite email sent to the user.</li>
 </ol>
