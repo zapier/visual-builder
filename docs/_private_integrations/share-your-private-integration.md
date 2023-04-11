@@ -78,7 +78,7 @@ There are two ways to revoke email invites using either the Zapier Platform UI o
 
 <ol>
 <li>In your terminal, navigate to the directory of your integration (the directory with the <code>.zapierapprc</code> file).</li>
-<li> Run <code>zapier users:remove user@example.com</code>. Replace <i>user@example.com</i> with the email address that you’d like to revoke.</li>
+<li>Run <code>zapier users:remove user@example.com</code>. Replace <i>user@example.com</i> with the email address that you’d like to revoke.</li>
 <li>  The CLI will prompt you to confirm your revocation, type <b>Y</b> and click <b>Enter</b>.</li>
 </ol>
 
