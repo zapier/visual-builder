@@ -118,7 +118,7 @@ In some cases, it may be more useful to migrate only a portion of the current us
 
 ![Using the Percentage slider to migrate only 55% of users](https://cdn.zappy.app/68a6701f418dbda95771258703cc609a.png)
 
-> **Warning:** Migrating a single user with the "migrate by email" option will migrate that user *and all of their team members*! If your intention is to migrate a single user, make sure to use a user account that is not in a Teams account.
+> **Warning:** By default, migrating a single user with the "migrate by email" option will only migrate Zaps that are *private to that user*—owned by the user, are not shared, and whose the integration auths are not shared.
 
 You can then repeat the Migration process later on, and migrate the rest of the users once you are comfortable with how the new version is running in production.
 
