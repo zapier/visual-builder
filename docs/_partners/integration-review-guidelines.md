@@ -112,16 +112,27 @@ The integration should not already have an equivalent that is Public in our App 
 Do not create separate integrations for functionality that share the same authentication method and interact with the same API. Consolidate the functionality into one, high-level integration.
 
 ### 2.5 Name
-Make the integration name [titlecased](https://titlecase.com/), representative of the integration, and free of any cruft like “Cloned” or “Archived”.
+Use the actual, unique name of your app with the same capitalization your company uses in your core branding. Trademark/copyright identifiers such as a TM suffix aren’t allowed in the app name, though they can be added to the description.
+
+Do not add adjectives or phrases to your app name, and only include your company name if the company and app name are always used together in your branding. Do not include the word "app" unless you always include that in your app’s branding.
 
 ### 2.6 Logo
-The logo image must be square, at least 256px on each side, and have a transparent background. Use a version of the logo without the name or other writing on the image as the words may not be legible at small sizes around the Zapier platform and website. Upload the logo as a PNG file.
+The logo must be a square, transparent PNG at least 256x256px in size. Please use a bigger version if you have one available. If your app has a solid, square background, round the corners 3% of the width and set the background as transparent. If your icon is not square, make a square transparent image and center your icon inside the transparent square. Do not include the app name or other copy in the logo as it will not be legible at small sizes.
 
 ### 2.7 Description
-The integration description is 1-3 sentences or approximately 20-40 words in the form of “<Integration Name'> is a...”. Here’s a good description to follow: https://zapier.com/integrations/slack/integrations. It should describe what your integration is *outside* of the Zapier context, and be free of generic marketing-speak, links, and mentions of Zapier itself. Do not make it appear your integration is associated with or endorsed by Zapier such as “<Integration Name> is Zapier's preferred CRM application.“ And do not use overstated language such “<Integration Name> is the best CRM in the world.”
+Write a short description (up to 140 characters) of your app’s core features and use cases in the form of `<Integration Name> is a...`. The copy should not include links or mentions of Zapier. Do not use flowery or overstated language, or make make it appear your integration is associated with or endorsed by Zapier.
+
+**Example**:
+
+- `Trello is a team collaboration tool to organize anything on a kanban board.`, not `Trello is the best project management tool.`
+- `Dropbox lets you store files online, sync them to all your devices, and share them easily.`, not `A file storage app.`
 
 ###  2.8 Category and Role
-Whether your integration is built with the [Platform UI or CLI](https://platform.zapier.com/docs/vs#zapier-platform-ui-vs-cli-which-should-i-choose), be sure to select the most appropriate category to classify your integration by in the Category field and the integration owner’s relationship with your integration in the Role field.
+Select the category that best fits your app’s core features and use case. If your app includes features from multiple categories, choose the category that best describes your app’s primary use case today.
+
+You may update your app’s category anytime if needed, so do not select a category that fits your future ambitions for the app instead of its features today. Additionally, do not select a category that applies only to a secondary feature in your app or a narrow category that does not cover your app’s broader focus.
+
+Be sure to select the integration owner’s relationship with your integration in the Role field.
 
 ### 2.9 Language
 We do not have native support for language other than English on the Zapier Platform. The description of your integration, trigger/action/search names, field names, output field labels, help texts, and error messages must be in English. The data returned from your API and passed back to Zapier can be in the native language of your product.
