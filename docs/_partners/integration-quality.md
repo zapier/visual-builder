@@ -16,6 +16,7 @@ We’ll examine the main metrics around integration health and explore what they
 
 * **Errors** 
 * **Zap activation rate**
+* **Embed activation rate**
 * **Bugs**
 * **Active users retention**
 
@@ -26,7 +27,7 @@ Utilize the various tools and resources available in the developer platform, suc
 1. Sign into [Zapier Developer Platform](https://developer.zapier.com/) through your Zapier account to see integrations you can access.
 2. Select an integration to view its insights. You **MUST** be an admin or collaborator to view an integration’s Dashboard.
     * If an integration isn’t listed, ask an admin to invite you or try [adding yourself as a collaborator](https://developer.zapier.com/join-integration).
-3. Navigate to “Dashboard” in the lefthand sidebar to view growth and usage insights.
+3. Navigate to “Dashboard” in the lefthand sidebar to view growth, usage, and embed insights.
 
 ![Screenshot of Dashboard tab in Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
 
@@ -87,6 +88,32 @@ Give users the best chance to successfully activate their Zaps by making the int
     * Match the field types in the platform to the integration. For example, if a field is a static dropdown in the platform, implement it as the same type within the integration.
 
 
+## Embed activation rates
+
+### What is embed activation rate?
+
+How effective are the Zapier embeds in your product at converting user clicks on Zap Templates to Zap activations? Consider all the user clicks on Zap Templates surfaced in your embeds. Then look at the percentage of those Zaps that actually activated within 24 hours of creation, meaning the Zap ran at least one successful task. _That’s the embed activation rate._
+
+In your integration's Dashboard, along with activation rate, see a funnel-view of users who signed up for Zapier, created Zaps, enabled Zaps, and activated Zaps from Zap Templates in your embeds.
+
+![Screenshot of embed insights dashboard](https://cdn.zappy.app/896a5e4d56f2c86ba3909b669abf5d0c.png)
+
+### Does low activation mean something is broken?
+
+Not necessarily. Both your integration and embed(s) could be implemented correctly and in good health, but you could still be seeing low activation rates. Embed insights can help identify where in their journey users are hitting challenges with activating, whether it's the Zapier sign up, Zap setup or enablement stage.
+
+### What we have learned
+
+Embed insights and activation rates are strong indicators of user awareness and integration usability. If the click-to-sign-up ratio is really low, perhaps you haven't set sufficient context and expectations where the embed is placed for users to feel confident when they land on Zapier.com. If the create-to-enabled ratio is low, users could be having trouble with authenticating or field mapping once they're in the Editor creating a Zap from the template.
+
+### Best Practices
+
+* Don't see "Embed insights" in your Dashboard? That means we haven't found any embeds associated with the integration. Check out the "Embed" tab of your integration's Dashboard or our [Partner Solutions](https://zapier.com/l/partner/solutions) to see how you can start embedding.
+* We offer a variety of [embed tools](https://platform.zapier.com/embed/overview) as different options work best for different Partners and their platforms. Implement a combination of our partner tools and compare metrics to see which implementations are most successful for your use case.
+* Users are more likely to sign-up when they are aware of Zapier and the value we provide by integrating to your app. Give context of Zapier via a brief onboarding flow or link to help docs so users know what to expect.
+* Check our Partner success stories from [Clearbit](https://platform.zapier.com/partner_success_stories/clearbit) and [Close](https://platform.zapier.com/partner_success_stories/close) who created Zapier onboarding and help docs for their users.
+
+
 ## Bugs
 
 As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim).
@@ -137,7 +164,7 @@ Approaching active user retention with a long-term strategy can help maintain a 
 
 ## Integration Insights Definitions
 
-The following includes definitions for each of the metrics provided in the integration Dashboard:
+The following includes definitions for each of the integration metrics provided in the Dashboard:
 
 | **Metric**                  | Definition                                                                              | Available Filters   |
 |-----------------------------|-----------------------------------------------------------------------------------------|---------------------|
@@ -159,3 +186,24 @@ The following includes definitions for each of the metrics provided in the integ
 * Launching a co-marketing campaign or running ads? Track daily and monthly MAU over the launch period to track changes in usage.
 * Noticing certain triggers and actions with higher activations? Create additional Zap Templates to expand usage further since you know they are popular functionality.
 * Noticing certain triggers and actions with lower activation? Hop into the Zap Editor and test them out yourself. Are there any technical or usability issues you experience? How do other top apps in your category implement similar functionality?
+
+
+## Embed Insights Definitions
+
+The following includes definitions for each of the embed metrics provided in the Dashboard. All metrics can be filtered by "All Embeds" or individual embeds, and the last 7, 30, and 90 days.
+
+| **Metric**                             | Definition                                                                  |
+|----------------------------------------|-----------------------------------------------------------------------------|
+| **Total conversion**                   | Percentage of users who clicked on Zap Templates that activated Zaps.       |
+| **Users who clicked on Zap Templates** | Percentage and count of users who clicked on Zap Template in an embed.      |
+| **Users who signed up to Zapier**      | Percentage and count of users who signed up for a new account on Zapier.    |
+| **Users who created Zaps**             | Percentage and count of users who started on Zaps in the editor.            |
+| **Users who enabled Zaps**             | Percentage and count of users who created and successfully published Zaps.  |
+| **Users who activated Zaps**           | Percentage and count of users who created Zaps that successfully ran tasks. |
+
+
+## Practical Applications of Embed Insights
+
+* Test different iterations of embeds and compare rates to see which ones resonate most with your users. Do certain sets of Zap Templates garner more clicks and activations than others? Does enabling "App search" on the Full Zapier Experience, so users can see all the apps they can integrate with, increase activations?
+* Improve your Zap Templates with short, descriptive titles, and as much prefilled field mapping as possible, so users are immediately aware of the use case and can activate the Zap with the least amount of clicks.
+* Provide context with your embed through help docs or an onboarding flow guiding users on how to connect your app with others using Zapier to improve the "Users who signed up for Zapier" rate.
