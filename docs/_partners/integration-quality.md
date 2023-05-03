@@ -113,6 +113,7 @@ Embed insights and activation rates are strong indicators of user awareness and 
 * Users are more likely to sign-up when they are aware of Zapier and the value we provide by integrating to your app. Give context of Zapier via a brief onboarding flow or link to help docs so users know what to expect.
 * Check our Partner success stories from [Clearbit](https://platform.zapier.com/partner_success_stories/clearbit) and [Close](https://platform.zapier.com/partner_success_stories/close) who created Zapier onboarding and help docs for their users.
 
+
 ## Bugs
 
 As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim).
@@ -163,7 +164,7 @@ Approaching active user retention with a long-term strategy can help maintain a 
 
 ## Integration Insights Definitions
 
-The following includes definitions for each of the integration metrics provided in the integration Dashboard:
+The following includes definitions for each of the integration metrics provided in the Dashboard:
 
 | **Metric**                  | Definition                                                                              | Available Filters   |
 |-----------------------------|-----------------------------------------------------------------------------------------|---------------------|
@@ -189,7 +190,7 @@ The following includes definitions for each of the integration metrics provided 
 
 ## Embed Insights Definitions
 
-The following includes definitions for each of the embed metrics provided in the integration Dashboard. All metrics can be filtered by "All Embeds" or individual embeds, and the last 7, 30, and 90 days.
+The following includes definitions for each of the embed metrics provided in the Dashboard. All metrics can be filtered by "All Embeds" or individual embeds, and the last 7, 30, and 90 days.
 
 | **Metric**                             | Definition                                                                  |
 |----------------------------------------|-----------------------------------------------------------------------------|
