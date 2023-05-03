@@ -94,7 +94,9 @@ Give users the best chance to successfully activate their Zaps by making the int
 
 How effective are the Zapier embeds in your product at converting user clicks on Zap Templates to Zap activations? Consider all the user clicks on Zap Templates surfaced in your embeds. Then look at the percentage of those Zaps that actually activated within 24 hours of creation, meaning the Zap ran at least one successful task. _That’s the embed activation rate._
 
-Along with activation rate, see a funnel-view of Zapier sign-up, Zap created, and Zap enabled rates for embeds in your integration's Dashboard.
+In your integration's Dashboard, along with activation rate, see a funnel-view of users who signed up for Zapier, created Zaps, enabled Zaps, and activated Zaps from Zap Templates in your embeds.
+
+![Screenshot of embed insights dashboard](https://cdn.zappy.app/896a5e4d56f2c86ba3909b669abf5d0c.png)
 
 ### Does low activation mean something is broken?
 
