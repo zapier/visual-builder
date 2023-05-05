@@ -397,7 +397,7 @@ See [ZDE004](https://zapier.com/developer/documentation/v2/app-checks-reference/
 
 <a name="ZDE019"></a>
 
-## ZDE019 - Important Polling Triggers Should Always Have Sample Data
+## ZDE019 - Visible Polling Triggers Should Always Have Sample Data
 
 When users are setting up a Trigger, they need sample data to be returned in order to have fields available to map the Action. If testing the trigger returns no live results, we use Sample Data as a fallback.
 
@@ -499,16 +499,6 @@ var result = JSON.parse(bundle.response.content)
 ```javascript
 var result = z.JSON.parse(bundle.response.content)
 ```
-
----
-
-<a name="ZDW004"></a>
-
-## ZDW004 - There Should Be No More Than X Important Triggers|Searches|Actions in an App
-
-In order to highlight your most popular steps and give the user a clear recommendation of what to use Zapier for, we encourage a limited number of "important" steps. These are shown first in the UI and aren't behind a "show more" click.
-
-These can be adjusted in the settings for each individual step, either via checkbox (V2 Platform) or via the `important` property (CLI)
 
 ---
 
@@ -654,16 +644,6 @@ Read more about implementing dynamic dropdowns below:
 
 - CLI: https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#dynamic-dropdowns
 - Web Builder: https://zapier.com/developer/documentation/v2/dynamic-dropdowns/
-
----
-
-<a name="ZDW013"></a>
-
-## ZDW013 - There Should Be At Least X Important Triggers|Searches|Actions in an App
-
-In order to highlight your most popular steps and give the user a clear recommendation of what to use Zapier for, we encourage the use of "important" steps. Important steps are shown first in the UI, while non-important steps are shown after a "show more" click.
-
-These can be adjusted in the settings for each individual step, either via checkbox (V2 Platform) or via the `important` property (CLI)
 
 ---
 
