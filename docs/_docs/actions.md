@@ -19,8 +19,6 @@ Actions should also return output fields detailing what was created (or found), 
 
 Zapier strongly recommends against action steps that delete or remove data. To prevent data loss, action steps should only add or update data. If you are considering adding a delete action to your app, consider alternative actions for items such as deactivating, unsubscribing, or canceling, instead of deleting items completely.
 
-> **Note**: Actions are initially displayed in the order they are added to Zapier integrations, so be sure to add your app's most important actions first.
-
 # How to Add a New Action to a Zapier Integration
 
 ## 1. Configure Action Settings
