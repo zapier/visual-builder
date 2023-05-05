@@ -145,10 +145,7 @@ For security purposes, all API endpoints used by in integration must use HTTPS v
 
 ## 4. Triggers
 
-### 4.1 Important Triggers
-We allow integrations to set a maximum of three triggers as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/triggers#how-to-add-a-new-trigger-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer triggers, generally you should set them all as ‘Important’.
-
-### 4.2 Copy
+### 4.1 Copy
 Any copy associated with a trigger should match the copy, text, and terminology used in your product’s UI. This includes the trigger’s name, description, input fields, help text, output fields, etc. For instance, since Dropbox calls directories "folders" in their product UI, the respective trigger in [their Zapier integration](https://zapier.com/integrations/dropbox/integrations#triggers-and-actions) refers to "folders" instead of "directories". If your API uses different terminology than your product’s UI, match the UI as users are most familiar with this - not the API.
 
 Additionally, each trigger must have:
@@ -158,31 +155,31 @@ Additionally, each trigger must have:
 * a descriptive noun that reflects the object that is being returned in the trigger. This typically is one word and should always be in the singular form. The noun is used around the Zapier platform and will be pluralized automatically to complete various messages to users such as ‘No new <noun> found.‘
 * a concise description using our standard phrasing ‘Triggers when...“ and no more than a handful of additional words. Always the description with a period/full stop. Do not include the name of your integration nor capitalize the noun in the description such a ‘Triggers when a new Lead is created in Example CRM.’ 
 
-### 4.3 Trigger Input Fields
+### 4.2 Trigger Input Fields
 [Trigger input fields](http:), if they exist, should be named appropriately and include help text if their purpose is ambiguous.
 
-#### 4.3.1 ID Fields
+#### 4.2.1 ID Fields
 * Users should never be expected to type in an ID as this is error prone. Your integration should not have any trigger fields labeled ‘<Object Name> ID’, such as ‘Customer ID’. Instead, use Zapier’s [dropdown](https://platform.zapier.com/docs/input-designer) functionality to provide users with a user-friendly list of options.
 
-#### 4.3.2 Help Text
+#### 4.2.2 Help Text
 * Don't be redundant with help text, and only include it if you have something different to say from the field name such as  the expected format of the value or additional instructions. Redundant help text teaches users not to read any help text at all, so important information can be missed.
 
-#### 4.3.3 Optional Trigger Fields
+#### 4.2.3 Optional Trigger Fields
 
 * If a trigger field is optional, confirm the request does not throw an error in a null case where the users does not select an option.
 
-#### 4.3.4 Field Types
+#### 4.2.4 Field Types
 * Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note the Zap Editor does not validate the data to ensure users added the correct item for that field type. 
 
 * If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
 
-#### 4.3.5 Ordering
+#### 4.2.5 Ordering
 * Put required trigger input fields at the top of the form with optional fields towards the bottom by importance.
 
-### 4.4 Static Webhooks
+### 4.3 Static Webhooks
 Triggers using [static webhooks](https://platform.zapier.com/legacy/docs#static-webhooks) are not allowed in public Zapier integrations. Users can replicate this functionality on Zapier via our built in [Webhooks integration](https://zapier.com/integrations/webhook/integrations). Please consider including authentication and using REST hooks to provide users with a more streamlined experience.
 
-### 4.5 Polling Triggers
+### 4.4 Polling Triggers
 Live Zaps with [polling triggers](https://platform.zapier.com/docs/triggers#polling-trigger) automatically poll the request URL for new data every 5 to 15 minutes, depending on the user’s [Zapier plan](https://zapier.com/pricing).
 
 * Return results from the polling URL in reverse chronological order by created date, so the most recently created or updated object is returned first. 
@@ -190,26 +187,26 @@ Live Zaps with [polling triggers](https://platform.zapier.com/docs/triggers#poll
 * Use [pagination](https://platform.zapier.com/docs/triggers#how-to-use-pagination) on the trigger results if large amounts of data will be returned.
 * Each result should contain an explicit ‘id’ field for [deduplication](https://platform.zapier.com/docs/dedupe) from the polling endpoint. By default, the field called `id` will be used as the deduplication key if it exists. Otherwise Zapier looks for the shortest field key with `id` in the key name.
 
-### 4.6 REST Webhooks
+### 4.5 REST Webhooks
 [REST hook-based triggers](https://platform.zapier.com/docs/triggers#rest-hook-trigger) are Zapier’s preferred implementation of triggers, since they fire immediately after the triggering action is performed. Here’s a [post](https://zapier.com/engineering/introducing-resthooksorg/) further describing why we and our mutual users prefer REST hook triggers over polling triggers.
 
-#### 4.6.1 Multiple Subscriptions
+#### 4.5.1 Multiple Subscriptions
 * Hook based triggers must allow multiple subscriptions without overwriting subscriptions. You can test this by setting up 2 Zaps with the same trigger, turning them On, and confirming  both Zaps fire successfully when the triggering action is performed.
 
-#### 4.6.2 Polling URL
+#### 4.5.2 Polling URL
 * Each REST hook trigger must also have a polling URL defined. This allows users to easily pull in sample resources to set up their Zaps without leaving the Zap Editor. Without a corresponding polling URL, users would have to navigate off of the Zap Editor to the product to create or update a resource each time they setup a Zap.
 * Ensure the data returned from the polling URL follows the Polling Trigger guidelines above.
 * Data returned from the polling URL should exactly match the data returned in the hook payload. Be particularly wary field keys from the polling URL and in the hook payload match in spelling and casing.
 
-### 4.7 Response Content
+### 4.6 Response Content
 
-#### 4.7.1 Names
+#### 4.6.1 Names
 * Many actions in Zapier require names to be split into two fields - first/last or given/surname. This conflicts with some naming schemes around the world, but without a separated name field, your trigger may not be compatible with certain integrations. Always provide separated name fields, though feel free to return the full name as well if the response already includes this.
 
-#### 4.7.2 Addresses
+#### 4.6.2 Addresses
 * Likewise with names, many actions in Zapier require address components in separate fields (street, street2, city, state, zip), instead of requiring the complete address in a single field. Always provide separated address fields, though feel free to return the complete address as well if the response already includes this.
 
-#### 4.7.3 Date-times
+#### 4.6.3 Date-times
 * Date-time values are required to be in [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it's UTC). This includes date-time values returned from the polling URL, in the hook payload, and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
 
     * `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
@@ -217,27 +214,27 @@ Live Zaps with [polling triggers](https://platform.zapier.com/docs/triggers#poll
     * `2018-12-01T12:32:01-08:00`
     * `2018-12-13` (for date-only values)
 
-#### 4.7.4 Booleans
+#### 4.6.4 Booleans
 * Set boolean values as `true` or `false`. Do not use `1` and `0` or alternative representations for boolean values.
 
-#### 4.7.5 Important Data
+#### 4.6.5 Important Data
 * The response data should include important keys in the most usable format. For example, it helps to return both the ID and pretty name of objects, any contact information, and links to the resource (ex: New Card in Trello, link to card).
 
-#### 4.7.6 Unnecessary/Excess Data
+#### 4.6.6 Unnecessary/Excess Data
 * Remove unnecessary fields that may seem confusing or add noise to users’ Zap setup process. For example, if the response content includes information about the request itself and the input fields provided, please remove those fields from the returned response.
 
-#### 4.7.7 Dropdown Fields
+#### 4.6.7 Dropdown Fields
 
 * Return both the name and ID of the selected dropdown option to be used in subsequent steps of a Zap. 
 
-### 4.8 Sample Data
+### 4.7 Sample Data
 Each trigger requires [sample data](https://platform.zapier.com/docs/faq#output) for instances where no result is returned during Zap setup. This could be because the API is temporarily down, or because the user has no existing data in their account to return. The sample data must:
 
 * Only represent one item, and not the entire response of the request if there are multiple items returned as a set. For example, {"key": "value"} instead of [{"key": "value"}, {"key": "value2"}, ... ]. 
 * Use representative data in the expected format the values will be returned. For example, don’t set a ‘first name’ key to ‘string’ or ‘1234’; set it to something like ‘Bob’.
 * Be a reflection of the keys returned in every response for all users of the trigger. This means if there are custom fields that will be returned for some users and not others, please do not include these in the sample data.
 
-### 4.9 Output Fields
+### 4.8 Output Fields
 [Output Fields](https://platform.zapier.com/docs/faq#output) add user-friendly labels to your API’s response to facilitate mapping fields during Zap setup for users. By default, Zapier will try to make a friendly version of the response by capitalizing words and replacing underscores with spaces, but this can be customized. Add a custom output field label when:
 
 * a field is abbreviated. For example, ‘LTV’ should be labeled ‘Lifetime Value’.
@@ -245,18 +242,15 @@ Each trigger requires [sample data](https://platform.zapier.com/docs/faq#output)
 * a field is represented by an ID.
 * in general, it is not instantly clear what the field or value represents.
 
-### 4.10 Update Triggers
+### 4.9 Update Triggers
 Don't offer a generic 'Updated <object name>' trigger, as these are often too general for users to use in their Zaps. Instead, think under what specific scenarios the user needs an update trigger. For example, instead of offering an 'Updated Deal' trigger which triggers when anything changes on the deal, offer a 'New Deal in Stage' or 'Updated Deal Status' trigger that allows the user to specify which stage they want to monitor.
 
-### 4.11 Error Messages
+### 4.10 Error Messages
 Users should never receive a successful response if there was an error in the request. All error messages should be user-friendly and avoid technical jargon. Be as specific as possible to what caused the error.
 
 ## 5. Actions
 
-### 5.1 Important Actions
-We allow integrations to set a maximum of three actions as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or fewer actions, generally you should set them all as ‘Important’.
-
-### 5.2 Copy
+### 5.1 Copy
 The copy for actions should match your product’s UI. This includes the action’s name, description, input fields, help text, etc. For instance, since Dropbox calls directories "folders" in their product UI, the Zapier integration should refer to "folders" in the respective action. If the API uses different terminology than your product’s UI, match the UI - not the API.
 
 Additionally, each action must have:
@@ -266,40 +260,40 @@ Additionally, each action must have:
 * a descriptive noun that reflects the object that is being fired in the trigger. This should typically be one word and should always be in the singular form. The noun is used around the Zapier platform and will be pluralized automatically to complete various messages to users such as ‘No new <noun> found.‘
 * a concise description starting with a plural form of the action verb, and ending in a period/fullstop. For example, the description for a ‘Create Lead’ action could be ‘Creates a new lead.’ Please do not include the name of the platform nor capitalize the noun such a  ‘Creates a new Lead in XXX CRM.’
 
-### 5.3 Action Input Fields
+### 5.2 Action Input Fields
 All action steps *must* include [input fields](https://platform.zapier.com/docs/actions#2-build-action-input-form) to gather the data needed to create, update, or perform the intended action.
 
-#### 5.3.1 ID Fields
+#### 5.2.1 ID Fields
 * Users should never be expected to manually type or map an internal ID to an action field. Your integration should not have input fields labeled ‘XXX ID’. Generally, trigger and action steps of other integrations do not return internal IDs for your specific platform to be used in an action field from your Zapier integration. Use Zapier’s [dynamic dropdown](https://platform.zapier.com/cli_tutorials/dynamic-dropdowns) and [Search Connector](https://platform.zapier.com/legacy/docs#search-connector)/[search-powered field](https://platform.zapier.com/cli_docs/docs#search-powered-fields) functionalities to provide users with an easier way to select or search for the appropriate resource by a more readily-available value such as ‘name’, ‘email address’, ‘title’, etc.
 
-#### 5.3.2 Ordering
+#### 5.2.2 Ordering
 * Order action fields logically. If you are unsure, look at how the respective fields are ordered in your platform and mimic that since users will be familiar with that ordering. 
 * Required action fields should generally be listed first at the top of the Zap Editor.
 * Place all optional, lesser-used fields towards the bottom.
 * Group related fields together. For example, first name and last name fields, as well as individual address component fields should be ordered consecutively. Do NOT use [line-item groups](https://platform.zapier.com/docs/input-designer#how-to-add-a-line-item-group) or the [‘children’](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) field schema key to visually group fields; these are solely intended for line-item functionality.
 
-#### 5.3.3 Required Fields
+#### 5.2.3 Required Fields
 * If a field doesn't have to be required, don't make it! Parallel the required fields from your integration as closely as possible. For example, if 'Email Address' is not required to create a lead in the platform, do not make the 'Email Address' field required in the Zapier editor. If the API specifies a non-important field as required, hard-code a default value so the field is not empty if one is not provided by the user.
 * If the action step has a case where one field OR another field is required, set both fields as optional, add help text to both fields stating that one or the other is required, and throw a user-friendly error message if neither field is filled.
 
-#### 5.3.4 Help Text
+#### 5.2.4 Help Text
 * Don't be redundant with help text, and only include it if you have something different to say from the field name such as the expected format of the value or additional instructions. For example, help text for an 'Email Address' field stating 'Contact's email address' is not necessary. Redundant help text teaches users not to read any help text at all, so important information can be missed. You may use [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) formatting in help text.
 
-#### 5.3.5 Default Values
+#### 5.2.5 Default Values
 * Set [default values](https://platform.zapier.com/docs/input-designer#add-fields) for input fields sparsely, but when:
 
 * the API specifies an unimportant field as required, set a default value in case one is not provided by the user.
 * the a field in the platform is set to or shows a default value, set the same default value for the action field in the Zapier integration.
 
-#### 5.3.6 Field Types
+#### 5.2.6 Field Types
 * Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note Zapier does not validate the data to ensure users added the correct item for that field type.
 
 * If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
 
-### 5.4 [Response Content](https://zapier.com/developer/documentation/v2/integration-dev-guide/#action-response-content)
+### 5.3 [Response Content](https://zapier.com/developer/documentation/v2/integration-dev-guide/#action-response-content)
 Return information about the resource that was created, updated, or affected by the action, and not just a 'success' message. At a minimum, return an ID, the name or title of the resource (when pertinent), and a link to the newly created, updated, or affected resource in the platform (if available). Additionally, return any other useful data about the resource users may need in subsequent actions of a multi-step Zap.
 
-#### 5.4.1 Date-times
+#### 5.3.1 Date-times
 * Date-time values are required to be in standard [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it's UTC). This includes date-time values returned from the polling URL, in the hook payload, and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
 
     * `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
@@ -307,30 +301,30 @@ Return information about the resource that was created, updated, or affected by 
     * `2018-12-01T12:32:01-08:00`
     * `2018-12-13` (for date-only values)
 
-#### 5.4.2 Booleans
+#### 5.3.2 Booleans
 * Set boolean values as `true` or `false`. Do not use `1` and `0` or alternative representations for boolean values.
 
-#### 5.4.3 Important Data
+#### 5.3.3 Important Data
 * The response data should include important fields in the most usable format. For example, it helps to return both the ID and pretty name of resources, any important information about the resource such as contact information, and a link to the resource in the platform (ex: New Card in Trello, link to card).
 
 * Returning a link of the newly created/updated/affected resource in the action’s response data helps users link to the resource in subsequent steps of a multi-step Zap and confirms the new resource was created. This is also helpful for our support team when debugging issues.
 
-#### 5.4.4 Unnecessary/Excess Data
+#### 5.3.4 Unnecessary/Excess Data
 * Remove non-necessary fields that may seem confusing or add unnecessary noise to users’ Zap setup process from your API call’s custom code. For example, if the response content includes information about the request itself and the input fields provided, please remove those fields from the returned response.
 
-#### 5.4.5 Dropdown Fields
+#### 5.3.5 Dropdown Fields
 * The response data should include important keys in the most usable format. For example, it helps to return both the ID and pretty name of objects, any contact information, and links to the resource (ex: Find Card in Trello, link to card).
 
 * Return both the name and ID of the selected dropdown option to be used in subsequent steps of the Zap. 
 
-### 5.5 Sample Data
+### 5.4 Sample Data
 The ‘Test this Step’ step on actions sends a real request on behalf of the connected account. Therefore, each action requires [sample data](https://platform.zapier.com/docs/faq#output) for instances when the user does not wish to actually run the action in their account to finish setting up the Zap. The sample data must:
 
 * Only represent one record, and not the entire return from the request if there are multiple records returned as a set. For example, {"key": "value"} instead of [{"key": "value"}, {"key": "value2"}, ... ]. 
 * Use representative data in the expected format the values will be returned. For example, don’t set a ‘first name’ key to ‘string’ or ‘1234’; set it to something like ‘Bob’.
 * Be a reflection of the keys return in every response for all users of the action. This means if there are custom fields that will be returned for some users and not others, please do not include these key:values in the sample data.
 
-### 5.6 Output Fields
+### 5.5 Output Fields
 [Output Fields](https://platform.zapier.com/docs/faq#output) add user-friendly labels to your API’s response data to facilitate mapping fields during Zap setup for users. By default, Zapier will try to make friendly version of your API’s response, capitalizing words, and replacing underscores with spaces, but they an also be customized. Add a custom output field label when:
 
 * a field is abbreviated. For example, ‘LTV’ should be labeled ‘Lifetime Value’.
@@ -338,21 +332,18 @@ The ‘Test this Step’ step on actions sends a real request on behalf of the c
 * a field is represented by an ID.
 * in general, it is not instantly clear what the field or value represents.
 
-### 5.7 Create or Update Functionality
+### 5.6 Create or Update Functionality
 If your integration must have a ‘Create-or-Update’ functionality, implement a ‘Find-or-Create Search’ with an ‘Update’ action versus a ‘Search’ with a ‘Create-or-Update’ action or a standalone ‘Create-or-Update’ action.
 
-### 5.8 Delete Actions
+### 5.7 Delete Actions
 Avoid delete actions which make it easy for users to accidentally delete data they didn’t intend to remove. Instead, offer less permanent actions such as options to deactivate, unsubscribe, or tag a user in a certain way (where users could then easily delete those items from inside your product).
 
 ## 6. Searches
 
-### 6.1 Important Searches
-We allow integrations to set a maximum of three searches as ‘Important’ via the [Visibility Option](https://platform.zapier.com/docs/actions#how-to-add-a-new-action-to-a-zapier-integration) in the Visual Builder or the basic [display schema](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema) via the CLI. If you have three or less searches, generally you should set them all as ‘Important’.
-
-### 6.2 Find or Create
+### 6.1 Find or Create
 Search actions can optionally create items if nothing is found in the search. If your integration has a ‘Create-or-Update’ action, please implement a ‘Find-or-Create Search’ with an ‘Update’ action versus a ‘Search’ with a ‘Create-or-Update’ action or a standalone ‘Create-or-Update’ action.
 
-### 6.3 Copy
+### 6.2 Copy
 The copy for searches should match your product’s UI. This includes search name, description, input fields, help text, etc. For instance, since Dropbox calls directories "folders" in their product UI, the Zapier integration should refer to "folders" in the respective search. If the API uses different terminology than your integration's UI, match the UI - not the API.
 
 Additionally, each search must have:
@@ -362,38 +353,38 @@ Additionally, each search must have:
 * a descriptive noun that reflects the object that will be returned. This should typically be one word and should always be in the singular form. The noun is used around the Zapier platform and will be pluralized automatically to complete various messages to users such as ‘No new <noun> found.‘
 * a concise description starting with a plural form of the verb, which typically is ‘Finds’, and ending in a period/fullstop. For example, a valid description for a ‘Find Lead’ search is ‘Finds a new lead.’ Please do not include the name of the platform nor capitalize the noun such a  ‘Finds a new Lead in XXX CRM.’
 
-### 6.4 Search Fields
+### 6.3 Search Fields
 [Search fields](https://platform.zapier.com/docs/actions#2-build-action-input-form) should be named appropriately and include help text if their purpose is ambiguous.
 
-#### 6.4.1 ID Fields
+#### 6.3.1 ID Fields
 * Users should never be expected to manually type or map an internal ID to a search field. Your integration should not have search fields labeled ‘XXX ID’. Generally, trigger and action steps of other integrations do not return internal IDs for your specific platform to be used in an action field from your Zapier integration. And if the user *is* using a trigger from your Zapier integration, the trigger should return all necessary information about the resource without the Zap needing a search step to retrieve additional, necessary information. Instead, provide search field options for more general information such as ‘name’, ‘email address’, ‘phone number’, ‘title’, etc. that is more readily-available from all triggers.
 
-#### 6.4.2 Help Text
+#### 6.3.2 Help Text
 * Don't be redundant with help text, and only include it if you have something different to say from the field name such as the expected format of the value or additional instructions. Redundant help text teaches users not to read any help text at all, so important information can be missed.
 
-#### 6.4.3 Optional Search Fields
+#### 6.3.3 Optional Search Fields
 * If a search field is optional, confirm the request does not throw an error in a null case where the users does not select an option.
 
-#### 6.4.4 Field Types
+#### 6.3.4 Field Types
 * Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note Zapier does not validate the data to ensure users added the correct item for that field type. 
 * If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
 
-#### 6.4.5 Ordering
+#### 6.3.5 Ordering
 * Put required search fields at the top of the form with optional fields towards the bottom by importance.
 
-### 6.5 Response Content
+### 6.4 Response Content
 While create actions return a single object to Zapier; searches must return an array of objects. Each search must follow these guideline:
 
-#### 6.5.1 No Result
+#### 6.4.1 No Result
 * Do not raise an error if there are no search results to return. If your API returns a 404 for search misses, use custom code to return an empty list.
 
-#### 6.5.2 Names
+#### 6.4.2 Names
 * Many actions in Zapier require names to be split into two fields - first/last or given/surname. This conflicts with some naming schemes around the world, but without a separated name field, your trigger may not be compatible with certain integrations. Always provide separated name fields, though feel free to return the full name as well if the response already includes this.
 
-#### 6.5.3 Addresses
+#### 6.4.3 Addresses
 * Likewise with names, most actions in Zapier require address components in separate fields (street, street2, city, state, zip), instead of requiring the complete address in a single field. Always provide separated address fields, though feel free to return the complete address as well if the response already includes this.
 
-#### 6.5.4 Date-times
+#### 6.4.4 Date-times
 * Date-time values are required to be in [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it's UTC). This includes date-time values returned from the polling URL, in the hook payload, and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
 
     * `2018-12-15T01:15:13Z` (or `-0000` instead of `Z`)
@@ -401,23 +392,23 @@ While create actions return a single object to Zapier; searches must return an a
     * `2018-12-01T12:32:01-08:00`
     * `2018-12-13` (for date-only values)
 
-#### 6.5.5 Booleans
+#### 6.4.5 Booleans
 * Set boolean values as `true` or `false`. Do not use `1` and `0` or alternative representations for boolean values.
 
-#### 6.5.6 Important Data
+#### 6.4.6 Important Data
 * The response data should include important fields in the most usable format. For example, it helps to return both the ID and pretty name of resources, any important information about the resource such as contact information, and a link to the resource in the platform (ex: New Card in Trello, link to card).
 
-#### 6.5.7 Unnecessary/Excess Data
+#### 6.4.7 Unnecessary/Excess Data
 * Remove unnecessary fields that may seem confusing or add noise to users’ Zap setup process from your API call’s custom code. For example, if the response content includes information about the request itself and the input fields provided, please remove those fields from the returned response.
 
-### 6.6 Sample Data
+### 6.5 Sample Data
 Each search requires [sample data](https://platform.zapier.com/docs/faq#output) for instances where no result is returned during Zap setup. This could be because the API is temporarily down, or because no result is returned for the specific search the user tests. The sample data must:
 
 * Only represent one record, and not the entire return from the request if there are multiple records returned as a set. For example, {"key": "value"} instead of [{"key": "value"}, {"key": "value2"}, ... ]. 
 * Use representative data in the expected format the values will be returned. For example, don’t set a ‘first name’ key to ‘string’ or ‘1234’; set it to something like ‘Bob’.
 * Be a reflection of the keys return in every response for all users of the search. This means if there are custom fields that will be returned for some users and not others, please do not include these key:values in the sample data.
 
-### 6.7 Output Fields
+### 6.6 Output Fields
 [Output Fields](https://platform.zapier.com/docs/faq#output) add user-friendly labels to your API’s response data to facilitate mapping fields during Zap setup for users. By default, Zapier will try to make friendly version of your API’s response, capitalizing words, and replacing underscores with spaces, but they an also be customized. Add a custom output field label when:
 
 * a field is abbreviated. For example, ‘LTV’ should be labeled ‘Lifetime Value’.
