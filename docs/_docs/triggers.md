@@ -15,8 +15,6 @@ Triggers are how your app's users can start automated workflows whenever they ad
 
 As triggers only watch for new data and typically need to send no or little data to the app, they're often quicker to set up than Zapier [actions](./actions). Zapier can watch for any new or updated item through your API—or optionally, you can include [input fields](https://platform.zapier.com/docs/input-designer) for users to enter filters, tags, and other details to filter through new data and watch for the items they want.
 
-> **Note**: Triggers are initially displayed in the order they are added to Zapier integrations, so be sure to add your app’s most important triggers first.
-
 ## Trigger Types
 
 Most Zapier triggers run when new items are added to an app, database, project, or file. Some apps also include update triggers that run whenever an item is updated in the app, which is useful to help users keep data up to date across apps using Zapier.

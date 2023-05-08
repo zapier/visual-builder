@@ -51,7 +51,7 @@ Then be sure to check each of the following:
 
 - **Authentication**: Does your app account successfully connect? Zapier will show any testing accounts you already added, but try adding a new account here for a complete test.
 - **Connection Label**: Does Zapier show a detailed connection label on the new account, with the info you set when building your integration?
-- **Trigger and Action List**: Do you see every trigger and action step, respectively, that you added to your integration? Are the ones you marked as _Important_ shown above the fold? Are each trigger and action's name and description accurate and grammatically correct?
+- **Trigger and Action List**: Do you see every trigger and action step, respectively, that you added to your integration? Are each trigger and action's name and description accurate and grammatically correct?
 - **Fields**: Do triggers and actions show the fields you expect? Are their names and labels accurate and grammatically correct? Do any links or formatting in descriptions work correctly? Do drop-down fields or those with multiple selectors work correctly?
 - **Output**: When you run a Zap trigger or action's test, does the step return the fields and data you expect? Are those formatted correctly? Do triggers show the most recently added item from your app, and do searches return appropriate results?
 - **Input**: Open your app, and check each item that Zapier actions added or updated. Were they added correctly? Is their data in the correct format?
