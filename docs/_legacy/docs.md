@@ -993,12 +993,6 @@ Demo: <br/> _the user will see **Name** and **Help Text** like below:_
 
 ![label and help](https://cdn.zapier.com/storage/photos/d4fd7c63b1f2fe58946a4184a4bce722.png)
 
-### Important
-
-Occasionally, you'll have unimportant triggers which are used mostly to drive things like [dynamic dropdown](#dynamic-dropdowns), but could be useful to a small subset of users. If you mark a trigger as unimportant, we will hide the trigger behind a link. The user can still pick these if they really want to but it is hidden by default.
-
-> Note: if you have no important triggers, we will not hide any of them by default.
-
 ### Hide
 
 If you create a trigger solely to be used in a [dynamic dropdown](#dynamic-dropdowns) and it will never be helpful to users, you can mark it as hidden. We will never show the trigger in the UI and users will not be able to pick it.
@@ -1373,10 +1367,6 @@ This allows you to dynamically define action fields that are user set (IE: custo
 Example: <br/> {% raw %}`http://api.example.com/v2/fields.json` or `http://{% templatetag openvariable %}account{% templatetag closevariable %}.example.com/api/v1/fields.json`{% endraw %}
 
 > Read more about [custom field formatting here](#action-fields-custom).
-
-### Important
-
-Usually you'll want to leave this checked, but if you don't we'll hide that action behind an "uncommon" link when a user selects their action. Mainly this is helpful for removing actions that are there for breadth but are rarely used.
 
 ### Hide
 
@@ -1792,7 +1782,6 @@ If your action **returns** custom fields you'll also want to configure a source 
         "type": "unicode",
         "key": "json_key", // the field "name", will be used to construct a label if none is provided
         "label": "Pretty Label",
-        "important": true // optional
     },
     ...
 ]
@@ -1882,10 +1871,6 @@ Example: <br/> `find_contact`, or `findContact`
 A longer description of what this Search actually looks for. Point out any un-standard behavior as far as how searching happens.
 
 Example: <br/> `Finds a contact by email address.`
-
-### Important
-
-Usually you'll want to leave this checked, but if you don't we'll hide that search behind an "uncommon" link when a user selects their action. Mainly this is helpful for removing searches that are there for breadth but are rarely used.
 
 ### Hide
 
@@ -2095,7 +2080,6 @@ If your search action **returns** custom fields you'll also want to configure a 
         "type": "unicode",
         "key": "json_key", // the field "name", will be used to construct a label if none is provided
         "label": "Pretty Label",
-        "important": true // optional
     },
     ...
 ]

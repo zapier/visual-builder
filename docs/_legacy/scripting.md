@@ -1151,8 +1151,7 @@ bundle.response.content: <str>
                # `type` can be unicode, int, bool
                # `key` should be unique, and will be the "key" in "key: value" in the response content
                # `label` should be provided
-               # `important` is optional
-               {'type': <str>, 'key': <str>, 'label': <str>, 'important': <str>}
+               {'type': <str>, 'key': <str>, 'label': <str>}
            ]
         */
         return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
@@ -1229,8 +1228,7 @@ bundle.response.content: <str>
                # `type` can be unicode, int, bool
                # `key` should be unique, and will be the "key" in "key: value" in the response content
                # `label` should be provided
-               # `important` is optional
-               {'type': <str>, 'key': <str>, 'label': <str>, 'important': <str>}
+               {'type': <str>, 'key': <str>, 'label': <str>}
            ]
     */
         return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields

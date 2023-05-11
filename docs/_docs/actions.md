@@ -37,7 +37,7 @@ Then add the core details to your action, including:
 - **Name**: A human friendly plain text name for this action, typically with a verb such as _Add_ or _Create_ followed by the name of the item this action will create in your app. Shown inside the Zap editor and on Zapier's app directory marketing pages.
 - **Noun**: A single noun that describes what this action creates, used by Zapier to auto-generate text in Zaps about your action.
 - **Description**: A plain text sentence that describes what your action does to help users understand why they should use this action. Shown inside the Zap editor and on Zapier's app directory marketing pages.
-- **Visibility Options**: An option to select when this action will be shown. _Important_ is chosen by default. Choose _None_ if the action is not important, or choose _Hidden_ if this action should not be shown to users. This is helpful if you build a create action solely to pair with a search action but do not want it used on its own.
+- **Visibility Options**: An option to select when this action will be shown. _Shown_ is chosen by default. Choose _Hidden_ if this action should not be shown to users. This is helpful if you build a create action solely to pair with a search action but do not want it used on its own.
 
 Once the action settings are added, click _Save and Continue_ to add the new action and save your settings. You can edit the settings any time later with the exception of the create or search option.
 

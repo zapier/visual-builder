@@ -83,7 +83,7 @@ To select the test version of your integration, click the “Version” dropdown
 
 ![](https://cdn.zappy.app/9757a3a04626669fe2836229dd7e6b86.png)
 
-In the left sidebar menu, select the hidden trigger or action in your integration. At the bottom of the Settings page click the “Visibility Options” dropdown menu and select “Important (Displayed above the fold in the Zap Editor).” Then click “Save.”
+In the left sidebar menu, select the hidden trigger or action in your integration. At the bottom of the Settings page, under “Visibility Options”, select “Shown.” Then click “Save.”
 
 ![](https://cdn.zappy.app/11786cd7941cf9eab71dc81d73f244db.png)
 
