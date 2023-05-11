@@ -183,12 +183,24 @@ const search = async (query) => {
     }
 }
 
+const sanitizeUserInput = (input) => {
+    /**
+    * Sanitize user input to prevent XSS attacks.
+    */
+    return input
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
 /**
 * Run the search
 */
 
 if (params.q) {
-    searchInputElement.value = params.q;
-    search(params.q);
+    const query = sanitizeUserInput(params.q);
+    searchInputElement.value = query
+    search(query);
 }
 </script>
