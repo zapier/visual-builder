@@ -85,7 +85,7 @@ To select the test version of your integration, click the “Version” dropdown
 
 In the left sidebar menu, select the hidden trigger or action in your integration. At the bottom of the Settings page, under “Visibility Options”, select “Shown.” Then click “Save.”
 
-![](https://cdn.zappy.app/a11912100041e9fc982d3ec9eaaabef9.png)
+![](https://cdn.zappy.app/955d4c1d7610603a676baf43eb680516.png)
 
 ### When you’re done testing
 
