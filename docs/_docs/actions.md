@@ -23,7 +23,7 @@ Zapier strongly recommends against action steps that delete or remove data. To p
 
 ## 1. Configure Action Settings
 
-![Zapier visual builder action settings](https://cdn.zappy.app/10d48377c1b0020384db1d1029ba8fc6.png)
+![Zapier visual builder action settings](https://cdn.zappy.app/90061640a1c8e2f1f3172033c932bf57.png)
 
 To add a new action step to a Zapier integration, open the _Actions_ page in Zapier visual builder from the sidebar on the left, and select _Add Action_. Start by selecting your action type. New actions are _Create_ type by default, and will add new data to your app. If your action should lookup existing items instead, select _Search_—then jump to the [Search](#search) section below for details on setting up a search action.
 
