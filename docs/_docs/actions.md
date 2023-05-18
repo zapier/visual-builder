@@ -124,15 +124,13 @@ Finally, in the API configuration, add your API endpoint where Zapier will by de
 
 When users use the search action in a Zap, Zapier will show your core search action settings that you set in the input designer by default. Then, if users check to create an item if nothing is found, Zapier will load the create action's input fields inside the search action so users can fill both out.
 
-## How to Reorder Actions in a Zapier Integration
+## Viewing Actions in a Zapier Integration
 
 ![Actions inside Zapier](https://cdn.zappy.app/5d3c2e8f9f6cf0f6daadd3ee97fa5e80.png)
 
-Whenever a user selects your app's integration in a Zapier action step, they'll see every create and search action in your integration. Zapier shows create actions first, followed by search actions.
+Whenever a user selects your app's integration in a Zapier action step, they'll see every create and search action in your integration. Zapier shows create actions first, followed by search actions. Actions are listed in alphabetical order.
 
-Actions are originally listed in the order you add them to your integration. As people use your integration, Zapier will show your integration's most popular actions first, automatically reordering them based on popularity.
-
-You change actions' visibility at any time, if you don't want an action to show first. Edit the action, then in the last option on the _Settings_ page, choose _Hidden_ to make this action not usable inside Zapier.
+You can change actions' visibility at any time, if you don't want an action to be shown. Open the action in the Zapier visual builder, to the _Settings_ tab, and scroll to the bottom of the page to the _Visibility Options_ section. Select _Hidden_ if you want to keep users from being able to use this action (often used if an action is deprecated but should keep working in users' existing Zaps).
 
 ## How to Remove an Existing Action
 

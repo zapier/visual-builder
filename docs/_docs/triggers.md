@@ -171,15 +171,15 @@ Then click _Generate Output Field Definitions_, and Zapier will build a table of
 
 You can now make a new Zap using your trigger to test out the trigger live inside Zapier.
 
-## How to Reorder Triggers
+## Viewing Triggers in a Zapier Integration
 
 ![Triggers in Zapier](https://cdn.zappy.app/35a3f80c665bcc9afc02b2a55424b805.png)
 
-Triggers are originally listed in the order you add them to your integration. As people use your integration, Zapier will show your integration's most popular triggers first, automatically reordering them based on popularity. You cannot set a trigger to always be in a specific order in your integration's trigger list.
+Triggers are listed in alphabetical order. You cannot set up trigger to be in a custom order in your integration's trigger list.
 
-![Trigger visibility](https://cdn.zappy.app/7a059a17e929383afd61ecb4f00733c3.png)
+![Trigger visibility](https://cdn.zappy.app/402a8dc91f24f70e432d03c6668fbf4e.png)
 
-You can, however, change a trigger's visibility and thus choose whether it's shown or not at any time. Open the trigger in the Zapier visual builder, and scroll to the bottom of the page to the _Visibility Options_ menu. Select _Hidden_ if you want to keep users from being able to use this trigger (often used if the trigger is only used to power dynamic fields).
+You can, however, change a trigger's visibility and thus choose whether it's shown or not at any time. Open the trigger in the Zapier visual builder, and scroll to the bottom of the page to the _Visibility Options_ section. Select _Hidden_ if you want to keep users from being able to use this trigger (often used if the trigger is only used to power dynamic fields).
 
 ## How to Remove Triggers
 
