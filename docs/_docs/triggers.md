@@ -175,7 +175,7 @@ You can now make a new Zap using your trigger to test out the trigger live insid
 
 ![Triggers in Zapier](https://cdn.zappy.app/35a3f80c665bcc9afc02b2a55424b805.png)
 
-Triggers are listed in alphabetical order. You cannot set up trigger to be in a custom order in your integration's trigger list.
+Triggers are listed in alphabetical order. You cannot customize the order of your integration's trigger list.
 
 ![Trigger visibility](https://cdn.zappy.app/402a8dc91f24f70e432d03c6668fbf4e.png)
 

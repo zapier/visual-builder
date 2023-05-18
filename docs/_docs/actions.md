@@ -128,7 +128,7 @@ When users use the search action in a Zap, Zapier will show your core search act
 
 ![Actions inside Zapier](https://cdn.zappy.app/5d3c2e8f9f6cf0f6daadd3ee97fa5e80.png)
 
-Whenever a user selects your app's integration in a Zapier action step, they'll see every create and search action in your integration. Zapier shows create actions first, followed by search actions. Actions are listed in alphabetical order.
+Whenever a user selects your app's integration in a Zapier action step, they'll see every create and search action in your integration. Zapier shows Create actions first, followed by Search actions. Within the Create and Search sections, actions are listed in alphabetical order.
 
 You can change actions' visibility at any time, if you don't want an action to be shown. Open the action in the Zapier visual builder, to the _Settings_ tab, and scroll to the bottom of the page to the _Visibility Options_ section. Select _Hidden_ if you want to keep users from being able to use this action (often used if an action is deprecated but should keep working in users' existing Zaps).
 
