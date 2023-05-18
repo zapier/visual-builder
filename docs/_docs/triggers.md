@@ -27,7 +27,7 @@ To create an "updated item" trigger, use an API endpoint that lists all items, b
 
 ## 1. Configure Trigger Settings
 
-![Zapier trigger settings](https://cdn.zappy.app/6af5e5288d73d9458454214318297533.png)
+![Zapier trigger settings](https://cdn.zappy.app/024547d6df8622335ca65456c6d0a11c.png)
 
 Start building your trigger by adding details about what this trigger does. You need to add both internal data to identify your trigger, and user facing text to describe the trigger to users.
 
