@@ -286,15 +286,15 @@ $ tree .
 ├── index.js
 ├── package.json
 ├── triggers
-│   └── contact-by-tag.js
+│   └── contact-by-tag.js
 ├── resources
-│   └── Contact.js
+│   └── Contact.js
 ├── test
-│   ├── basic.js
-│   ├── triggers.js
-│   └── resources.js
+│   ├── basic.js
+│   ├── triggers.js
+│   └── resources.js
 ├── build
-│   └── build.zip
+│   └── build.zip
 └── node_modules
     ├── ...
     └── ...
@@ -1803,7 +1803,7 @@ The available errors are:
 
 * `Error` (_added in v9.3.0_) - Stops the current operation, allowing for (auto) replay. Read more on [General Errors](#general-errors)
 * `HaltedError` - Stops current operation, but will never turn off Zap. Read more on [Halting Execution](#halting-execution)
-* `ExpiredAuthError` - Turns off Zap and emails user to manually reconnect. Read more on [Stale Authentication Credentials](#stale-authentication-credentials)
+* `ExpiredAuthError` - Stops the current operation and emails user to manually reconnect. Read more on [Stale Authentication Credentials](#stale-authentication-credentials)
 * `RefreshAuthError` - (OAuth2 or Session Auth) Tells Zapier to refresh credentials and retry operation. Read more on [Stale Authentication Credentials](#stale-authentication-credentials)
 * `ThrottledError` (_new in v11.2.0_) - Tells Zapier to retry the current operation after a delay specified in seconds. Read more on [Handling Throttled Requests](#handling-throttled-requests)
 
@@ -2807,7 +2807,7 @@ provides a mechanism to notify users of expired credentials. With the
 is sent out asking the user to refresh the credentials. While the auth is
 disconnected, Zap runs will not be executed, to prevent more calls with expired
 credentials. (The runs will be
-[Held](https://zapier.com/help/manage/history/view-and-manage-your-zap-history#holding),
+[Held](https://help.zapier.com/hc/en-us/articles/8496291148685-View-and-manage-your-Zap-history#held-0-3),
 and the user will be able to replay them after reconnecting.)
 
 Example: `throw new z.errors.ExpiredAuthError('You must manually reconnect this auth.');`
