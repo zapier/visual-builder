@@ -7,7 +7,7 @@ redirect_from: /docs/
 
 # Triggers
 
-![Zapier Trigger Visual Builder](https://cdn.zappy.app/241f7b2bd64067f8e555d37777469d80.png)
+![Zapier Trigger Visual Builder](https://cdn.zappy.app/0693967761317b3d1be7712cb3f91d15.png)
 
 Every Zap starts with one trigger, powered by either a webhook subscription that watches for new data as it comes in, or a polling API call to check for new data periodically.
 
@@ -19,9 +19,9 @@ As triggers only watch for new data and typically need to send no or little data
 
 Most Zapier triggers run when new items are added to an app, database, project, or file. Some apps also include update triggers that run whenever an item is updated in the app, which is useful to help users keep data up to date across apps using Zapier.
 
-To create a "new item" trigger, use an API endpoint that lists items in an array sorted in reverse chronological order. These are typically the most common API endpoints to read data from a platform. If your API lists items in a different order by default, but allows for sorting, include an order or sorting field in your API call.
+To create a "new item" trigger, use an API endpoint that lists items in an array sorted in reverse chronological order. These are typically the most common API endpoints to read data from a platform. If your API lists items in a different order by default, but allows for sorting, include an order or sorting field in your API call. This is important so that the newest records are returned on the [first page of results.](https://platform.zapier.com/docs/dedupe)
 
-To create an "updated item" trigger, use an API endpoint that lists all items, both new and updated, or an endpoint that lists only updated items. Zapier needs a composite `id` field that changes whenever the item is updated (ideally `z.hash('md5', item.id + item.updated_at)`), so subsequent updates aren't be filtered out by Zapier's deduper. Again, this endpoint should return an array of items in reverse chronological order, preferably by recency of update. Be sure to include details in your trigger description that lets users know which updates will run this trigger.
+To create an "updated item" trigger, use an API endpoint that lists all items, both new and updated, or an endpoint that lists only updated items. Zapier needs a [composite `id` field](https://platform.zapier.com/docs/dedupe#custom-or-multiple-id-fields) that changes whenever the item is updated (ideally `z.hash('md5', item.id + item.updated_at)`), so subsequent updates aren't be filtered out by Zapier's deduper. Again, this endpoint should return an array of items in reverse chronological order, preferably by recency of update. Be sure to include details in your trigger description that lets users know which updates will run this trigger.
 
 # How to Add a New Trigger to a Zapier Integration
 
@@ -177,9 +177,9 @@ You can now make a new Zap using your trigger to test out the trigger live insid
 
 Triggers are originally listed in the order you add them to your integration. As people use your integration, Zapier will show your integration's most popular triggers first, automatically reordering them based on popularity. You cannot set a trigger to always be in a specific order in your integration's trigger list.
 
-![Trigger visibility](https://cdn.zappy.app/7a059a17e929383afd61ecb4f00733c3.png)
+![Trigger visibility](https://cdn.zappy.app/168679ee5bb9b3e3493ecfde382ee416.png)
 
-You can, however, change a trigger's visibility and thus choose whether it's shown or not at any time. Open the trigger in the Zapier visual builder, and scroll to the bottom of the page to the _Visibility Options_ menu. Select _Hidden_ if you want to keep users from being able to use this trigger (often used if the trigger is only used to power dynamic fields).
+You can, however, change a trigger's visibility and thus choose whether it's shown or not at any time. Open the trigger in the Zapier visual builder, and scroll to the bottom of the page to the _Visibility in Editor_ menu. Select _Hidden_ if you want to keep users from being able to use this trigger (often used if the trigger is only used to power dynamic fields).
 
 ## How to Remove Triggers
 
