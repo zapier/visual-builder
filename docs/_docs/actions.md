@@ -23,7 +23,7 @@ Zapier strongly recommends against action steps that delete or remove data. To p
 
 ## 1. Configure Action Settings
 
-![Zapier visual builder action settings](https://cdn.zappy.app/10d48377c1b0020384db1d1029ba8fc6.png)
+![Zapier visual builder action settings](https://cdn.zappy.app/57f28534d180f2a642ebe0be2e236c32.png)
 
 To add a new action step to a Zapier integration, open the _Actions_ page in Zapier visual builder from the sidebar on the left, and select _Add Action_. Start by selecting your action type. New actions are _Create_ type by default, and will add new data to your app. If your action should lookup existing items instead, select _Search_—then jump to the [Search](#search) section below for details on setting up a search action.
 
@@ -37,7 +37,7 @@ Then add the core details to your action, including:
 - **Name**: A human friendly plain text name for this action, typically with a verb such as _Add_ or _Create_ followed by the name of the item this action will create in your app. Shown inside the Zap editor and on Zapier's app directory marketing pages.
 - **Noun**: A single noun that describes what this action creates, used by Zapier to auto-generate text in Zaps about your action.
 - **Description**: A plain text sentence that describes what your action does to help users understand why they should use this action. Shown inside the Zap editor and on Zapier's app directory marketing pages.
-- **Visibility Options**: An option to select when this action will be shown. _Important_ is chosen by default. Choose _None_ if the action is not important, or choose _Hidden_ if this action should not be shown to users. This is helpful if you build a create action solely to pair with a search action but do not want it used on its own.
+- **Visibility Options**: An option to select when this action will be shown. _Shown_ is chosen by default. Choose _Hidden_ if this action should not be shown to users. This is helpful if you build a create action solely to pair with a search action but do not want it used on its own.
 
 Once the action settings are added, click _Save and Continue_ to add the new action and save your settings. You can edit the settings any time later with the exception of the create or search option.
 
@@ -124,15 +124,13 @@ Finally, in the API configuration, add your API endpoint where Zapier will by de
 
 When users use the search action in a Zap, Zapier will show your core search action settings that you set in the input designer by default. Then, if users check to create an item if nothing is found, Zapier will load the create action's input fields inside the search action so users can fill both out.
 
-## How to Reorder Actions in a Zapier Integration
+## Viewing Actions in a Zapier Integration
 
 ![Actions inside Zapier](https://cdn.zappy.app/5d3c2e8f9f6cf0f6daadd3ee97fa5e80.png)
 
-Whenever a user selects your app's integration in a Zapier action step, they'll see every create and search action in your integration. Zapier shows create actions first, followed by search actions.
+Whenever a user selects your app's integration in a Zapier action step, they'll see every create and search action in your integration. Zapier shows Create actions first, followed by Search actions. Within the Create and Search sections, actions are listed in alphabetical order.
 
-Actions are originally listed in the order you add them to your integration. As people use your integration, Zapier will show your integration's most popular actions first, automatically reordering them based on popularity.
-
-You change actions' visibility at any time, if you don't want an action to show first. Edit the action, then in the last option on the _Settings_ page, choose _Hidden_ to make this action not usable inside Zapier.
+You can change actions' visibility at any time, if you don't want an action to be shown. Open the action in the Zapier visual builder, to the _Settings_ tab, and scroll to the bottom of the page to the _Visibility Options_ section. Select _Hidden_ if you want to keep users from being able to use this action (often used if an action is deprecated but should keep working in users' existing Zaps).
 
 ## How to Remove an Existing Action
 

@@ -142,7 +142,7 @@ Every Zapier integration includes at least one trigger or action, and ideally wi
 
 Follow the following guidelines whenever creating a trigger, create action, or search action:
 
-**Include at least 3 important triggers, actions, and searches at launch** Think through the use cases where users would use your Zapier integration, and try to build Zap steps that fit those needs. You can add additional Zap steps later based on user feedback. Triggers and actions are most important; searches could be added later as advanced features.
+**Include at least 3 triggers, actions, and searches at launch** Think through the use cases where users would use your Zapier integration, and try to build Zap steps that fit those needs. You can add additional Zap steps later based on user feedback. Triggers and actions are most important; searches could be added later as advanced features.
 
 **Use a descriptive name**. Each trigger, action, and search must include a name in title case, along with a simple description of what that step does. Start with the phrase "Triggers when", "Creates a new", or "Finds a" for triggers, create actions, and search actions, respectively, followed by three to five words additional words.
 

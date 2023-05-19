@@ -25,7 +25,7 @@ The Triggers, Actions, and Searches are identified by their **key**, such as `ne
 
 There are two solutions:
 
-- If you need to remove a Trigger/Action/Search, change its visibility to **hidden** instead. Use the Visibility Options dropdown in the [UI](https://platform.zapier.com/docs/triggers#1-configure-trigger-settings), or the `hidden` key in the [CLI](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema).
+- If you need to remove a Trigger/Action/Search, change its visibility to **hidden** instead. Use the Visibility Options dropdown in the [UI](https://platform.zapier.com/docs/triggers#1-configure-trigger-settings), or the `hidden` key in the [CLI](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#basicdisplayschema).
 - If you've renamed the **key** for a Trigger/Action/Search, you'll need to switch it back to the previous **key**.
 
 ### You cannot change the authentication type

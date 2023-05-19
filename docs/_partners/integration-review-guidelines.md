@@ -182,7 +182,7 @@ Additionally, each trigger must have:
 #### 4.2.4 Field Types
 * Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note the Zap Editor does not validate the data to ensure users added the correct item for that field type. 
 
-* If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
+* If the field can accept multiple values, use our built in [‘List’ property](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
 
 #### 4.2.5 Ordering
 * Put required trigger input fields at the top of the form with optional fields towards the bottom by importance.
@@ -281,7 +281,7 @@ All action steps *must* include [input fields](https://platform.zapier.com/docs/
 * Order action fields logically. If you are unsure, look at how the respective fields are ordered in your platform and mimic that since users will be familiar with that ordering. 
 * Required action fields should generally be listed first at the top of the Zap Editor.
 * Place all optional, lesser-used fields towards the bottom.
-* Group related fields together. For example, first name and last name fields, as well as individual address component fields should be ordered consecutively. Do NOT use [line-item groups](https://platform.zapier.com/docs/input-designer#how-to-add-a-line-item-group) or the [‘children’](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) field schema key to visually group fields; these are solely intended for line-item functionality.
+* Group related fields together. For example, first name and last name fields, as well as individual address component fields should be ordered consecutively. Do NOT use [line-item groups](https://platform.zapier.com/docs/input-designer#how-to-add-a-line-item-group) or the [‘children’](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#fieldschema) field schema key to visually group fields; these are solely intended for line-item functionality.
 
 #### 5.2.3 Required Fields
 * If a field doesn't have to be required, don't make it! Parallel the required fields from your integration as closely as possible. For example, if 'Email Address' is not required to create a lead in the platform, do not make the 'Email Address' field required in the Zapier editor. If the API specifies a non-important field as required, hard-code a default value so the field is not empty if one is not provided by the user.
@@ -299,7 +299,7 @@ All action steps *must* include [input fields](https://platform.zapier.com/docs/
 #### 5.2.6 Field Types
 * Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note Zapier does not validate the data to ensure users added the correct item for that field type.
 
-* If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
+* If the field can accept multiple values, use our built in [‘List’ property](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
 
 ### 5.3 [Response Content](https://zapier.com/developer/documentation/v2/integration-dev-guide/#action-response-content)
 Return information about the resource that was created, updated, or affected by the action, and not just a 'success' message. At a minimum, return an ID, the name or title of the resource (when pertinent), and a link to the newly created, updated, or affected resource in the platform (if available). Additionally, return any other useful data about the resource users may need in subsequent actions of a multi-step Zap.
@@ -378,7 +378,7 @@ Additionally, each search must have:
 
 #### 6.3.4 Field Types
 * Use the most appropriate [input field type](https://platform.zapier.com/docs/input-designer#zapier-input-field-types) for each of the input fields to show users what type of data to include — though do note Zapier does not validate the data to ensure users added the correct item for that field type. 
-* If the field can accept multiple values, use our built in [‘List’ property](https://zapier.github.io/zapier-platform-schema/build/schema.html#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
+* If the field can accept multiple values, use our built in [‘List’ property](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#fieldschema) or ‘[Allow Multiples’](https://platform.zapier.com/docs/input-designer#allows-multiples) functionality rather than asking users to provide a comma-separated value in a text field.
 
 #### 6.3.5 Ordering
 * Put required search fields at the top of the form with optional fields towards the bottom by importance.
