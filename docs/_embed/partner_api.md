@@ -535,6 +535,143 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 }
 ```
 
+### GET /v1/categories
+
+|               URL                | Protected By |
+| :------------------------------: | :----------: |
+| **api.zapier.com/v1/categories** |     None     |
+
+**Arguments**
+
+Available parameters to the categories resource:
+
+| parameter  | requirement | notes                                                                                                                                                  |
+| ---------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **limit**  | Optional    | (defaults to 10, max of 100) Limit the number of Zap templates returned.                                                                               |
+| **offset** | Optional    | (defaults to 0) The number of categories items to skip before returning new categories. The default value is 0, which is the offset of the first item. |
+
+**Example Requests**
+
+Get a list of Zap categories
+
+```bash
+curl -L "https://api.zapier.com/v1/categories"
+```
+
+**Example Response**
+
+> Refer to the [AppCategory](#appcategory) reference for all the available fields.
+
+```json
+{
+    "next": "https://api.zapier-staging.com/v1/categories?limit=10&offset=10",
+    "previous": null,
+    "count": 90,
+    "objects": [
+        {
+            "id": 7,
+            "title": "Accounting",
+            "slug": "accounting",
+            "description": "Tools for accounting and finance.",
+            "url": "https://zapier-staging.com/api/v4/app-directory/categories/accounting/",
+            "type_of": "curated",
+            "featured_entry_slug": "favorite-zaps-accounting",
+            "role": "child"
+        },
+        {
+            "id": 77,
+            "title": "Ads & Conversion",
+            "slug": "ads-conversion",
+            "description": "Tools to track and reach an audience online.",
+            "url": "https://zapier-staging.com/api/v4/app-directory/categories/ads-conversion/",
+            "type_of": "curated",
+            "featured_entry_slug": "boost-google-ads-ROI-with-zapier",
+            "role": "child"
+        },
+        {
+            "id": 104,
+            "title": "AI Tools",
+            "slug": "ai-tools",
+            "description": "Unlock the potential of artificial intelligence in your workflow with these AI integrations. These apps use AI to tackle everything from natural language processing to image classification, providing you with unparalleled automation power.",
+            "url": "https://zapier-staging.com/api/v4/app-directory/categories/ai-tools/",
+            "type_of": "curated",
+            "featured_entry_slug": null,
+            "role": "parent"
+        },
+        {
+            "id": 87,
+            "title": "All",
+            "slug": "all",
+            "description": "Contains all the services.",
+            "url": "https://zapier-staging.com/api/v4/app-directory/categories/all/",
+            "type_of": "auto",
+            "featured_entry_slug": null,
+            "role": "parent"
+        },
+        {
+            "id": 57,
+            "title": "Amazon",
+            "slug": "aws",
+            "description": "Tools from Amazon to host and manage sites and applications on the Amazon cloud.",
+            "url": "https://zapier-staging.com/api/v4/app-directory/categories/aws/",
+            "type_of": "curated",
+            "featured_entry_slug": "what-you-should-automate",
+            "role": "child"
+        },
+        {
+            "id": 24,
+            "title": "Analytics",
+            "slug": "analytics",
+            "description": "Tools to measure and report on success",
+            "url": "https://zapier-staging.com/api/v4/app-directory/categories/analytics/",
+            "type_of": "curated",
+            "featured_entry_slug": "automate-analytics-tools",
+            "role": "child"
+        },
+        {
+            "id": 31,
+            "title": "App Builder",
+            "slug": "app-builder",
+            "description": "Tools to build a custom app with forms and databases.",
+            "url": "https://zapier-staging.com/api/v4/app-directory/categories/app-builder/",
+            "type_of": "curated",
+            "featured_entry_slug": null,
+            "role": "child"
+        },
+        {
+            "id": 95,
+            "title": "App Families",
+            "slug": "app-families",
+            "description": "",
+            "url": "https://zapier-staging.com/api/v4/app-directory/categories/app-families/",
+            "type_of": "curated",
+            "featured_entry_slug": null,
+            "role": "parent"
+        },
+        {
+            "id": 105,
+            "title": "Artificial Intelligence",
+            "slug": "artificial-intelligence",
+            "description": "Unlock the potential of artificial intelligence in your workflow with these AI integrations. These apps use AI to tackle everything from natural language processing to image classification, providing you with unparalleled automation power.",
+            "url": "https://zapier-staging.com/api/v4/app-directory/categories/artificial-intelligence/",
+            "type_of": "curated",
+            "featured_entry_slug": null,
+            "role": "parent"
+        },
+        {
+            "id": 86,
+            "title": "Beta",
+            "slug": "beta",
+            "description": "Beta services.",
+            "url": "https://zapier-staging.com/api/v4/app-directory/categories/beta/",
+            "type_of": "auto",
+            "featured_entry_slug": null,
+            "role": "child"
+        }
+    ]
+}
+```
+
 ### Data Objects
 
 #### App
@@ -577,6 +714,32 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
       "slug": "top-100"
     }
   ]
+}
+```
+
+#### AppCategory
+
+| attribute               | type                                      | notes                                                                                                                                                                                                                                                            |
+| ----------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**                  | String                                    | Unique identifier for the category.                                                                                                                                                                                                                              |
+| **title**               | String                                    | Plain text description of the category.                                                                                                                                                                                                                          |
+| **slug**                | String                                    | URL/SEO friendly ID for the Zap template.  API.                                                                                                                                                                                                                  |
+| **description**         | Detailed explanation of the app category. |
+| **url**                 | String                                    | An absolute url to the Zapbook Apps page.                                                                                                                                                                                                                        |
+| **type_of**             | String                                    | Category type. 'Curated' categories are maintained by Zapier staff, 'Automatically Generated' categories are maintained by automation and populated with the 'rebuild_special_categories' command, 'Other' categories are manually created for various purposes. |
+| **featured_entry_slug** | String                                    | Alternative slug for the category.                                                                                                                                                                                                                               |
+| **role**                | String                                    | Indicates if the category is a 'parent' or a 'child'.                                                                                                                                                                                                            |
+
+```json
+{
+    "id": 104,
+    "title": "AI Tools",
+    "slug": "ai-tools",
+    "description": "Unlock the potential of artificial intelligence in your workflow with these AI integrations. These apps use AI to tackle everything from natural language processing to image classification, providing you with unparalleled automation power.",
+    "url": "https://zapier.com/api/v4/app-directory/categories/ai-tools/",
+    "type_of": "curated",
+    "featured_entry_slug": null,
+    "role": "parent"
 }
 ```
 
