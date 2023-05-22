@@ -140,14 +140,15 @@ The idea is to use an intermediate page that reads the access token from the URL
 
 Available parameters to the Apps resource:
 
-| parameter             | requirement | notes                                                                                  |
-| --------------------- | ----------- | -------------------------------------------------------------------------------------- |
-| **client_id**         | Required    | Your application client ID.                                                            |
-| **category**          | Optional    | Filter the results by app category.                                                    |
-| **title_search**      | Optional    | Filter the results by matching title (case-insensitive).                               |
-| **title_starts_with** | Optional    | Fetch apps with a title that starts with this value (case-insensitive).                |
-| **per_page**          | Optional    | (defaults to 100, max of 100) Limit the number of apps returned.                       |
-| **page**              | Optional    | (defaults to 1) The page number. Page number 1 refers to the first page in the result. |
+| parameter                   | requirement | notes                                                                                         |
+| --------------------------- | ----------- | --------------------------------------------------------------------------------------------- |
+| **client_id**               | Required    | Your application client ID.                                                                   |
+| **category**                | Optional    | Filter the results by app category.                                                           |
+| **is_in_zap_template_with** | Optional    | Service slug that limits the results to apps that are included within the same Zap Templates. |
+| **title_search**            | Optional    | Filter the results by matching title (case-insensitive).                                      |
+| **title_starts_with**       | Optional    | Fetch apps with a title that starts with this value (case-insensitive).                       |
+| **per_page**                | Optional    | (defaults to 100, max of 100) Limit the number of apps returned.                              |
+| **page**                    | Optional    | (defaults to 1) The page number. Page number 1 refers to the first page in the result.        |
 
 **Example Requests**
 
@@ -161,6 +162,12 @@ Get a list of google apps
 
 ```bash
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&category=google"
+```
+
+Get a list of apps that are included in the same Zap Template as the Google Calendar app
+
+```bash
+curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&is_in_zap_template_with=google-calendar"
 ```
 
 Get the Google Calendar app
