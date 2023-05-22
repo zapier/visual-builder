@@ -140,11 +140,14 @@ The idea is to use an intermediate page that reads the access token from the URL
 
 Available parameters to the Apps resource:
 
-| parameter     | requirement | notes                                                                                  |
-| ------------- | ----------- | -------------------------------------------------------------------------------------- |
-| **client_id** | Required    | Your application client ID.                                                            |
-| **per_page**  | Optional    | (defaults to 100, max of 100) Limit the number of apps returned.                       |
-| **page**      | Optional    | (defaults to 1) The page number. Page number 1 refers to the first page in the result. |
+| parameter             | requirement | notes                                                                                  |
+| --------------------- | ----------- | -------------------------------------------------------------------------------------- |
+| **client_id**         | Required    | Your application client ID.                                                            |
+| **category**          | Optional    | Filter the results by app category.                                                    |
+| **title_search**      | Optional    | Filter the results by matching title (case-insensitive).                               |
+| **title_starts_with** | Optional    | Fetch apps with a title that starts with this value (case-insensitive).                |
+| **per_page**          | Optional    | (defaults to 100, max of 100) Limit the number of apps returned.                       |
+| **page**              | Optional    | (defaults to 1) The page number. Page number 1 refers to the first page in the result. |
 
 **Example Requests**
 
@@ -152,6 +155,24 @@ Get apps that can be integrated with my app.
 
 ```bash
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}"
+```
+
+Get a list of google apps
+
+```bash
+curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&category=google"
+```
+
+Get the Google Calendar app
+
+```bash
+curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&title_search=google%calendar"
+```
+
+Get a list of apps where the title starts with google
+
+```bash
+curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&title_starts_with=google"
 ```
 
 Get apps that can be integrated with my app, returning only 5 results per page
