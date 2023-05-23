@@ -158,7 +158,7 @@ Get apps that can be integrated with my app.
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}"
 ```
 
-Get a list of google apps
+Get a list of apps related to google
 
 ```bash
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&category=google"
@@ -376,6 +376,7 @@ Available parameters to the Zaps resource:
 | parameter                   | requirement | notes                                                                                                                                      |
 | --------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **params\_\_{KEY}={VALUE}** | Optional    | Return Zaps that have a specific key/value set in the params (settings) of the Zap. |
+| **get_params** | Optional    | Return Zaps along with their associated key/value param settings. |
 | **limit** | Optional | (defaults to 5, max of 100) Limits the number of returned items |
 | **offset** | Optional | (defaults to 0) the number of Zaps to skip before beginning to return the Zaps. The default value of 0, which is the offset of the first item. |
 
@@ -724,7 +725,7 @@ curl -L "https://api.zapier.com/v1/categories"
 | **id**                  | String                                    | Unique identifier for the category.                                                                                                                                                                                                                              |
 | **title**               | String                                    | Plain text description of the category.                                                                                                                                                                                                                          |
 | **slug**                | String                                    | URL/SEO friendly ID for the Zap template.  API.                                                                                                                                                                                                                  |
-| **description**         | Detailed explanation of the app category. |
+| **description**         | String |  Detailed explanation of the app category.
 | **url**                 | String                                    | An absolute url to the Zapbook Apps page.                                                                                                                                                                                                                        |
 | **type_of**             | String                                    | Category type. 'Curated' categories are maintained by Zapier staff, 'Automatically Generated' categories are maintained by automation and populated with the 'rebuild_special_categories' command, 'Other' categories are manually created for various purposes. |
 | **featured_entry_slug** | String                                    | Alternative slug for the category.                                                                                                                                                                                                                               |
@@ -860,6 +861,19 @@ All errors will be JSON object with a String array of errors:
 ```
 
 ## Changelog
+- 2023-05-25
+
+  - Added query parameters to `v1/apps`
+
+    - The endpoint `/v1/apps` supports query parameters `title_search`, `title_starts_with`, and `category` for more refined app search results
+
+  - Added query parameter to `v1/zaps`
+
+    - The endpoint `/v1/zaps` supports the query parameters `is_in_zap_template_with`.
+
+  - Added endpoint `/v1/categories`
+
+    - The new endpoint `/v1/categories` returns a list of support zap categories
 
 - 2023-03-30
 
