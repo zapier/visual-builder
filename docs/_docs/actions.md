@@ -7,11 +7,11 @@ redirect_from: /docs/
 
 # Actions
 
-![Zapier Action Visual Builder](https://cdn.zappy.app/8b5a6ba27686f0aa783c97949da0dee3.png)
+![Zapier Action Visual Builder](https://cdn.zappy.app/57f28534d180f2a642ebe0be2e236c32.png)
 
 All Zaps start with a trigger that watches for new or updated data. They get the ball rolling. Everything a Zap does with that data, though, is done by actions.
 
-Zapier actions push or put new data into apps through API calls that pass data from user customized [input fields](https://platform.zapier.com/docs/input-designer). 
+Zapier actions push or put new data into apps through API calls that pass data from user customized [input fields](https://platform.zapier.com/docs/input-designer).
 
 Action steps in Zaps can create new items in an app or update existing items with a *create* action, or find existing items in an app with *search* actions. Search actions can optionally be paired with create actions to add a new item if the search does not return a result.
 
@@ -23,7 +23,7 @@ Zapier strongly recommends against action steps that delete or remove data. To p
 
 ## 1. Configure Action Settings
 
-![Zapier visual builder action settings](https://cdn.zappy.app/57f28534d180f2a642ebe0be2e236c32.png)
+![Zapier visual builder action settings](https://cdn.zappy.app/c845778e65b58839d1fac151d805bb55.png)
 
 To add a new action step to a Zapier integration, open the _Actions_ page in Zapier visual builder from the sidebar on the left, and select _Add Action_. Start by selecting your action type. New actions are _Create_ type by default, and will add new data to your app. If your action should lookup existing items instead, select _Search_—then jump to the [Search](#search) section below for details on setting up a search action.
 
@@ -106,7 +106,7 @@ To use custom code, click the _Switch to Code Mode_ button. Zapier will translat
 <a id="search"></a>
 ## How to Add a Search Action
 
-![Zapier Search action settings](https://cdn.zappy.app/8aa8bbe51aae1dc502ca46ef0a00396b.png)
+![Zapier Search action settings](https://cdn.zappy.app/3e47ad8a26c30fb761fdd60390d8705e.png)
 
 Building a search action is much the same as building a create action, only with a couple extra steps. Select *Search* as your action type, then fill in the core action settings as normal.
 

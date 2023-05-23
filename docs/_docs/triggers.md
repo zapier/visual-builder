@@ -7,7 +7,7 @@ redirect_from: /docs/
 
 # Triggers
 
-![Zapier Trigger Visual Builder](https://cdn.zappy.app/241f7b2bd64067f8e555d37777469d80.png)
+![Zapier Trigger Visual Builder](https://cdn.zappy.app/024547d6df8622335ca65456c6d0a11c.png)
 
 Every Zap starts with one trigger, powered by either a webhook subscription that watches for new data as it comes in, or a polling API call to check for new data periodically.
 
@@ -27,7 +27,7 @@ To create an "updated item" trigger, use an API endpoint that lists all items, b
 
 ## 1. Configure Trigger Settings
 
-![Zapier trigger settings](https://cdn.zappy.app/024547d6df8622335ca65456c6d0a11c.png)
+![Zapier trigger settings](https://cdn.zappy.app/2ec8af054d697bc5db5d21112d57ebe6.png)
 
 Start building your trigger by adding details about what this trigger does. You need to add both internal data to identify your trigger, and user facing text to describe the trigger to users.
 
