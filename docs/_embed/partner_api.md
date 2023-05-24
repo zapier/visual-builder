@@ -164,10 +164,10 @@ Get a list of apps related to google
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&category=google"
 ```
 
-Get a list of apps that are included in the same Zap Template as the Google Calendar app
+Get a list of apps that are included in the same Zap Template with my app
 
 ```bash
-curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&is_in_zap_template_with=google-calendar"
+curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&is_in_zap_template_with"
 ```
 
 Get the Google Calendar app
@@ -394,115 +394,131 @@ Get all Zaps in the user's account that have a particular Trello board (assuming
 curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&params__board=BOARD_ID"
 ```
 
+Get all Zaps in the user's account and include their associated param key/value pairs (assuming the OAuth app is Trello).
+
+```bash
+curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&get_params"
+```
+
 **Example Response**
 
 > Refer to the [Zap](#zap) reference for all the available fields.
 
 ```json
 {
-  "next": "https://api.zapier.com/v1/zaps?limit=2&offset=2",
-  "previous": null,
-  "count": 4,
-  "objects": [
-    {
-      "id": 125,
-      "modified_at": "2017-03-22T09:38:11-05:00",
-      "state": "on",
-      "steps": [
+    "next": "https://api.zapier.com/v1/zaps?limit=2&offset=4",
+    "previous": "https://api.zapier.com/v1/zaps?limit=2",
+    "count": 20,
+    "objects": [
         {
-          "app": {
-            "description": "Typeform helps you ask awesomely online! If you ever need to run a survey, questionnaire, form, contest etc... Typeform will help you achieve it beautifully across all devices, every time, using its next generation platform.",
-            "hex_color": "8bcbca",
-            "id": 4259,
-            "uuid": " b9df4eff-f311-44f9-ac54-2901f952c6ac",
-            "image": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.png",
-            "images": {
-              "url_128x128": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.128x128.png",
-              "url_16x16": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.16x16.png",
-              "url_32x32": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.32x32.png",
-              "url_64x64": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.64x64.png"
-            },
-            "api": "TypeformDevAPI",
-            "slug": "typeform",
-            "title": "Typeform",
-            "url": "https://zapier.com/apps/typeform/integrations"
-          },
-          "type_of": "read"
+            "id": 159061877,
+            "title": "",
+            "state": "off",
+            "steps": [
+                {
+                    "type_of": "read",
+                    "app": {
+                        "id": 730,
+                        "uuid": "c91cc1ba-d8fb-4aaa-b71a-a325f7705f78",
+                        "title": "Typeform",
+                        "slug": "typeform",
+                        "description": "Typeform helps you ask awesomely online! If you ever need to run a survey, questionnaire, form, contest etc. Typeform will help you achieve it beautifully across all devices, every time, using its next generation platform.",
+                        "hex_color": "8bcbca",
+                        "image": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+                        "images": {
+                            "url_16x16": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+                            "url_32x32": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+                            "url_64x64": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+                            "url_128x128": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
+                        },
+                        "api": "TypeformCLIAPI@1.0.25",
+                        "url": "https://zapier.com/apps/typeform/integrations?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None"
+                    },
+                    "params": null
+                },
+                {
+                    "type_of": "write",
+                    "app": {
+                        "id": 60,
+                        "uuid": "b9df4eff-f311-44f9-ac54-2901f952c6ac",
+                        "title": "Trello",
+                        "slug": "trello",
+                        "description": "Trello is a team collaboration tool that lets you organize anything and everything to keep your projects on task.",
+                        "hex_color": "0079bf",
+                        "image": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+                        "images": {
+                            "url_16x16": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+                            "url_32x32": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+                            "url_64x64": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+                            "url_128x128": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
+                        },
+                        "api": "TrelloAPI",
+                        "url": "https://zapier.com/apps/trello/integrations?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None"
+                    },
+                    "params": {
+                        "checklist_name": "Checklist",
+                        "card_pos": "bottom"
+                    }
+                }
+            ],
+            "url": "https://zapier.com/app/editor/159061877?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None",
+            "modified_at": "2022-08-22T15:17:30+00:00"
         },
         {
-          "app": {
-            "description": "Trello is team collaboration tool that lets you organize anything and everything to keep your projects on task.",
-            "hex_color": "0079bf",
-            "id": 4192,
-            "uuid": " b9df4eff-f311-44f9-ac54-2901f952c6ac",
-            "image": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.png",
-            "images": {
-              "url_128x128": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.128x128.png",
-              "url_16x16": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.16x16.png",
-              "url_32x32": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.32x32.png",
-              "url_64x64": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.64x64.png"
-            },
-            "api": "TrelloAPI",
-            "slug": "trello",
-            "title": "Trello",
-            "url": "https://zapier.com/apps/trello/integrations"
-          },
-          "type_of": "write"
+            "id": 159061916,
+            "title": "",
+            "state": "off",
+            "steps": [
+                {
+                    "type_of": "read",
+                    "app": {
+                        "id": 730,
+                        "uuid": "c91cc1ba-d8fb-4aaa-b71a-a325f7705f78",
+                        "title": "Typeform",
+                        "slug": "typeform",
+                        "description": "Typeform helps you ask awesomely online! If you ever need to run a survey, questionnaire, form, contest etc. Typeform will help you achieve it beautifully across all devices, every time, using its next generation platform.",
+                        "hex_color": "8bcbca",
+                        "image": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+                        "images": {
+                            "url_16x16": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+                            "url_32x32": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+                            "url_64x64": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+                            "url_128x128": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
+                        },
+                        "api": "TypeformCLIAPI@1.0.25",
+                        "url": "https://zapier.com/apps/typeform/integrations?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None"
+                    },
+                    "params": null
+                },
+                {
+                    "type_of": "write",
+                    "app": {
+                        "id": 60,
+                        "uuid": "b9df4eff-f311-44f9-ac54-2901f952c6ac",
+                        "title": "Trello",
+                        "slug": "trello",
+                        "description": "Trello is a team collaboration tool that lets you organize anything and everything to keep your projects on task.",
+                        "hex_color": "0079bf",
+                        "image": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+                        "images": {
+                            "url_16x16": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+                            "url_32x32": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+                            "url_64x64": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+                            "url_128x128": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
+                        },
+                        "api": "TrelloAPI",
+                        "url": "https://zapier.com/apps/trello/integrations?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None"
+                    },
+                    "params": {
+                        "checklist_name": "Checklist",
+                        "card_pos": "bottom"
+                    }
+                }
+            ],
+            "url": "https://zapier.com/app/editor/159061916?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None",
+            "modified_at": "2022-08-22T15:17:30+00:00"
         }
-      ],
-      "title": "Create Trello cards from new Typeform entries",
-      "url": "https://zapier.com/app/editor/125"
-    },
-    {
-      "id": 123,
-      "modified_at": "2017-03-21T22:04:05-05:00",
-      "state": "off",
-      "steps": [
-        {
-          "app": {
-            "description": "Typeform helps you ask awesomely online! If you ever need to run a survey, questionnaire, form, contest etc... Typeform will help you achieve it beautifully across all devices, every time, using its next generation platform.",
-            "hex_color": "8bcbca",
-            "id": 4259,
-            "uuid": "ca83afc5-ee9a-470d-b577-e7f8fd555b67",
-            "image": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.png",
-            "images": {
-              "url_128x128": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.128x128.png",
-              "url_16x16": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.16x16.png",
-              "url_32x32": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.32x32.png",
-              "url_64x64": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.64x64.png"
-            },
-            "api": "TypeformDevAPI",
-            "slug": "typeform",
-            "title": "Typeform",
-            "url": "https://zapier.com/apps/typeform/integrations"
-          },
-          "type_of": "read"
-        },
-        {
-          "app": {
-            "description": "Trello is team collaboration tool that lets you organize anything and everything to keep your projects on task.",
-            "hex_color": "0079bf",
-            "id": 4192,
-            "uuid": "fa55afc5-dd9a-890d-c8b7-a7f8fd777b67",
-            "image": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.png",
-            "images": {
-              "url_128x128": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.128x128.png",
-              "url_16x16": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.16x16.png",
-              "url_32x32": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.32x32.png",
-              "url_64x64": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.64x64.png"
-            },
-            "api": "TrelloAPI",
-            "slug": "trello",
-            "title": "Trello",
-            "url": "https://zapier.com/apps/trello/integrations"
-          },
-          "type_of": "write"
-        }
-      ],
-      "title": "Create Trello cards from new Typeform entries",
-      "url": "https://zapier.com/app/editor/123"
-    }
-  ]
+    ]
 }
 ```
 
@@ -865,15 +881,15 @@ All errors will be JSON object with a String array of errors:
 
   - Added query parameters to `v1/apps`
 
-    - The endpoint `/v1/apps` supports query parameters `title_search`, `title_starts_with`, and `category` for more refined app search results
+    - The endpoint `/v1/apps` supports query parameters `title_search`, `title_starts_with`, `category`, and `is_in_zap_template_with` for more refined app search results
 
   - Added query parameter to `v1/zaps`
 
-    - The endpoint `/v1/zaps` supports the query parameters `is_in_zap_template_with`.
+    - The endpoint `/v1/zaps` supports the query parameters `get_params`.
 
   - Added endpoint `/v1/categories`
 
-    - The new endpoint `/v1/categories` returns a list of support zap categories
+    - The new endpoint `/v1/categories` returns a list of supported zap categories
 
 - 2023-03-30
 
