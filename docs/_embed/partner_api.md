@@ -881,7 +881,7 @@ All errors will be JSON object with a String array of errors:
 
   - Added query parameters to `v1/apps`
 
-    - The endpoint `/v1/apps` supports query parameters `title_search`, `title_starts_with`, `category`, and `is_in_zap_template_with` for more refined app search results
+    - The endpoint `/v1/apps` supports query parameters `title_search`, `title_starts_with`, `category`, and `is_in_zap_template_with` for more refined app search results.
 
   - Added query parameter to `v1/zaps`
 
@@ -889,7 +889,7 @@ All errors will be JSON object with a String array of errors:
 
   - Added endpoint `/v1/categories`
 
-    - The new endpoint `/v1/categories` returns a list of supported zap categories
+    - The new endpoint `/v1/categories` returns a list of supported zap categories.
 
 - 2023-03-30
 
