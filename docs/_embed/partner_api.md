@@ -581,7 +581,7 @@ curl -L "https://api.zapier.com/v1/categories"
 
 ```json
 {
-    "next": "https://api.zapier-staging.com/v1/categories?limit=10&offset=10",
+    "next": "https://api.zapier.com/v1/categories?offset=10&limit=10",
     "previous": null,
     "count": 90,
     "objects": [
@@ -590,9 +590,9 @@ curl -L "https://api.zapier.com/v1/categories"
             "title": "Accounting",
             "slug": "accounting",
             "description": "Tools for accounting and finance.",
-            "url": "https://zapier-staging.com/api/v4/app-directory/categories/accounting/",
+            "url": "https://zapier.com/api/v4/app-directory/categories/accounting/",
             "type_of": "curated",
-            "featured_entry_slug": "favorite-zaps-accounting",
+            "featured_entry_slug": "accounting-automation",
             "role": "child"
         },
         {
@@ -600,27 +600,27 @@ curl -L "https://api.zapier.com/v1/categories"
             "title": "Ads & Conversion",
             "slug": "ads-conversion",
             "description": "Tools to track and reach an audience online.",
-            "url": "https://zapier-staging.com/api/v4/app-directory/categories/ads-conversion/",
+            "url": "https://zapier.com/api/v4/app-directory/categories/ads-conversion/",
             "type_of": "curated",
-            "featured_entry_slug": "boost-google-ads-ROI-with-zapier",
+            "featured_entry_slug": "improve-ppc-campaigns",
             "role": "child"
         },
         {
-            "id": 104,
+            "id": 106,
             "title": "AI Tools",
             "slug": "ai-tools",
             "description": "Unlock the potential of artificial intelligence in your workflow with these AI integrations. These apps use AI to tackle everything from natural language processing to image classification, providing you with unparalleled automation power.",
-            "url": "https://zapier-staging.com/api/v4/app-directory/categories/ai-tools/",
+            "url": "https://zapier.com/api/v4/app-directory/categories/ai-tools/",
             "type_of": "curated",
-            "featured_entry_slug": null,
-            "role": "parent"
+            "featured_entry_slug": "use-openai-gpt-3-to-write-emails",
+            "role": "child"
         },
         {
             "id": 87,
             "title": "All",
             "slug": "all",
             "description": "Contains all the services.",
-            "url": "https://zapier-staging.com/api/v4/app-directory/categories/all/",
+            "url": "https://zapier.com/api/v4/app-directory/categories/all/",
             "type_of": "auto",
             "featured_entry_slug": null,
             "role": "parent"
@@ -630,7 +630,7 @@ curl -L "https://api.zapier.com/v1/categories"
             "title": "Amazon",
             "slug": "aws",
             "description": "Tools from Amazon to host and manage sites and applications on the Amazon cloud.",
-            "url": "https://zapier-staging.com/api/v4/app-directory/categories/aws/",
+            "url": "https://zapier.com/api/v4/app-directory/categories/aws/",
             "type_of": "curated",
             "featured_entry_slug": "what-you-should-automate",
             "role": "child"
@@ -640,7 +640,7 @@ curl -L "https://api.zapier.com/v1/categories"
             "title": "Analytics",
             "slug": "analytics",
             "description": "Tools to measure and report on success",
-            "url": "https://zapier-staging.com/api/v4/app-directory/categories/analytics/",
+            "url": "https://zapier.com/api/v4/app-directory/categories/analytics/",
             "type_of": "curated",
             "featured_entry_slug": "automate-analytics-tools",
             "role": "child"
@@ -650,7 +650,7 @@ curl -L "https://api.zapier.com/v1/categories"
             "title": "App Builder",
             "slug": "app-builder",
             "description": "Tools to build a custom app with forms and databases.",
-            "url": "https://zapier-staging.com/api/v4/app-directory/categories/app-builder/",
+            "url": "https://zapier.com/api/v4/app-directory/categories/app-builder/",
             "type_of": "curated",
             "featured_entry_slug": null,
             "role": "child"
@@ -660,7 +660,7 @@ curl -L "https://api.zapier.com/v1/categories"
             "title": "App Families",
             "slug": "app-families",
             "description": "",
-            "url": "https://zapier-staging.com/api/v4/app-directory/categories/app-families/",
+            "url": "https://zapier.com/api/v4/app-directory/categories/app-families/",
             "type_of": "curated",
             "featured_entry_slug": null,
             "role": "parent"
@@ -670,9 +670,9 @@ curl -L "https://api.zapier.com/v1/categories"
             "title": "Artificial Intelligence",
             "slug": "artificial-intelligence",
             "description": "Unlock the potential of artificial intelligence in your workflow with these AI integrations. These apps use AI to tackle everything from natural language processing to image classification, providing you with unparalleled automation power.",
-            "url": "https://zapier-staging.com/api/v4/app-directory/categories/artificial-intelligence/",
+            "url": "https://zapier.com/api/v4/app-directory/categories/artificial-intelligence/",
             "type_of": "curated",
-            "featured_entry_slug": null,
+            "featured_entry_slug": "gpt-3-prompt",
             "role": "parent"
         },
         {
@@ -680,7 +680,7 @@ curl -L "https://api.zapier.com/v1/categories"
             "title": "Beta",
             "slug": "beta",
             "description": "Beta services.",
-            "url": "https://zapier-staging.com/api/v4/app-directory/categories/beta/",
+            "url": "https://zapier.com/api/v4/app-directory/categories/beta/",
             "type_of": "auto",
             "featured_entry_slug": null,
             "role": "child"
