@@ -140,15 +140,15 @@ The idea is to use an intermediate page that reads the access token from the URL
 
 Available parameters to the Apps resource:
 
-| parameter                   | requirement | notes                                                                                         |
-| --------------------------- | ----------- | --------------------------------------------------------------------------------------------- |
-| **client_id**               | Required    | Your application client ID.                                                                   |
-| **category**                | Optional    | Filter the results by app category.                                                           |
-| **is_in_zap_template_with** | Optional    | Fetch apps that appear in a Zap Template with your app. |
-| **title_search**            | Optional    | Filter the results by matching title (case-insensitive).                                      |
-| **title_starts_with**       | Optional    | Fetch apps with a title that starts with this value (case-insensitive).                       |
-| **per_page**                | Optional    | (defaults to 100, max of 100) Limit the number of apps returned.                              |
-| **page**                    | Optional    | (defaults to 1) The page number. Page number 1 refers to the first page in the result.        |
+| parameter                   | requirement | notes                                                                                   |
+| --------------------------- | ----------- | --------------------------------------------------------------------------------------- |
+| **client_id**               | Required    | Your application client ID.                                                             |
+| **category**                | Optional    | Filter the results by app category slug.                                                |
+| **is_in_zap_template_with** | Optional    | Fetch apps that appear in a Zap Template with your app (no value required).             |
+| **title_search**            | Optional    | Filter the results with a case-insensitive search for a substring within the app title. |
+| **title_starts_with**       | Optional    | Fetch apps with a title that starts with this value (case-insensitive).                 |
+| **per_page**                | Optional    | (defaults to 100, max of 100) Limit the number of apps returned.                        |
+| **page**                    | Optional    | (defaults to 1) The page number. Page number 1 refers to the first page in the result.  |
 
 **Example Requests**
 
