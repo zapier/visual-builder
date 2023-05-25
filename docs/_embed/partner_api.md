@@ -144,7 +144,7 @@ Available parameters to the Apps resource:
 | --------------------------- | ----------- | --------------------------------------------------------------------------------------------- |
 | **client_id**               | Required    | Your application client ID.                                                                   |
 | **category**                | Optional    | Filter the results by app category.                                                           |
-| **is_in_zap_template_with** | Optional    | Service slug that limits the results to apps that are included within the same Zap Templates. |
+| **is_in_zap_template_with** | Optional    | Fetch apps that appear in a Zap Template with your app. |
 | **title_search**            | Optional    | Filter the results by matching title (case-insensitive).                                      |
 | **title_starts_with**       | Optional    | Fetch apps with a title that starts with this value (case-insensitive).                       |
 | **per_page**                | Optional    | (defaults to 100, max of 100) Limit the number of apps returned.                              |
@@ -164,7 +164,7 @@ Get a list of apps related to google
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&category=google"
 ```
 
-Get a list of apps that are included in the same Zap Template with my app
+Get a list of apps that are included in the same Zap Template as your app
 
 ```bash
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&is_in_zap_template_with"
@@ -173,7 +173,7 @@ curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&is_in_zap_templat
 Get the Google Calendar app
 
 ```bash
-curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&title_search=google%calendar"
+curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&title_search=google+calendar"
 ```
 
 Get a list of apps where the title starts with google
