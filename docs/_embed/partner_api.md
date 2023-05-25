@@ -394,7 +394,7 @@ Get all Zaps in the user's account that have a particular Trello board (assuming
 curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&params__board=BOARD_ID"
 ```
 
-Get all Zaps in the user's account and include their associated param key/value pairs (assuming the OAuth app is Trello).
+Get all Zaps in the user's account and include Trello steps' `params` key/value pairs (assuming the OAuth app is Trello).
 
 ```bash
 curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&get_params"
