@@ -140,11 +140,15 @@ The idea is to use an intermediate page that reads the access token from the URL
 
 Available parameters to the Apps resource:
 
-| parameter     | requirement | notes                                                                                  |
-| ------------- | ----------- | -------------------------------------------------------------------------------------- |
-| **client_id** | Required    | Your application client ID.                                                            |
-| **per_page**  | Optional    | (defaults to 100, max of 100) Limit the number of apps returned.                       |
-| **page**      | Optional    | (defaults to 1) The page number. Page number 1 refers to the first page in the result. |
+| parameter                   | requirement | notes                                                                                   |
+| --------------------------- | ----------- | --------------------------------------------------------------------------------------- |
+| **client_id**               | Required    | Your application client ID.                                                             |
+| **category**                | Optional    | Filter the results by app category slug.                                                |
+| **is_in_zap_template_with** | Optional    | Fetch apps that appear in a Zap Template with your app (no value required).             |
+| **title_search**            | Optional    | Filter the results with a case-insensitive search for a substring within the app title. |
+| **title_starts_with**       | Optional    | Fetch apps with a title that starts with this value (case-insensitive).                 |
+| **per_page**                | Optional    | (defaults to 100, max of 100) Limit the number of apps returned.                        |
+| **page**                    | Optional    | (defaults to 1) The page number. Page number 1 refers to the first page in the result.  |
 
 **Example Requests**
 
@@ -152,6 +156,30 @@ Get apps that can be integrated with my app.
 
 ```bash
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}"
+```
+
+Get a list of apps related to google
+
+```bash
+curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&category=google"
+```
+
+Get a list of apps that are included in the same Zap Template as your app
+
+```bash
+curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&is_in_zap_template_with"
+```
+
+Get the Google Calendar app
+
+```bash
+curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&title_search=google+calendar"
+```
+
+Get a list of apps where the title starts with google
+
+```bash
+curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&title_starts_with=google"
 ```
 
 Get apps that can be integrated with my app, returning only 5 results per page
@@ -348,6 +376,7 @@ Available parameters to the Zaps resource:
 | parameter                   | requirement | notes                                                                                                                                      |
 | --------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **params\_\_{KEY}={VALUE}** | Optional    | Return Zaps that have a specific key/value set in the params (settings) of the Zap. |
+| **get_params** | Optional    | Return Zaps along with their associated key/value param settings. |
 | **limit** | Optional | (defaults to 5, max of 100) Limits the number of returned items |
 | **offset** | Optional | (defaults to 0) the number of Zaps to skip before beginning to return the Zaps. The default value of 0, which is the offset of the first item. |
 
@@ -365,115 +394,131 @@ Get all Zaps in the user's account that have a particular Trello board (assuming
 curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&params__board=BOARD_ID"
 ```
 
+Get all Zaps in the user's account and include Trello steps' `params` key/value pairs (assuming the OAuth app is Trello).
+
+```bash
+curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&get_params"
+```
+
 **Example Response**
 
 > Refer to the [Zap](#zap) reference for all the available fields.
 
 ```json
 {
-  "next": "https://api.zapier.com/v1/zaps?limit=2&offset=2",
-  "previous": null,
-  "count": 4,
-  "objects": [
-    {
-      "id": 125,
-      "modified_at": "2017-03-22T09:38:11-05:00",
-      "state": "on",
-      "steps": [
+    "next": "https://api.zapier.com/v1/zaps?limit=2&offset=4",
+    "previous": "https://api.zapier.com/v1/zaps?limit=2",
+    "count": 20,
+    "objects": [
         {
-          "app": {
-            "description": "Typeform helps you ask awesomely online! If you ever need to run a survey, questionnaire, form, contest etc... Typeform will help you achieve it beautifully across all devices, every time, using its next generation platform.",
-            "hex_color": "8bcbca",
-            "id": 4259,
-            "uuid": " b9df4eff-f311-44f9-ac54-2901f952c6ac",
-            "image": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.png",
-            "images": {
-              "url_128x128": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.128x128.png",
-              "url_16x16": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.16x16.png",
-              "url_32x32": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.32x32.png",
-              "url_64x64": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.64x64.png"
-            },
-            "api": "TypeformDevAPI",
-            "slug": "typeform",
-            "title": "Typeform",
-            "url": "https://zapier.com/apps/typeform/integrations"
-          },
-          "type_of": "read"
+            "id": 159061877,
+            "title": "",
+            "state": "off",
+            "steps": [
+                {
+                    "type_of": "read",
+                    "app": {
+                        "id": 730,
+                        "uuid": "c91cc1ba-d8fb-4aaa-b71a-a325f7705f78",
+                        "title": "Typeform",
+                        "slug": "typeform",
+                        "description": "Typeform helps you ask awesomely online! If you ever need to run a survey, questionnaire, form, contest etc. Typeform will help you achieve it beautifully across all devices, every time, using its next generation platform.",
+                        "hex_color": "8bcbca",
+                        "image": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+                        "images": {
+                            "url_16x16": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+                            "url_32x32": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+                            "url_64x64": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+                            "url_128x128": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
+                        },
+                        "api": "TypeformCLIAPI@1.0.25",
+                        "url": "https://zapier.com/apps/typeform/integrations?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None"
+                    },
+                    "params": null
+                },
+                {
+                    "type_of": "write",
+                    "app": {
+                        "id": 60,
+                        "uuid": "b9df4eff-f311-44f9-ac54-2901f952c6ac",
+                        "title": "Trello",
+                        "slug": "trello",
+                        "description": "Trello is a team collaboration tool that lets you organize anything and everything to keep your projects on task.",
+                        "hex_color": "0079bf",
+                        "image": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+                        "images": {
+                            "url_16x16": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+                            "url_32x32": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+                            "url_64x64": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+                            "url_128x128": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
+                        },
+                        "api": "TrelloAPI",
+                        "url": "https://zapier.com/apps/trello/integrations?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None"
+                    },
+                    "params": {
+                        "checklist_name": "Checklist",
+                        "card_pos": "bottom"
+                    }
+                }
+            ],
+            "url": "https://zapier.com/app/editor/159061877?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None",
+            "modified_at": "2022-08-22T15:17:30+00:00"
         },
         {
-          "app": {
-            "description": "Trello is team collaboration tool that lets you organize anything and everything to keep your projects on task.",
-            "hex_color": "0079bf",
-            "id": 4192,
-            "uuid": " b9df4eff-f311-44f9-ac54-2901f952c6ac",
-            "image": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.png",
-            "images": {
-              "url_128x128": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.128x128.png",
-              "url_16x16": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.16x16.png",
-              "url_32x32": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.32x32.png",
-              "url_64x64": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.64x64.png"
-            },
-            "api": "TrelloAPI",
-            "slug": "trello",
-            "title": "Trello",
-            "url": "https://zapier.com/apps/trello/integrations"
-          },
-          "type_of": "write"
+            "id": 159061916,
+            "title": "",
+            "state": "off",
+            "steps": [
+                {
+                    "type_of": "read",
+                    "app": {
+                        "id": 730,
+                        "uuid": "c91cc1ba-d8fb-4aaa-b71a-a325f7705f78",
+                        "title": "Typeform",
+                        "slug": "typeform",
+                        "description": "Typeform helps you ask awesomely online! If you ever need to run a survey, questionnaire, form, contest etc. Typeform will help you achieve it beautifully across all devices, every time, using its next generation platform.",
+                        "hex_color": "8bcbca",
+                        "image": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+                        "images": {
+                            "url_16x16": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+                            "url_32x32": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+                            "url_64x64": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+                            "url_128x128": "https://zapier-images.imgix.net/storage/services/065860c1e1210fdf4040105024099b0a.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
+                        },
+                        "api": "TypeformCLIAPI@1.0.25",
+                        "url": "https://zapier.com/apps/typeform/integrations?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None"
+                    },
+                    "params": null
+                },
+                {
+                    "type_of": "write",
+                    "app": {
+                        "id": 60,
+                        "uuid": "b9df4eff-f311-44f9-ac54-2901f952c6ac",
+                        "title": "Trello",
+                        "slug": "trello",
+                        "description": "Trello is a team collaboration tool that lets you organize anything and everything to keep your projects on task.",
+                        "hex_color": "0079bf",
+                        "image": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=50",
+                        "images": {
+                            "url_16x16": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=16&ixlib=python-3.0.0&q=50&w=16",
+                            "url_32x32": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=32&ixlib=python-3.0.0&q=50&w=32",
+                            "url_64x64": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=64&ixlib=python-3.0.0&q=50&w=64",
+                            "url_128x128": "https://zapier-images.imgix.net/storage/services/da3ff465abd3a3e1b687c52ff803af74.png?auto=format%2Ccompress&fit=crop&h=128&ixlib=python-3.0.0&q=50&w=128"
+                        },
+                        "api": "TrelloAPI",
+                        "url": "https://zapier.com/apps/trello/integrations?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None"
+                    },
+                    "params": {
+                        "checklist_name": "Checklist",
+                        "card_pos": "bottom"
+                    }
+                }
+            ],
+            "url": "https://zapier.com/app/editor/159061916?utm_source=partner&utm_medium=embed&utm_campaign=partner_api&referer=None",
+            "modified_at": "2022-08-22T15:17:30+00:00"
         }
-      ],
-      "title": "Create Trello cards from new Typeform entries",
-      "url": "https://zapier.com/app/editor/125"
-    },
-    {
-      "id": 123,
-      "modified_at": "2017-03-21T22:04:05-05:00",
-      "state": "off",
-      "steps": [
-        {
-          "app": {
-            "description": "Typeform helps you ask awesomely online! If you ever need to run a survey, questionnaire, form, contest etc... Typeform will help you achieve it beautifully across all devices, every time, using its next generation platform.",
-            "hex_color": "8bcbca",
-            "id": 4259,
-            "uuid": "ca83afc5-ee9a-470d-b577-e7f8fd555b67",
-            "image": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.png",
-            "images": {
-              "url_128x128": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.128x128.png",
-              "url_16x16": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.16x16.png",
-              "url_32x32": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.32x32.png",
-              "url_64x64": "https://cdn.zapier.com/storage/developer/5e21b4c1e0a2a3346a801dbc0a2a5a6d_2.64x64.png"
-            },
-            "api": "TypeformDevAPI",
-            "slug": "typeform",
-            "title": "Typeform",
-            "url": "https://zapier.com/apps/typeform/integrations"
-          },
-          "type_of": "read"
-        },
-        {
-          "app": {
-            "description": "Trello is team collaboration tool that lets you organize anything and everything to keep your projects on task.",
-            "hex_color": "0079bf",
-            "id": 4192,
-            "uuid": "fa55afc5-dd9a-890d-c8b7-a7f8fd777b67",
-            "image": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.png",
-            "images": {
-              "url_128x128": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.128x128.png",
-              "url_16x16": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.16x16.png",
-              "url_32x32": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.32x32.png",
-              "url_64x64": "https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.64x64.png"
-            },
-            "api": "TrelloAPI",
-            "slug": "trello",
-            "title": "Trello",
-            "url": "https://zapier.com/apps/trello/integrations"
-          },
-          "type_of": "write"
-        }
-      ],
-      "title": "Create Trello cards from new Typeform entries",
-      "url": "https://zapier.com/app/editor/123"
-    }
-  ]
+    ]
 }
 ```
 
@@ -504,6 +549,143 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
     "email_confirmed": true,
     "timezone": null,
     "full_name": "Jacob Corwin"
+}
+```
+
+### GET /v1/categories
+
+|               URL                | Protected By |
+| :------------------------------: | :----------: |
+| **api.zapier.com/v1/categories** |     None     |
+
+**Arguments**
+
+Available parameters to the categories resource:
+
+| parameter  | requirement | notes                                                                                                                                                  |
+| ---------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **limit**  | Optional    | (defaults to 10, max of 100) Limit the number of Zap templates returned.                                                                               |
+| **offset** | Optional    | (defaults to 0) The number of categories items to skip before returning new categories. The default value is 0, which is the offset of the first item. |
+
+**Example Requests**
+
+Get a list of Zap categories
+
+```bash
+curl -L "https://api.zapier.com/v1/categories"
+```
+
+**Example Response**
+
+> Refer to the [AppCategory](#appcategory) reference for all the available fields.
+
+```json
+{
+    "next": "https://api.zapier.com/v1/categories?offset=10&limit=10",
+    "previous": null,
+    "count": 90,
+    "objects": [
+        {
+            "id": 7,
+            "title": "Accounting",
+            "slug": "accounting",
+            "description": "Tools for accounting and finance.",
+            "url": "https://zapier.com/api/v4/app-directory/categories/accounting/",
+            "type_of": "curated",
+            "featured_entry_slug": "accounting-automation",
+            "role": "child"
+        },
+        {
+            "id": 77,
+            "title": "Ads & Conversion",
+            "slug": "ads-conversion",
+            "description": "Tools to track and reach an audience online.",
+            "url": "https://zapier.com/api/v4/app-directory/categories/ads-conversion/",
+            "type_of": "curated",
+            "featured_entry_slug": "improve-ppc-campaigns",
+            "role": "child"
+        },
+        {
+            "id": 106,
+            "title": "AI Tools",
+            "slug": "ai-tools",
+            "description": "Unlock the potential of artificial intelligence in your workflow with these AI integrations. These apps use AI to tackle everything from natural language processing to image classification, providing you with unparalleled automation power.",
+            "url": "https://zapier.com/api/v4/app-directory/categories/ai-tools/",
+            "type_of": "curated",
+            "featured_entry_slug": "use-openai-gpt-3-to-write-emails",
+            "role": "child"
+        },
+        {
+            "id": 87,
+            "title": "All",
+            "slug": "all",
+            "description": "Contains all the services.",
+            "url": "https://zapier.com/api/v4/app-directory/categories/all/",
+            "type_of": "auto",
+            "featured_entry_slug": null,
+            "role": "parent"
+        },
+        {
+            "id": 57,
+            "title": "Amazon",
+            "slug": "aws",
+            "description": "Tools from Amazon to host and manage sites and applications on the Amazon cloud.",
+            "url": "https://zapier.com/api/v4/app-directory/categories/aws/",
+            "type_of": "curated",
+            "featured_entry_slug": "what-you-should-automate",
+            "role": "child"
+        },
+        {
+            "id": 24,
+            "title": "Analytics",
+            "slug": "analytics",
+            "description": "Tools to measure and report on success",
+            "url": "https://zapier.com/api/v4/app-directory/categories/analytics/",
+            "type_of": "curated",
+            "featured_entry_slug": "automate-analytics-tools",
+            "role": "child"
+        },
+        {
+            "id": 31,
+            "title": "App Builder",
+            "slug": "app-builder",
+            "description": "Tools to build a custom app with forms and databases.",
+            "url": "https://zapier.com/api/v4/app-directory/categories/app-builder/",
+            "type_of": "curated",
+            "featured_entry_slug": null,
+            "role": "child"
+        },
+        {
+            "id": 95,
+            "title": "App Families",
+            "slug": "app-families",
+            "description": "",
+            "url": "https://zapier.com/api/v4/app-directory/categories/app-families/",
+            "type_of": "curated",
+            "featured_entry_slug": null,
+            "role": "parent"
+        },
+        {
+            "id": 105,
+            "title": "Artificial Intelligence",
+            "slug": "artificial-intelligence",
+            "description": "Unlock the potential of artificial intelligence in your workflow with these AI integrations. These apps use AI to tackle everything from natural language processing to image classification, providing you with unparalleled automation power.",
+            "url": "https://zapier.com/api/v4/app-directory/categories/artificial-intelligence/",
+            "type_of": "curated",
+            "featured_entry_slug": "gpt-3-prompt",
+            "role": "parent"
+        },
+        {
+            "id": 86,
+            "title": "Beta",
+            "slug": "beta",
+            "description": "Beta services.",
+            "url": "https://zapier.com/api/v4/app-directory/categories/beta/",
+            "type_of": "auto",
+            "featured_entry_slug": null,
+            "role": "child"
+        }
+    ]
 }
 ```
 
@@ -549,6 +731,32 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
       "slug": "top-100"
     }
   ]
+}
+```
+
+#### AppCategory
+
+| attribute               | type                                      | notes                                                                                                                                                                                                                                                            |
+| ----------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**                  | String                                    | Unique identifier for the category.                                                                                                                                                                                                                              |
+| **title**               | String                                    | Plain text description of the category.                                                                                                                                                                                                                          |
+| **slug**                | String                                    | URL/SEO friendly ID for the Zap template.  API.                                                                                                                                                                                                                  |
+| **description**         | String |  Detailed explanation of the app category.
+| **url**                 | String                                    | An absolute url to the Zapbook Apps page.                                                                                                                                                                                                                        |
+| **type_of**             | String                                    | Category type. 'Curated' categories are maintained by Zapier staff, 'Automatically Generated' categories are maintained by automation and populated with the 'rebuild_special_categories' command, 'Other' categories are manually created for various purposes. |
+| **featured_entry_slug** | String                                    | Alternative slug for the category.                                                                                                                                                                                                                               |
+| **role**                | String                                    | Indicates if the category is a 'parent' or a 'child'.                                                                                                                                                                                                            |
+
+```json
+{
+    "id": 104,
+    "title": "AI Tools",
+    "slug": "ai-tools",
+    "description": "Unlock the potential of artificial intelligence in your workflow with these AI integrations. These apps use AI to tackle everything from natural language processing to image classification, providing you with unparalleled automation power.",
+    "url": "https://zapier.com/api/v4/app-directory/categories/ai-tools/",
+    "type_of": "curated",
+    "featured_entry_slug": null,
+    "role": "parent"
 }
 ```
 
@@ -669,6 +877,19 @@ All errors will be JSON object with a String array of errors:
 ```
 
 ## Changelog
+- 2023-05-25
+
+  - Added query parameters to `v1/apps`
+
+    - The endpoint `/v1/apps` supports query parameters `title_search`, `title_starts_with`, `category`, and `is_in_zap_template_with` for more refined app search results.
+
+  - Added query parameter to `v1/zaps`
+
+    - The endpoint `/v1/zaps` supports the query parameters `get_params`.
+
+  - Added endpoint `/v1/categories`
+
+    - The new endpoint `/v1/categories` returns a list of supported zap categories.
 
 - 2023-03-30
 
