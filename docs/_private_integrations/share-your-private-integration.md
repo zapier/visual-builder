@@ -16,15 +16,11 @@ You can share a link with users to all versions of your integration.
 > * You can’t view invited users via a public link.
 > * You can’t revoke a link invite, once shared. If you require control over who accesses your private integration, we recommend inviting users by email. 
 
-
-<ol> 
- <li><a href="https://zapier.com/app/developer">Log into the Zapier Platform UI</a> or refer to the <a href="https://platform.zapier.com/cli_tutorials/getting-started#invite-users-to-your-app">Zapier Platform CLI documentation</a>.</li>
- <li> Select <b>My Integration</b>.</li>
- <li>In the <i>Integrations</i> section, select your <b>integration</b>.</li>
- <li> In the left sidebar, under <i>Manage</i> click <b>Sharing</b>.</li>
- <li> Click <img style="vertical-align: middle;" src="https://res.cloudinary.com/zapier-media/image/upload/zinnia-icons/actionCopy.svg" alt="ICON NAME icon" width="24"> to copy the invite public link.</li>
-</ol>
-
+1. [Log into the Platform UI](https://zapier.com/app/developer) or refer to the [Platform CLI documentation](https://platform.zapier.com/cli_tutorials/getting-started#invite-users-to-your-app).
+2. Select **My Integration**.
+3. In the *Integrations* section, select your **integration**.
+4. In the left sidebar, under *Manage* click **Sharing**.
+5. Click <img style="vertical-align: middle; width:24px;" src="https://res.cloudinary.com/zapier-media/image/upload/zinnia-icons/actionCopy.svg" alt="ICON NAME icon"> to copy the invite public link. 
 
 Now you can share the invite link with users. The link will take users to your private integration landing page where they can follow the on-screen instructions to accept your invite. 
 <br>
@@ -35,15 +31,14 @@ Now you can share the invite link with users. The link will take users to your p
 You can invite new users by emailing them. You also have the option to select what version of your private integration they can have. All users invited by email are tracked in your Sharing settings, allowing you to control who has access to your private integration.
 
 > **Note**: You can only invite 100 users by email.
-<ol>
- <li><a href="https://zapier.com/app/developer">Log into the Zapier Platform UI</a> or refer to the <a href="https://platform.zapier.com/cli_tutorials/getting-started#invite-users-to-your-app">Zapier Platform CLI documentation</a>.</li>
- <li> Select <b>My Integration</b>.</li>
- <li>In the <i>Integrations</i> section, select your <b>integration</b>.</li>
- <li> In the left sidebar, under <i>Manage</i> click <b>Sharing</b>.</li>
- <li>In the <i>Email</i> field, insert the <b>user’s email</b>.</li>
- <li> [Optional] In the <i>Versions</i> dropdown menu, select what <b>version</b> of your private integration you want your user to access.</li>
-<li>Click <b>Invite</b>. This will instantly send the user an email from notifications@mail.zapier.com.</li>
-</ol>
+
+1. [Log into the Platform UI](https://zapier.com/app/developer) or refer to the [Platform CLI documentation](https://platform.zapier.com/cli_tutorials/getting-started#invite-users-to-your-app).
+2. Select **My Integration**.
+3. In the *Integrations* section, select your **integration**.
+4. In the left sidebar, under *Manage* click **Sharing**.
+5. In the *Email* field, insert the **user’s email**.
+6. (Optional) In the *Versions* dropdown menu, select what **version** of your private integration you want your user to access.
+7. Click **Invite**. This will instantly send the user an email from notifications@mail.zapier.com. 
 
 The user’s email will be added to the table in your Sharing settings. From there, you can track the status of their invite. 
 <br>
@@ -63,22 +58,17 @@ There are two ways to revoke email invites using either the Zapier Platform UI o
 
 #### Zapier Platform UI
 
-<ol>
- <li> <a href="https://zapier.com/app/developer">Log into the Zapier Platform UI</a> </li>
- <li>Select <b>My Integrations</b>. </li>
- <li> In the <i>Integrations</i> section, select your <b>integration</b>.</li>
- <li> In the left sidebar, under <i>Manage</i> click <b>Sharing</b>.</li>
- <li> In the row for your user, click <b>Delete</b>.</li>
- <li> Click <b>Really?</b>. This will revoke the invite email sent to the user.</li>
-</ol>
+1. [Log into the Platform UI](https://zapier.com/app/developer) 
+2. Select **My Integration**.
+3. In the *Integrations* section, select your **integration**.
+4. In the left sidebar, under *Manage* click **Sharing**.
+5. In the row for your user, click **Delete**.
+6. Click **Really?** to revoke the invite email sent to the user. 
 
 #### Zapier Platform CLI
 
 > **Note**: This method will remove users from all versions of your integration.
 
-<ol>
-<li>  In your terminal, navigate to the directory of your integration (the directory with the <code>.zapierapprc</code> file).</li>
-<li> Run <code>zapier users:remove user@example.com</code>. Replace <i>user@example.com</i> with the email address that you’d like to revoke.</li>
-<li>  The CLI will prompt you to confirm your revocation, type <b>Y</b> and click <b>Enter</b>.</li>
-</ol>
-
+1. In your terminal, navigate to the directory of your integration (the directory with the `.zapierapprc` file).
+2. Run zapier `users:remove user@example.com`. Replace `user@example.com` with the email address that you’d like to revoke.
+3. The CLI will prompt you to confirm your revocation, type `Y` and click `Enter`.

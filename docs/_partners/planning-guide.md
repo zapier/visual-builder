@@ -41,9 +41,9 @@ When you create a Zapier integration, you’ll be asked to add your app’s name
 
 ### App name
 
-Use the actual, unique name of your app with the same capitalization your company uses in your core branding. Trademark/copyright identifiers such as a TM suffix aren't allowed in the app name, though they can be added to the [Description](https://platform.zapier.com/partners/planning-guide#app-description-copy).
+Use the actual, unique name of your app with the same capitalization your company uses in your core branding. Trademark/copyright identifiers such as a TM suffix aren't allowed in the app name, though they can be added to the [description](https://platform.zapier.com/partners/planning-guide#app-description-copy).
 
-Do not add adjectives or phrases to your app name, and only include your company name if the company and app name are always used together in your branding. Do not include the word _app_ unless you always include that in your app’s branding. 
+Do not add adjectives or phrases to your app name, and only include your company name if the company and app name are always used together in your branding. Do not include the word "app" unless you always include that in your app’s branding. 
 
 **Example**:
 
@@ -52,9 +52,7 @@ Do not add adjectives or phrases to your app name, and only include your company
 
 ### App logo
 
-Upload a square, transparent PNG format logo for your app at least 256x256px in size (please use a bigger version if you have one available). If your app has a solid, square background, round the corners 3% of the width and set the background as transparent. If your icon is not square, make a square transparent image and center your icon inside the transparent square.
-
-Do not include the app name or other copy in the logo as it will not be legible at small sizes.
+The logo must be a square, transparent PNG at least 256x256px in size. Please use a bigger version if you have one available. If your app has a solid, square background, round the corners 3% of the width and set the background as transparent. If your icon is not square, make a square transparent image and center your icon inside the transparent square. Do not include the app name or other copy in the logo as it will not be legible at small sizes.
 
 **Example**:
 
@@ -66,11 +64,10 @@ Evernote's elephant icon is included in a transparent square rectangle.
 
 Todoist's icon includes transparent, rounded corners.
 
+
 ### App description copy
 
-Write a short description (up to 140 characters) of your app’s core features and use cases. Include your app’s name in the description, then explain what makes your app different and the reason one should use it. Use proper English and full sentences.
-
-Do not use flowery or overstated language, and do not mention Zapier or other apps in the description. Do not simply state your app’s category.
+Write a short description (up to 140 characters) of your app’s core features and use cases. Include your app’s name in the description, then explain what makes your app different and the reason one should use it. Use proper English and full sentences. The copy should not include links or mentions of Zapier. Do not use flowery or overstated language, or make make it appear your integration is associated with or endorsed by Zapier.
 
 **Example**:
 
@@ -146,7 +143,7 @@ Every Zapier integration includes at least one trigger or action, and ideally wi
 
 Follow the following guidelines whenever creating a trigger, create action, or search action:
 
-**Include at least 3 important triggers, actions, and searches at launch** Think through the use cases where users would use your Zapier integration, and try to build Zap steps that fit those needs. You can add additional Zap steps later based on user feedback. Triggers and actions are most important; searches could be added later as advanced features.
+**Include at least 3 triggers, actions, and searches at launch** Think through the use cases where users would use your Zapier integration, and try to build Zap steps that fit those needs. You can add additional Zap steps later based on user feedback. Triggers and actions are most important; searches could be added later as advanced features.
 
 **Use a descriptive name**. Each trigger, action, and search must include a name in title case, along with a simple description of what that step does. Start with the phrase "Triggers when", "Creates a new", or "Finds a" for triggers, create actions, and search actions, respectively, followed by three to five words additional words.
 

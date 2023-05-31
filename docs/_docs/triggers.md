@@ -7,7 +7,7 @@ redirect_from: /docs/
 
 # Triggers
 
-![Zapier Trigger Visual Builder](https://cdn.zappy.app/241f7b2bd64067f8e555d37777469d80.png)
+![Zapier Trigger Visual Builder](https://cdn.zappy.app/024547d6df8622335ca65456c6d0a11c.png)
 
 Every Zap starts with one trigger, powered by either a webhook subscription that watches for new data as it comes in, or a polling API call to check for new data periodically.
 
@@ -15,21 +15,19 @@ Triggers are how your app's users can start automated workflows whenever they ad
 
 As triggers only watch for new data and typically need to send no or little data to the app, they're often quicker to set up than Zapier [actions](./actions). Zapier can watch for any new or updated item through your API—or optionally, you can include [input fields](https://platform.zapier.com/docs/input-designer) for users to enter filters, tags, and other details to filter through new data and watch for the items they want.
 
-> **Note**: Triggers are initially displayed in the order they are added to Zapier integrations, so be sure to add your app’s most important triggers first.
-
 ## Trigger Types
 
 Most Zapier triggers run when new items are added to an app, database, project, or file. Some apps also include update triggers that run whenever an item is updated in the app, which is useful to help users keep data up to date across apps using Zapier.
 
-To create a "new item" trigger, use an API endpoint that lists items in an array sorted in reverse chronological order. These are typically the most common API endpoints to read data from a platform. If your API lists items in a different order by default, but allows for sorting, include an order or sorting field in your API call.
+To create a "new item" trigger, use an API endpoint that lists items in an array sorted in reverse chronological order. These are typically the most common API endpoints to read data from a platform. If your API lists items in a different order by default, but allows for sorting, include an order or sorting field in your API call. This is important so that the newest records are returned on the [first page of results.](https://platform.zapier.com/docs/dedupe)
 
-To create an "updated item" trigger, use an API endpoint that lists all items, both new and updated, or an endpoint that lists only updated items. Zapier needs a composite `id` field that changes whenever the item is updated (ideally `z.hash('md5', item.id + item.updated_at)`), so subsequent updates aren't be filtered out by Zapier's deduper. Again, this endpoint should return an array of items in reverse chronological order, preferably by recency of update. Be sure to include details in your trigger description that lets users know which updates will run this trigger.
+To create an "updated item" trigger, use an API endpoint that lists all items, both new and updated, or an endpoint that lists only updated items. Zapier needs a [composite `id` field](https://platform.zapier.com/docs/dedupe#custom-or-multiple-id-fields) that changes whenever the item is updated (ideally `z.hash('md5', item.id + item.updated_at)`), so subsequent updates aren't be filtered out by Zapier's deduper. Again, this endpoint should return an array of items in reverse chronological order, preferably by recency of update. Be sure to include details in your trigger description that lets users know which updates will run this trigger.
 
 # How to Add a New Trigger to a Zapier Integration
 
 ## 1. Configure Trigger Settings
 
-![Zapier trigger settings](https://cdn.zappy.app/1acb400e936c56c2c021d3bc38af5790.png)
+![Zapier trigger settings](https://cdn.zappy.app/2ec8af054d697bc5db5d21112d57ebe6.png)
 
 Start building your trigger by adding details about what this trigger does. You need to add both internal data to identify your trigger, and user facing text to describe the trigger to users.
 
@@ -39,7 +37,7 @@ Add each of the following to your trigger:
 - **Name**: A human-friendly plain-text name for this trigger, typically with an adjective such as _New_ or _Updated_ followed by the name of the item this watches for in your app. Shown inside the Zap editor and on Zapier's app directory marketing pages.
 - **Noun**: A single noun that describes what this trigger watches for, used by Zapier to auto-generate text in Zaps about your trigger.
 - **Description**: A plain text sentence that describes what the trigger does and when it should be used. Shown inside the Zap editor and on Zapier's app directory marketing pages.
-- **Visibility Options**: An option to select when this trigger will be shown. _Important_ is chosen by default. Choose _None_ if the trigger is not important, or choose _Hidden_ if this trigger should not be shown to users.
+- **Visibility Options**: An option to select when this trigger will be shown. _Shown_ is chosen by default. Choose _Hidden_ if this trigger should not be shown to users.
 
 Once the settings are added, click _Save and Continue_ to add the new trigger and save your settings. You can edit the settings any time later with the exception of the create or search option.
 
@@ -173,15 +171,15 @@ Then click _Generate Output Field Definitions_, and Zapier will build a table of
 
 You can now make a new Zap using your trigger to test out the trigger live inside Zapier.
 
-## How to Reorder Triggers
+## Viewing Triggers in a Zapier Integration
 
 ![Triggers in Zapier](https://cdn.zappy.app/35a3f80c665bcc9afc02b2a55424b805.png)
 
-Triggers are originally listed in the order you add them to your integration. As people use your integration, Zapier will show your integration's most popular triggers first, automatically reordering them based on popularity. You cannot set a trigger to always be in a specific order in your integration's trigger list.
+Triggers are listed in alphabetical order. You cannot customize the order of your integration's trigger list.
 
-![Trigger visibility](https://cdn.zappy.app/7a059a17e929383afd61ecb4f00733c3.png)
+![Trigger visibility](https://cdn.zappy.app/402a8dc91f24f70e432d03c6668fbf4e.png)
 
-You can, however, change a trigger's visibility and thus choose whether it's shown or not at any time. Open the trigger in the Zapier visual builder, and scroll to the bottom of the page to the _Visibility Options_ menu. Select _Hidden_ if you want to keep users from being able to use this trigger (often used if the trigger is only used to power dynamic fields).
+You can, however, change a trigger's visibility and thus choose whether it's shown or not at any time. Open the trigger in the Zapier visual builder, and scroll to the bottom of the page to the _Visibility Options_ section. Select _Hidden_ if you want to keep users from being able to use this trigger (often used if the trigger is only used to power dynamic fields).
 
 ## How to Remove Triggers
 

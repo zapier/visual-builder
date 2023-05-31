@@ -13,7 +13,7 @@ This guide will walk you through what steps you need to take to build a [private
 
 ## Prerequisite
 
-* You’ll need a [Zapier account](https://zapier.com/).
+* You’ll need a [Zapier account](https://zapier.com/sign-up).
 
 ## 1. Choose your developer tool
 
