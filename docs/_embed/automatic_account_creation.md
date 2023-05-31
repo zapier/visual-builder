@@ -9,9 +9,13 @@ redirect_from: /partner_api/
 
 Save time and reduce friction for your users by having a Zapier account created on their behalf when using one of our product embeds.  Users no longer need to worry about the hassle of signing up to a new service.
 
-<video controls loop src="https://cdn.zappy.app/29e94e1421ab8c4cbae09bcba07f2fdb.mp4" height="100%" width="100%"></video>
+The below video shows the signup flow on Google's embed experience without automatic account creation. To sign up, users are required to manually provide first and last name, email address, and go through a multi-step onboarding survey before arriving at the Zap Editor:
 
-*Pictured above: A Zapier partner demo site, Space by Zapier, uses Auth0 as their identity provider and has enabled Automatic Account Creation.  When a new user interacts with a Zapier embed the user is asked to consent in sharing their profile information with Zapier and an account is created on their behalf.*
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/tqz0movaqf" width="400" height="225"></iframe>
+
+In comparison, the below videeo shows the signup flow with automatic account creation enabled. To sign up, users confirm on a consent screen and then are directed to the Zap Editor:
+
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/e66sqvvd20" width="400" height="225"></iframe>
 
 Zapier accomplishes this by being an OpenID Connect relaying party.  Partners who support being an identity provider and are able to communicate via OpenID Connect can take advantage of this new communication channel.
 
