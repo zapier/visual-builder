@@ -1,16 +1,17 @@
 ---
-title: Integration Examples
-order: 8
+title: Integration design examples
+order: 5
 layout: post-toc
 redirect_from: /partners/
 ---
 
-# Integration Design Examples
+# Integration design examples
 
 Each app has its own unique features, but there are also a number of similarities between apps in similar categories. Here are some examples to keep in mind when designing a [form](#form), [CRM](#crm), or [project management](#pm) app integration:
 
 <a id="form"></a>
-## Add a Form or Survey App to Zapier
+
+## Add a form or survey app to Zapier
 
 Form and Survey apps—along with similar apps for polls, applications, and mobile data collection—are ideal apps to integrate with Zapier. Whenever someone fills out the form, that new data needs to go somewhere. Zapier can connect that form to create new contacts, document templates, messages, and more.
 
@@ -18,7 +19,7 @@ Here are things to keep in mind when adding a form-based app to Zapier.
 
 ### Triggers
 
-#### Add a New Entry/Response Trigger
+#### Add a new entry/response trigger
 
 ![Form app on Zapier](https://cdn.zapier.com/storage/photos/419a35068b794c36a9253a31a309e21d.png)
 
@@ -26,7 +27,7 @@ The most common trigger for a form or survey app is a "New Form Entry/Submission
 
 Using our standard "New xxx" naming pattern makes it clear to users that Zapier only retrieves new entries, not existing ones.
 
-#### Let Users Select a Specific Form
+#### Let users select a specific form
 
 ![Select Form in Zapier](https://cdn.zapier.com/storage/files/f951d24a065e5a2c56665e51002e7e17.gif)
 
@@ -36,9 +37,9 @@ Add a [dynamic dropdown](https://platform.zapier.com/docs/input-designer#how-to-
 
 You could make the form selector required, so the trigger only watches for results from this one form, which is the recommended option. Or, you could make the field optional so it would trigger for responses to any form; if so, add help text to let users know what to expect if they do not select a form.
 
-### Format Trigger Response
+### Format trigger response
 
-#### Question and Answer Fields
+#### Question and answer fields
 
 ![Example Form field names](https://cdn.zapier.com/storage/photos/554f4fc4856a555714398088f7a162b2.png)
 
@@ -52,13 +53,13 @@ For example, a common use case is to log responses in spreadsheets, with each an
 
 Consider including the question number as a prefix to the label as well, to make it even easier for users to find specific questions and fields.
 
-#### Multiple Choice Fields
+#### Multiple choice fields
 
 ![Multiple Choice Fields](https://cdn.zapier.com/storage/photos/033953ce0537c18a6efbe47f783ddf5a.png)
 
 If a multiple choice question is based on a spectrum of values (e.g., from "not really" to "very"), it’s sometimes useful to return the choice values (such as `1` to `5`) as well as the actual answer. This can be especially useful for tracking responses in a spreadsheet.
 
-#### Multi-select Fields
+#### Multi-select fields
 
 ![multi-select field](https://cdn.zapier.com/storage/photos/e922d705c9f9d61c46f32b31ba03e53f.png)
 
@@ -72,7 +73,7 @@ Consider returning these responses individually. Split each individual response 
 
 Or, return all the selected values in a single, comma separated response. Users can then easily split the responses themselves with Zapier's [Formatter](https://zapier.com/help/formatter/#using-split-text) tool, or could map the responses together to another field.
 
-#### Date Fields
+#### Date fields
 
 ![Date field from form](https://cdn.zapier.com/storage/photos/291cb5f3b048bcf6cda769f93408128d.png)
 
@@ -80,15 +81,15 @@ Return the timestamp when the response was completed, at a minimum, in [ISO 8601
 
 Consider also including a human-friendly date for the response completion and any other selected dates from the form.
 
-#### File Attachments
+#### File attachments
 
 If users can attach files to form responses, include those in the response data as well. Zapier can request the full file via [file dehydration](https://zapier.github.io/zapier-platform-cli/#file-dehydration), or your app can return a URL for the file.
 
-### Technical Configuration
+### Technical configuration
 
-#### REST Hooks
+#### REST hooks
 
-If possible, use [REST Hooks](https://platform.zapier.com/docs/triggers#rest-hook-trigger) for your trigger, as they will send new form entries to Zapier as soon as the form is filled out. If you have a lot of form entries in a short space of time, webhooks can make your integration more robust, as with polling, there is a chance the number of new entries will exceed your page size of polling results. Additionally, with REST hooks, Zapier won't repeatedly poll your API to check for new responses.
+If possible, use [REST hooks](https://platform.zapier.com/docs/triggers#rest-hook-trigger) for your trigger, as they will send new form entries to Zapier as soon as the form is filled out. If you have a lot of form entries in a short space of time, webhooks can make your integration more robust, as with polling, there is a chance the number of new entries will exceed your page size of polling results. Additionally, with REST hooks, Zapier won't repeatedly poll your API to check for new responses.
 
 The format of the key/values in a hook should match the format for a polling URL item.
 
@@ -104,7 +105,7 @@ Zapier requests sample results for every trigger and action, so users can still 
 
 Instead, include the bare set of common form fields from every result, such as the form ID and timestamp.
 
-### Form or Survey Integration Test Checklist
+### Form or survey tntegration test checklist
 
 Once you’ve built a “New Form Entry” trigger, make Zaps for the following items to ensure your integration works well:
 
@@ -117,7 +118,7 @@ Then submit new entries to your form to check that the Zaps run as expected when
 
 <a id="crm"></a>
 
-## Add a CRM or Contacts App to Zapier
+## Add a CRM or contacts app to Zapier
 
 CRM—or customer relationship management—apps are more than just a list of contact details. They're detailed databases that link contacts with companies, companies with deals, and more. That makes them a bit more tricky to integrate with Zapier than many other apps where each bit of data stands alone.
 
@@ -125,7 +126,7 @@ Here are things to keep in mind to make your CRM integration deliver the experie
 
 ### Triggers
 
-#### Include Triggers For Every Common Item
+#### Include triggers for every common ttem
 
 Users typically expect the following types of triggers for CRM apps. If your app uses a different name for these items, use the name that appears in your UI so your customers know exactly what to expect:
 
@@ -138,11 +139,11 @@ Users typically expect the following types of triggers for CRM apps. If your app
 * New Contact in View (also: Filter)—useful to trigger when contacts meet specific criteria
 * New Deal in Stage (also: Group, Segment, or Contact in Stage)—useful to trigger when a deal progresses, if your CRM includes a way to track deal stages
 
-#### Use Separate New and Updated Triggers
+#### Use Separate new and updated triggers
 
 Use "New x" triggers only for new items. If you want a way to track updated items, add "Updated x" triggers for those items. That way users can build Zaps that fit their workflows depending on if a contact is new or updated.
 
-#### Include Filter Options
+#### Include filter options
 
 ![Filter options in a CRM](https://cdn.zapier.com/storage/photos/5dddfc827be95b7125cec7c27ab716bc.png)
 
@@ -150,11 +151,11 @@ Some apps, such as Pipedrive and Salesforce, let users add custom filters or vie
 
 Ordering the dropdown list by most recently added so users can easily find the filter or view they need.
 
-### Technical Configuration
+### Technical configuration
 
-#### REST Hooks
+#### REST hooks
 
-We recommend you use [REST Hooks](https://platform.zapier.com/docs/triggers#rest-hook-trigger) if possible, so new contacts start Zaps as soon as they're added. This is especially helpful if users import hundreds of contacts to your app, which a paging trigger's API response may not be able to handle.
+We recommend you use [REST hooks](https://platform.zapier.com/docs/triggers#rest-hook-trigger) if possible, so new contacts start Zaps as soon as they're added. This is especially helpful if users import hundreds of contacts to your app, which a paging trigger's API response may not be able to handle.
 
 #### Update Triggers
 
@@ -162,7 +163,7 @@ Updated triggers should run whenever an item has new data added, or when relatio
 
 If you are using polling triggers, this may cause issues with [how Zapier performs deduplication](https://platform.zapier.com/docs/dedupe), as we don’t consider the status, stage, or tag to be newly applied to that contact anymore. You may need to customize your API call's code to add a timestamp to the id field you’re using for deduplication so that the Zap triggers each time the record is updated.
 
-### Trigger Response Format
+### Trigger response format
 
 #### Polling URL
 
@@ -170,7 +171,7 @@ The polling URL should return the most recent record created, so users can set u
 
 If there are no recent new records, return an empty array. Zapier will then encourage the user to create a sample then re-test their trigger and finish mapping their Zap.
 
-#### Obtaining Linked Information 
+#### Obtaining linked information 
 
 Records in CRMs don't stand alone—they are only one part of a linked ecosystem of data. Getting the full context of linked information is useful. For example, if your trigger is "New Contact" and newly added contacts are linked to organizations, users expect to get full organization data, too.
 
@@ -178,7 +179,7 @@ Linked information should include both IDs to easily map them to your app’s ac
 
 If your record API endpoint does not automatically return additional linked data beyond the ID or name of the record, you will need to add custom code to your trigger API call to fetch the linked record as well.
 
-#### Custom Fields
+#### Custom fields
 
 If your customers typically use custom fields, make sure Zapier pulls in every custom field with [pagination](https://platform.zapier.com/docs/triggers#how-to-use-pagination).
 
@@ -188,7 +189,7 @@ If possible, return tags on records as an array of strings or a comma-delimited 
 
 ### Searches
 
-#### Include Common Search Actions
+#### Include common search actions
 
 Users typically expect to have the following searches for a CRM integration:
 
@@ -198,7 +199,7 @@ Users typically expect to have the following searches for a CRM integration:
 
 Each should find an existing record, and return it in the same format that the trigger returns records. This ensures that the user gets a consistent experience and can use data from triggers and searches the same way.
 
-### Offer Multiple Search Options
+### Offer multiple search options
 
 ![Infusionsoft Zapier Search Options](https://cdn.zapier.com/storage/files/5395ac18091a4fe7506d5b5e4a8ced60.gif)
 
@@ -206,17 +207,17 @@ If possible, let users search for items by a search key as well as a search valu
 
 For a "Find Contact" search, for example, consider letting users search by Email, ID, or Name.
 
-### Prevent Deduplication Problems
+### Prevent deduplication problems
 
 If your CRM doesn’t allow multiple records that have the same value for a field (such as email), consider offering only a single search query for that field instead of providing multiple options. This prevents users from searching on a different field, trying to create a new record, and then being told that a record with that email already exists.
 
-### Offer Parity Across Triggers
+### Offer parity across triggers
 
 Ensure that the field(s) you offer for search are fields that are returned by the trigger steps. For example, a user might use a *New Contact* trigger, and then want to find out more information about the organization the contact is associated with by using a *Find Organization* search. If the *New Contact* trigger only provides the associated organization ID, it doesn’t make sense for the *Find Organization* search to only allow searches for the organization name.
 
 In the same vein, include linked information in search results as in triggers.
 
-#### Error Handling
+#### Error handling
 
 ![Halt a Zap instead of showing an error](https://cdn.zapier.com/storage/files/a57ed995196cb44caf4dd813ac6c60aa.gif)
 
@@ -226,7 +227,7 @@ If a record cannot be found, ensure that it returns a halted exception instead o
 
 ### Actions
 
-#### Include Common Create Actions
+#### Include common create actions
 
 Users typically expect to have the following types of create actions for CRM apps, with either *Create* or *Add* as the first word in the title:
 
@@ -245,7 +246,7 @@ It’s also useful to include Update actions, as information on records in CRMs 
 
 You don't need to add all of these actions in the first version of your integration, but over time these are all actions that may be good to add into your integration
 
-#### Allow Linked Records
+#### Allow linked records
 
 ![Linked Record](https://cdn.zapier.com/storage/photos/19fad8f7f1b3ae44be4425760901329c.png)
 
@@ -253,17 +254,17 @@ Your CRM integration will be especially powerful if users can link other record 
 
 That said, do not have one action create multiple items. When a user creates a new contact through Zapier, this should only create new contacts, and should not also create other linked records at the same time. Instead, include a separate action to create the other linked record, along with a contact update action to link the contact after the other record is created. This reduces the chance for errors and record redundancy.
 
-#### Bring in All Custom Fields
+#### Bring in all custom fields
 
 Custom fields should be displayed with a human-readable label instead of the internal ID. If the custom fields are radio selects, booleans, or can only accept certain values, add them as [static or dynamic dropdowns](https://platform.zapier.com/docs/input-designer#dropdown) in Zapier.
 
-#### Support Workflows
+#### Support workflows
 
 ![CRM workflows in Zapier](https://cdn.zapier.com/storage/photos/ce412bf1bf164bdcde6f624c3ec59fe8.png)
 
 If your app has the lets new records get automatically added to in-app workflows, sequences, follow-ups, or campaigns, make sure records created by Zapier will also get automatically added to workflows. You can also add a boolean field to your action input field to let users select if they want this contact added to a workflow, or include a dynamic dropdown to select the workflow they want.
 
-### CRM Integration Test Checklist
+### CRM integration test checklist
 
 Once you've built your CRM integration, create Zaps for the following scenarios to test your integration and ensure it works as expected:
 
@@ -272,13 +273,14 @@ Once you've built your CRM integration, create Zaps for the following scenarios 
 * If you have the option to link records in your integration's actions, check to see that these are linked correctly when creating records.
 
 <a id="pm"></a>
-## Add a Project Management or Tasks App to Zapier
+
+## Add a project management or tasks app to Zapier
 
 You often can't automate the work in your projects, but you can automatically add tasks, spin up new projects, and keep track of what's done with a Zapier product management app integration. Here are the things your users will expect in your integration
 
 ### Triggers
 
-#### Include Popular Triggers
+#### Include popular triggers
 
 Be sure to include at least the following triggers, depending on what your app supports:
 
@@ -302,7 +304,7 @@ Then, consider adding update triggers as well. More than in most other apps, use
 * Completed Project
 * Project moved to Stage (also: Project Changed Status)
 
-#### Watch Out For Permissions
+#### Watch out for permissions
 
 Project Management apps are typically used in a team, so it’s important to ensure that Zaps also trigger on teammates’ activity. For example, if user A creates a Zap that collects comments on projects, they’ll want to know if user B comments on projects as well. 
 
@@ -310,7 +312,7 @@ Permissions may also fluctuate depending on if someone is an admin/creator of a 
 
 If this is not possible with your API, we recommend making this clear in the Trigger description. For example, for a _New Note_ trigger, add help text such as "Triggers when the connected user account adds a note to a project."
 
-#### Include Trigger Options
+#### Include trigger options
 
 ![Trigger Options](https://cdn.zapier.com/storage/photos/4fad8819e9d09ca9fc3b590afe64d947.png)
 
@@ -318,7 +320,7 @@ Add Trigger options so users can select which records they want to receive. For 
 
 Order the dropdown list by most recently added to make it easier for users to find their current project.
 
-#### Obtain Linked Information
+#### Obtain linked information
 
 ![Linked Data in Podio Zapier](https://cdn.zapier.com/storage/photos/8ec62dd77f8278ff1626b9c2cf1be47d.png)
 
@@ -330,7 +332,7 @@ If your API doesn't return linked data by default, add custom code to your API c
 
 ### Searches
 
-#### Include Popular Searches
+#### Include popular searches
 
 Users typically expect to be able to find the broader items that organize their projects, including:
 
@@ -342,7 +344,7 @@ Users will typically want to find top-level records so they can add child-level 
 
 Searches should find an already existing record, and return it in the same format and with the same data as triggers use, for a consistent experience.
 
-#### Offer Multiple Search Options
+#### Offer multiple search options
 
 ![Project Management Search Options](https://cdn.zapier.com/storage/photos/df5c2a77049abfa967e32f043d14811e.png)
 
@@ -352,7 +354,7 @@ Additionally, project name searches should exact matches first. It’s likely th
 
 ### Actions
 
-#### Include Popular Create Actions
+#### Include popular create actions
 
 Users typically expect to be able to create everything they could in your app. Use *Create* or *Add* to prefix each action:
 
@@ -368,7 +370,7 @@ Because projects are very dynamic and are often organized across several apps, w
 * Complete Task (also: Todo, Subtask, Card. You might try "Update Task Status" if it’s appropriate for your API as well.)
 * Update Event
 
-#### Let User Link Records
+#### Let user link records
 
 ![Create Action Search](https://cdn.zapier.com/storage/photos/acd4cd6c45be3b17d74b597c1327f282.png)
 
@@ -376,7 +378,7 @@ Your integration will be especially powerful if users can link other record type
 
 Only create one record with one Zapier action, though. When a user creates a new Event through Zapier, this should only create new Events, and should not also create other linked records at the same time. This reduces opportunity for error as well as record redundancy for the user.
 
-### Project Management Integration Test Checklist
+### Project management integration test checklist
 
 Once you've built your project management app integration, set up a few Zaps to test out popular scenarios:
 

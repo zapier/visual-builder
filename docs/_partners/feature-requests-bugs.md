@@ -1,11 +1,11 @@
 ---
-title: How to Maintain a Zapier Integration
-order: 3
+title: How to maintain a Zapier integration
+order: 9
 layout: post-toc
 redirect_from: /partners/
 ---
 
-# How to Maintain a Zapier Integration
+# How to maintain a Zapier integration
 
 Things change. Over time, you'll add new tools to your app, improve existing features, fix bugs, and continuously improve it. New features may grow it into a larger category, or make it more focused on a smaller niche. Its description will likely change, as may its logo or even name. The API may even change as your app matures.
 
@@ -13,7 +13,7 @@ Your Zapier integration needs to change, too. The best integrations are improved
 
 Keep these guidelines in mind as you maintain your Zapier integration:
 
-## How to Update App Branding in Zapier
+## How to update app branding in Zapier
 
 ![Update Zapier integration details](https://cdn.zappy.app/21501f70d3d15a341e6dc7ea90690ee6.png)
 
@@ -25,7 +25,7 @@ If your app is public, you'll then need to [send us a request](mailto:partners@z
 
 Please make sure to follow [Zapier's branding guidelines](https://platform.zapier.com/partners/planning-guide) whenever updating app branding.
 
-## How to Monitor Feature Requests and Bugs
+## How to monitor feature requests and bugs
 
 ![Issues in Zapier Integration](https://cdn.zappy.app/b986eef73a1558ee3e121cf5d985339a.png)
 
@@ -39,7 +39,7 @@ Whenever a new issue is added or updated, Zapier will log it in the _Bugs & Feat
 
 Issue notifications are automatically sent to all confirmed Administrators and Collaborators on the integration team. If an Administrator or Collaborator is listed as `Invitation Pending`, they will need to accept the invite before they start to receive issue notifications.
 
-## How to Monitor Integration Insights
+## How to monitor integration insights
 
 As you launch and maintain your integration, you should monitor and review the insights in the dashboard on a regular cadence. Insights include important data on both the integration's growth and usage, such as monthly active users, retention rates, and Zap usage by triggers and actions. You can [see all the metrics tracked](https://platform.zapier.com/partners/integration-quality#integration-insights-definitions) in this table, or access them for any integration you are an Admin or Collaborator on from the "Dashboard" tab of the developer platform.
 
@@ -47,11 +47,11 @@ As you launch and maintain your integration, you should monitor and review the i
 
 You can filter most growth metrics by the last X number of days to identify trends and changes in user activity in correlation to marketing initiatives, integration changes, and product updates like [embedding Zapier](https://platform.zapier.com/embed/full-zapier-experience). Usage details for each trigger and action will show which functionalities are the most popular and being effectively utilized. You can easily and safely share access to the insights by [inviting collaborators](https://platform.zapier.com/quickstart/invite-team-member#collaborator) to the integration without giving them permissions to make changes to it.
 
-## How to Make a New Version of Your Integration
+## How to make a new version of your integration
 
 Sometimes you may want to add something new to your integration. You may need to fix bugs in your integration, or add additional details to resolve user issues. You might want to add additional triggers, actions, or searches to your integration as uses request them. Or, over time, you may need to change your app's authentication and API calls.
 
-The Zapier platform makes it easy to build new versions of your integration when needed. You can create new versions for minor or major changes as needed.
+The Zapier Platform makes it easy to build new versions of your integration when needed. You can create new versions for minor or major changes as needed.
 
 Versions that have been made public, or those with more than 5 users, cannot be edited. In that case, you will need to create a new version to make any changes. This is so that existing users are not surprised by changes to their running workflows.
 

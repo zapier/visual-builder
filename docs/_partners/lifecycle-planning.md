@@ -1,241 +1,146 @@
 ---
-title: How to Build and Publish a Zapier Integration
+title: Build your first public integration on Zapier
 order: 1
 layout: post-toc
 redirect_from: /partners/
 ---
-# How to Build and Publish a Zapier Integration
+# Build your first public integration on Zapier
 
-## 1. Plan Your Zapier Integration
+This guide gives an overview of the process to publishing a public integration. For public integrations, you'll join [Zapier's Partner Program](CHANGE URL) once your app has been successfully reviewed.
 
-No app can do everything on its own. The best apps are instead focused on their core features, then rely on integrations with dozens of other great apps to do the rest. That is what the Zapier platform enables. It brings the best of every app together.
+To get a picture of how your integration will show up on Zapier's website, you can browse the[ app directory](https://zapier.com/apps). It's a great idea to explore similar apps to see what triggers and actions they provide for building Zapier workflows, called Zaps.
 
-A Zapier integration connects your app to {{ site.partner_count }} of the best business and productivity apps so millions of Zapier users can add it to their workflows.
 
-If you haven't yet, please read [How Zapier Works](https://zapier.com/help/how-zapier-works/) and set up a few Zaps to get a sense of the user experience.
+## **Before you start**
 
-Then, before you start building, think through how your Zapier integration will work, and plan out what triggers and actions to build.
+Consider workflows your app will support, and what types of activities your users want to automate. Learn[ how Zapier works](https://zapier.com/help/how-zapier-works/) and set up a few Zaps to get a sense of the user experience.
 
-Building on the Zapier platform is different from other platforms. Instead of defining an entire app's end-to-end user experience, you're creating discrete triggers and actions .
+To design useful triggers and actions for your integration, consider how your users might need data from your app to run other parts of their business. Some of the most popular use cases for Zapier integrations include:
 
-However, it is similar in the sense that end user experience still matters **a lot**. Simply building triggers and actions from your public API endpoints isn't enough. You'll want to strongly consider workflows your app will support and what the user experience looks like while setting up a Zap with your app.
 
-The most successful integrations on Zapier only have two or three triggers and actions to start. You can always add more over time as users request them. If you need help figuring out what might be useful to your users, you can browse the [App Directory](https://zapier.com/apps) for similar apps and see what triggers and actions are supported.
 
-Start out by reading through our [Zapier Integration Planning guide](https://platform.zapier.com/partners/planning-guide), which includes the guidelines and considerations needed when building a Zapier integration:
+* Sending follow-up emails or messages
+* Copying data from a bill or invoice into another system
+* Updating contact records in multiple databases
+* Creating or updating records in a project management tool
 
-- [How to Brand Your Zapier Integration](https://platform.zapier.com/partners/planning-guide#how-to-brand-your-zapier-integration)
-- [How to Design Successful Zapier Authentication Flow](https://platform.zapier.com/partners/planning-guide#authentication)
-- [How to Design Successful Zapier Triggers](https://platform.zapier.com/partners/planning-guide#triggers)
-- [How to Design Successful Zapier Actions](https://platform.zapier.com/partners/planning-guide#actions)
-- [How to Design Successful Zapier Searches](https://platform.zapier.com/partners/planning-guide#searches)
+Learn more about how to[ approach use cases](https://platform.zapier.com/partners/integration-examples).
 
-### Learn From Popular Zapier Integration Categories
 
-Each type of app has its own special considerations on Zapier. Form apps, for example, need to return values from multiple choice questions, while CRMs need to manage a wide variety of related data. Check our category-specific guides to learn from these best practices before building your app's Zapier integration.
+## **Build your integration**
 
-- [Add a Form or Survey App to Zapier](https://platform.zapier.com/partners/integration-examples#form)
-- [Add a CRM or Contacts App to Zapier](https://platform.zapier.com/partners/integration-examples#crm)
-- [Add a Project Management App to Zapier](https://platform.zapier.com/partners/integration-examples#pm)
+Building a Zapier integration means identifying the right APIs for your triggers and actions, and designing an intuitive experience for your users to select and map the data they need.
 
-## 2. Build Your Integration
+There are two ways to build an integrations on Zapier’s Platform:
 
-Building a Zapier integration means keeping one eye on the technical bits and one eye on the user experience.
 
-Some of the best Zapier integrations are built when pairing an engineer and a product manager together. But anyone can build a Zapier integration, as long as you follow the guidelines in our [integration design guide](https://platform.zapier.com/partners/planning-guide) and [developer docs](https://platform.zapier.com/quickstart/introduction).
 
-There are two ways to build Zapier integrations on Zapier's Platform:our UI-based visual builder or CLI. The visual builder lets you create a Zapier integration in your browser without code—then can customize the integration with code if needed. The CLI, instead, lets you build integrations in your local development environment, collaborate with version control and CI tools, and push new versions of your integration from the command line. Both run on the same Zapier platform, so choose the tool that fits your workflow the best.
+* The Platform UI lets you create a Zapier integration in your browser without code using API endpoint URLs. You can also set any custom options your API may need, including custom URL params, HTTP headers, and request body items, using code mode.
+* Zapier Platform CLI lets you build a Zapier integration in your local development environment, collaborate with version control and CI tools, and push new versions of your integration from the command line.
 
-Learn how to use the Zapier Platform with our [visual builder Quick Start tutorial](https://platform.zapier.com/quickstart/introduction) or our [CLI Quick Start tutorial](https://zapier.com/developer/start/introduction). Then visit [zapier.com/app/developer](https://zapier.com/app/developer/) or enter `zapier init` in Terminal to build a new integration.
+Both of these tools run on the same Zapier platform, so choose the one that fits your workflow the best.
 
-### Test Your Integration
+Learn more about the difference between building with the[ Platform UI and the CLI](https://platform.zapier.com/docs/vs).
 
-While you're building your integration, it's best to test authentication, triggers, and actions as you add them to your app. In the Platform UI, you can test each step live in the editor as it's built. With both Platform UI and CLI, have a separate tab open in your browser to the user-facing [Zap editor](https://zapier.com/app/editor), then refresh anytime you add a new trigger or action to test it live immediately.
 
-> **Note:** You may have to refresh a few times for new triggers and actions to appear.
+## **Test your integration**
 
-After you're done building, invite users to try your integration before making it available to a wider audience.
+While you’re building your integration, you can test your API requests within the Integration Builder. For developers building on Zapier Platform CLI, you can write unit tests that run locally, in a CI tool like[ Travis](https://travis-ci.com/).
 
-#### Invite Others to Help Test Your Integration
+To get a sense of the user experience, it’s recommended to test your integration within the Zap editor.[ Create a new Zap](https://zapier.com/help/create/basics/create-zaps) that uses your integration’s triggers or actions to ensure they all work as expected. After you’re done building, invite users to try your integration before making it available to a wider audience.
 
-As you're getting close to finishing development, you’ll want others to try out your app using Zapier. You can invite co-workers or your users to provide feedback. Invitees must have a Zapier account, which they can create for free during the invite process.
+Learn more about testing your integration:
 
-You can invite people directly to your integration from Zapier's Platform UI, whether you built it in the Platform UI or CLI. Open Zapier's developer platform at [zapier.com/app/developer](https://zapier.com/app/developer), select your app, then click the _Sharing_ tab on the left. There, you can enter contacts' email addresses to invite them to your integration, or can copy a public invite link to share with those whom you want to test. The link will invite users to all versions of your app, while email invites allow you to select specific version(s) to share.
 
-![Invite screen](https://cdn.zapier.com/storage/photos/d7e6f91a029c9ae740f70e475c97081d.png)
 
-When users accept your invite or click the link, they'll see a page that explains that you have invited them to your app, covers some common questions about Zapier, and explains that you will support your app while in beta.
+* [Testing using Zapier Platform UI](https://platform.zapier.com/docs/testing)
+* [Testing using Zapier Platform CLI](https://platform.zapier.com/cli_docs/docs#testing)
 
-After accepting the invite, users land in the Zapier editor, where they are prompted to build a Zap with your product.
 
-It's a good idea to reach out to the users you invited and check in on their experience using your integration with Zapier so that you can identify any usability issues.
+## **4. Submit your integration for app review**
 
-#### Manage Your Integration Versions
+After you've confirmed your integration is working, you're almost ready to publish your app. To publish your integration, you need to submit your app for review.  
 
-As you work on your integration, start getting feedback from testers, and eventually release it to the public, you will want to add and change things over time. Zapier's Platform UI and CLI both support versioning to make minor or major versions of your integration. Each version is kept separate, so you can make changes to your integration without affecting other users.
+Before submitting your integration, review[ Zapier’s integration review guidelines](https://platform.zapier.com/partners/integration-review-guidelines) to speed up the app review process.
 
-Find out more in our _[How to Maintain Your Zapier Integration](https://platform.zapier.com/partners/feature-requests-bugs)_ guide.
+To submit your integration for app review:
 
-## 3. Publish Your Integration to the App Directory
 
-Now that you're finished developing and testing your Zapier integration, it's time to share it with the world! When you publish your integration, your product will get a dedicated page in [Zapier's App Directory](https://zapier.com/apps). Just follow these steps:
 
-> If you’re not seeing the publishing features, check your [integration settings are set to public](https://platform.zapier.com/docs/start#edit-your-zapier-integration-info).
+1. [Log into the Platform UI](https://zapier.com/app/developer)
+2. Select your **integration**.
+3. In _Integration Home_, click **Publish.**
+4. You’ll need to complete our online form.
+5. Click **Submit for Review**.
 
-### **1. Ensure your integration follows the Zapier Integration Development Guide**
+After you’ve submitted your integration for review, one of our developers will reach out to you in 1 week or less. Zapier will update your:
 
-The [Integration Development Guide](https://platform.zapier.com/partners/planning-guide) is written with the user in mind, ensuring a consistent experience across Zapier. Hundreds of companies have launched Zapier integrations and the Integration Development Guide is a list of best practices learned, so your users have the best experience with your Zapier integration.
 
-We recommend your Zapier integration have no more than 5 of each (trigger, action, or search) at first; we suggest starting with your most popular 2-3 use cases.
 
-### **2. Have at least 1 live Zap for each of your integration's visible Triggers, Actions, and Searches**
+* App version to **Pending**.
+* App status will remain as **Private**.
 
-Clone your integration and place it into invite-only mode. Doing so provides you a link to share this instance of your Zapier integration with prospective users.
 
-The intention of this step is to ensure any show-stopping bugs are worked out and verify existing user demand. Towards this end, your users should be non-QA emails and external or outside of your company.
+## **Beta phase**
 
-### **3. Prepare your team to support and maintain your integration**
+When your integration is approved, Zapier will update your:
 
-Zapier's support team serves as frontline support for your Zapier integration. As users encounter bugs or think of new features they’d like within the integration, some reach out to the Zapier support team. Those requests are logged in Zapier’s issue tracker, which you can see from the Bug & Feature Requests page of the integration’s developer platform. If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), you can create Zaps to do so using [Zapier Issue Manager](https://platform.zapier.com/partners/zim). We expect your team to promptly reply to those requests and to maintain your integration.
 
-### **4. Submit your integration for review by the Zapier team**
 
-Read our [App Review Guidelines](https://platform.zapier.com/partners/integration-review-guidelines) to help you better prepare your integration before submitting it for review.
+* App status to **Public**.
+* App version will update to **Beta**.
+* Integration will be added to[ Zapier’s app directory](https://zapier.com/apps) with a Beta tag.
 
-Then, navigate to the Publishing page for your app, fill out the form, and click _Submit for Review_.
+Your integration will remain in beta for 90 days.
 
-![Publishing integration page](https://cdn.zappy.app/5717927f617ec65928b00b23459365fe.png)
+Whilst in public beta, we recommend completing these tasks to improve your integration:
 
-Expect to hear from us within a week.
 
-<a id="early"></a>
+### **Add help docs to Zapier’s Help Center**
 
-### Your App is Now a Part of the Zapier Platform!
+The Zapier team provide frontline support for your integration, and in order to provide the best experience for your users, we also host help documentation about your integration in the[ Zapier Help Center](https://help.zapier.com/hc/en-us). Help our Technical Writing team create accurate documentation by filling out[ this form](https://eu.jotform.com/form/202233475923352). We can also include link out to documentation on your site to help customers find the information they are looking for.
 
-Your app will be listed with a dedicated page in [Zapier's App Directory](https://zapier.com/apps). All Zapier users can discover your app and start building Zaps with your integration. Your new integration will feature a Beta tag when it's first published. At this point you'll have access to build Zap Templates, which are the best way to help new users discover specific useful things they can do with your integration.
+Once submitted, it takes roughly 2 weeks to get help docs published in the Help Center.
 
-### What's the Next Step?
 
-As your integration continues to accumulate users, our team will watch the growth of your integration. Once your integration [reaches 50 users](https://zapier.com/developer/documentation/v2/app-lifecycle/#1-wait-for-an-invite-from-the-zapier-team), our partner team will reach out and talk about next steps working with Zapier to grow your business and share Zapier with your users.
+> **Tip:** As you maintain your integration, you can use the same form to submit updates at any time to the Technical Writing team.
 
-## 4. Launch with the Partner Program
 
-We may invite your company to officially launch your Zapier integration and join the [Zapier Integration Partner Program](https://zapier.com/platform/partner-program). Once you launch, you will automatically join the free **Zapier Integration Partner Program** and can access the program's [many co-marketing benefits](https://zapier.com/platform/partner-program) including:
+### **Create Zap templates**
 
-- A shoutout about the launch of your integration in our [updates blog post](https://zapier.com/blog/all-articles/product-news/)
-- Access to your [integration health data](https://platform.zapier.com/partners/feature-requests-bugs#how-to-monitor-integration-insights)
-- A dedicated page in [Zapier’s App Directory](https://zapier.com/apps)
-- Exposure within Zapier's product and on the sites of Zapier's {{ site.partner_count }} integration partners
+As soon as your app is published and in beta you can begin creating and sharing[ Zap Templates](https://zapier.com/developer/zap-templates). Zap Templates are readymade integrations or Zaps with the apps and core fields pre-selected. In a few clicks, they help people discover a use case, connect apps, and turn on the Zap.
 
-Here are the steps to take to officially launch and join the program:
+Learn more about creating[ Zap templates](https://platform.zapier.com/partners/zap-templates).
 
-<a id="wait"></a>
 
-### **1. Build, test, and publish your Beta integration**
+### **Embed Zapier in your product or website**
 
-See previous section on building and publishing a new integration.
+The best way to ensure users are able to discover your Zapier integration is to surface your integration where users are looking at it. By embedding Zapier in your product, you can create end-to-end user experience, helping your customers discover available integrations within your product without having to leave your app.
 
-As mentioned above, you’ll need to complete the following tasks before the Beta tag is removed from your app listing:
+Learn more about[ embedding Zapier.](https://platform.zapier.com/embed/overview)
 
-- Create at least 10 Zap Templates
-- Submit Help Docs
-- Reach 50 users OR embed your Zap Templates into your own product
 
-Remember, once you fulfill the criteria above, you’ll automatically join the free Zapier Partner Program to earn co-marketing benefits as your integration grows.
+### **Grow active usage**
 
-Up next, we’ll dive into these requirements more.
+During the beta stage of your integration, it's important to actively work on growing the usage of your app. By encouraging more people to use your integration, you'll be able to gather valuable insights and feedback early on, which will help you optimize it further.
 
-### Create 10 Zap Templates
+Learn more strategy[ tips to improve your integration](https://platform.zapier.com/partners/partner-faq).
 
-***Estimated time to complete:*** _1-2 hours_
 
-***Who to involve:*** _Your product or marketing team_
+### **Manage bugs and feature requests**
 
-As soon as your app is published and in beta you can begin creating and sharing [Zap Templates](https://zapier.com/developer/zap-templates). Zap Templates are readymade integrations or Zaps with the apps and core fields pre-selected. In a few clicks, they help people discover a use case, connect apps, and turn on the Zap. We’ll look for a least 10 of these in place before an official partnership launch.
+With the Zapier Issue Manager, you have the ability to conveniently address bugs and new feature requests within your preferred issue-tracking tool. Regularly reviewing and taking action on these items will greatly contribute to enhancing the overall health score of your integration.
 
-### Help our team create Help Docs on Zapier.com
+Learn more about[ Zapier Issue Manager](https://platform.zapier.com/partners/zim).
 
-***Estimated time to complete:*** _5 minutes_
 
-***Who to involve:*** _Your product or marketing team_
+## **Public phase**
 
-The Zapier team provides frontline support for your integration and, in order to provide the best experience for your users, we also host help documentation about your integration on our site. Help our support team create accurate documentation by filling out [this form](https://eu.jotform.com/form/202233475923352).
+After 90 days in public beta, your integration will become public:
 
-### Reach 50 users
 
-While your integration is in beta, we'll monitor how it's performing. When your integration reaches 50 users, our team will get in touch to invite you to start the official partner program launch process.
 
-<a id="beta"></a>
+* Your app status will be updated to public, and the beta tag will be removed.
+* You’re added to our[ Partner Program](https://coda.io/d/_d-clruQiSri/_susbo#_luCcs), where you can earn marketing and support benefits.
 
-### Easily embed your Zapier integration into your product
-
-***Estimated time to complete:*** _5-10 minutes for an engineering or technical resource_
-
-***Who to involve:*** _Your product and development team_
-
-The best way to ensure users are able to discover how to connect your app to {{ site.partner_count }} other apps is to surface your integration where your users are looking for it. Using Zapier’s embedding technology, you can present your most popular Zap Templates to your users in your app’s UI, help docs, FAQs, blog posts, and more.
-
-There are lots of ways to embed Zapier workflows into your product. Jump into the Embed section of your developer dashboard for an interactive sandbox, but the high-level breakdown is below.
-
-> **Tip:** Looking for buy-in from your team on embedding Zapier into your product? Share examples and how it’ll make your customers happier, more loyal, and more successful with [this resource](https://zapier.com/partner/solutions). 
-
-**Option 1**
-The Full Zapier Experience and embedding Zap Templates: Embed quickly by copying and pasting a few simple lines of code
-
-Use our [plug and play solutions](https://zapier.com/partner/solutions/plug-and-play) to generate your own Full Zapier Experience or embed Zap Templates that features your app. This small snippet of code allows you to quickly and easily embed the Full Zapier Experience and/or your Zap Templates on your site and in your product.
-
-Here is an example of what embedded Zap Templates look like for MailChimp:
-
-<zapier-zap-templates theme="light" apps="mailchimp" create-without-template="hide" limit="5" use-this-zap="show"></zapier-zap-templates>
-<br />
-
-**Option 2**
-The Partner API: Embed in a customized way to fit the style of your product
-
-Our [Partner API](https://platform.zapier.com/partners/zap-templates#embed-zapier-into-your-app-with-zapier-partner-api) gives you total control over the look and feel of the Zapier experience inside your app.
-
-Here is an example of how our partner Unbounce implemented the Partner API inside their product:
-
-![](https://cdn.zapier.com/storage/photos/9e769e34030c2bbcf2fb80b827d69c22.png)
-
-### Create help documentation for the integration on your site
-
-***Estimated time to complete:*** _1 day_
-
-***Who to involve:*** _Your support or marketing team_
-
-Make sure your users of your Zapier integration can get their questions answered easily. Create help documentation on your site like our partner Autopilot did:
-
-![](https://cdn.zapier.com/storage/photos/90186e0afa54eab0817ae1f66488d380.gif)
-
-We've put together [this template](https://docs.google.com/document/d/1eg3CaU9ytf5QH38FuaxAyQgmFN2HYZFbBN7E3l9kZZg/edit) to help you get your page up quickly.
-
-### **2. Create a marketing campaign for your integration’s full launch**
-
-***Estimated time to complete:*** _1-2 weeks_
-
-***Who to involve:*** _Your marketing team_
-
-After you've passed the Beta phase, work with your marketing team to create a launch campaign to let your users know that they can now connect your product to {{ site.partner_count }} web apps. Marketing campaigns help you get more users on your integration right away, so you can rise the ranks of the Zapier Partner Program more quickly.
-
-Here's some inspiration from some of our most successful partners:
-
-- Write a blog post about the integration like [Evernote](https://evernote.com/blog/speed-up-evernote-workflows-with-zapier/) did
-- Send an [email](https://cdn.zapier.com/storage/photos/c760446e7cd5a1448ba66aeb6b7b002a.png) to your users to announce the integration like Wunderlist did
-- Send an [in-app announcement](https://cdn.zapier.com/storage/photos/6ddd0d8aeb90f73590673cfa569c192f.png) like Feedly did
-- Promote the integration on social media like [Hootsuite](https://cdn.zapier.com/storage/photos/71c1d98949f7063bbbd210de211f0e47.png) did
-- Feature your Zapier integration in your product's onboarding sequence like [Base CRM](https://cdn.zapier.com/storage/photos/9b1c3ac4d870456e5f4ceedc85159878.png) does
-- Add your Zapier integration to your website's [integration directory](https://cdn.zapier.com/storage/photos/edaae7a3799ad14ecc970daa0ea49b8f.gif) like Zoho Connect
-
-Make sure to check out [Zapier's brand guidelines](https://zapier.com/resources/partner-marketing) as you're planning!
-
-## 5. Get Zapier Integration Support
-
-![](https://cdn.zapier.com/storage/photos/352d5dea5b77da6d6e0c930c67d90be4.png)
-
-Once you've launched your Zapier integration in the partner program, you're enrolled in the [Zapier Partner Program](https://zapier.com/platform/partner-program) and are eligible for a variety of benefits. Congrats! You'll receive monthly emails from us about how your integration is doing, plus updates on where you stand and what benefits you're eligible for.
-
-- Have questions about how the Zapier Partner Program works? [Check out our FAQ page](https://platform.zapier.com/partners/partner-faq#zapier-partner-program-faqs).
-- Curious about how to increase usage and move up levels in the program? Here are some [tips on getting more users](https://platform.zapier.com/partners/partner-faq), according to top Zapier partners.
-
-_Have any other questions about the Partner Program? Please [email us](mailto:partners@zapier.com)._
+Learn more about[ maintaining your Zapier integration](https://platform.zapier.com/partners/feature-requests-bugs).

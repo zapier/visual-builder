@@ -1,16 +1,16 @@
 ---
-title: Zapier Trusted App Developers
-order: 10
+title: Zapier trusted app developers
+order: 11
 layout: post-toc
 redirect_from: /partners/
 ---
 
 
-# Zapier Trusted App Developers
+# Zapier trusted app developers
 
-If you don't have the time/resources to dedicate towards building and launching your own integration, there are  Zapier Trusted Developers who may be able to assist you. These are individuals/groups who have demonstrated their capabilities by satisfying our requirements for building apps on our Developer Platform, and we recommend as a substitute for building your integration in-house. 
+If you don't have the time/resources to dedicate towards building and launching your own integration, there are  Zapier trusted developers who may be able to assist you. These are individuals/groups who have demonstrated their capabilities by satisfying our requirements for building apps on our Developer Platform, and we recommend as a substitute for building your integration in-house. 
 
-## Approved Trusted Zapier App Developers
+## Approved trusted Zapier app developers
 
 * [Left Hook Digital](http://lefthookdigital.com/zapier-integration-developer-partner/)
 
@@ -24,15 +24,15 @@ If you don't have the time/resources to dedicate towards building and launching 
 
 If you're looking for help with Zap workflows and not building an app, contact one of our [Zapier Experts](https://zapier.com/experts/) who can help you out.
 
-> Note*: If you do work with one of our Zapier Trusted Developers to develop an app, make sure you develop a plan for continued support and maintenance, either using that developer, or with an in-house team who will take responsibility for the app.*
+> Note*: If you do work with one of our Zapier trusted developers to develop an app, make sure you develop a plan for continued support and maintenance, either using that developer, or with an in-house team who will take responsibility for the app.*
 
-## Requirements for becoming a Zapier Trusted Developer
+## Requirements for becoming a Zapier trusted developer
 
-In order to become a Zapier Trusted Developer, you must demonstrate your capabilities by satisfying the following requirements:
+In order to become a Zapier trusted developer, you must demonstrate your capabilities by satisfying the following requirements:
 
-* Develop and launch two Public apps that meet our [App Development Guide](https://zapier.com/developer/documentation/v2/app-dev-guide/) standards. This ensures that you're familiar with Zapier development, launch, promotion, and maintenance processes. You are responsible for finding clients who need Zapier integrations built.
+* Develop and launch two Public apps that meet our [Zapier integration branding and design guidelines](https://platform.zapier.com/partners/planning-guide) standards. This ensures that you're familiar with Zapier development, launch, promotion, and maintenance processes. You are responsible for finding clients who need Zapier integrations built.
 
-* The apps must have **sufficient complexity**, which includes a mix/quantity of Triggers, Actions, Searches, and/or Scripting. Barring this being present on the Public apps, you must demonstrate your competence with these features in another way, perhaps on an invite only app.
+* The apps must have **sufficient complexity**, which includes a mix/quantity of triggers, actions, searches, and/or scripting. Barring this being present on the public apps, you must demonstrate your competence with these features in another way, perhaps on an invite only app.
 
 * You are responsive when handling maintenance needs (bug fixes and feature requests), including being receptive to us increasing standards on the Developer Platform and adding new features, or moving to a newer version of the Developer Platform.
 

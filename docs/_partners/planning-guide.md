@@ -1,11 +1,11 @@
 ---
-title: Zapier Integration Branding and Design Guidelines
-order: 2
+title: Zapier integration branding and design guidelines
+order: 4
 layout: post-toc
 redirect_from: /partners/
 ---
 
-# Zapier Integration Branding and Design Guidelines
+# Zapier integration branding and design guidelines
 
 No app can do everything on its own. The best apps are instead focused on their core features, then rely on integrations with dozens of other great apps to do the rest. That is what the Zapier platform enables. It brings the best of every app together.
 
@@ -13,14 +13,14 @@ A Zapier integration connects your app to {{ site.partner_count }} of the best b
 
 Here are the core things to keep in mind to build a great Zapier integration.
 
-## How to Brand Your Zapier Integration
+## How to brand Your Zapier integration
 
-![Zapier App Directory](https://cdn.zappy.app/a0f7ce40c90b488c9ddf04b65db1c58b.png)
-_The Zapier App Directory is the best way to find new apps to add to your workflows_
+![Zapier app directory](https://cdn.zappy.app/a0f7ce40c90b488c9ddf04b65db1c58b.png)
+_The Zapier app directory is the best way to find new apps to add to your workflows_
 
 Your customers already recognize your app name and logo, and they’ll look for it inside Zapier. Zapier users who have never used your app may discover it through Zapier when looking for a new tool. That makes consistent branding a core part of a successful Zapier integration.
 
-The search for new apps and integrations starts at the [Zapier App Directory](https://zapier.com/apps/). Apps are ranked by popularity and category, with a search box to filter through the list.
+The search for new apps and integrations starts at the [Zapier app directory](https://zapier.com/apps/). Apps are ranked by popularity and category, with a search box to filter through the list.
 
 ![Zapier app directory pages](https://cdn.zappy.app/06ab4121b4b18d05816e1293aeb185a5.png)
 _App Directory listings help users discover new ways to connect apps_
@@ -39,7 +39,7 @@ Then, inside the core Zapier app, users will again see your app name and logo in
 
 When you create a Zapier integration, you’ll be asked to add your app’s name, logo, description, category, along with your brand color when the integration is launched publicly. Follow these guidelines to effectively brand your app on Zapier:
 
-### App Name
+### App name
 
 Use the actual, unique name of your app with the same capitalization your company uses in your core branding. Trademark/copyright identifiers such as a TM suffix aren't allowed in the app name, though they can be added to the [Description](https://platform.zapier.com/partners/planning-guide#app-description-copy).
 
@@ -50,7 +50,7 @@ Do not add adjectives or phrases to your app name, and only include your company
 - `Evernote`, not `Evernote Note Taking App` or `EverNote`
 - `Google Sheets`, not `Sheets` or `Google Spreadsheets`
 
-### App Logo
+### App logo
 
 Upload a square, transparent PNG format logo for your app at least 256x256px in size (please use a bigger version if you have one available). If your app has a solid, square background, round the corners 3% of the width and set the background as transparent. If your icon is not square, make a square transparent image and center your icon inside the transparent square.
 
@@ -66,7 +66,7 @@ Evernote's elephant icon is included in a transparent square rectangle.
 
 Todoist's icon includes transparent, rounded corners.
 
-### App Description Copy
+### App description copy
 
 Write a short description (up to 140 characters) of your app’s core features and use cases. Include your app’s name in the description, then explain what makes your app different and the reason one should use it. Use proper English and full sentences.
 
@@ -99,7 +99,7 @@ Do not use pure white (`#FFFFFF`) for either color, as overlaid text would be un
 
 Zapier uses the primary color as the background color in your app’s Zapier App Directory listing, and may additionally use it in the Zapier app dashboard, Zapier blog marketing materials, and other parts of Zapier’s app and content that promote your app’s integrations.
 
-## How to Design Successful Zapier Integrations
+## How to design successful Zapier integrations
 
 It starts with a Google search, perhaps, or a peek at Zapier's App Directory to find a new integration. Then the user makes a new Zap, either manually or from a Zap Template, and chooses your app. Then they connect their account with your app, set up the trigger or action they need for this workflow, and tell Zapier what data to copy from other apps to your app or vice versa.
 
@@ -132,15 +132,15 @@ Basic authentication, while acceptable, is the least appropriate authentication 
 
 Here are additional considerations when adding authentication to your integration:
 
-**Include Help Text**: If your authentication requires users to enter a domain name, API key, or other information that could be confusing, always include help text for those authentication input fields. Add links to your app in the help text with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/).
+**Include help text**: If your authentication requires users to enter a domain name, API key, or other information that could be confusing, always include help text for those authentication input fields. Add links to your app in the help text with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/).
 
-**Link to API Key (with API Key Authentication)**: If your authentication requires an API key, include a direct URL where users can obtain their API key from your app. If there is no direct link, include as clear of directions as possible to help users find the API key.
+**Link to API key (with API key authentication)**: If your authentication requires an API key, include a direct URL where users can obtain their API key from your app. If there is no direct link, include as clear of directions as possible to help users find the API key.
 
-**Use a Dedicated Endpoint for Testing**: Your Authentication Test API call should ping an endpoint such as `/me` or `/user` that tests if the authentication was successful but does not require additional input. This call should return a `2xx` error for invalid authentication. Do not use an API call that returns a `4xx` error for missing input data aside from authentication.
+**Use a dedicated endpoint for testing**: Your Authentication Test API call should ping an endpoint such as `/me` or `/user` that tests if the authentication was successful but does not require additional input. This call should return a `2xx` error for invalid authentication. Do not use an API call that returns a `4xx` error for missing input data aside from authentication.
 
-**Customize Your Connection Label**: Zapier includes the app name, integration version, and a number to help identify each connected account, so users can add multiple accounts of one app to Zapier. When building your integration's authentication, be sure to customize your connection label to include a username, email address, or other data aside from passwords and API keys entered during authentication or returned by your test trigger. Learn how in Zapier's [Visual Builder](https://platform.zapier.com/docs/auth#how-to-add-a-connection-label-to-authenticated-accounts) and [Platform CLI](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#authentication) docs.
+**Customize your connection label**: Zapier includes the app name, integration version, and a number to help identify each connected account, so users can add multiple accounts of one app to Zapier. When building your integration's authentication, be sure to customize your connection label to include a username, email address, or other data aside from passwords and API keys entered during authentication or returned by your test trigger. Learn how in Zapier's [Visual Builder](https://platform.zapier.com/docs/auth#how-to-add-a-connection-label-to-authenticated-accounts) and [Platform CLI](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#authentication) docs.
 
-## Zap Steps
+## Zap steps
 
 Every Zapier integration includes at least one trigger or action, and ideally will include several triggers, actions, and searches to let users do as much with the app through Zapier as possible. Triggers, actions, and searches—together called _Zap Steps_—all have their own unique considerations, but also have some common things to keep in mind.
 
@@ -185,9 +185,9 @@ Or imagine a “New Email” trigger in an email app. Users may want to watch fo
 
 **Watch for specific updates**. Don't include a generic "Item Updated" trigger. Think instead about the scenario where users would want to watch for updated items. They may want to watch for deal status changes in a CRM, or email address changes from contacts. Include filters so users can watch for the specific updates that are important to their work.
 
-**Use REST Hooks whenever possible**. Zaps with [REST hook](http://resthooks.org) triggers run automatically when new data is available, which matches users' expectations from automation. Polling triggers, instead, run `GET` calls every 1 to 15 minutes, depending on the user's Zapier plan, and static webhooks are not supported (as users could instead use Zapier's built-in [Webhooks app](https://zapier.com/apps/webhook/integrations)).
+**Use REST hooks whenever possible**. Zaps with REST hook triggers run automatically when new data is available, which matches users' expectations from automation. Polling triggers, instead, run `GET` calls every 1 to 15 minutes, depending on the user's Zapier plan, and static webhooks are not supported (as users could instead use Zapier's built-in [Webhooks app](https://zapier.com/apps/webhook/integrations)).
 
-**Only include Trigger input fields where necessary**. Many triggers need no fields, as they simply watch for new or updated items without any additional input from users. If your trigger would return a large amount of data to Zapier and cause the Zap to run too often, include input fields to let users filter and only run the Zap on the data they want.
+**Only include trigger input fields where necessary**. Many triggers need no fields, as they simply watch for new or updated items without any additional input from users. If your trigger would return a large amount of data to Zapier and cause the Zap to run too often, include input fields to let users filter and only run the Zap on the data they want.
 
 **Use smart defaults for input fields**. If your API requires a trigger field, use the default value where possible. For example, Dropbox' **New File** trigger watches for new files in the root directory by default. That helps users successfully set up Zaps even if they don't customize the input field.
 
@@ -206,9 +206,9 @@ Triggers are focused on data that has been added in your app. Actions are focuse
 
 **Focus on popular use cases**. Think about what users would want to automatically create in your app, and build actions for those specific items. Think about everything they would need to create in a workflow—would they need to create folders along with new files? Would they need to add a customer for a new order? That will help you find other actions that may need to be added.
 
-**Do not add Delete actions**. Deleting data automatically can let users accidentally delete data they didn't intend to delete. Instead, offer less permanent actions such as options to deactivate, unsubscribe, or tag a user in a certain way (where users could then easily delete those items from inside your app).
+**Do not add delete actions**. Deleting data automatically can let users accidentally delete data they didn't intend to delete. Instead, offer less permanent actions such as options to deactivate, unsubscribe, or tag a user in a certain way (where users could then easily delete those items from inside your app).
 
-**Only add Update actions for clear use cases**. Updating items with detailed fields such as contact details are easy, as users can simply add the updated data via Zapier. Updating a longer, single item such as a note or document is harder or impossible to implement, and thus should not be used in a Zapier integration. Update actions should be separate from create actions.
+**Only add update actions for clear use cases**. Updating items with detailed fields such as contact details are easy, as users can simply add the updated data via Zapier. Updating a longer, single item such as a note or document is harder or impossible to implement, and thus should not be used in a Zapier integration. Update actions should be separate from create actions.
 
 **Actions may create multiple items if needed**, using the same data, though you will likely need to customize the API call code to create multiple items at once. Only do this for linked items, such as if an app stores customers and customer addresses separately.  If the multiple items that need to be created are top-level, complex items in your app, they should be separate actions within Zapier. You can then link the two with a drop-down menu in the action to select the paired item, add a search action for users to find the specific item they need, and then let them match the items with the [_Use a Custom Value_ option](https://zapier.com/help/create/customize/add-custom-values-to-dropdown-menu-fields-in-zaps) in Zapier.
 
@@ -228,9 +228,9 @@ Searches may enable more advanced actions, where users can find an item then use
 
 ![Search or Create in Zapier](https://cdn.zappy.app/ebb86788d99f03f117cc7504e894d11b.png)
 
-**Add matching Create actions where possible**, then enable the _Search or Create_ functionality in your Search action so Zapier can let users create the item if Zapier doesn't find it. That lets users keep from adding duplicate data to your app, and lets their Zap continue to work even if the search comes back without data.
+**Add matching create actions where possible**, then enable the _Search or Create_ functionality in your Search action so Zapier can let users create the item if Zapier doesn't find it. That lets users keep from adding duplicate data to your app, and lets their Zap continue to work even if the search comes back without data.
 
-## Output Data
+## Output data
 
 Each Zap step must return data to Zapier to use in subsequent steps. By default, the output data is the direct response from your API—but in some cases, you may need to customize the response data to make it work well with Zapier. Here are general principles for output data from your Zap steps:
 
