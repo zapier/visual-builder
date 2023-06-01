@@ -1,7 +1,7 @@
 ---
 title: Zap Templates
 order: 3
-layout: post
+layout: post-toc
 redirect_from: 
   - /partner_api/embedding
 ---
@@ -18,3 +18,9 @@ Want to embed specific Zap Templates instead? Simply select the Custom selected 
 
 
 Find the Zap Templates generator under Embed on the left-hand menu in the [Developer Platform](https://developer.zapier.com/).
+
+## Example Implementation
+
+This video shows an example implementation of the Zap Templates element embedded within the Zoho Sheet platform to surface popular workflows for users to easily discover and create Zaps:
+
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/hg0qtkr80v" width="640" height="360"></iframe>
