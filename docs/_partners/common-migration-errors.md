@@ -1,12 +1,12 @@
 ---
-title: Common Errors When Migrating Users
-order: 11
+title: Common errors when migrating users
+order: 10
 layout: post-toc
 redirect_from: /partners/
 ---
 <a id="deploy-errors"></a>
 
-## Common Errors When Migrating Users and Zaps Between Versions
+## Common errors when migrating users and Zaps between versions
 
 There are certain changes to an integration the platform considers breaking changes, meaning migrating users and their Zaps to the new version will break existing, live Zaps and cause them to be turned off. 
 
@@ -16,17 +16,17 @@ Here are some commonly encountered errors and breaking changes to watch out for,
 
 > **Note:** You can also always choose to promote an incompatible version, not migrate users, and either follow our [deprecation process](https://platform.zapier.com/cli_tutorials/versions#deprecate-an-older-version-of-your-integration) or leave them on the old version.
 
-### You cannot remove or update keys for existing Triggers, Actions, and Searches.
+### You cannot remove or update keys for existing triggers, actions, and searches
 
 You will see a similar error to the one below from our automated checks:
 `vX.X is missing the following keys: {<list of missing keys>}. Hide them instead of removing them.`
 
-The Triggers, Actions, and Searches are identified by their **key**, such as `new_contact` or `create_post`, so if you remove it, or change its **key**, this message appears.
+The triggers, actions, and searches are identified by their **key**, such as `new_contact` or `create_post`, so if you remove it, or change its **key**, this message appears.
 
 There are two solutions:
 
-- If you need to remove a Trigger/Action/Search, change its visibility to **hidden** instead. Use the Visibility Options dropdown in the [UI](https://platform.zapier.com/docs/triggers#1-configure-trigger-settings), or the `hidden` key in the [CLI](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#basicdisplayschema).
-- If you've renamed the **key** for a Trigger/Action/Search, you'll need to switch it back to the previous **key**.
+- If you need to remove a trigger/action/search, change its visibility to **hidden** instead. Use the Visibility Options dropdown in the [UI](https://platform.zapier.com/docs/triggers#1-configure-trigger-settings), or the `hidden` key in the [CLI](https://zapier.github.io/zapier-platform-schema/build/schema.html#basicdisplayschema).
+- If you've renamed the **key** for a trigger/action/search, you'll need to switch it back to the previous **key**.
 
 ### You cannot change the authentication type
 
@@ -39,10 +39,10 @@ Changing an integration's authentication type (such as Basic Auth, API Key, or O
 
 If you're adding a new **required** input field or making a previously optional input field now required, it's possible Zaps without a value for the newly required field exist and thus, may break. There is no automated check for this.
 
-**If this is a field in a Trigger, Action, or Search, there are two solutions:**
+**If this is a field in a trigger, action, or search, there are two solutions:**
 
 - Leave the field as "optional", and use custom code in your API call to set a value if users leave it blank in their Zaps.
-- Copy the Trigger/Action/Search and give it a new **key** (such as appending `_v2` to the end), add your required field to the **new** Trigger/Action/Search, and **hide** the previous Trigger/Action/Search. That way, existing Zaps will continue to work with the previous (and now hidden) Trigger/Action/Search definition, and new Zaps will be forced to provide a value for the required field.
+- Copy the trigger/action/search and give it a new **key** (such as appending `_v2` to the end), add your required field to the **new** trigger/action/search, and **hide** the previous trigger/action/search. That way, existing Zaps will continue to work with the previous (and now hidden) trigger/action/search definition, and new Zaps will be forced to provide a value for the required field.
 
 **If this is a field in your authentication:**
 
@@ -51,12 +51,12 @@ This is a pretty big change, because it means all of the accounts already setup 
 There are two solutions:
 
 - Leave the field as "optional", and use custom code in your API call to set a value if left blank.
-- [Contact us](https://developer.zapier.com/contact), and we'll try to help find the best approach.
+- [Contact us](https://developer.zapier.com/contact), and we'll try to find the best approach.
 
-### You cannot change an existing Trigger's type (Polling vs REST Hooks).
+### You cannot change an existing trigger's type (Polling vs REST Hooks).
 
 A change in an existing trigger's type will cause your user's Zaps to stop working. There is no automated check for this.
 
 Here's a solution:
 
-- Copy the Trigger and give it a new **key** (such as appending `_v2` on the end), change the type for this new Trigger, and **hide** the previous Trigger. This way existing Zaps continue to work with the previous (and now hidden) Trigger definition, and new Zaps will use the new Trigger definition.
+- Copy the trigger and give it a new **key** (such as appending `_v2` on the end), change the type for this new rrigger, and **hide** the previous trigger. This way existing Zaps continue to work with the previous (and now hidden) rrigger definition, and new Zaps will use the new trigger definition.
