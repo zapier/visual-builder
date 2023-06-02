@@ -9,14 +9,6 @@ redirect_from: /partner_api/
 
 Save time and reduce friction for your users by having a Zapier account created on their behalf when using one of our product embeds.  Users no longer need to worry about the hassle of signing up to a new service.
 
-The below video shows the signup flow on Google's embed experience without automatic account creation. To sign up, users are required to manually provide first and last name, email address, and go through a multi-step onboarding survey before arriving at the Zap Editor:
-
-<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/tqz0movaqf" width="400" height="225"></iframe>
-
-In comparison, the below videeo shows the signup flow with automatic account creation enabled. To sign up, users confirm on a consent screen and then are directed to the Zap Editor:
-
-<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/e66sqvvd20" width="400" height="225"></iframe>
-
 Zapier accomplishes this by being an OpenID Connect relaying party.  Partners who support being an identity provider and are able to communicate via OpenID Connect can take advantage of this new communication channel.
 
 In order to help customers feel secure during this exchange of profile information, Zapier has added an acknowledgement page that will be presented before the partner’s OpenID Connect consent screen.  This acknowledgement page informs the end user why their profile information is being exchanged and that a new account is being created on their behalf.
@@ -24,6 +16,18 @@ In order to help customers feel secure during this exchange of profile informati
 Following account creation the end user will be sent an email to let them know a Zapier account has been created, how to set a password on their new account, and highlight the partner that brought them to Zapier.
 
 <a class="button" style="background-color:#20272B;color:white" href="https://zapier.typeform.com/to/OlPloIcW/?utm_source=zapier_marketing_website&utm_medium=embed_experience&utm_campaign=solutions_marketing_page">Enable this for your product</a>
+
+## Example Implementation
+
+The below video shows the signup flow on Google's embed experience without automatic account creation. To sign up, users are required to manually provide first and last name, email address, and go through a multi-step onboarding survey before arriving at the Zap Editor:
+
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/tqz0movaqf" width="640" height="360"></iframe>
+
+
+In comparison, the below videeo shows the signup flow with automatic account creation enabled. To sign up, users confirm on a consent screen and then are directed to the Zap Editor:
+
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/e66sqvvd20" width="640" height="360"></iframe>
+
 
 ## Requirements
 

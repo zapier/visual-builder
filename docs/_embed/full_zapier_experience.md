@@ -14,6 +14,12 @@ The Full Zapier Experience is a prebuilt UI component that offers the quickestâ€
 
 With the Full Zapier Experience, you can create a seamless experience for your users that allows them to automate workflows without having to switch tasks or apps halfway through a job.
 
+## Example Implementation
+This video shows an example implementation of the Full Zapier Experience, and how users can discover workflow use cases, create and edit Zaps, and manage their existing Zaps all within your platform:
+
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/84kpi5zau6" width="640" height="360"></iframe>
+
+
 ## Customize
 ![Customize](https://cdn.zappy.app/2f5e6152ad6c3a807d210f0c6746c890.png)
 
