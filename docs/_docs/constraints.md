@@ -123,7 +123,7 @@ Once a Zap is enabled, while the time and size constraints remain the same, the 
 
 - User will receive an email with an error message, usually with _"Trigger Partner Failure"_ in the message text. An example of the email sent when the trigger errors due to a timeout:
 
-![](https://cdn.zappy.app/17cc8fb9313f8b0920a7ccd6dd95e9b0.png)
+![](https://cdn.zappy.app/c5b320d7dff2a21064b63b98e156c52a.png)
 
 **Best practices:**
 
