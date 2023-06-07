@@ -191,7 +191,7 @@ If your app no longer supports a trigger, or you wish to fully rebuild one, you 
 
 You cannot restore deleted triggers, so make sure you select the correct triggers for deletion.
 
-> **Note**: It is best practice to not remove a trigger that has been used in a live, public integration version. If a trigger is in use, it is recommended to hide it rather than deleting it. Only remove unused triggers from pre-release integrations, or from new versions that will later be rolled out to users.
+> **Note**: It is best practice to not remove a trigger that has been used in a live, public integration version. If a trigger is in use, it is recommended to hide it rather than deleting it. Only remove unused triggers from pre-release integrations.
 
 <a id="pagination"></a>
 ## How to Use Pagination
