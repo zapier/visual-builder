@@ -383,11 +383,11 @@ user. If the label and help text are the same, they are considered redundant.
 
 ## D012 - Static Sample Is Required
 
-When a user sets up a trigger, they need sample data to be returned in order to have
+When a user sets up a trigger or action (create or search), they need sample data to be returned in order to have
 fields available to map in the subsequent steps. If testing the trigger returns no
 live results, we use static sample data as a fallback.
 
-It's very important that the structure of an object from the actual trigger and in
+It's very important that the structure of an object from the actual trigger/action and in
 the sample data are identical. Otherwise, users could map fields that don't exist
 in the live results, which results in a broken Zap.
 
