@@ -21,7 +21,7 @@ You may find docs duplicate or outdated across the Zapier site. The most up-to-d
 
 Our code is updated frequently. To see a full list of changes, look no further than [the CHANGELOG](https://github.com/zapier/zapier-platform/blob/main/CHANGELOG.md).
 
-This doc describes the latest CLI version (**14.0.0**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc describes the latest CLI version (**14.0.1**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [11.3.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@11.3.3/packages/cli/README.md), [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/README.md), [9.7.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.7.3/packages/cli/README.md)
 - CLI Reference: [11.3.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@11.3.3/packages/cli/docs/cli.md), [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/docs/cli.md), [9.7.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.7.3/packages/cli/docs/cli.md)
@@ -876,9 +876,9 @@ To use PKCE in your OAuth2 flow, you'll need to set the following variables:
 The OAuth2 PKCE flow uses the same flow as OAuth2 but adds a few extra parameters:
 
   1. Zapier computes a `code_verifier` and `code_challenge` internally and stores the `code_verifier` in the Zapier bundle.
-  2. Zapier sends the user to the authorization URL defined by your app, passing along the computed `code_challenge`.
+  2. Zapier sends the user to the authorization URL defined by your app. We automatically include the computed `code_challenge` and `code_challenge_method` in the authorization request.
   3. Once authorized, your website sends the user to the `redirect_uri` Zapier provided.
-  4. Zapier makes a call to your API to exchange the `code` and the computed `code_verifier` for an `access_token`.
+  4. Zapier makes a call to your API to exchange the code but you must include the computed `code_verifier` in the request for an `access_token`.
   5. Zapier stores the `access_token` and uses it to make calls on behalf of the user.
 
 Your auth definition would look something like this:
@@ -2385,7 +2385,7 @@ This behavior has changed periodically across major versions, which changes how/
 
 ![](https://cdn.zappy.app/e835d9beca1b6489a065d51a381613f3.png)
 
-Ensure you're handling errors correctly for your platform version. The latest released version is **14.0.0**.
+Ensure you're handling errors correctly for your platform version. The latest released version is **14.0.1**.
 
 ### HTTP Request Options
 
@@ -3578,7 +3578,7 @@ Broadly speaking, all releases will continue to work indefinitely. While you nev
 For more info about which Node versions are supported, see [the faq](#how-do-i-manually-set-the-nodejs-version-to-run-my-app-with).
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **14.0.0**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **14.0.1**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
