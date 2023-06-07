@@ -161,9 +161,9 @@ The last step in creating a new Trigger for a Zapier integration is to _Define y
 
 ![Sample Data in a Zap Step](https://cdn.zappy.app/437ead89852cbfd339b10c15c085b0ed.png)
 
-Sample Data is the default data Zapier shows users when building a Zap using this trigger. In the Zap editor, Zapier will ask to test the Zap step after users set it up. With Triggers, Zapier will try to fetch recently added or updated items during the test.
+Sample Data is the default data Zapier shows users when building a Zap using this trigger. In the Zap editor, Zapier will ask to test the Zap step after users set it up. With Triggers, Zapier will try to fetch recently added or updated items during the test. If the connected account doesn't have any data for this item (polling triggers) or the Perform List is not defined (REST Hook triggers), the user will see an error that no items are available.
 
-If users are in a hurry, though, they can skip the testing step. Zapier will then show the sample data instead. Or, if the connected account doesn't have any data for this item yet, Zapier will default to showing the sample data instead of showing an error that no items are available.
+If users are in a hurry, though, they can skip the testing step. Zapier will then show the sample data instead. 
 
 Note that regardless of how many items are retrieved when testing, the Zap editor will only show up to three samples during the initial test. If new items are later added, those can be pulled in using "Load More", but older items will not be used.
 
