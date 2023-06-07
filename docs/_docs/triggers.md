@@ -101,9 +101,11 @@ When Zapier sends the request to your API to unsubscribe the webhook, it can ref
 
 ![](https://cdn.zappy.app/44615176b56966a90101067d719b09ad.png)
 
+If a REST Hook trigger is missing a Subscribe or Unsubscribe endpoint, it is presented to users as a [Static Webhook.](https://cdn.zappy.app/3b35908a6a0c232087b5da807cf9d6fb.png) Static hooks are [not supported in public integrations](https://platform.zapier.com/docs/integration-checks-reference#d017---static-hook-is-discouraged), but they could be used if the integration intends to remain private.  
+
 #### Perform List
 
-In addition to the Subscribe and Unsubscribe requests, it's important to add a Perform List request where Zapier can check for recent items. This will be used to fetch data when users are setting up and testing the Zap. If you don't define a Perform List, then the user needs to go into your app and do something to generate a new event while the Zap editor waits for data, which is not an optimal experience.
+In addition to the Subscribe and Unsubscribe requests, it's important to add a Perform List request where Zapier can check for recent items. This will be used to fetch data when users are setting up and testing the Zap. If you don't define a Perform List, then the user is unable to test the REST Hook trigger in the Zap editor which is not an optimal experience.
 
 <a id="perform"></a>
 #### Perform
@@ -159,11 +161,11 @@ The last step in creating a new Trigger for a Zapier integration is to _Define y
 
 ![Sample Data in a Zap Step](https://cdn.zappy.app/437ead89852cbfd339b10c15c085b0ed.png)
 
-Sample Data is the default data Zapier shows users when building a Zap using this trigger. In the Zap Editor, Zapier will ask to test the Zap step after users set it up. With Triggers, Zapier will try to fetch recently added or updated items during the test.
+Sample Data is the default data Zapier shows users when building a Zap using this trigger. In the Zap editor, Zapier will ask to test the Zap step after users set it up. With Triggers, Zapier will try to fetch recently added or updated items during the test.
 
 If users are in a hurry, though, they can skip the testing step. Zapier will then show the sample data instead. Or, if the connected account doesn't have any data for this item yet, Zapier will default to showing the sample data instead of showing an error that no items are available.
 
-Note that regardless of how many items are retrieved when testing, the Zap Editor will only show up to three samples during the initial test. If new items are later added, those can be pulled in using "Load More", but older items will not be used.
+Note that regardless of how many items are retrieved when testing, the Zap editor will only show up to three samples during the initial test. If new items are later added, those can be pulled in using "Load More", but older items will not be used.
 
 In the _Sample Data_ box, either click the _Use Response from Test Data_ button to import the fields your app sent to Zapier in the previous test, or add your own JSON-formatted fields. Only keep the most important fields, and make sure the data you include with those fields is non-private, non-identifiable testing data that can be shared publicly.
 
@@ -189,7 +191,7 @@ If your app no longer supports a trigger, or you wish to fully rebuild one, you 
 
 You cannot restore deleted triggers, so make sure you select the correct triggers for deletion.
 
-> **Note**: Never remove a trigger from a live, public integration version. Only remove triggers from pre-release integrations, or from new versions that will later be rolled out to users.
+> **Note**: It is best practice to not remove a trigger that has been used in a live, public integration version. If a trigger is in use, it is recommended to hide it rather than deleting it. Only remove unused triggers from pre-release integrations, or from new versions that will later be rolled out to users.
 
 <a id="pagination"></a>
 ## How to Use Pagination
