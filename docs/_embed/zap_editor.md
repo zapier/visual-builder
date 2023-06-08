@@ -8,9 +8,16 @@ redirect_from:
   - /partner_api/introduction
 ---
 
-# Embedding the Zap Editor
+# Pre-filled Zaps and Embedding the Zap Editor
 
 By embedding our Zap Editor in your product, your users can create and edit their Zaps without leaving your product.
+
+## Example Implementation
+
+This video shows how Paperform prefills Zaps for their embedded Zap Editor with contextual data from the platform, such as the Form ID, to make Zap setup easier for users. By doing so, Paperform reduces the number of clicks it takes for users to publish a Zap and removes mental friction of users needing to remember details for it:
+
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://cdn.zappy.app/0625a071fbee914968480b0b58d696a8.mp4" width="640" height="360"></iframe>
+
 
 ## Creating Zaps from Zap Templates
 
