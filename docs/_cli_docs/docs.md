@@ -21,7 +21,7 @@ You may find docs duplicate or outdated across the Zapier site. The most up-to-d
 
 Our code is updated frequently. To see a full list of changes, look no further than [the CHANGELOG](https://github.com/zapier/zapier-platform/blob/main/CHANGELOG.md).
 
-This doc describes the latest CLI version (**14.0.1**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc describes the latest CLI version (**14.1.1**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [11.3.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@11.3.3/packages/cli/README.md), [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/README.md), [9.7.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.7.3/packages/cli/README.md)
 - CLI Reference: [11.3.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@11.3.3/packages/cli/docs/cli.md), [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/docs/cli.md), [9.7.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.7.3/packages/cli/docs/cli.md)
@@ -1659,14 +1659,20 @@ const App = {
 
 ## Output Fields
 
-On each trigger, search, or create in the operation directive - you can provide an array of objects as fields under the `outputFields`. Output Fields are what your users would see when they select a field provided by your trigger, search or create to map it to another.
+On each trigger, search, or create in the operation directive - you can provide an array of objects as fields under the `outputFields`. Output Fields are what users see when they select a field provided by your trigger, search or create to map it to another.
 
 Output Fields are optional, but can be used to:
+
 
 - Define friendly labels for the returned fields. By default, we will *humanize* for example `my_key` as *My Key*.
 - Make sure that custom fields that may not be found in every live sample and - since they're custom to the connected account - cannot be defined in the static sample, can still be mapped.
 
-The [schema](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#fieldschema) for `outputFields` is shared with `inputFields` but only the `key` and `required` properties are relevant.
+The [schema](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#fieldschema) for `outputFields` is shared with `inputFields` but only the `key`, `label`, `type`, and `required` properties are relevant:
+
+- `key` - includes the field when not present in the live sample. When no `label` property is provided, `key` will be *humanized* and displayed as the field name.
+- `label` - defines the field name displayed to users.
+- `type` - defines the type for static sample data. A [validation warning](https://platform.zapier.com/docs/integration-checks-reference#d024---static-sample-respects-output-field-definition) will be displayed if the static sample does not match the specified type.
+- `required` - defines whether the field is required in static sample data. A [validation warning](https://platform.zapier.com/docs/integration-checks-reference#d024---static-sample-respects-output-field-definition) will be displayed if the value is true and the static sample does not contain the field.
 
 Custom/Dynamic Output Fields are defined in the same way as [Custom/Dynamic Input Fields](#customdynamic-fields).
 
@@ -2385,7 +2391,7 @@ This behavior has changed periodically across major versions, which changes how/
 
 ![](https://cdn.zappy.app/e835d9beca1b6489a065d51a381613f3.png)
 
-Ensure you're handling errors correctly for your platform version. The latest released version is **14.0.1**.
+Ensure you're handling errors correctly for your platform version. The latest released version is **14.1.1**.
 
 ### HTTP Request Options
 
@@ -2491,7 +2497,7 @@ Dehydration, and its counterpart Hydration, is a tool that can lazily load data 
 
 The method `z.dehydrate(func, inputData)` has two required arguments:
 
-* `func` - the function to call to fetch the extra data. Can be any raw `function`, defined in the file doing the dehydration or imported from another part of your app. You must also register the function in the app's `hydrators` property
+* `func` - the function to call to fetch the extra data. Can be any raw `function`, defined in the file doing the dehydration or imported from another part of your app. You must also register the function in the app's `hydrators` property. Note that since v10.1.0, the maximum payload size to pass to `z.dehydrate` / `z.dehydrateFile` is 6KB. 
 * `inputData` - this is an object that contains things like a `path` or `id` - whatever you need to load data on the other side
 
 > **Why do I need to register my functions?** Because of how JavaScript works with its module system, we need an explicit handle on the function that can be accessed from the App definition without trying to "automagically" (and sometimes incorrectly) infer code locations.
@@ -3578,7 +3584,7 @@ Broadly speaking, all releases will continue to work indefinitely. While you nev
 For more info about which Node versions are supported, see [the faq](#how-do-i-manually-set-the-nodejs-version-to-run-my-app-with).
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **14.0.1**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **14.1.1**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
