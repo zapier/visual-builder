@@ -26,7 +26,11 @@ Optionally, you can add additional parameters to the `create_url` to prefill the
 
 ## Creating Zaps without Zap Templates
 
-You can also facilitate a user's Zap creation via URL parameters instead of an existing Zap Template. This provides flexibility to redirect users to a pre-populated Zap Editor with known context from your app without publishing a Zap Template for each specific use case. Use this URL schema for your embedded editor experience or as lightweight entry point into the Zap Editor from your app. Similar to the [prefill](https://platform.zapier.com/embed/zap-editor#prefill-options) options for automatically defining field values for users, you can prefill apps, events, and input field values in the Zap Editor with the following URL schema:
+You can also facilitate a user's Zap creation via URL parameters instead of an existing Zap Template. This provides flexibility to redirect users to a pre-populated Zap Editor with known context from your app without publishing a Zap Template for each specific use case.
+
+Use the generator under the "Embeds" and "Pre-filled Zaps" tabs in the developer platform to easily construct pre-filled Zaps for your embedded editor experience or as lightweight entry point into the Zap Editor from your app. See how to use the [pre-filled Zap generator](https://platform.zapier.com/embed/zap-editor#pre-filled-zap-generator) in the section below.
+
+Similar to the [prefill](https://platform.zapier.com/embed/zap-editor#prefill-options) options for automatically defining field values for users, you can prefill apps, events, and input field values in the Zap Editor with the following URL schema:
 
 Base URL: `https://zapier.com/webintent/create-zap?`
 
@@ -61,8 +65,26 @@ Defining a trigger and trigger event with a prefilled value for the "Audience" i
 Defining a trigger, trigger event, action, and action event with prefilled values for "Audience" and "Customer List" input fields:
 > `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member&steps[0][params][list_id]=123&steps[1][app]=GoogleAdsCLIAPI@latest&steps[1][action]=add_to_customer_list_v2&steps[1][params][customer_list_id]=234`
 
-Defining a trigger and two actions:
+Defining a multi-step Zap with a trigger and two actions:
 > `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[1][app]=GoogleAdsCLIAPI@latest&steps[2][app]=FacebookLeadAdsCLIAPI@latest`
+
+## Using the pre-filled Zap generator
+
+We provide a UI-based generator in your integration's developer platform to facilitate constructing pre-filled Zaps. Pre-filled Zaps are simply URLs with field values added as parameters, which you can use to direct users to the Zap Editor with some input fields already filled. Place these URLs inside your product or within an embedded Zap Editor to facilitate users creating and publishing Zaps.
+
+Find the pre-filled Zap generator under the "Embed" and "Pre-filled Zaps" section of the developer platform.
+
+To create a pre-filled Zap:
+- Select an app and event for both the trigger and action to see the fields you can pre-fill. If no fields appear, the step has no input fields.
+- Select the fields you want to pre-fill. Note: fields denoting "(required)" are required for the Zap to be turned on, and not required to be pre-filled.
+  - If you don’t want to pre-fill the field, leave the box unchecked. In the Zap, the field will be empty or set to a default value, if there is one.
+  - If there's a static value for a field that applies to every user's Zap (like the title of an email), check the field and provide the value in the text field.
+  - If the values are dynamic or you don’t know them yet (like the ), replace the placeholders represented in curly brackets (i.e {TRIGGER_LIST_ID}) in the generated URL from Step 2 before using the it in your app. This could be like an account or list ID field. The placholder serves as a reminder to replace the value at runtime.
+  - If the field is greyed out, it requires a complex field value and cannot be pre-filled.
+- Test the Zap! We provide a handy test button for you to make sure the resulting Zap is what you intended. You'll need to connect accounts on both steps to see the pre-filled fields.
+- Copy the code and embed it inside your app to make setting up a Zap easier and faster for users.
+
+The generator only supports creating 2-step Zaps, but you can construct multi-step Zaps by building upon the generated URL and adding [`steps` parameters with increased indeces](https://platform.zapier.com/embed/zap-editor#creating-zaps-without-zap-templates). You also cannot prefill an action field with data returned from the trigger step. In this case, use [pre-filled Zaps with Zap Templates](https://platform.zapier.com/embed/zap-editor#creating-zaps-without-zap-templates)!
 
 ## Editing a Zap
 
