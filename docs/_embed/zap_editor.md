@@ -8,7 +8,7 @@ redirect_from:
   - /partner_api/introduction
 ---
 
-# Pre-filled Zaps and Embedding the Zap Editor
+# Pre-filled Zaps & Embedding the Zap Editor
 
 By embedding our Zap Editor in your product, your users can create and edit their Zaps without leaving your product.
 
@@ -81,13 +81,19 @@ We provide a UI-based generator in your integration's developer platform to faci
 
 Find the pre-filled Zap generator under the "Embed" and "Pre-filled Zaps" section of the developer platform.
 
-To create a pre-filled Zap:
+![Screenshot of pre-filled Zaps & Zap Editor tab](https://cdn.zappy.app/8def932e3bc978fa64e91d29b8914173.png)
+
+To create a pre-filled Zap using the generator:
 - Select an app and event for both the trigger and action to see the fields you can pre-fill. If no fields appear, the step has no input fields.
+![Screenshot of generator trigger step setup](https://cdn.zappy.app/87b9c4951d55298780ff209e217bb750.png)
+
 - Select the fields you want to pre-fill. Note: fields denoting "(required)" are required for the Zap to be turned on, and not required to be pre-filled.
   - If you don’t want to pre-fill the field, leave the box unchecked. In the Zap, the field will be empty or set to a default value, if there is one.
   - If there's a static value for a field that applies to every user's Zap (like the title of an email), check the field and provide the value in the text field.
   - If the values are dynamic or you don’t know them yet (like the ), replace the placeholders represented in curly brackets (i.e {TRIGGER_LIST_ID}) in the generated URL from Step 2 before using the it in your app. This could be like an account or list ID field. The placholder serves as a reminder to replace the value at runtime.
   - If the field is greyed out, it requires a complex field value and cannot be pre-filled.
+![Screenshot of prefill input field options](https://cdn.zappy.app/9e845182506292214c866f3278861e8d.png)
+
 - Test the Zap! We provide a handy test button for you to make sure the resulting Zap is what you intended. You'll need to connect accounts on both steps to see the pre-filled fields.
 - Copy the code and embed it inside your app to make setting up a Zap easier and faster for users.
 
