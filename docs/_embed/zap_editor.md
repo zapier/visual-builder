@@ -35,7 +35,7 @@ Optionally, you can add additional parameters to the `create_url` to prefill the
 
 You can also facilitate a user's Zap creation via URL parameters instead of an existing Zap Template. This provides flexibility to redirect users to a pre-populated Zap Editor with known context from your app without publishing a Zap Template for each specific use case.
 
-Use the generator under the "Embeds" and "Pre-filled Zaps" tabs in the developer platform to easily construct pre-filled Zaps for your embedded editor experience or as lightweight entry point into the Zap Editor from your app. See how to use the [pre-filled Zap generator](https://platform.zapier.com/embed/zap-editor#pre-filled-zap-generator) in the section below.
+Use the generator under the "Embeds" and "Pre-filled Zaps" tabs in the developer platform to easily construct pre-filled Zaps for your embedded editor experience or as lightweight entry point into the Zap Editor from your app. See how to use the [pre-filled Zap generator](https://platform.zapier.com/embed/zap-editor#using-the-pre-filled-zap-generator) in the section below.
 
 Similar to the [prefill](https://platform.zapier.com/embed/zap-editor#prefill-options) options for automatically defining field values for users, you can prefill apps, events, and input field values in the Zap Editor with the following URL schema:
 
@@ -91,7 +91,7 @@ To create a pre-filled Zap:
 - Test the Zap! We provide a handy test button for you to make sure the resulting Zap is what you intended. You'll need to connect accounts on both steps to see the pre-filled fields.
 - Copy the code and embed it inside your app to make setting up a Zap easier and faster for users.
 
-The generator only supports creating 2-step Zaps, but you can construct multi-step Zaps by building upon the generated URL and adding [`steps` parameters with increased indeces](https://platform.zapier.com/embed/zap-editor#creating-zaps-without-zap-templates). You also cannot prefill an action field with data returned from the trigger step. In this case, use [pre-filled Zaps with Zap Templates](https://platform.zapier.com/embed/zap-editor#creating-zaps-without-zap-templates)!
+The generator only supports creating 2-step Zaps, but you can construct multi-step Zaps by building upon the generated URL and adding [`steps` parameters with increased indeces](https://platform.zapier.com/embed/zap-editor#creating-zaps-without-zap-templates). You also cannot prefill an action field with data returned from the trigger step. In this case, use [pre-filled Zaps with Zap Templates](https://platform.zapier.com/embed/zap-editor#creating-zaps-from-zap-templates)!
 
 ## Editing a Zap
 
