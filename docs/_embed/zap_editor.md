@@ -79,9 +79,9 @@ Defining a multi-step Zap with a trigger and two actions:
 
 We provide a UI-based generator in your integration's developer platform to facilitate constructing pre-filled Zaps. **Pre-filled Zaps are simply URLs with field values added as parameters,** which you can use to direct users to the Zap Editor with some input fields already filled. Place these URLs inside your product or within an embedded Zap Editor to facilitate users creating and publishing Zaps.
 
-Find the pre-filled Zap generator under the "Embed" and "Pre-filled Zaps & Zap Editor" section of the developer platform.
+Find the pre-filled Zap generator under the "Embed" and "Pre-filled Zaps" section of the developer platform.
 
-![Screenshot of pre-filled Zaps & Zap Editor tab](https://cdn.zappy.app/8def932e3bc978fa64e91d29b8914173.png)
+![Screenshot of pre-filled Zaps tab](https://cdn.zappy.app/2a4f9c6de6c525cbcdc1b513ec88c519.png)
 
 To create a pre-filled Zap using the generator:
 - Select an app and event for both the trigger and action to see the fields you can pre-fill. If no fields appear, the event has no input fields.
