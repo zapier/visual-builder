@@ -1,5 +1,5 @@
 ---
-title: Zap Editor
+title: Pre-filled Zaps & Embedding the Zap Editor
 order: 4
 layout: post-toc
 redirect_from:
@@ -77,27 +77,30 @@ Defining a multi-step Zap with a trigger and two actions:
 
 ## Using the pre-filled Zap generator
 
-We provide a UI-based generator in your integration's developer platform to facilitate constructing pre-filled Zaps. Pre-filled Zaps are simply URLs with field values added as parameters, which you can use to direct users to the Zap Editor with some input fields already filled. Place these URLs inside your product or within an embedded Zap Editor to facilitate users creating and publishing Zaps.
+We provide a UI-based generator in your integration's developer platform to facilitate constructing pre-filled Zaps. **Pre-filled Zaps are simply URLs with field values added as parameters,** which you can use to direct users to the Zap Editor with some input fields already filled. Place these URLs inside your product or within an embedded Zap Editor to facilitate users creating and publishing Zaps.
 
 Find the pre-filled Zap generator under the "Embed" and "Pre-filled Zaps" section of the developer platform.
 
-![Screenshot of pre-filled Zaps & Zap Editor tab](https://cdn.zappy.app/8def932e3bc978fa64e91d29b8914173.png)
+![Screenshot of pre-filled Zaps tab](https://cdn.zappy.app/2a4f9c6de6c525cbcdc1b513ec88c519.png)
 
 To create a pre-filled Zap using the generator:
-- Select an app and event for both the trigger and action to see the fields you can pre-fill. If no fields appear, the step has no input fields.
+- Select an app and event for both the trigger and action to see the fields you can pre-fill. If no fields appear, the event has no input fields.
+
 ![Screenshot of generator trigger step setup](https://cdn.zappy.app/87b9c4951d55298780ff209e217bb750.png)
 
-- Select the fields you want to pre-fill. Note: fields denoting "(required)" are required for the Zap to be turned on, and not required to be pre-filled.
+- Select the fields you want to pre-fill:
   - If you don’t want to pre-fill the field, leave the box unchecked. In the Zap, the field will be empty or set to a default value, if there is one.
   - If there's a static value for a field that applies to every user's Zap (like the title of an email), check the field and provide the value in the text field.
   - If the values are dynamic or you don’t know them yet (like the ), replace the placeholders represented in curly brackets (i.e {TRIGGER_LIST_ID}) in the generated URL from Step 2 before using the it in your app. This could be like an account or list ID field. The placholder serves as a reminder to replace the value at runtime.
   - If the field is greyed out, it requires a complex field value and cannot be pre-filled.
+
 ![Screenshot of prefill input field options](https://cdn.zappy.app/9e845182506292214c866f3278861e8d.png)
+_Note: fields denoting "(required)" are required for the Zap to be turned on, and not required to be pre-filled._
 
 - Test the Zap! We provide a handy test button for you to make sure the resulting Zap is what you intended. You'll need to connect accounts on both steps to see the pre-filled fields.
 - Copy the code and embed it inside your app to make setting up a Zap easier and faster for users.
 
-The generator only supports creating 2-step Zaps, but you can construct multi-step Zaps by building upon the generated URL and adding [`steps` parameters with increased indeces](https://platform.zapier.com/embed/zap-editor#creating-zaps-without-zap-templates). You also cannot prefill an action field with data returned from the trigger step. In this case, use [pre-filled Zaps with Zap Templates](https://platform.zapier.com/embed/zap-editor#creating-zaps-from-zap-templates)!
+The generator only supports creating 2-step Zaps, but you can construct multi-step Zaps by building upon the generated URL and adding [`steps` parameters with increased indeces](https://platform.zapier.com/embed/zap-editor#creating-zaps-without-zap-templates). You also cannot prefill an action field with data returned from the trigger. In this case, use [pre-filled Zaps with Zap Templates](https://platform.zapier.com/embed/zap-editor#creating-zaps-from-zap-templates)!
 
 ## Editing a Zap
 
