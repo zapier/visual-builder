@@ -88,6 +88,8 @@ If you ever need to reference Zapier's redirect URL inside your Zapier integrati
 
 {% raw %}`{{bundle.inputData.redirect_uri}}`{% endraw %}
 
+> **Note**: When [building a public integration](https://platform.zapier.com/private_integrations/private-vs-public-integrations),  the redirect URL will change once the app integration is approved for publishing, to be more consistent with your app’s branding. Depending on your API, you may need to add this new redirect URL to an allow list in order for users to continue connecting to your app on Zapier. To access the new redirect URL, head to Step 2 of the Auth setup in the visual builder once once the integration is public. 
+
 <a id="PKCE"></a>
 ## Add PKCE Support
 
