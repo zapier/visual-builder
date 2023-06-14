@@ -127,7 +127,7 @@ const matchStrength = (query, post) => {
     * Search through the content and title with the whole query,
     * then remove the first term, repeating until there are no more terms.
     */ 
-    const forwardSearch = queryTerms;
+    const forwardSearch = [...queryTerms];
     while (forwardSearch.length > 0) {
         const regex = new RegExp(forwardSearch.join(' '), 'gi');
         strength += [...post.content.matchAll(regex)].length * forwardSearch.length;
@@ -139,7 +139,7 @@ const matchStrength = (query, post) => {
     * Search through the content and title with the whole query,
     * then remove the last term, repeating until there are no more terms.
     */ 
-    const backwardSearch = queryTerms;
+    const backwardSearch = [...queryTerms];
     while (backwardSearch.length > 0) {
         const regex = new RegExp(backwardSearch.join(' '), 'gi');
         strength += [...post.content.matchAll(regex)].length * backwardSearch.length;
