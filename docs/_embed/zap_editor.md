@@ -39,7 +39,7 @@ Use the generator under the "Embeds" and "Pre-filled Zaps" tabs in the developer
 
 Similar to the [prefill](https://platform.zapier.com/embed/zap-editor#prefill-options) options for automatically defining field values for users, you can prefill apps, events, and input field values in the Zap Editor with the following URL schema:
 
-Base URL: `https://zapier.com/webintent/create-zap?`
+Base URL: `https://api.zapier.com/v1/embed/{your_app}/create` - you can find `{your_app}` by using the [Prefill Generator](https://platform.zapier.com/embed/zap-editor#using-the-pre-filled-zap-generator)
 
 URL parameters (with example values):
 
@@ -61,19 +61,19 @@ Requirements:
 Examples:
 
 Defining a trigger and action app
-> `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[1][app]=GoogleAdsCLIAPI@latest`
+> `https://api.zapier.com/v1/embed/{your_app}/create?steps[0][app]=MailchimpCLIAPI@latest&steps[1][app]=GoogleAdsCLIAPI@latest`
 
 Defining a trigger and trigger event with no action:
-> `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member`
+> `https://api.zapier.com/v1/embed/{your_app}/create?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member`
 
 Defining a trigger and trigger event with a prefilled value for the "Audience" input field:
-> `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member&steps[0][params][list_id]=123`
+> `https://api.zapier.com/v1/embed/{your_app}/create?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member&steps[0][params][list_id]=123`
 
 Defining a trigger, trigger event, action, and action event with prefilled values for "Audience" and "Customer List" input fields:
-> `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member&steps[0][params][list_id]=123&steps[1][app]=GoogleAdsCLIAPI@latest&steps[1][action]=add_to_customer_list_v2&steps[1][params][customer_list_id]=234`
+> `https://api.zapier.com/v1/embed/{your_app}/create?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member&steps[0][params][list_id]=123&steps[1][app]=GoogleAdsCLIAPI@latest&steps[1][action]=add_to_customer_list_v2&steps[1][params][customer_list_id]=234`
 
 Defining a multi-step Zap with a trigger and two actions:
-> `https://zapier.com/webintent/create-zap?steps[0][app]=MailchimpCLIAPI@latest&steps[1][app]=GoogleAdsCLIAPI@latest&steps[2][app]=FacebookLeadAdsCLIAPI@latest`
+> `https://api.zapier.com/v1/embed/{your_app}/create?steps[0][app]=MailchimpCLIAPI@latest&steps[1][app]=GoogleAdsCLIAPI@latest&steps[2][app]=FacebookLeadAdsCLIAPI@latest`
 
 ## Using the pre-filled Zap generator
 
