@@ -151,7 +151,7 @@ This doc describes the latest CLI version (**14.1.1**), as of this writing. If y
 
 ## Getting Started
 
-> If you're new to Zapier Platform CLI, we strongly recommend you to walk through the [Tutorial](https://zapier.com/developer/start) for a more thorough introduction.
+> If you're new to Zapier Platform CLI, we strongly recommend you to walk through the [Tutorial]() for a more thorough introduction.
 
 ### What is an App?
 
@@ -246,7 +246,7 @@ zapier push
 
 ### Tutorial
 
-For a full tutorial, head over to our [Tutorial](https://zapier.com/developer/start) for a comprehensive walkthrough for creating your first app. If this isn't your first rodeo, read on!
+For a full tutorial, head over to our [Tutorial](https://platform.zapier.com/cli_tutorials/getting-started) for a comprehensive walkthrough for creating your first app. If this isn't your first rodeo, read on!
 
 ## Creating a Local App
 

@@ -27,7 +27,7 @@ We created the visual builder to be the easiest way for everyone to get started 
 
 _Step 1: Install and configure the Zapier CLI on your development environment._
 
-Follow the steps in the setup section in our [quickstart guide](https://zapier.com/developer/start/introduction)
+Follow the steps in the setup section in our [quickstart guide](https://platform.zapier.com/cli_docs/docs#quick-setup-guide)
 
 _Step 2: Run the `convert` command to create a CLI version of your project locally_
 

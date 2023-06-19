@@ -103,4 +103,4 @@ Want to start over and build a new integration, or add another integration for a
 
 Choose the Platform UI to build your integration online with a visual builder to create input forms for your triggers and actions and add API details in minutes. Or, choose the Platform CLI to code your integration in JavaScript, manage versions in your team's version control, and manage your integration from terminal.
 
-Try the tool of your choice out with Zapier's [Platform UI Quick Start guide](https://platform.zapier.com/quickstart/introduction) and [CLI Quick Start guide](https://zapier.com/developer/start/introduction), then check our documentation to build a complete new integration.
+Try the tool of your choice out with Zapier's [Platform UI Quick Start guide](https://platform.zapier.com/quickstart/introduction) and [CLI Quick Start guide](https://platform.zapier.com/cli_docs/docs#quick-setup-guide), then check our documentation to build a complete new integration.
