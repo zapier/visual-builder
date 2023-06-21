@@ -4,12 +4,12 @@ order: 1
 layout: post-toc
 redirect_from: /partners/
 ---
+
 # Build your first public integration on Zapier
 
 This guide gives an overview of the process to publishing a public integration. For public integrations, you'll join [Zapier's Partner Program](CHANGE URL) once your app has been successfully reviewed.
 
 To get a picture of how your integration will show up on Zapier's website, you can browse the[ app directory](https://zapier.com/apps). It's a great idea to explore similar apps to see what triggers and actions they provide for building Zapier workflows, called Zaps.
-
 
 ## **Before you start**
 
@@ -17,15 +17,12 @@ Consider workflows your app will support, and what types of activities your user
 
 To design useful triggers and actions for your integration, consider how your users might need data from your app to run other parts of their business. Some of the most popular use cases for Zapier integrations include:
 
-
-
-* Sending follow-up emails or messages
-* Copying data from a bill or invoice into another system
-* Updating contact records in multiple databases
-* Creating or updating records in a project management tool
+- Sending follow-up emails or messages
+- Copying data from a bill or invoice into another system
+- Updating contact records in multiple databases
+- Creating or updating records in a project management tool
 
 Learn more about how to[ approach use cases](https://platform.zapier.com/partners/integration-examples).
-
 
 ## **Build your integration**
 
@@ -33,15 +30,12 @@ Building a Zapier integration means identifying the right APIs for your triggers
 
 There are two ways to build an integrations on Zapier’s Platform:
 
-
-
-* The Platform UI lets you create a Zapier integration in your browser without code using API endpoint URLs. You can also set any custom options your API may need, including custom URL params, HTTP headers, and request body items, using code mode.
-* Zapier Platform CLI lets you build a Zapier integration in your local development environment, collaborate with version control and CI tools, and push new versions of your integration from the command line.
+- The Platform UI lets you create a Zapier integration in your browser without code using API endpoint URLs. You can also set any custom options your API may need, including custom URL params, HTTP headers, and request body items, using code mode.
+- Zapier Platform CLI lets you build a Zapier integration in your local development environment, collaborate with version control and CI tools, and push new versions of your integration from the command line.
 
 Both of these tools run on the same Zapier platform, so choose the one that fits your workflow the best.
 
 Learn more about the difference between building with the[ Platform UI and the CLI](https://platform.zapier.com/docs/vs).
-
 
 ## **Test your integration**
 
@@ -51,21 +45,16 @@ To get a sense of the user experience, it’s recommended to test your integrati
 
 Learn more about testing your integration:
 
-
-
-* [Testing using Zapier Platform UI](https://platform.zapier.com/docs/testing)
-* [Testing using Zapier Platform CLI](https://platform.zapier.com/cli_docs/docs#testing)
-
+- [Testing using Zapier Platform UI](https://platform.zapier.com/docs/testing)
+- [Testing using Zapier Platform CLI](https://platform.zapier.com/cli_docs/docs#testing)
 
 ## **4. Submit your integration for app review**
 
-After you've confirmed your integration is working, you're almost ready to publish your app. To publish your integration, you need to submit your app for review.  
+After you've confirmed your integration is working, you're almost ready to publish your app. To publish your integration, you need to submit your app for review.
 
 Before submitting your integration, review[ Zapier’s integration review guidelines](https://platform.zapier.com/partners/integration-review-guidelines) to speed up the app review process.
 
 To submit your integration for app review:
-
-
 
 1. [Log into the Platform UI](https://zapier.com/app/developer)
 2. Select your **integration**.
@@ -75,26 +64,20 @@ To submit your integration for app review:
 
 After you’ve submitted your integration for review, one of our developers will reach out to you in 1 week or less. Zapier will update your:
 
-
-
-* App version to **Pending**.
-* App status will remain as **Private**.
-
+- App version to **Pending**.
+- App status will remain as **Private**.
 
 ## **Beta phase**
 
 When your integration is approved, Zapier will update your:
 
-
-
-* App status to **Public**.
-* App version will update to **Beta**.
-* Integration will be added to[ Zapier’s app directory](https://zapier.com/apps) with a Beta tag.
+- App status to **Public**.
+- App version will update to **Beta**.
+- Integration will be added to[ Zapier’s app directory](https://zapier.com/apps) with a Beta tag.
 
 Your integration will remain in beta for 90 days.
 
 Whilst in public beta, we recommend completing these tasks to improve your integration:
-
 
 ### **Add help docs to Zapier’s Help Center**
 
@@ -102,9 +85,7 @@ The Zapier team provide frontline support for your integration, and in order to 
 
 Once submitted, it takes roughly 2 weeks to get help docs published in the Help Center.
 
-
 > **Tip:** As you maintain your integration, you can use the same form to submit updates at any time to the Technical Writing team.
-
 
 ### **Create Zap templates**
 
@@ -112,13 +93,11 @@ As soon as your app is published and in beta you can begin creating and sharing[
 
 Learn more about creating[ Zap templates](https://platform.zapier.com/partners/zap-templates).
 
-
 ### **Embed Zapier in your product or website**
 
 The best way to ensure users are able to discover your Zapier integration is to surface your integration where users are looking at it. By embedding Zapier in your product, you can create end-to-end user experience, helping your customers discover available integrations within your product without having to leave your app.
 
 Learn more about[ embedding Zapier.](https://platform.zapier.com/embed/overview)
-
 
 ### **Grow active usage**
 
@@ -126,21 +105,17 @@ During the beta stage of your integration, it's important to actively work on gr
 
 Learn more strategy[ tips to improve your integration](https://platform.zapier.com/partners/partner-faq).
 
-
 ### **Manage bugs and feature requests**
 
 With the Zapier Issue Manager, you have the ability to conveniently address bugs and new feature requests within your preferred issue-tracking tool. Regularly reviewing and taking action on these items will greatly contribute to enhancing the overall health score of your integration.
 
 Learn more about[ Zapier Issue Manager](https://platform.zapier.com/partners/zim).
 
-
 ## **Public phase**
 
 After 90 days in public beta, your integration will become public:
 
-
-
-* Your app status will be updated to public, and the beta tag will be removed.
-* You’re added to our[ Partner Program](https://coda.io/d/_d-clruQiSri/_susbo#_luCcs), where you can earn marketing and support benefits.
+- Your app status will be updated to public, and the beta tag will be removed.
+- You’re added to our[ Partner Program](https://zapier.com/platform/partner-program), where you can earn marketing and support benefits.
 
 Learn more about[ maintaining your Zapier integration](https://platform.zapier.com/partners/feature-requests-bugs).
