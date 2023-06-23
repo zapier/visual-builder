@@ -26,7 +26,7 @@ Below you will find our latest guidelines arranged into clear, multiple sections
 ## Pre-submission checklist
 
 
-Before submitting your[ Zapier integration for app review](https://coda.io/d/_d-clruQiSri/_suH72#_luOj4), familiarize yourself with the criteria the Zapier team uses during app reviews:
+Before submitting your[ Zapier integration for app review](https://platform.zapier.com/partners/lifecycle-planning), familiarize yourself with the criteria the Zapier team uses during app reviews:
 
 * Confirm your integration is fully developed and has undergone thorough testing. This includes creating test Zaps on your end that check for bugs, edge cases, and errors.
 * Focus on primary use cases. Review similar integrations in [Zapier’s App Directory](https://zapier.com/integrations/) for inspiration on which features to include in your integration.
