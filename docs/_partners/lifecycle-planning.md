@@ -11,7 +11,7 @@ This guide gives an overview of the process to publishing a public integration. 
 
 To get a picture of how your integration will show up on Zapier's website, you can browse the[ app directory](https://zapier.com/apps). It's a great idea to explore similar apps to see what triggers and actions they provide for building Zapier workflows, called Zaps.
 
-## **Before you start**
+## **1. Before you start**
 
 Consider workflows your app will support, and what types of activities your users want to automate. Learn[ how Zapier works](https://zapier.com/help/how-zapier-works/) and set up a few Zaps to get a sense of the user experience.
 
@@ -24,7 +24,7 @@ To design useful triggers and actions for your integration, consider how your us
 
 Learn more about how to[ approach use cases](https://platform.zapier.com/partners/integration-examples).
 
-## **Build your integration**
+## **2. Build your integration**
 
 Building a Zapier integration means identifying the right APIs for your triggers and actions, and designing an intuitive experience for your users to select and map the data they need.
 
@@ -37,7 +37,7 @@ Both of these tools run on the same Zapier platform, so choose the one that fits
 
 Learn more about the difference between building with the[ Platform UI and the CLI](https://platform.zapier.com/docs/vs).
 
-## **Test your integration**
+## **3. Test your integration**
 
 While you’re building your integration, you can test your API requests within the Integration Builder. For developers building on Zapier Platform CLI, you can write unit tests that run locally, in a CI tool like[ Travis](https://travis-ci.com/).
 
@@ -67,7 +67,7 @@ After you’ve submitted your integration for review, one of our developers will
 - App version to **Pending**.
 - App status will remain as **Private**.
 
-## **Beta phase**
+## **5. Beta phase**
 
 When your integration is approved, Zapier will update your:
 
@@ -111,7 +111,7 @@ With the Zapier Issue Manager, you have the ability to conveniently address bugs
 
 Learn more about[ Zapier Issue Manager](https://platform.zapier.com/partners/zim).
 
-## **Public phase**
+## **6. Public phase**
 
 After 90 days in public beta, your integration will become public:
 
