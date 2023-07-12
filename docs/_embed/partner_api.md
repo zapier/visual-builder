@@ -564,12 +564,12 @@ Available parameters to the categories resource:
 
 | parameter  | requirement | notes                                                                                                                                                  |
 | ---------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **limit**  | Optional    | (defaults to 10, max of 100) Limit the number of Zap templates returned.                                                                               |
+| **limit**  | Optional    | (defaults to 10, max of 100) Limit the number of categories. returned.                                                                               |
 | **offset** | Optional    | (defaults to 0) The number of categories items to skip before returning new categories. The default value is 0, which is the offset of the first item. |
 
 **Example Requests**
 
-Get a list of Zap categories
+Get a list of app categories
 
 ```bash
 curl -L "https://api.zapier.com/v1/categories"
