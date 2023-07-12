@@ -2,7 +2,9 @@
 title: Security
 order: 7
 layout: post
-redirect_from: /partner_api/
+redirect_from: 
+    - /embed/
+    - /partner_api/
 ---
 
 # Security
