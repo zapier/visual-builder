@@ -2,7 +2,7 @@
 title: Respond to user feedback
 order: 3
 layout: post-toc
-redirect_from: /manage/
+redirect_from: /partners/feature-requests-bugs
 ---
 
 # Respond to user feedback

@@ -2,7 +2,7 @@
 title: Frequently asked questions
 order: 20
 layout: post-toc
-redirect_from: /build/
+redirect_from: /docs/faq
 ---
 
 # Frequently asked questions

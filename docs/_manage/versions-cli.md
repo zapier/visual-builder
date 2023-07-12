@@ -2,7 +2,7 @@
 title: Manage integration versions in Platform CLI
 order: 7
 layout: post-toc
-redirect_from: /manage/
+redirect_from: /cli_tutorials/versions
 ---
 
 # Manage integration versions in Platform CLI

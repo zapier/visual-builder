@@ -2,7 +2,7 @@
 title: Build a private integration
 order: 6
 layout: post-toc
-redirect_from: /quickstart/
+redirect_from: /private_integrations/build-a-private-integration
 ---
 
 # Build a private integration

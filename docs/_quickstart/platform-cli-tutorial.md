@@ -2,7 +2,7 @@
 title: Platform CLI tutorial
 order: 8
 layout: post-toc
-redirect_from: /quickstart/
+redirect_from: /cli_tutorials/getting-started
 ---
 
 # Platform CLI tutorial

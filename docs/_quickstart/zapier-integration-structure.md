@@ -2,7 +2,7 @@
 title: Zapier integration structure
 order: 2
 layout: post-toc
-redirect_from: /quickstart/
+redirect_from: /quickstart/project-structure
 ---
 
 # Zapier integration structure

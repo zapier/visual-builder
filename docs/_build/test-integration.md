@@ -2,7 +2,9 @@
 title: Test your integration
 order: 13
 layout: post-toc
-redirect_from: /build/
+redirect_from: 
+    - /quickstart/test-complete
+    - /docs/testing
 ---
 
 ## Test your integration

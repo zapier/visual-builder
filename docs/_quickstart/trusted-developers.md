@@ -2,7 +2,7 @@
 title: Zapier trusted app developers
 order: 11
 layout: post-toc
-redirect_from: /quickstart/
+redirect_from: /partners/trusted-developers
 ---
 
 

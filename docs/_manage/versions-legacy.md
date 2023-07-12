@@ -2,7 +2,13 @@
 title: Manage a legacy web builder integration in Platform UI
 order: 9
 layout: post-toc
-redirect_from: /manage/
+redirect_from: 
+    - /legacy/import
+    - /legacy/docs
+    - /legacy/dedupe
+    - /legacy/example-apps
+    - /legacy/app-checks-reference
+
 ---
 
 # Manage a legacy web builder integration in Platform UI

@@ -2,7 +2,7 @@
 title: Add authentication with API Key Auth
 order: 3
 layout: post-toc
-redirect_from: /build/
+redirect_from: /docs/apikey
 ---
 
 # Add authentication with API Key Auth

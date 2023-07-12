@@ -2,7 +2,7 @@
 title: Natural Language Actions API
 order: 4
 layout: post-toc
-redirect_from: /reference/
+redirect_from: /zapier_products/natural-language-actions-api
 ---
 
 # Natural Language Actions API

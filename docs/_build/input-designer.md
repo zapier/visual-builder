@@ -2,7 +2,7 @@
 title: Supported fields using Input Designer
 order: 8
 layout: post-toc
-redirect_from: /build/
+redirect_from: /docs/input-designer
 ---
 
 ## Supported fields using Input Designer

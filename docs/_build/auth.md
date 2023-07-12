@@ -2,7 +2,9 @@
 title: Authentication
 order: 2
 layout: post-toc
-redirect_from: /build/
+redirect_from: 
+    - /quickstart/auth
+    - /docs/auth
 ---
 
 # Authentication

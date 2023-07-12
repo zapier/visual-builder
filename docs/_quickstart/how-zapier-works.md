@@ -2,7 +2,9 @@
 title: How Zapier works
 order: 1
 layout: post-toc
-redirect_from: /quickstart/
+redirect_from: 
+    - /quickstart/introduction
+    - /docs/zapier-intro
 ---
 
 # How Zapier works

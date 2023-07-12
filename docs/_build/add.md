@@ -2,7 +2,10 @@
 title: Add a new integration to the Zapier Platform 
 order: 1
 layout: post-toc
-redirect_from: /build/
+redirect_from: 
+  - /quickstart/what-you-need
+  - /quickstart/create-integration
+  - /docs/start
 ---
 
 # Add a new integration to the Zapier Platform 

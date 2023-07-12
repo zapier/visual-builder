@@ -2,7 +2,7 @@
 title: Maintaining your converted integration
 order: 12
 layout: post-toc
-redirect_from: /manage/
+redirect_from: /conversion/maintaining
 ---
 
 # Maintaining your converted integration

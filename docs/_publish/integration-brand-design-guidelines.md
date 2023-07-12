@@ -2,7 +2,7 @@
 title: Integration branding and design guidelines
 order: 4
 layout: post-toc
-redirect_from: /publish/
+redirect_from: /partners/planning-guide
 ---
 
 # Integration branding and design guidelines

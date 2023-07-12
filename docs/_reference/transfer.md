@@ -2,7 +2,7 @@
 title: Transfer
 order: 3
 layout: post-toc
-redirect_from: /reference/
+redirect_from: /docs/transfer
 ---
 
 # Adding Support for Transfer

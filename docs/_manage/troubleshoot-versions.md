@@ -2,7 +2,7 @@
 title: Troubleshoot migrating users between versions
 order: 10
 layout: post-toc
-redirect_from: /manage/
+redirect_from: /partners/common-migration-errors
 ---
 <a id="deploy-errors"></a>
 

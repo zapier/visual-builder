@@ -2,7 +2,10 @@
 title: Action
 order: 11
 layout: post-toc
-redirect_from: /build/
+redirect_from: 
+    - /quickstart/build-action
+    - /docs/actions
+
 ---
 
 # Action

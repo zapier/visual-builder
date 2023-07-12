@@ -2,7 +2,7 @@
 title: Analyze integration performance
 order: 4
 layout: post-toc
-redirect_from: /manage/
+redirect_from: /partners/integration-quality
 ---
 
 # Analyze integration performance

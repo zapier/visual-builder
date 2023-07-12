@@ -2,7 +2,8 @@
 title: Zapier operating constraints
 order: 16
 layout: post-toc
-redirect_from: /build/
+redirect_from: /docs/constraints
+
 ---
 
 # Zapier operating constraints

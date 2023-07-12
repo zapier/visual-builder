@@ -2,7 +2,7 @@
 title: Add authentication with Session Auth
 order: 7
 layout: post-toc
-redirect_from: /build/
+redirect_from: /docs/session
 ---
 
 # Add authentication with Session Auth

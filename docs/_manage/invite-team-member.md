@@ -2,7 +2,9 @@
 title: Add team members to integration
 order: 1
 layout: post-toc
-redirect_from: /manage/
+redirect_from: 
+    - /quickstart/
+    - /quickstart/invite-team-member
 ---
 
 # Add team members to integration

@@ -2,7 +2,7 @@
 title: Integration publishing guidelines
 order: 3
 layout: post-toc
-redirect_from: /publish/
+redirect_from: /partners/integration-review-guidelines
 ---
 
 # Integration publishing guidelines

@@ -2,7 +2,7 @@
 title: Zap templates
 order: 8
 layout: post-toc
-redirect_from: /publish/
+redirect_from: /partners/zap-templates
 ---
 
 # Zap templates

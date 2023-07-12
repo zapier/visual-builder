@@ -2,7 +2,7 @@
 title: Integration check reference
 order: 5
 layout: post-toc
-redirect_from: /publish/
+redirect_from: /docs/integration-checks-reference
 ---
 
 # Integration Checks Reference

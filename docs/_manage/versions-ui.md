@@ -2,7 +2,7 @@
 title: Manage versions integration in Platform UI
 order: 6
 layout: post-toc
-redirect_from: /manage/
+redirect_from: /docs/versions
 ---
 
 # Manage versions integration in Platform UI

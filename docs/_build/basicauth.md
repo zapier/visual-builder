@@ -2,7 +2,7 @@
 title: Add authentication with Basic Auth
 order: 4
 layout: post-toc
-redirect_from: /build/
+redirect_from: /docs/basic
 ---
 
 # Add authentication with Basic Auth

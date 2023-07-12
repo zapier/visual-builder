@@ -2,7 +2,7 @@
 title: Trigger data deduplication
 order: 10
 layout: post-toc
-redirect_from: /build/
+redirect_from: /docs/depupe
 ---
 
 # Trigger data deduplication

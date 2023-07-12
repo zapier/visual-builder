@@ -2,7 +2,7 @@
 title: Search or create action
 order: 12
 layout: post-toc
-redirect_from: /build/
+redirect_from: /docs/search-create
 ---
 
 ## Search or create action

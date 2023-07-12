@@ -2,7 +2,7 @@
 title: Add integration branding in Platform CLI
 order: 5
 layout: post-toc
-redirect_from: /manage/
+redirect_from: /cli_tutorials/cli-branding
 ---
 
 # Add integration branding in Platform CLI

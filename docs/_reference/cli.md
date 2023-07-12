@@ -2,7 +2,7 @@
 title: Zapier CLI reference
 order: 2
 layout: post-toc
-redirect_from: /cli-docs/
+redirect_from: /cli_docs/cli
 ---
 
 <!-- AUTO GENERATED, DO NOT EDIT, COPY zapier-platform/packages/cli/docs/cli.md INSTEAD -->

@@ -2,7 +2,7 @@
 title: Zapier plugin in ChatGPT
 order: 8
 layout: post-toc
-redirect_from: /zapier_products/
+redirect_from: /zapier_products/zapiers-chatgpt-plugin
 ---
 
 # Zapier plugin in ChatGPT

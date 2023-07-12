@@ -2,7 +2,7 @@
 title: Zapier Partner Program tips
 order: 7
 layout: post-toc
-redirect_from: /publish/
+redirect_from: /partners/partner-faq
 ---
 
 # Zapier Partner Program tips

@@ -2,7 +2,7 @@
 title: Share integration to users
 order: 2
 layout: post-toc
-redirect_from: /manage/
+redirect_from: /private_integrations/share-your-private-integration
 ---
 # Share integration to users
 

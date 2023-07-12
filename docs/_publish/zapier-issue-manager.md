@@ -2,7 +2,7 @@
 title: Zapier Issue Manager
 order: 9
 layout: post-toc
-redirect_from: /publish/
+redirect_from: /partners/zim
 ---
 # Zapier Issue Manager
 

@@ -2,7 +2,7 @@
 title: Private vs public integrations
 order: 4
 layout: post-toc
-redirect_from: /quickstart/
+redirect_from: /private_integrations/private-vs-public-integrations
 ---
 # Private vs public integrations
 

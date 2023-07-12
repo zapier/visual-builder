@@ -2,7 +2,7 @@
 title: Code mode
 order: 15
 layout: post-toc
-redirect_from: /build/
+redirect_from: docs/faq
 ---
 
 # Code mode

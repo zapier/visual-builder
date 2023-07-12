@@ -2,7 +2,7 @@
 title: Zapier Glossary
 order: 10
 layout: post
-redirect_from: /quickstart/
+redirect_from: /docs/glossary
 ---
 
 ## Zapier Glossary

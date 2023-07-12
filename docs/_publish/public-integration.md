@@ -2,7 +2,7 @@
 title: Build your first public integration on Zapier
 order: 1
 layout: post-toc
-redirect_from: /publish/
+redirect_from: /partners/lifecycle-planning
 ---
 
 # Build your first public integration on Zapier

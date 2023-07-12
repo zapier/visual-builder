@@ -2,7 +2,7 @@
 title: Zapier Platform UI vs CLI
 order: 3
 layout: post-toc
-redirect_from: /quickstart/
+redirect_from: /docs/vs
 ---
 
 # Zapier Platform UI vs CLI

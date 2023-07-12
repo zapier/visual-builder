@@ -2,7 +2,7 @@
 title: About the Partner Program
 order: 2
 layout: post-toc
-redirect_from: /publish/
+redirect_from: /partners/partner-program
 ---
 # About the Partner Program
 

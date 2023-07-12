@@ -2,7 +2,7 @@
 title: Add authentication with OAuth v2
 order: 6
 layout: post-toc
-redirect_from: /build/
+redirect_from: /docs/oauth
 ---
 
 # Add authentication with OAuth v2

@@ -2,7 +2,6 @@
 title: Platform UI guide
 order: 7
 layout: post-toc
-redirect_from: /quickstart/
 ---
 
 # Platform UI guide

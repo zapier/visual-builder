@@ -2,7 +2,7 @@
 title: Get help with the Zapier Platform
 order: 12
 layout: post-toc
-redirect_from: /quickstart/
+redirect_from: /partners/developer-platform-help
 ---
 
 # Get help with the Zapier Platform

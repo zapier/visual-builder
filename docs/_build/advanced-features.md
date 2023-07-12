@@ -2,7 +2,9 @@
 title: Advanced features
 order: 14
 layout: post-toc
-redirect_from: /build/
+redirect_from: 
+    - /docs/advanced
+    - /docs/knownissues
 ---
 
 <a id="environment"></a>

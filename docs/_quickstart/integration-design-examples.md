@@ -2,7 +2,7 @@
 title: Integration design examples
 order: 5
 layout: post-toc
-redirect_from: /quickstart/
+redirect_from: /partners/integration-examples
 ---
 
 # Integration design examples

@@ -2,7 +2,7 @@
 title: Add authentication with Digest Auth
 order: 5
 layout: post-toc
-redirect_from: /build/
+redirect_from: /docs/digest
 ---
 
 # Add authentication with Digest Auth

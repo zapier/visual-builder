@@ -2,7 +2,7 @@
 title: Zapier integration tips
 order: 6
 layout: post-toc
-redirect_from: /publish/
+redirect_from: /partners/faq
 ---
 
 # Zapier integration tips

@@ -2,7 +2,7 @@
 title: Private integration rate limits
 order: 9
 layout: post-toc
-redirect_from: /quickstart/
+redirect_from: /private_integrations/private-integration-rate-limits
 ---
 # Private integration rate limits
 
