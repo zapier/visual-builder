@@ -1,11 +1,11 @@
 ---
-title: Use hydration in Platform CLI
+title: Use dynamic dropdowns in Platform CLI
 order: 17
 layout: post-toc
 redirect_from: /cli_tutorials/hydration
 ---
 
-# Use hydration in Platform CLI
+# Use dynamic dropdowns in Platform CLI
 
 ## What is Dehydration & Hydration?
 
