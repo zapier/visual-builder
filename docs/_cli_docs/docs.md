@@ -21,7 +21,7 @@ You may find docs duplicate or outdated across the Zapier site. The most up-to-d
 
 Our code is updated frequently. To see a full list of changes, look no further than [the CHANGELOG](https://github.com/zapier/zapier-platform/blob/main/CHANGELOG.md).
 
-This doc describes the latest CLI version (**14.1.1**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc describes the latest CLI version (**15.0.1**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [11.3.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@11.3.3/packages/cli/README.md), [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/README.md), [9.7.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.7.3/packages/cli/README.md)
 - CLI Reference: [11.3.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@11.3.3/packages/cli/docs/cli.md), [10.2.0](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@10.2.0/packages/cli/docs/cli.md), [9.7.3](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@9.7.3/packages/cli/docs/cli.md)
@@ -181,21 +181,21 @@ The Zapier Platform includes two ways to build integrations: a CLI (to build int
 
 Zapier Platform CLI is designed to be used by development teams who collaborate with version control and CI, and can be used to build more advanced integrations with custom coding for every part of your API calls and response parsing.
 
-[Zapier Platform UI](https://zapier.com/app/developer/) is designed to quickly spin up new integrations, and collaborate on them with teams that include non-developers. It's the quickest way to start using the Zapier platform—and you can manage your CLI apps' core details from its online UI as well. You can also [export](https://platform.zapier.com/docs/export) Zapier Platform UI integrations to CLI to start development in your browser, then finish out the core features in your local development environment.
+[Zapier Platform UI](https://developer.zapier.com/) is designed to quickly spin up new integrations, and collaborate on them with teams that include non-developers. It's the quickest way to start using the Zapier platform—and you can manage your CLI apps' core details from its online UI as well. You can also [export](https://platform.zapier.com/docs/export) Zapier Platform UI integrations to CLI to start development in your browser, then finish out the core features in your local development environment.
 
 > Learn more in our [Zapier Platform UI vs CLI](https://platform.zapier.com/docs/vs) post.
 
 ### Requirements
 
-All Zapier CLI apps are run using Node.js `v16`.
+All Zapier CLI apps are run using Node.js `v18`.
 
-You can develop using any version of Node you'd like, but your eventual code must be compatible with `v16`. If you're using features not yet available in `v16`, you can transpile your code to a compatible format with [Babel](https://babeljs.io/) (or similar).
+You can develop using any version of Node you'd like, but your eventual code must be compatible with `v18`. If you're using features not yet available in `v18`, you can transpile your code to a compatible format with [Babel](https://babeljs.io/) (or similar).
 
-To ensure stability for our users, we strongly encourage you run tests on `v16` sometime before your code reaches users. This can be done multiple ways.
+To ensure stability for our users, we strongly encourage you run tests on `v18` sometime before your code reaches users. This can be done multiple ways.
 
 Firstly, by using a CI tool (like [Travis CI](https://travis-ci.org/) or [Circle CI](https://circleci.com/), which are free for open source projects). We provide a sample [.travis.yml](https://github.com/zapier/zapier-platform/blob/main/example-apps/trigger/.travis.yml) file in our template apps to get you started.
 
-Alternatively, you can change your local node version with tools such as [nvm](https://github.com/nvm-sh/nvm#installation-and-update). Then you can either swap to that version with `nvm use v16`, or do `nvm exec v16 zapier test` so you can run tests without having to switch versions while developing.
+Alternatively, you can change your local node version with tools such as [nvm](https://github.com/nvm-sh/nvm#installation-and-update). Then you can either swap to that version with `nvm use v18`, or do `nvm exec v18 zapier test` so you can run tests without having to switch versions while developing.
 
 
 ### Quick Setup Guide
@@ -223,7 +223,13 @@ cd example-app
 # install all the libraries needed for your app
 npm install
 ```
+Depending on the authentication method for your app, you'll also likely need to set your `CLIENT_ID` and `CLIENT_SECRET` as environment variables. These are the consumer key and secret in OAuth1 terminology.
 
+```bash
+# setting the environment variables on Zapier.com
+$ zapier env:set 1.0.0 CLIENT_ID=1234
+$ zapier env:set 1.0.0 CLIENT_SECRET=abcd
+```
 > Note: When you run `zapier init`, you'll be presented with a list of templates to start with. Pick the one that matches a feature you'll need (such as "dynamic-dropdown" for an integration with [dynamic dropdown fields](#dynamic-dropdowns)), or select "minimal" for an integration with only the essentials. [View more example apps here](https://github.com/zapier/zapier-platform/tree/main/example-apps).
 
 You should now have a working local app. You can run several local commands to try it out.
@@ -241,7 +247,7 @@ Next, you'll probably want to upload app to Zapier itself so you can start testi
 zapier push
 ```
 
-> Go check out our [full CLI reference documentation](https://zapier.github.io/zapier-platform/cli) to see all the other commands!
+> Go check out our [full CLI reference documentation](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#zapier-cli-reference) to see all the other commands!
 
 
 ### Tutorial
@@ -250,7 +256,7 @@ For a full tutorial, head over to our [Tutorial](https://platform.zapier.com/cli
 
 ## Creating a Local App
 
-> Tip: Check the [Quick Setup](#quick-setup-guide) if this is your first time using the platform!
+> Tip: Check the [Quick Setup](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#quick-setup-guide) if this is your first time using the platform!
 
 Creating an App can be done entirely locally and they are fairly simple Node.js apps using the standard Node environment and should be completely testable. However, a local app stays local until you `zapier register`.
 
@@ -423,7 +429,7 @@ zapier deprecate 1.0.0 2020-06-01
 
 ## Converting an Existing App
 
-If you have an existing Zapier [legacy Web Builder app](https://zapier.com/developer/builder/), you can use it as a template to kickstart your local application.
+If you have an existing Zapier [legacy Web Builder app](https://platform.zapier.com/conversion/maintaining), you can use it as a template to kickstart your local application.
 
 ```bash
 # Convert an existing Web Builder app to a CLI app in the my-app directory
@@ -869,7 +875,7 @@ If you define `fields` to collect additional details from the user, please note 
 
 *Added in v14.0.0.*
 
-Zapier's OAuth2 implementation also supports [PKCE](https://oauth.net/2/pkce/). This implementation is an extension of the OAuth2 `authorization_code` flow described above.
+Zapier's OAuth2 implementation also supports [PKCE](https://oauth.net/2/pkce/). This implementation is an extension of the OAuth2 `authorization_code` flow described above. 
 
 To use PKCE in your OAuth2 flow, you'll need to set the following variables:
   1. `enablePkce: true`
@@ -2393,7 +2399,7 @@ This behavior has changed periodically across major versions, which changes how/
 
 ![](https://cdn.zappy.app/e835d9beca1b6489a065d51a381613f3.png)
 
-Ensure you're handling errors correctly for your platform version. The latest released version is **14.1.1**.
+Ensure you're handling errors correctly for your platform version. The latest released version is **15.0.1**.
 
 ### HTTP Request Options
 
@@ -2499,7 +2505,7 @@ Dehydration, and its counterpart Hydration, is a tool that can lazily load data 
 
 The method `z.dehydrate(func, inputData)` has two required arguments:
 
-* `func` - the function to call to fetch the extra data. Can be any raw `function`, defined in the file doing the dehydration or imported from another part of your app. You must also register the function in the app's `hydrators` property. Note that since v10.1.0, the maximum payload size to pass to `z.dehydrate` / `z.dehydrateFile` is 6KB.
+* `func` - the function to call to fetch the extra data. Can be any raw `function`, defined in the file doing the dehydration or imported from another part of your app. You must also register the function in the app's `hydrators` property. Note that since v10.1.0, the maximum payload size to pass to `z.dehydrate` / `z.dehydrateFile` is 6KB. 
 * `inputData` - this is an object that contains things like a `path` or `id` - whatever you need to load data on the other side
 
 > **Why do I need to register my functions?** Because of how JavaScript works with its module system, we need an explicit handle on the function that can be accessed from the App definition without trying to "automagically" (and sometimes incorrectly) infer code locations.
@@ -2847,7 +2853,7 @@ const yourAfterResponse = (resp) => {
 ```
 Instead of a user’s Zap erroring and halting, the request will be repeatedly retried at the specified time.
 
-For throttled requests that occur during processing of a webhook trigger's perform, before results are produced; there is a max retry delay of 300 seconds and a default delay of 60 seconds if none is specified. For webhook processing only, if a request during the retry attempt is also throttled, it will not be re-attempted again.
+For throttled requests that occur during processing of a webhook trigger's perform, before results are produced; there is a max retry delay of 300 seconds and a default delay of 60 seconds if none is specified. For webhook processing only, if a request during the retry attempt is also throttled, it will not be re-attempted again. 
 
 ## Testing
 
@@ -3048,7 +3054,7 @@ This makes it straightforward to integrate into your testing interface. For exam
 ```yaml
 language: node_js
 node_js:
-  - "v16"
+  - "v18"
 before_script: npm install -g zapier-platform-cli
 script: CLIENT_ID=1234 CLIENT_SECRET=abcd zapier test
 ```
@@ -3229,9 +3235,9 @@ zapier test
 zapier push
 ```
 
-There are a lot of details left out - check out the full example app for a working setup.
+There are a lot of details left out - check out the full example app [here](https://github.com/zapier/zapier-platform/tree/main/example-apps/babel).
 
-> To create a new integration with Babel, run `zapier init [your app name] --template babel`. You can also check out our working example app [here](https://github.com/zapier/zapier-platform/tree/main/example-apps/babel).
+> We recommend using `zapier init .`  to create an app - you’ll be presented with a list of currently available example templates to start with.
 
 ## FAQs
 
@@ -3520,7 +3526,7 @@ InvalidParameterValueException An error occurred (InvalidParameterValueException
 
 1. Edit `package.json` to depend on a later major version of `zapier-platform-core`. There's a list of all breaking changes (marked with a :exclamation:) in the [changelog](https://github.com/zapier/zapier-platform/blob/main/CHANGELOG.md).
 2. Increment the `version` property in `package.json`
-3. Ensure you're using version `v16` (or greater) of node locally (`node -v`). Use [nvm](https://github.com/nvm-sh/nvm) to use a different one if need be.
+3. Ensure you're using version `v18` (or greater) of node locally (`node -v`). Use [nvm](https://github.com/nvm-sh/nvm) to use a different one if need be.
 4. Run `rm -rf node_modules && npm i` to get a fresh copy of everything
 5. Run `zapier test` to ensure your tests still pass
 6. Run `zapier push`
@@ -3586,7 +3592,7 @@ Broadly speaking, all releases will continue to work indefinitely. While you nev
 For more info about which Node versions are supported, see [the faq](#how-do-i-manually-set-the-nodejs-version-to-run-my-app-with).
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **14.1.1**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **15.0.1**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
