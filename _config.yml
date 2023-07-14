@@ -22,36 +22,22 @@ collections:
   quickstart:
     output: true
     permalink: /:collection/:name
-  docs:
+  build:
     output: true
     permalink: /:collection/:name
-  cli_docs:
+  manage:
     output: true
     permalink: /:collection/:name
-  cli_tutorials:
-    output: true
-    permalink: /:collection/:name
-  private_integrations:
-    output: true
-    permalink: /:collection/:name
-  legacy:
-    output: true
-    permalink: /:collection/:name
-  partners:
-    output: true
-    permalink: /:collection/:name
-  partner_success_stories:
+  publish:
     output: true
     permalink: /:collection/:name
   embed:
     output: true
-    permalink: /:collection/:name
-  conversion:
+    permalink: /:collection/:name    
+  reference:
     output: true
     permalink: /:collection/:name
-  zapier_products:
-    output: true
-    permalink: /:collection/:name
+
 
 defaults:
   - scope:
@@ -61,42 +47,17 @@ defaults:
       layout: default
   - scope:
       path: ""
-      type: "docs"
+      type: "build"
     values:
       layout: default
   - scope:
       path: ""
-      type: "news"
+      type: "manage"
     values:
       layout: default
   - scope:
       path: ""
-      type: "cli_docs"
-    values:
-      layout: default
-  - scope:
-      path: ""
-      type: "cli_tutorials"
-    values:
-      layout: default
-  - scope:
-      path: ""
-      type: "legacy"
-    values:
-      layout: default
-  - scope:
-      path: ""
-      type: "conversion"
-    values:
-      layout: default
-  - scope:
-      path: ""
-      type: "partners"
-    values:
-      layout: default
-  - scope:
-      path: ""
-      type: "partner_success_stories"
+      type: "publish"
     values:
       layout: default
   - scope:
@@ -106,11 +67,7 @@ defaults:
       layout: default
   - scope:
       path: ""
-      type: "private_integrations"
+      type: "reference"
     values:
       layout: default
-  - scope:
-      path: ""
-      type: "zapier_products"
-    values:
-      layout: default
+
