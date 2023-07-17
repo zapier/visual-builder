@@ -54,45 +54,6 @@ Clicking **Edit** will direct you to the page of that version. You can then make
 
 While using the Zapier CLI, you can change which version you are editing by updating the version number in your `package.json` file. When you run [`zapier push`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#push) your code will overwrite the specified version. While optional, we also recommend using version control software, such as GitHub or GitLab, to keep track of previous versions of your code.
 
-### Versioning Matrix and Best Practices
-
-Before updating your integration, consider how changes can affect user migration and existing Zaps. The matrix below illustrates the impact of different changes on promotions and migrations for public integration. Refer to our best practices to facilitate the upgrade process for you and your users.
-
-Key:
-* Update: Making a change to an existing component
-* Replace: Deleting/deprecating an existing compoment and adding a new compoment in its place
-
-
-| **Integration Change** | **Add** | **Update** | **Replace** | **Delete/Deprecate** | **Validated by platform?** |
-| --- | --- | --- | --- | --- | --- |
-| **Authentication schemes** | **BREAKING CHANGE** | n/a | **BREAKING CHANGE** | n/a | Yes |
-| **Authentication fields - required** | **BREAKING CHANGE** | Depends | n/a | OK | |
-| **Authentication fields - optional** | OK | OK | n/a | OK | |
-| **Authentication field key(s)** | n/a | **BREAKING CHANGE** | n/a | n/a | |
-| **Authentication - token request** | n/a | OK | n/a | n/a | |
-| **Authentication - test function** | n/a | OK | OK | n/a | |
-| **Trigger/Action/Search - meta info (e.g.: label, description)** | n/a | OK | OK | n/a | |
-| **Trigger/Action/Search - key | n/a | **BREAKING CHANGE** | **BREAKING CHANGE** | n/a | Yes |
-| **Trigger/Action/Search - input field(s) - required** | Depends | Depends | Depends | OK | |
-| **Trigger/Action/Search - input field(s) - optional** | OK | OK | OK | OK | |
-| **Trigger/Action/Search - input field(s) - key** | n/a | **BREAKING CHANGE** | **BREAKING CHANGE** | n/a | |
-| **Trigger/Action/Search - input field(s) - field type** | n/a | Depends | Depends | n/a | |
-| **Trigger/Action/Search - output - key** | OK | **BREAKING CHANGE** | **BREAKING CHANGE** | **BREAKING CHANGE** | |
-| **Trigger/Action/Search - output - response data structure** | n/a | **BREAKING CHANGE** | **BREAKING CHANGE** | n/a | |
-| **Trigger/Action/Search - perform function** | n/a | Depends | Depends | n/a | |
-| **Trigger type - polling/hook** | n/a | **BREAKING CHANGE** | n/a | n/a | Yes |
-| **Trigger (polling) - perform function** | n/a | Depends | Depends | n/a | |
-| **Trigger (hook) - perform list** | n/a | Depends | Depends | n/a | |
-| **Trigger (hook) - performSubscribe** | n/a | OK | OK | n/a | |
-| **Trigger (hook) - performUnsubscribe** | n/a | OK | OK | n/a | |
-| **Middleware** | Depends | Depends | Depends | Depends | |
-| **Partner's API (overall)** | n/a | Depends | Depends | Depends | |
-| **Product feature** | OK | n/a | n/a | n/a | |
-| **Rebrand - (e.g. logo, app name)** | n/a | OK | n/a | n/a | |
-| **Convert - UI to CLI** | n/a | Depends | OK | n/a | |
-| **Convert - CLI to UI** | n/a | Depends | n/a | n/a | |
-| **Edit - version of a converted Web Builder integration** | n/a | Depends | Depends | n/a | |
-
 ## Why Can’t I Edit a Particular Version?
 
 To make sure that existing Zaps can continue to work consistently, the Zapier Developer Platform only allows you to edit versions that are Private and have fewer than 5 users. Versions that are Public or have more than 5 users will show a warning message prompting you to Clone the version instead.
@@ -177,7 +138,7 @@ Because of that, a “breaking change” can be defined as any modification to t
 
 ### Affects of Different Changes (Versioning Matrix)
 
-The matrix below shows how various changes to a Zapier integration affect promotions and user migrations for public integrations.
+Before updating your integration, consider how changes can affect user migration and existing Zaps. The matrix below illustrates the impact of different changes on promotions and migrations for public integration. Refer to our best practices to facilitate the upgrade process for you and your users.
 
 * Update: Making a change to an existing component
 * Replace: Deleting/deprecating an existing component and adding a new one in its place
@@ -212,9 +173,7 @@ Several change scenarios are valiated by the platform when you try to "Migrate" 
 | **Rebrand - (e.g. logo, app name)** | n/a | OK | n/a | n/a | |
 | **Convert - UI to CLI** | n/a | Depends | OK | n/a | |
 | **Convert - CLI to UI** | n/a | Depends | n/a | n/a | |
-
-| **Trigger/Action/Search (T/A/S) - overall** | OK | **BREAKING CHANGE** | Depends | **BREAKING CHANGE** | Validates deletion of T/A/S keys |
-| **Convert - WB to VB** | n/a | Depends | Depends | n/a | |
+| **Edit - version of a converted Web Builder integration** | n/a | Depends | Depends | n/a | |
 
 ## Deprecating Versions
 
