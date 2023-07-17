@@ -6,7 +6,7 @@ layout: post-toc
 
 # Making Integration Changes in Platform UI and CLI
 
-Before making updates to your integration, it's important to consider the potential impact on user migration and existing Zaps. Ensuring your API and Zapier integration remains backwards compatible is crucial to avoid disruption to users. However, we acknowledge certain changes are sometimes necessary and avoidable. In such cases, consider the best practices for implementations.
+Before making updates to your integration, it's important to consider the potential impact on user migration and existing Zaps. Ensuring your API and Zapier integration remains backwards compatible is crucial to avoid disruption to users. However, we acknowledge certain changes are sometimes necessary and avoidable. In such cases, consider the best practices for implementation.
 
 ## Affects of Different Changes (Versioning Matrix)
 
