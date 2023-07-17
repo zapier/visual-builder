@@ -33,7 +33,7 @@ This guide is intended to cover version management in the Visual Builder. If you
 
 A Zapier integration can be either _Private_, _Beta_, or _Public_. Private integrations require an [invitation](https://platform.zapier.com/manage/share-integration) for users to access it. Public and Beta integrations can be seen by Zapier users on [the public Apps page](https://zapier.com/apps). Each integration can have many versions, but only one version can be public at a time, while the rest remain private. 
 
-Newly published integrations will feature a _Beta_ tag when first published. While your integration is in Beta, we’ll monitor how it’s performing. When your integration reaches 50 users, our team will get in touch to invite you to start the [official partner program](https://zapier.com/platform/partner-program) launch process.
+Newly published integrations will feature a _Beta_ tag when first published. While your [integration is in Beta](https://platform.zapier.com/publish/public-integration#5-beta-phase), we’ll monitor how it’s performing. When your integration reaches 50 users, our team will get in touch to invite you to start the [official partner program](https://zapier.com/platform/partner-program) launch process.
 
 To review your integration’s versions, open it in the Visual Builder and navigate to Manage then Versions. This page shows a list of all versions of the integration, along with status and the number of users of each.
 
