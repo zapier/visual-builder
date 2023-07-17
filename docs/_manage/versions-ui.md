@@ -156,7 +156,7 @@ To deprecate a Private version, select the **gear icon** next to the version num
 
 Once a deprecation date is set, Zapier sends [email notification #1](https://cdn.zappy.app/147e8ce1de24c6f799afac516112bbd0.png) to that version’s users, to notify them that a new Public version is available, and that action is required on their part to manually update their Zaps and ensure that the new version fits their workflows.
 
-Once the deprecation date is reached, if the Zaps weren’t updated, they’ll automatically be paused and email notification #2 is sent to any remaining users - with the subject line "X Zaps paused over deprecated apps!". It is not possible to customize that email to include a change log to let users know what the differences are.
+Once the deprecation date is reached, if the Zaps weren’t updated, they’ll automatically be paused and [email notification #2](https://cdn.zappy.app/f6920ad2c38bc8e52cc09420ed47e73e.png) is sent to any remaining users - with the subject line "X Zaps paused over deprecated apps!". It is not possible to customize that email to include a change log to let users know what the differences are.
 
 Once the deprecation date is reached, they’ll also start seeing it as “Deprecated” in the Zap Editor along with the [prompt to update to the latest version.](https://cdn.zappy.app/551bc24447db12241e1b0bf2452b7c15.png)
 
