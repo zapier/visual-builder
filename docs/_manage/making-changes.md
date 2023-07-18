@@ -6,44 +6,48 @@ layout: post-toc
 
 # Making Integration Changes in Platform UI and CLI
 
-Before making updates to your integration, it's important to consider the potential impact on user migration and existing Zaps. Ensuring your API and Zapier integration remains backwards compatible is crucial to avoid disruption to users. However, we acknowledge certain changes are sometimes necessary and avoidable. In such cases, consider the best practices for implementation.
+Before making updates to your integration, it's important to consider the potential impact on user migration and existing Zaps. Ensuring your API and Zapier integration remains backwards compatible is crucial to avoid disruption to users. However, we acknowledge certain changes are sometimes necessary and unavoidable. In such cases, consider the best practice for implementation.
 
 ## Affects of Different Changes (Versioning Matrix)
 
-The matrix below illustrates the impact of different changes on promotions and migrations for public integration. Refer to our best practices to facilitate the upgrade process for you and your users.
+The matrix below illustrates the impact of different changes on promotions and migrations for a public integration. Refer to our best practice to facilitate the upgrade process for yourself and your users.
 
+Matrix Key:
 * Update: Making a change to an existing component
 * Replace: Deleting/deprecating an existing component and adding a new one in its place
-* Breaking Change: any modification to the integration which renders existing Zaps incompatible with the new version
+* Breaking Change: A modification to the integration which renders existing Zaps incompatible with the new version
+* Depends: A modification which may render existing Zaps incompatible with the new version, depending on the implementation
+* ✓: A modification to the integration which renders existing Zaps compatible with the new version
+* -: Not applicable
 
-Several change scenarios are validated by the platform when you try to "Migrate" after a version promotion, but always be aware of the affects of any changes you make before you even begin implementing those changes.
+Several change scenarios are validated by the platform when you try to "Migrate" after a version promotion, but always be aware of the effects of any changes you make before you even begin implementing those changes.
 
 | **Integration Change** | **Add** | **Update** | **Replace** | **Delete/Deprecate** | **Validated by platform?** |
 | --- | --- | --- | --- | --- | --- |
-| **Authentication schemes** | **BREAKING CHANGE** | n/a | **BREAKING CHANGE** | n/a | Yes |
-| **Authentication fields - required** | **BREAKING CHANGE** | Depends | n/a | OK | |
-| **Authentication fields - optional** | OK | OK | n/a | OK | |
-| **Authentication field key(s) | n/a | **BREAKING CHANGE** | n/a | n/a | |
-| **Authentication - token request** | n/a | OK | n/a | n/a | |
-| **Authentication - test function** | n/a | OK | OK | n/a | |
-| **Trigger/Action/Search - meta info (e.g.: label, description)** | n/a | OK | OK | n/a | |
-| **Trigger/Action/Search - key | n/a | **BREAKING CHANGE** | **BREAKING CHANGE** | n/a | Yes |
-| **Trigger/Action/Search - input field(s) - required** | Depends | Depends | Depends | OK | |
-| **Trigger/Action/Search - input field(s) - optional** | OK | OK | OK | OK | |
-| **Trigger/Action/Search - input field(s) - key** | n/a | **BREAKING CHANGE** | **BREAKING CHANGE** | n/a | |
-| **Trigger/Action/Search - input field(s) - field type** | n/a | Depends | Depends | n/a | |
-| **Trigger/Action/Search - output data - key(s)** | OK | **BREAKING CHANGE** | **BREAKING CHANGE** | **BREAKING CHANGE** | |
-| **Trigger/Action/Search - output data - response structure** | n/a | **BREAKING CHANGE** | **BREAKING CHANGE** | n/a | |
-| **Trigger/Action/Search - perform function** | n/a | Depends | Depends | n/a | |
-| **Trigger type - polling/hook | n/a | **BREAKING CHANGE** | n/a | n/a | Yes |
-| **Trigger (polling) - perform function** | n/a | Depends | Depends | n/a | |
-| **Trigger (hook) - perform list** | n/a | Depends | Depends | n/a | |
-| **Trigger (hook) - performSubscribe** | n/a | OK | OK | n/a | |
-| **Trigger (hook) - performUnsubscribe** | n/a | OK | OK | n/a | |
+| **Authentication schemes** | **BREAKING CHANGE** | - | **BREAKING CHANGE** | - | ✓ |
+| **Authentication fields - required** | **BREAKING CHANGE** | Depends | - | ✓ | |
+| **Authentication fields - optional** | ✓ | ✓ | - | ✓ | |
+| **Authentication field key(s)** | - | **BREAKING CHANGE** | - | - | |
+| **Authentication - token request** | - | ✓ | - | - | |
+| **Authentication - test function** | - | ✓ | ✓ | - | |
+| **Trigger/Action/Search - meta info (e.g.: label, description)** | - | ✓ | ✓ | - | |
+| **Trigger/Action/Search - key** | - | **BREAKING CHANGE** | **BREAKING CHANGE** | - | ✓ |
+| **Trigger/Action/Search - input field(s) - required** | Depends | Depends | Depends | ✓ | |
+| **Trigger/Action/Search - input field(s) - optional** | ✓ | ✓ | ✓ | ✓ | |
+| **Trigger/Action/Search - input field(s) - key** | - | **BREAKING CHANGE** | **BREAKING CHANGE** | - | |
+| **Trigger/Action/Search - input field(s) - field type** | - | Depends | Depends | - | |
+| **Trigger/Action/Search - output data - key(s)** | ✓ | **BREAKING CHANGE** | **BREAKING CHANGE** | **BREAKING CHANGE** | |
+| **Trigger/Action/Search - output data - response structure** | - | **BREAKING CHANGE** | **BREAKING CHANGE** | - | |
+| **Trigger/Action/Search - perform function** | - | Depends | Depends | - | |
+| **Trigger type - polling/hook** | - | **BREAKING CHANGE** | - | - | ✓ |
+| **Trigger (polling) - perform function** | - | Depends | Depends | - | |
+| **Trigger (hook) - perform list** | - | Depends | Depends | - | |
+| **Trigger (hook) - performSubscribe** | - | ✓ | ✓ | - | |
+| **Trigger (hook) - performUnsubscribe** | - | ✓ | ✓ | - | |
 | **Middleware** | Depends | Depends | Depends | Depends | |
-| **Partner's API (overall)** | n/a | Depends | Depends | Depends | |
-| **Product feature** | OK | n/a | n/a | n/a | |
-| **Rebrand - (e.g. logo, app name)** | n/a | OK | n/a | n/a | |
-| **Convert - UI to CLI** | n/a | Depends | OK | n/a | |
-| **Convert - CLI to UI** | n/a | Depends | n/a | n/a | |
-| **Edit - version of a converted Web Builder integration** | n/a | Depends | Depends | n/a | |
+| **Partner's API (overall)** | - | Depends | Depends | Depends | |
+| **Product feature** | ✓ | - | - | - | |
+| **Rebrand - (e.g. logo, app name)** | - | ✓ | - | - | |
+| **Convert - UI to CLI** | - | Depends | ✓ | - | |
+| **Convert - CLI to UI** | - | Depends | - | - | |
+| **Edit - version of a converted Web Builder integration** | - | Depends | Depends | - | |
