@@ -1,6 +1,6 @@
 ---
 title: Manage integration versions in Platform CLI
-order: 7
+order: 8
 layout: post-toc
 redirect_from: /cli_tutorials/versions
 ---
