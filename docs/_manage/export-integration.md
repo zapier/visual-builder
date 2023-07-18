@@ -1,6 +1,6 @@
 ---
 title: Export integration from Platform UI to Platform CLI
-order: 11
+order: 12
 layout: post-toc
 redirect_from: /docs/export
 ---

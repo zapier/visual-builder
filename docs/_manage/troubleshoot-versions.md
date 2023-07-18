@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot migrating users between versions
-order: 10
+order: 11
 layout: post-toc
 redirect_from: /partners/common-migration-errors
 ---
