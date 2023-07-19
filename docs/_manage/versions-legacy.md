@@ -1,6 +1,6 @@
 ---
 title: Manage a legacy web builder integration in Platform UI
-order: 9
+order: 10
 layout: post-toc
 redirect_from: 
     - /legacy/import
