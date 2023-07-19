@@ -50,6 +50,18 @@ Subscribers receive monthly email updates only. This is a legacy role that is no
 | Receive Integration Issue Notification Email                      	| ✓         	| ✓                	| -                       	|
 | Receive Monthly Partner Newsletter Email                          	| ✓         	| ✓                	| ✓                       	|
 
+## Integration Ownership
+
+Integrations are not owned by individuals, but rather by a team. Any Zapier user who is added as an Admin to the integration team will have complete read/write access to the integration. Think of integration Admins as the "integration owners."
+
+When you access your integration on the developer platform, the “Manage Team” page will display a list of current integration Admins and Collaborators. From this page, you can invite other users to become either an Admin or Collaborator for the integration. Note that Admins can invite both new Admins and Collaborators, whilst Collaborators can only invite new Collaborators.
+
+![Screenshot showing steps to invite new team members](https://cdn.zappy.app/bae7d5d6224b6b0d8cca85458154574a.png)
+
+Once you invite a new team member as an Admin and they accept the invite, they will be able to access the integration through their own Zapier account. They can then choose to remove you as an Admin from the integration, if desired.
+
+An integration can have as many Admins and Collaborators as necessary. However, please note that if you are removed as an Admin, you will only be able to regain Admin access if invited by an existing Admin. Zapier is unable to restore Admin access.
+
 ## Manage Team - Settings
 
 ### Allow team members with specific email domains to join your integration as a Collaborator
