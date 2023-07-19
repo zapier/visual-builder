@@ -1,6 +1,6 @@
 ---
 title: Maintaining your converted integration
-order: 13
+order: 12
 layout: post-toc
 redirect_from: /conversion/maintaining
 ---

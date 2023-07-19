@@ -1,6 +1,6 @@
 ---
 title: Scripting in Legacy Web Builder
-order: 14
+order: 13
 layout: post-toc
 redirect_from: /legacy/scripting
 ---
