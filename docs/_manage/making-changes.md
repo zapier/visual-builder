@@ -12,45 +12,49 @@ Before making updates to your integration, it's important to consider the potent
 
 The matrix below illustrates the impact of different changes on promotions and migrations for a public integration. Refer to our best practice to facilitate the upgrade process for yourself and your users.
 
-Matrix Key:
+Columns:
+* Add: Adding a net new component
 * Update: Making a change to an existing component
 * Replace: Deleting/deprecating an existing component and adding a new one in its place
+* Delete/Deprecate: Removing an existing component completely
+
+Matrix Key:
 * Breaking Change: A modification to the integration which renders existing Zaps incompatible with the new version
 * Depends: A modification which may render existing Zaps incompatible with the new version, depending on the implementation
 * ✓: A modification to the integration which renders existing Zaps compatible with the new version
 * -: Not applicable
 
-Several change scenarios are validated by the platform when you try to "Migrate" after a version promotion, but always be aware of the effects of any changes you make before you even begin implementing those changes.
+Several change scenarios are validated by the platform when you try to "Migrate" after a version promotion, but always be aware of the effects of any changes you make before you even begin implementing those changes. Change scenarios marked as "Depends" but with no link can vary widely across integrations, so a generalized best practice is not provided; reach out to [support](https://platform.zapier.com/quickstart/support#platform-and-partner-support) if you need help with your specific change scenario.
 
-| **Integration Change** | **Add** | **Update** | **Replace** | **Delete/Deprecate** | **Validated by platform?** |
-| --- | --- | --- | --- | --- | --- |
-| **Authentication schemes** | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-scheme) | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-scheme) | - | <center>✓</center> |
-| **Authentication fields - required** | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#adding-a-required-auth-field) | [Depends](https://platform.zapier.com/manage/making-changes#adding-a-required-auth-field) | - | <center>✓</center> | |
-| **Authentication fields - optional** | <center>✓</center> | <center>✓</center> | - | <center>✓</center> | |
-| **Authentication field key(s)** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-field-keys) | - | - | |
-| **Authentication - token request** | - | <center>✓</center> | - | - | |
-| **Authentication - test function** | - | <center>✓</center> | <center>✓</center> | - | |
-| **Trigger/Action/Search - meta info (e.g.: label, description)** | - | <center>✓</center> | <center>✓</center> | - | |
-| **Trigger/Action/Search - key** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#updates-to-triggeractionsearch-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#updates-to-triggeractionsearch-keys) | - | <center>✓</center> |
-| **Trigger/Action/Search - input field(s) - required** | [Depend](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | [Depends](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | [Depends](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | <center>✓</center> | |
-| **Trigger/Action/Search - input field(s) - optional** | <center>✓</center> | <center>✓</center> | <center>✓</center> | <center>✓</center> | |
-| **Trigger/Action/Search - input field(s) - key** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-form-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-form-field-keys) | - | |
-| **Trigger/Action/Search - input field(s) - field type** | - | Depends | Depends | - | |
-| **Trigger/Action/Search - output data - key(s)** | <center>✓</center> | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | |
-| **Trigger/Action/Search - output data - response structure** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | - | |
-| **Trigger/Action/Search - perform function** | - | Depends | Depends | - | |
-| **Trigger type - polling/hook** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | - | - | <center>✓</center> |
-| **Trigger (polling) - perform function** | - | [Depends](https://platform.zapier.com/manage/making-changes#updating-a-polling-triggers-perform-method) | [Depends](https://platform.zapier.com/manage/making-changes#updating-a-polling-triggers-perform-method) | - | |
-| **Trigger (hook) - perform list** | - | Depends | Depends | - | |
-| **Trigger (hook) - performSubscribe** | - | <center>✓</center> | <center>✓</center> | - | |
-| **Trigger (hook) - performUnsubscribe** | - | <center>✓</center> | <center>✓</center> | - | |
-| **Middleware** | Depends | Depends | Depends | Depends | |
-| **Partner's API (overall)** | - | [Depends](https://platform.zapier.com/manage/making-changes#making-changes-to-your-api) | [Depends](https://platform.zapier.com/manage/making-changes#making-changes-to-your-api) | [Depends](https://platform.zapier.com/manage/making-changes#making-changes-to-your-api) | |
-| **Product feature** | <center>✓</center> | - | - | - | |
-| **Rebrand - (e.g. logo, app name)** | - | <center>✓</center> | - | - | |
-| **Convert - UI to CLI** | - | [Depends](https://platform.zapier.com/manage/making-changes#converting-ui-to-cli) | <center>✓</center> | - | |
-| **Convert - CLI to UI** | - | [Depends](https://platform.zapier.com/manage/making-changes#converting-cli-to-ui) | - | - | |
-| **Edit - version of a converted Web Builder integration** | - | [Depends](https://platform.zapier.com/manage/making-changes#editing-legacy-apps-in-the-ui) | [Depends](https://platform.zapier.com/manage/making-changes#editing-legacy-apps-in-the-ui) | - | |
+| Integration Change | Add | Update | Replace | Delete/Deprecate | Validated by platform? |
+| --- | :---: | :---: | :---: | :---: | :---: |
+| **Authentication schemes** | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-scheme) | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-scheme) | - | ✓ |
+| **Authentication fields - required** | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#adding-a-required-auth-field) | [Depends](https://platform.zapier.com/manage/making-changes#adding-a-required-auth-field) | - | ✓ | - |
+| **Authentication fields - optional** | ✓ | ✓ | - | ✓ | - |
+| **Authentication field key(s)** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-field-keys) | - | - | - |
+| **Authentication - token request** | - | ✓ | - | - | - |
+| **Authentication - test function** | - | ✓ | ✓ | - | - |
+| **Trigger/Action/Search - meta info (e.g.: label, description)** | - | ✓ | ✓ | - | - |
+| **Trigger/Action/Search - key** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#updates-to-triggeractionsearch-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#updates-to-triggeractionsearch-keys) | - | ✓ |
+| **Trigger/Action/Search - input field(s) - required** | [Depend](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | [Depends](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | [Depends](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | ✓ | - |
+| **Trigger/Action/Search - input field(s) - optional** | ✓ | ✓ | ✓ | ✓ | - |
+| **Trigger/Action/Search - input field(s) - key** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-form-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-form-field-keys) | - | - |
+| **Trigger/Action/Search - input field(s) - field type** | - | Depends | Depends | - | - |
+| **Trigger/Action/Search - output data - key(s)** | ✓ | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | - |
+| **Trigger/Action/Search - output data - response structure** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | - | - |
+| **Trigger/Action/Search - perform function** | - | Depends | Depends | - | - |
+| **Trigger type - polling/hook** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | - | - | ✓ |
+| **Trigger (polling) - perform function** | - | [Depends](https://platform.zapier.com/manage/making-changes#updating-a-polling-triggers-perform-method) | [Depends](https://platform.zapier.com/manage/making-changes#updating-a-polling-triggers-perform-method) | - | - |
+| **Trigger (hook) - perform list** | - | Depends | Depends | - | - |
+| **Trigger (hook) - performSubscribe** | - | ✓ | ✓ | - | - |
+| **Trigger (hook) - performUnsubscribe** | - | ✓ | ✓ | - | - |
+| **Middleware** | Depends | Depends | Depends | Depends | - |
+| **Partner's API (overall)** | - | Depends | Depends | Depends | - |
+| **Product feature** | ✓ | - | - | - | - |
+| **Rebrand - (e.g. logo, app name)** | - | ✓ | - | - | - |
+| **Convert - UI to CLI** | - | [Depends](https://platform.zapier.com/manage/making-changes#converting-ui-to-cli) | ✓ | - | - |
+| **Convert - CLI to UI** | - | [Depends](https://platform.zapier.com/manage/making-changes#converting-cli-to-ui) | - | - | - |
+| **Edit - version of a converted Web Builder integration** | - | [Depends](https://platform.zapier.com/manage/making-changes#editing-legacy-apps-in-the-ui) | [Depends](https://platform.zapier.com/manage/making-changes#editing-legacy-apps-in-the-ui) | - | - |
 
 ## Change Scenarios & Best Practices
 
