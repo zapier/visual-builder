@@ -1,14 +1,14 @@
 ---
-title: Making Integration Changes in Platform UI and CLI
+title: Making integration changes
 order: 6
 layout: post-toc
 ---
 
-# Making Integration Changes in Platform UI and CLI
+# Making integration changes
 
 Before making updates to your integration, it's important to consider the potential impact on user migration and existing Zaps. Ensuring your API and Zapier integration remains backwards compatible is crucial to avoid disruption to users. However, we acknowledge certain changes are sometimes necessary and unavoidable. In such cases, consider the best practice for implementation.
 
-## Affects of Different Changes (Versioning Matrix)
+## Effects of Different Changes (Versioning Matrix)
 
 The matrix below illustrates the impact of different changes on promotions and migrations for a public integration. Refer to our best practice to facilitate the upgrade process for yourself and your users.
 
@@ -24,33 +24,33 @@ Several change scenarios are validated by the platform when you try to "Migrate"
 
 | **Integration Change** | **Add** | **Update** | **Replace** | **Delete/Deprecate** | **Validated by platform?** |
 | --- | --- | --- | --- | --- | --- |
-| **Authentication schemes** | **BREAKING CHANGE** | - | **BREAKING CHANGE** | - | ✓ |
-| **Authentication fields - required** | **BREAKING CHANGE** | Depends | - | ✓ | |
-| **Authentication fields - optional** | ✓ | ✓ | - | ✓ | |
-| **Authentication field key(s)** | - | **BREAKING CHANGE** | - | - | |
-| **Authentication - token request** | - | ✓ | - | - | |
-| **Authentication - test function** | - | ✓ | ✓ | - | |
-| **Trigger/Action/Search - meta info (e.g.: label, description)** | - | ✓ | ✓ | - | |
-| **Trigger/Action/Search - key** | - | **BREAKING CHANGE** | **BREAKING CHANGE** | - | ✓ |
-| **Trigger/Action/Search - input field(s) - required** | Depends | Depends | Depends | ✓ | |
-| **Trigger/Action/Search - input field(s) - optional** | ✓ | ✓ | ✓ | ✓ | |
-| **Trigger/Action/Search - input field(s) - key** | - | **BREAKING CHANGE** | **BREAKING CHANGE** | - | |
+| **Authentication schemes** | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-scheme) | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-scheme) | - | <center>✓</center> |
+| **Authentication fields - required** | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#adding-a-required-auth-field) | [Depends](https://platform.zapier.com/manage/making-changes#adding-a-required-auth-field) | - | <center>✓</center> | |
+| **Authentication fields - optional** | <center>✓</center> | <center>✓</center> | - | <center>✓</center> | |
+| **Authentication field key(s)** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-field-keys) | - | - | |
+| **Authentication - token request** | - | <center>✓</center> | - | - | |
+| **Authentication - test function** | - | <center>✓</center> | <center>✓</center> | - | |
+| **Trigger/Action/Search - meta info (e.g.: label, description)** | - | <center>✓</center> | <center>✓</center> | - | |
+| **Trigger/Action/Search - key** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#updates-to-triggeractionsearch-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#updates-to-triggeractionsearch-keys) | - | <center>✓</center> |
+| **Trigger/Action/Search - input field(s) - required** | [Depend](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | [Depends](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | [Depends](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | <center>✓</center> | |
+| **Trigger/Action/Search - input field(s) - optional** | <center>✓</center> | <center>✓</center> | <center>✓</center> | <center>✓</center> | |
+| **Trigger/Action/Search - input field(s) - key** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-form-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-form-field-keys) | - | |
 | **Trigger/Action/Search - input field(s) - field type** | - | Depends | Depends | - | |
-| **Trigger/Action/Search - output data - key(s)** | ✓ | **BREAKING CHANGE** | **BREAKING CHANGE** | **BREAKING CHANGE** | |
-| **Trigger/Action/Search - output data - response structure** | - | **BREAKING CHANGE** | **BREAKING CHANGE** | - | |
+| **Trigger/Action/Search - output data - key(s)** | <center>✓</center> | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | |
+| **Trigger/Action/Search - output data - response structure** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | - | |
 | **Trigger/Action/Search - perform function** | - | Depends | Depends | - | |
-| **Trigger type - polling/hook** | - | **BREAKING CHANGE** | - | - | ✓ |
-| **Trigger (polling) - perform function** | - | Depends | Depends | - | |
+| **Trigger type - polling/hook** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | - | - | <center>✓</center> |
+| **Trigger (polling) - perform function** | - | [Depends](https://platform.zapier.com/manage/making-changes#updating-a-polling-triggers-perform-method) | [Depends](https://platform.zapier.com/manage/making-changes#updating-a-polling-triggers-perform-method) | - | |
 | **Trigger (hook) - perform list** | - | Depends | Depends | - | |
-| **Trigger (hook) - performSubscribe** | - | ✓ | ✓ | - | |
-| **Trigger (hook) - performUnsubscribe** | - | ✓ | ✓ | - | |
+| **Trigger (hook) - performSubscribe** | - | <center>✓</center> | <center>✓</center> | - | |
+| **Trigger (hook) - performUnsubscribe** | - | <center>✓</center> | <center>✓</center> | - | |
 | **Middleware** | Depends | Depends | Depends | Depends | |
-| **Partner's API (overall)** | - | Depends | Depends | Depends | |
-| **Product feature** | ✓ | - | - | - | |
-| **Rebrand - (e.g. logo, app name)** | - | ✓ | - | - | |
-| **Convert - UI to CLI** | - | Depends | ✓ | - | |
-| **Convert - CLI to UI** | - | Depends | - | - | |
-| **Edit - version of a converted Web Builder integration** | - | Depends | Depends | - | |
+| **Partner's API (overall)** | - | [Depends](https://platform.zapier.com/manage/making-changes#making-changes-to-your-api) | [Depends](https://platform.zapier.com/manage/making-changes#making-changes-to-your-api) | [Depends](https://platform.zapier.com/manage/making-changes#making-changes-to-your-api) | |
+| **Product feature** | <center>✓</center> | - | - | - | |
+| **Rebrand - (e.g. logo, app name)** | - | <center>✓</center> | - | - | |
+| **Convert - UI to CLI** | - | [Depends](https://platform.zapier.com/manage/making-changes#converting-ui-to-cli) | <center>✓</center> | - | |
+| **Convert - CLI to UI** | - | [Depends](https://platform.zapier.com/manage/making-changes#converting-cli-to-ui) | - | - | |
+| **Edit - version of a converted Web Builder integration** | - | [Depends](https://platform.zapier.com/manage/making-changes#editing-legacy-apps-in-the-ui) | [Depends](https://platform.zapier.com/manage/making-changes#editing-legacy-apps-in-the-ui) | - | |
 
 ## Change Scenarios & Best Practices
 
@@ -362,26 +362,26 @@ _for example_  Add a created_date_ISO field with the ISO-8601 formatted created 
 
 ### Trigger type changes (polling vs REST Hook)
 
-##### Change Scenario
+#### Change Scenario
 
 An app needs to change how it notifies Zapier of new records - changing the type of trigger - from Zapier polling an app endpoint for new items to instead a REST Hook subscription where the app notifies Zapier of new records; or vice versa.
 
-##### Impact to Users
+#### Impact to Users
 
 This is a breaking change. Edits to an existing trigger’s type will cause your users’ Zaps to stop working and they would need to create new Zaps with the new trigger type, and manually re-create their actions. Using the [Duplicate feature](https://help.zapier.com/hc/en-us/articles/15408145778829-Duplicate-your-Zap) would help, but each Zap would need to be mapped individually with the new trigger.
 
-##### Best Practices
+#### Best Practices
 
 - Copy the trigger configuration into a new trigger and give it a new **key** (such as appending `_v2` on the end), change the type for this new trigger, and **hide** the previous trigger. This way existing Zaps continue to work with the previous (and now hidden) trigger definition, and new Zaps will use the new trigger definition.
 - That is the recommended path forward whether using the visual builder or the CLI, with the only difference being using the Visibility: Hidden toggle in the visual builder and setting the `hidden` key as `true` [in the CLI](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#basicdisplayschema).
 
 ### Updating a polling trigger's Perform method
 
-##### Change Scenario
+#### Change Scenario
 
 It is generally safe to update a polling trigger's [perform method](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#basicpollingoperationschema) (CLI) or [API endpoint](https://platform.zapier.com/docs/triggers#polling-trigger) (UI), as long as the changes maintain backward compatibility in the returned response data. This means that the output fields and output data structure should remain consistent with previous version’s.
 
-##### Impact to Users
+#### Impact to Users
 
 Updating a polling trigger's perform method or API endpoint might cause deduplication issues and cause old records to trigger a Zap if any of the following changes occur:
 
@@ -390,18 +390,18 @@ Updating a polling trigger's perform method or API endpoint might cause deduplic
 
 For example, if the API or endpoint previously returned dedupe IDs as integers -1,2,3,4 - and is now updated to return alphanumeric values - 1-abc, 2-bcd, 3-cde, 4-def - records that were previously processed will fire again since the new IDs aren't saved in the deduplication table that Zapier references during each poll.
 
-##### Best Practices
+#### Best Practices
 
 - Ensure the dedupe ID key remains unchanged: If the API response changes the dedupe ID key, use [custom code](https://platform.zapier.com/build/dedupe#custom-or-multiple-id-fields) to maintain consistency and prevent deduplication issues.
 - Maintain reverse chronological order: the trigger should continue to return data in reverse chronological order to prevent unintended records triggering the Zap.
 
 ### Making changes to your API
 
-##### Change Scenario
+#### Change Scenario
 
 When making changes to your API, consider how these will affect your Zapier integration. API updates can widely vary from small to significant changes and can have varying effects on your users’ Zaps.
 
-##### Impact to Users
+#### Impact to Users
 
 Though not exhaustive, here are some potential major impacts to users:
 
@@ -410,7 +410,7 @@ Though not exhaustive, here are some potential major impacts to users:
 - Changes to a trigger, action, or search’s response data can break or negatively affect the proceeding steps of the Zap.
 - Changes to response data in polling triggers can prevent Zaps from triggering on new records or cause them to trigger on old records. This can lead to missed data and undesirable results for your users.
 
-##### Best Practices
+#### Best Practices
 
 To mitigate the impact of API changes on your Zapier users, consider the following best practices:
 
@@ -423,15 +423,15 @@ By adhering to these best practices, you can minimize disruptions to your Zapier
 
 ### Rebrand
 
-##### Change Scenario
+#### Change Scenario
 
 The app name, description, homepage or logo has changed.
 
-##### Impact to Users
+#### Impact to Users
 
 As shown to users in the App Directory: https://zapier.com/apps.
 
-##### Best Practices
+#### Best Practices
 
 To edit your integration details on Zapier's public app directory, email partners@zapier.com as Public apps cannot make these edits themselves.
 
@@ -476,15 +476,15 @@ return z.request(options).then((response) => {
 
 ### Editing Legacy Apps in the UI
 
-##### Change Scenario
+#### Change Scenario
 
 All existing integrations built with Zapier’s legacy web builder have been converted to the new Zapier Platform UI to use our new input form editor and integration testing features. 
 
-##### Impact to Users
+#### Impact to Users
 
 Users were not impacted when legacy web builder integrations were converted to the new UI. All apps on the new Platform run on the [zapier-platform-core NPM package.](https://www.npmjs.com/package/zapier-platform-core) When making edits to your converted integration, consider the following. 
 
-##### Best Practices
+#### Best Practices
 
 Any custom code written in the Legacy app can be viewed and edited in the “Advanced” section of the UI, in the “Legacy Web Builder” tab. The z.legacyScripting will call these functions to drive your triggers, actions, and authentication transactions. There are no plans to sunset the Legacy Scripting upon which all converted applications are dependent. 
 Legacy apps can be converted to the [CLI](https://platform.zapier.com/manage/export-integration) with the ability to better optimize existing custom code. 
@@ -496,11 +496,11 @@ To fully convert your app to the new Zapier Platform UI and eliminate any legacy
 
 ### Converting UI to CLI
 
-##### Change Scenario
+#### Change Scenario
 
 The Zapier CLI (Command Line Interface) is a toolset you install and run on your local development environment. It allows you to build, test, and manage your Zapier integration through JavaScript code and terminal commands instead of building in the visual builder on the Zapier Platform. [Compare UI to CLI features.](https://platform.zapier.com/quickstart/zapier-platform) 
 
-##### Impact to Users
+#### Impact to Users
 
 At time of exporting an app to the CLI in your local environment, there is no user impact. Once you push and promote a version from the CLI, you’ll want to consider any changes made. 
 When exporting an app from the UI to CLI, you can push the new CLI version (as long as no changes were made) and migrate users. 
@@ -509,7 +509,7 @@ If instead you create a brand new CLI app, migration of users may not be possibl
 When there are breaking changes between the UI version and the new CLI version, existing users will be able to continue using the version they’re on, but must upgrade to the new version manually. Zapier does not automatically notify all existing users of a new version’s availability, but new users would see the currently promoted/Public version when searching for the app name. We also recommend announcing the changes/new integration version to your general user base via in-app or email marketing to encourage users to switch over.
 It is recommended to allow users to remain on the old version until they switch over manually, as long as the endpoints are functional. If [Deprecation](https://platform.zapier.com/manage/versions-ui#deprecating-versions) is necessary, please note this is significantly more disruptive to our mutual users and should be considered carefully. 
 
-##### Best Practices
+#### Best Practices
 
 Once an UI app version is exported to a CLI version to your local environment, it can be deleted, so there’s no risk in trying it out before promoting it to users. You’ll just lose any changes you made in the CLI version as those cannot be converted back to the UI. 
 Change the version number in your local environment from the `package.json` file before you push to keep the latest private version you built in the visual builder for reference. 
@@ -518,16 +518,16 @@ See more details to convert [here](https://platform.zapier.com/manage/export-int
 
 ### Converting CLI to UI
 
-##### Change Scenario
+#### Change Scenario
 
 Building in the UI is the easiest way for anyone with API experience to build Zapier integrations. [Compare CLI to UI features.](add link to https://platform.zapier.com/docs/vs)
 
-##### Impact to Users
+#### Impact to Users
 
 When moving an app from CLI to the VB, we **cannot** migrate users from previous versions or apps. Existing users will be able to continue using the version they’re on, but must upgrade to the new version manually. Zapier does not automatically notify all existing users of a new version’s availability, but new users would see the currently promoted/Public version when searching for the app name. We also recommend announcing the changes/new integration version to your general user base via in-app or email marketing to encourage users to switch over.
 It is recommended to allow users to remain on the old version until they switch over manually, as long as the endpoints are functional. If [Deprecation](https://platform.zapier.com/manage/versions-cli#deprecate-an-older-version-of-your-integration) is necessary, please note this is significantly more disruptive to our mutual users and should be considered carefully. 
 
-##### Best Practices
+#### Best Practices
 
 Contact [Developer Support](https://developer.zapier.com/contact) to create an **empty** version associated to your same app ID. Hiding an app and replacing it with a new app ID built in the preferred tool is [**not** supported.](https://platform.zapier.com/publish/integration-publishing-guidelines#23-replacement-integration) 
 You will need to re-build the integration from scratch with feature parity to the previous CLI version, and it can then be maintained in the visual builder by your team. For Public apps, this avoids a repeat of the app review process; as well as retaining previous versions, associated bug reports and feature requests.
