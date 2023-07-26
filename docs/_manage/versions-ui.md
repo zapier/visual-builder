@@ -1,6 +1,6 @@
 ---
 title: Manage versions integration in Platform UI
-order: 6
+order: 7
 layout: post-toc
 redirect_from: /docs/versions
 ---
@@ -33,7 +33,7 @@ This guide is intended to cover version management in the Visual Builder. If you
 
 A Zapier integration can be either _Private_, _Beta_, or _Public_. Private integrations require an [invitation](https://platform.zapier.com/manage/share-integration) for users to access it. Public and Beta integrations can be seen by Zapier users on [the public Apps page](https://zapier.com/apps). Each integration can have many versions, but only one version can be public at a time, while the rest remain private. 
 
-Newly published integrations will feature a _Beta_ tag when first published. While your integration is in Beta, we’ll monitor how it’s performing. When your integration reaches 50 users, our team will get in touch to invite you to start the [official partner program](https://zapier.com/platform/partner-program) launch process.
+Newly published integrations will feature a _Beta_ tag when first published. While your [integration is in Beta](https://platform.zapier.com/publish/public-integration#5-beta-phase), we’ll monitor how it’s performing. When your integration reaches 50 users, our team will get in touch to invite you to start the [official partner program](https://zapier.com/platform/partner-program) launch process.
 
 To review your integration’s versions, open it in the Visual Builder and navigate to Manage then Versions. This page shows a list of all versions of the integration, along with status and the number of users of each.
 
@@ -138,7 +138,15 @@ Because of that, a “breaking change” can be defined as any modification to t
 
 ## Deprecating Versions
 
-_Deprecation_ is an optional process that allows you to set a date from which a non-Public version of your integration will no longer be supported. This is usually recommended after promoting a major update which cannot support automatic migration of users due to breaking changes. It allows Zapier to notify all of that version's users that a new version is available, and that action is required on their part to update their Zaps manually.
+_Deprecation_ is an optional process that allows you to set a date from which a non-Public version of your integration will no longer be supported. This is only applicable after promoting a major update which cannot support automatic migration of users due to breaking changes **and** when the older version will no longer function.
+
+Setting a deprecation date needs to be between 2 weeks and 1 year in the future.
+
+Upon deprecation, two automatic communications are sent by Zapier. We recommend also announcing the changes/new integration version to your general user base via in-app or email marketing. For privacy reasons, Zapier is unable to provide an email list of your app’s Zapier integration users.
+
+Please note that deprecating a version is significantly more disruptive to our mutual users than migrating to the latest promoted version, or than leaving users on an older (now) private version if migration is not possible.
+
+Users with Zaps on any older Private versions will still have access to those older Private versions in the Zap Editor after a new version has been promoted. However, users who have no Zaps on older versions will only see the current Public (promoted) version. [This help page](https://help.zapier.com/hc/en-us/articles/8496295729421-What-are-legacy-and-deprecated-apps-#1-optional-duplicate-your-zap-0-0) provides users with information about this.
 
 To deprecate a Private version, select the **gear icon** next to the version number on the Versions page, then select **Deprecate**.
 
@@ -146,9 +154,13 @@ To deprecate a Private version, select the **gear icon** next to the version num
 
 > **Note:** You can also set a deprecation date using the CLI, with the [`zapier deprecate`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#deprecate) command. [More about that here](https://platform.zapier.com/reference/cli-docs#promoting-an-app-version).
 
-When a deprecation date is set, Zapier sends an email notification to that version’s users, to let them know about the need to upgrade to the latest Public version. Users can then manually update their Zaps, and ensure that the new version fits their workflows.
+Once a deprecation date is set, Zapier sends [email notification #1](https://cdn.zappy.app/147e8ce1de24c6f799afac516112bbd0.png) to that version’s users, to notify them that a new Public version is available, and that action is required on their part to manually update their Zaps and ensure that the new version fits their workflows.
 
-After the deprecation date has passed, the version will still be available in the Versions page for future reference. You can (but should not) even invite users to it with the options in the Sharing page, like you would with a Private version.
+Once the deprecation date is reached, if the Zaps weren’t updated, they’ll automatically be paused and [email notification #2](https://cdn.zappy.app/f6920ad2c38bc8e52cc09420ed47e73e.png) is sent to any remaining users - with the subject line "X Zaps paused over deprecated apps!". It is not possible to customize that email to include a change log to let users know what the differences are.
+
+Once the deprecation date is reached, they’ll also start seeing it as “Deprecated” in the Zap Editor along with the [prompt to update to the latest version.](https://cdn.zappy.app/551bc24447db12241e1b0bf2452b7c15.png)
+
+After the deprecation date has passed, the version will still be available in the [Versions page of your integration](https://cdn.zappy.app/7015fc0393d6e687b3eb4d1070977c93.png) for future reference. You can (but should not) even invite users to it with the options in the Sharing page, like you would with any Private version.
 
 ### Should I Deprecate or Delete?
 

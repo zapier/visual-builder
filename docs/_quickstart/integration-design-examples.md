@@ -105,14 +105,14 @@ Zapier requests sample results for every trigger and action, so users can still 
 
 Instead, include the bare set of common form fields from every result, such as the form ID and timestamp.
 
-### Form or survey tntegration test checklist
+### Form or survey integration test checklist
 
 Once you’ve built a “New Form Entry” trigger, make Zaps for the following items to ensure your integration works well:
 
-* A form that already has completed entries, where you should check that your polling URL is returning the latest form entry first (reverse chronological)
-* A brand new form that has no entries, where you should make sure your form sends an appropriate error
-* A form that is composed of required and optional questions, where you should make sure all the questions are mappable regardless of whether the latest response only had a few questions answered.
-* A form that has questions with multi select answers, where you should choose one or more options to check that all the values come through
+- A form that already has completed entries, where you should check that your polling URL is returning the latest form entry first (reverse chronological)
+- A brand new form that has no entries, where you should make sure your form sends an appropriate error
+- A form that is composed of required and optional questions, where you should make sure all the questions are mappable regardless of whether the latest response only had a few questions answered.
+- A form that has questions with multi select answers, where you should choose one or more options to check that all the values come through
 
 Then submit new entries to your form to check that the Zaps run as expected when turned on.
 
@@ -130,14 +130,14 @@ Here are things to keep in mind to make your CRM integration deliver the experie
 
 Users typically expect the following types of triggers for CRM apps. If your app uses a different name for these items, use the name that appears in your UI so your customers know exactly what to expect:
 
-* New Contact (also: Person, Lead)
-* New Deal (also: Opportunity)
-* New Company (also: Organization)
-* New Tag
-* New Note
-* New Tag Added to Contact
-* New Contact in View (also: Filter)—useful to trigger when contacts meet specific criteria
-* New Deal in Stage (also: Group, Segment, or Contact in Stage)—useful to trigger when a deal progresses, if your CRM includes a way to track deal stages
+- New Contact (also: Person, Lead)
+- New Deal (also: Opportunity)
+- New Company (also: Organization)
+- New Tag
+- New Note
+- New Tag Added to Contact
+- New Contact in View (also: Filter)—useful to trigger when contacts meet specific criteria
+- New Deal in Stage (also: Group, Segment, or Contact in Stage)—useful to trigger when a deal progresses, if your CRM includes a way to track deal stages
 
 #### Use Separate new and updated triggers
 
@@ -171,7 +171,7 @@ The polling URL should return the most recent record created, so users can set u
 
 If there are no recent new records, return an empty array. Zapier will then encourage the user to create a sample then re-test their trigger and finish mapping their Zap.
 
-#### Obtaining linked information 
+#### Obtaining linked information
 
 Records in CRMs don't stand alone—they are only one part of a linked ecosystem of data. Getting the full context of linked information is useful. For example, if your trigger is "New Contact" and newly added contacts are linked to organizations, users expect to get full organization data, too.
 
@@ -193,9 +193,9 @@ If possible, return tags on records as an array of strings or a comma-delimited 
 
 Users typically expect to have the following searches for a CRM integration:
 
-* Find Contact (also: Person, Lead)
-* Find Deal (also: Opportunity)
-* Find Company (also: Organization)
+- Find Contact (also: Person, Lead)
+- Find Deal (also: Opportunity)
+- Find Company (also: Organization)
 
 Each should find an existing record, and return it in the same format that the trigger returns records. This ensures that the user gets a consistent experience and can use data from triggers and searches the same way.
 
@@ -213,7 +213,7 @@ If your CRM doesn’t allow multiple records that have the same value for a fiel
 
 ### Offer parity across triggers
 
-Ensure that the field(s) you offer for search are fields that are returned by the trigger steps. For example, a user might use a *New Contact* trigger, and then want to find out more information about the organization the contact is associated with by using a *Find Organization* search. If the *New Contact* trigger only provides the associated organization ID, it doesn’t make sense for the *Find Organization* search to only allow searches for the organization name.
+Ensure that the field(s) you offer for search are fields that are returned by the trigger steps. For example, a user might use a _New Contact_ trigger, and then want to find out more information about the organization the contact is associated with by using a _Find Organization_ search. If the _New Contact_ trigger only provides the associated organization ID, it doesn’t make sense for the _Find Organization_ search to only allow searches for the organization name.
 
 In the same vein, include linked information in search results as in triggers.
 
@@ -223,26 +223,26 @@ In the same vein, include linked information in search results as in triggers.
 
 If a record cannot be found, ensure that it returns a halted exception instead of an error. That way, you can pair the search with a _Create_ action to let users search for items and create them if they don't exist.
 
-*→ Learn more about [searches and creates](https://platform.zapier.com/build/search-create-action).*
+_→ Learn more about [searches and creates](https://platform.zapier.com/build/search-create-action)._
 
 ### Actions
 
 #### Include common create actions
 
-Users typically expect to have the following types of create actions for CRM apps, with either *Create* or *Add* as the first word in the title:
+Users typically expect to have the following types of create actions for CRM apps, with either _Create_ or _Add_ as the first word in the title:
 
-* Create Contact (also: Person, Lead)
-* Create Deal (also: Opportunity)
-* Create Company (also: Organization)
-* Create Note
+- Create Contact (also: Person, Lead)
+- Create Deal (also: Opportunity)
+- Create Company (also: Organization)
+- Create Note
 
-It’s also useful to include Update actions, as information on records in CRMs tend to change frequently. Any Update action you include should have a corresponding Search action to make it easier for users to update the correct record. For example, an *Add Contact to Stage* create action needs to be paired with a *Find Contact* search.
+It’s also useful to include Update actions, as information on records in CRMs tend to change frequently. Any Update action you include should have a corresponding Search action to make it easier for users to update the correct record. For example, an _Add Contact to Stage_ create action needs to be paired with a _Find Contact_ search.
 
-* Update Contact (also: Deal, Person, Opportunity, Lead)
-* Update Company (also: Organization)
-* Add Tag to Contact
-* Add Contact to Stage (also: Group, Segment)
-* Add Contact to Workflow (also: Sequence, Follow-up, Campaign)
+- Update Contact (also: Deal, Person, Opportunity, Lead)
+- Update Company (also: Organization)
+- Add Tag to Contact
+- Add Contact to Stage (also: Group, Segment)
+- Add Contact to Workflow (also: Sequence, Follow-up, Campaign)
 
 You don't need to add all of these actions in the first version of your integration, but over time these are all actions that may be good to add into your integration
 
@@ -268,9 +268,9 @@ If your app has the lets new records get automatically added to in-app workflows
 
 Once you've built your CRM integration, create Zaps for the following scenarios to test your integration and ensure it works as expected:
 
-* Add a record with many custom fields, and make a Zap to watch for new records to make sure each field comes in and what they look like in subsequent steps.
-* Make a multi-step Zap (we recommend one trigger, search, and action step) where every step uses your app integration, to check the ease of linking one step to another.
-* If you have the option to link records in your integration's actions, check to see that these are linked correctly when creating records.
+- Add a record with many custom fields, and make a Zap to watch for new records to make sure each field comes in and what they look like in subsequent steps.
+- Make a multi-step Zap (we recommend one trigger, search, and action step) where every step uses your app integration, to check the ease of linking one step to another.
+- If you have the option to link records in your integration's actions, check to see that these are linked correctly when creating records.
 
 <a id="pm"></a>
 
@@ -284,12 +284,12 @@ You often can't automate the work in your projects, but you can automatically ad
 
 Be sure to include at least the following triggers, depending on what your app supports:
 
-* New Project
-* New Task (also: Todo, Subtask, Card)
-* New File
-* New Comment (also: Note)
-* New Event
-* New Account (also: Member)
+- New Project
+- New Task (also: Todo, Subtask, Card)
+- New File
+- New Comment (also: Note)
+- New Event
+- New Account (also: Member)
 
 ![new activity trigger](https://cdn.zapier.com/storage/photos/77fad901c962b2ef853f01c88e4b1d7c.png)
 
@@ -297,16 +297,16 @@ You could also consider including a _New Activity_ trigger, with options to let 
 
 Then, consider adding update triggers as well. More than in most other apps, users really want to see updates triggers in project management integrations because updates affect their work. They need to know if the task deadline changed, if details were added or the scope was redefined, or if someone completed something. And if they're using multiple task apps, they need Zaps that can move the changes. Here are some popular update triggers to include:
 
-* Updated Project
-* Updated Task (also: Todo, Subtask, Card)
-* Updated Event
-* Completed Task
-* Completed Project
-* Project moved to Stage (also: Project Changed Status)
+- Updated Project
+- Updated Task (also: Todo, Subtask, Card)
+- Updated Event
+- Completed Task
+- Completed Project
+- Project moved to Stage (also: Project Changed Status)
 
 #### Watch out for permissions
 
-Project Management apps are typically used in a team, so it’s important to ensure that Zaps also trigger on teammates’ activity. For example, if user A creates a Zap that collects comments on projects, they’ll want to know if user B comments on projects as well. 
+Project Management apps are typically used in a team, so it’s important to ensure that Zaps also trigger on teammates’ activity. For example, if user A creates a Zap that collects comments on projects, they’ll want to know if user B comments on projects as well.
 
 Permissions may also fluctuate depending on if someone is an admin/creator of a record or not. Typically users expect to be able to automate off any record that is shared with them, regardless if they’re an admin/creator or not, so we strongly recommend ensuring that any trigger behavior encompasses all updates that are visible to a logged-in user in the UI. For example, if I can see that a teammate has made an update to a Project that we are all assigned to, their updates should trigger Zaps connected to my account as well.
 
@@ -316,7 +316,7 @@ If this is not possible with your API, we recommend making this clear in the Tri
 
 ![Trigger Options](https://cdn.zapier.com/storage/photos/4fad8819e9d09ca9fc3b590afe64d947.png)
 
-Add Trigger options so users can select which records they want to receive. For example, a *New Task* trigger could trigger when tasks are added to any project *or* to one specific project. Include [dynamic dropdowns](https://platform.zapier.com/build/input-designer#how-to-add-dynamic-and-custom-fields) to fetch accounts, projects, lists, and other items users would want to filter.
+Add Trigger options so users can select which records they want to receive. For example, a _New Task_ trigger could trigger when tasks are added to any project _or_ to one specific project. Include [dynamic dropdowns](https://platform.zapier.com/build/input-designer#how-to-add-dynamic-and-custom-fields) to fetch accounts, projects, lists, and other items users would want to filter.
 
 Order the dropdown list by most recently added to make it easier for users to find their current project.
 
@@ -336,11 +336,11 @@ If your API doesn't return linked data by default, add custom code to your API c
 
 Users typically expect to be able to find the broader items that organize their projects, including:
 
-* Find Project
-* Find Account (also: Member)
-* Find Event
+- Find Project
+- Find Account (also: Member)
+- Find Event
 
-Users will typically want to find top-level records so they can add child-level details. For example, a Project can have many Tasks, and some projects may have the same or similar tasks. Users are more likely to want a *Find Project* search so they can add tasks to projects, rather than a Find Task search which may not return the precise item they need.
+Users will typically want to find top-level records so they can add child-level details. For example, a Project can have many Tasks, and some projects may have the same or similar tasks. Users are more likely to want a _Find Project_ search so they can add tasks to projects, rather than a Find Task search which may not return the precise item they need.
 
 Searches should find an already existing record, and return it in the same format and with the same data as triggers use, for a consistent experience.
 
@@ -348,7 +348,7 @@ Searches should find an already existing record, and return it in the same forma
 
 ![Project Management Search Options](https://cdn.zapier.com/storage/photos/df5c2a77049abfa967e32f043d14811e.png)
 
-If possible, offer multiple ways to search for items, with a dropdown menu to select the search key and a text field to enter what to find. For example, a *Find Project* search should let users search by project ID and name. The former is useful for searching based on data in previous steps, where the latter is useful to find projects with human input.
+If possible, offer multiple ways to search for items, with a dropdown menu to select the search key and a text field to enter what to find. For example, a _Find Project_ search should let users search by project ID and name. The former is useful for searching based on data in previous steps, where the latter is useful to find projects with human input.
 
 Additionally, project name searches should exact matches first. It’s likely that users will have similarly named projects, for example, "Promotional Advertisement November" and “Promotional Advertisement September.” Be sure to note how your app returns search results in the help text, as in the Asana screenshot above.
 
@@ -356,19 +356,19 @@ Additionally, project name searches should exact matches first. It’s likely th
 
 #### Include popular create actions
 
-Users typically expect to be able to create everything they could in your app. Use *Create* or *Add* to prefix each action:
+Users typically expect to be able to create everything they could in your app. Use _Create_ or _Add_ to prefix each action:
 
-* Create Project
-* Create Task (also: Todo, Subtask, Card)
-* Create File
-* Create Comment (also: Note)
-* Create Event
+- Create Project
+- Create Task (also: Todo, Subtask, Card)
+- Create File
+- Create Comment (also: Note)
+- Create Event
 
 Because projects are very dynamic and are often organized across several apps, we strongly recommend adding updates actions as well, such as:
 
-* Update Project
-* Complete Task (also: Todo, Subtask, Card. You might try "Update Task Status" if it’s appropriate for your API as well.)
-* Update Event
+- Update Project
+- Complete Task (also: Todo, Subtask, Card. You might try "Update Task Status" if it’s appropriate for your API as well.)
+- Update Event
 
 #### Let user link records
 
@@ -382,6 +382,6 @@ Only create one record with one Zapier action, though. When a user creates a new
 
 Once you've built your project management app integration, set up a few Zaps to test out popular scenarios:
 
-* Connect your integration with [other project management apps](https://zapier.com/apps/categories/project-management), to see if the data your integration returns blends well with our common apps. Companies frequently use integration to copy tasks and projects across a blend of project management apps to keep track of work between teams.
-* If your integration supports events or tasks with due dates, try connecting them to a popular [calendar or scheduling app](https://zapier.com/apps/categories/calendar) to see if they integrate well.
-* If your integration has many nested items (such as projects containing sub-projects with tasks and sub-tasks), try setting up a few Zaps to see if the behavior across nested objects is the same as parent objects. Data returned should always be the same format; if your API doesn’t enable access to nested objects, note that in the help text for that trigger/search/action.
+- Connect your integration with [other project management apps](https://zapier.com/apps/categories/project-management), to see if the data your integration returns blends well with our common apps. Companies frequently use integration to copy tasks and projects across a blend of project management apps to keep track of work between teams.
+- If your integration supports events or tasks with due dates, try connecting them to a popular [calendar or scheduling app](https://zapier.com/apps/categories/calendar) to see if they integrate well.
+- If your integration has many nested items (such as projects containing sub-projects with tasks and sub-tasks), try setting up a few Zaps to see if the behavior across nested objects is the same as parent objects. Data returned should always be the same format; if your API doesn’t enable access to nested objects, note that in the help text for that trigger/search/action.
