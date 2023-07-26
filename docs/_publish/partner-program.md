@@ -38,7 +38,7 @@ Zapier won’t externally share your level in the Partner Program with anyone, i
 
 The active users metric looks at how many people are actively using your Zapier integration this quarter. Since this number accumulates over the quarter, it is normal to see a drop at the beginning of each quarter compared to the end of last quarter.
 
-To increase usage of your Zapier integration, try out [these 10 tactics](https://platform.zapier.com/publish/partner-program-tips).
+To increase usage of your Zapier integration, try out [these 10 tactics](https://platform.zapier.com/publish/partner-faq).
 
 
 ### Integration health score
