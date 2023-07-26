@@ -50,7 +50,7 @@ Typeform customers who also use Zapier are less than half as likely to churn aft
 
 ![](https://zappy.zapier.com/90f027eb232e4b3e21ad3fdac3d36863.png)
 
-In Typeform’s in-product “Connect Your Form” tab, they contextually surface the names, logos, and descriptions of the most popularly paired apps—powered by Zapier. The “Connect” buttons take the user directly to a pre-built Zap—called a Zap template—that they can set up with just a few clicks. They also link to Zapier's full list of connected apps for users that can't find the app they want from the most popular options.
+In Typeform’s in-product “Connect Your Form” tab, they contextually surface the names, logos, and descriptions of the most popularly paired apps—powered by Zapier. The “Connect” buttons take the user directly to a pre-built Zap called a Zap template—that they can set up with just a few clicks. They also link to Zapier's full list of connected apps for users that can't find the app they want from the most popular options.
 
 ![](https://zappy.zapier.com/3ed64bf1484d6c50375ce323a8084a15.png)
 

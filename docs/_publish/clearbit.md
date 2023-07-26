@@ -38,7 +38,7 @@ One of the strategies Clearbit uses to reduce churn? Surfacing integrations to t
 
 A sign-up is one thing, but how do you get users to activate? One of the main ways to turn a registered user into an active user is through onboarding emails. Onboarding messaging can be tailored to the actions your customers take (or don't take!) while they're learning the ins and outs of your product. Nudging them towards solutions like integrations can help turn new users into paid customers and reduce churn.
 
-"[Integrations] have particular importance early in a customer's lifecycle because they show the value of your product very quickly," says [Matt Sornson](https://blog.clearbit.com/driving-interest-to-clearbits-integrations-using-technology-tags-in-email-segmentation/), Clearbit's Chief Marketing Officer. "This means you want to promote them as soon as possible. We do this through targeted nurture emails to new customers highlighting our integrations." 
+*"[Integrations] have particular importance early in a customer's lifecycle because they show the value of your product very quickly,"* says [Matt Sornson](https://blog.clearbit.com/driving-interest-to-clearbits-integrations-using-technology-tags-in-email-segmentation/), Clearbit's Chief Marketing Officer. "This means you want to promote them as soon as possible. We do this through targeted nurture emails to new customers highlighting our integrations." 
 
 Clearbit set up a custom onboarding flow for self-serve users to trigger a personalized email to anyone who uses a Zap involving Clearbit. In that email, they celebrate the milestone, and suggest more Zapier use cases to further engage the user and encourage them to continue using the product.
 

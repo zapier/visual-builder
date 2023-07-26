@@ -31,6 +31,9 @@ collections:
   publish:
     output: true
     permalink: /:collection/:name
+    subcategories:
+      - "Partner success stories"
+      UncategorizedPosition: "after"
   embed:
     output: true
     permalink: /:collection/:name    

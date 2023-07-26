@@ -34,7 +34,7 @@ When customers sign up for a product or service, they embark on a journey. Along
 
 To introduce the Autopilot-Zapier integration in late 2015, Autopilot hosted a webinar with Zapier co-founder Wade Foster and a mutual customer that uses both Zapier and Autopilot. But the partnership didn't stop there: today, Autopilot continues to highlight Zapier to all customers in a variety of ways.
 
-“We like to engage people with Zapier when they are already on our website and in our product,” Anne says.
+*“We like to engage people with Zapier when they are already on our website and in our product,”* Anne says.
 
 <a id="onboarding"></a>
 Autopilot also found that onboarding emails are an opportune time to introduce Autopilot users to Zapier. That way, new customers can use Zapier to easily weave Autopilot into their existing workflows right away. Autopilot's onboarding emails show off the possibilities of using Autopilot and Zapier together and link to a corresponding [help document](https://autopilothq.zendesk.com/hc/en-us/articles/204963625-How-to-use-Zapier-with-Autopilot) where new users can learn more.

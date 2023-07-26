@@ -16,23 +16,23 @@ Partners from startup to big tech have Zapier at the center of their integration
 
 "The earlier someone executes a Zapier integration, the more apt they are to be retained." - *Tyler Huggins, Head of Growth at Acuity Scheduling*
 
-Read more from [Typeform](https://platform.zapier.com/partner_success_stories/typeform), 
-[Clearbit](https://platform.zapier.com/partner_success_stories/clearbit), and [Autopilot](https://platform.zapier.com/partner_success_stories/autopilot)
+Read more from [Typeform](https://platform.zapier.com/partner-success-stories/typeform), 
+[Clearbit](https://platform.zapier.com/partner-success-stories/clearbit), and [Autopilot](https://platform.zapier.com/partner-success-stories/autopilot)
 
 ## Increase revenue
 
 "Users who connect Airtable with Zapier are our most valuable users—they're more likely to upgrade to a paid plan." - *Zoelle Egner, Director of Enterprise at Airtable*
 
-Read more from [Autopilot](https://platform.zapier.com/partner_success_stories/autopilot) and [Paperform](https://platform.zapier.com/partner_success_stories/paperform) 
+Read more from [Autopilot](https://platform.zapier.com/partner-success-stories/autopilot) and [Paperform](https://platform.zapier.com/partner-success-stories/paperform) 
 
 ## Grow leads
 
 "Visitors referred from Zapier signed up for a FullContact address book account at 3x the average rate of other referral sources." - *Hillary Pitts, Product Marketing Manager at FullContact*
 
-Read more from [MeisterTask](https://platform.zapier.com/publish/partner_success_stories/meistertask), [Close](https://platform.zapier.com/partner_success_stories/close), and [Paperform](https://platform.zapier.com/partner_success_stories/paperform)
+Read more from [MeisterTask](https://platform.zapier.com/publish/partner_success_stories/meistertask), [Close](https://platform.zapier.com/partner-success-stories/close), and [Paperform](https://platform.zapier.com/partner-success-stories/paperform)
 
 ## Integration strategy
 
 "Around 40% of our customers use Zapier in some way or another. So Zapier is an integral part of our business and integration strategy." - *Jeremy Clarke, Founder at WebMerge*
 
-Read more from [Paperform](https://platform.zapier.com/partner_success_stories/paperform) and [MeisterTask](https://platform.zapier.com/partner_success_stories/meistertask)
+Read more from [Paperform](https://platform.zapier.com/partner-success-stories/paperform) and [MeisterTask](https://platform.zapier.com/partner-success-stories/meistertask)
