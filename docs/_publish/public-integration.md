@@ -111,7 +111,7 @@ Learn more about[ embedding Zapier](https://platform.zapier.com/embed/overview).
 
 During the beta stage of your integration, it's important to actively work on growing the usage of your app. By encouraging more people to use your integration, you'll be able to gather valuable insights and feedback early on, which will help you optimize it further.
 
-Learn more strategy[ tips to improve your integration](https://platform.zapier.com/publish/partner-program-tips).
+Learn more strategy[ tips to improve your integration](https://platform.zapier.com/publish/partner-faq).
 
 ### **Manage bugs and feature requests**
 

@@ -157,7 +157,7 @@ Active user retention is not a leading indicator. In fact, it’s quite a laggin
 Approaching active user retention with a long-term strategy can help maintain a consistently high level of retention:
  
 * [Embed](https://platform.zapier.com/embed/overview) the Zapier experience with copy-and-paste and customizable code within your platform to provide automation value directly to users. Embeds have proven to [reduce churn](https://platform.zapier.com/partner_success_stories/all) on Partners’ platforms. Find live embed examples under the ‘Embed’ tab of the integration’s developer platform.
-* [Share use cases](https://platform.zapier.com/publish/partner-program-tips#tip-4-share-zapier-use-cases-in-your-onboarding) widely during your platform’s onboarding process. Having multiple Zaps using your integration increases stickiness of users not only to the Zapier integration, but also to your platform.
+* [Share use cases](https://platform.zapier.com/publish/partner-faq#tip-4-share-zapier-use-cases-in-your-onboarding) widely during your platform’s onboarding process. Having multiple Zaps using your integration increases stickiness of users not only to the Zapier integration, but also to your platform.
 * Update the integration regularly with features as your platform evolves. [Invite stakeholders to your integration](https://platform.zapier.com/manage/invite-team-member) to give them admin or read-only access to insights, metrics, and feedback to prioritize and align improvements. 
 
 
