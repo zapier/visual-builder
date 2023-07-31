@@ -56,27 +56,25 @@ Several change scenarios are validated by the platform when you try to "Migrate"
 | **Convert - CLI to UI** | - | [Depends](https://platform.zapier.com/manage/making-changes#converting-cli-to-ui) | - | - | - |
 | **Edit - version of a converted Web Builder integration** | - | [Depends](https://platform.zapier.com/manage/making-changes#editing-legacy-apps-in-the-ui) | [Depends](https://platform.zapier.com/manage/making-changes#editing-legacy-apps-in-the-ui) | - | - |
 
-## Change Scenarios & Best Practices
-
 Below is a list of common changes that require special attention as they can affect the ability to migrate users. Look for your change and check out the recommended best practices. 
 
 If your change is not in this list, it's likely fine, but consider whether it changes keys, requires users to provide _new_ info, or revokes functionality.
 
 I want to make edits to...
 
-### Authentication
+## Authentication
 
-#### Changing authentication scheme
+### Changing authentication scheme
 
-##### Change Scenario
+**Change Scenario**
 
 If your API’s authentication method changes, or your app rolls out different endpoints for integration users; you would need to change the method Zapier uses to authenticate user accounts.
 
-##### Impact to Users
+**Impact to Users**
 
 Changing an integration’s authentication type (such as Basic Auth, API Key, or OAuth) to a different one is a breaking change. Migration would not be possible as all existing connected accounts would stop working if migrated. Users would need to make a new connection to your app and manually update each of their Zaps using the app.
 
-##### Best Practices
+**Best Practices**
 
 Clone your app into a new version, deleting the existing authentication method and adding the new one. Once ready promote that version for new users to select when connecting your app to Zapier.
 
@@ -86,20 +84,20 @@ If the existing authentications will cease to function at some future date, then
 
 > NOTE: this method is not possible with apps built in the legacy web builder. To update the authentication, you would need to update all triggers/actions/searches as well; as deleting the authentication method and re-adding it in the new builder would not be compatible with existing triggers/actions/searches built in the legacy web builder.
 
-#### Adding a required auth field
+### Adding a required auth field
 
-##### Change Scenario
+**Change Scenario**
 
 Breaking changes can occur when adding a new required authentication field or updating an existing optional authentication field to be required.
 
-##### Impact to Users
+**Impact to Users**
 
 Requiring new data during authentication can have significant effects:
 
 - Existing connected accounts will not work: All existing connected accounts will no longer be functional with your integration until users re-authenticated manually.
 - Manual updates are required for all Zaps: If a Zap cannot be migrated due to a breaking change, users will have to edit each Zap individually before they can start running tasks again. For example, if a user has 20 Zaps set up with your integration, they will need to manually update each one of those Zaps.
 
-##### Best Practices
+**Best Practices**
 
 - **Add the field as optional**: Use field help text and custom error handling to validate that the newly required field is provided, while keeping it set to optional. Also, consider using custom code to set the field's default value in your API call if left blank.
 - **Set a default value**: If possible, provide a default value for the required field that can be overwritten if necessary. This ensures that users who do not provide explicit values for these fields can continue to use your integration without issues.
@@ -123,19 +121,19 @@ switch (authData.region) {
 }
 ```
 
-#### Changing authentication field keys
+### Changing authentication field keys
 
-##### Change Scenario
+**Change Scenario**
 
 You want to change the key of one or more [authentication input fields](https://platform.zapier.com/docs/auth) required when a user authenticates your app to Zapier.
 
-##### Impact to Users
+**Impact to Users**
 
 This is a breaking change.
 
 Unless precautions are taken, changing the key of an existing authentication field will break existing app connections. Migration would not be possible. Users would need to make a new connection to your app and manually update each of their Zaps using the app.
 
-##### Best Practices
+**Best Practices**
 
 We strongly encourage you to **avoid changing authentication field keys** whenever possible.
 
@@ -163,15 +161,15 @@ params: {
 }
 ```
 
-###  Trigger/action/search keys, fields and output
+## Trigger/action/search keys, fields and output
 
-#### Updates to trigger/action/search keys
+### Updates to trigger/action/search keys
 
-##### Change Scenario
+**Change Scenario**
 
 In cases where a trigger/action/search’s custom code needs to be rewritten or a new v2 is replacing an older v1.
 
-##### Impact to Users
+**Impact to Users**
 
 Deleting a trigger/action/search in a new version is a breaking change - which would prevent migration of your users to the new version. Updating an existing trigger/action/search’s custom code would allow for migration but break users’ Zaps if the output changes.
 
@@ -179,7 +177,7 @@ Deleting a trigger/action/search in a new version is a breaking change - which w
 
 The triggers, actions, and searches are identified by their **key**, such as `new_contact` or `create_post`, so if you remove it, or change its **key** (possible in CLI apps only), this message appears when you attempt to migrate.
 
-##### Best Practices
+**Best Practices**
 
 - If you have already renamed the **key** (possible in CLI apps only) for a trigger/action/search, you’ll need to switch it back to the previous **key** to proceed with migrating users.
 - If you need to remove a trigger/action/search, change its visibility to **hidden** instead. Use the Visibility Options dropdown in the [UI](https://platform.zapier.com/docs/triggers#1-configure-trigger-settings), or the `hidden` key in the [CLI](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#basicdisplayschema).
@@ -218,17 +216,17 @@ The benefits of this approach are:
 
 ![custom error](https://cdn.zappy.app/50807aad2a2e2ecda9044a524dafba8c.png)
 
-#### Adding new required fields in trigger/action/search
+### Adding new required fields in trigger/action/search
 
-##### Change Scenario
+**Change Scenario**
 
 Your app’s API endpoint adds an additional field for filtering records (trigger/search) or an additional property for created records (action).
 
-##### Impact to Users
+**Impact to Users**
 
 Adding a new **required** input field or making a _previously_ optional input field now required, would break existing Zaps without a value for the field. There is no automated check for this when migrating so though it may be possible, it will be a breaking change for users.
 
-##### Best Practices
+**Best Practices**
 
 Consider the following options:
 
@@ -236,24 +234,24 @@ Consider the following options:
 - Use Code Mode (UI) or code in Perform (CLI) to set a default value for the inputField if users have it blank in their existing Zaps. This would only be successful if a universal default could apply to all users (would not work for custom fields for example).
 - Create a new trigger/action/search (T/A/S) with the required inputField; and [hide the previous T/A/S](https://platform.zapier.com/docs/versions-best-practices#custom-error-handling). That way, existing Zaps will continue to work with the previous (and now hidden) trigger/action/search definition, and new Zaps will be forced to provide a value for the required field.
 
-#### Changing form field keys
+### Changing form field keys
 
-##### Change Scenario
+**Change Scenario**
 
 You want to change the key of one or more form field inputs within a trigger, action, or search.
 
-##### Impact to Users
+**Impact to Users**
 
 Modifying the key of a form field input is a breaking change.
 
 Unless precautions are taken, changing the key of an existing form field input will break the field’s mapping within the step it’s used. The previously-mapped value will be dropped, resulting in missed data and/or errors.
 
-##### Best Practices
+**Best Practices**
 
 - We strongly encourage you to **avoid changing form field input keys** whenever possible.
 - Design the trigger, action, or search to **handle both the old and new keys**.
 
-###### Avoid changing form field input keys
+_Avoid changing form field input keys_
 
 If your API endpoint needs a different property in the request, consider changing the property key instead of modifying the form field input’s key.
 
@@ -279,7 +277,7 @@ body: {
 }
 ```
 
-###### Handle both the old and new keys
+_Handle both the old and new keys_
 
 If it’s not possible to simply change a hardcoded request property’s key:
 
@@ -311,17 +309,17 @@ body = {
 
 With this approach, or one like it, you can change the request as needed without modifying field keys and breaking users’ mappings.
 
-#### Changing output field keys
+### Changing output field keys
 
-##### Change Scenario
+**Change Scenario**
 
 You may want to update or remove existing output field keys in your Zapier integration. This can happen when you need to clean up output data, remove unnecessary fields, or due to changes in your API's response data.
 
-##### Impact to Users
+**Impact to Users**
 
 If a user has mapped one of the affected fields to an input field in a subsequent step of their Zap, the change can affect that step and potentially the entire Zap's functionality. Imagine if you updated the output field key or removed an output field altogether that a user had mapped to a required field in the next step of their Zap - the step would now error every time.
 
-##### Best Practices
+**Best Practices**
 
 To minimize disruptions to your users, follow these best practices when updating or removing existing output field keys:
 
@@ -329,9 +327,9 @@ To minimize disruptions to your users, follow these best practices when updating
 - Maintain backward compatibility (CLI partners): If you're using the Zapier CLI, you can use custom code to ensure backward compatibility with updated response data from your API. Modify the perform methods in your code appropriately to handle these changes.
 - Update the static sample: When you have made any changes to output fields, remember to update the static sample data accordingly. This ensures that the sample data used for testing and setup by users remains accurate and up-to-date.
 
-#### Changing output data
+### Changing output data
 
-##### Change Scenario
+**Change Scenario**
 
 Breaking changes can occur when certain changes are made to a trigger, action, or search's output data structure. Even if the output field key(s) remain the same, significant changes to the data structure or format returned from one or more of these fields can affect users’ Zaps.
 
@@ -341,7 +339,7 @@ Examples of potential breaking change scenarios:
 - A `results` field in a search returns a list of all search results instead of the single, last created result
 - A previously comma-separated list value is updated to return line-items
 
-##### Impact to Users
+**Impact to Users**
 
 Updated output fields from your integration steps can impact the way subsequent actions run in a user's Zap if they are mapped to input fields in those actions.
 
@@ -349,7 +347,7 @@ For example, if a user has set up a Formatter step to parse out the day of the w
 
 Another example is a user's Zap configured with a search that always returns a single result based on the latest created date in the `results` field. If the search is updated to return all results, subsequent actions in the Zap may not be set up to handle multiple results, leading to potential problems.
 
-##### Best Practices
+**Best Practices**
 
 - Use custom code to add your newly formatted data to the existing output data. By doing this, you ensure that users who have already set up their Zaps with the previous data structure will not experience issues due to the changes.
   - _For example:_  Add a created_date_ISO field with the ISO-8601 formatted created date to the output data, instead of updating the current created_date value to be in ISO-8601 format. Define clear [output field labels](https://platform.zapier.com/build/faq#output-fields) to help users differentiate the fields; updates to field labels are non-breaking.
@@ -359,26 +357,26 @@ Another example is a user's Zap configured with a search that always returns a s
 
 ### Trigger type changes (polling vs REST Hook)
 
-#### Change Scenario
+**Change Scenario**
 
 An app needs to change how it notifies Zapier of new records - changing the type of trigger - from Zapier polling an app endpoint for new items to instead a REST Hook subscription where the app notifies Zapier of new records; or vice versa.
 
-#### Impact to Users
+**Impact to Users**
 
 This is a breaking change. Edits to an existing trigger’s type will cause your users’ Zaps to stop working and they would need to create new Zaps with the new trigger type, and manually re-create their actions. Using the [Duplicate feature](https://help.zapier.com/hc/en-us/articles/15408145778829-Duplicate-your-Zap) would help, but each Zap would need to be mapped individually with the new trigger.
 
-#### Best Practices
+**Best Practices**
 
 - Copy the trigger configuration into a new trigger and give it a new **key** (such as appending `_v2` on the end), change the type for this new trigger, and **hide** the previous trigger. This way existing Zaps continue to work with the previous (and now hidden) trigger definition, and new Zaps will use the new trigger definition.
 - That is the recommended path forward whether using the visual builder or the CLI, with the only difference being using the Visibility: Hidden toggle in the visual builder and setting the `hidden` key as `true` [in the CLI](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#basicdisplayschema).
 
 ### Updating a polling trigger's Perform method
 
-#### Change Scenario
+**Change Scenario**
 
 It is generally safe to update a polling trigger's [perform method](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#basicpollingoperationschema) (CLI) or [API endpoint](https://platform.zapier.com/docs/triggers#polling-trigger) (UI), as long as the changes maintain backward compatibility in the returned response data. This means that the output fields and output data structure should remain consistent with previous version’s.
 
-#### Impact to Users
+**Impact to Users**
 
 Updating a polling trigger's perform method or API endpoint might cause deduplication issues and cause old records to trigger a Zap if any of the following changes occur:
 
@@ -387,18 +385,18 @@ Updating a polling trigger's perform method or API endpoint might cause deduplic
 
 For example, if the API or endpoint previously returned dedupe IDs as integers -1,2,3,4 - and is now updated to return alphanumeric values - 1-abc, 2-bcd, 3-cde, 4-def - records that were previously processed will fire again since the new IDs aren't saved in the deduplication table that Zapier references during each poll.
 
-#### Best Practices
+**Best Practices**
 
 - Ensure the dedupe ID key remains unchanged: If the API response changes the dedupe ID key, use [custom code](https://platform.zapier.com/build/dedupe#custom-or-multiple-id-fields) to maintain consistency and prevent deduplication issues.
 - Maintain reverse chronological order: the trigger should continue to return data in reverse chronological order to prevent unintended records triggering the Zap.
 
 ### Making changes to your API
 
-#### Change Scenario
+**Change Scenario**
 
 When making changes to your API, consider how these will affect your Zapier integration. API updates can widely vary from small to significant changes and can have varying effects on your users’ Zaps.
 
-#### Impact to Users
+**Impact to Users**
 
 Though not exhaustive, here are some potential major impacts to users:
 
@@ -407,7 +405,7 @@ Though not exhaustive, here are some potential major impacts to users:
 - Changes to a trigger, action, or search’s response data can break or negatively affect the proceeding steps of the Zap.
 - Changes to response data in polling triggers can prevent Zaps from triggering on new records or cause them to trigger on old records. This can lead to missed data and undesirable results for your users.
 
-#### Best Practices
+**Best Practices**
 
 To mitigate the impact of API changes on your Zapier users, consider the following best practices:
 
@@ -420,15 +418,15 @@ By adhering to these best practices, you can minimize disruptions to your Zapier
 
 ### Rebrand
 
-#### Change Scenario
+**Change Scenario**
 
 The app name, description, homepage or logo has changed.
 
-#### Impact to Users
+**Impact to Users**
 
 As shown to users in the App Directory: https://zapier.com/apps.
 
-#### Best Practices
+**Best Practices**
 
 To edit your integration details on Zapier's public app directory, email partners@zapier.com as Public apps cannot make these edits themselves.
 
@@ -473,15 +471,15 @@ return z.request(options).then((response) => {
 
 ### Editing Legacy Apps in the UI
 
-#### Change Scenario
+**Change Scenario**
 
 All existing integrations built with Zapier’s legacy web builder have been converted to the new Zapier Platform UI to use our new input form editor and integration testing features.
 
-#### Impact to Users
+**Impact to Users**
 
 Users were not impacted when legacy web builder integrations were converted to the new UI. All apps on the new Platform run on the [zapier-platform-core NPM package.](https://www.npmjs.com/package/zapier-platform-core).
 
-#### Best Practices
+**Best Practices**
 
 When making edits to your converted integration, consider the following:
 
@@ -494,18 +492,18 @@ When making edits to your converted integration, consider the following:
 
 ### Converting UI to CLI
 
-#### Change Scenario
+**Change Scenario**
 
 The Zapier CLI (Command Line Interface) is a toolset you install and run on your local development environment. It allows you to build, test, and manage your Zapier integration through JavaScript code and terminal commands instead of building in the visual builder on the Zapier Platform. [Compare UI to CLI features.](https://platform.zapier.com/quickstart/zapier-platform) 
 
-#### Impact to Users
+**Impact to Users**
 
 At the time of exporting an app to the CLI in your local environment, there is no user impact. Once you push and promote a version from the CLI, you’ll want to consider any changes made:
 - When exporting an app from the UI to CLI, you can push the new CLI version to your existing app and migrate users, as long as no changes were made. Contact [Developer Support](https://developer.zapier.com/contact) for steps on how to push your new CLI version as a new version of the existing UI app.
 - If instead you create a brand new CLI app, migration of users may not be possible and you would want to review the best practices in this list to assess the impacts of your changes.
 - When there are breaking changes between the UI version and the new CLI version, existing users will be able to continue using the version they’re on, but must upgrade to the new version manually. Zapier does not automatically notify all existing users of a new version’s availability, but new users would see the currently promoted/Public version when searching for the app name. We also recommend announcing the changes/new integration version to your general user base via in-app or email marketing to encourage users to switch over.
 
-#### Best Practices
+**Best Practices**
 
 Once an UI app version is exported as a CLI version to your local environment, there's no risk in pushing and testing changes in the CLI environment _before_ it is promoted to users. The local CLI version can easily be deleted, though you will lose any changes you made in the CLI environment as those cannot be converted back to the UI.
 
@@ -517,15 +515,15 @@ Once an UI app version is exported as a CLI version to your local environment, t
 
 ### Converting CLI to UI
 
-#### Change Scenario
+**Change Scenario**
 
 Building in the UI is the easiest way for anyone with API experience to build Zapier integrations. [Compare CLI to UI features.](add link to https://platform.zapier.com/docs/vs)
 
-#### Impact to Users
+**Impact to Users**
 
 When moving an app from CLI to the VB, we **cannot** migrate users from previous versions or apps. Existing users will be able to continue using the version they’re on, but must upgrade to the new version manually. Zapier does not automatically notify all existing users of a new version’s availability, but new users would see the currently promoted/Public version when searching for the app name. We also recommend announcing the changes/new integration version to your general user base via in-app or email marketing to encourage users to switch over.
 
-#### Best Practices
+**Best Practices**
 
 - Contact [Developer Support](https://developer.zapier.com/contact) to create an **empty** version associated to your same app ID. Hiding an app and replacing it with a new app ID built in the preferred tool is [**not** supported](https://platform.zapier.com/publish/integration-publishing-guidelines#23-replacement-integration).
 - Rebuild the integration from scratch with feature parity to the previous CLI version, and it can then be maintained in the visual builder by your team. For Public apps, this avoids a repeat of the app review process; as well as retaining previous versions, associated bug reports and feature requests.
