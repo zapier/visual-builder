@@ -26,7 +26,7 @@ This guide will walk you through what steps you need to take to build a [private
 Create and add details about your integration. Set your Intended audience to select **Private: I’m building an integration for personal use or to explore the Zapier platform**. 
 
 * [Create an integration using Zapier Platform UI](https://developer.zapier.com/app/new)
-* [Create an integration using Zapier Platform CLI](https://platform.zapier.com/cli_docs/docs#creating-a-local-app)
+* [Create an integration using Zapier Platform CLI](https://platform.zapier.com/reference/cli-docs#creating-a-local-app)
   * **Note**: If you’re building with Zapier Platform CLI, you’ll set your intended audience when you register your app.
 
 ## 3. Create an authentication 
@@ -50,7 +50,7 @@ Triggers allow users to find new data as soon as it’s available in your app. U
 Actions allow users to either create, search or update records through your API.
 
 * [Create an action using Zapier Platform UI](https://platform.zapier.com/quickstart/build-action)
-* [Create an action using Zapier Platform CLI](https://platform.zapier.com/cli_docs/docs#triggerssearchescreates)
+* [Create an action using Zapier Platform CLI](https://platform.zapier.com/reference/cli-docs#triggerssearchescreates)
   * [Search schema](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#searchschema)
   * [Create schema](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#createschema)
 
@@ -59,13 +59,13 @@ Actions allow users to either create, search or update records through your API.
 Test your authentication, triggers, actions, and how your private integration works inside Zapier.
 
 * [Testing using Zapier Platform UI](https://platform.zapier.com/docs/testing)
-* [Testing using Zapier Platform CLI](https://platform.zapier.com/cli_docs/docs#testing)
+* [Testing using Zapier Platform CLI](https://platform.zapier.com/reference/cli-docs#testing)
 
 ## [Optional] Validate your integration
 
 Run automated checks to identify errors and recommendations on how to improve the user experience of your private integration. 
 
-* [Run automated checks using Zapier Platform UI](https://platform.zapier.com/docs/integration-checks-reference)
+* [Run automated checks using Zapier Platform UI](https://platform.zapier.com/publish/integration-checks-reference)
 * [Run automated checks using Zapier Platform CLI](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#validate)
 
 ## [Optional] Invite team members

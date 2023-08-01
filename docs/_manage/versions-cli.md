@@ -54,36 +54,13 @@ There are two strategies for this. You can “hide” the existing Trigger/Actio
 ## Testing Your Integration
 
 One advantage building your integration within the CLI environment, you can write your own unit tests!
-See our complete [Testing Guide here](../cli_docs/docs#testing).
-
-## Migrate Users to Your New Integration Version
-
-Once you’ve added all the changes needed to your integration, you can start rolling it out to users to update their existing Zaps and let users make new Zaps with your new integration features.
-
-If you made a patch version with only minor, non-breaking changes, you can migrate existing users and Zaps to your new integration version. For a complete guide to the `migrate` command, look [here](../cli_docs/cli#migrate).
-
-Typically, Zapier recommends moving a small percentage of your users—perhaps 10 or 20%—to the new integration version to make sure everything is working as expected. Once everything looks good, you can migrate the remainder of your users to the new version.
-
-Major versions of integrations—especially if authentication or API calls were changed and other breaking changes were added—will require users to re-create their Zaps with the new version of your integration. In that case, you won’t be able to migrate existing users. Instead, you’ll need to promote the new version and deprecate the old one so new users and Zaps will be made with the new integration.
-
-**Examples**
-
-```
-# migrate 100% of your users between version 1.0.0 over to 1.0.1
-zapier migrate 1.0.0 1.0.1
-
-# migrate 15% of your users between version 1.0.1 over to 2.0.0
-zapier migrate 1.0.1 2.0.0 15
-
-# migrate the specific user user@example.com between version 2.0.0 to 2.0.1
-zapier migrate 2.0.0 2.0.1 --user=user@example.com
-```
+See our complete [Testing Guide here](https://platform.zapier.com/reference/cli-docs#testing).
 
 ## Promote a New Version of Your Integration
 
-You can also Promote your new integration version to make it the default version that Zapier shows to users when creating new Zaps. For a complete guide to the `promote` command, look [here](../cli_docs/cli#promote).
+When ready, you can Promote your new integration version to make it the default version that Zapier shows to new users when creating new Zaps. For a complete guide to the `promote` command, look [here](https://platform.zapier.com/reference/cli-docs#promoting-an-app-version).
 
-If this isn’t the first time you’ve promoted your app - you might have users on older versions. You can `zapier migrate` to either move users over (which can be dangerous if you have breaking changes). Or, you can `zapier deprecate` to give users some time to move over themselves.
+If this isn’t the first time you’ve promoted your app - you might have users on older versions. You can use `zapier migrate` to move users and their Zaps to a new version, which can be dangerous if you have breaking changes. Or, you can use `zapier deprecate` to give users time to upgrade their Zaps manually, which can be disruptive to their workflows.
 
 **Examples**
 
@@ -96,6 +73,28 @@ zapier migrate 1.0.0 1.0.1
 
 # OR - mark the old version as deprecated
 zapier deprecate 1.0.0 2020-06-01
+```
+## Migrate Users to Your New Integration Version
+
+Next, you can start rolling your updated integration out to users to update their existing Zaps and let users make new Zaps with your new integration features.
+
+If you made a patch version with only minor, non-breaking changes, you can migrate existing users and Zaps to your new integration version. For a complete guide to the `migrate` command, look [here](https://platform.zapier.com/reference/cli-docs#promoting-an-app-version).
+
+Typically, Zapier recommends moving a small portion of your existing users to the new integration version to make sure everything is working as expected. This can be done using the **Percentage** option in the Migration window, or select **Email** to migrate only one user at a time. Monitor the logs in the Monitoring tab, and migrate the remainder of your users to the new version when ready. 
+
+Major versions of integrations—especially if authentication or API calls were changed and other breaking changes were added—will require users to re-create their Zaps with the new version of your integration. In that case, you won’t be able to migrate existing users. Instead, you’ll need to promote the new version and deprecate the old one so new users and Zaps will be made with the new integration. Please note that deprecating a version is significantly more disruptive to our mutual users than migrating to the latest promoted version, or than leaving users on an older (now) private version if migration is not possible.
+
+**Examples**
+
+```
+# migrate 100% of your users between version 1.0.0 over to 1.0.1
+zapier migrate 1.0.0 1.0.1
+
+# migrate 15% of your users between version 1.0.1 over to 2.0.0
+zapier migrate 1.0.1 2.0.0 15
+
+# migrate the specific user user@example.com between version 2.0.0 to 2.0.1
+zapier migrate 2.0.0 2.0.1 --user=user@example.com
 ```
 
 ## Deprecate an Older Version of Your Integration

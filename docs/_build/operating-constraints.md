@@ -16,7 +16,7 @@ Zapier offers a relatively unique run-time environment for your integration and 
 
 This document exposes various operating constraints of these run-time modes, errors users and your integration could run into, and best practices. This information is targeted towards users of our CLI development environment, but many of the strategies can be used in [Code Mode](https://platform.zapier.com/build/code-mode) in our Platform UI.
 
-Many errors can be viewed in your integration's log monitoring in the [Platform UI](https://platform.zapier.com/build/testing#monitoring), or if using the [CLI](https://platform.zapier.com/reference/cli_docs/#handling-throttled-requests#logs), using `zapier logs`.
+Many errors can be viewed in your integration's log monitoring in the [Platform UI](https://platform.zapier.com/build/testing#monitoring), or if using the [CLI](https://platform.zapier.com/reference/cli-docs#handling-throttled-requests), using `zapier logs`.
 
 # Zap step setup using the Zap editor
 
@@ -40,7 +40,7 @@ When users add steps to their Zaps using your integration, they have the opportu
 - _"Problem creating Sample: Our computers ran into a problem"_
 - _“We couldn't find any more x. Create a new x in your account and try again.”_
 
-**Best practice:** The Zap editor will only process three new records at a time for sample data, so one way of speeding up the response is by limiting your results to three records. To determine when the request is for sample data, use the bundle meta parameter `bundle.meta.isLoadingSample`. When that is set to `true`, the user is testing in the Zap editor, and your integration can respond with a limited payload. More on `bundle.meta` properties [here](https://platform.zapier.com/reference/cli_docs#bundlemeta).
+**Best practice:** The Zap editor will only process three new records at a time for sample data, so one way of speeding up the response is by limiting your results to three records. To determine when the request is for sample data, use the bundle meta parameter `bundle.meta.isLoadingSample`. When that is set to `true`, the user is testing in the Zap editor, and your integration can respond with a limited payload. More on `bundle.meta` properties [here](https://platform.zapier.com/reference/cli-docs#bundlemeta).
 
 ## Payload size (triggers)
 
@@ -50,7 +50,7 @@ When users add steps to their Zaps using your integration, they have the opportu
 
 - _“Scripting payload too large ('n' bytes but max is 6291456bytes).”_ - ('n' is the number of bytes in the payload.)
 
-**Best practice:** The Zap editor will only process three new records at a time for sample data, so one way of making sure your payload size is less than the limit is by limiting your results to three records. To determine when the request is for sample data, use the bundle meta parameter `bundle.meta.isLoadingSample`. When that is set to `true`, the user is testing in the Zap editor, and your integration can respond with a limited payload. More on `bundle.meta` properties [here](https://platform.zapier.com/reference/cli_docs#bundlemeta).
+**Best practice:** The Zap editor will only process three new records at a time for sample data, so one way of making sure your payload size is less than the limit is by limiting your results to three records. To determine when the request is for sample data, use the bundle meta parameter `bundle.meta.isLoadingSample`. When that is set to `true`, the user is testing in the Zap editor, and your integration can respond with a limited payload. More on `bundle.meta` properties [here](https://platform.zapier.com/reference/cli-docs#bundlemeta).
 
 ## Timeouts (actions/searches)
 
@@ -130,8 +130,8 @@ Once a Zap is enabled, while the time and size constraints remain the same, the 
 
 - For polling triggers, if your API endpoint supports request filtering around number of records or datetime, using these to reduce the number of records returned
 - For both types of triggers, optimize the `perform` scripting for manipulating the payload
-- Use [console logging](https://platform.zapier.com/reference/cli_docs#console-logging) efficiently. It can help you determine where the issue might lie, but too much console logging can cause timeouts due to logging overhead.
-- If you have multiple requests per record that are causing timeouts, use the Zapier platform dehydration functions, as explained [here](https://platform.zapier.com/reference/cli_docs#dehydration). Instead of making the request immediately, a dehydration pointer is created, and the request will be made if the Zap needs a hydrated property in a later step.
+- Use [console logging](https://platform.zapier.com/reference/cli-docs#console-logging) efficiently. It can help you determine where the issue might lie, but too much console logging can cause timeouts due to logging overhead.
+- If you have multiple requests per record that are causing timeouts, use the Zapier platform dehydration functions, as explained [here](https://platform.zapier.com/reference/cli-docs#dehydration). Instead of making the request immediately, a dehydration pointer is created, and the request will be made if the Zap needs a hydrated property in a later step.
 
 ## Payload size (polling triggers)
 
@@ -144,7 +144,7 @@ Once a Zap is enabled, while the time and size constraints remain the same, the 
 **Best practices:**
 
 - If your API endpoint supports request filtering around number of records or datetime, using these to reduce the number of records returned
-- If filtering isn't an option, consider using the simplest available endpoint on your API for the basic record data, and use Zapier platform [dehydration](https://platform.zapier.com/reference/cli_docs#dehydration) to request supplementary data. A dehydration pointer is created for each subsequent request, and this pointer will only be resolved if the Zap needs a hydrated property in a later step.
+- If filtering isn't an option, consider using the simplest available endpoint on your API for the basic record data, and use Zapier platform [dehydration](https://platform.zapier.com/reference/cli-docs#dehydration) to request supplementary data. A dehydration pointer is created for each subsequent request, and this pointer will only be resolved if the Zap needs a hydrated property in a later step.
 
 ## Payload size (REST Hook triggers)
 
@@ -157,7 +157,7 @@ Once a Zap is enabled, while the time and size constraints remain the same, the 
 **Best practices:**
 
 - If your REST Hook subscription endpoint supports filtering, one option is to provide input fields in the trigger so a user can decide what record data they want to return.
-- Consider sending a notification REST Hook that includes minimal record data. You can then use additional API endpoints and Zapier platform [dehydration](https://platform.zapier.com/reference/cli_docs#dehydration) to request the supplementary record data. A dehydration pointer is created for each subsequent request, and this pointer will only be resolved if the Zap needs a hydrated property in a later step.
+- Consider sending a notification REST Hook that includes minimal record data. You can then use additional API endpoints and Zapier platform [dehydration](https://platform.zapier.com/reference/cli-docs#dehydration) to request the supplementary record data. A dehydration pointer is created for each subsequent request, and this pointer will only be resolved if the Zap needs a hydrated property in a later step.
 
 ## Timeouts (actions)
 
@@ -167,7 +167,7 @@ Once a Zap is enabled, while the time and size constraints remain the same, the 
 
 - An error in the Zap history of their Zap due to the request timing out
 
-**Best practice:** Use the webhook-based callback service the Zapier platform provides. This allows your action to be performed asynchronously, and when finished, POST to the callback URL. More on using this method [here](https://platform.zapier.com/reference/cli_docs#zgeneratecallbackurl).
+**Best practice:** Use the webhook-based callback service the Zapier platform provides. This allows your action to be performed asynchronously, and when finished, POST to the callback URL. More on using this method [here](https://platform.zapier.com/reference/cli-docs#zgeneratecallbackurl).
 
 **What a user will see if callback service implemented:**
 
@@ -181,7 +181,7 @@ Once a Zap is enabled, while the time and size constraints remain the same, the 
 
 - _“Scripting payload too large ('n' bytes but max is 6291456bytes).”_ - ('n' is the number of bytes in the payload.)
 
-**Best practice:** Consider using the simplest available endpoint on your API for the basic record data, and use Zapier platform [dehydration](https://platform.zapier.com/reference/cli_docs#dehydration) to request supplementary data. A dehydration pointer is created for each subsequent request, and this pointer will only be resolved if the Zap needs a hydrated property in a later step.
+**Best practice:** Consider using the simplest available endpoint on your API for the basic record data, and use Zapier platform [dehydration](https://platform.zapier.com/reference/cli-docs#dehydration) to request supplementary data. A dehydration pointer is created for each subsequent request, and this pointer will only be resolved if the Zap needs a hydrated property in a later step.
 
 ## Reducing requests to your API
 
@@ -189,15 +189,15 @@ Once a Zap is enabled, while the time and size constraints remain the same, the 
 
 **Best practice:** One way to reduce that API load is via the Zapier platform dehydration feature mentioned earlier. By putting these secondary requests behind a dehydration pointer, Zapier will only make this request once, although it might see these same records again and again based on the Zap’s polling cycle. Dehydration provides one other advantage - if there is an error in trying to hydrate the request, the error will be exposed in Zap history and the Zap can be replayed from there.
 
-More on dehydration again [here](https://platform.zapier.com/reference/cli_docs#dehydration).
+More on dehydration again [here](https://platform.zapier.com/reference/cli-docs#dehydration).
 
 ## Reducing file requests to your API
 
 **Constraint:** Each time a Zap step requests a file from your API, it will be accessed and downloaded.
 
-**Best practice:** Much like data dehydration, you can implement a file request using [dehydration](https://platform.zapier.com/reference/cli_docs#file-dehydration), so the file will only be accessed and downloaded when a later Zap step asks for it.
+**Best practice:** Much like data dehydration, you can implement a file request using [dehydration](https://platform.zapier.com/reference/cli-docs#file-dehydration), so the file will only be accessed and downloaded when a later Zap step asks for it.
 
-To make this even more efficient, you can [stash the file](https://platform.zapier.com/reference/cli_docs#stashing-files) at Zapier. Rather than provide the file to the requesting step, Zapier will stash the file (under a dehydrated URL), so that only one request will ever be made for the file from your API.
+To make this even more efficient, you can [stash the file](https://platform.zapier.com/reference/cli-docs#stashing-files) at Zapier. Rather than provide the file to the requesting step, Zapier will stash the file (under a dehydrated URL), so that only one request will ever be made for the file from your API.
 
 # Throttling
 
@@ -212,7 +212,7 @@ There are a number of throttles that a Zapier user could encounter when using yo
 - If a trigger, user will receive an email with an error message about the trigger error
 - If an action, user will see an error in Zap history
 
-**Best practice:** Add a specific 429 `Retry-After` header to your response, or specify a timed delay in your error response using a special `ThrottledError`. Instead of a user’s Zap erroring and halting, the request will be retried at the specified time. More on the retry [here](https://platform.zapier.com/reference/cli_docs#handling-throttled-requests). The user will see this message in Zap History instead of an error while the limit is still in place:
+**Best practice:** Add a specific 429 `Retry-After` header to your response, or specify a timed delay in your error response using a special `ThrottledError`. Instead of a user’s Zap erroring and halting, the request will be retried at the specified time. More on the retry [here](https://platform.zapier.com/reference/cli-docs#handling-throttled-requests). The user will see this message in Zap History instead of an error while the limit is still in place:
 ![](https://cdn.zappy.app/0933736266259b11771a0eba0aff23ce.png)
 
 ## Webhook throttles (Zapier)
@@ -246,7 +246,7 @@ As an integration developer, you'll be able to see more detail in your [Monitori
 
 # Hydration/Dehydration
 
-[File dehydration](https://platform.zapier.com/reference/cli_docs#file-dehydration) is an extremely useful tool to remain within time and size constraints for Zapier triggers and actions. However, it does have its own limits.
+[File dehydration](https://platform.zapier.com/reference/cli-docs#file-dehydration) is an extremely useful tool to remain within time and size constraints for Zapier triggers and actions. However, it does have its own limits.
 
 **Constraint**: There is a hard limit of 150MB on the size of dehydrated files. Depending on the complexity of the app, issues can also occur for files over ~100MB.
 

@@ -96,7 +96,7 @@ If you’re working with an integration that’s currently private, the _Promote
 
 ### What Happens When a Version Is Promoted?
 
-* [Zap templates](https://platform.zapier.com/publish/zap-templates) are updated to use the new Public version of your app if there are no breaking changes
+* [Zap templates](https://platform.zapier.com/publish/zap-templates) are updated to use the new Public version of your app if there are no [breaking changes](https://platform.zapier.com/manage/making-changes)
 * Any new triggers or actions will appear on your integration’s public app page
 * When a user selects your integration in a new Zap, they’ll use the promoted version by default
 
@@ -128,13 +128,7 @@ You can then repeat the Migration process later on, and migrate the rest of the 
 
 Before performing a migration, it is important to consider all Zaps which are currently running on previous versions of your integration. The configuration of these Zaps will not be modified during the migration, so they will need to be capable of functioning correctly on both the old and new versions.
 
-Because of that, a “breaking change” can be defined as any modification to the integration which renders existing Zaps incompatible with the new version. Examples include:
-
-* Changing the Authentication scheme
-* Adding a new "required" input field or making a previously optional input field “required”
-* Removing a trigger/action
-* Changing the key of a trigger/action or any input field
-* Removing an input or output field on a trigger/action
+Because of that, a “breaking change” can be defined as any modification to the integration which renders existing Zaps incompatible with the new version. For examples and best practices, see [making changes](https://platform.zapier.com/manage/making-changes).
 
 ## Deprecating Versions
 

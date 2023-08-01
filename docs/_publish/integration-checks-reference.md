@@ -118,7 +118,7 @@ A Connection Label helps a customer remember which account they connected.
 It should be short and easily identifiable.
 
 For both [Platform UI](https://platform.zapier.com/build/auth#how-to-add-a-connection-label-to-authenticated-accounts)
-and [CLI](https://platform.zapier.com/reference/cli_docs#authentication), the connection
+and [CLI](https://platform.zapier.com/reference/cli-docs#authentication), the connection
 label is a string. You can use any data returned by your test function.
 
 For instance, if a successful run of the auth test returns the following data:
@@ -158,14 +158,14 @@ The most important role of the label is to uniquely identify the connection.
 ## D004 - ID Fields Should Have Dynamic Dropdowns
 
 We've found that instead of instructing users to paste an item `id` into Zapier,
-providing them with a [dynamic dropdown](https://platform.zapier.com/reference/cli_docs#dynamic-dropdowns)
+providing them with a [dynamic dropdown](https://platform.zapier.com/reference/cli-docs#dynamic-dropdowns)
 greatly increases the likelihood of the user setting up Zaps correctly. Users will
 still be able to map custom fields, but this gets them started on the right foot.
 
 Read more about implementing dynamic dropdowns below:
 
 - Platform UI: https://platform.zapier.com/build/input-designer#dropdown
-- Platform CLI: https://platform.zapier.com/reference/cli_docs#dynamic-dropdowns
+- Platform CLI: https://platform.zapier.com/reference/cli-docs#dynamic-dropdowns 
 
 ---
 
@@ -173,7 +173,7 @@ Read more about implementing dynamic dropdowns below:
 
 ## D005 - Dynamic Dropdown Connects to a Non-Existing Trigger
 
-[Dynamic dropdowns](https://platform.zapier.com/reference/cli_docs#dynamic-dropdowns)
+[Dynamic dropdowns](https://platform.zapier.com/reference/cli-docs#dynamic-dropdowns)
 allow you to connect an input field to an existing trigger. The dropdown won't work
 if the trigger key you specify doesn't exist.
 
@@ -399,7 +399,7 @@ See [Sample Data](./faq#output) for more details on this.
 
 ## D013 - Connects to a Non-Existing Search
 
-[Search-Powered Fields](https://platform.zapier.com/cli_docs/docs#search-powered-fields)
+[Search-Powered Fields](https://platform.zapier.com/reference/cli-docs#search-powered-fields)
 prompt users to set up a search step to populate the value of the field. It won't
 work if the search key you specify doesn't exist.
 

@@ -40,11 +40,11 @@ Errors can cause pain for users at two vital points:
 
 ### Are all errors “bad”?
 
-We don’t want integrations throwing errors unnecessarily, but not all errors are necessarily bad. It’s perfectly acceptable for your integration to throw errors, as long as [they are meaningful](https://platform.zapier.com/publish/integration-review-guidelines#7-error-handling) in stating the problem and ideally the resolution, and [handled correctly](https://platform.zapier.com/reference/cli_docs#error-handling). For example, warnings due to user error or duplications are appropriate to throw and not an issue of the integration itself. So, it’s helpful to identify which errors are actual errors of the integration’s functionality.
+We don’t want integrations throwing errors unnecessarily, but not all errors are necessarily bad. It’s perfectly acceptable for your integration to throw errors, as long as [they are meaningful](https://platform.zapier.com/publish/integration-publishing-guidelines#7-error-handling) in stating the problem and ideally the resolution, and [handled correctly](https://platform.zapier.com/reference/cli-docs#error-handling). For example, warnings due to user error or duplications are appropriate to throw and not an issue of the integration itself. So, it’s helpful to identify which errors are actual errors of the integration’s functionality.
 
 ### Key Zapier insights
 
-Spikes in errors should be monitored as leading indicators of problems users are facing within your integration. The more descriptive and thorough [error handling](https://platform.zapier.com/reference/cli_docs#error-handling) your API and integration have in place, the easier it will be for users to resolve their own issues and for Zapier’s support team to assist with debugging.
+Spikes in errors should be monitored as leading indicators of problems users are facing within your integration. The more descriptive and thorough [error handling](https://platform.zapier.com/reference/cli-docs#error-handling) your API and integration have in place, the easier it will be for users to resolve their own issues and for Zapier’s support team to assist with debugging.
 
 ### Best practices
 
