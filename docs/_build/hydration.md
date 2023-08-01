@@ -9,7 +9,7 @@ redirect_from: /cli_tutorials/hydration
 
 ## What is Dehydration & Hydration?
 
-The best answer to this lives on our [CLI docs](https://platform.zapier.com/reference/cli_docs#dehydration):
+The best answer to this lives on our [CLI docs](https://platform.zapier.com/reference/cli-docs#dehydration):
 
 >  Dehydration, and its counterpart Hydration, is a tool that can lazily load data that might be otherwise expensive to retrieve aggressively.
 

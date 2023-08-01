@@ -54,7 +54,7 @@ To get a sense of the user experience, it’s recommended to test your integrati
 Learn more about testing your integration:
 
 - [Testing using Zapier Platform UI](https://platform.zapier.com/build/test-integration)
-- [Testing using Zapier Platform CLI](https://platform.zapier.com/reference/cli_docs#testing)
+- [Testing using Zapier Platform CLI](https://platform.zapier.com/reference/cli-docs#testing)
 
 ## **4. Submit your integration for app review**
 

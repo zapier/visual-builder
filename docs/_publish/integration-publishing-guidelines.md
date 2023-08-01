@@ -292,7 +292,7 @@ All action steps *must* include [input fields](https://platform.zapier.com/build
 
 #### 5.3.1 ID fields
 
-* Users should never be expected to manually type or map an internal ID to an action field. Your integration should not have input fields labeled ‘XXX ID’. Generally, trigger and action steps of other integrations do not return internal IDs for your specific platform to be used in an action field from your Zapier integration. Use Zapier’s [dynamic dropdown](https://platform.zapier.com/build/dynamic-dropdowns) and [Search Connector](https://platform.zapier.com/build/search-create-action)/[search-powered field](https://platform.zapier.com/reference/cli_docs#search-powered-fields) functionalities to provide users with an easier way to select or search for the appropriate resource by a more readily-available value such as ‘name’, ‘email address’, ‘title’, etc.
+* Users should never be expected to manually type or map an internal ID to an action field. Your integration should not have input fields labeled ‘XXX ID’. Generally, trigger and action steps of other integrations do not return internal IDs for your specific platform to be used in an action field from your Zapier integration. Use Zapier’s [dynamic dropdown](https://platform.zapier.com/build/dynamic-dropdowns) and [Search Connector](https://platform.zapier.com/build/search-create-action)/[search-powered field](https://platform.zapier.com/reference/cli-docs#search-powered-fields) functionalities to provide users with an easier way to select or search for the appropriate resource by a more readily-available value such as ‘name’, ‘email address’, ‘title’, etc.
 
 #### 5.2.2 Ordering
 * Order action fields logically. If you are unsure, look at how the respective fields are ordered in your platform and mimic that since users will be familiar with that ordering. 
@@ -483,7 +483,7 @@ Use `HaltedError` in situations where a required pre-condition is not met. For i
 Do not hard code credentials such as API Keys, Client IDs, Client Secrets, etc. into your integration. Use [environment variables](https://platform.zapier.com/build/advanced-features#environment-variables)instead. 
 
 ### 8.2 Structure
-If you are using the [Zapier CLI](https://platform.zapier.com/reference/cli_docs) to build the integration, ensure files are logically broken out into respective directories and the code is easy to follow. We suggest putting triggers, actions, and searches each in their own directories.
+If you are using the [Zapier CLI](https://platform.zapier.com/reference/cli-docs) to build the integration, ensure files are logically broken out into respective directories and the code is easy to follow. We suggest putting triggers, actions, and searches each in their own directories.
 
 
 If you have any questions or concerns about our integration review guidelines, contact Zapier via the [contact form](https://developer.zapier.com/contact).

@@ -27,7 +27,7 @@ We created the visual builder to be the easiest way for everyone to get started 
 
 _Step 1: Install and configure the Zapier CLI on your development environment._
 
-Follow the steps in the setup section in our [quickstart guide](https://platform.zapier.com/reference/cli_docss#quick-setup-guide)
+Follow the steps in the setup section in our [quickstart guide](https://platform.zapier.com/reference/cli-docs#quick-setup-guide)
 
 _Step 2: Run the `convert` command to create a CLI version of your project locally_
 
@@ -49,7 +49,7 @@ Using this example to create our project in the current directory our command wo
 
 _Step 3: Explore your new CLI project and get familiar with the tool_
 
-Check out the resources available in the [CLI section](/reference/cli_docs) of the docs to learn all about the Zapier CLI.
+Check out the resources available in the [CLI section](https://platform.zapier.com/reference/cli-docs) of the docs to learn all about the Zapier CLI.
 
 If you need a refresher on JavaScript, it's well worth the time to check out some of the many great resources available [online](https://javascript.info/). The Zapier Platform uses promises pretty heavily, so this is a good JavaScript topic to get familiar with.
 

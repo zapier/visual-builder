@@ -21,7 +21,7 @@ Zapier Platform CLI is the most advanced way to build integrations in your local
 - Install Zapier Platform CLI and build a sample integration in the [CLI Quick Start guide](https://zapier.com/developer/start/introduction)
 - Find detailed info on the Zapier Platform in the [Zapier Platform Schema](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md) from our built-in code docs
 - Start quicker with our template [Zapier CLI Example Apps](https://github.com/zapier/zapier-platform/wiki/Example-Apps)
-- Learn more in [Zapier's Platform CLI Documentation](https://platform.zapier.com/cli_docs/docs)
+- Learn more in [Zapier's Platform CLI Documentation](https://platform.zapier.com/reference/cli-docs)
 
 ## Join the Community
 

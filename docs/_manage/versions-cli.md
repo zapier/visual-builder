@@ -54,11 +54,11 @@ There are two strategies for this. You can “hide” the existing Trigger/Actio
 ## Testing Your Integration
 
 One advantage building your integration within the CLI environment, you can write your own unit tests!
-See our complete [Testing Guide here](../cli_docs/docs#testing).
+See our complete [Testing Guide here](https://platform.zapier.com/reference/cli-docs#testing).
 
 ## Promote a New Version of Your Integration
 
-When ready, you can Promote your new integration version to make it the default version that Zapier shows to new users when creating new Zaps. For a complete guide to the `promote` command, look [here](../cli_docs/cli#promote).
+When ready, you can Promote your new integration version to make it the default version that Zapier shows to new users when creating new Zaps. For a complete guide to the `promote` command, look [here](https://platform.zapier.com/reference/cli-docs#promoting-an-app-version).
 
 If this isn’t the first time you’ve promoted your app - you might have users on older versions. You can use `zapier migrate` to move users and their Zaps to a new version, which can be dangerous if you have breaking changes. Or, you can use `zapier deprecate` to give users time to upgrade their Zaps manually, which can be disruptive to their workflows.
 
@@ -78,7 +78,7 @@ zapier deprecate 1.0.0 2020-06-01
 
 Next, you can start rolling your updated integration out to users to update their existing Zaps and let users make new Zaps with your new integration features.
 
-If you made a patch version with only minor, non-breaking changes, you can migrate existing users and Zaps to your new integration version. For a complete guide to the `migrate` command, look [here](../cli_docs/cli#migrate).
+If you made a patch version with only minor, non-breaking changes, you can migrate existing users and Zaps to your new integration version. For a complete guide to the `migrate` command, look [here](https://platform.zapier.com/reference/cli-docs#promoting-an-app-version).
 
 Typically, Zapier recommends moving a small portion of your existing users to the new integration version to make sure everything is working as expected. This can be done using the **Percentage** option in the Migration window, or select **Email** to migrate only one user at a time. Monitor the logs in the Monitoring tab, and migrate the remainder of your users to the new version when ready. 
 
