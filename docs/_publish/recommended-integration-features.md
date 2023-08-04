@@ -14,7 +14,7 @@ The lists provided are not meant to encompass every possible model or object spe
 
 Let's use a CRM app as an example. Maybe on your platform, new entries are referred to as 'Contacts'. On another, they could be called 'Leads', 'Clients', 'Persons', or any term unique to the platform, such as 'Hoomans' or 'Zaperonis'. You may not find 'Zaperonis' listed below, but if you see a similar concept like a 'New Contact' trigger, you can apply the same logic with a ‘New Zaperoni’ trigger for your integration.
 
-If you don't see a list for your specific category, we may not have sufficient integrations within it to surface best practices or may be working on it. Reach out to partners@zapier.com to request a category.
+If you don't see a list for your specific category, we may not have sufficient integrations within it to surface best practices or may be working on it. Reach out via our [Partner support channel](https://developer.zapier.com/contact) to request a category.
 
 ### Accounting
 
