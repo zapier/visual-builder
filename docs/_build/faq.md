@@ -1,6 +1,6 @@
 ---
 title: Frequently asked questions
-order: 20
+order: 21
 layout: post-toc
 redirect_from: /docs/faq
 ---

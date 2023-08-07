@@ -1,6 +1,6 @@
 ---
 title: Use REST Hooks in Platform CLI
-order: 19
+order: 20
 layout: post-toc
 redirect_from: /cli_tutorials/resthooks
 ---

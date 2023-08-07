@@ -1,6 +1,6 @@
 ---
 title: Use dynamic dropdowns in Platform CLI
-order: 17
+order: 18
 layout: post-toc
 redirect_from: /cli_tutorials/dynamic-dropdowns
 ---

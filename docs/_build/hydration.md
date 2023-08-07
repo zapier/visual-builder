@@ -1,6 +1,6 @@
 ---
 title: Use hydration in Platform CLI
-order: 17
+order: 19
 layout: post-toc
 redirect_from: /cli_tutorials/hydration
 ---
