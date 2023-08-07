@@ -1,6 +1,6 @@
 ---
 title: Test your integration
-order: 13
+order: 14
 layout: post-toc
 redirect_from: 
     - /quickstart/test-complete
