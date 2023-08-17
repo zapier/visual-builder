@@ -2,7 +2,9 @@
 title: Private vs public integrations
 order: 4
 layout: post-toc
-redirect_from: /private_integrations/private-vs-public-integrations
+redirect_from: 
+    - /private_integrations/private-vs-public-integrations
+    - /embed/zapier-plugin-chatgpt
 ---
 # Private vs public integrations
 
@@ -35,6 +37,7 @@ Public integrations are suitable for the following use cases:
 * [Embed Zap Templates](https://platform.zapier.com/embed/zap-templates).
 * Use [Zapier Issue Manager](https://platform.zapier.com/partners/zim) to manage bugs and feature requests.
 * Users of your integration can [Share a copy of their Zaps](https://help.zapier.com/hc/en-us/articles/8496292155405-Share-a-copy-of-your-Zap).
+* Users can use your integration with [Zapier's ChatGPT plugin](https://help.zapier.com/hc/en-us/articles/14058263394573).
 
 ### Limitations
 
@@ -69,6 +72,7 @@ If you’re building a private integration, there are specific limitations to be
 * [Rate limits](https://platform.zapier.com/quickstart/private-integration-rate-limits) for users will vary based on the Zapier plan of the integration owner.
 * Private integrations can only have up to [100 admins and collaborators](https://platform.zapier.com/manage/invite-team-member). 
 * Private integrations can only be shared with up to [100 users by email](https://platform.zapier.com/manage/share-integration#invite-users-by-email). There’s no limit when [sharing using a public link](https://platform.zapier.com/manage/share-integration#invite-users-with-a-public-link).
+* [Zapier's ChatGPT plugin](https://help.zapier.com/hc/en-us/articles/14058263394573) is not supported.
 
 
 
