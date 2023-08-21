@@ -70,7 +70,7 @@ If you’re building a private integration, there are specific limitations to be
 * [Rate limits](https://platform.zapier.com/quickstart/private-integration-rate-limits) will depend on the Zapier plan of the integration owner.
 * You can have up to [100 admins and collaborators](https://platform.zapier.com/manage/invite-team-member). 
 * You can invite up to [100 users by email](https://platform.zapier.com/manage/share-integration#invite-users-by-email). There’s no limit when [sharing using a public link](https://platform.zapier.com/manage/share-integration#invite-users-with-a-public-link).
-*  [Zap templates](https://platform.zapier.com/publish/zap-templates) are not supported.
+* [Zap templates](https://platform.zapier.com/publish/zap-templates) are not supported.
 * [Sharing a copy of Zaps](https://help.zapier.com/hc/en-us/articles/8496292155405-Share-a-copy-of-your-Zap) is not supported. 
 * Your app won't appear as an option on [Zapier's ChatGPT plugin](https://help.zapier.com/hc/en-us/articles/14058263394573).
 
