@@ -67,7 +67,7 @@ By creating a private integration:
 
 If you’re building a private integration, there are specific limitations to be aware of: 
 
-* [Rate limits](https://platform.zapier.com/quickstart/private-integration-rate-limits) will depend on the Zapier plan of the integration owner.
+* [Rate limits](https://platform.zapier.com/quickstart/private-integration-rate-limits) depend on the Zapier plan of the integration owner.
 * You can have up to [100 admins and collaborators](https://platform.zapier.com/manage/invite-team-member). 
 * You can invite up to [100 users by email](https://platform.zapier.com/manage/share-integration#invite-users-by-email). There’s no limit when [sharing using a public link](https://platform.zapier.com/manage/share-integration#invite-users-with-a-public-link).
 * [Zap templates](https://platform.zapier.com/publish/zap-templates) are not supported.
