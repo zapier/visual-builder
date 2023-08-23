@@ -1,11 +1,11 @@
 ---
-title: Manage versions integration in Platform UI
+title: Manage integration versions in Platform UI
 order: 7
 layout: post-toc
 redirect_from: /docs/versions
 ---
 
-# Manage versions integration in Platform UI
+# Manage integration versions in Platform UI
 
 Your Zapier integration should be ready to use when first launched—minimal, perhaps, but with the basics covered. The app authentication will let users connect to your API, and the triggers and actions should get data to and from your API.
 

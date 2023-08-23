@@ -22,7 +22,10 @@ You can share a link with users to all versions of your integration.
 4. In the left sidebar, under *Manage* click **Sharing**.
 5. Click <img style="vertical-align: middle; width:24px;" src="https://res.cloudinary.com/zapier-media/image/upload/zinnia-icons/actionCopy.svg" alt="ICON NAME icon"> to copy the invite public link. 
 
-Now you can share the invite link with users. The link will take users to your integration landing page where they can follow the on-screen instructions to accept your invite. 
+Now you can share the invite link with users. The link will take users to your integration landing page where they can follow the on-screen instructions to accept your invite to all versions of the integration. 
+
+Generating a public sharing link for one specific version is  available in the [Platform CLI](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#sharing-an-app-version), but not the Platform UI. 
+
 <br>
 <br>
 
