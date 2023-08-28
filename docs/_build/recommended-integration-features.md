@@ -36,6 +36,38 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 *Be sure your actions cover all types of events or conversions your app supports, such as ‘offline’, ‘lead’, ‘funnel’, etc.
 
+### AI Tools
+
+| Triggers                | Actions                     | Searches                               | Search or Creates                |
+|-------------------------|-----------------------------|----------------------------------------|----------------------------------|
+| (Chat) New Message      | Send Prompt                 |                                        |                                  |
+| New Transcription/Recording/Video/Image Ready | Request/Generate Image/Transcription/Video/etc. |                               |                                  |
+
+### Bookmark Managers
+
+| Triggers                | Actions                     | Searches                               | Search or Creates                |
+|-------------------------|-----------------------------|----------------------------------------|----------------------------------|
+| New Item/Bookmark       | Bookmark/Add Page/Item      |                                        |                                  |
+| New Favorited Item      |                             |                                        |                                  |
+| New Tagged Item         |                             |                                        |                                  |
+
+### Calendar
+
+| Triggers                | Actions                     | Searches                               | Search or Creates                |
+|-------------------------|-----------------------------|----------------------------------------|----------------------------------|
+| New or Updated Event/Meeting | Create Event             | Find Event                             | Find or Create Event             |
+| Event Started           | Add Attendee to Event       |                                        |                                  |
+| Event Ended             | Update Event                |                                        |                                  |
+| Event Cancelled         | Delete Event                |                                        |                                  |
+
+### Call Tracking
+
+| Triggers                | Actions                     | Searches                               | Search or Creates                |
+|-------------------------|-----------------------------|----------------------------------------|----------------------------------|
+| Call completed          |                             |                                        |                                  |
+| New Call/Call Started   |                             |                                        |                                  |
+| Call tagged             |                             |                                        |                                  |
+
 ### Contact Management
 
 | Triggers | Actions | Searches | Search or Creates |
@@ -82,6 +114,16 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 *Zapier searches automatically return only the first result in the response. To return multiple results, return the set of results as an array of objects under a descriptive key.
 
+### Documents
+
+| Triggers                         | Actions                       | Searches                 | Search or Creates       |
+|----------------------------------|-------------------------------|--------------------------|-------------------------|
+| New Document                     | Create Document (from template) | Find Document            | Find or Create Document |
+| Document Completed               | Upload Document               |                          |                         |
+| Document Status Updated          |                               |                          |                         |
+| Document Sent                    |                               |                          |                         |
+| Document Signed                  |                               |                          |                         |
+
 ### Drip Email
 
 | Triggers                | Actions                                                                    | Searches                                                    | Search or Creates                                                 |
@@ -101,6 +143,16 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Cancelled Order/Subscription     | Create Product  |                  |                       |
 | Abandoned Cart                       |                 |                  |                       |
 
+### Email
+
+| Triggers                         | Actions                       | Searches                 | Search or Creates       |
+|----------------------------------|-------------------------------|--------------------------|-------------------------|
+| New Email Matching Search        | Send Email                    | Find Email               | Find or Create Contact  |
+| New Email                        | Create Draft Email            | Find Contact             | Find or Create Email    |
+| New Labeled/Tagged/Starred Email | Validate Email (if applicable)|                          |                         |
+| New Attachment                   | Create Contact                |                          |                         |
+|                                  | Add Label to Email            |                          |                         |
+
 ### Email Newsletter
 
 | Triggers                          | Actions                                  | Searches                                  | Search or Creates                        |
@@ -114,11 +166,20 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 ### Event Management
 
-|     Triggers       |       Actions       |    Searches        |    Search or Creates       |
+| Triggers              | Actions              | Searches          | Search or Creates             |
 |-----------------------|----------------------|-------------------|-------------------------------|
 | New Contact/Attendee/Lead | Create Contact/Attendee/Lead | Find Contact/Attendee/Lead | Find or Create Contact/Attendee/Lead |
 | New Registrant/RSVP | Add Registrant to Event |                     |                                     |
 | New Order/Booking/Ticket | Create Event |                             |                                     |
+
+### File Management & Storage
+
+| Triggers                         | Actions                       | Searches                 | Search or Creates       |
+|----------------------------------|-------------------------------|--------------------------|-------------------------|
+| New File in Folder               | Upload File                   | Find File                | Find or Create File     |
+| New File                         | Create Folder                 | Find Folder              | Find or Create Folder   |
+| New Folder                       | Create File                   |                          |                         |
+| Updated File                     | Move File                     |                          |                         |
 
 ### Fundraiser
 
@@ -141,6 +202,20 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 *If you’re adding a “Create or Update” action instead of an “Update” action along with a “Find or Create” action, it’s best practice to return in the response payload if the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
 
+### Notes
+
+| Triggers                         | Actions                       | Searches                 | Search or Creates       |
+|----------------------------------|-------------------------------|--------------------------|-------------------------|
+| New Note                         | Create Note                   |                          |                         |
+| New Note in Notebook/Section/Tag | Append to Note                |                          |                         |
+
+### Notifications
+
+
+| Triggers                         | Actions                       | Searches                 | Search or Creates       |
+|----------------------------------|-------------------------------|--------------------------|-------------------------|
+| New Notification/Message         | Send Notification/Message     |                          |                         |
+
 ### Online Courses
 
 | Triggers                           | Actions                            | Searches                          | Search or Creates              |
@@ -162,6 +237,34 @@ If you don't see a list for your specific category, we may not have sufficient i
 | Canceled Subscription/Order/Sale    |                                     |                     |                            |
 | Failed Payment                      |                                     |                     |                            |
 | Checkout Session Completed          |                                     |                     |                            |
+
+### Phone & SMS
+| Triggers                         | Actions                       | Searches                 | Search or Creates       |
+|----------------------------------|-------------------------------|--------------------------|-------------------------|
+| New SMS/Message Received         | Create or Update Contact      | Find Contact             | Find or Create Contact  |
+| New Call                         | Send SMS/Message              |                          |                         |
+| New Recording                    | Create Contact                |                          |                         |
+|                                  | Opt-in Contact                |                          |                         |
+|                                  | Call Phone Number             |                          |                         |
+
+### Product Management
+
+| Triggers                          | Actions                                | Searches                               | Search or Creates                |
+|-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
+| New Feedback/Form Submitted/Request | Create Note/Feature/Task/Idea           |                                        |                                  |
+| New Note/Comment                   |                                        |                                        |                                  |
+
+### Project Management
+
+| Triggers                          | Actions                                | Searches                               | Search or Creates                |
+|-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
+| New Task/Item/Issue                | Create Task/Item/Issue                  | Find Task/Item/Issue                    | Find or Create Task/Item/Issue   |
+| Task/Item/Issue Status Changed     | Update Task/Item/Issue                  | Find User                              | Find or Create Project/Board     |
+| New Label/Tag on Task/Item/Issue   | Add Comment/Note to Task/Item/Issue     | Find Project/Board                      |                                  |
+| New Event/Activity                 | Attach/Upload file to Task/Item/Issue   |                                        |                                  |
+| Completed Task/Item/Issue          | Create Project/Board                    |                                        |                                  |
+| Updated Task/Item/Issue            | Add Label/Tag to Task/Item/Issue        |                                        |                                  |
+| Specific Value on Task/Item/Issue Changed |                                    |                                        |                                  |
 
 ### Proposal & Invoice Management
 
@@ -206,6 +309,43 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Post/Message/Media (by me)   | Create Post/Message/Media|                          |                         |
 | New Post/Message/Media by User  | Publish Post/Message/Media|                          |                         |
 
+### Spreadsheets
+
+| Triggers                          | Actions                                | Searches                               | Search or Creates                |
+|-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
+| New Row                           | Create/Add Row                         | Lookup/Find Row(s) (with line-item support) | Find or Create Row               |
+| Updated Row                       | Create Row(s)                          | Find Spreadsheet                       |                                  |
+| New Spreadsheet/Worksheet         | Update Row                             |                                        |                                  |
+|                                    | Delete Row                             |                                        |                                  |
+|                                    | Create Spreadsheet                     |                                        |                                  |
+
+### Task Management
+
+| Triggers                          | Actions                                | Searches                               | Search or Creates                |
+|-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
+| New Task                           | Create/Add Task                         | Find Task                              | Find or Create Task              |
+| Completed Task                     | Complete Task                           |                                        |                                  |
+|                                    | Update Task                             |                                        |                                  |
+
+### Team Chat
+
+| Triggers                          | Actions                                | Searches                               | Search or Creates                |
+|-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
+| New Message in Channel             | Send Channel Message                    | Find User (by email, name, username)   |                                  |
+| New Reaction on Message            | Send Direct/Private Message             |                                        |                                  |
+| New Mention                        | Set Status                              |                                        |                                  |
+| New User                           | Add User/Role                           |                                        |                                  |
+
+### Time Tracking Software
+
+| Triggers                          | Actions                                | Searches                               | Search or Creates                |
+|-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
+| New Time Entry                     | Start Time Entry                        | Find Client                            | Find or Create Client            |
+| New Time Entry/Timer Started       | Create Time Entry                       |                                        | Find or Create Project           |
+|                                    |                                        | Create Project                         |                                  |
+|                                    |                                        | Create Client                          |                                  |
+|                                    |                                        | Create Task                            |                                  |
+
 ### Transactional Emails
 
 | Triggers        | Actions       | Searches  | Search or Creates |
@@ -215,6 +355,27 @@ If you don't see a list for your specific category, we may not have sufficient i
 | Open/Clicked Event |             |           |                   |
 
 *Send Email actions often allowed users to select and use a template in the action’s setup.
+
+### Transcription
+
+| Triggers                   | Actions                   | Searches      | Search or Creates       |
+| -------------------------- | ------------------------- | --------------| ----------------------- |
+| New Transcript             | Create Transcription/Upload Audio or File |               |                         |
+
+### Video & Audio
+
+| Triggers                   | Actions              | Searches        | Search or Creates |
+|----------------------------|----------------------|-----------------|-------------------|
+| New Video (in Channel/Playlist) | Upload Video         | Find Track      |                   |
+| New Track in Playlist      | Add Track to Playlist |                 |                   |
+
+### Video Conferencing
+
+| Triggers        | Actions          | Searches  | Search or Creates |
+| --------------- | ---------------- | --------- | ----------------- |
+| New Recording   | Create/Add Registrant |           |                   |
+| New Registrant  | Create Meeting   |           |                   |
+| New Meeting     |                  |           |                   |
 
 ### Webinars
 
