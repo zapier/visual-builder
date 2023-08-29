@@ -126,7 +126,30 @@ Here's what this information means:
 #### Step 3
 Repeat to add more posts.
 
-***
+* * * 
+
+## Adding a new subcategory 
+Subcategories help group posts together. Note: we only support subcategories one level deep.
+
+#### Step 1
+Under a collection, create a new sub-folder:
+For example:
+
+```
+/_reference
+  /soda-brands (new sub-folder)
+```
+
+#### Step 2
+Create your posts under the new sub-folder:
+```
+/_reference
+  /soda-brands
+    pepsi.md
+    coke.md
+```
+
+* * *
 
 ## Code snippet highlighting
 If you are using a language that contains curly braces, you will likely need to place {% raw %} and  {% endraw %} tags around your code. [Learn more](https://jekyllrb.com/docs/liquid/tags/#code-snippet-highlighting).
