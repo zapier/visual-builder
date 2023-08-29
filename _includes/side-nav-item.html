@@ -1,4 +1,4 @@
-{% assign sorted = (include.items | sort: 'order')%}
+{% assign sorted = (include.items | sort: 'order') %}
 
 <a class="sidebar__toggle {% if include.current_section == include.section_id %} sidebar__toggle--is-selected {% endif %}" href="{{ site.baseurl }}{{ sorted[0].url }}">
   <h3 class="sidebar__title">{{ include.title }}</h3>
@@ -6,11 +6,39 @@
 </a>
 
 <ul id={{ include.section_id | append: '-list' }} class="sidebar__list" aria-hidden="{% if include.current_section != include.section_id %}true{% else %}false{% endif %}">
+  {% assign subcategories = "" | split: ',' %}
   {% for item in sorted %}
-    {% unless item.exclude %}
+    {% assign split_path = item.path | split: '/' %}
+    {% if split_path.size == 3 %}
+      {% unless subcategories contains split_path[1] %}
+        {% assign subcategories = subcategories | push: split_path[1] %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+
+  {% for subcategory in subcategories %}
+    <li class="sidebar__list-subcategory">
+      <p class="sidebar__list-subcategory-title">{{ subcategory | replace: '-', ' ' | capitalize }}</p>
+      <ul class="sidebar__list-subcategory-list">
+        {% for item in sorted %}
+          {% assign split_path = item.path | split: '/' %}
+          {% if split_path.size == 3 and split_path[1] == subcategory %}
+            <li>
+              <a href="{{ site.baseurl }}{{ item.url }}" class="sidebar__list-link {% if page.url == item.url %} sidebar__list-link--is-selected {% endif %}">{{ item.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+
+  {% comment %}Loop through non-subcategory items{% endcomment %}
+  {% for item in sorted %}
+    {% assign split_path = item.path | split: '/' %}
+    {% if split_path.size == 2 %}
       <li class="sidebar__list-item">
         <a href="{{ site.baseurl }}{{ item.url }}" class="sidebar__list-link {% if page.url == item.url %} sidebar__list-link--is-selected {% endif %}">{{ item.title }}</a>
       </li>
-    {% endunless %}
+    {% endif %}
   {% endfor %}
 </ul>
