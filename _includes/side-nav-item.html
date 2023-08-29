@@ -1,16 +1,62 @@
-{% assign sorted = (include.items | sort: 'order')%}
+{% assign sorted = (include.items | sort: 'order') %}
 
 <a class="sidebar__toggle {% if include.current_section == include.section_id %} sidebar__toggle--is-selected {% endif %}" href="{{ site.baseurl }}{{ sorted[0].url }}">
   <h3 class="sidebar__title">{{ include.title }}</h3>
   <div class="sidebar__arrow js-sidebar-toggle" aria-controls="{{ include.section_id | append: '-list' }}" aria-expanded="{% if include.current_section != include.section_id %}false{% else %}true{% endif %}"></div>
 </a>
 
+
+<!--
+This section represents the list of items in the sidebar for a collection. 
+See side-nav.html for the list of collections in the sidebar.
+
+The list is split into two sections: subcategories and non-subcategory items.
+For context, the path is structured as follows:
+  /collection/subcategory/post
+  /collection/post
+
+All posts with a subcategory has a path with 3 elements, all posts without a subcategory has a path with 2 elements.
+-->
 <ul id={{ include.section_id | append: '-list' }} class="sidebar__list" aria-hidden="{% if include.current_section != include.section_id %}true{% else %}false{% endif %}">
+  <!--subcategories represents a comma-separated string of all subcategories-->
+  {% assign subcategories = "" | split: ',' %}
+
+  <!--For each post, check the path, if it contains a subcategory, push the subcategory into the subcategories string-->
   {% for item in sorted %}
-    {% unless item.exclude %}
+    {% assign split_path = item.path | split: '/' %}
+    {% if split_path.size == 3 %}
+      {% unless subcategories contains split_path[1] %}
+        {% assign subcategories = subcategories | push: split_path[1] %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+
+  <!--Loop through all the subcategories, for each one, loop through all the posts, if it
+  matches the subcategory, render this item under the subcategory.
+  -->
+  {% for subcategory in subcategories %}
+    <li class="sidebar__list-subcategory">
+      <p class="sidebar__list-subcategory-title">{{ subcategory | replace: '-', ' ' | capitalize }}</p>
+      <ul class="sidebar__list-subcategory-list">
+        {% for item in sorted %}
+          {% assign split_path = item.path | split: '/' %}
+          {% if split_path.size == 3 and split_path[1] == subcategory %}
+            <li>
+              <a href="{{ site.baseurl }}{{ item.url }}" class="sidebar__list-link {% if page.url == item.url %} sidebar__list-link--is-selected {% endif %}">{{ item.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+
+  <!--For every other item without a subcategory, render the remaining items.-->
+  {% for item in sorted %}
+    {% assign split_path = item.path | split: '/' %}
+    {% if split_path.size == 2 %}
       <li class="sidebar__list-item">
         <a href="{{ site.baseurl }}{{ item.url }}" class="sidebar__list-link {% if page.url == item.url %} sidebar__list-link--is-selected {% endif %}">{{ item.title }}</a>
       </li>
-    {% endunless %}
+    {% endif %}
   {% endfor %}
 </ul>

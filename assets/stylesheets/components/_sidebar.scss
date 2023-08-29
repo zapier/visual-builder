@@ -157,6 +157,22 @@
     }
   }
 
+  &__list-subcategory {
+    padding-left: 20px;
+    list-style: none;
+    &-title {
+      font-weight: bold;
+    }
+    &-list {
+      display: block;
+      text-decoration: none;
+      color: $blackwidow;
+      padding-left: 0;
+      margin-top: 10px;
+      list-style: none;
+    }
+  }
+  
   &__list-link {
     display: block;
     text-decoration: none;
