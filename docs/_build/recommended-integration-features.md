@@ -342,9 +342,9 @@ If you don't see a list for your specific category, we may not have sufficient i
 |-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
 | New Time Entry                     | Start Time Entry                        | Find Client                            | Find or Create Client            |
 | New Time Entry/Timer Started       | Create Time Entry                       |                                        | Find or Create Project           |
-|                                    |                                        | Create Project                         |                                  |
-|                                    |                                        | Create Client                          |                                  |
-|                                    |                                        | Create Task                            |                                  |
+|                                    | Create Project                          |                                        |                                  |
+|                                    | Create Client                           |                                        |                                  |
+|                                    | Create Task                             |                                        |                                  |
 
 ### Transactional Emails
 
