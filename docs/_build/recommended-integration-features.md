@@ -27,6 +27,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Quote/Estimate     | Send Invoice                    |                              |                                      |
 | New Transaction        | Create Expense                  |                              |                                      |
 
+
 ### Ads & Conversions
 
 | Triggers                     | Actions                             | Searches | Search or Creates |
@@ -36,12 +37,14 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 *Be sure your actions cover all types of events or conversions your app supports, such as ‘offline’, ‘lead’, ‘funnel’, etc.
 
+
 ### AI Tools
 
 | Triggers                | Actions                     | Searches                               | Search or Creates                |
 |-------------------------|-----------------------------|----------------------------------------|----------------------------------|
 | (Chat) New Message      | Send Prompt                 |                                        |                                  |
 | New Transcription/Recording/Video/Image Ready | Request/Generate Image/Transcription/Video/etc. |                               |                                  |
+
 
 ### Bookmark Managers
 
@@ -50,6 +53,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Item/Bookmark       | Bookmark/Add Page/Item      |                                        |                                  |
 | New Favorited Item      |                             |                                        |                                  |
 | New Tagged Item         |                             |                                        |                                  |
+
 
 ### Calendar
 
@@ -60,6 +64,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | Event Ended             | Update Event                |                                        |                                  |
 | Event Cancelled         | Delete Event                |                                        |                                  |
 
+
 ### Call Tracking
 
 | Triggers                | Actions                     | Searches                               | Search or Creates                |
@@ -67,6 +72,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | Call completed          |                             |                                        |                                  |
 | New Call/Call Started   |                             |                                        |                                  |
 | Call tagged             |                             |                                        |                                  |
+
 
 ### Contact Management
 
@@ -79,6 +85,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 *If you’re adding a “Create or Update” action instead of an “Update” action along with a “Find or Create” action, it’s best practice to return in the response payload if the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
 
+
 ### Customer Support
 
 | Triggers | Actions | Searches | Search or Creates |
@@ -88,6 +95,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Customer/User/Lead | Add/Remove Tag on User/Ticket/Lead | | |
 | Finished/Closed Chat | Add Comment/Note on Ticket | | |
 | Tag Added to Customer/User/Lead | Send Message | | |
+
 
 ### CRM (Customer Relationship Management)
 
@@ -104,6 +112,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 **“Updated” triggers for CRMs are often most useful when users are able to specify which field(s) to watch for updates on, instead of triggering on any and all updates. 
 
+
 ### Databases
 
 | Triggers             | Actions               | Searches                                     | Search or Creates                     |
@@ -113,6 +122,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 |                      | Find Record/Row via Custom Query |                                              |                                       |
 
 *Zapier searches automatically return only the first result in the response. To return multiple results, return the set of results as an array of objects under a descriptive key.
+
 
 ### Documents
 
@@ -124,6 +134,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | Document Sent                    |                               |                          |                         |
 | Document Signed                  |                               |                          |                         |
 
+
 ### Drip Email
 
 | Triggers                | Actions                                                                    | Searches                                                    | Search or Creates                                                 |
@@ -132,6 +143,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Tagged Subscriber    | Create Subscriber/Lead/Prospect/Contact                                   |                                                             |                                                                   |
 | New Unsubscribe         | Update Subscriber/Lead/Prospect/Contact                                   |                                                             |                                                                   |
 | New Reply               | Add Subscriber/Lead/Prospect/Contact to Sequence/Campaign/List/Audience    |                                                             |                                                                   |
+
 
 ### eCommerce
 
@@ -143,6 +155,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Cancelled Order/Subscription     | Create Product  |                  |                       |
 | Abandoned Cart                       |                 |                  |                       |
 
+
 ### Email
 
 | Triggers                         | Actions                       | Searches                 | Search or Creates       |
@@ -152,6 +165,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Labeled/Tagged/Starred Email | Validate Email (if applicable)|                          |                         |
 | New Attachment                   | Create Contact                |                          |                         |
 |                                  | Add Label to Email            |                          |                         |
+
 
 ### Email Newsletter
 
@@ -164,6 +178,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 *If you’re adding a “Create or Update” action instead of an “Update” action along with a “Find or Create” action, it’s best practice to return in the response payload if the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
 
+
 ### Event Management
 
 | Triggers              | Actions              | Searches          | Search or Creates             |
@@ -171,6 +186,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Contact/Attendee/Lead | Create Contact/Attendee/Lead | Find Contact/Attendee/Lead | Find or Create Contact/Attendee/Lead |
 | New Registrant/RSVP | Add Registrant to Event |                     |                                     |
 | New Order/Booking/Ticket | Create Event |                             |                                     |
+
 
 ### File Management & Storage
 
@@ -181,12 +197,14 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Folder                       | Create File                   |                          |                         |
 | Updated File                     | Move File                     |                          |                         |
 
+
 ### Fundraiser
 
 | Triggers                  | Actions                    | Searches                    | Search or Creates                      |
 |---------------------------|----------------------------|-----------------------------|----------------------------------------|
 | New Donation/Transaction/Pledge | Create Member/Donor/Contact  | Find Member/Donor/Contact   | Find or Create Member/Donor/Contact    |
 | New Member/Donor/Contact       | Create Donation/Transaction/Pledge   |                             |                                        |
+
 
 ### Marketing Automation
 
@@ -202,6 +220,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 *If you’re adding a “Create or Update” action instead of an “Update” action along with a “Find or Create” action, it’s best practice to return in the response payload if the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
 
+
 ### Notes
 
 | Triggers                         | Actions                       | Searches                 | Search or Creates       |
@@ -209,12 +228,14 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Note                         | Create Note                   |                          |                         |
 | New Note in Notebook/Section/Tag | Append to Note                |                          |                         |
 
+
 ### Notifications
 
 
 | Triggers                         | Actions                       | Searches                 | Search or Creates       |
 |----------------------------------|-------------------------------|--------------------------|-------------------------|
 | New Notification/Message         | Send Notification/Message     |                          |                         |
+
 
 ### Online Courses
 
@@ -224,6 +245,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Order/Sale/Purchase            | Unenroll User/Student              |                                   |                               |
 | New User/Student                   | Create Credentials/Grant Access/Issue Credentials|                                 |                               |
 | Course/Lesson Completed            | Create User/Student                |                                   |                               |
+
 
 ### Payment Processing
 
@@ -238,7 +260,9 @@ If you don't see a list for your specific category, we may not have sufficient i
 | Failed Payment                      |                                     |                     |                            |
 | Checkout Session Completed          |                                     |                     |                            |
 
+
 ### Phone & SMS
+
 | Triggers                         | Actions                       | Searches                 | Search or Creates       |
 |----------------------------------|-------------------------------|--------------------------|-------------------------|
 | New SMS/Message Received         | Create or Update Contact      | Find Contact             | Find or Create Contact  |
@@ -247,12 +271,14 @@ If you don't see a list for your specific category, we may not have sufficient i
 |                                  | Opt-in Contact                |                          |                         |
 |                                  | Call Phone Number             |                          |                         |
 
+
 ### Product Management
 
 | Triggers                          | Actions                                | Searches                               | Search or Creates                |
 |-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
 | New Feedback/Form Submitted/Request | Create Note/Feature/Task/Idea           |                                        |                                  |
 | New Note/Comment                   |                                        |                                        |                                  |
+
 
 ### Project Management
 
@@ -266,6 +292,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | Updated Task/Item/Issue            | Add Label/Tag to Task/Item/Issue        |                                        |                                  |
 | Specific Value on Task/Item/Issue Changed |                                    |                                        |                                  |
 
+
 ### Proposal & Invoice Management
 
 | Triggers                | Actions                     | Searches                   | Search or Creates         |
@@ -276,6 +303,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | Proposal Sent           | Create Project              |                            |                           |
 | New Proposal/Estimate/Quote |                             |                            |                           |
 
+
 ### Scheduling & Booking
 
 | Triggers | Actions | Searches | Search or Creates   |
@@ -285,12 +313,14 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Client/Customer |       |        |               |
 | Booking/Appointment Completed |       |        |               |
 
+
 ### Server Monitoring
 
 | Triggers                           | Actions                    | Searches                           | Search or Creates            |
 |------------------------------------|----------------------------|------------------------------------|-----------------------------|
 | New or Updated Ticket/Request/Incident | Create Alert           | Find Ticket/Request/Incident   |                               |
 | New Alert                           | Create Ticket/Request         |                                    |                               |
+
 
 ### Signatures
 
@@ -302,12 +332,14 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 *Create Document/Contract actions typically allow for users to select a template in the action’s setup.
 
+
 ### Social Media Accounts
 
 | Triggers                        | Actions                  | Searches                 | Search or Creates       |
 | ------------------------------- | ------------------------ | ------------------------ | ----------------------- |
 | New Post/Message/Media (by me)   | Create Post/Message/Media|                          |                         |
 | New Post/Message/Media by User  | Publish Post/Message/Media|                          |                         |
+
 
 ### Spreadsheets
 
@@ -319,6 +351,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 |                                    | Delete Row                             |                                        |                                  |
 |                                    | Create Spreadsheet                     |                                        |                                  |
 
+
 ### Task Management
 
 | Triggers                          | Actions                                | Searches                               | Search or Creates                |
@@ -326,6 +359,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Task                           | Create/Add Task                         | Find Task                              | Find or Create Task              |
 | Completed Task                     | Complete Task                           |                                        |                                  |
 |                                    | Update Task                             |                                        |                                  |
+
 
 ### Team Chat
 
@@ -335,6 +369,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Reaction on Message            | Send Direct/Private Message             |                                        |                                  |
 | New Mention                        | Set Status                              |                                        |                                  |
 | New User                           | Add User/Role                           |                                        |                                  |
+
 
 ### Time Tracking Software
 
@@ -346,6 +381,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 |                                    | Create Client                           |                                        |                                  |
 |                                    | Create Task                             |                                        |                                  |
 
+
 ### Transactional Emails
 
 | Triggers        | Actions       | Searches  | Search or Creates |
@@ -356,11 +392,13 @@ If you don't see a list for your specific category, we may not have sufficient i
 
 *Send Email actions often allowed users to select and use a template in the action’s setup.
 
+
 ### Transcription
 
 | Triggers                   | Actions                   | Searches      | Search or Creates       |
 | -------------------------- | ------------------------- | --------------| ----------------------- |
 | New Transcript             | Create Transcription/Upload Audio or File |               |                         |
+
 
 ### Video & Audio
 
@@ -369,6 +407,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Video (in Channel/Playlist) | Upload Video         | Find Track      |                   |
 | New Track in Playlist      | Add Track to Playlist |                 |                   |
 
+
 ### Video Conferencing
 
 | Triggers        | Actions          | Searches  | Search or Creates |
@@ -376,6 +415,7 @@ If you don't see a list for your specific category, we may not have sufficient i
 | New Recording   | Create/Add Registrant |           |                   |
 | New Registrant  | Create Meeting   |           |                   |
 | New Meeting     |                  |           |                   |
+
 
 ### Webinars
 
