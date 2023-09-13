@@ -6,6 +6,7 @@ redirect_from: /cli_docs/cli
 ---
 
 <!-- AUTO GENERATED, DO NOT EDIT, COPY zapier-platform/packages/cli/docs/cli.md INSTEAD -->
+
 # Zapier CLI Reference
 
 These are the generated docs for all Zapier platform CLI commands.
