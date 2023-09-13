@@ -10,6 +10,7 @@ redirect_from: /cli_docs/docs
 
 <!-- GENERATED! DON'T EDIT THIS FILE. ONLY EDIT `README-source.md` -->
 <!-- How? See https://coda.io/d/Team-Developer-Platform_di0MgBhlCWf/Syncing-CLI-Docs_su6uK#_lu3fi -->
+
 Zapier is a platform for creating integrations and workflows. This CLI is your gateway to creating custom applications on the Zapier platform.
 
 You may find some documents on the Zapier site duplicate or outdated. The most up-to-date contents are always available on GitHub:
