@@ -96,6 +96,20 @@ Do not use pure white (`#FFFFFF`) for either color, as overlaid text would be un
 
 Zapier uses the primary color as the background color in your app’s Zapier App Directory listing, and may additionally use it in the Zapier app dashboard, Zapier blog marketing materials, and other parts of Zapier’s app and content that promote your app’s integrations.
 
+## How to rebrand your integration
+
+### Private Integrations
+
+If your integration is in `private` status, you can freely update your integration's name, description, homepage URL, and logo anytime on the Integration Settings page. You can access Integration Settings by clicking the gear icon to the right of the integration name.
+
+![Integration Setttings page for private app](https://cdn.zappy.app/cf718800abff0d3a5905e92bb8c3bc90.png)
+
+### Beta/Public Integrations
+
+If your integration is in `beta` or `public` status, branding changes need to be processed by our Partner Support team. To request branding changes, visit the Integration Settings page and click the form linked at the top of the page. You can access Integration Settings by clicking the gear icon to the right of the integration name. Your app ID and Zapier account email will automatically populate into the form. Provide only the details you want updated on your integration's directory page, and submit the form! You'll receive a confirmation email of your submission, and our Partner Support team will process the changes within 1 business day. You'll receive a second email confirming once the changes have been made.
+
+![Integration Settings page for public app](https://cdn.zappy.app/13cb72133173c8add77496c62d0a4079.png)
+
 ## How to design successful Zapier integrations
 
 It starts with a Google search, perhaps, or a peek at Zapier's App Directory to find a new integration. Then the user makes a new Zap, either manually or from a Zap Template, and chooses your app. Then they connect their account with your app, set up the trigger or action they need for this workflow, and tell Zapier what data to copy from other apps to your app or vice versa.
