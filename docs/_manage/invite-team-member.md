@@ -98,9 +98,9 @@ We'll keep you in the loop with Zapier Platform and Partner Program Updates. The
 * Alerts about user [Bugs and Feature Requests](https://platform.zapier.com/manage/analyze-integration-performance#bugs)
 * Critical Platform and Program Updates
 
-You cannot unsubscribe from Zapier Platform and Partner Program Updates unless an existing integration team member (with an equal or greater role as you^) removes you from the integration team entirely. These emails deliver essential announcements about the Partner Program, Zapier Platform features, product updates, and compliance with integration quality standards to ensure you're always up-to-date with changes that could impact your use of the Zapier Platform.
+You cannot unsubscribe from Zapier Platform and Partner Program Updates unless an existing integration team member removes you from the integration team entirely. These emails deliver essential announcements about the Partner Program, Zapier Platform features, product updates, and compliance with integration quality standards to ensure you're always up-to-date with changes that could impact your use of the Zapier Platform.
 
-> **^An Admin can remove another Admin or Collaborator from the integration team. A Collaborator can only remove other Collaborators from the integration team.**
+> **Note: An Admin can remove another Admin or Collaborator from the integration team. A Collaborator can only remove other Collaborators from the integration team.**
 
 ### Opting Team Members Into Emails
 
