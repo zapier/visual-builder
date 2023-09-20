@@ -81,3 +81,31 @@ To sign up as a collaborator, log in to Zapier (or sign up for Zapier if you don
 ![JoinIntegrationFromDashbaord](https://cdn.zappy.app/5a3452ea8e72049a2083aab5dac59069.png)
 
 ![JoinIntegration](https://cdn.zappy.app/b47f3a9b672533df505667cf3933a9ee.png)
+
+## Managing Partner Email Subscriptions
+
+### General Partner Marketing Updates
+
+Zapier sends out general partner marketing updates related to your integration and the Zapier platform. These emails include:
+* Monthly Partner Newsletter with integration data insights
+* Outreach about partnership and co-marketing opportunities 
+
+To control your subscription for these emails, visit the [email preferences page](https://developer.zapier.com/partner-settings/email) in the developer dashboard and opt in or out per integration as needed.
+
+### Platform and Partner Program Updates
+
+We'll keep you in the loop with Zapier Platform and Partner Program Updates. These emails include:
+* Alerts about user [Bugs and Feature Requests](https://platform.zapier.com/manage/analyze-integration-performance#bugs)
+* Critical Platform and Program Updates
+
+You cannot unsubscribe from Zapier Platform and Partner Program Updates unless an existing integration team member (with an equal or greater role as you^) removes you from the integration team entirely. These emails deliver essential announcements about the Partner Program, Zapier Platform features, product updates, and compliance with integration quality standards to ensure you're always up-to-date with changes that could impact your use of the Zapier Platform.
+
+> **^An Admin can remove another Admin or Collaborator from the integration team. A Collaborator can only remove other Collaborators from the integration team.**
+
+### Opting Team Members Into Emails
+
+If you want to ensure that your team members receive partner marketing emails:
+
+1. [Invite your team members](https://platform.zapier.com/manage/invite-team-member) to the integration team as either an Admin or Collaborator and ensure they accept the invite
+2. Team members who accept the invite will automatically receive Platform and Partner Program Updates
+3. If they want to receive General Partner Marketing updates, have them visit their [email preferences](https://developer.zapier.com/partner-settings/email) in the developer platform and ensure they’re opted into emails for the integration you want them to receive alerts for
