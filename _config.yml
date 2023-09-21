@@ -40,7 +40,8 @@ collections:
   cli_docs:
     output: true
     permalink: /:collection/:name
-
+  partner_success_stories:
+    output: true
 
 defaults:
   - scope:
