@@ -56,17 +56,6 @@ No. If you'd like to work with file attachments in your app, you'll need to conv
 
 <a id="files"></a>
 
-## What response type does Zapier expect?
-
-With every API call, including authentication and auth testing calls, triggers, searches, and create actions, Zapier expects to receive response data from the API. If your API call does not return a response, Zapier will show a timeout error.
-
-Zapier additionally expects different data for different API calls:
-
-- **Object** _for Authentication, Auth testing, and Create Actions_. Zapier expects to receive a single JSON formatted object with the correct details, including specific fields for Authentication calls depending on the auth scheme. Zapier will parse the individual fields and, with Create Actions, let users include their data in subsequent Zap steps.
-- **Array** _for Triggers and Search Actions_. Zapier expects to receive a JSON formatted array with the results in reverse chronological order. Even if the trigger or search only returns a single item, it should be formatted as an array. Zapier will then parse the results and return the most relevant result for searches, and return all new items from Triggers that pass Zapier's deduper.
-
-<a id="array"></a>
-
 ## I got an "An array is expected" error. How do I fix that?
 
 With you add a polling trigger or search action to a Zap, the Zapier platform expects to get a bare array of the new or found items, sorted in reverse chronological order. APIs will instead return a result _object_ that contains the array of items the trigger needs.
@@ -120,61 +109,6 @@ While building your integration, testing authentication, and customizing your ap
 Open your [Zapier _Connected Accounts_](https://zapier.com/app/connections) page, and find your app's name (you may need to use the search box or `CMD`+`F` (Mac) or `Ctrl`+`F` (PC)). Click the app name. Once on the app's connections page, identify the connection to remove and click the three dots, then _Delete_, and confirm the deletion. Repeat for each subsequent testing account you added to clean up your authentication list.
 
 Then refresh your integration page in the Visual Builder, and you'll only see the authentications that were not deleted.
-
-<a id="output"></a>
-
-## How do Sample Data and Output Fields work?
-
-![Adding Sample Data to Zapier integration](https://cdn.zappy.app/293b09e9593b591de3c735988f1a5f19.png)
-_Sample Data gives Zapier example data if users don't test the trigger or action. Output Fields give your API data user-friendly names in subsequent Zap steps._
-
-The last step in creating a new Trigger or Action for a Zapier integration is to _Define your Output_. Zapier asks both for Sample Data and Output Fields. Sample Data is especially important for Triggers, and useful with Actions as well. Output Fields are equally important for both triggers and actions, as the output data from both may be used in subsequent Zap steps.
-
-### Sample Data
-
-![Sample Data in a Trigger step with no available data](https://cdn.zappy.app/05e9be8a62a663f42ab25cf2b17591b8.png)
-![Sample Data in an Action step](https://cdn.zappy.app/42353c3702ca94af6000e3efb926a3f2.png)
-
-In the Zap Editor, Zapier will attempt to retrieve or create existing data to test Triggers and Actions. If users are in a hurry when building a Zap, or don't have any data available, they can skip these test steps. Zapier will then show the sample data instead, so they can map fields correctly in subsequent Zap steps without seeing their account's live data.
-
-Make sure to provide JSON-formatted sample data using the same field names as your API. The sample response data should not include any personally identifiable data, have copy that is safe for work, and be easily recognizable as sample data.
-
-When providing sample data, it's also important that it only include fields that are present every time a Zap runs. When a field is provided in the sample, it can be mapped into a field in a later action.
-
-If that field isn't available when the user's Zap runs, the action field will be empty, which can cause errors or unexpected results for users. For example, suppose your sample data looks like this:
-
-```json
-{
-  "id": 1,
-  "first_name": "Jane",
-  "last_name": "Suarez",
-  "email_address": "janesz@example.com",
-  "job_title": "Executive Director"
-}
-```
-
-A user might map the `job_title` information into a required field in another app, such as a CRM. Then, when the Zap runs, `job_title` is only included in the live result if it happens to be available, and the data the Zap receives looks like this:
-
-```json
-{
-  "id": 5,
-  "first_name": "Jacob",
-  "last_name": "Giotto",
-  "email_address": "jacob@example.com"
-}
-```
-
-The user's Zap will error unexpectedly when they try to add the person to their CRM because `job_title` is a required field in the CRM but there's no data in it. Because this result is confusing, there are several [integration checks](https://platform.zapier.com/publish/integration-checks-reference) that require sample and live data to match.
-
-### Output Fields
-
-Output Fields add user-friendly labels to your API's response data. Zapier uses a basic human-friendly transformation of field names by default, capitalizing words and adding spaces instead of underscores. You can customize this further with Output Fields.
-
-For example, if you use GitHub's API to watch for new issues, the API calls the issue name `title`. Users may expect that field to be called _Issue_ or _Issue Title_, so you could define the Output Field as having the name _Issue Title_, rather than the default transformation of "Title".
-
-You can learn more about how Zapier uses sample data and output fields in [triggers](https://platform.zapier.com/build/triggers#define-sample-data-and-output-fields) and [actions](https://platform.zapier.com/build/action#define-sample-data-and-output-fields).
-
-<a id="resthooktesting"></a>
 
 ## How do I define REST Hooks?
 
