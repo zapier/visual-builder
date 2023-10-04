@@ -9,7 +9,7 @@ redirect_from:
 
 # Use dynamic dropdowns in Zapier Platform CLI
 
-API endpoints sometimes require clients to specify a parent object in order to create or access the child resources. For instance, accessing the tasts in a project, or specifying a spreadsheet ID in order to retrieve its worksheets. Since people don’t speak in auto-incremented ID’s, it is necessary that Zapier offer a simple way to select that parent using human readable handles.
+API endpoints sometimes require clients to specify a parent object in order to create or access the child resources. For instance, accessing the tasks in a project, or specifying a spreadsheet ID in order to retrieve its worksheets. Since people don’t speak in auto-incremented IDs, it is necessary that Zapier offer a simple way to select that parent using human readable handles.
 
 Zapier does that with a dropdown that is populated by making a live API call to fetch a list of parent objects. We call these special dropdowns “dynamic dropdowns.”
 
@@ -26,7 +26,7 @@ If the dynamic dropdown is powered by a resource, the value of the `dynamic` pro
 
 Before adding a dynamic dropdown, you should have:
 
-- A trigger, create action or search action that has dynamic dropdown field added.
+- A trigger, create action or search action that needs a dynamic dropdown field added.
 - A trigger or a resource that Zapier would use to make the API call that would get the values to populate the dynamic dropdown field. 
 
 > **Note**: If a trigger is used, and the trigger is not to be made available to the end users, you can hide this trigger from the end users by setting `hidden:true` on the display object of the trigger definition.

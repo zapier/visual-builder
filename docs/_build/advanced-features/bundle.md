@@ -15,7 +15,9 @@ Zapier integrations include the following bundles:
 
 - authData
 - inputData
+- meta
 - rawRequest and cleanedRequest
+- outputData
 - targetURL
 - subscribeData
 - process.env
@@ -51,6 +53,21 @@ Commonly used inputData fields include:
 - Authorization Code: {% raw %}`{{bundle.inputData.code}}`{% endraw %}
 - ID of selected triggering event: {% raw %}`{{bundle.inputData.id}}`{% endraw %}
 
+## meta
+
+Reference with: {% raw %}`{{bundle.meta.field}}`{% endraw %}
+
+`bundle.meta` contains information on what the user is doing. It has the following options for `field`:
+
+| key | default | description |
+| --- | --- | --- |
+| `isLoadingSample` | `false` | If true, this run was initiated manually via the Zap Editor |
+| `isFillingDynamicDropdown` | `false` | If true, this poll is being used to populate a dynamic dropdown. You only need to return the fields you specified (such as `id` and `name`), though returning everything is fine too |
+| `isPopulatingDedupe` | `false` | If true, the results of this poll will be used to initialize the deduplication list rather than trigger a zap. You should grab as many items as possible. See also: [deduplication](#dedup) |
+| `limit` | `-1` | The number of items you should fetch. `-1` indicates there's no limit. Build this into your calls insofar as you are able |
+| `page` | `0` | Used in [paging](#paging) to uniquely identify which page of results should be returned |
+| `isTestingAuth` | `false` | (legacy property) If true, the poll was triggered by a user testing their account (via [clicking "test"](https://cdn.zapier.com/storage/photos/5c94c304ce11b02c073a973466a7b846.png) or during setup). We use this data to populate the auth label, but it's mostly used to verify we made a successful authenticated request |
+
 ## rawRequest and cleanedRequest
 > Note: `bundle.rawRequest` and `bundle.cleanedRequest` are only available in the `perform` for webhooks, `getAccessToken` for OAuth v2 and `performResume` in callback actions.
 
@@ -59,6 +76,14 @@ Reference with: {% raw %}`{{bundle.rawRequest}}`{% endraw %} or {% raw %}`{{bund
 It includes the raw or cleaned information, respectively, from the HTTP request that triggered the `perform` method, or from the user's browser request that triggers the `getAccessToken` call from OAuth v2 authentication. You can reference individual fields with `cleanedRequest`.
 
 Use `bundle.rawRequest` if you need access to header data. In `bundle.rawRequest`, headers other than `Content-Length` and `Content-Type` will be prefixed with `Http-`, and all headers will be named in Camel-Case.
+
+## outputData
+
+Reference with: {% raw %}`{{bundle.outputData}}`{% endraw %}
+
+> Note: `bundle.outputData` is only available in the `performResume` in a callback action - read about that advanced functionality [here](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#zgeneratecallbackurl). 
+
+Using `bundle.outputData` will return a whatever data you originally returned in the `perform`, allowing you to mix that with `bundle.rawRequest` or `bundle.cleanedRequest`.
 
 ## targetUrl
 Referenced with: {% raw %}`{{bundle.targetUrl}}`{% endraw %}

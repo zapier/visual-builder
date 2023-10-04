@@ -9,7 +9,7 @@ redirect_from:
 
 # Field definitions and types
 
-There are three types of fields exist for users to see in the Zap editor: 
+Three types of fields exist for users to see in the Zap editor: 
 
 - Input fields
 - Dynamic fields

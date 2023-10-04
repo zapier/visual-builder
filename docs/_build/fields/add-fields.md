@@ -17,7 +17,7 @@ Actions require an input form, as they always need a way for users to send data 
 
 In this guide we will cover:
 - Add an input field to a trigger or action
-- Setting field options
+- Set field options
 - Reorder input fields
 - Remove input fields
 
@@ -56,7 +56,7 @@ In this guide we will cover:
 
 An email app like MailChimp requires an email address to add a new email subscription, and a calendar app like Google Calendar requires an event title, date, and time to add new events. 
 
-Check the _Required_ option on those fields if your trigger or action step requires any data to make the API request. Zapier will show a red `(required)` label beside the field name in the Zap Editor, and will not let users complete the Zap step without adding data to that field.
+Check the _Required_ option on those fields if your trigger or action step requires any data to make the API request. Zapier will show a red `(required)` label beside the field name in the Zap editor, and will not let users complete the Zap step without adding data to that field.
 
 ![Zapier Required Field](https://cdn.zappy.app/f8d0fd74582dc7c5997248516ad50d4f.png)
 
@@ -121,15 +121,17 @@ For example, if your API expects a value of `1` or `2`, but `1` actually means `
 
 #### Dynamic Dropdown
 
-If users need to select data from their account in your app—such as a project, folder, team member, or other user-specific detail—then you would use a dynamic dropdown. For dynamic dropdowns, Zapier first fetches data from your API and then displays it in a menu.
+If users need to select data from their account in your app — such as a project, folder, team member, or other user-specific detail — then you would use a dynamic dropdown. For dynamic dropdowns, Zapier first fetches data from your API and then displays it in a menu.
 
 The best way to make a dynamic dropdown is to use a dedicated trigger to fetch the values for the menu. 
 
 **1. Build a trigger to fetch dynamic dropdown data**
 
-Create a new trigger, with a key, name, and noun. This trigger won't be seen by users but you may wish to include a description for your internal team's awareness. In the _Visibility in Editor_ field, select `Hidden` to hide this trigger from your app's trigger list in Zapier.
+Create a new trigger, with a key, name, and noun. This trigger is usually configured to not be seen by users but you may wish to include a description for your internal team's awareness. In the _Visibility in Editor_ field, select `Hidden` to hide this trigger from your app's trigger list in Zapier.
 
 ![Zapier hidden trigger setting](https://cdn.zappy.app/36d19e02a566c61c3df00e7b6987daf1.png)
+
+You can also use an existing, visible trigger to power a dynamic dropdown if applicable.
 
 Skip the _Input Designer_ tab, as the dynamic dropdown cannot require any user input.
 
