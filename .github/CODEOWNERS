@@ -1,3 +1,5 @@
 *                   @zapier/epd-dev-platform-content
 /docs/_embed/       @zapier/epd-partner-sharing
 /docs/_partners/    @zapier/epd-partner-sharing
+
+/docs   @zapier/team-platform-support
