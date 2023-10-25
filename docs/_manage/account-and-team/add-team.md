@@ -8,33 +8,63 @@ redirect_from:
     - /manage/invite-team-member
 ---
 
-# Add team members to your integration
+# Invite Team Members to Your Integration
 
-You can add team members to your integration to collaborate, contribute, and get analytics data on the integration in the Zapier Platform. You can have up to 100 team members on an integration regardless of if it is a private or a public integration. Team members added to your Zapier integration can be assigned either of the following two roles:
+You can add team members to your integration to collaborate, contribute, and view analytics data for your integration on the Developer Platform. Your integration team can have up to 100 team members, regardless of whether your integration is Private or Public. Team members added to your integration will be assigned one of the following roles:
 
-- **Admin**: Admins have full access to build, manage, and edit your Zapier integration. Admin access is recommended for developers and others who directly contribute to building and maintaining your integration.
+- **Admin**: Admins are granted read and write access to the integration. This role is ideal for developers and individuals actively involved in building and maintaining the integration.
 
-- **Collaborator**: Collaborators have view-only access to your Zapier integration (including integration details, history, and analytics). Collaborators are unable to edit but can view performance data, view the integration history, comment on feature requests and bugs, and access tools to embed Zapier integrations inside your UI to rack up user adoption. Collaborator access is recommended for product, leadership, partnership, marketing, and other teams that do not contribute directly to the creation and maintenance of the integration, but need to get data regarding the integration for analysis and record purposes.
+- **Collaborator**: Collaborators are granted read-only access to the integration. Collaborator access is recommended for product, leadership, partnership, marketing, and other teams seeking access to integration data for analysis and record-keeping without direct involvement in its creation and maintenance. While they cannot make direct changes to the integration, they can:
 
-## Adding team members
+- View performance data
+- View the integration history
+- Review and comment on feature requests and bug reports
+- Access tools to embed your integration throughout your site to drive user adoption
 
-To add team members to your integration:
-1. Log into the [Platform UI](https://zapier.com/app/developer).
-2. Select your **integration**. 
-3. In the _Manage_ section in the left sidebar, click on **Manage Team**.
-4. Click on the **Invite Team Member** button.
-5. Enter the team member's email address to be invited.
-6. Select the **Team Member Role**.
+## Inviting Team Members
 
-> **Note**: Admins can invite both admins and collaborators while collaborators can only invite collaborators.
+To add team members to your integration, follow these steps:
 
-7. Add a **note** to the invitation. This information will be included in the invitation email.
-8. Click the **Send Invite** button.
+1. Log into the [Developer Platform](https://zapier.com/app/developer)
+2. Choose your integration
+3. In the "Manage" section on the left sidebar, click "Manage Team”
+4. Click “Invite Team Member”
+5. Enter the email address of the team member that you want to invite
+6. Select the role that you wish to assign to the team member
+7. A note will be included in the invitation email. You can either use the default message provided, or customize it with your own text
+8. Click “Send Invite”
 
-When you do this, an invitation email would be sent to the invitee, asking them to accept the invitation.
+> **Note**: Admins can invite both Admins and Collaborators, while Collaborators can only invite Collaborators.
 
-Once an invitee accepts the invite, they can access the integration through their own Zapier account. If the invitee does not have a Zapier account, accepting the invite would prompt them to sign up one first before they can access the integration.
+Once you click "Send Invite", an email invitation will be sent to the invitee, requesting their acceptance. If the invitee does not already have a Zapier account associated with the invited email, they will need to create an account first. Upon accepting the invitation, they will gain access to the integration through their Zapier account on the Developer Platform.
 
-## View and remove team members
+## Self-Serve Collaborator Access
 
-You can view a list of invited team members (both those that have accepted the invites and those with pending invites) from the **Manage Team** page. An admin can also remove other team members from this page. However, please note that if you are removed as an Admin, you will only be able to regain Admin access if invited by an existing Admin.
+Depending on your [integration settings](https://cdn.zappy.app/b2637f3ad910c36c4e8c8224c349beee.png), users have the option to self-serve and join an integration team as Collaborators. This feature employs domain-name verification and is managed by integration Admins. Currently, this feature is only available for integrations listed in [Zapier's directory](https://zapier.com/apps).
+
+### Enabling or Disabling Self-Serve Collaborator Access
+
+To toggle the “Self-serve join as Collaborator” feature, please follow these steps:
+1. Log into the [Developer Platform](https://zapier.com/app/developer)
+2. Choose your integration
+3. In the "Manage" section on the left sidebar, click "Manage Team"
+4. Click “Settings”
+5. Click the toggle to enable or disable self-serve join as Collaborator
+
+### Managing Eligible Email Domains for Self-Serve Collaborator Access
+1. Log into the [Developer Platform](https://zapier.com/app/developer)
+2. Choose your integration
+3. In the "Manage" section on the left sidebar, click "Manage Team"
+4. Click “Settings”
+5. Click “Edit email domains”
+6. Add/remove the domain(s) to be allowed
+
+### Joining an Integration Team via Self-Serve Collaborator Access
+1. Log into the [Developer Platform](https://zapier.com/app/developer)
+2. Click “Get Access”
+3. Search for and select your integration, then click “Submit”
+4. If the Zapier account you're using is associated with an approved domain, you'll receive an invitation to join via email
+
+## View and Remove Team Members
+
+You can view a list of invited team members (both accepted and pending invites) from the “Manage Team” page. Admins have the ability to remove team members (both other Admins and Collaborators) from this page. Collaborators can only remove other Collaborators. You can also remove yourself from the team, regardless of your role. It’s important to note that if you are removed as an Admin, you can regain Admin access only if invited by an existing Admin.

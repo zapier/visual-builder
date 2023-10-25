@@ -211,7 +211,7 @@ You should then try using the Zap template to make sure it works as expected. Op
 
 Finally, when your Zap template is ready for public release, click `Submit for Review` under "Finish Up Your Zap Template". This will submit the Zap template to our team to review to ensure it works as expected and meets our standards.
 
-![Subimt for review](https://cdn.zappy.app/09d633673809c700778cfa945b63d4ba.png)
+![Submit for review](https://cdn.zappy.app/09d633673809c700778cfa945b63d4ba.png)
 
 We'll then contact you, typically within a couple of weeks, after reviewing your Zap template(s). If your Zap templates pass the tests, we will mark them as public to automatically have them show up on your app's app directory page, inside select partners' apps and sites, and in Zapier's onboarding experience.
 
