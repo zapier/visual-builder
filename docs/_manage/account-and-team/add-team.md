@@ -8,7 +8,7 @@ redirect_from:
     - /manage/invite-team-member
 ---
 
-# Invite Team Members to Your Integration
+# Invite team members to your integration
 
 You can add team members to your integration to collaborate, contribute, and view analytics data for your integration on the Developer Platform. Your integration team can have up to 100 team members, regardless of whether your integration is Private or Public. Team members added to your integration will be assigned one of the following roles:
 
@@ -21,7 +21,7 @@ You can add team members to your integration to collaborate, contribute, and vie
 - Review and comment on feature requests and bug reports
 - Access tools to embed your integration throughout your site to drive user adoption
 
-## Inviting Team Members
+## Invite team members
 
 To add team members to your integration, follow these steps:
 
@@ -38,11 +38,11 @@ To add team members to your integration, follow these steps:
 
 Once you click "Send Invite", an email invitation will be sent to the invitee, requesting their acceptance. If the invitee does not already have a Zapier account associated with the invited email, they will need to create an account first. Upon accepting the invitation, they will gain access to the integration through their Zapier account on the Developer Platform.
 
-## Self-Serve Collaborator Access
+## Self-serve Collaborator access
 
 Depending on your [integration settings](https://cdn.zappy.app/b2637f3ad910c36c4e8c8224c349beee.png), users have the option to self-serve and join an integration team as Collaborators. This feature employs domain-name verification and is managed by integration Admins. Currently, this feature is only available for integrations listed in [Zapier's directory](https://zapier.com/apps).
 
-### Enabling or Disabling Self-Serve Collaborator Access
+### Enable or disable self-serve Collaborator access
 
 To toggle the “Self-serve join as Collaborator” feature, please follow these steps:
 1. Log into the [Developer Platform](https://zapier.com/app/developer)
@@ -51,7 +51,7 @@ To toggle the “Self-serve join as Collaborator” feature, please follow these
 4. Click “Settings”
 5. Click the toggle to enable or disable self-serve join as Collaborator
 
-### Managing Eligible Email Domains for Self-Serve Collaborator Access
+### Manage eligible email domains for self-serve Collaborator access
 1. Log into the [Developer Platform](https://zapier.com/app/developer)
 2. Choose your integration
 3. In the "Manage" section on the left sidebar, click "Manage Team"
@@ -59,12 +59,12 @@ To toggle the “Self-serve join as Collaborator” feature, please follow these
 5. Click “Edit email domains”
 6. Add/remove the domain(s) to be allowed
 
-### Joining an Integration Team via Self-Serve Collaborator Access
+### Join an integration team via self-serve Collaborator access
 1. Log into the [Developer Platform](https://zapier.com/app/developer)
 2. Click “Get Access”
 3. Search for and select your integration, then click “Submit”
 4. If the Zapier account you're using is associated with an approved domain, you'll receive an invitation to join via email
 
-## View and Remove Team Members
+## View and remove team members
 
 You can view a list of invited team members (both accepted and pending invites) from the “Manage Team” page. Admins have the ability to remove team members (both other Admins and Collaborators) from this page. Collaborators can only remove other Collaborators. You can also remove yourself from the team, regardless of your role. It’s important to note that if you are removed as an Admin, you can regain Admin access only if invited by an existing Admin.
