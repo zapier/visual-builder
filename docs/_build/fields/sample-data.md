@@ -4,6 +4,8 @@ order: 5
 layout: post-toc
 redirect_from: 
     - /build/faq#how-do-sample-data-and-output-fields-work
+    - /build/faq#output-fields
+    - build/faq/#output-fields
 ---
 
 # Defining sample data and output fields

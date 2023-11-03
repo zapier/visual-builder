@@ -22,7 +22,7 @@ In the [Platform UI](https://zapier.com/app/developer):
 2. Click the **Input Designer** tab.
 3. Click **Add** and select **Dynamic Field**.
 4. A code box will appear. Add your **JavaScript code** to make an API call and fetch the fields from your app's API. Use Zapier's `z.request` to make the API call.  Your code should return each custom field's key and name to Zapier in an array, so they display correctly in the Zap editor. Learn more about using [Z Object to call a function](https://github.com/zapier/zapier-platform/blob/master/packages/cli/README.md#z-object).
-5. Once you've added your JavasScript code, click **Save**.
+5. Once you've added your JavaScript code, click **Save**.
 
 > **Note**: 
 - Do not rely on any input fields already having a value, since they won't have one the first time the Zap editor loads.

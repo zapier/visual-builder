@@ -1,5 +1,5 @@
 ---
-title: Manage integration versions in Platform UI
+title: Versions
 order: 1
 layout: post-toc
 redirect_from: 

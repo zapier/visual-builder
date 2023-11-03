@@ -517,7 +517,7 @@ Once an UI app version is exported as a CLI version to your local environment, t
 
 **Change Scenario**
 
-Building in the UI is the easiest way for anyone with API experience to build Zapier integrations. [Compare CLI to UI features.](add link to https://platform.zapier.com/docs/vs)
+Building in the UI is the easiest way for anyone with API experience to build Zapier integrations. [Compare CLI to UI features.](https://platform.zapier.com/quickstart/ui-vs-cli)
 
 **Impact to Users**
 
