@@ -1,6 +1,6 @@
 ---
 title: Security
-order: 7
+order: 6
 layout: post
 redirect_from: 
     - /embed/
