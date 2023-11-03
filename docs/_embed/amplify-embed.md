@@ -1,10 +1,10 @@
 ---
 title: Strategies to amplify your Zapier integration & embed
 order: 8
-layout: post
+layout: post-toc
 ---
 
-# Strategies to amplify your Zapier integration & embed
+# Amplify your Zapier integration & embed
 
 ## Introduction
 Already embedded? We’ve put together a list of opportunities to help your integration become more visible. Try one or all of the options here and begin connecting your users with Zapier’s 6000+ integrations. Here’s what you can do today!
