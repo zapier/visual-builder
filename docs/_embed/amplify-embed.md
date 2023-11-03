@@ -1,5 +1,5 @@
 ---
-title: Strategies to amplify your Zapier integration & embed
+title: Amplify your Zapier integration & embed
 order: 8
 layout: post-toc
 ---
