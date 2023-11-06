@@ -199,5 +199,3 @@ Changes merged to master go directly to production.
 ## Need help?
 
 Please feel free to ask a developer or post in #design for help.
-
-Hello World
