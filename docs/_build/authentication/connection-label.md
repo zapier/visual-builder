@@ -14,7 +14,7 @@ A connection label in the integration authentication options adds optional text 
 
 ![Zapier Authentication Connection Label](https://cdn.zappy.app/b2612dc2bf60454eea4ae37335638bf5.png)
 
-## Prerequisites:
+## Prerequisites
 
 - A configured authentication scheme in the Platform UI
 

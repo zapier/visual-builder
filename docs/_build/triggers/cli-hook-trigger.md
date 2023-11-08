@@ -167,7 +167,7 @@ module.exports = {
 
 ## 5. Test your API Request
 
-To test the REST Hook trigger, [build a Zap in the editor](https://platform.zapier.com/build/test-integration).
+To test the REST Hook trigger, [build a Zap in the editor](https://platform.zapier.com/build/test-triggers-actions).
 
 ## 6. Define sample and outputFields
 

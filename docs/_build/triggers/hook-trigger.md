@@ -21,10 +21,15 @@ Set up your REST Hook trigger in the Platform UI with the Settings, Input Design
 - On the Settings page, specify the following:
 
 -- **Key**: A unique identifier for this trigger to be referenced inside Zapier. This is not shown to users. This cannot be edited once saved.
+
 -- **Label**: A human-friendly name for this trigger, typically with an adjective such as _New or Updated_ followed by the name of the item that the trigger watches for inside  your app. The label is shown inside the Zap editor and on Zapier’s app directory marketing pages.
+
 -- **Noun**: A single noun that describes what this trigger watches for, used by Zapier to auto-generate text in Zaps about your trigger.
+
 -- **Description**: A plain text sentence that describes what the trigger does and when it should be used. Shown inside the Zap editor and on Zapier’s app directory marketing pages.
+
 -- **Visibility in Editor**:  An option to select when this trigger will be shown. _Shown_ is chosen by default. Choose `Hidden` if this trigger should not be shown to users.`Hidden` is usually selected when the trigger is not ready to be used in the integration, or for polling triggers that power [dynamic dropdown](https://platform.zapier.com/build/add-fields#dynamic-dropdown) fields.
+
 -- **Directions** is used for static webhooks only to describe how and where to copy-paste the static webhook URL for the trigger within your app. **Directions** will not show to users in other cases. Static webhooks are not permitted in public integrations. 
 
 - Click on the **Save and continue** button.
@@ -100,7 +105,7 @@ Once you've configured all the endpoints, click _Save API Request & Continue_
 
 ## 4. Test your API Request
 
-To test the REST Hook trigger, [build a Zap in the editor](https://platform.zapier.com/build/test-integration).
+To test the REST Hook trigger, [build a Zap in the editor](https://platform.zapier.com/build/test-triggers-actions).
 
 ## 5. Define your Output
 

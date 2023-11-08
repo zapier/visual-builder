@@ -54,7 +54,7 @@ Once you've added your trigger settings, click _Save API Request & Continue_.
 
 ## 4. Test your API Request
 
-Configure test data to [test the polling trigger](https://platform.zapier.com/build/test-integration).
+Configure test data to [test the polling trigger](https://platform.zapier.com/build/test-triggers-actions).
 
 ## 5. Define your Output
 
