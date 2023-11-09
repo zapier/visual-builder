@@ -30,7 +30,7 @@ Before submitting your[ Zapier integration for app review](https://platform.zapi
 
 * Confirm your integration is fully developed and has undergone thorough testing. This includes creating test Zaps on your end that check for bugs, edge cases, and errors.
 * Focus on primary use cases. Review similar integrations in [Zapier’s App Directory](https://zapier.com/integrations/) for inspiration on which features to include in your integration.
-* Ensure all integration information and metadata is complete and accurate. Be sure to follow[ Zapier’s standards for integration branding](https://platform.zapier.com/publish/intergration-brand-design-guidelines) to help your integration fit into the Zapier ecosystem well.
+* Ensure all integration information and metadata is complete and accurate. Be sure to follow[ Zapier’s standards for integration branding](https://platform.zapier.com/publish/integration-brand-design-guidelines) to help your integration fit into the Zapier ecosystem well.
 * Provide an active demo account and login credentials, plus any other resources that might be needed to review your integration (e.g. login credentials to your product under integration-testing@zapier.com as the username/email and dummy credit card credentials used to test making purchases, if applicable to your integration). We may need to test triggers, actions, or searches in your integration during review, so please provide us with access to the appropriate platforms and resources to do so.
 * Test early with real users. Use our[ invite links to beta test](https://platform.zapier.com/manage/share-integration) the integration.
 * Enable backend services so they’re live and accessible during review.

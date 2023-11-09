@@ -167,7 +167,7 @@ When this trigger/action is selected in a Zap, the user will see a dropdown as Z
 
 It is important to provide the API value (example `id`) for users to know what type of data the field expects. Users can also choose to [enter a custom value](https://cdn.zappy.app/f72a12759a3b3b391025f6500f6c7904.png) and map data from other Zap steps into this field. Being able to see what type of value to map is extremely helpful.
 
-** 3.Add search to a dynamic field (optional)**
+**3. Add search to a dynamic field (optional)**
 
 Dynamic Dropdown menus can optionally include an additional _Add a Search Step_ button beside the dropdown menu. This lets users dynamically select the correct item from a dynamic field based on input from previous Zap steps.
 
@@ -179,16 +179,7 @@ You'll need to add a [Search Action](https://platform.zapier.com/build/action#ho
 
 When users click or add a search step in their Zap, Zapier will add a new search step before this action step. 
 
-<html>
-  <head>
-    <title>How to add a search step on Platform UI</title>
-  </head>
-  <body>
-    <video width="600" height="400" controls>
-      <source src="https://cdn.zappy.app/b6a7e1ac915b668e12c53b0d08f8330c.mp4" type=video/mp4>
-    </video>
-  </body>
-</html>
+<iframe allowtransparency="true" title="Search or create" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://cdn.zappy.app/b6a7e1ac915b668e12c53b0d08f8330c.mp4" width="640" height="360"></iframe>
 
 This allows the user to enter the details to search for the item they need, and Zapier will automatically map the correct output value from that search to this dynamic dropdown field [as a custom value](https://help.zapier.com/hc/en-us/articles/8496241696141-Add-custom-values-to-dropdown-menu-fields-in-Zaps#01H7FR09FBWT481ZJ77VVR0HBR).
 

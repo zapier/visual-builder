@@ -4,6 +4,7 @@ order: 6
 layout: post-toc
 redirect_from: 
     - /build/faq#what-response-type-does-zapier-expect
+    - /build/faq#i-get-a-trigger-error-saying-that-an-array-is-expected-how-do-i-fix-it
 ---
 
 # Response types Zapier expects

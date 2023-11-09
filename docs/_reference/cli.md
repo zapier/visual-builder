@@ -1,5 +1,5 @@
 ---
-title: Zapier CLI reference
+title: Zapier CLI Reference
 order: 2
 layout: post-toc
 redirect_from: /cli_docs/cli
