@@ -25,10 +25,10 @@ Once authentication is tested, trigger and action steps are easy to test inside 
 4. Select _Test Your Request_ to run the trigger or action step, verify it ran successfully and show the JSON results which you can explore as in the Authentication testing.
 5. When testing a [REST Hook trigger](https://platform.zapier.com/build/hook-trigger), you will instead have to create and test a Zap in the Zap Editor as follows:
 
-- Test the trigger to confirm that the Perform List works and provides live data from the app.
-- Turn on the Zap to confirm that the subscription is successful.
-- Perform the trigger event in the app to confirm that the webhook is sent to the Zap's webhook URL and triggers the Zap.
-- Compare the data returned from the Perform (can be seen in the [Zap history](https://help.zapier.com/hc/en-us/articles/8496291148685-View-and-manage-your-Zap-history)) with the data returned from the Perform List and confirm that they are both in the same format and have the same information in them.
-- Turn off the Zap to confirm that the unsubscription is successful. A successful unsubscription should delete the Zap's webhook URL from your app.
+    - Test the trigger to confirm that the Perform List works and provides live data from the app.
+    - Turn on the Zap to confirm that the subscription is successful.
+    - Perform the trigger event in the app to confirm that the webhook is sent to the Zap's webhook URL and triggers the Zap.
+    - Compare the data returned from the Perform (can be seen in the [Zap history](https://help.zapier.com/hc/en-us/articles/8496291148685-View-and-manage-your-Zap-history)) with the data returned from the Perform List and confirm that they are both in the same format and have the same information in them.
+    - Turn off the Zap to confirm that the unsubscription is successful. A successful unsubscription should delete the Zap's webhook URL from your app.
 
 It is recommended that you check the logs in the [Monitoring](https://platform.zapier.com/build/test-monitoring) component for feedback from your Zap testing.

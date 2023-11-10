@@ -35,18 +35,18 @@ Testing inside the Platform UI is crucial during the building process. To ensure
 
 4. Use the _Monitoring_ page in the Platform UI to ensure that test Zaps and the expected requests are running without errors. Every request made to your API by your Zapier integration is shown. 
 
-Adjust the Chart Filter for the correct timeframe, then click on any data point in the chart to see the any error messages and logs which should help you troubleshoot further. You can also filter by log type and by user email. 
+    Adjust the Chart Filter for the correct timeframe, then click on any data point in the chart to see the any error messages and logs which should help you troubleshoot further. You can also filter by log type and by user email. 
 
-![Monitoring Zapier integration](https://cdn.zappy.app/8e7113b876e9dd37b71722fee763cf3e.png)
+    ![Monitoring Zapier integration](https://cdn.zappy.app/8e7113b876e9dd37b71722fee763cf3e.png)
 
-To manually print a log statement you can see in Monitoring, use `z.console.log` in Code Mode:
+    To manually print a log statement you can see in Monitoring, use `z.console.log` in Code Mode:
 
-`z.console.log('Here are the input fields', bundle.inputData);`
+    `z.console.log('Here are the input fields', bundle.inputData);`
 
 5. Have internal team members and/or beta users test your integration. If you are going to submit your app for _Publishing_ in the Zapier App Directory, you'll need at least 3 users with live Zaps. Each additional tester helps ensure that your app doesn't ship with usability problems or bugs.
 
-Internal team members can be invited from _[Manage Team](https://platform.zapier.com/manage/invite-team-member)_ as admins or collaborators. 
+    Internal team members can be invited from _[Manage Team](https://platform.zapier.com/manage/invite-team-member)_ as admins or collaborators. 
 
-Beta users external to your organization can be invited from _[Sharing](https://platform.zapier.com/manage/share-integration)_
+    Beta users external to your organization can be invited from _[Sharing](https://platform.zapier.com/manage/share-integration)_
 
-The _Dashboard_ section in the Platform UI provides usage statistics by trigger and action. 
+    The _Dashboard_ section in the Platform UI provides usage statistics by trigger and action. 

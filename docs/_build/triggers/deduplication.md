@@ -98,12 +98,17 @@ If the items your API returns do not have an `id` field or you're adding an Upda
 
 In older, [legacy Zapier Web Builder apps](https://platform.zapier.com/manage/versions-legacy), Zapier guessed if `id` wasn't present. It is now required that an `id` field is present. If your API's items have a differently-named unique field, adapt this code snippet to ensure this test passes:
 
+{% highlight javascript %}
+{% raw %}
 // ...
 let items = response.data.items; // or response.json.items if you're using core v9 or older
 return items.map((item) => {
   item.id = item.contactId;
   return item;
 });
+{% endraw %}
+{% endhighlight %}
+
 
 ## Updated item triggers
 

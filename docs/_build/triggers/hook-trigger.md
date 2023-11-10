@@ -2,7 +2,8 @@
 title: Add a REST Hook trigger
 order: 3
 layout: post-toc
-redirect_from: 
+redirect_from: /build/resthooks
+
 ---
 
 # Add a REST Hook trigger 
