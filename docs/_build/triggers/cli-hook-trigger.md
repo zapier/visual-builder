@@ -2,9 +2,7 @@
 title: Add an instant trigger using REST Hooks in Zapier Platform CLI
 order: 7
 layout: post-toc
-redirect_from: 
-  - /cli_tutorials/resthooks
-  - /build/resthooks
+redirect_from: /cli_tutorials/resthooks
 ---
 
 # Add an instant trigger using REST Hooks in Zapier Platform CLI 
