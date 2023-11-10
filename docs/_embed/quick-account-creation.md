@@ -27,7 +27,7 @@ When Quick Account Creation is enabled:
   - If the user closes the consent page, no Zapier account is created.
   - If there is an error creating an account, the user is redirected to an error page.
 
-If you have an existing Full Zapier Experience or Zap templates element embed, you can add the new required fields for Quick Account Creation to your current code implementation, instead of customizing and regenerating the code. Make sure the **Body** code includes the below four fields with the placeholder values replaced:
+If you have an existing Full Zapier Experience or Zap templates element embed, you can add the new required fields for Quick Account Creation to your current code implementation, instead of re-customizing and regenerating the code. Make sure the **Body** code includes the below four fields with the placeholder values replaced:
   - client-id="your_integreation_client_id"
   - sign-up-email="email_of_your_user@example.com"
   - sign-up-first-name="first_name_of_your_user"
