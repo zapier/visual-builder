@@ -4,6 +4,7 @@ order: 8
 layout: post-toc
 redirect_from:
     - /amplify-embed/
+    - /embed/amplify-embed/
 ---
 
 # Benefits of embedding Zapier
