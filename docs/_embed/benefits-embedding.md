@@ -1,13 +1,15 @@
 ---
-title: Amplify your Zapier integration & embed
+title: Benefits of embedding Zapier
 order: 8
 layout: post-toc
+redirect_from:
+    - /amplify-embed/
 ---
 
-# Amplify your Zapier integration & embed
+# Benefits of embedding Zapier
 
 ## Introduction
-Already embedded? We’ve put together a list of opportunities to help your integration become more visible. Try one or all of the options here and begin connecting your users with Zapier’s 6000+ integrations. Here’s what you can do today!
+We’ve put together a list of opportunities to help your integration become more visible. Try one or all of the options here and begin connecting your users with Zapier’s 6000+ integrations.
 
 ## Leverage Zap templates
 **Why?** Zap templates are part of our SEO strategy. This means users can discover them when searching for solutions to their automation needs. Zap templates are also surfaced throughout many of our embed solutions.
