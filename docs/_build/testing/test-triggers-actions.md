@@ -23,7 +23,14 @@ Once authentication is tested, trigger and action steps are easy to test inside 
 2. Fill in details for each of the input fields in the _Configure Test Data_ form. Add data that will successfully work in this API call, similar to what you would use in a live Zap.
 3. Enter individual values in each field to add single objects. If you include commas in the field data, Zapier will turn that field into an array sent to your API. Select _Raw_ to preview the JSON formatted data.
 4. Select _Test Your Request_ to run the trigger or action step, verify it ran successfully and show the JSON results which you can explore as in the Authentication testing.
-5. When testing a [REST Hook trigger](https://platform.zapier.com/build/hook-trigger), you will instead have to create and test a Zap in the Zap Editor as follows:
+5. If an error is returned, check the following:
+
+    - Authentication: Did your app's authentication work correctly in the authentication step? You can only test an integration once you've connected an app account to Zapier.
+    - Test Data: Did your test data include the details your app expects, such as actual dates in date fields or complete email addresses in email address fields?
+    - Input Field Keys: Did you use the same field keys in your input field as your API expects? Double-check that in the Input Designer, and change if needed.
+    - API Call Customization: Does your API expect something different than the standard API call details Zapier sets by default? You may need to use Code Mode if the options you need aren't available.
+
+6. When testing a [REST Hook trigger](https://platform.zapier.com/build/hook-trigger), you will instead have to create and test a Zap in the Zap Editor as follows:
 
     - Test the trigger to confirm that the Perform List works and provides live data from the app.
     - Turn on the Zap to confirm that the subscription is successful.

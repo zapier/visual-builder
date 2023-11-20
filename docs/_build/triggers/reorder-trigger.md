@@ -7,7 +7,7 @@ redirect_from:
 
 # Reorder or remove triggers
 
-## Reordering Triggers
+## Reordering triggers
 
 Triggers are listed in alphabetical order in the Zap editor and this order cannot be changed. 
 
@@ -23,7 +23,7 @@ To change a trigger's visibility:
 
 ![](https://cdn.zappy.app/51c3b8911b5384ddf03b9dbfffd40050.png)
 
-## Removing Triggers
+## Removing triggers
 
 You may want to remove a trigger that your app no longer supports, or fully rebuild a new one in place of the previous one.
 

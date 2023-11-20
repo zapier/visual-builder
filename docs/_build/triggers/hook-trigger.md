@@ -49,6 +49,8 @@ On the API Configuration page, select **REST Hook** as the trigger type, and com
 
 ![](https://cdn.zappy.app/0368aeae12e11ec59688d10a7ef69d8c.png)
 
+REST Hook triggers are marked as _Instant_ [in the Zap editor](https://cdn.zappy.app/f510859bf90c0e341bc94997a75f9626.png).
+
 ### Subscribe
 This request, usually a POST, is performed when a user activates a Zap that starts with this REST Hook trigger. This is how a Zap makes a subscription request to your API to be notified (via webhook) of all trigger events with the given parameters going forward.
 
@@ -104,10 +106,10 @@ For data sent to Zapier via REST Hook, most requests will be successful and retu
 
 Once you've configured all the endpoints, click _Save API Request & Continue_
 
-## 4. Test your API Request
+## 4. Test your API request
 
 To test the REST Hook trigger, [build a Zap in the editor](https://platform.zapier.com/build/test-triggers-actions).
 
-## 5. Define your Output
+## 5. Define your output
 
 Define sample data and output fields following [the guide](https://platform.zapier.com/build/sample-data).
