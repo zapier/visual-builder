@@ -7,11 +7,11 @@ redirect_from: /docs/integration-checks-reference
 
 # Integration Checks Reference
 
-We run your integration through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience. 
+We run your integration through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience.
 
 To [publish your integration](https://platform.zapier.com/publish/public-integration), all Errors and Publishing Tasks should be validated. You can address any Warnings after [submitting your integration for review](https://platform.zapier.com/publish/public-integration#4-submit-your-integration-for-app-review).
 
-If your integration will remain private, it isn't necessary to clear validation checks. You can [invite others to test your integration](https://platform.zapier.com/build/test-integration#how-to-invite-others-to-test-new-integrations) before publication.
+If your integration will remain private, it isn't necessary to clear validation checks. You can [invite others to test your integration](https://platform.zapier.com/manage/sharing) before publication.
 
 To help better address a check in communication, each check is given a unique ID, consisting of a capital letter and three digits, such as `D001`.
 
@@ -117,9 +117,9 @@ Website Dashboard to find your API Key.
 A Connection Label helps a customer remember which account they connected.
 It should be short and easily identifiable.
 
-For both [Platform UI](https://platform.zapier.com/build/auth#how-to-add-a-connection-label-to-authenticated-accounts)
-and [CLI](https://platform.zapier.com/reference/cli-docs#authentication), the connection
-label is a string. You can use any data returned by your test function.
+For both [Platform UI](https://platform.zapier.com/build/connection-label)
+and [CLI](https://platform.zapier.com/reference/cli-docs#connection-label), the
+connection label is a string. You can use any data returned by your test function.
 
 For instance, if a successful run of the auth test returns the following data:
 
@@ -164,8 +164,8 @@ still be able to map custom fields, but this gets them started on the right foot
 
 Read more about implementing dynamic dropdowns below:
 
-- Platform UI: https://platform.zapier.com/build/input-designer#dropdown
-- Platform CLI: https://platform.zapier.com/reference/cli-docs#dynamic-dropdowns 
+- Platform UI: https://platform.zapier.com/build/field-definitions#dynamic-fields
+- Platform CLI: https://platform.zapier.com/reference/cli-docs#dynamic-dropdowns
 
 ---
 
@@ -239,9 +239,7 @@ remove the `friends` information, and return only the array of contacts, not the
 enclosing object.
 
 The polling result is not used when a user skips testing the Zap step. In that case,
-Zapier uses the sample data.
-
-See [Sample Data](./faq#output) for more details on this.
+Zapier uses the sample data. See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
 ---
 
@@ -250,8 +248,8 @@ See [Sample Data](./faq#output) for more details on this.
 ## D007 - All URLs Should Be HTTPS
 
 When handling customer data (which all Zapier functions do), it's strongly
-encouraged that all communication take place securely. Using SSL is a big part
-of that, so ensure your URLs have HTTPS as their protocol.
+encouraged that all communication take place securely. Using SSL is a big part of
+that, so ensure your URLs have HTTPS as their protocol.
 
 If you need help setting up an SSL certificate for your API, we suggest
 [Let's Encrypt](https://letsencrypt.org/).
@@ -391,7 +389,7 @@ It's very important that the structure of an object from the actual trigger/acti
 the sample data are identical. Otherwise, users could map fields that don't exist
 in the live results, which results in a broken Zap.
 
-See [Sample Data](./faq#output) for more details on this.
+See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
 ---
 
@@ -706,7 +704,8 @@ To resize an image or convert an image to PNG, you can use this
 To ensure that this integration is being submitted by the app owner we require that
 one of the Admin team members listed on the project have an email address with the same
 domain as your app's homepage URL (which must also be present). You can add the homepage
-URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`. Collaborator team members with the same domain as the homepage do not meet this requirement.
+URL at `https://developer.zapier.com/app/APP_ID/version/APP_VERSION/settings`.
+Collaborator team members with the same domain as the homepage do not meet this requirement.
 
 ---
 
@@ -715,7 +714,7 @@ URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings
 ## M006 - Homepage URL Must Be Present
 
 Each app must have a homepage URL. You can add the homepage
-URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`.
+URL at `https://developer.zapier.com/app/APP_ID/version/APP_VERSION/settings`.
 
 ---
 
@@ -737,9 +736,9 @@ a new integration.
 
 To verify user demand, there should be at least 3 users who have a live Zap using
 this integration. "Live" means the Zaps are switched on with at least one successful
-[Zap run in recent history](https://zapier.com/help/manage/history/view-and-manage-your-zap-history).
+[Zap run in recent history](https://help.zapier.com/hc/en-us/articles/8496291148685).
 
-You can [invite others to test your integration](https://platform.zapier.com/manage/share-integration)
+You can [invite others to test your integration](https://platform.zapier.com/manage/sharing)
 before publication.
 
 ---
@@ -751,10 +750,10 @@ before publication.
 To ensure any show-stopping bugs are worked out, every visible trigger/search/action
 of your integration should have a live Zap that demonstrates it works. "Live" means
 the Zaps are switched on with at least one successful
-[Zap run in recent history](https://zapier.com/help/manage/history/view-and-manage-your-zap-history).
+[Zap run in recent history](https://help.zapier.com/hc/en-us/articles/8496291148685).
 
-You can create a [new Zapier account](https://zapier.com/help/account/billing-pricing/get-started-with-your-free-zapier-trial)
-and [invite it to your integration](https://platform.zapier.com/manage/share-integration)
+You can create a [new Zapier account](https://help.zapier.com/hc/en-us/articles/8496197192461)
+and [invite it to your integration](https://platform.zapier.com/manage/sharing)
 if you need extra Zaps.
 
 You can also [contact us](https://developer.zapier.com/contact) if you need a trial extension.
@@ -784,7 +783,7 @@ This check is performed using the [Zap History](https://zapier.com/app/history) 
 accounts belonging to the integration admins, so build your test Zaps in these
 accounts.
 
-Learn more about the Zap History [here](https://zapier.com/help/manage/history/view-and-manage-your-zap-history).
+Learn more about the Zap History [here](https://help.zapier.com/hc/en-us/articles/8496291148685).
 
 ---
 
@@ -902,7 +901,7 @@ static: {"id": 1, "name": "John"}
 live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ```
 
-See [Sample Data](./faq#output) for more details on this.
+See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
 ---
 
@@ -941,7 +940,7 @@ output fields: [
 ]
 ```
 
-See [Sample Data](./faq#output) for more details on this.
+See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
 ---
 
@@ -985,7 +984,8 @@ live: {"id": 2, "name": "Alice"}
 polling sample: {"id": 1, "name": "John"}
 live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ```
-See [Sample Data](./faq#output) for more details on this.
+
+See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
 ---
 
