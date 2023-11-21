@@ -485,5 +485,7 @@ Do not hard code credentials such as API Keys, Client IDs, Client Secrets, etc. 
 ### 8.2 Structure
 If you are using the [Zapier CLI](https://platform.zapier.com/reference/cli-docs) to build the integration, ensure files are logically broken out into respective directories and the code is easy to follow. We suggest putting triggers, actions, and searches each in their own directories.
 
+### 8.3 Dependencies
+If you are using the [Zapier CLI](https://platform.zapier.com/reference/cli-docs), keep dependencies up to date. When notified that a dependency must be updated—for example, `zapier-platform-legacy-scripting-runner`, `zapier-platform-core`, or `zapier-platform-cli`—complete the update in a timely manner or by the stated deadline. If requested updates are not completed by the stated deadline, Zapier reserves the right to make necessary updates on your behalf.
 
 If you have any questions or concerns about our integration review guidelines, contact Zapier via the [contact form](https://developer.zapier.com/contact).
