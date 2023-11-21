@@ -9,6 +9,8 @@ redirect_from: /cli_tutorials/resthooks
 
 REST Hooks are an alternative to polling. The main differences are allowing your customers' Zaps to trigger instantly; and avoiding polling triggers' numerous - and sometimes unnecessary - requests to your API's endpoints to check for new data. 
 
+REST Hook triggers are marked as _Instant_ [in the Zap editor](https://cdn.zappy.app/f510859bf90c0e341bc94997a75f9626.png).
+
 When building in the [Platform CLI](https://platform.zapier.com/quickstart/ui-vs-cli), use the [example implementation](https://github.com/zapier/zapier-platform/tree/main/example-apps/rest-hooks) for guidance.
 
 With a REST Hook trigger, Zapier subscribes to your server using a unique URL per activated Zap and your app sends a payload of data back to the unique URL to trigger that particular Zap whenever that trigger event occurs in your app.

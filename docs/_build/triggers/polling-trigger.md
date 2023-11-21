@@ -57,10 +57,10 @@ Only if you plan to use this trigger to power dynamic dropdown menus in other Za
 
 Once you've added your trigger settings, click _Save API Request & Continue_.
 
-## 4. Test your API Request
+## 4. Test your API request
 
 Configure test data to [test the polling trigger](https://platform.zapier.com/build/test-triggers-actions).
 
-## 5. Define your Output
+## 5. Define your output
 
 Define sample data and output fields following [the guide](https://platform.zapier.com/build/sample-data).

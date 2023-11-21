@@ -23,7 +23,7 @@ After your integration has entered the beta or public status, you can set a new 
 
 ## Promote a version with Platform CLI
 
-In the Platform CLI, you can run `zapier promote [version]` to make the specified version number the new public and default version. Learn more about [promoting a version using the Platform CLI ](https://platform.zapier.com/reference/cli-docs#promoting-an-app-version).
+In the Platform CLI, you can run `zapier promote [version]` to make the specified version number the new public and default version. Learn more about [promoting a version using the Platform CLI ](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#promoting-an-app-version).
 
 
 ## What happens after you promote a version?
@@ -34,4 +34,4 @@ After successfully promoting a version:
 - **New triggers and actions**: Any newly added triggers or actions will be displayed on your integration's public app page.
 - **User experience**: Users who select your integration for a new Zap will interact with the promoted version by default.
 
-By following these steps, you can seamlessly promote a new version of your integration, ensuring that your users have access to the latest features and improvements.
+By following these steps, you can seamlessly promote a new version of your integration, ensuring that new users have access to the latest features and improvements.
