@@ -52,8 +52,8 @@ _Promote_ and then _migrate_ users to this new version as close to the sunset da
 
 The benefits of this approach are:
 
--- Throwing an explicit exception will ensure impacted Zaps will hit the error ratio (and be turned off) at the earliest possible time.
--- You can add a user-friendly message to the exception that users will see in both Zaps Runs on the [Zap History](https://help.zapier.com/hc/en-us/articles/8496291148685-View-and-manage-your-Zap-history) and also in email error notifications, e.g. _This function has been deprecated and is no longer available._
--- Here's an example of how a custom error message would be displayed on an action in the Zap History:
+- Throwing an explicit exception will ensure impacted Zaps will hit the error ratio (and be turned off) at the earliest possible time.
+- You can add a user-friendly message to the exception that users will see in both Zaps Runs on the [Zap History](https://help.zapier.com/hc/en-us/articles/8496291148685-View-and-manage-your-Zap-history) and also in email error notifications, e.g. _This function has been deprecated and is no longer available._
+- Here's an example of how a custom error message would be displayed on an action in the Zap History:
 
 ![custom error](https://cdn.zappy.app/50807aad2a2e2ecda9044a524dafba8c.png)
