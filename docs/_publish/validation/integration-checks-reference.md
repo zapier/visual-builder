@@ -1,17 +1,19 @@
 ---
 title: Integration check reference
-order: 5
+order: 1
 layout: post-toc
 redirect_from: /docs/integration-checks-reference
 ---
 
-# Integration Checks Reference
+# Integration check reference
 
-We run your integration through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience.
+Before you can submit your integration for publishing, it runs through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience. 
 
-To [publish your integration](https://platform.zapier.com/publish/public-integration), all Errors and Publishing Tasks should be validated. You can address any Warnings after [submitting your integration for review](https://platform.zapier.com/publish/public-integration#4-submit-your-integration-for-app-review).
+To [publish your integration](https://platform.zapier.com/publish/public-integration), all Errors and Publishing Tasks must be validated. Warnings are non-blocking and not strictly required to proceed, though we do recommend you review them for usability of your integration.
 
-If your integration will remain private, it isn't necessary to clear validation checks. You can [invite others to test your integration](https://platform.zapier.com/manage/sharing) before publication.
+Warnings are not going to block you from promoting that version, though we do recommend you review them for usability of your triggers.
+
+If your integration will remain private, it isn't _necessary_ to pass the validation checks. You will be able to [share it with users](https://platform.zapier.com/manage/share-integration) as is. However, you can still select `Run Validation` from the _Version Overview_ tab in the Platform UI or run the `zapier validate` command [in the Platform CLI](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#validate) to be notified of any issues and recommendations to better the user experience.
 
 To help better address a check in communication, each check is given a unique ID, consisting of a capital letter and three digits, such as `D001`.
 
@@ -117,9 +119,9 @@ Website Dashboard to find your API Key.
 A Connection Label helps a customer remember which account they connected.
 It should be short and easily identifiable.
 
-For both [Platform UI](https://platform.zapier.com/build/connection-label)
-and [CLI](https://platform.zapier.com/reference/cli-docs#connection-label), the
-connection label is a string. You can use any data returned by your test function.
+For both [Platform UI](https://platform.zapier.com/build/auth#how-to-add-a-connection-label-to-authenticated-accounts)
+and [CLI](https://platform.zapier.com/reference/cli-docs#authentication), the connection
+label is a string. You can use any data returned by your test function.
 
 For instance, if a successful run of the auth test returns the following data:
 
@@ -164,8 +166,8 @@ still be able to map custom fields, but this gets them started on the right foot
 
 Read more about implementing dynamic dropdowns below:
 
-- Platform UI: https://platform.zapier.com/build/field-definitions#dynamic-fields
-- Platform CLI: https://platform.zapier.com/reference/cli-docs#dynamic-dropdowns
+- Platform UI: https://platform.zapier.com/build/input-designer#dropdown
+- Platform CLI: https://platform.zapier.com/reference/cli-docs#dynamic-dropdowns 
 
 ---
 
@@ -190,13 +192,9 @@ sending an actual message in a Slack channel, which is disruptive.
 
 Instead, during testing, the Perform List (`performList`) operation fetches a
 (real) recent message using the provided URL for polling and uses it as the test result.
-The polling URL is only used for tests.
+The polling URL in a Rest Hook trigger is only used for testing during Zap setup..
 
-It's very important that the structure of an object from a webhook and from a poll
-are identical. Typically, this means modifying a poll result so that it looks like a
-hook. If a poll has fields that a hook doesn't, the user may map them to a later
-step, and when the Zap runs live, the value will be blank. This can cause errors
-or unexpected results for users.
+It's very important that the data structure of the array delivered from a webhook and from the poll are identical. Typically, this means modifying a poll result so that it looks like a hook. If a poll has fields that a hook doesn't, the user may map them to a later action step, and when the Zap runs live, the value will be blank. This would cause errors or unexpected results for users.
 
 Let's walk through an example. Say we have a `New Contact` REST Hook trigger. When a
 new contact is created, Zapier gets a webhook that looks like this:
@@ -239,7 +237,9 @@ remove the `friends` information, and return only the array of contacts, not the
 enclosing object.
 
 The polling result is not used when a user skips testing the Zap step. In that case,
-Zapier uses the sample data. See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
+Zapier uses the sample data.
+
+See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
 ---
 
@@ -248,8 +248,8 @@ Zapier uses the sample data. See [Sample Data](https://platform.zapier.com/build
 ## D007 - All URLs Should Be HTTPS
 
 When handling customer data (which all Zapier functions do), it's strongly
-encouraged that all communication take place securely. Using SSL is a big part of
-that, so ensure your URLs have HTTPS as their protocol.
+encouraged that all communication take place securely. Using SSL is a big part
+of that, so ensure your URLs have HTTPS as their protocol.
 
 If you need help setting up an SSL certificate for your API, we suggest
 [Let's Encrypt](https://letsencrypt.org/).
@@ -273,8 +273,8 @@ https://example.com/messages/subscribe
 ## D008 - Invalid Markdown Link
 
 A valid markdown link consists of a pair of square brackets with the link text
-paired with a pair of parens that have the link itself. See the
-[markdown cheatsheet](https://daringfireball.net/projects/markdown/syntax#link) for
+paired with a pair of parentheses that have the link itself. See the
+[markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/) for
 more info.
 
 If you want to show a full link without actually linking to it, use backticks. This
@@ -311,7 +311,7 @@ trigger/action/search and the help text for any fields that might have bad links
 
 ## D009 - Requires at Least One Search Field
 
-When making a search step, it's important to have a field to search on! Common
+When making a search step, it's important to have a field to search by. Common
 examples for searching for a user are by name, email, and username.
 
 ---
@@ -381,13 +381,9 @@ user. If the label and help text are the same, they are considered redundant.
 
 ## D012 - Static Sample Is Required
 
-When a user sets up a trigger or action (create or search), they need sample data to be returned in order to have
-fields available to map in the subsequent steps. If testing the trigger returns no
-live results, we use static sample data as a fallback.
+When a user sets up a trigger or action (create or search), they need sample data to be returned in order to have fields available to map in the subsequent steps. If testing the trigger returns no live results, we use static sample data as a fallback.
 
-It's very important that the structure of an object from the actual trigger/action and in
-the sample data are identical. Otherwise, users could map fields that don't exist
-in the live results, which results in a broken Zap.
+It's very important that the data structure of the response from the actual trigger/action request and in the sample data are identical. Otherwise, users could map fields that don't exist in the live results, which results in a broken Zap.
 
 See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
@@ -397,9 +393,7 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 
 ## D013 - Connects to a Non-Existing Search
 
-[Search-Powered Fields](https://platform.zapier.com/reference/cli-docs#search-powered-fields)
-prompt users to set up a search step to populate the value of the field. It won't
-work if the search key you specify doesn't exist.
+[Search-Powered Fields](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#search-powered-fields) prompt users to set up a search step to populate the value of the field. It won't work if the search key you specify doesn't exist.
 
 ---
 
@@ -407,9 +401,7 @@ work if the search key you specify doesn't exist.
 
 ## D014 - Has a Search Connector, but No Dynamic Dropdown
 
-By design, to get the "Add a Search Step" button, an action needs both a search
-connector and a (valid) dynamic dropdown. If you can't provide a valid dropdown, you
-can instead point to a dummy trigger that always returns an empty array.
+By design, to get the "Add a Search Step" button to appear for users in the Zap editor, an action needs both a search connector and a (valid) dynamic dropdown. If you can't provide a valid dropdown, you can instead point to a dummy trigger that always returns an empty array.
 
 ✘ an example of an **incorrect** setup:
 
@@ -445,8 +437,7 @@ existing search or action. Otherwise, it won't work.
 
 ## D016 - Consists Only a Static Webhook
 
-Static Webhooks, while convenient to build, leave a lot to be desired from our side.
-For this reason, Zapier doesn't allow integration that are a single static hook. To
+A REST Hook trigger missing a Subscribe or Unsubscribe endpoint, is presented to users as a [Static Webhook](https://cdn.zappy.app/3b35908a6a0c232087b5da807cf9d6fb.png). Static hooks are [not supported in public integrations](https://platform.zapier.com/publish/integration-checks-reference#d017---static-hook-is-discouraged), but they could be used if the integration intends to remain private. Howwver, Zapier doesn't allow integration that are a single static hook with the availability of [Webhooks by Zapier](https://zapier.com/apps/webhook/integrations). To
 fix this, add more triggers/searches/actions.
 
 ---
@@ -456,10 +447,7 @@ fix this, add more triggers/searches/actions.
 ## D017 - Static Hook Is Discouraged
 
 When a REST Hook trigger is missing a Subscribe or Unsubscribe endpoint, it is
-presented to users as a Static Webhook. As static webhooks are complicated to set up
-correctly, we no longer support adding new static webhook triggers to a public
-integration. Please set up Subscribe and Unsubscribe requests for this trigger,
-or use a Polling trigger type instead.
+presented to users as a Static Webhook. As static webhooks require manual intervention by the user to set up correctly, we no longer support adding new static webhook triggers to a public integration. Please set up Subscribe and Unsubscribe requests for this trigger, or use a Polling trigger type instead.
 
 ---
 
@@ -535,29 +523,29 @@ in the Zap History.
 ✘ examples of an **incorrect** implementation:
 
 ```
-01 Aug 2019
+01 Aug 2023
 ```
 
 ```
-01 Aug 2019 06:50:30
+01 Aug 2023 06:50:30
 ```
 
 ```
-2019-08-01T06:50:30
+2023-08-01T06:50:30
 ```
 
 ✔ examples of a **correct** implementation:
 
 ```
-2019-08-01
+2023-08-01
 ```
 
 ```
-2019-08-01T06:50:30-0500
+2023-08-01T06:50:30-0500
 ```
 
 ```
-2019-09-15T09:59:59Z
+2023-09-15T09:59:59Z
 ```
 
 ---
@@ -616,7 +604,7 @@ back and you want to resubmit for another review, you should make changes on a
 
 ## L003 - Version Is Already Production
 
-This could happen if you're promoting a version that is already production.
+This could happen if you're attempting to promote a version that is already in production.
 
 ---
 
@@ -649,12 +637,12 @@ really like your service, you're not allowed to say "Zapier" in your app's
 description.
 
 Additionally, it's discouraged that you talk about how this integration will `sync`
-anything, as the space is supposed to be about your service itself instead of the
+anything, as the space is supposed to be about your app itself instead of the
 Zapier integration in particular.
 
 Lastly, this section should be short and sweet. A brief description (roughly
 tweet-sized) is best. Specifically, we're looking for 1 - 3 sentences or at least
-40 characters.
+40 characters and a maximum of 140 characters.
 
 ✘ an example of an **incorrect** setup:
 
@@ -703,9 +691,7 @@ To resize an image or convert an image to PNG, you can use this
 
 To ensure that this integration is being submitted by the app owner we require that
 one of the Admin team members listed on the project have an email address with the same
-domain as your app's homepage URL (which must also be present). You can add the homepage
-URL at `https://developer.zapier.com/app/APP_ID/version/APP_VERSION/settings`.
-Collaborator team members with the same domain as the homepage do not meet this requirement.
+domain as your app's homepage URL (which must also be present). You can add the homepage URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`. Collaborator team members with the same domain as the homepage do not meet this requirement.
 
 ---
 
@@ -714,7 +700,7 @@ Collaborator team members with the same domain as the homepage do not meet this 
 ## M006 - Homepage URL Must Be Present
 
 Each app must have a homepage URL. You can add the homepage
-URL at `https://developer.zapier.com/app/APP_ID/version/APP_VERSION/settings`.
+URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`.
 
 ---
 
@@ -723,10 +709,9 @@ URL at `https://developer.zapier.com/app/APP_ID/version/APP_VERSION/settings`.
 ## M007 - Public Integration Already Exists
 
 We only allow one public integration in our app directory for a given app. If a
-public integration with the same title already exists, we probably won't approve
+public integration with the same title already exists, we won't approve
 your submission to go public. If you're the owner of the existing public
-integration, you may want to create a version and promote that instead of submitting
-a new integration.
+integration, create an updated version with any edits and promote that instead of submitting a new integration.
 
 ---
 
@@ -738,7 +723,7 @@ To verify user demand, there should be at least 3 users who have a live Zap usin
 this integration. "Live" means the Zaps are switched on with at least one successful
 [Zap run in recent history](https://help.zapier.com/hc/en-us/articles/8496291148685).
 
-You can [invite others to test your integration](https://platform.zapier.com/manage/sharing)
+You can [invite others to test your integration](https://platform.zapier.com/manage/share-integration)
 before publication.
 
 ---
@@ -752,9 +737,7 @@ of your integration should have a live Zap that demonstrates it works. "Live" me
 the Zaps are switched on with at least one successful
 [Zap run in recent history](https://help.zapier.com/hc/en-us/articles/8496291148685).
 
-You can create a [new Zapier account](https://help.zapier.com/hc/en-us/articles/8496197192461)
-and [invite it to your integration](https://platform.zapier.com/manage/sharing)
-if you need extra Zaps.
+You can create a [new Zapier account](https://help.zapier.com/hc/en-us/articles/8496197192461) and [invite it to your integration](https://platform.zapier.com/manage/share-integration) if you need extra Zaps.
 
 You can also [contact us](https://developer.zapier.com/contact) if you need a trial extension.
 
@@ -764,8 +747,7 @@ You can also [contact us](https://developer.zapier.com/contact) if you need a tr
 
 ## S003 - Live Version Count Limit
 
-You can't have more than 5 previous or current production versions with live Zaps. To continue,
-migrate users on older versions to a newer version.
+You can't have more than 5 previous or current production versions with live Zaps. To continue, migrate users on older versions to a newer version.
 
 ---
 
@@ -843,29 +825,29 @@ accounts.
 ✘ examples of an **incorrect** implementation:
 
 ```
-01 Aug 2019
+01 Aug 2023
 ```
 
 ```
-01 Aug 2019 06:50:30
+01 Aug 2023 06:50:30
 ```
 
 ```
-2019-08-01T06:50:30
+2023-08-01T06:50:30
 ```
 
 ✔ examples of a **correct** implementation:
 
 ```
-2019-08-01
+2023-08-01
 ```
 
 ```
-2019-08-01T06:50:30-0500
+2023-08-01T06:50:30-0500
 ```
 
 ```
-2019-09-15T09:59:59Z
+2023-09-15T09:59:59Z
 ```
 
 ---
@@ -948,7 +930,7 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 
 ## T006 - Polling Sample Contains a Subset of Keys from Live Result
 
-For REST Hook triggers, we require you to provide a Perform List URL
+For REST Hook triggers, we require you to provide a `Perform List` URL
 (check `D006`) so that users can retrieve a real data sample in the Zap
 editor. This is called a polling sample, and is created when you test
 the trigger in the Zap editor before turning it on.
@@ -984,7 +966,6 @@ live: {"id": 2, "name": "Alice"}
 polling sample: {"id": 1, "name": "John"}
 live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ```
-
 See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
 ---
@@ -994,7 +975,7 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 ## U001 - Developer Terms of Service
 
 You must agree to the latest Developer Terms of Service in order to proceed. Go to
-[Developer Home](https://zapier.com/app/developer) to agree.
+[Developer Home](https://developer.zapier.com) to agree.
 
 ---
 
@@ -1002,7 +983,7 @@ You must agree to the latest Developer Terms of Service in order to proceed. Go 
 
 ## Z001 - Polling Sample Respects Output Field Definition
 
-For REST Hook triggers, we require you to provide a Perform List URL
+For REST Hook triggers, we require you to provide a `Perform List` URL
 (check `D006`) so that users can pull a live sample in the Zap editor.
 This is called a polling sample.
 

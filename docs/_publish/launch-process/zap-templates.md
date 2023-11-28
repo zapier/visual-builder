@@ -1,6 +1,6 @@
 ---
 title: Zap templates
-order: 8
+order: 3
 layout: post-toc
 redirect_from: /partners/zap-templates
 ---
@@ -14,71 +14,72 @@ Zap templates are ready made integrations or Zaps with the apps and core fields 
 
 <script type="text/javascript" src="https://zapier.com/apps/embed/widget.js?guided_zaps=192,111,162,1495,883"></script>
 
+
 They’re also a great way to promote your app, as your Zap templates are featured in:
 
 - Zapier’s app directory
 - Zapier’s onboarding experience
 - In many of Zapier's {{ site.partner_count }} integration partners' apps and sites
 
-Zap templates can also be featured inside your site and content to help your users start using Zapier integrations. The more Zap templates you create and the more users they have, the more likely they are to be featured. This helps your Zapier integration gain popularity and rise the ranks of the [Zapier Partner Program](https://zapier.com/partners/partner-program). To learn more about embedding Zap templates (and other experiences) into your app or website, see our dedicated [embed](https://platform.zapier.com/embed/overview) section.
+Zap templates can also be featured inside your site and content to help your users start using Zapier integrations. The more Zap templates you create and the more users they have, the more likely they are to be featured. This helps your Zapier integration gain popularity and rise the ranks of the [Zapier Partner Program](https://zapier.com/developer-platform/partner-program). To learn more about embedding Zap templates (and other experiences) into your app or website, see our dedicated [embed](https://platform.zapier.com/embed/overview) section.
 
 > Expected time to create a Zap Template: 10 minutes.
 
 ![Example Zap Template](https://cdn.zappy.app/0d6ffaf492b547878ef8c06924a714f1.gif)
-_An example Zap Template that automatically saves Gmail attachments to Google Drive—a handy way to speed up email file management._
+_An example Zap Template that automatically saves Gmail attachments to Google Drive — a handy way to speed up email file management._
 
 ## How to build a Zap template
 
-Zap templates take a few steps to build, similar to any other Zap. You first select the app and trigger you want to start the Zap, then add an action app and map the fields from the trigger app to the action—and optionally add additional steps. Then, add a title and description to help people quickly understand when to use your Zap.
+Zap templates take a few steps to build, similar to any other Zap. You first select the app and trigger you want to start the Zap, then add an action app and map the fields from the trigger app to the action — and optionally add additional steps. Then, add a title and description to help people quickly understand when to use your Zap.
 
 
 ### 1. Add a Trigger Step
 
 ![Zap Template select trigger app](https://cdn.zappy.app/64e407ae2b8e5f3ecaf9bedbbacd11d4.png)
 
-Go to Zapier’s [Zap template creator](https://zapier.com/zap-templates/create) or from the [Zap Template dashboard](https://zapier.com/zap-templates/), click the _Create Zap Template_ button. 
+Go to Zapier’s [Zap template creator](https://zapier.com/app/editor/zap-template/) or from the [Zap Template dashboard](https://developer.zapier.com/zap-templates), click _Create Zap Template_. 
 
 Select the trigger app, as you would when making a Zap for yourself. Search for the app by name from the dropdown menu.
 
-> **Tip:** You can use Zapier integrations that are publicly available or that have applied to be launched publicly.
-
-![Zap Template select trigger](https://cdn.zappy.app/bcf87bac5267b210d520cb97ac0e5612.png)
+> **Note:** You can use Zapier integrations that have been launched publicly.
 
 Choose the app’s trigger from the dropdown that starts your Zap. 
 
-![Zap Template authentication](https://cdn.zappy.app/a1cc719414192c01ed08b085d00bc5ba.png)
+![Zap Template select trigger](https://cdn.zappy.app/bcf87bac5267b210d520cb97ac0e5612.png)
 
-For most triggers from apps that require authentication, Zapier loads sample data similar to the data the app would send Zapier when it’s connected with a live account. Click the _Save + Continue_ button to use that in the next steps.
+For most triggers from apps that require authentication, Zapier loads sample data similar to the data the app would send Zapier when it’s connected with a live account. Click _Save + Continue_ to use that in the next steps.
+
+![Zap Template authentication](https://cdn.zappy.app/a1cc719414192c01ed08b085d00bc5ba.png)
 
 Some triggers require authentication, but don't include sample data. If so, Zapier will note that in a message. You can still use that Zap in a Zap template, though when setting up the Zap's action step(s), you won't be able to pre-map fields for your users.
 
+If your trigger includes options—or if you're using a triggers such as Zapier’s _RSS_ or _Schedule_ tool that don’t require authentication — Zapier will then show additional settings for this trigger. Fill in any form fields, select multi-choice options, and click _Continue_ to save them. Or leave the defaults to let users add info to the Zap themselves — in which case, click _Test trigger_ to skip the options and continue.
+
 ![Zap Template built-in trigger](https://cdn.zappy.app/84fafa564da379d204b5a8535acfef57.png)
-
-If your trigger includes options—or if you're using a triggers such as Zapier’s _RSS_ or _Schedule_ tool that don’t require authentication—Zapier will then show additional settings for this trigger. Fill in any form fields, select multi-choice options, and click _Continue_ to save them. Or leave the defaults to let users add info to the Zap themselves—in which case, click the _Test This Step_ link in the left sidebar to skip the options.
-
-![Zap Template sample](https://cdn.zappy.app/d90a46d02a04c72341c2534c3c77e353.png)
 
 In the final trigger option, Zapier shows sample data from the app. You can click the down arrow on the sample data to see what details are included and the input fields you can use from this app in the rest of your workflow. Then again click _Continue_ to complete your Zap's trigger.
 
-### 2. Add an Action Step
+![Zap Template sample](https://cdn.zappy.app/d90a46d02a04c72341c2534c3c77e353.png)
 
-![Zap Template add action app](https://cdn.zappy.app/ff77e3d0297f9a61bad2b6250472a059.png)
+### 2. Add an Action Step
 
 Now add the action step to your Zap. Select the action app from the search menu.
 
-> **Tip:** You can use Zapier integrations that are publicly available or that have applied to be launched publicly.
+![Zap Template add action app](https://cdn.zappy.app/ff77e3d0297f9a61bad2b6250472a059.png)
 
-![Zap Template select action step](https://cdn.zappy.app/667f2e42d0ad4b367f2b86fd1e00398b.png)
+> **Note:** You can use Zapier integrations that have been launched publicly.
 
 Choose the create or search action for your Zap. You may then be prompted to use sample data as before; click _Continue_ to accept.
 
+![Zap Template select action step](https://cdn.zappy.app/667f2e42d0ad4b367f2b86fd1e00398b.png)
+
 > **Note**: If you use a search action, you need to also add a second action step to use the data from the trigger and search steps.
 
-As in the trigger step, when setting up most actions, you'll see a screen where your users will authenticate the action app—only in the Zap template creator, Zapier uses this to pull in sample fields for the app.
-
-![Zap Template form fields](https://cdn.zappy.app/42933f0f6a425d029429dbe918b0a107.png)
+As in the trigger step, when setting up most actions, you'll see a screen where your users will authenticate the action app — only in the Zap template creator, Zapier uses this to pull in sample fields for the app.
 
 Now for the most crucial part of your Zap template: Map the input fields from the trigger app to the form fields in this action app. The action step’s template shows every field that Zapier can send to the app, with required and optional fields. For the best Zap templates, you want to fill in as many form fields as possible to help users set up Zaps quickly.
+
+![Zap Template form fields](https://cdn.zappy.app/42933f0f6a425d029429dbe918b0a107.png)
 
 > **Note**: Zap templates' action fields _never_ show custom fields from apps, including spreadsheet columns, custom CRM fields, and other fields that are added by users, as Zapier's Template Creator is not authenticated with an app account and custom fields will vary depending on the user. Your users will always need to add details to custom fields themselves.
 
@@ -86,23 +87,23 @@ For most form fields, you’ll need to add input fields from the trigger to the 
 
 > **Tip**: Use [Zapier’s date and time syntax](https://help.zapier.com/hc/en-us/articles/8496275717261) to modify dates and times in action form fields.
 
-Most dropdown menus are used to select folders, projects, and other user-generated data and should be left blank by default. You can, however, select options for dropdowns for boolean yes/no fields if you're certain which option is best for this Zap template.
-
-![Zap Template required fields](https://cdn.zappy.app/e4222e2c4934485dd27454ef50f17ec0.png)
+Most dropdown menus are used to select folders, projects, and other user-generated data and should be left blank by default. You can, however, select options for dropdowns for boolean yes/no fields if you're certain which option is best for all users of this Zap template.
 
 Zap Template action forms include _required_ and _optional_ fields. When users set up your Zap Template, they will see the required fields by default, and _must_ fill them in before turning on the Zap. Try to map as many required input fields as possible. Then, less-critical fields will often be marked as optional, and are hidden by default when users set up the Zap Template. If you know the best data to map to those fields, add them to make sure your users' Zaps include as much detail as possible.
 
+![Zap Template required fields](https://cdn.zappy.app/e4222e2c4934485dd27454ef50f17ec0.png)
+
 > **Note**: Do not enter plain text into an action form field unless _every_ user of this Zap Template would want the text included in the action.
+
+Zapier then shows a test screen similar to what users see when setting up the Zap. Since you’re building a Zap template, Zapier doesn’t create or add anything to your apps — the screen confirms everything should work correctly.
 
 ![Finish Zap Template Action](https://cdn.zappy.app/6e87adbfde77b00ae144b487c4185c20.png)
 
-Zapier then shows a test screen similar to what users see when setting up the Zap. Since you’re building a Zap template, Zapier doesn’t create or add anything to your apps—the screen confirms everything should work correctly.
-
 ### 3. (Optional) Add filters or additional action steps
 
-Now you have a choice: You can add another step to your Zap, or finish and save this Zap template with only two steps.
+Choose to add another step to your Zap, or finish and save this Zap template with only two steps.
 
-Most Zap templates only need two steps, with a trigger to watch for data from an app and an action to do something with that data. Sometimes, though, you need more steps for advanced workflows, including:
+Most Zap templates only need two steps, with a trigger to watch for data from an app and an action to do something with that data in another app. Sometimes, though, you need more steps for advanced workflows, including:
 
 - **[Additional create actions](https://help.zapier.com/hc/en-us/articles/8496257774221-Set-up-your-Zap-action)** to add additional automations to your workflow
 - **[Filters](https://help.zapier.com/hc/en-us/articles/8496276332557)** to watch for specific items from trigger or action step(s)
@@ -112,39 +113,37 @@ Most Zap templates only need two steps, with a trigger to watch for data from an
 
 To add another search or create action to your Zap, click the _Add a Step_ button after setting up your action above, then repeat step 2 and set up the additional action. To add a _delay_ action, select the _Delay by Zapier_ app when adding a new action.
 
-> **Note**: Code, custom webhook and custom Formatter steps are not allowed in Zap Templates. 
-
-![Add Filter step to Zap Template](https://cdn.zappy.app/23309a53e37648bd8547e0a7ec0c993e.png)
+> **Note**: Code, custom webhook, Looping and custom Formatter steps are not allowed in Zap Templates. 
 
 To add a filter, click the `+` button and select _Filter_. You could add it between the trigger and action step to have the Zap only run when specific items come in from the trigger app, or you can add it after the action to watch for particular results (then add subsequent action steps to do more with data if it passes the filter criteria).
 
-![Customize Zapier Filter](https://cdn.zappy.app/db5c3975470b1b2ba7be62b0ceb244ac.png)
+![Add Filter step to Zap Template](https://cdn.zappy.app/23309a53e37648bd8547e0a7ec0c993e.png)
 
 Then add details to the filter, if this Zap should always watch for the same data. Select the field the filter should watch, then choose the filter criteria (if the text exists, doesn’t exist, if a number is greater than this value, etc.), and finally type in the text you need Zapier to find. If you need additional conditions in your filter, click the `+ AND` or `+ OR` buttons to add other criteria.
+
+![Customize Zapier Filter](https://cdn.zappy.app/db5c3975470b1b2ba7be62b0ceb244ac.png)
 
 Alternately, leave the filter details blank and let users customize the filter to their needs.
 
 > **Note**: Most Zap templates don’t need filters, and most filters should be added by users later if required. However, including a filter in a Zap template can be useful if your Zap Template is only useful with a filter to remove extraneous data.
 
-<a id="shared-zaps-description"></a>
-
 ### 4. Add a title and description
+
+The final step is to add Zap template’s title and description, then submit your Zap template for review.
 
 ![Zap Template Description](https://cdn.zappy.app/44e237ef141178a3311bb96a9d8a1633.png)
 
-Now for the final step: add Zap template’s title and description, then submit your Zap template for review.
+Zap templates need to showcase a use case and describe it effectively. They provide inspiration for how to automate popular apps and workflows. Your Zap template's description and title help illustrate that idea to users.
 
-Zap templates need to showcase a use case and describe it effectively. They provide inspiration for how to automate popular apps and workflows. Your Zap template's description and title help sell that idea to users.
+The title is the first thing people see. Embedded Zaps inside Zapier, your app, blog posts and other content show the Zap's title and app icons. Titles need to fit in well in each environment and describe the use case at a glance.
 
-The title is the first thing people see. Embedded Zaps inside Zapier, your app, blog posts and other content show the Zap's title and app icons. Titles need to fit in well in each environment and sell the use case at a glance.
-
-Descriptions, then, are what users see when they click the Zap template. They explain the use case and tell how the Zap works. The title grabs interest; the description gets people to invest the minute or three it takes to turn on the Zap.
+Descriptions, then, are what users see when they click the Zap template. They explain the use case in further detail and tell how the Zap works. The title grabs interest; the description gets people to invest the minute or three it takes to turn on the Zap.
 
 #### How to write a Zap template title
 
-![Example Zap Template Title](https://cdn.zapier.com/storage/photos/fc6854d9f356bca06d8879a50ef41036.png)
-
 Zap template titles clearly and briefly state the apps the Zap connects and the workflow it accomplishes. They include the trigger and action apps and the actions they perform. They use present tense, active voice, and sentence case.
+
+![Example Zap Template Title](https://cdn.zapier.com/storage/photos/fc6854d9f356bca06d8879a50ef41036.png)
 
 Most Zap template titles read something like this: `Add new Gmail emails to Google Sheets as rows`. The title mentions what happens in the trigger app followed by what Zapier does in the action app. Some examples of good titles:
 
@@ -153,7 +152,7 @@ Most Zap template titles read something like this: `Add new Gmail emails to Goog
 - `Subscribe new Gumroad customers to a MailChimp list`
 - `Save new liked SoundCloud tracks to Google Drive`
 
-> **Tip**: Use your discretion whether to mention the action or trigger app first. The trigger app works best first in most cases, but sometimes it sounds awkward—if so, go with the action app first.
+> **Tip**: Use your discretion whether to mention the action or trigger app first. The trigger app works best first in most cases, but sometimes it sounds awkward — if so, go with the action app first.
 
 Follow these rules in your Zap template titles:
 
@@ -193,7 +192,7 @@ Keep these guidelines in mind:
 - **Use same terms as the integrations themselves**. If an app calls the results of a form an “entry” don’t call it a “submission,” or if an email app uses "tags," don’t refer to "folders."
 - **Include tips at the end**. If your Zap Template requires extra setup for filters or other steps, or if it doesn't cover all use cases users may expect, include a sentence at the end to clarify. Start the tip with `Note:`, and format the entire note in italics with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) formatting. For example: `*Note: Add the tag you want to the Zap's [Filter](https://help.zapier.com/hc/en-us/articles/8496276332557) step.*`
 
-> **Note**: Always write unique descriptions for each Zap template—we will reject Zap templates that use the same descriptions but only replace app names.
+> **Note**: Always write unique descriptions for each Zap template — Zap templates that use the same descriptions but only replace app names, or those that duplicate the Zap template title, will be rejected.
 
 ---
 
@@ -201,7 +200,7 @@ Once you've added your Zap template title and description, click `Save Draft` un
 
 ![Save Draft](https://cdn.zappy.app/fb9a10e41c4ba4d794dc758e6c970f7f.png)
 
-You should then try using the Zap template to make sure it works as expected. Open your [Zap Template dashboard](https://zapier.com/zap-templates/), click the gear icon beside the Zap template you built, and select `Copy Link`. Open that link in a new tab or window, set up and turn on the Zap, and verify everything works correctly.
+Now try using the Zap template to make sure it works as expected. Open your [Zap Template dashboard](https://zapier.com/zap-templates/), click the gear icon beside the Zap template you built, and select `Copy Link`. Open that link in a new tab or window, set up and turn on the Zap, and verify everything works correctly.
 
 ![Test Zap Template](https://cdn.zappy.app/c06a94f004e20748235d5de67efa2960.png)
 
@@ -213,25 +212,27 @@ Finally, when your Zap template is ready for public release, click `Submit for R
 
 ![Submit for review](https://cdn.zappy.app/09d633673809c700778cfa945b63d4ba.png)
 
-We'll then contact you, typically within a couple of weeks, after reviewing your Zap template(s). If your Zap templates pass the tests, we will mark them as public to automatically have them show up on your app's app directory page, inside select partners' apps and sites, and in Zapier's onboarding experience.
+We'll then contact you in an automated email, typically within a couple of weeks, after reviewing your Zap template(s). If your Zap templates pass the tests, we will mark them as public to automatically have them show up on your app's app directory page, inside select partners' apps and sites, and in Zapier's onboarding experience.
+
+If your Zap template is rejected, the automated email will provide the reason why and you can amend the template and `Submit for Review` again. 
 
 Then make some more Zap templates. The more you make, the easier it will be for users to start using your Zapier integration.
 
 ## Promote Your Zap templates
 
-It’s not enough to turn your ideal workflows into Zap templates. You need to get them in front of everyone who should use your Zaps. Zapier automatically promotes your Zap templates in our App Directory and in partner apps with embedded Zaps if your Zap templates include their apps. You can promote them further with a list of your Zap templates on your site, or include built-in Zap Template embeds inside your app.
+It’s not enough to turn your ideal workflows into Zap templates. You need to get them in front of everyone who should use your Zaps. Zapier automatically promotes your Zap templates in our App Directory and in partner apps with embedded Zaps when your Zap templates include their apps. You can promote them further with a list of your Zap templates on your site, or include built-in Zap Template embeds inside your app.
 
 ### Zapier app directory
 
-![Zapier App Directory Page](https://cdn.zappy.app/f56ac65d2c36314bae02f21b00f983e4.png)
-
 The easiest way to find Zap templates is in Zapier’s [app directory](https://zapier.com/apps/) where we have individual pages for each of the {{ site.partner_count }} apps that integrate with Zapier. Want to find Gmail integrations? Go to [zapier.com/apps/gmail/integrations](https://zapier.com/apps/gmail/integrations/) to see the top apps connected with Gmail on Zapier, followed by a list of popular Gmail Zap templates and Zapier content about Gmail use cases.
+
+![Zapier App Directory Page](https://cdn.zappy.app/f56ac65d2c36314bae02f21b00f983e4.png)
 
 Find your app’s app directory page at `zapier.com/apps/YourApp/integrations`, replacing `YourApp` with your app’s name.
 
-![Zapier App Directory two-app page](https://cdn.zappy.app/3937aa425d4ac71d0da24efd3a312829.png)
-
 Want to find ways to connect two specific apps? Click one of the top apps on any App Directory page to see our two-app pages, such as the one above for Trello and Gmail. It shows the most popular use cases for those two apps together.
+
+![Zapier App Directory two-app page](https://cdn.zappy.app/3937aa425d4ac71d0da24efd3a312829.png)
 
 Find your app’s two-app pages at `zapier.com/apps/YourApp/integrations/OtherApp`, substituting `YourApp` with your app’s name and `OtherApp` with the other app connected to your app.
 
@@ -239,13 +240,13 @@ Zapier also shows these top use cases to logged in users, promoting your app’s
 
 ## Manage Your Zap templates
 
-![Zap Template List](https://cdn.zappy.app/83e8b8cece2a25070406f94b3097473d.png)
+One Zap template isn’t enough—you’ll want to make Zap templates for each of your app’s most popular use cases. Over time, you’ll likely make dozens of Zap templates. You can manage them — in draft, review, or publicly available — from your [Zap templates](https://zapier.com/zap-templates/) dashboard alongside Zapier’s Developer Platform tools.
 
-One Zap template isn’t enough—you’ll want to make Zap templates for each of your app’s most popular use cases. Over time, you’ll likely make dozens of Zap templates. You can manage them—in draft, review, or publicly available—from your [Zap templates](https://zapier.com/zap-templates/) dashboard alongside Zapier’s Developer Platform tools.
+![Zap Template List](https://cdn.zappy.app/35809b4d266dcfb55f1190cd8224ff1d.png)
 
 Filter through your Zap templates by status on the left sidebar, click a Zap template to edit it, or select the gear icon on the right of a Zap template to copy its public link, test it, or delete it.
 
-If you have any Zap templates in your _Rejected_ list, edit them to fix the issues then re-submit them. You cannot edit public Zap templates, but if you notice something that you need to change in your existing Zap Templates, please email [partners@zapier.com](mailto:partners@zapier.com) with the link to the Zap template, and we can set the Zap as _Draft_ again so you can edit and re-submit it with any changes.
+If you have any Zap templates in your _Rejected_ list, edit them to fix the issues then re-submit them. You cannot edit public Zap templates, but if you notice something that you need to change in your existing Zap Templates, please email [partners@zapier.com](mailto:partners@zapier.com) with the link to the Zap template, and we can set the Zap as _Draft_ again so you can edit and re-submit it for review with any changes.
 
 Then start again. Whenever you think of something that’s the _perfect_ use case for your Zapier integration, turn it into a Zap template with the [Zap Template Creator](https://zapier.com/zap-templates/create). As soon as it’s approved, it’ll show up everywhere your Zapier integration is promoted, spreading your use case to the people who will benefit from it most.
 
@@ -261,7 +262,7 @@ When promoting a new version of your integration, all Zap templates using the in
 
 * A trigger/action output field key is changed or removed.
 
-If breaking changes exist between the previous and newly promoted integration versions, Zap templates will not be automatically updated and will continue to use the previous version.
+If breaking changes exist between the previous and newly promoted integration versions, existing Zap templates will not be automatically updated and will continue to use the previous version. This can result in an older version acquiring new users over time. Consider the user impacts of [changes made in new versions](https://platform.zapier.com/manage/making-changes).
 
 ### Deprecating versions of your integration
 
