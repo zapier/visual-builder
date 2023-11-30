@@ -7,9 +7,9 @@ redirect_from:
 
 # Clone a version
 
-Cloning allows you to duplicate an existing version of your integration. This is particularly useful when you want to introduce new features or fixes without altering the original integration. When previous version of your integration have more than 5 active users, you will need to clone that version to make modifications.
+Cloning allows you to duplicate an existing version of your integration. This is particularly useful when you want to introduce new features or fixes without altering the original integration. When a previous version of your integration has more than 5 active users, you will need to clone that version to make modifications.
 
-> **Note**: The term “cloning” is specific to the Platform UI and is not used with Platform CLI. However, the concept is similar to updating the version number in your `package.json` file and running [`zapier push`](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#push) to create a new version.
+> **Note**: The term “cloning” is specific to the Platform UI and is not used with Platform CLI. However, the concept is similar to updating the version number in your `package.json` file and running [`zapier push`](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#push) to create a new version you can access within your Zaps for testing.
 
 
 ## How to clone an integration version

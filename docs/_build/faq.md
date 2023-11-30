@@ -87,29 +87,3 @@ Now, retest the request and it should run successfully.
 ![](https://cdn.zappy.app/af56c7fed5183aed462d2e7efbf78f8c.png)
 
 <a id="censored"></a>
-
-## Why does Zapier show `censored` fields in request and response data?
-
-![Example censored fields in Zapier](https://cdn.zappy.app/1ace9c1a32b101b30d8600db73c5dd10.png)
-
-When testing Authentication, Triggers, or Actions in Zapier visual builder, you can see the raw data Zapier sends to your API call and receives from it in the _Bundle_ and _HTTP_ tabs of the testing pane. Some of those values may not be shown; instead, you'll see a value like `:censored:6:82a3be9927:` as in the screenshot above.
-
-Zapier automatically censors sensitive values at runtime, including all input fields marked as `password` and all authentication fields that will include sensitive, private data including username and password fields from Basic and Digest auth, API keys from API key auth, access and refresh tokens from Session and OAuth v2 authentication. These values are stored in the `Auth` bundle and used in API calls, but are replaced in Zapier's logs with a `censored` value.
-
-<a id="cleanup"></a>
-
-## How do I clean up test authentication accounts?
-
-![Example account with multiple test accounts](https://cdn.zappy.app/943cd7b0ee2ada32492c834157a2eccb.png)
-
-While building your integration, testing authentication, and customizing your app's connection label, you may quickly end up with a list of broken or old app authentications. You can clean those up and remove older accounts from your core Zapier account.
-
-![Remove authed accounts](https://cdn.zappy.app/b31f5c7f712c1a585e727b729248615a.png)
-
-Open your [Zapier _Connected Accounts_](https://zapier.com/app/connections) page, and find your app's name (you may need to use the search box or `CMD`+`F` (Mac) or `Ctrl`+`F` (PC)). Click the app name. Once on the app's connections page, identify the connection to remove and click the three dots, then _Delete_, and confirm the deletion. Repeat for each subsequent testing account you added to clean up your authentication list.
-
-Then refresh your integration page in the Visual Builder, and you'll only see the authentications that were not deleted.
-
-## How do I define REST Hooks?
-
-See [Triggers: REST Hook Trigger](https://platform.zapier.com/build/triggers#rest-hook-trigger) for details.

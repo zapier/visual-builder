@@ -1,5 +1,5 @@
 ---
-title: Manage integration versions in Platform UI
+title: Versions
 order: 1
 layout: post-toc
 redirect_from: 
@@ -14,9 +14,9 @@ Versions in Developer Platform allow developers to create multiple iterations of
 
 Versions allow you to have:
 
-- **Seamless user experience**: This allows existing users with uninterrupted service, while new features are being tested and deployed.
-- **Incremental upgrades**: You can facilitate phased roll outs of new features, allowing for thorough testing and feedback collection before full deployment.
-- **Version management**: It provide a structred approach to deprecate older versions post the migration of users to updated versions.
+- **Seamless user experience**: Existing users have uninterrupted service, while new features are being tested and deployed.
+- **Incremental upgrades**: Developers can facilitate phased roll outs of new features, allowing for thorough testing and feedback collection before full deployment.
+- **Version management**: Developers have a structured approach to migrate users to updated versions and deprecate older versions when applicable.
 
 ## Managing versions in Platform UI
 
@@ -38,7 +38,7 @@ Learn more on:
 
 ## Managing versions in Platform CLI 
 
-Integrations created with the Platform CLI cannot be edited and manage versions in the Platform UI, however you can view versions in the Platform UI. You can also run the [`zapier versions`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#versions) command to see the same information in your local terminal.
+Integrations created with the Platform CLI cannot be edited in the Platform UI, however you can view the available versions in the Platform UI. You can also run the [`zapier versions`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#versions) command to see the same information in your local terminal.
 
 ## Who can view your versions?
 

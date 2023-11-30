@@ -4,6 +4,10 @@ order: 2
 layout: post-toc
 redirect_from: 
     - /quickstart/platform-ui-guide
+    - /quickstart/what-you-need
+    - /quickstart/create-integration
+    - /docs/start
+    - /build/add
 ---
 
 # Platform UI tutorial

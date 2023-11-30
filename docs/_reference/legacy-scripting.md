@@ -1,6 +1,6 @@
 ---
 title: Scripting in converted Legacy Web Builder Integrations
-order: 1
+order: 7
 layout: post-toc
 redirect_from: 
     - /legacy/scripting
