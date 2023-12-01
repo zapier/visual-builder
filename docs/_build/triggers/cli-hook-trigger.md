@@ -25,6 +25,7 @@ Zapier does not support Identity Confirmation for webhook subscriptions.
 - A way to store the unique URLs we send you, such as a database.
 - A way to send payloads in JSON format to each stored URL, when a specific event happens that you want to trigger the associated Zap on.
 - One or more endpoint(s) to receive subscribe and unsubscribe payloads (these can be the same endpoint(s) or separate ones)
+- If your webhook subscriptions expire, make sure the subscribe endpoint returns an `expiration_date` property containing an ISO8601 date. The platform will automatically attempt to resubscribe after the expiration date.
 
 When a Zap is turned on, the `subscribeHook` function is called with a payload of data that includes the unique URL to send data to in order to trigger the Zap. Store this URL, associating it with an id and use it whenever you want to trigger this Zap. Return that id in the response back to Zapier to be used later in the Unsubscribe.
 
