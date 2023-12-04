@@ -27,8 +27,6 @@ If you have an existing Full Zapier Experience or Zap templates element embed, y
 
 ## Add support for Quick Account Creation with the Partner API
 
-To implement Quick Account Creation with a Partner API implementation:
-
 1. Retrieve your integration's name from the "title" field returned from the [`/apps` endpoint](https://platform.zapier.com/embed/partner-api#get-v1apps).
 2. Redirect users to the URL below:
 `https://zapier.com/partner/acknowledgment?sign-up-last-name=<sign-up-last-name>&next=%2Fapp%2Fdashboard&type=quac&name=<Partner Name>&sign-up-first-name=<sign-up=first-name>&sign-up-email=<sign-up-email>`
