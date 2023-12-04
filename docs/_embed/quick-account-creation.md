@@ -45,6 +45,3 @@ To implement Quick Account Creation with a Partner API implementation:
   - If the user consents to the terms and selects "Continue", a Zapier account is created on their behalf and they are redirected to the Zap editor.
   - If the user closes the consent page, no Zapier account is created.
   - If there is an error creating an account, the user is redirected to an error page.
-
-
-
