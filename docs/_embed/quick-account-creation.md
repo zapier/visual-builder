@@ -9,7 +9,7 @@ Instead of being directed to a sign-up screen, users are presented with a consen
 - New or existing implementation of the [Full Zapier Experience](https://platform.zapier.com/embed/full-zapier-experience), [Zap templates element](https://platform.zapier.com/embed/zap-templates), or [Partner API](https://platform.zapier.com/embed/partner-api).
 - Access to your user’s first name, last name, and email on the page supporting Quick Account Creation.
 
-## To add support for Quick Account Creation
+## Add support for Quick Account Creation on embed elements
 
 1. Go to the [generator tool](https://zapier.com/partner/solutions/plug-and-play) for either the Full Zapier Experience or [Zap templates element](https://platform.zapier.com/embed/zap-templates).
 2. Customize the visual design and features of the embed solution of choice.
@@ -19,7 +19,26 @@ Instead of being directed to a sign-up screen, users are presented with a consen
 
 You can embed the Full Zapier Experience and Zap templates element, or utilize the Partner API without support for Quick Account Creation. If the four required fields aren’t provided, the embed will use the default behaviour redirecting users to Zapier's signup page from your product's page.
 
-When Quick Account Creation is enabled:
+If you have an existing Full Zapier Experience or Zap templates element embed, you can add the new required fields for Quick Account Creation to your current code implementation, instead of re-customizing and regenerating the code. Make sure the **Body** code includes the below four fields with the placeholder values replaced:
+- client-id="your_integration_client_id"
+- sign-up-email="email_of_your_user@example.com"
+- sign-up-first-name="first_name_of_your_user"
+- sign-up-last-name="last_name_of_your_user"
+
+## Add support for Quick Account Creation with the Partner API
+
+To implement Quick Account Creation with a Partner API implementation:
+
+1. Retrieve your integration's name from the "title" field returned from the [`/apps` endpoint](https://platform.zapier.com/embed/partner-api#get-v1apps).
+2. Redirect users to the URL below:
+`https://zapier.com/partner/acknowledgment?sign-up-last-name=<sign-up-last-name>&next=%2Fapp%2Fdashboard&type=quac&name=<Partner Name>&sign-up-first-name=<sign-up=first-name>&sign-up-email=<sign-up-email>`
+3. Replace the following placeholders from the query parameter, using the "title" value from step 1 for the "name" parameter:
+- sign-up-first-name=<sign-up-first-name>
+- sign-up-last-name=<sign-up-last-name>
+- sign-up-email=<sign-up-email>
+- name=<Partner Name>
+
+## When Quick Account Creation is enabled
 - If the user is already logged into Zapier, they are redirected to Zap editor.
 - If the user’s email is already associated with a Zapier account, but the user is not logged in, they are redirected to Zapier's sign-in page.
 - If the user's email is not associated with an existing Zapier account, they are redirect to the consent page.
@@ -27,9 +46,5 @@ When Quick Account Creation is enabled:
   - If the user closes the consent page, no Zapier account is created.
   - If there is an error creating an account, the user is redirected to an error page.
 
-If you have an existing Full Zapier Experience or Zap templates element embed, you can add the new required fields for Quick Account Creation to your current code implementation, instead of re-customizing and regenerating the code. Make sure the **Body** code includes the below four fields with the placeholder values replaced:
-  - client-id="your_integration_client_id"
-  - sign-up-email="email_of_your_user@example.com"
-  - sign-up-first-name="first_name_of_your_user"
-  - sign-up-last-name="last_name_of_your_user"
+
 
