@@ -21,7 +21,7 @@ Signups to use Adalo's integration jumped 40% after embedding Zapier with Quick 
 4. Replace the placeholder values set to `client-id`, `sign-up-email`, `sign-up-first-name`, and `sign-up-last-name` in the code **Body**. All four values are required for Quick Account Creation.
 5. Embed both the **Head** and **Body** code on your product's page.
 
-You can embed the Full Zapier Experience and Zap templates element, or utilize the Partner API without support for Quick Account Creation. If the four required fields aren’t provided, the embed will use the default behaviour redirecting users to Zapier's signup page from your product's page.
+You can still embed the Full Zapier Experience and Zap templates element, or utilize the Partner API without support for Quick Account Creation. If the four required fields aren’t provided, the embed will use the default behaviour redirecting users to Zapier's signup page from your product's page.
 
 If you have an existing Full Zapier Experience or Zap templates element embed, you can add the new required fields for Quick Account Creation to your current code implementation, instead of re-customizing and regenerating the code. Make sure the **Body** code includes the below four fields with the placeholder values replaced:
 - client-id="your_integration_client_id"
