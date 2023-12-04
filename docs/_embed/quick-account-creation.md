@@ -4,7 +4,7 @@ Quick Account Creation is a seamless, accelerated sign-up feature allowing first
 
 Instead of being directed to a sign-up screen, users are presented with a consent page to connect to Zapier, then proceed to the Zap editor if consented. If an existing Zapier account under the email does not exist, users will receive an email prompting them to finish setting up their account. This allows users to dive directly into the Zap editor to accomplish the task at hand efficiently and without context switching.
 
-## Case Study
+## Case study
 
 Signups to use Adalo's integration jumped 40% after embedding Zapier with Quick Account Creation into their app builder. [Read more about Adalo's user experience and results.](https://zapier.com/blog/adalo-user-experience-with-zapier/).
 
@@ -32,13 +32,15 @@ If you have an existing Full Zapier Experience or Zap templates element embed, y
 ## Add support for Quick Account Creation with the Partner API
 
 1. Retrieve your integration's name from the "title" field returned from the [`/apps` endpoint](https://platform.zapier.com/embed/partner-api#get-v1apps).
-2. Redirect users to the URL below:
+2. Redirect users to the acknowledgement page URL below:
 `https://zapier.com/partner/acknowledgment?sign-up-last-name=<sign-up-last-name>&next=%2Fapp%2Fdashboard&type=quac&name=<Partner Name>&sign-up-first-name=<sign-up=first-name>&sign-up-email=<sign-up-email>`
 3. Replace the following query parameter placeholders in the URL, using the "title" value from step 1 for the "name" parameter:
 - sign-up-first-name=<sign-up-first-name>
 - sign-up-last-name=<sign-up-last-name>
 - sign-up-email=<sign-up-email>
 - name=<Partner Name>
+
+After an account is created, a [user token still needs to be procured](https://platform.zapier.com/embed/partner-api#access-token) to access specific Partner API endpoints. Generally, since the user will already be signed in to their newly created account in an active session on Zapier, users won't have to explicitly sign in again when prompted with Zapier's OAuth flow.
 
 ## When Quick Account Creation is enabled
 - If the user is already logged into Zapier, they are redirected to Zap editor.
