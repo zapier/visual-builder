@@ -15,6 +15,7 @@ Set up your REST Hook trigger in the Platform UI with the Settings, Input Design
 - Your app supports REST Hooks - webhook subscriptions that can be manipulated through a REST API.
 - An endpoint/s to set up and remove the hook subscription exists for Zapier to send Subscribe and Unsubscribe API requests to with a unique subscription URL, the`bundle.targetUrl`, for each active Zap.
 - A separate endpoint exists that returns a list of sample items that would be expected to trigger the user's Zap. This is optional for apps remaining private and ***required*** for public apps.
+- If your webhook subscriptions expire, make sure the subscribe endpoint returns an `expiration_date` property containing an ISO8601 date. The platform will automatically attempt to resubscribe after the expiration date.
 
 ## 1. Add the trigger settings
 
