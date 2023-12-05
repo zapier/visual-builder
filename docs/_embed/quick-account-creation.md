@@ -18,7 +18,7 @@ This video shows an example implementation of Quick Account Creation with the Za
 
 ## Case study
 
-Signups to use Adalo's integration jumped 40% after embedding Zapier with Quick Account Creation into their app builder. [Read more about Adalo's user experience and results.](https://zapier.com/blog/adalo-user-experience-with-zapier/).
+Signups to use Adalo's integration jumped 40% after embedding Zapier with Quick Account Creation into their app builder. [Read more about Adalo's user experience and results.](https://zapier.com/blog/adalo-user-experience-with-zapier/)
 
 ## Prerequisites
 
