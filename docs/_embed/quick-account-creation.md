@@ -4,6 +4,12 @@ Quick Account Creation is a seamless, accelerated sign-up feature allowing first
 
 Instead of being directed to a sign-up screen, users are presented with a consent page to connect to Zapier, then proceed to the Zap editor if consented. If an existing Zapier account under the email does not exist, users will receive an email prompting them to finish setting up their account. This allows users to dive directly into the Zap editor to accomplish the task at hand efficiently and without context switching.
 
+## Example implementation
+
+This video shows an example implementation of Quick Account Creation with the Zap template element embedded within Adalo's platform, providing their users with an accelerated, sign-up experience:
+
+<iframe allowtransparency="true" title="Search or create" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://cdn.zappy.app/v1f21dbddbc570407248253c13859a5d9.mp4" width="640" height="360"></iframe>
+
 ## Case study
 
 Signups to use Adalo's integration jumped 40% after embedding Zapier with Quick Account Creation into their app builder. [Read more about Adalo's user experience and results.](https://zapier.com/blog/adalo-user-experience-with-zapier/).
