@@ -30,7 +30,7 @@ This video demonstrates how to implement Quick Account Creation using the Zap te
 1. Go to the [generator tool](https://zapier.com/partner/solutions/plug-and-play) for either the [Full Zapier Experience]((https://platform.zapier.com/embed/full-zapier-experience)) or [Zap templates element](https://platform.zapier.com/embed/zap-templates).
 2. Customize the visual design and features of the embed solution of choice.
 3. Generate the embed code in HTML, Vanilla JS, React, Angular, or Vue.js.
-4. Replace the placeholder values set to `client-id`, `sign-up-email`, `sign-up-first-name`, and `sign-up-last-name` in the code **Body**. All four values are required for Quick Account Creation.
+4. Replace the placeholder values set to `sign-up-email`, `sign-up-first-name`, and `sign-up-last-name` in the code **Body**. All three values and the client ID are required for Quick Account Creation.
 5. Embed both the **Head** and **Body** code on your product's page.
 
 You can still embed the Full Zapier Experience and Zap templates element, or utilize the Partner API without support for Quick Account Creation. If the four required fields aren’t provided, the embed will use the default behaviour redirecting users to Zapier's signup page from your product's page.
