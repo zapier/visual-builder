@@ -1,3 +1,9 @@
+---
+title: Support Quick Account Creation
+order: 6
+layout: post-toc
+---
+
 # Support Quick Account Creation
 
 Quick Account Creation is a seamless, accelerated sign-up feature allowing first time Zapier users to skip the standard sign-up procedure and onboarding survey. Enabling Quick Account Creation as part of your embed tool code helps provide a more frictionless experience for end users.
@@ -49,6 +55,7 @@ If you have an existing Full Zapier Experience or Zap templates element embed, y
 After an account is created, a [user token still needs to be procured](https://platform.zapier.com/embed/partner-api#access-token) to access specific Partner API endpoints. Generally, since the user will already be signed in to their newly created account in an active session on Zapier, users won't have to explicitly sign in again when prompted with Zapier's OAuth flow.
 
 ## When Quick Account Creation is enabled
+
 - If the user is already logged into Zapier, they are redirected to Zap editor.
 - If the user’s email is already associated with a Zapier account, but the user is not logged in, they are redirected to Zapier's sign-in page.
 - If the user's email is not associated with an existing Zapier account, they are redirect to the consent page.

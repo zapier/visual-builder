@@ -1,6 +1,6 @@
 ---
 title: Benefits of embedding Zapier
-order: 8
+order: 9
 layout: post-toc
 redirect_from:
     - /amplify-embed/

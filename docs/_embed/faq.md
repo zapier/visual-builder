@@ -1,6 +1,6 @@
 ---
 title: Embed frequently asked questions
-order: 7
+order: 8
 layout: post
 redirect_from: 
     - /embed/
