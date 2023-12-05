@@ -47,7 +47,7 @@ If you have an existing Full Zapier Experience or Zap templates element embed, y
 2. Redirect users to the acknowledgement page URL below:
 `https://zapier.com/partner/acknowledgment?sign-up-last-name=<sign-up-last-name>&next=%2Fapp%2Fdashboard&type=quac&name=<Partner Name>&sign-up-first-name=<sign-up=first-name>&sign-up-email=<sign-up-email>`
 3. Replace the following query parameter placeholders in the URL, using the "title" value from step 1 for the "name" parameter:
-- name=`<Partner Name>`
+- name=`<partner-name>`
 - sign-up-first-name=`<sign-up-first-name>`
 - sign-up-last-name=`<sign-up-last-name>`
 - sign-up-email=`<sign-up-email>`
