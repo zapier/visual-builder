@@ -31,10 +31,10 @@ This page shows a list of all versions of the integration, along with status, nu
 ![The Versions page in the Zapier Developer Platform](https://cdn.zappy.app/b443129368e61bdaa86c6f5a741fbe8a.png)
 
 Learn more on:
-- [Clone an version]()
-- [Migrate users to a new version]()
-- [Promote an version]()
-- [Deprecate or delete an version]()
+- [Clone an version](https://platform.zapier.com/manage/clone)
+- [Promote a version](https://platform.zapier.com/manage/promote)
+- [Migrate users to a new version](https://platform.zapier.com/manage/migrate)
+- [Deprecate or delete an version](https://platform.zapier.com/manage/deprecate)
 
 ## Managing versions in Platform CLI 
 

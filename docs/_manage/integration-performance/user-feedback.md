@@ -76,7 +76,7 @@ Problems with your public integration, authentication and API calls will be logg
 
 ## 4. Monitor integration insights
 
-- [See all the metrics tracked](https://platform.zapier.com/manage/analyze-integration-performance#integration-insights-definitions) in this table, or access them for any integration you are an Admin or Collaborator on from the _Dashboard_ tab of the Platform UI. Insights include important data on both the integration's growth and usage, such as monthly active users, retention rates, and Zap usage by triggers and actions.
+- [See all the metrics tracked](https://platform.zapier.com/manage/integration-insights) in this table, or access them for any integration you are an Admin or Collaborator on from the _Dashboard_ tab of the Platform UI. Insights include important data on both the integration's growth and usage, such as monthly active users, retention rates, and Zap usage by triggers and actions.
 
 ![Screenshot of Dashboard tab in left sidebar of Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
 

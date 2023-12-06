@@ -35,24 +35,24 @@ Change scenarios marked as _Depends_ with no linked best practice can vary widel
 | --- | :---: | :---: | :---: | :---: | :---: |
 | **AUTHENTICATION CHANGES**  |
 |------------------------|---------------------------------|------------------------------|--------------------------------------|
-| **Authentication schemes** | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-scheme) | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-scheme) | - | ✓ |
-| **Authentication fields - required** | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#adding-a-required-auth-field) | [Depends](https://platform.zapier.com/manage/making-changes#adding-a-required-auth-field) | - | ✓ | - |
+| **Authentication schemes** | [BREAKING CHANGE](https://platform.zapier.com/manage/auth-scheme) | - | [BREAKING CHANGE](https://platform.zapier.com/manage/auth-scheme) | - | ✓ |
+| **Authentication fields - required** | [BREAKING CHANGE](https://platform.zapier.com/manage/auth-required) | [Depends](https://platform.zapier.com/manage/auth-required) | - | ✓ | - |
 | **Authentication fields - optional** | ✓ | ✓ | - | ✓ | - |
-| **Authentication field key(s)** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-authentication-field-keys) | - | - | - |
+| **Authentication field key(s)** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/auth-keys) | - | - | - |
 | **Authentication - token request** | - | ✓ | - | - | - |
 | **Authentication - test function** | - | ✓ | ✓ | - | - |
 | **TRIGGER/ACTION CHANGES** |
 | **Trigger/Action - meta info (e.g.: label, description)** | - | ✓ | ✓ | - | - |
-| **Trigger/Action - key** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#updates-to-triggeractionsearch-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#updates-to-triggeractionsearch-keys) | - | ✓ |
-| **Trigger/Action - input field(s) - required** | [Depends](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | [Depends](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | [Depends](https://platform.zapier.com/manage/making-changes#adding-new-required-fields-in-triggeractionsearch) | ✓ | - |
+| **Trigger/Action - key** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/change-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/change-keys) | - | ✓ |
+| **Trigger/Action - input field(s) - required** | [Depends](https://platform.zapier.com/manage/required-input) | [Depends](https://platform.zapier.com/manage/required-input) | [Depends](https://platform.zapier.com/manage/required-input) | ✓ | - |
 | **Trigger/Action - input field(s) - optional** | ✓ | ✓ | ✓ | ✓ | - |
-| **Trigger/Action - input field(s) - key** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-form-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-form-field-keys) | - | - |
+| **Trigger/Action - input field(s) - key** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/input-key) | [BREAKING CHANGE](https://platform.zapier.com/manage/input-key) | - | - |
 | **Trigger/Action - input field(s) - field type** | - | Depends | Depends | - | - |
-| **Trigger/Action - output data - key(s)** | ✓ | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-field-keys) | - |
-| **Trigger/Action - output data - response structure** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | - | - |
+| **Trigger/Action - output data - key(s)** | ✓ | [BREAKING CHANGE](https://platform.zapier.com/manage/output-key) | [BREAKING CHANGE](https://platform.zapier.com/manage/output-key) | [BREAKING CHANGE](https://platform.zapier.com/manage/output-key) | - |
+| **Trigger/Action - output data - response structure** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/output) | [BREAKING CHANGE](https://platform.zapier.com/manage/output) | - | - |
 | **Trigger/Action - perform function** | - | Depends | Depends | - | - |
-| **Trigger type - polling to hook type** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/making-changes#changing-output-data) | - | - | ✓ |
-| **Trigger (polling) - perform function** | - | [Depends](https://platform.zapier.com/manage/making-changes#updating-a-polling-triggers-perform-method) | [Depends](https://platform.zapier.com/manage/making-changes#updating-a-polling-triggers-perform-method) | - | - |
+| **Trigger type - polling to hook type** | - | [BREAKING CHANGE](https://platform.zapier.com/manage/change-trigger) | - | - | ✓ |
+| **Trigger (polling) - perform function** | - | [Depends](https://platform.zapier.com/manage/change-perform) | [Depends](https://platform.zapier.com/manage/change-perform) | - | - |
 | **Trigger (hook) - perform list** | - | Depends | Depends | - | - |
 | **Trigger (hook) - performSubscribe** | - | ✓ | ✓ | - | - |
 | **Trigger (hook) - performUnsubscribe** | - | ✓ | ✓ | - | - |
@@ -61,8 +61,8 @@ Change scenarios marked as _Depends_ with no linked best practice can vary widel
 | **Partner's API (overall)** | - | Depends | Depends | Depends | - |
 | **Product feature** | ✓ | - | - | - | - |
 | **Rebrand - (e.g. logo, app name)** | - | ✓ | - | - | - |
-| **Export UI to CLI** | - | [Depends](https://platform.zapier.com/manage/making-changes#converting-ui-to-cli) | ✓ | - | - |
-| **Export CLI to UI** | - | [Depends](https://platform.zapier.com/manage/making-changes#converting-cli-to-ui) | - | - | - |
+| **Export UI to CLI** | - | [Depends](https://platform.zapier.com/manage/export-cli) | ✓ | - | - |
+| **Export CLI to UI** | - | [Depends](https://platform.zapier.com/manage/export-ui) | - | - | - |
 | **Edit Legacy Web Builder integration** | - | [Depends](https://platform.zapier.com/manage/versions-legacy) | [Depends](https://platform.zapier.com/manage/versions-legacy) | - | - |
 
 

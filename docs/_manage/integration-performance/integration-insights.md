@@ -6,6 +6,7 @@ redirect_from:
    - /manage/analyze-integration-performance#integration-insights-definitions
    - /manage/analyze-integration-performance#practical-applications-of-integration-insights
    - /partners/integration-quality
+   - /manage/analyze-integration-performance
 ---
 
 # Integration insights definitions

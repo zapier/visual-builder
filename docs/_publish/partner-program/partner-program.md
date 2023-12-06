@@ -64,7 +64,7 @@ You can view Partner Program metrics in two ways:
 
 ## How to monitor integration insights
 
-As you launch and maintain your integration, monitor and review the insights in the dashboard on a regular cadence. Insights include data on the integration's growth and usage, such as monthly active users, retention rates, and Zap usage by triggers and actions. You can [see all the metrics tracked](https://platform.zapier.com/manage/analyze-integration-performance#integration-insights-definitions) in this table, or access them for any integration you are an Admin or Collaborator on from the "Dashboard" tab of the developer platform.
+As you launch and maintain your integration, monitor and review the insights in the dashboard on a regular cadence. Insights include data on the integration's growth and usage, such as monthly active users, retention rates, and Zap usage by triggers and actions. You can [see all the metrics tracked](https://platform.zapier.com/manage/integration-insights) in this table, or access them for any integration you are an Admin or Collaborator on from the "Dashboard" tab of the developer platform.
 
 ![Screenshot of Dashboard tab in left sidebar of Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
 

@@ -29,7 +29,7 @@ Make sure your sales and support teams say "yes!" when asked about an integratio
 
 ## Tip 2: Monitor your integration insights on growth and usage
 
-Review your integration insights on a regular cadence to guide making decisions and [inform you on the quality](https://platform.zapier.com/manage/analyze-integration-performance) of your integration. We routinely hear from our partners that Zapier users are higher-value, sticky users. So, it's important to keep a pulse on how the integration is doing.
+Review your integration insights on a regular cadence to guide making decisions and [inform you on the quality](https://platform.zapier.com/manage/integration-insights) of your integration. We routinely hear from our partners that Zapier users are higher-value, sticky users. So, it's important to keep a pulse on how the integration is doing.
 
 **Clearbit case study:** Clearbit carefully tracks the success of their users and discovered Zapier users are 20% less likely to churn. Armed with this data, their team prioritizes promotion and development strategies that encourage more of their users to try integrations.
 
