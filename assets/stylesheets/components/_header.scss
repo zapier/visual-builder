@@ -1,16 +1,15 @@
 .platform-header {
-  background: $blackwidow;
-  height: 69px;
+  background: #2d2e2e;
+  height: 68px;
   position: fixed;
   width: 100%;
   padding: 0 30px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .platform-header__links {
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -21,48 +20,32 @@
   margin: 0 0 0 80px;
 
   li {
-    margin: 0 12px;
-
-    &:first-of-type {
-      margin-left: 0;
-    }
+    display: inline-flex;
+    margin-bottom: 0px;
   }
 
   a {
-    color: rgb(218, 223, 226);
-    transition: color 0.2s ease-in-out 0s;
-    position: relative;
-
-    &:hover {
-      color: #fff;
-      text-decoration: none;
-      text-shadow: -0.03ex 0 0 #ffffff, 0.03ex 0 0 #ffffff;
-    }
+    color: #fffdf9;
+    border-bottom: 4px solid transparent;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 17px;
+    padding: 21px 3px 17px;
   }
 
   .platform-header__selected {
-    text-shadow: -0.03ex 0 0 #ffffff, 0.03ex 0 0 #ffffff;
-
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 100%;
-      height: 2px;
-      background-color: #ffffff;
-    }
+    border-bottom: 4px solid #fffdf9;
   }
 }
 
 .platform-header__logo {
-  height: 32px;
+  height: 33px;
 }
 
 a#platform-header__logo {
   background: url($baseurl + "/assets/images/platform-logo.svg") no-repeat;
   width: 192px;
-  height: 32px;
+  height: 33px;
 }
 
 .menu-toggle {
@@ -154,6 +137,7 @@ a#platform-header__logo {
   .platform-header {
     height: 56px;
     padding: 0 20px;
+    justify-content: space-between;
 
     .search { display: none; }
   }
