@@ -1,8 +1,10 @@
 ---
-title: Integration design examples
+title: Must have triggers and actions
 order: 1
 layout: post-toc
-redirect_from: /build/recommended-integration-features
+redirect_from:
+    - /build/recommended-integration-features
+    - /quickstart/integration-design-examples
 ---
 
 <style>
