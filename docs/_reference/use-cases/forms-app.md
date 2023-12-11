@@ -4,7 +4,6 @@ order: 1
 layout: post-toc
 redirect_from: 
     - /partners/integration-examples
-    - /quickstart/integration-design-examples
 ---
 
 # Zapier integration structure for a forms app
