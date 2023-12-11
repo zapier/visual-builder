@@ -20,7 +20,7 @@ table {
   }
 </style>
 
-# Integration design examples
+# Must have triggers and actions
 
 Whether you're just starting to scope out a new Zapier integration build or have successfully launched your app in the Zapier App Directory, it's helpful to know what features users find the most valuable and are the most widely used across Zapier's various [app categories](https://zapier.com/apps). Ensuring your integration covers the foundational triggers, actions, and searches applicable to your app will provide more utility to your users.
 
