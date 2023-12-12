@@ -43,14 +43,27 @@ If you have an existing Full Zapier Experience or Zap templates element embed, y
 
 ## Add support to the Partner API
 
-1. Retrieve your integration's name from the "title" field returned from the [`/apps` endpoint](https://platform.zapier.com/embed/partner-api#get-v1apps).
-2. Redirect users to the acknowledgement page URL below:
-`https://zapier.com/partner/acknowledgment?sign-up-last-name=<sign-up-last-name>&next=%2Fapp%2Fdashboard&type=quac&name=<Partner Name>&sign-up-first-name=<sign-up=first-name>&sign-up-email=<sign-up-email>`
-3. Replace the following query parameter placeholders in the URL, using the "title" value from step 1 for the "name" parameter:
-- name=`<partner-name>`
+1. Send users to the URL below to create an account and redirect them into the Editor setup with the Zap template set in the parameters:
+`https://zapier.com/webintent/create-zap?
+template=<zap-template-id>&
+utm_source=partner&
+utm_medium=embed&
+utm_campaign=zap_templates_element&
+entry-point-location=partner_embed&
+referer=<referer>&
+referrer=<referrer>&
+sign-up-first-name=<sign-up-first-name>&
+sign-up-last-name=<sign-up-last-name>&
+sign-up-email=<sign-up-email>&
+client-id=<client-id>`
+2. Replace the following query parameter placeholders in the URL:
+- client-id=`<client-id>`
+- template=`<zap-template-id>`
 - sign-up-first-name=`<sign-up-first-name>`
 - sign-up-last-name=`<sign-up-last-name>`
 - sign-up-email=`<sign-up-email>`
+- referer=`<referer>`
+- referrer=`<referrer>`
 
 After an account is created, a [user token still needs to be procured](https://platform.zapier.com/embed/partner-api#access-token) to access specific Partner API endpoints. Generally, since the user will already be signed in to their newly created account in an active session on Zapier, users won't have to explicitly sign in again when prompted with Zapier's OAuth flow.
 
