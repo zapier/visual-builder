@@ -15,5 +15,5 @@
 {% endfor %}
 
 <hr>
-{% if prev %}<a class="button blue" href="{{ site.baseurl }}{{ prev.url}}">Previous: {{ prev.title }}</a>{% endif %}
-{% if next %}<a class="button blue" href="{{ site.baseurl }}{{ next.url}}">Next: {{ next.title }}</a>{% endif %}
+{% if prev %}<a id="previous_page" class="button blue" href="{{ site.baseurl }}{{ prev.url}}">Previous: {{ prev.title }}</a>{% endif %}
+{% if next %}<a id="next_page" class="button blue" href="{{ site.baseurl }}{{ next.url}}">Next: {{ next.title }}</a>{% endif %}

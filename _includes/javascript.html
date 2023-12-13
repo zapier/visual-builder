@@ -121,3 +121,36 @@ menuToggle.addEventListener('click', function(event) {
   document.addEventListener("keydown", keyDownHandler);
 })();
 </script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('.sidebar__list-link');
+    const currentUrl = window.location.pathname;
+    let currentIndex = -1;
+
+    const linksArray = Array.from(sidebarLinks);
+
+    linksArray.forEach((link, index) => {
+        if (link.getAttribute('href') === currentUrl) {
+            currentIndex = index;
+        }
+    });
+
+    if (currentIndex !== -1) {
+        const prevLink = linksArray[currentIndex - 1];
+        const nextLink = linksArray[currentIndex + 1];
+
+        if (prevLink) {
+            document.getElementById('previous_page').href = prevLink.href;
+            document.getElementById('previous_page').textContent = prevLink.textContent.trim();
+        }
+
+        if (nextLink) {
+            document.getElementById('next_page').href = nextLink.href;
+            document.getElementById('next_page').textContent = nextLink.textContent.trim();
+        }
+    }
+});
+
+</script>
