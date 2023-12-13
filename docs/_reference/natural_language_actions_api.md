@@ -12,7 +12,7 @@ Zapier’s [AI Actions](https://actions.zapier.com/) is an AI alpha product desi
 With the Natural Language Actions API, you can:
 
 - Access Zapier’s platform of 6000+ apps within your own product.
-- Integrate with chatbots or [large language models](https://en.wikipedia.org/wiki/Wikipedia:Large_language_models).
+- Integrate with chatbots or [large language models](https://en.wikipedia.org/wiki/Large_language_model).
 - Power any integration project.
 
 Learn more in our [AI Actions documentation](https://actions.zapier.com/).
