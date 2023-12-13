@@ -1,5 +1,5 @@
 ---
-title: Natural Language Actions API
+title: AI Actions
 order: 4
 layout: post-toc
 redirect_from: /zapier_products/natural-language-actions-api
