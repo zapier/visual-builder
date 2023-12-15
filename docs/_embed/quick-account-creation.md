@@ -43,7 +43,7 @@ If you have an existing Full Zapier Experience or Zap templates element embed, y
 
 ## Add support to the Partner API
 
-1. Send users to the URL below to create an account and redirect them into the Editor setup with the Zap template set in the parameters:
+1. Use the URL below to initiate Quick Account Creation, then redirect users into the Editor with the Zap template set in the parameters:
 `https://zapier.com/webintent/create-zap?
 template=<zap-template-id>&
 utm_source=partner&
