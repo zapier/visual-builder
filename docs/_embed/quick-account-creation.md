@@ -48,7 +48,8 @@ If you have an existing Full Zapier Experience or Zap templates element embed, y
 template=<zap-template-id>&
 utm_source=partner&
 utm_medium=embed&
-utm_campaign=zap_templates_element&
+utm_campaign=partner_api&
+utm_content=partner_quick_account_creation&
 entry-point-location=partner_embed&
 referer=<referer>&
 referrer=<referrer>&
