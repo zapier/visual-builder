@@ -49,6 +49,7 @@ https://zapier.com/webintent/create-zap?template=<zap-template-id>&utm_source=pa
 ```
 
 2. Replace the following query parameter placeholders in the URL:
+
 |      Parameter          | Requirement | Explanation                                                                                        |
 | :---------------------: | :---------: | -------------------------------------------------------------------------------------------------- |
 | **client_id**           |  Required   | Your application Client ID.                                                                        |
