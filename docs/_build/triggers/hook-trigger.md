@@ -61,9 +61,9 @@ Zapier includes a `targetUrl` when making this request. You need to store the ta
 
 Your app's event system would determine which stored subscriptions should be invoked when an event occurs in your app, posting to the corresponding stored `targetUrl`.
 
-The webhook URL can be accessed via  `{{bundle.targetUrl}}`.
+The webhook URL can be accessed via  {% raw %}`{{bundle.targetUrl}}`{% endraw %}.
 
-For example, for Gitlab's API `url` is used as the key for the `{{bundle.targetUrl}}` value that contains the webhook URL to send data to.
+For example, for Gitlab's API `url` is used as the key for the {% raw %}`{{bundle.targetUrl}}`{% endraw %} value that contains the webhook URL to send data to.
 
 ![](https://cdn.zappy.app/8b7941e3092850bd7edf331cb78b5659.png)
 
