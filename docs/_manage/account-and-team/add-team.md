@@ -16,10 +16,10 @@ You can add team members to your integration to collaborate, contribute, and vie
 
 - **Collaborator**: Collaborators are granted read-only access to the integration. Collaborator access is recommended for product, leadership, partnership, marketing, and other teams seeking access to integration data for analysis and record-keeping without direct involvement in its creation and maintenance. While they cannot make direct changes to the integration, they can:
 
-- View performance data
-- View the integration history
-- Review and comment on feature requests and bug reports
-- Access tools to embed your integration throughout your site to drive user adoption
+    * View performance data
+    * View the integration history
+    * Review and comment on feature requests and bug reports
+    * Access tools to embed your integration throughout your site to drive user adoption
 
 ## Invite team members
 
