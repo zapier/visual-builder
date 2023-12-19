@@ -2,7 +2,9 @@
 title: AI Actions
 order: 4
 layout: post-toc
-redirect_from: /zapier_products/natural-language-actions-api
+redirect_from: 
+    - /zapier_products/natural-language-actions-api
+    - /reference/natural-language-actions-api
 ---
 
 # AI Actions
