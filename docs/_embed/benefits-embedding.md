@@ -10,9 +10,9 @@ redirect_from:
 # Benefits of embedding Zapier
 
 ## Introduction
-We’ve put together a list of opportunities to help your integration become more visible. Try one or all of the options here and begin connecting your users with Zapier’s 6, 000+ integrations.
+We’ve put together a list of opportunities to help your integration become more visible. Try one or all of the options here and begin connecting your users with Zapier’s {{site.partner_count}} integrations.
 
-## Allow Users to Connect Faster through accelerated sign-ups
+## Allow users to connect faster through accelerated sign-ups
 **Why?** The [Quick Account Creation](https://platform.zapier.com/embed/quick-account-creation) feature allows you to make it easy for your users to sign up for a Zapier account while using your embed tool.
 **How?** Seamless user signups = more usage of your integration. Check how [Zapier Partner Adalo started using this feature](https://zapier.com/blog/adalo-user-experience-with-zapier/) and saw a 40 percent increase in users successfully creating Zaps. And it took less than a day to get set up!
 
