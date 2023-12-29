@@ -24,7 +24,7 @@ Use Session authentication with your Zapier integration if your API is designed 
 
 - Session auth does not include any default input fields. Add the fields required by your API by selecting _Add Fields_ and fill in the details for each field. Add the most commonly needed fields first, in the order users expect, as you cannot reorder fields once added. 
 
-- Two types of fields are available when building an OAuth v2 input form. Standard Fields, work much like other form fields with Zapier's [input form](https://platform.zapier.com/build/input-designer) in triggers and actions. [Computed Fields](https://platform.zapier.com/build/authentication/computed-fields) make sure specific fields are returned by your app's authentication API call response.
+- Two types of fields are available when building an Session input form. Standard Fields, work much like other form fields with Zapier's [input form](https://platform.zapier.com/build/input-designer) in triggers and actions. [Computed Fields](https://platform.zapier.com/build/authentication/computed-fields) make sure specific fields are returned by your app's authentication API call response.
 
 - For each field, add the required _Key_, the name your API uses to reference this field.
 

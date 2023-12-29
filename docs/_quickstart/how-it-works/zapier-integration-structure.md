@@ -10,8 +10,6 @@ redirect_from:
 
 # Zapier integration structure
 
-## Project Structure
-
 [Zapier's Developer Platform](https://developer.zapier.com/) includes everything needed to build and manage a new Zapier integration. When you access your integration project by name, you'll see the left sidebar outlines the core project structure. 
 
 ### Dashboard

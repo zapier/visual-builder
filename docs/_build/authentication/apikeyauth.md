@@ -13,7 +13,7 @@ API Key authentication passes along a user-entered API Key with every API call. 
 ![Zapier API Key auth example](https://cdn.zapier.com/storage/photos/19467b7d1852276b766b373373fd069c.png)
 _Example API Key auth screen for users inside Zapier_
 
-Use API Key authentication if your API primarily uses an API Key to identify accounts, especially with apps for weather, maps, content verification, file conversion, and other data tools that require a key for access to the service but do not contain user-specific content. 
+Use API Key authentication if your API primarily uses an API key to identify accounts, especially with apps for weather, maps, content verification, file conversion, and other data tools that require a key for access to the service but do not contain user-specific content. 
 
 Since API Key authentication allows you to create a custom input form, you can use it for any custom authentication type with username and password-based logins that don't fit other authentication scheme types.
 
@@ -41,7 +41,7 @@ Since API Key authentication allows you to create a custom input form, you can u
 
 -- **Type**: All input fields use the `string` text field by default; select `password` instead if you would like to obscure the data as users enter it.
 
--- **Help Text**: Include details to assist users in authenticating with your app, especially if they may be unsure where to find the data needed within your app. Format text with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/), and include a hyperlink if needed.
+-- **Help Text**: Include a direct URL formatted with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) where users can obtain their API key from your app. If there is no direct link, include as clear of directions as possible to help users find the API key.
 
 -- **Input Format**: (optional) Help users figure out exactly what piece of data you need them to enter. For example, for a subdomain, https://{{input}}.yourdomain.com/.
 
@@ -59,11 +59,11 @@ Since API Key authentication allows you to create a custom input form, you can u
 
 ## 2. Add a Test API Request
 
-- Add an API call to your API that requires no configuration, typically a `/user` or `/me` call. Add the URL for the API call, and set the call type, typically a `GET`. This will test the user-entered API Key and any other credentials to ensure it enables a successful API call to your app. 
+- Add an API call to your API that requires no configuration, typically a `/user` or `/me` call. Add the URL for the API call, and set the call type, typically a `GET`. This will test the user-entered API key and any other credentials to ensure it enables a successful API call to your app. 
 
 ![Zapier test request API Key authentication](https://cdn.zappy.app/c4c58979ddcf7eb8a462ac5ff7a37348.png)
 
-- The API Key and any additional input fields are automatically included in the URL Params and the HTTP Headers. Click _Show Options_ to remove the details where they are not needed. It is typically not recommended to pass any sensitive information such as the API Key in the URL Params. Passing it through the headers or even the body is preferable.
+- The API key and any additional input fields are automatically included in the URL Params and the HTTP Headers. Click _Show Options_ to remove the details where they are not needed. It is typically not recommended to pass any sensitive information such as the API key in the URL Params. Passing it through the headers or even the body is preferable.
 
 - To customize the test API request, select _Switch to Code Mode_ and write custom JavaScript code to handle your test API call and the response parsing as needed. The first time you click the toggle, Zapier will convert your API call to code. If you switch back to Form Mode though, Zapier will not convert your code changes to the Form mode, nor will any subsequent changes in the form be added to your code.
 

@@ -17,6 +17,8 @@ Every Zap has a single trigger. Triggers are how your app's users can start auto
 
 Triggers only watch for new data and typically send no or little data to your app. They are often quicker to set up than Zapier [actions](https://platform.zapier.com/build/action). 
 
+Design triggers around how users interact with your app, not based on which API endpoints are available.
+
 The are two types of triggers.
 
 ## 1. Polling trigger 

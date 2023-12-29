@@ -19,11 +19,11 @@ redirect_from:
 
 -- **Key**: A unique identifier for this action, used to reference the action inside Zapier. Does not need to be the same identifier as used in your API. Not shown to users.
 
--- **Name**: A human friendly plain text name for this action, typically with a verb such as _Find_ or _Search_ followed by the name of the item this action will find in your app. Shown inside the Zap editor and on Zapier's app directory marketing pages.
+-- **Name**: A human friendly plain text name for this action, typically with a verb such as _Find_ or _Search_ followed by the name of the item this action will find in your app. The title-case name is shown inside the Zap editor and on Zapier's app directory marketing pages.
 
 -- **Noun**: A single noun that describes what this action searches, used by Zapier to auto-generate text in Zaps about your action.
 
--- **Description**: A plain text sentence that describes what the action does and when it should be used. Shown inside the Zap editor and on Zapier's app directory marketing pages.
+-- **Description**: A plain text sentence that describes what the action does and when it should be used. Shown inside the Zap editor and on Zapier's app directory marketing pages. Starts with the phrase "Finds a". 
 
 -- **Visibility Options**: An option to select when this action will be shown. _Shown_ is chosen by default. 
 
