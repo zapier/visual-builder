@@ -1,5 +1,5 @@
 ---
-title: Defining sample data and output fields
+title: Output data, defining sample data and output fields
 order: 5
 layout: post-toc
 redirect_from: 
@@ -8,9 +8,31 @@ redirect_from:
     - build/faq/#output-fields
 ---
 
-# Defining sample data and output fields
+# Output data, defining sample data and output fields
 
-This guide will explain what sample data and output fields are and how to modify them in your triggers or actions. 
+This guide will explain what output data, sample data and output fields are and how to modify them in your triggers or actions. 
+
+## Output data
+
+Each Zap step must return data to Zapier to use in subsequent steps. By default, the output data is the direct response from your API—but in some cases, you may need to customize the response data to make it work well with Zapier. Here are general principles for output data from your Zap steps:
+
+**Separate data where possible**, to make it as widely usable as possible in subsequent Zap steps. Names should be split into separate first/last or given/surname pairs, along optionally with a full name field. Addresses should be separated into their individual components.
+
+<a id="date"></a>
+**Format Date-time values in [ISO 8601](http://www.cl.cam.ac.uk/~mgk25/iso-time.html#date) standard including time zone offset**, even for UTC times. Avoid UNIX or Epoch timestamps. Date responses may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
+
+- `2023-12-15T01:15:13Z` (or `-0000` instead of `Z`)
+- `2023-12-01T12:32:01-0800`
+- `2023-12-01T12:32:01-08:00`
+- `2023-12-13` (for date-only values)
+
+**Optionally include an additional human-friendly date** especially for scheduling or calendar app integrations where the date is important for users.
+
+**Set boolean values as `true` or `false`**. Do not use `1` and `0` for boolean values.
+
+**Include the value name and ID in lists and dropdown menus** to help users know which item to choose.
+
+**Consider removing non-necessary fields that may seem confusing to users** in your API call's custom code.
 
 ## Sample data
 

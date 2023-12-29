@@ -166,8 +166,8 @@ still be able to map custom fields, but this gets them started on the right foot
 
 Read more about implementing dynamic dropdowns below:
 
-- Platform UI: https://platform.zapier.com/build/input-designer#dropdown
-- Platform CLI: https://platform.zapier.com/reference/cli-docs#dynamic-dropdowns 
+- [Platform UI](https://platform.zapier.com/build/add-fields#dynamic-dropdown)
+- [Platform CLI](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#dynamic-dropdowns)
 
 ---
 

@@ -8,12 +8,12 @@ redirect_from:
 
 # Prepare for API outages
 
-Zapier recognises that temporary unavailability is sometimes inevitable for your API. To accommodate these situations, we recommend configuring [custom error response handling](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#general-errors) to:
+Zapier recognizes that temporary unavailability is sometimes inevitable for your API. To accommodate these situations, we recommend configuring [custom error response handling](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#general-errors) to:
 - Present a meaningful, user-friendly message to users
 - Refrain from disabling Zaps due to error-ratios
 - Potentially reattempt the action after a given delay window
 
-## 1. Default behaviour
+## 1. Default behavior
 
 Zap runs that encounter a 5xx error from your API throw an exception and receive the “Stopped / Errored” status. This will [display an error message to the user](https://help.zapier.com/hc/en-us/articles/20505304170637-Review-Zap-run-statuses); allowing them to replay the Run.
  

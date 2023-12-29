@@ -10,7 +10,7 @@ redirect_from:
 
 ## Error shown
 
-When you add a polling trigger or search action to a Zap, the Zapier platform [expects a bare array of new or found items returned](https://platform.zapier.com/build/response-types), sorted in reverse chronological order. An API may instead return a result _object_ that contains the array of items the trigger/search needs.
+When you add a polling trigger or search action to your integration, the Zapier platform [expects a bare array of new or found items returned](https://platform.zapier.com/build/response-types), sorted in reverse chronological order. An API may instead return a result _object_ that contains the array of items the trigger/search needs.
 
 {% raw %}
 For example, for a "Find Issue" search action with GitHub's API, we might start with a `https://api.github.com/repos/{{bundle.inputData.owner}}/ {{bundle.inputData.repo}}/issues/{{bundle.inputData.issue_number}}` request:

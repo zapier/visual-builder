@@ -31,6 +31,12 @@ Zapier supports the following five authentication schemes in the Platform UI, ea
 
 ![Zapier Authentication](https://cdn.zappy.app/37e7829169eb2e07278d512c174cd708.png)
 
+Where possible, OAuth v2 authentication is the preferred scheme to simplify a user's account connection and minimize set up time. During the authentication flow via Zapier, a familiar popup window appears from your app to select their account or log in, then verify the connection. This fits the flow most modern apps use for integration authentication.
+
+API Key authentication is next best. Users must be able to obtain their API key from your app without human intervention. Your integration won't be [approved for publishing](https://platform.zapier.com/quickstart/private-vs-public-integrations) if your service requires users to email or call your team in order to receive an API key or access to your API.
+
+Basic authentication, while acceptable, is the least appropriate authentication type to use for a third party service like Zapier, as users must type their account credentials directly into Zapier's UI.
+
 For more custom authentication schemes, switch to the [Platform CLI](https://platform.zapier.com/manage/export-integration). 
 
 ## How to Remove or Change Type of Authentication Scheme 

@@ -9,7 +9,7 @@ redirect_from:
 
 When building in the Platform UI, you'll use the Input Designer to create the form users will input data into, to send to your app's API.
 
-The Input Designer works similarly to other form builder tools, building a form that lives inside the Platform UI. Add fields to your form for each bit of data your app needs from users. Configure each field's settings, then reorder them to match the logical order users would add data in your app.
+The Input Designer works similarly to other form builder tools, building a form that lives inside the Platform UI. Add fields to your form for each bit of data your app needs from users. Use the same name for items as used in your app's UI. Configure each field's settings, then reorder them to match the logical order users would add or view data in your app.
 
 ![Example Input Editor](https://cdn.zappy.app/524b9300c044809eb13eb732d7a50f9d.png)
 
@@ -32,7 +32,7 @@ In this guide we will cover:
 
 - **Key**: A unique identifier for the field, without spaces, ideally with the same key as your API, such as `first_name`.
 - **Label**: A user friendly name for the field, such as `First Name`.
-- **Help Text**: (optional) A 20 character or longer description that appears under the field label, with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) formatting.
+- **Help Text**: (optional) A 20 character or longer description that appears under the field label, with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/) formatting. Do not include redundant help text in input fields that repeats the name of the field. Use field help text to tell users what to do, for example "Choose the directory to watch for new files". Always use active voice. 
 - **Type**: From the dropdown menu, select type of data you want user's to enter. Learn more in [field definitions and types](https://platform.zapier.com/build/field-definitions):
     - String
     - Text
@@ -68,7 +68,7 @@ If users could add multiple entries in the same field, check the _Allows Multipl
 
 ![Zapier Field Allows Multiples](https://cdn.zappy.app/bf4c2a6ad55c12f6e3079e50f5d38e6c.png)
 
-That will add another entry row to allow the user to input another entry for that field. Each entry is then included in a comma separated list in the API request.
+That will add another entry row to allow the user to input another entry for that field. Each entry is then included in a comma separated list in the API request. Never ask users to type in a comma separated list, rather use this functionality. 
 
 ### Alters dynamic fields
 
@@ -121,7 +121,7 @@ For example, if your API expects a value of `1` or `2`, but `1` actually means `
 
 #### Dynamic Dropdown
 
-If users need to select data from their account in your app — such as a project, folder, team member, or other user-specific detail — then you would use a dynamic dropdown. For dynamic dropdowns, Zapier first fetches data from your API and then displays it in a menu.
+If users need to select data from their account in your app — such as a project, folder, team member, or other user-specific detail with a corresponding ID — then you would use a dynamic dropdown. For dynamic dropdowns, Zapier first fetches data from your API and then displays it in a menu. Never make users type in an ID number, rather use this functionality or [add a search action](https://platform.zapier.com/build/search) to find the ID number automatically.
 
 The best way to make a dynamic dropdown is to use a dedicated trigger to fetch the values for the menu. 
 
