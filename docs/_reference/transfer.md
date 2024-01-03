@@ -5,13 +5,18 @@ layout: post-toc
 redirect_from: /docs/transfer
 ---
 
-# Adding Support for Transfer
+# Transfer
 
-> **Note**: As of 1st April 2023, we no longer accept reviews for new Transfer source apps. We’re currently evaluating our process for building new sources for Transfer. During this period we aren’t accepting new Transfer sources built by partners for review. We don't have an expected timeframe of when we're opening reviews for new Transfer source apps.
+> **Note**: The scheduled Transfer functionality is being deprecated as of 15th January 2024.  
+
+One time transfers will be available to users [within their Zaps with supported triggers](https://help.zapier.com/hc/en-us/articles/8496274335885).
+
+We are no longer accepting new Transfer sources built by partners for review.
 
 ## What is Transfer?
 
-[Transfer](https://transfer.zapier.com/) is a Zapier service that enables users to perform bulk operations using their historical data. Today Zaps only process new data and events created after the user turns on their Zap. Transfer lets users reach back and use existing data. Think of it as allowing your users to leverage Zapier for ETL (“Extract, Transform, Load”) tasks.
+[Transfer](https://help.zapier.com/hc/en-us/articles/8496274335885) is a Zapier functionality that enables users to perform bulk operations using their historical data. Today Zaps only process new data and events created after the user turns on their Zap. Transfer lets users access data that existed in their trigger app before the Zap was on.
+It allows users to leverage Zapier for ETL (“Extract, Transform, Load”) tasks.
 
 Some example usage scenarios:
 
