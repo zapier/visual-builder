@@ -1,14 +1,14 @@
 ---
-title: Embed Zap templates
-order: 3
+title: Zap templates
+order: 2
 layout: post-toc
 redirect_from: 
     - /partner_api/embedding
 ---
 
-# Embed Zap templates
+# Zap templates
 
-Zap Templates are pre-made Zaps that help users discover popular use cases for automating their work. Each template features a specific use case and the apps (including yours!) needed for it to work.
+Zap templates are pre-made Zaps that help users discover popular use cases for automating their work. Each template features a specific use case and the apps (including yours!) needed for it to work.
 
 ![zap_template_image](https://cdn.zappy.app/261ccbda7c2aa7f87618983f05ca353a.png)
 

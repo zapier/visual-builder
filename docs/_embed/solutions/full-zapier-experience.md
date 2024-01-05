@@ -1,6 +1,6 @@
 ---
-title: Embed Full Zapier Experience into your product or website
-order: 2
+title: Full Zapier Experience
+order: 1
 layout: post
 redirect_from: 
   - /embed/
@@ -12,7 +12,7 @@ redirect_from:
   - /embed/elements
 ---
 
-# Embed Full Zapier Experience into your product or website
+# Full Zapier Experience
 
 The Full Zapier Experience is a prebuilt UI component that offers the quickest—and easiest—way to surface your Zapier integration directly within your own product. 
 

@@ -1,5 +1,5 @@
 ---
-title: Embed benefits
+title: Benefits
 order: 1
 layout: post
 redirect_from: 
@@ -8,7 +8,7 @@ redirect_from:
    - /embed/amplify-embed/
 ---
 
-## Embed benefits
+## Benefits
 
 Embedding Zapier in your product allows your users to search for apps that connect with yours, see popular workflows used with your app, and (most importantly) enables them to sign up for Zapier, building Zaps and editing them, too—without leaving your product. 
 

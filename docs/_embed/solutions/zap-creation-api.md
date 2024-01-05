@@ -1,6 +1,6 @@
 ---
 title: Zap Creation API
-order: 9
+order: 4
 layout: post-toc
 redirect_from: 
 ---
