@@ -1,6 +1,6 @@
 ---
 title: Zapier trusted app developers
-order: 11
+order: 2
 layout: post-toc
 redirect_from: /partners/trusted-developers
 ---
@@ -26,9 +26,11 @@ If you're looking for help with Zap workflows and not building an app, contact o
 
 > Note*: If you do work with one of our Zapier trusted developers to develop an app, make sure you develop a plan for continued support and maintenance, either using that developer, or with an in-house team who will take responsibility for the app.*
 
-## Requirements for becoming a Zapier trusted developer
+## Requirements for Zapier trusted developers
 
-In order to become a Zapier trusted developer, you must demonstrate your capabilities by satisfying the following requirements:
+At this time, we are not actively accepting new developers into the program, and we cannot provide a definitive timeline on whether we will do so in the future.
+
+In order to qualify as a Zapier trusted developer, you have demonstrated your capabilities by satisfying the following requirements:
 
 * Develop and launch two Public apps that meet our [Zapier integration branding and design guidelines](https://platform.zapier.com/publish/intergration-brand-design-guidelines) standards. This ensures that you're familiar with Zapier development, launch, promotion, and maintenance processes. You are responsible for finding clients who need Zapier integrations built.
 
@@ -37,9 +39,5 @@ In order to become a Zapier trusted developer, you must demonstrate your capabil
 * You are responsive when handling maintenance needs (bug fixes and feature requests), including being receptive to us increasing standards on the Developer Platform and adding new features, or moving to a newer version of the Developer Platform.
 
 * In order to maintain your listing on this page, you must have continued involvement with the Developer Platform. This can take the form of new Public apps, or significant improvements or bug fixes to existing apps. Developers should have some significant activity every year to continue.
-
-If you have met the qualifications listed above, and would like to be listed on this page, please you may contact us to inquire about joining the program. We'll work with you to determine if there is a fit for you to be a part of the program.
-
-[Contact us here to inquire about joining the Trusted App Developers program.](mailto:[partners@zapier.com]?subject=Requested+addition+to+Zapier+Trusted+App+Developers+listing)
 
 As a developer listed here, you may promote your status within your own channels (website, social media, etc). We will be happy to give feedback on that information, which we expect to appropriately reflect Zapier's features and your capabilities as a partner.

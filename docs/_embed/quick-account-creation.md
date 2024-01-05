@@ -1,6 +1,6 @@
 ---
 title: Support Quick Account Creation
-order: 6
+order: 11
 layout: post-toc
 ---
 
