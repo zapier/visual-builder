@@ -1,10 +1,10 @@
 ---
-title: Support Quick Account Creation
-order: 11
+title: Quick Account Creation
+order: 2
 layout: post-toc
 ---
 
-# Support Quick Account Creation
+# Quick Account Creation
 
 Quick Account Creation is a seamless, accelerated sign-up feature allowing first time Zapier users to skip the standard sign-up procedure and onboarding survey. Enabling Quick Account Creation as part of your embed tool code helps provide a more frictionless experience for end users.
 
