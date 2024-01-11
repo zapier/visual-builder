@@ -1176,12 +1176,6 @@ All errors will be JSON object with a String array of errors:
 
     - Sub-second responses to the `/v1/zap-templates` even when requesting up to 100 Zap templates.
 
-- 2017-11-01
-
-  - Access tokens never expire.
-
-    - After security review, the access tokens granted **will no longer expire**. This may change in the future, however, based on endpoints provided by the API. In that event, we expect API consumers to provide the user with the authorize endpoint to get a fresh access token.
-
 - 2017-10-16
 
   - `/zaps`
