@@ -36,13 +36,12 @@ If you don't see a list for your specific category, there may not have sufficien
 ### Accounting
 {% capture styled_table %}
 | Triggers               | Actions                         | Searches                     | Search or Creates                     |
-|------------------------|---------------------------------|------------------------------|--------------------------------------|
-| New Payment            | Create Invoice/Bill             | Find Customer/Client/Contact | Find or Create Customer/Client/Contact|
-| New Invoice/Bill       | Create Payment                  | Find Product(s)              |                                      |
-| New Customer/Contact/Client| Create Customer/Contact/Client| Find Invoice                 |                                      |
-| New Expense            | Create/Record Sale/Sales Receipt|                              |                                      |
-| New Quote/Estimate     | Send Invoice                    |                              |                                      |
-| New Transaction        | Create Expense                  |                              |                                      |
+|------------------------|---------------------------------|------------------------------|---------------------------------------|
+| New Payment            | Create Customer/Contact/Client  | Find Invoice                 | Find or Create Customer/Client/Contact|
+| New Invoice/Bill       | Create Invoice/Bill             | Find Customer/Client/Contact |                                       |
+| New Expense            | Send Invoice                    |                              |                                       |
+| New Customer/Contact/Client | Create Payment/Sale/Sales Receipt |                       |                                       |
+| New Quote/Estimate     |                                 |                              |                                       |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -120,40 +119,49 @@ View [example apps](https://zapier.com/apps/categories/call-tracking).
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
-*If you’re adding a _Create or Update_ action instead of the recommended _Update_ action  to go along with a _Find or Create_ action, it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
+*If you’re adding a _Create or Update_ action instead of the [recommended _Update_ action to go along with a _Find or Create_ action](https://platform.zapier.com/publish/integration-publishing-guidelines#56-create-or-update-functionality), it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
 
 View [example apps](https://zapier.com/apps/categories/contacts).
 
 ### Customer Support
 {% capture styled_table %}
-| Triggers | Actions | Searches | Search or Creates |
-| --- | --- | --- | --- |
-| New Ticket/Request | Create Ticket/Request/Conversation | Find Customer/User/Lead | Find or Create Customer/User/Lead |
-| New Chat/Message/Conversation | Create or Update User/Lead/Contact | Find Ticket/Request | |
-| New Customer/User/Lead | Add/Remove Tag on User/Ticket/Lead | | |
-| Finished/Closed Chat | Add Comment/Note on Ticket | | |
-| Tag Added to Customer/User/Lead | Send Message | | |
+| Triggers                         | Actions                              | Searches                               | Search or Creates                 |
+|----------------------------------|--------------------------------------|----------------------------------------|-----------------------------------|
+| Tag Added to Customer/User/Lead  | Create Ticket/Request/Conversation   | Find Customer/User/Lead                | Find or Create Customer/User/Lead |
+| New Ticket/Request               | Update Ticket/Request/Conversation   | Find Ticket/Request/Conversation       |                                   |
+| New Customer/User/Lead           | Add/Remove Tag on User/Ticket/Lead   |                                        |                                   |
+| New Chat/Message/Conversation    | Send Message                         |                                        |                                   |
+| New Closed/Finished Conversation | *Create or Update Customer/User/Lead |                                        |                                   |
+|                                  | Add Comment/Note on Ticket/Request   |                                        |                                   |
+|                                  | Create Customer/User/Lead/Company    |                                        |                                   |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
+
+*If you’re adding a _Create or Update_ action instead of the [recommended _Update_ action to go along with a _Find or Create_ action](https://platform.zapier.com/publish/integration-publishing-guidelines#56-create-or-update-functionality), it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
 
 View [example apps](https://zapier.com/apps/categories/customer-support).
 
 ### CRM (Customer Relationship Management)
 {% capture styled_table %}
-| Triggers | Actions | Searches | Search or Creates |
-| --- | --- | --- | --- |
-| New Record | *Create Record/X | *Find Record/X (most importantly Contacts/Lead/Person) | *Find or Create Record/X (most importantly Contacts/Lead/Person) |
-| New Contact/Lead/Person | *Update Record/X |   |   |
-| *New X | Add Lead to Campaign/Group |   |   |
-| **Updated Record/Contact/Lead/Person/X | *Add Tag to X |   |   |
-| Updated Stage/Status on Deal/Opportunity | Update Stage |   |   |
-| Tag Added/Removed | Attach/Upload File |   |   |
+| Triggers                         | Actions                              | Searches                               | Search or Creates                              |
+|----------------------------------|--------------------------------------|----------------------------------------|------------------------------------------------|
+| *New Record/Module Entry         | *Create Record/Module Entry          | *Find Record/Module Entry              | *Find or Create Record/Module Entry            |
+| New Contact/Lead/Person/Company  | *Update Record/Module Entry          | Find Lead/Contact/Person/Company       | Find or Create Lead/Contact/Person/Company     |
+| New Deal/Opportunity/Job/Inquiry | Create Contact/Lead/Person/Company   | Find Deal/Opportunity                  | Find or Create Deal/Opportunity                |
+| Tag Added or Removed             | Update Contact/Lead/Person/Company   |                                        |                                                |
+| **Updated Record/Module Entry    | *Create or Update Contact/Lead/Person/Company   |                             |                                                |
+| Updated X Stage/Status (i.e. deal, opportunity, project, lead) | Create Deal/Opportunity |                       |                                                |
+|                                  | Update Deal/Opportunity              |                                        |                                                |
+|                                  | Create Note                          |                                        |                                                |
+|                                  | Add Contact/Lead to Campaign/Group   |                                        |                                                |
+|                                  | Create Activity/Event                |                                        |                                                |
+|                                  | Add Tag to X (i.e. Contact, Record, Opportunity) |                            |                                                |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
-*"X" represents your app’s various models or objects such as Deal, Project, etc. Make sure to cover the most popular models at a minimum. You can create individual triggers, actions, and searches for each or a single one where users can select different models in an input field.
+*Cover the most popular models of your platform at a minimum. You can create individual triggers, actions, and searches for each model such as, "New Customer", "New Deal", "Create Customer", and "Create Deal". Or create a singular trigger, action, and search that each support multiple models by requiring users to select which model they're taking action on via an input field, such as "New Record" and "Create Record".
 
-*_Updated_ triggers for CRMs are often most useful when users are able to specify which field(s) to watch for updates on, instead of triggering on any and all updates. 
+**_Updated_ triggers for CRMs are often most useful when users are able to specify which field(s) to watch for updates on, instead of triggering on any and all updates. 
 
 View [example apps](https://zapier.com/apps/categories/crm).
 
@@ -201,12 +209,11 @@ View [example apps](https://zapier.com/apps/categories/drip-emails).
 ### eCommerce
 {% capture styled_table %}
 | Triggers                           | Actions         | Searches         | Search or Creates      |
-|-----------------------------------|-----------------|------------------|-----------------------|
-| New Order/Purchase/Sale (with line-item support)  | Create Order  | Find Customer | Find or Create Customer |
-| New Paid Order/Payment Received      | Create Customer | Find Order       |                       |
-| New Customer                         | Update Customer | Find Product     |                       |
-| New Cancelled Order/Subscription     | Create Product  |                  |                       |
-| Abandoned Cart                       |                 |                  |                       |
+|------------------------------------|-----------------|------------------|------------------------|
+| New Order/Purchase/Sale            | Create Order    | Find Order       | Find or Create Customer|
+| New Paid Order/Payment Received    | Create Customer | Find Customer    |                        |
+| Abandoned Cart                     | Create Product  | Find Product     |                        |
+| New Customer                       |                 |                  |                        |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -216,27 +223,27 @@ View [example apps](https://zapier.com/apps/categories/ecommerce).
 {% capture styled_table %}
 | Triggers                         | Actions                       | Searches                 | Search or Creates       |
 |----------------------------------|-------------------------------|--------------------------|-------------------------|
-| New Email Matching Search        | Send Email                    | Find Email               | Find or Create Contact  |
-| New Email                        | Create Draft Email            | Find Contact             | Find or Create Email    |
-| New Labeled/Tagged/Starred Email | Validate Email (if applicable)|                          |                         |
-| New Attachment                   | Create Contact                |                          |                         |
-|                                  | Add Label to Email            |                          |                         |
+| New Email Matching Search        | Send Email                    | Find Email               | Find or Create Email    |
+| New Email                        | Create Draft Email            |                          | Find or Create Contact  |
+| New Labeled/Tagged/Starred Email | Create Contact                |                          |                         |
+| New Attachment                   |                               |                          |                         |
+|                                  |                               |                          |                         |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
 View [example apps](https://zapier.com/apps/categories/email).
 
-### Email Newsletter
+### Email Newsletters
 {% capture styled_table %}
-| Triggers                          | Actions                                  | Searches                                  | Search or Creates                        |
+| Triggers                          | Actions                                  | Searches                                  | Search or Creates                         |
 |-----------------------------------|------------------------------------------|-------------------------------------------|-------------------------------------------|
-| New Subscriber/Contact            | *Create or Update Subscriber/Contact      | Find Subscriber/Contact                   | Find or Create Subscriber/Contact         |
-| New Subscriber/Contact in List/Audience/Tag | Unsubscribe Subscriber/Contact   |                                           |                                           |
-| New Unsubscriber                   | Add/Subscribe Contact to List/Audience/Tag |                                           |                                           |
-| Email Opened                       | Send Email/Campaign                       |                                           |                                           |
+| New Subscriber/Contact in List/Audience/Tag | *Create or Update Subscriber/Contact | Find Subscriber/Contact             | Find or Create Subscriber/Contact         |
+| New Subscriber/Contact            | Send Email/Campaign                      |                                           |                                           |
+| Email Opened/Link Clicked         | Add/Subscribe Contact to List/Audience/Tag     |                                     |                                           |
+|                                   | Create Subscriber/Contact                |                                           |                                           |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
-*If you’re adding a _Create or Update_ action instead of the recommended _Update_ action  to go along with a _Find or Create_ action, it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario
+*If you’re adding a _Create or Update_ action instead of the [recommended _Update_ action to go along with a _Find or Create_ action](https://platform.zapier.com/publish/integration-publishing-guidelines#56-create-or-update-functionality), it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario
 
 View [example apps](https://zapier.com/apps/categories/email-newsletters).
 
@@ -256,14 +263,25 @@ View [example apps](https://zapier.com/apps/categories/event-management).
 {% capture styled_table %}
 | Triggers                         | Actions                       | Searches                 | Search or Creates       |
 |----------------------------------|-------------------------------|--------------------------|-------------------------|
-| New File in Folder               | Upload File                   | Find File                | Find or Create File     |
-| New File                         | Create Folder                 | Find Folder              | Find or Create Folder   |
-| New Folder                       | Create File                   |                          |                         |
+| New File in Folder               | Upload File                   | Find File                | Find or Create Folder   |
+| New Folder                       | Create Folder                 | Find Folder              |                         |
+| New File                         | Create File                   |                          |                         |
 | Updated File                     | Move File                     |                          |                         |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
 View [example apps](https://zapier.com/apps/categories/files).
+
+### Forms & Surveys
+{% capture styled_table %}
+| Triggers                           | Actions                               | Searches                            | Search or Creates       |
+|------------------------------------|---------------------------------------|-------------------------------------|-------------------------|
+| New Entry/Form Response/Submission | Create Entry/Form Response/Submission | Find Entry/Form Response/Submission |                         |
+| New Lead                           | Send Form                             |                                     |                         |
+{% endcapture %}
+{{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
+
+View [example apps](https://zapier.com/apps/categories/forms).
 
 ### Fundraising
 {% capture styled_table %}
@@ -278,19 +296,20 @@ View [example apps](https://zapier.com/apps/categories/fundraising).
 
 ### Marketing Automation
 {% capture styled_table %}
-| Triggers                            | Actions                                            | Searches                            | Search or Creates                |
-|------------------------------------|----------------------------------------------------|------------------------------------|----------------------------------|
-| New Contact/Lead/Subscriber         | *Create or Update Contact/Lead/Deal/Opportunity/Order | Find Contact/Lead/Subscriber       | Find or Create Contact/Lead/Subscriber |
-| New Contact in List/Audience/Segment | Add/Subscribe Contact to Campaign/List/Group        | Find Deal                          | Find or Create Deal              |
-| Tag Added/Removed from Contact/Lead/Subscriber | Add/Remove Tag from Contact/Lead/Subscriber      |                                    |                                  |
-| Updated Deal/Pipeline Stage          |                                                    |                                    |                                  |
-| New or Updated Deal/Opportunity     |                                                    |                                    |                                  |
-| New Order/Purchase/Sale             |                                                    |                                    |                                  |
-| New Form Entry/Submission           |                                                    |                                    |                                  |
+| Triggers                             | Actions                                            | Searches                           | Search or Creates                      |
+|--------------------------------------|----------------------------------------------------|------------------------------------|----------------------------------------|
+| New Contact/Lead/Subscriber          | *Create or Update Opportunity/Deal                 | Find Contact/Lead/Subscriber       | Find or Create Contact/Lead/Subscriber |
+| New Contact in List/Audience/Segment | *Create or Update Contact/Lead/Subscriber          | Find Deal                          |                                        |
+| Tag Added/Removed from Contact/Lead/Subscriber | Update Opportunity/Deal                  |                                    |                                        |
+| Updated Deal/Pipeline Stage          | Add Contact/Lead/Subscriber to Campaign/List/Group |                                    |                                        |
+| New Order/Purchase/Sale              | Update Contact/Lead/Subscriber                     |                                    |                                        |
+| New Form Entry/Submission            | Create Opportunity/Deal/Order                      |                                    |                                        |
+| Updated Contact/Lead/Subscriber      | Create Contact/Lead/Subscriber                     |                                    |                                        |
+|                                      | Add/Remove Tag fro Contact/Lead/Subscriber         |                                    |                                        |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
-*If you’re adding a _Create or Update_ action instead of the recommended _Update_ action  to go along with a _Find or Create_ action, it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
+*If you’re adding a _Create or Update_ action instead of the [recommended _Update_ action to go along with a _Find or Create_ action](https://platform.zapier.com/publish/integration-publishing-guidelines#56-create-or-update-functionality), it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
 
 View [example apps](https://zapier.com/apps/categories/marketing-automation).
 
@@ -317,12 +336,12 @@ View [example apps](https://zapier.com/apps/categories/notifications).
 
 ### Online Courses
 {% capture styled_table %}
-| Triggers                           | Actions                            | Searches                          | Search or Creates              |
+| Triggers                           | Actions                            | Searches                          | Search or Creates             |
 |------------------------------------|------------------------------------|-----------------------------------|-------------------------------|
-| New Enrollment/Subscription        | Enroll User/Student                | Find User/Student                 | Find or Create User/Student   |
-| New Order/Sale/Purchase            | Unenroll User/Student              |                                   |                               |
-| New User/Student                   | Create Credentials/Grant Access/Issue Credentials|                                 |                               |
-| Course/Lesson Completed            | Create User/Student                |                                   |                               |
+| New Order/Sale/Purchase/Subscription | Enroll User/Add User to Course   | Find User/Student                 | Find or Create User/Student   |
+| New Enrollment                     | Create Credentials/Grant Access/Issue Credentials |                    |                               |
+| Course/Lesson Completed            | Subscribe User to List/Add User to Group |                             |                               |
+| New User/Student                   | Unenroll User/Student              |                                   |                               |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -330,16 +349,14 @@ View [example apps](https://zapier.com/apps/categories/it-operations-education).
 
 ### Payment Processing
 {% capture styled_table %}
-| Triggers                            | Actions                             | Searches           | Search or Creates          |
-|-------------------------------------|-------------------------------------|---------------------|----------------------------|
-| New Payment                         | Create Customer                     | Find Customer       | Find or Create Customer    |
-| New Subscription/Order/Sale/Transaction/Invoice | Create Payment Link (if applicable) | Find Subscription  |                            |
-| New Customer                        | Update Customer                     |                     |                            |
-| New Paid Order/Invoice              |                                     |                     |                            |
-| New Refund                          |                                     |                     |                            |
-| Canceled Subscription/Order/Sale    |                                     |                     |                            |
-| Failed Payment                      |                                     |                     |                            |
-| Checkout Session Completed          |                                     |                     |                            |
+| Triggers                            | Actions                             | Searches                         | Search or Creates          |
+|-------------------------------------|-------------------------------------|----------------------------------|----------------------------|
+| New Payment or Payment Paid         | Create Customer                     | Find Invoice/Payment/Transaction | Find or Create Customer    |
+| New Subscription/Order/Sale/Transaction/Invoice | Create Payment Link (if applicable) | Find Customer        |                            |
+| New Customer                        | Update Customer                     | Find Subscription                |                            |
+| Canceled Subscription/Order/Sale    |                                     |                                  |                            |
+| Failed Payment                      |                                     |                                  |                            |
+| New Refund                          |                                     |                                  |                            |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -374,13 +391,12 @@ View [example apps](https://zapier.com/apps/categories/product-management).
 {% capture styled_table %}
 | Triggers                          | Actions                                | Searches                               | Search or Creates                |
 |-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
-| New Task/Item/Issue                | Create Task/Item/Issue                  | Find Task/Item/Issue                    | Find or Create Task/Item/Issue   |
-| Task/Item/Issue Status Changed     | Update Task/Item/Issue                  | Find User                              | Find or Create Project/Board     |
-| New Label/Tag on Task/Item/Issue   | Add Comment/Note to Task/Item/Issue     | Find Project/Board                      |                                  |
-| New Event/Activity                 | Attach/Upload file to Task/Item/Issue   |                                        |                                  |
-| Completed Task/Item/Issue          | Create Project/Board                    |                                        |                                  |
-| Updated Task/Item/Issue            | Add Label/Tag to Task/Item/Issue        |                                        |                                  |
-| Specific Value on Task/Item/Issue Changed |                                    |                                        |                                  |
+| New Task/Item/Issue               | Create Task/Item/Issue                 | Find Task/Item/Issue                   | Find or Create Task/Item/Issue   |
+| Task/Item/Issue Status Changed    | Update Task/Item/Issue                 | Find User                              | Find or Create Project/Board     |
+| New Label/Tag on Task/Item/Issue  | Add Comment/Note to Task/Item/Issue    | Find Project/Board                     |                                  |
+| Completed Task/Item/Issue         |                                        |                                        |                                  |
+| New Event/Activity                |                                        |                                        |                                  |
+| Updated Task/Item/Issue           |                                        |                                        |                                  |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -442,8 +458,8 @@ View [example apps](https://zapier.com/apps/categories/signatures).
 {% capture styled_table %}
 | Triggers                        | Actions                  | Searches                 | Search or Creates       |
 | ------------------------------- | ------------------------ | ------------------------ | ----------------------- |
-| New Post/Message/Media (by me)   | Create Post/Message/Media|                          |                         |
-| New Post/Message/Media by User  | Publish Post/Message/Media|                          |                         |
+| New Post/Message/Media (by me)  | Create Post/Message/Media|                          |                         |
+| New Post/Message/Media          |                          |                          |                         |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -467,9 +483,8 @@ View [example apps](https://zapier.com/apps/categories/spreadsheets).
 {% capture styled_table %}
 | Triggers                          | Actions                                | Searches                               | Search or Creates                |
 |-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
-| New Task                           | Create/Add Task                         | Find Task                              | Find or Create Task              |
-| Completed Task                     | Complete Task                           |                                        |                                  |
-|                                    | Update Task                             |                                        |                                  |
+| New Task                          | Create Task                            | Find Task                              | Find or Create Task              |
+|                                   | Update Task                            |                                        |                                  |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -479,10 +494,8 @@ View [example apps](https://zapier.com/apps/categories/todo-lists).
 {% capture styled_table %}
 | Triggers                          | Actions                                | Searches                               | Search or Creates                |
 |-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
-| New Message in Channel             | Send Channel Message                    | Find User (by email, name, username)   |                                  |
-| New Reaction on Message            | Send Direct/Private Message             |                                        |                                  |
-| New Mention                        | Set Status                              |                                        |                                  |
-| New User                           | Add User/Role                           |                                        |                                  |
+| New Message in Channel            | Send Channel Message                   | Find User (by email, name, username)   |                                  |
+| New Reaction on Message           | Send Direct/Private Message            |                                        |                                  |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -560,3 +573,15 @@ View [example apps](https://zapier.com/apps/categories/video-calls).
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
 View [example apps](https://zapier.com/apps/categories/webinars).
+
+### Website Builders
+{% capture styled_table %}
+| Triggers                           | Actions                    | Searches               | Search or Creates            |
+| ---------------------------------- | -------------------------- | ---------------------- | ---------------------------- |
+| New Form Submission/Review/Message | Create Post/Content        |                        |                              |
+| New Member/User/Lead               | Create/Invite User/Member  |                        |                              |
+| New Post/Content                   |                            |                        |                              |
+{% endcapture %}
+{{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
+
+View [example apps](https://zapier.com/apps/categories/cms).
