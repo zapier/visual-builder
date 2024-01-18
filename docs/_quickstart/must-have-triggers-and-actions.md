@@ -87,10 +87,9 @@ View [example apps](https://zapier.com/apps/categories/bookmarks).
 {% capture styled_table %}
 | Triggers                | Actions                     | Searches                               | Search or Creates                |
 |-------------------------|-----------------------------|----------------------------------------|----------------------------------|
-| New or Updated Event/Meeting | Create Event             | Find Event                             | Find or Create Event             |
+| New or Updated Event/Meeting | Create Event           | Find Event                             | Find or Create Event             |
 | Event Started           | Add Attendee to Event       |                                        |                                  |
-| Event Ended             | Update Event                |                                        |                                  |
-| Event Cancelled         | Delete Event                |                                        |                                  |
+| New Event/Meeting       |                             |                                        |                                  |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -110,16 +109,13 @@ View [example apps](https://zapier.com/apps/categories/call-tracking).
 
 ### Contact Management
 {% capture styled_table %}
-| Triggers | Actions | Searches | Search or Creates |
-| --- | --- | --- | --- |
-| New Contact/Lead/Person/Company | Create Contact/Lead/Person/Company | Find Contact/Lead/Person/Company | Find or Create Contact/Lead/Person/Company |
-| New Form Submission/Entry | Update Contact/Lead/Person/Company |  |   |
-| Updated Contact/Lead/Person/Company | *Create or Update Contact/Lead/Person/Company |   |   |
-|   | Add Contact to Group/Tag/List |   |   |
+| Triggers                                    | Actions                            | Searches                         | Search or Creates                |
+|---------------------------------------------|------------------------------------|----------------------------------|----------------------------------|
+| New or Updated Contact/Lead/Person/Company  | Create Contact/Lead/Person/Company | Find Contact/Lead/Person/Company | Find or Create Contact/Lead/Person/Company |
+| New Form Submission/Entry                   | Add Contact to Group/Tag/List      |                                  |                                  |
+| New Contact/Lead/Person/Company             | Update Contact/Lead/Person/Company |                                  |                                  |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
-
-*If you’re adding a _Create or Update_ action instead of the [recommended _Update_ action to go along with a _Find or Create_ action](https://platform.zapier.com/publish/integration-publishing-guidelines#56-create-or-update-functionality), it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
 
 View [example apps](https://zapier.com/apps/categories/contacts).
 
@@ -167,11 +163,10 @@ View [example apps](https://zapier.com/apps/categories/crm).
 
 ### Databases
 {% capture styled_table %}
-| Triggers             | Actions               | Searches                                     | Search or Creates                     |
-|----------------------|-----------------------|----------------------------------------------|---------------------------------------|
-| New Record/Row       | Create Record/Row     | Find Record/Row - return a single result      | Find or Create Record/Row             |
-| Updated Record/Row   | Update Record/Row     | *Find Record(s)/Row(s) - return multiple results |                                      |
-|                      | Find Record/Row via Custom Query |                                              |                                       |
+| Triggers                  | Actions               | Searches                                     | Search or Creates                     |
+|---------------------------|-----------------------|----------------------------------------------|---------------------------------------|
+| New Record/Row            | Create Record/Row     | Find Record/Row                              | Find or Create Record/Row             |
+| New or Updated Record/Row | Update Record/Row     |                                              |                                       |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -183,11 +178,10 @@ View [example apps](https://zapier.com/apps/categories/databases).
 {% capture styled_table %}
 | Triggers                         | Actions                       | Searches                 | Search or Creates       |
 |----------------------------------|-------------------------------|--------------------------|-------------------------|
-| New Document                     | Create Document (from template) | Find Document            | Find or Create Document |
-| Document Completed               | Upload Document               |                          |                         |
+| New Document                     | Create Document (from template) | Find Document          | Find or Create Document |
+| Document Completed/Signed        | Add to Document               |                          |                         |
 | Document Status Updated          |                               |                          |                         |
 | Document Sent                    |                               |                          |                         |
-| Document Signed                  |                               |                          |                         |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -249,11 +243,12 @@ View [example apps](https://zapier.com/apps/categories/email-newsletters).
 
 ### Event Management
 {% capture styled_table %}
-| Triggers              | Actions              | Searches          | Search or Creates             |
-|-----------------------|----------------------|-------------------|-------------------------------|
-| New Contact/Attendee/Lead | Create Contact/Attendee/Lead | Find Contact/Attendee/Lead | Find or Create Contact/Attendee/Lead |
-| New Registrant/RSVP | Add Registrant to Event |                     |                                     |
-| New Order/Booking/Ticket | Create Event |                             |                                     |
+| Triggers                  | Actions                        | Searches          | Search or Creates             |
+|---------------------------|--------------------------------|-------------------|-------------------------------|
+| New Registrant/RSVP       | Create Attendee/Add Registrant |                   |                               |
+| New Order/Booking/Ticket  | Create Event                   |                   |                               |
+| New Event | Create Event  |                                |                   |                               |
+| New Attendee/Contact/Lead |                                |                   |                               |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -366,11 +361,10 @@ View [example apps](https://zapier.com/apps/categories/payment-processing).
 {% capture styled_table %}
 | Triggers                         | Actions                       | Searches                 | Search or Creates       |
 |----------------------------------|-------------------------------|--------------------------|-------------------------|
-| New SMS/Message Received         | Create or Update Contact      | Find Contact             | Find or Create Contact  |
+| New SMS/Message Received         | Create or Update Contact      | Find Contact (by phone number) | Find or Create Contact  |
 | New Call                         | Send SMS/Message              |                          |                         |
 | New Recording                    | Create Contact                |                          |                         |
-|                                  | Opt-in Contact                |                          |                         |
-|                                  | Call Phone Number             |                          |                         |
+| Call Completed                   | Call Phone Number             |                          |                         |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -418,12 +412,12 @@ View [example apps](https://zapier.com/apps/categories/invoices).
 
 ### Scheduling & Booking
 {% capture styled_table %}
-| Triggers | Actions | Searches | Search or Creates   |
-|----------|---------|----------|--------------------|
-| New Booking/Appointment | Create Client/Customer | Find Client | Find or Create Client  |
-| New Cancellation | Create Booking/Appointment/Request/Job | Find Booking/Appointment |     |
-| New Client/Customer |       |        |               |
-| Booking/Appointment Completed |       |        |               |
+| Triggers                        | Actions                                | Searches                 | Search or Creates         |
+|---------------------------------|----------------------------------------|--------------------------|---------------------------|
+| New Client/Customer             | Create Client/Customer                 | Find Booking/Appointment | Find or Create Client     |
+| New Booking/Appointment         | Create Booking/Appointment/Request/Job |                          |                           |
+| New Cancellation                |                                        |                          |                           |
+| Rescheduled Booking/Appointment |                                        |                          |                           |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -442,11 +436,11 @@ View [example apps](https://zapier.com/apps/categories/server-monitoring).
 
 ### Signatures
 {% capture styled_table %}
-| Triggers                      | Actions                       | Searches                     | Search or Creates          |
+| Triggers                      | Actions                       | Searches                      | Search or Creates          |
 |-------------------------------|-------------------------------|-------------------------------|----------------------------|
-| Document/Contract Completed   | *Create Document/Contract     | Find Document/Contract       |                            |
-| Document/Contract Signed      | Send Signature Request        |                               |                            |
-| Document/Contract Sent        |                               |                               |                            |
+| Document/Contract Sent        | *Create Document/Contract     | Find Document/Contract        |                            |
+| Document/Contract Completed   | Send Signature Request        |                               |                            |
+| Document/Contract Signed      |                               |                               |                            |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -469,11 +463,9 @@ View [example apps](https://zapier.com/apps/categories/social).
 {% capture styled_table %}
 | Triggers                          | Actions                                | Searches                               | Search or Creates                |
 |-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
-| New Row                           | Create/Add Row                         | Lookup/Find Row(s) (with line-item support) | Find or Create Row               |
-| Updated Row                       | Create Row(s)                          | Find Spreadsheet                       |                                  |
-| New Spreadsheet/Worksheet         | Update Row                             |                                        |                                  |
-|                                    | Delete Row                             |                                        |                                  |
-|                                    | Create Spreadsheet                     |                                        |                                  |
+| New or Updated Row                | Create/Add Row                         | Find Row                               | Find or Create Row               |
+| New Row                           | Create Row(s)                          | Find Row(s) (with line-item support)   |                                  |
+|                                   | Update Row                             |                                        |                                  |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -541,10 +533,12 @@ View [example apps](https://zapier.com/apps/categories/transcription).
 
 ### Video & Audio
 {% capture styled_table %}
-| Triggers                   | Actions              | Searches        | Search or Creates |
-|----------------------------|----------------------|-----------------|-------------------|
-| New Video (in Channel/Playlist) | Upload Video         | Find Track      |                   |
-| New Track in Playlist      | Add Track to Playlist |                 |                   |
+| Triggers                          | Actions                 | Searches        | Search or Creates |
+|-----------------------------------|-------------------------|-----------------|-------------------|
+| New Video (in Channel/Playlist)   | Upload Video            | Find Track      |                   |
+| New Track in Playlist/Saved Track | Add Listener/Subscriber |                 |                   |
+|                                   | Add Track to Playlist   |                 |                   |
+
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -556,7 +550,6 @@ View [example apps](https://zapier.com/apps/categories/video).
 | --------------- | ---------------- | --------- | ----------------- |
 | New Recording   | Create/Add Registrant |           |                   |
 | New Registrant  | Create Meeting   |           |                   |
-| New Meeting     |                  |           |                   |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
