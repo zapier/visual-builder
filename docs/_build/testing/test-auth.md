@@ -26,7 +26,7 @@ Testing a user's authentication is crucially important, as it is later used to t
     ![Add testing account in Zapier visual builder](https://cdn.zappy.app/60ebf09a1442345cc5d86b44440eb11c.png)
 
 4. The _Response_ tab shows the JSON data response from your API, with each field and its data listed. 
-5. The _Bundle_ tab shows the data Zapier stores about your authentication. 
+5. The _Bundle_ tab shows the data Zapier stores about your authentication. Values returned by the test API call are stored in the `inputData` [bundle](https://platform.zapier.com/build/bundle#inputdata) and can be accessed by {% raw %}`{{bundle.inputData.field}}`{% endraw %} where `field` is the field key from the API response, for use in the [connection label](https://platform.zapier.com/build/connection-label) or trigger and action requests. However, responses from the test API call are not stored for subsequent requests in the case of OAuth v2 and session authentication unless you use [computed fields](https://platform.zapier.com/build/computed-test-field).
 6. The _HTTP_ tab shows the full request details for each API call Zapier made during the test. 
 7. The _Console_ tab shows any additional data your API calls logged in Zapier if you use custom code for any part of your authentication.
 8. Check each tab to ensure the expected data came through - it is possible to have an unsuccessful API call come through as successful if your API returns a message without an HTTP error code. Check the Response to make sure it includes the data expected from this API call, and if anything is incorrect, check the HTTP tab to help diagnose where things went wrong.

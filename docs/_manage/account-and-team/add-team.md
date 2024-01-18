@@ -27,16 +27,16 @@ To add team members to your integration, follow these steps:
 
 1. Log into the [Developer Platform](https://zapier.com/app/developer)
 2. Choose your integration
-3. In the "Manage" section on the left sidebar, click "Manage Team”
-4. Click “Invite Team Member”
+3. In the _Manage_ section on the left sidebar, select _Manage Team_
+4. Select _Invite Team Member_
 5. Enter the email address of the team member that you want to invite
 6. Select the role that you wish to assign to the team member
 7. A note will be included in the invitation email. You can either use the default message provided, or customize it with your own text
-8. Click “Send Invite”
+8. Click _Send Invite_.
 
 > **Note**: Admins can invite both Admins and Collaborators, while Collaborators can only invite Collaborators.
 
-Once you click "Send Invite", an email invitation will be sent to the invitee, requesting their acceptance. If the invitee does not already have a Zapier account associated with the invited email, they will need to create an account first. Upon accepting the invitation, they will gain access to the integration through their Zapier account on the Developer Platform.
+Once you click _Send Invite_, an email invitation will be sent to the invitee, requesting their acceptance. If the invitee does not already have a Zapier account associated with the invited email, they will need to create an account first. Upon accepting the invitation, they will gain access to the integration through their Zapier account on the Developer Platform.
 
 ## Self-serve Collaborator access
 
@@ -44,27 +44,56 @@ Depending on your [integration settings](https://cdn.zappy.app/b2637f3ad910c36c4
 
 ### Enable or disable self-serve Collaborator access
 
-To toggle the “Self-serve join as Collaborator” feature, please follow these steps:
+To toggle the “Join an Integration as Collaborators” feature, please follow these steps:
 1. Log into the [Developer Platform](https://zapier.com/app/developer)
 2. Choose your integration
-3. In the "Manage" section on the left sidebar, click "Manage Team"
-4. Click “Settings”
+3. In the _Manage_ section on the left sidebar, select _Manage Team_
+4. Select _Settings_
 5. Click the toggle to enable or disable self-serve join as Collaborator
 
 ### Manage eligible email domains for self-serve Collaborator access
 1. Log into the [Developer Platform](https://zapier.com/app/developer)
 2. Choose your integration
-3. In the "Manage" section on the left sidebar, click "Manage Team"
-4. Click “Settings”
+3. In the _Manage_ section on the left sidebar, select _Manage Team_
+4. Select _Settings_
 5. Click “Edit email domains”
 6. Add/remove the domain(s) to be allowed
 
 ### Join an integration team via self-serve Collaborator access
 1. Log into the [Developer Platform](https://zapier.com/app/developer)
-2. Click “Get Access”
+2. Click “Get Access” under Join an Integration as Collaborators
 3. Search for and select your integration, then click “Submit”
 4. If the Zapier account you're using is associated with an approved domain, you'll receive an invitation to join via email
 
 ## View and remove team members
 
-You can view a list of invited team members (both accepted and pending invites) from the “Manage Team” page. Admins have the ability to remove team members (both other Admins and Collaborators) from this page. Collaborators can only remove other Collaborators. You can also remove yourself from the team, regardless of your role. It’s important to note that if you are removed as an Admin, you can regain Admin access only if invited by an existing Admin.
+You can view a list of invited team members (both accepted and pending invites) from the _Manage Team_ page. Admins have the ability to remove team members (both other Admins and Collaborators) from this page. Collaborators can only remove other Collaborators. You can also remove yourself from the team, regardless of your role. It’s important to note that if you are removed as an Admin, you can regain Admin access only if invited by an existing Admin.
+
+## Manage email subscriptions relating to your integration
+
+### General marketing updates
+
+Zapier sends out general partner marketing updates related to your integrations and the Developer Platform. These emails include:
+
+* Monthly Partner Newsletter with integration data insights
+* Outreach about partnership and co-marketing opportunities 
+
+To control your subscription for these emails, visit the [email preferences page](https://developer.zapier.com/partner-settings/email) in the developer dashboard and opt in or out per each integration you are a team member of. 
+
+### Platform and Partner Program updates
+
+All members of your integration's team will also receive Zapier Platform and Partner Program Updates. These emails include:
+* Alerts about user [Bugs and Feature Requests](https://platform.zapier.com/manage/analyze-integration-performance#bugs)
+* Critical Platform and Program Updates
+
+You cannot unsubscribe from Zapier Platform and Partner Program Updates unless an existing integration team member removes you from the integration team entirely. These emails deliver essential announcements about the Partner Program, Zapier Platform features, product updates, and compliance with integration quality standards to ensure you're always up-to-date with changes that could impact your use of the Zapier Platform.
+
+> **Note: An Admin can remove another Admin or Collaborator from the integration team. A Collaborator can only remove other Collaborators from the integration team.**
+
+### Opting team members into emails
+
+If you want to ensure that your team members receive partner marketing emails:
+
+1. [Invite your team members](https://platform.zapier.com/manage/add-team) to the integration team as either an Admin or Collaborator and ensure they accept the invite.
+2. Team members who accept the invite will automatically receive Platform and Partner Program Updates.
+3. If they want to receive General Partner Marketing updates, have them visit their [email preferences](https://developer.zapier.com/partner-settings/email) in the developer platform and ensure they’re opted into emails for the integration you want them to receive alerts for.

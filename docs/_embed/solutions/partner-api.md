@@ -1,52 +1,258 @@
 ---
 title: Partner API
-order: 5
+order: 3
 layout: post-toc
 redirect_from:
-  - /embed/
   - /partner_api/authentication
   - /partner_api/examples
   - /partner_api/changelog
   - /partner_api/errors
   - /partner_api/endpoints
   - /partner_api/best-practices
+  - /embed/partner-api-examples
+  - /embed/partner-api-endpoints
+  - /embed/zap-editor
+  - /embed/prefill-zaps
+
+
 ---
 
 # Partner API
 
-## Introduction
-The Partner API is the best tool for complete style control over a user's Zapier experience within your app. Essentially, it lets you customize how you present Zapier within your product without sacrificing your app's look, feel, and flow.
+The Partner API is the best tool for complete style control over a user's Zapier experience within your app. It allows you to customize how you present Zapier within your product without sacrificing your app's look, feel, and flow.
 
-Think of it as a native Zapier integration, helping you showcase your best Zapier-powered workflows where it's most helpful to your users (within the flow of your tool). You can customize styling, streamline Zap set-up for users, expose relevant Zap information, and more!
+Think of it as a native Zapier integration, helping you showcase your best Zapier-powered workflows where it's most helpful to your users (within the flow of your tool). Customize styling, streamline Zap set-up for users and expose relevant Zap information.
 
+Embed features are available for public integrations. To enable embed features, [update your Intended Audience](https://platform.zapier.com/quickstart/private-vs-public-integrations) to public and [submit your integration for review](https://platform.zapier.com/publish/public-integration#4-submit-your-integration-for-app-review) to be published in the Zapier App Directory. 
 
-With the Partner API, you can:
+Once your integration is public, the integration's client ID needed to call the Partner API will be revealed under the `Embed > Settings` or `Embed > Partner API endpoints` section of that integration in the [Developer Platform](https://developer.zapier.com/).
 
-- Get a list of all the apps available in Zapier’s app directory so you can power your app directory and show your users all the integration possibilities with your Zapier integration.
+## Highlighted capabilities
+
+- Get a list of all the apps available in Zapier’s app directory to power your own app directory and show your users all the integration possibilities with your Zapier integration.
 - Have complete style control over how you present Zap templates in your product. The Partner API gives you access to the raw Zap Template data so you can give your users access to your Zap template with your product’s style, look and feel.
 - Get access to all your Zap templates and give your users the ability to search to quickly find the one they need.
 - Streamline Zap setup by pre-filling fields on behalf of your users.
-- Show users the Zaps they have set up from right within your product keeping them on your site longer and giving them complete confidence in their Zapier integration.
-- [Embed our Zap Editor](./zap-editor/) to allow your users to create new Zaps and modify existing ones, without needing to leave your product.
+- Show users the Zaps they have set up from right within your product, keeping them on your site longer and giving them complete confidence in your Zapier integration.
+- [Embed our Zap Editor](https://platform.zapier.com/embed/zap-editor) to allow your users to create new Zaps and modify existing ones, without needing to leave your product.
 
-Once your integration is public, the integration's client ID needed to call the Partner API will be revealed under the Embed > Settings or Embed > Partner API section of the [Developer Platform](https://developer.zapier.com/).
+## Partner API implementation examples
 
-## Authentication
+Jotform uses the `/apps` endpoint to power their own app directory by intertwining the thousands of public integrations on Zapier's directory with their native integrations:
 
-There are two ways to authenticate with the Partner API.
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/qk2x3cwnzt" width="640" height="360"></iframe>
 
-1. Your application's `client_id` which you will receive once you are approved for access to the API
+
+Wufoo uses the `/zap-templates` endpoint to retrieve raw data about their Zap Templates to customize the look and feel of how they are surfaced to users within their own integration directory:
+
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/j8t914xl0y" width="640" height="360"></iframe>
+
+
+Unbounce uses the `/zaps` endpoint to display users' Zaps using their integration directly within the Unbounce platform:
+
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/zhls72cz15" width="640" height="360"></iframe>
+
+## Embed Zap editor with Partner API
+
+With an embedded Zap editor in your product, your users can create and edit their Zaps without leaving your app.
+
+### Prerequisites
+
+- Your app has passed the review process and is Published in the Zapier App Directory
+- Any [Zap templates](https://platform.zapier.com/publish/zap-templates) you want to query have been reviewed and made public 
+
+### Example implementation
+
+This video shows how Paperform prefills Zaps for their embedded Zap editor with contextual data from the platform, such as the Form ID, to make Zap setup easier for users. By doing so, Paperform reduces the number of clicks it takes for users to publish a Zap and removes mental friction of users needing to remember details for it:
+
+<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://cdn.zappy.app/0625a071fbee914968480b0b58d696a8.mp4" width="640" height="360"></iframe>
+
+
+### Option 1: Create Zaps from Zap Templates
+
+Use the Partner API to query the public Zap templates featuring your integration (using the [`GET /v1/zap-templates`](https://platform.zapier.com/embed/partner-api) endpoint) and feature them in your product. When a user chooses a Zap template they’d like to try, use the `create_url` value as the source to load in an embedded frame such as:
+
+```html
+<iframe src="https://api.zapier.com/v1/embed/trello/create/113"></iframe>
+```
+
+Where `https://api.zapier.com/v1/embed/trello/create/113` is the `create_url` value of the Zap template.
+
+Optionally, you can add additional parameters to the `create_url` to [prefill the user’s Zap](https://platform.zapier.com/embed/prefill-zaps) with custom values (e.g., specifying a workspace for the trigger to filter by).
+
+### Option 2: Create Zaps without Zap Templates
+
+You can also facilitate a user's Zap creation via URL parameters instead of an existing Zap Template. This provides flexibility to redirect users to a pre-populated Zap editor with known context from your app without publishing a Zap Template for each specific use case.
+
+[Use the generator](https://platform.zapier.com/embed/prefill-zaps) under the _Embed_ and _Pre-filled Zaps_ tabs in the Platform UI to easily construct pre-filled Zaps for your embedded editor experience or as a lightweight entry point into the Zap editor from your app. 
+
+### Editing existing Zaps
+
+Use the Partner API to load a user’s Zaps (using the [`GET /v1/zaps`](https://platform.zapier.com/embed/partner-api) endpoint). When the user chooses to open or edit a Zap use the the `url` value of the Zap as the source of an embedded frame like this:
+
+```html
+<iframe src="https://zapier.com/app/editor/123456"></iframe>
+```
+
+Where `https://zapier.com/app/editor/123456` is the `url` of the Zap to be edited.
+
+If you prefer, you can open these URLs in a separate window, new tab, or popup from your app.
+
+### `postMessage` events
+
+If you decide to embed the Zap editor within your product you can listen to [message events from `postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event) to help you improve the interactivity with the iframe (e.g. automatically close the iframe modal.)
+
+The messages available include:
+
+- `zap:unpause` = Zap turned on / published
+- `zap:unpause:done` = Zap turned on / published (success)
+- `zap:unpause:fail` = Zap turned on / published (failure)
+- `zap:pause` = Zap turned off
+- `zap:pause:done` = Zap turned off (success)
+- `zap:pause:fail` = Zap turned off (failure)
+
+### Turning off a Zap
+
+The API does not currently have an endpoint to turn off/on a user's Zaps. If your Zapier app uses [Webhook Subscriptions](https://platform.zapier.com/build/hook-trigger), you can send a `DELETE` to the unique target URL that was provided when the subscription was created and that will then pause/turn off a Zap.
+
+## Embed pre-fill Zaps with Partner API
+
+Prefills allow you to define the input fields on behalf of the user, thus simplying the experience of setting up their Zap.
+
+### Prerequisites
+
+- You will need to know the required input fields per trigger or action step. You can find the fields as defined in your Zapier integration.
+
+### Create Zap with pre-filled fields
+
+Use the `create_url` (available in a [Zap template object](https://platform.zapier.com/embed/partner-api)) in order to create the Zap. 
+
+Next, add parameters to the `create_url` so that the user's Zap is prefilled with the provided custom values.
+
+#### Example with single app
+
+You can prefill the name of a Trello card (field: `name`) in the second step of the Zap template:
+
+> `https://api.zapier.com/v1/embed/trello/create/113?steps[1][params][name]=hello`
+
+- `template=113`
+- `steps[1][params][name]=hello`
+
+Here's what it would look like in the editor:
+
+![Zap Editor showing "hello" pre-filled into the name field of a new Zap titled Create Card in Trello](https://cdn.zappy.app/5db273249f668a1520e1632cf331a141.png)
+
+You can prefill multiple values for the user. In this example `name` and `desc` are prefilled
+
+> `https://api.zapier.com/v1/embed/trello/create/113?steps[1][params][name]=yoyoyo&steps[1][params][desc]=yeehaw`
+
+- `template=113`
+- `steps[1][params][name]=yoyoyo`
+- `steps[1][params][desc]=yeehaw`
+
+![Zap Editor showing "yoyoyo" pre-filled into the name field, and "yeehaw" pre-filled into the description field of a new Zap titled Create Card in Trello](https://cdn.zappy.app/35882f8b86dade9e41c13cdbd0baf03c.png)
+
+You can provide a label for prefill dropdowns as we won't fetch all of the pages of choices until the user opens the dropdown:
+
+> `https://api.zapier.com/v1/embed/trello/create/113?steps[1][params][board]=1234&steps[1][meta][parammap][board]=Test`
+
+- `template=113`
+- `steps[1][params][board]=1234`
+- `steps[1][meta][parammap][board]=Test`
+
+![Zap Editor showing "Test" pre-filled into the board field of a new Zap titled Create Card in Trello](https://cdn.zappy.app/fd9fd4872773018bfd15dfebea0795a4.png)
+
+#### Example with multiple apps
+
+Similarly, you can prefill apps, events, and input field values in the Zap Editor with the following URL schema:
+
+Base URL: `https://api.zapier.com/v1/embed/{your_app}/create` - you can find `{your_app}` by using the [Prefill Generator](https://platform.zapier.com/embed/prefill-zaps#using-the-pre-filled-zap-generator)
+
+##### URL parameters (with example values)
+
+- Trigger app (required): `steps[0][app]=MailchimpCLIAPI@latest` 
+- Trigger event: `steps[0][action]=new_member`
+- Trigger field prefills: `steps[0][params][list_id]=123`
+- Action app: `steps[1][app]=GoogleAdsCLIAPI@latest`
+- Action event: `steps[1][action]=add_to_customer_list_v2`
+- Action field prefills: `steps[1][params][list_id]=234`
+
+##### Requirements
+
+- A trigger app is required. The `steps` index for a trigger is always `0`.
+- Use `app_latest` values from the [`/apps` endpoint](https://platform.zapier.com/embed/partner-api#get-v1apps) of the Partner API to define an app. This is case-sensitive, so use exactly the value returned from the API.
+- You can define 0 to many subsequent action steps. The `steps` index for actions will be `1` or greater. Please note, only users on a paid Zapier plan have access to multi-step Zaps.
+- Events are defined by the `key` of the trigger, action, or search.
+- Field prefills are defined by the `key` of the input field. 
+
+##### Examples
+
+Defining a trigger and action app
+> `https://api.zapier.com/v1/embed/{your_app}/create?steps[0][app]=MailchimpCLIAPI@latest&steps[1][app]=GoogleAdsCLIAPI@latest`
+
+Defining a trigger and trigger event with no action:
+> `https://api.zapier.com/v1/embed/{your_app}/create?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member`
+
+Defining a trigger and trigger event with a prefilled value for the "Audience" input field:
+> `https://api.zapier.com/v1/embed/{your_app}/create?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member&steps[0][params][list_id]=123`
+
+Defining a trigger, trigger event, action, and action event with prefilled values for "Audience" and "Customer List" input fields:
+> `https://api.zapier.com/v1/embed/{your_app}/create?steps[0][app]=MailchimpCLIAPI@latest&steps[0][action]=new_member&steps[0][params][list_id]=123&steps[1][app]=GoogleAdsCLIAPI@latest&steps[1][action]=add_to_customer_list_v2&steps[1][params][customer_list_id]=234`
+
+Defining a multi-step Zap with a trigger and two actions:
+> `https://api.zapier.com/v1/embed/{your_app}/create?steps[0][app]=MailchimpCLIAPI@latest&steps[1][app]=GoogleAdsCLIAPI@latest&steps[2][app]=FacebookLeadAdsCLIAPI@latest`
+
+### Use the pre-filled Zap generator
+
+The UI-based generator in the Platform UI facilitates constructing pre-filled Zaps. 
+
+**Pre-filled Zaps are simply URLs with field values added as parameters,** which you can use to direct users to the Zap editor with some input fields already filled. Place these URLs inside your product or within an embedded Zap editor to facilitate users creating and publishing Zaps.
+
+Find the pre-filled Zap generator under the _Embed_ and _Pre-filled Zaps_ section of the Platform UI.
+
+![Screenshot of pre-filled Zaps tab](https://cdn.zappy.app/2a4f9c6de6c525cbcdc1b513ec88c519.png)
+
+#### Create a pre-filled Zap using the generator
+
+- Select an app and event for both the trigger and action to see the fields you can pre-fill. If no fields appear, the event has no input fields.
+
+![Screenshot of generator trigger step setup](https://cdn.zappy.app/87b9c4951d55298780ff209e217bb750.png)
+
+- Select the fields you want to pre-fill:
+  - If you don’t want to pre-fill the field, leave the box unchecked. In the Zap, the field will be empty or set to a default value, if there is one.
+  - If there's a static value for a field that applies to every user's Zap (like the title of an email), check the field and provide the value in the text field.
+  - If the values are dynamic or you don’t know them yet, replace the placeholders represented in curly brackets (i.e {TRIGGER_LIST_ID}) in the generated URL from Step 2 before using it in your app. This could be something like an account or list ID field. The placeholder serves as a reminder to replace the value at runtime.
+  - If the field is greyed out, it requires a complex field value and cannot be pre-filled.
+
+![Screenshot of prefill input field options](https://cdn.zappy.app/9e845182506292214c866f3278861e8d.png)
+
+_Note: fields denoting **(required)** are required for turning the Zap on, not required to be pre-filled._
+
+- Test the Zap! Use the handy test button to make sure the resulting Zap is what you intended. You'll need to connect app accounts on both steps to see the pre-filled fields.
+- Copy the code and embed it inside your app to make setting up a Zap easier and faster for users.
+
+The generator only supports creating 2-step Zaps, but you can construct multi-step Zaps by building upon the generated URL and adding `steps` parameters with increased indeces.
+ 
+You also cannot prefill an action field with data returned from the trigger. In this case, use [pre-filled Zaps with Zap Templates](https://platform.zapier.com/embed/zap-editor).
+
+## Partner API endpoints
+
+### Authentication
+
+There are two ways to authenticate to the Partner API.
+
+1. Your application's `client_id` which is available once you are approved for access to the API by publishing your app in Zapier's [App Directory](https://platform.zapier.com/quickstart/private-vs-public-integrations). 
 2. A user's access token
 
-Which authentication method you should use depends on which endpoint(s) you are using. Review each endpoint's documentation to understand which parameters are required.
+The authentication method you should use depends on which endpoint(s) you are using. Review each endpoint's documentation to understand which parameters are required.
 
-> Note: while we do generate a `client_secret`, the type of grant we use (`implicit`) doesn't need it so it's not something we provide.
+> Note: while we do generate a `client_secret`, the type of grant we use (`implicit`) doesn't need it so it is not provided to you. 
 
-### Access Token
+#### Access token
 
-For resources that require a valid access token you can use the [OAuth2 protocol](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2). At the moment, we only permit the [`implicit`](https://tools.ietf.org/html/rfc6749#section-4.2) grant type. Should your use case require a different grant type [send us your request](mailto:partners@zapier.com). There's also a [suggested workaround on how to work with an implicit oauth flow below](#workaround-for-implicit-only).
+For resources that require a valid access token you can use the [OAuth2 protocol](https://oauth.net/2/). At the moment, we only permit the [`implicit`](Fworkaround) grant type. Should your use case require a different grant type [send us your request](mailto:partners@zapier.com). There's also a [suggested workaround on how to work with an implicit oauth flow below](#workaround-for-implicit-only).
 
-#### Procuring a Token
+##### Procuring a token
 
 Construct the following URL, and redirect the user to authorize your application:
 
@@ -67,7 +273,7 @@ https://zapier.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_
 
 ![Example OAuth2 Authorization Prompt](https://cdn.zapier.com/storage/photos/d926ea5ba6ca80c184a45cf3f5e420fb.png)
 
-#### Receiving the Token, or Error
+##### Receiving the token, or error
 
 If the user cancels, or approves the authorization the user will be redirected to your `redirect_uri` with the following example urls:
 
@@ -85,7 +291,7 @@ http://your.redirect.url/?error=access_denied
 
 Your application should use JavaScript to parse the hash parameter and use the token as needed. The **access token will not expire**. If ever invalid, however, provide the user with the authorize flow once more. In the `implicit` grant type, there are no refresh tokens. You can use a hidden iframe with `approval_prompt=auto`, or ask the user to authorize once more, to receive new tokens.
 
-#### Using the token:
+##### Using the token
 
 Preferred use of the tokens is via an HTTP Authorization Header.
 
@@ -93,15 +299,13 @@ Preferred use of the tokens is via an HTTP Authorization Header.
 curl -H "Authorization: Bearer {token}" "https://api.zapier.com/v1/zaps"
 ```
 
-#### Workaround for Implicit Only
+##### Workaround for Implicit only
 
-While we consider and implement other OAuth flows, the following is a suggested workaround for working with the implicit OAuth flow. A sequence diagram is provided for the example:
+While we consider and implement other OAuth flows, the following sequence diagram is a suggested workaround for working with the implicit OAuth flow.
 
 ![](https://cdn.zapier.com/storage/photos/505e5f9b46d6f45822ae4090f7dcec8d.png)
 
 <div style="display: none">
-
-<!-- Recreate using https://mdp.tylingsoft.com/ and take a screenshot -->
 
 ```mermaid
 sequenceDiagram
@@ -121,11 +325,13 @@ sequenceDiagram
 
 </div>
 
-The idea is to use an intermediate page that reads the access token from the URL fragment. An example like so: `https://your.app/your/redirect_uri#access_token=THE_USER_ACCESS_TOKEN`. Then the page would `POST` to your backend the access token. If you created a popup, you can also use a `postMessage` to pass the access token to the main page. Ultimately, you'll want to save the token to your backend for the signed in user. Once the backend returns a successful save, then redirect the user (or close the popup) back to the page you'd like the user to interact with your page and uses the access token.
+The idea is to use an intermediate page that reads the access token from the URL fragment. An example like so: `https://your.app/your/redirect_uri#access_token=THE_USER_ACCESS_TOKEN`. The page then `POSTs` the access token to your backend. 
 
-## Endpoints
+If you created a popup, you can also use a `postMessage` to pass the access token to the main page. Ultimately, you'll want to save the token to your backend for the signed-in user. Once the backend returns a successful save, redirect the user (or close the popup) back to the page you'd like the user to interact with in your app and use the access token.
 
-### GET /v1/apps
+### Endpoints
+
+#### GET /v1/apps
 
 |            URL             | Protected By |
 | :------------------------: | :----------: |
@@ -159,31 +365,31 @@ Get apps that can be integrated with my app.
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}"
 ```
 
-Get a list of apps related to google
+Get a list of apps related to Google.
 
 ```bash
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&category=google"
 ```
 
-Get a list of apps that are included in the same Zap Template as your app
+Get a list of apps that are included in the same Zap Template as your app.
 
 ```bash
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&is_in_zap_template_with"
 ```
 
-Get the Google Calendar app
+Get the Google Calendar app.
 
 ```bash
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&title_search=google+calendar"
 ```
 
-Get a list of apps where the title starts with google
+Get a list of apps where the title starts with Google.
 
 ```bash
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&title_starts_with=google"
 ```
 
-Get apps that can be integrated with my app, returning only 5 results per page
+Get apps that can be integrated with my app, returning only 5 results per page.
 
 ```bash
 curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&per_page=5"
@@ -255,7 +461,7 @@ curl -L "https://api.zapier.com/v1/apps?client_id=${client_id}&per_page=5"
 }
 ```
 
-### GET /v1/zap-templates
+#### GET /v1/zap-templates
 
 |                 URL                 | Protected By |
 | :---------------------------------: | :----------: |
@@ -358,7 +564,7 @@ curl -H "Authorization: Bearer {token}" \
   -L "https://api.zapier.com/v1/zap-templates?client_id=${client_id}&limit=20&offset=20"
 ```
 
-### GET /v1/zaps
+#### GET /v1/zaps
 
 |            URL             | Protected By | Required Scopes |
 | :------------------------: | :----------: | :-------------: |
@@ -368,7 +574,7 @@ curl -H "Authorization: Bearer {token}" \
 >
 > 1. The zaps returned are narrowed/filtered by your Zapier app. For example, if you are Trello you'll only be returned a user's Zap that contain Trello in one of the steps of the Zap.
 >
-> 2. If your app is built with the [Zapier CLI](https://github.com/zapier/zapier-platform-cli) the Zaps returned are for **any** version of your app.
+> 2. If your app is built with the [Zapier CLI](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md) the Zaps returned are for **any** version of your app.
 
 **Arguments**
 
@@ -523,7 +729,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&get_
 }
 ```
 
-### GET /v1/profiles/me
+#### GET /v1/profiles/me
 
 |            URL                    | Protected By | Required Scopes     |
 | :-------------------------------: | :----------: | :-----------------: |
@@ -531,7 +737,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/zaps?&get_
 
 **Example Requests**
 
-Get user information related to the given `access_token`
+Get user information related to the given `access_token`.
 
 ```bash
 curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/me"
@@ -553,7 +759,7 @@ curl -H "Authorization: Bearer {token}" -L "https://api.zapier.com/v1/profiles/m
 }
 ```
 
-### GET /v1/categories
+#### GET /v1/categories
 
 |               URL                | Protected By |
 | :------------------------------: | :----------: |
@@ -690,9 +896,9 @@ curl -L "https://api.zapier.com/v1/categories"
 }
 ```
 
-### Data Objects
+#### Data Objects
 
-#### App
+##### App
 
 | attribute       | type   | notes                                                                                                                                                 |
 | --------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -735,13 +941,13 @@ curl -L "https://api.zapier.com/v1/categories"
 }
 ```
 
-#### AppCategory
+##### AppCategory
 
 | attribute               | type                                      | notes                                                                                                                                                                                                                                                            |
 | ----------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **id**                  | String                                    | Unique identifier for the category.                                                                                                                                                                                                                              |
 | **title**               | String                                    | Plain text description of the category.                                                                                                                                                                                                                          |
-| **slug**                | String                                    | URL/SEO friendly ID for the Zap template.  API.                                                                                                                                                                                                                  |
+| **slug**                | String                                    | URL/SEO friendly ID for the Zap template API.                                                                                                                                                                                                                  |
 | **description**         | String |  Detailed explanation of the app category.
 | **url**                 | String                                    | An absolute url to the Zapbook Apps page.                                                                                                                                                                                                                        |
 | **type_of**             | String                                    | Category type. 'Curated' categories are maintained by Zapier staff, 'Automatically Generated' categories are maintained by automation and populated with the 'rebuild_special_categories' command, 'Other' categories are manually created for various purposes. |
@@ -761,7 +967,7 @@ curl -L "https://api.zapier.com/v1/categories"
 }
 ```
 
-#### Profile
+##### Profile
 
 | attribute           | type            | notes                                                 |
 | ------------------- | --------------- | ----------------------------------------------------- |
@@ -785,7 +991,7 @@ curl -L "https://api.zapier.com/v1/categories"
 }
 ```
 
-#### Zap
+##### Zap
 
 | attribute       | type            | notes                                                 |
 | --------------- | --------------- | ----------------------------------------------------- |
@@ -808,7 +1014,7 @@ curl -L "https://api.zapier.com/v1/categories"
 
 ```
 
-#### Zap Step
+##### Zap Step
 
 | attribute   | type   | notes                                                                      |
 | ----------- | ------ | -------------------------------------------------------------------------- |
@@ -818,13 +1024,13 @@ curl -L "https://api.zapier.com/v1/categories"
 ```json
 {
   "app": {
-    /* See the App object definition ... */
+    // ... See the App object definition ...
   },
   "type_of": "read"
 }
 ```
 
-#### Zap Template
+##### Zap Template
 
 | attribute             | type       | notes                                                                                                                         |
 | --------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -832,7 +1038,7 @@ curl -L "https://api.zapier.com/v1/categories"
 | **create_url**        | String     | An absolute URL used to create the Zap.                                                                                       |
 | **description**       | String     | The HTML-rendered description provided when the Zap template was created.                                                     |
 | **description_plain** | String     | Plain text (HTML tags stripped) description. **Note: `\r` and `\n` replaced with space character. Artifacts may be present.** |
-| **description_raw**   | String     | The [Markdown][markdown] description provided when the Zap template was created.                                              |
+| **description_raw**   | String     | The [Markdown][https://www.markdownguide.org/getting-started/] description provided when the Zap template was created.                                              |
 | **slug**              | String     | A URL/SEO friendly ID for the Zap template.                                                                                   |
 | **steps**             | Array<App> | An array of two or more steps in the Zap template. See [App object](#app).                                                    |
 | **title**             | String     | The name of the Zap template.                                                                                                 |
@@ -849,7 +1055,7 @@ curl -L "https://api.zapier.com/v1/categories"
   "status": "published",
   "steps": [
     {
-      /* ... see App object definition ... */
+      // ... see App object definition ...
     }
   ],
   "title": "Subscribe new Facebook Lead Ad leads to a MailChimp list",
@@ -857,7 +1063,7 @@ curl -L "https://api.zapier.com/v1/categories"
 }
 ```
 
-## Errors
+### Errors
 Zapier uses HTTP response codes to indicate the success or failure of an API request.
 
 | Code    | Status            | Explanation                                                                |
@@ -877,23 +1083,7 @@ All errors will be JSON object with a String array of errors:
 }
 ```
 
-## Example Implementations
-Jotform uses the `/apps` endpoint to power their own app directory by intertwining the thousands of public integrations on Zapier's directory with their native integrations:
-
-<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/qk2x3cwnzt" width="640" height="360"></iframe>
-
-
-Wufoo uses the `/zap-templates` endpoint to retrieve raw data about their Zap Templates to customize the look and feel of how they are surfaced to users within their own integration directory:
-
-<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/j8t914xl0y" width="640" height="360"></iframe>
-
-
-Unbounce uses the `/zaps` endpoint to display users' Zaps using their integration directly within the Unbounce platform:
-
-<iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/zhls72cz15" width="640" height="360"></iframe>
-
-
-## Changelog
+### Changelog
 - 2023-05-25
 
   - Added query parameters to `v1/apps`
@@ -985,12 +1175,6 @@ Unbounce uses the `/zaps` endpoint to display users' Zaps using their integratio
   - Faster `/zap-templates` lookup.
 
     - Sub-second responses to the `/v1/zap-templates` even when requesting up to 100 Zap templates.
-
-- 2017-11-01
-
-  - Access tokens never expire.
-
-    - After security review, the access tokens granted **will no longer expire**. This may change in the future, however, based on endpoints provided by the API. In that event, we expect API consumers to provide the user with the authorize endpoint to get a fresh access token.
 
 - 2017-10-16
 
