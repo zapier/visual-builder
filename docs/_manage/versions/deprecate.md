@@ -9,6 +9,8 @@ redirect_from:
 
 Deprecation is an optional process that allows you to set a date from which a non-public version of your integration will no longer be updated. Deprecation is only recommended if the older integration version will eventually stop working, such as if the related API will be removed. Zapier is normally a “set it and forget it” experience for users, so use this feature carefully. Only if the older version will no longer function, should it be deprecated. Please note that deprecating a version is significantly more disruptive to our mutual users than migrating to the latest promoted version, or than leaving users on an older (now) private version if migration is not possible.
 
+When users are left on an older private version, they will see a [prompt in the Zap editor](https://help.zapier.com/hc/en-us/articles/18755649454989-Update-to-the-latest-app-version-in-Zaps) to optionally encourage them to make the update, instead of any deprecation communications or Zap disruptions. 
+
 ## What happens after setting a version to deprecate
 
 ### 1. Email notification

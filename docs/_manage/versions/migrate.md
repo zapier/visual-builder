@@ -19,7 +19,9 @@ Zapier recommends migrating a small portion of your existing users to the new in
 
 Major changes would cause active Zaps to error and potentially turn off. They would require users to manually update the Zap in order to get it working again.  Learn more about [breaking changes to your integration](https://platform.zapier.com/manage/making-changes), best practices and the user impacts. 
 
-Zapier recommends not to attempt to migrate users for major changes. Instead [deprecate the version](https://platform.zapier.com/manage/versions-ui#deprecating-versions) to prompt users to [manually update to the latest integration version](https://help.zapier.com/hc/en-us/articles/18755649454989-Update-to-the-latest-app-version-in-Zaps). Please note that deprecating a version is significantly more disruptive to our mutual users than migrating to the latest promoted version, or than leaving users on an older (now) private version when migration is not possible.
+Zapier recommends not to attempt to migrate users for major changes. Instead [deprecate the version](https://platform.zapier.com/manage/versions-ui#deprecating-versions) to prompt users to [manually update to the latest integration version](https://help.zapier.com/hc/en-us/articles/18755649454989-Update-to-the-latest-app-version-in-Zaps). Please note that deprecating a version is significantly more disruptive to our mutual users than migrating to the latest promoted version, or than leaving users on an older (now) private version when migration is not possible. 
+
+When users are left on an older private version, they will see a [prompt in the Zap editor](https://help.zapier.com/hc/en-us/articles/18755649454989-Update-to-the-latest-app-version-in-Zaps) to encourage them to make the update themselves. 
 
 ## Migrate users to new version with Platform UI
 
