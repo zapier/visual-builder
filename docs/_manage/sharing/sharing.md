@@ -33,7 +33,7 @@ Share the invite link with users via your website or other method. The link will
 
 Inviting users by email gives you the option to select which version of your integration they can access. All users invited by email are tracked in the Sharing tab, allowing you to view and control who has access to your integration.
 
-* You can only invite 100 users by email.
+* You can only invite 200 users by email.
 
 - [Log into the Platform UI](https://zapier.com/app/developer) or refer to the [Platform CLI documentation](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#sharing-an-app-version).
 - Select **My Integration**.
