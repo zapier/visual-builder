@@ -13,6 +13,11 @@ When building an integration on the Zapier Platform, you must specify the intend
 * Public integration: For access to all Zapier customers and published in the [Zapier App Directory](https://zapier.com/apps).
 * Private integration: For personal, internal (e.g. with your team) or controlled-access use.
 
+- Building a private or public integration on the Zapier Platform is free.
+- There are no fees for sharing or publishing an integration.
+- Users of your integration are responsible for their own Zapier plans and billing.
+- Partners do not incur fees as a result of the usage of their integration.
+
 Both private and public integrations can connect to Zapier’s app directory of over [{{ site.partner_count }} integrations](https://zapier.com/apps). Depending on your intended audience, there will be different features available and limitations to what the integration can do. 
 
 > **Note**: The intended audience is different from your integration’s status. All integrations, regardless of intent, start with a private status. Learn more in [Zapier integration publishing requirements](https://platform.zapier.com/publish/integration-publishing-guidelines).

@@ -108,7 +108,7 @@ Learn more about creating [Zap templates](https://platform.zapier.com/publish/za
 
 The best way to ensure users are able to discover your Zapier integration is to surface your integration where users are looking at it. By embedding Zapier in your product, you can create end-to-end user experience, helping your customers discover available integrations within your product without having to leave your app.
 
-Learn more about [embedding Zapier](https://platform.zapier.com/embed/overview).
+Learn more about [embedding Zapier](https://platform.zapier.com/embed/embed-benefits).
 
 ### **Grow active usage**
 
@@ -121,6 +121,10 @@ Learn more strategy [tips for a successful integration](https://platform.zapier.
 With the Zapier Issue Manager, you have the ability to conveniently address bugs and new feature requests within your preferred issue-tracking tool. Regularly reviewing and taking action on these items will greatly contribute to enhancing the overall health score of your integration.
 
 Learn more about [Zapier Issue Manager](https://platform.zapier.com/publish/zapier-issue-manager).
+
+### **Exit Beta early by embedding your integration**
+
+When activity from your integration is detected through one of the Zapier [embed tools](https://platform.zapier.com/embed/embed-benefits), you’ll exit Beta the next business day and unlock your [Partner Program benefits](https://zapier.com/developer-platform/partner-program). The simplest option is to feature your Zap templates in a launch announcement. Additionally, you can present a dynamic gallery of the 6,000+ applications that are now compatible with your app for creating workflows.
 
 ## **6. Public phase**
 

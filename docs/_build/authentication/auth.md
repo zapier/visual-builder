@@ -23,11 +23,11 @@ All Zapier integrations that can access or add private data for users require au
 
 Zapier supports the following five authentication schemes in the Platform UI, each with their own settings:
 
-- API Key
-- OAuth v2
-- Session Auth
-- Basic Auth
-- Digest Auth
+- [API Key](https://platform.zapier.com/build/apikeyauth)
+- [OAuth v2](https://platform.zapier.com/build/oauth)
+- [Session Auth](https://platform.zapier.com/build/sessionauth)
+- [Basic Auth](https://platform.zapier.com/build/basicauth)
+- [Digest Auth](https://platform.zapier.com/build/digestauth)
 
 ![Zapier Authentication](https://cdn.zappy.app/37e7829169eb2e07278d512c174cd708.png)
 
