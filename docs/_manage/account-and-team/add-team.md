@@ -10,7 +10,7 @@ redirect_from:
 
 # Invite team members to your integration
 
-You can add team members to your integration to collaborate, contribute, and view analytics data for your integration on the Developer Platform. Your integration team can have up to 100 team members, regardless of whether your integration is Private or Public. Team members added to your integration will be assigned one of the following roles:
+You can add team members to your integration to collaborate, contribute, and view analytics data for your integration on the Developer Platform. Your integration team can have up to 200 team members, regardless of whether your integration is Private or Public. Team members added to your integration will be assigned one of the following roles:
 
 - **Admin**: Admins are granted read and write access to the integration. This role is ideal for developers and individuals actively involved in building and maintaining the integration.
 
