@@ -1,10 +1,11 @@
 ---
 title: Embed insights definitions
-order: 6
+order: 4
 layout: post-toc
 redirect_from: 
     - /manage/analyze-integration-performance#embed-insights-definitions
     - /manage/analyze-integration-performance#practical-applications-of-embed-insights
+    - https://platform.zapier.com/manage/embed-insights 
 ---
 
 # Embed insights definitions 

@@ -33,6 +33,7 @@ Definitions for each of the metrics provided in the integration dashboard below:
 | **Usage by trigger**        | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each trigger.  | By integration version                       |
 | **Usage by action**         | Number of current live Zaps (Zaps turned on), paused Zaps (Zaps turned off), and total Zaps for each action.   | By integration version                       |
 
+Public app integrations also have [visibility into embed insights](https://platform.zapier.com/embed/embed-insights). 
 
 ## Best practices
 

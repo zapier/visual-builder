@@ -44,4 +44,10 @@ Most useful searches return one individual item that will likely be needed in an
 
 The [output returned](https://platform.zapier.com/build/response-types) by a _search_ should be a JSON-formatted array sorted with the best match first. Only the first item will be returned. For no match found, a `200` with an empty array must be returned. If your API returns a `404` error for searches without results, add custom code to your API call to replace it with an empty array. 
 
-Zapier strongly recommends against action steps that delete or remove data. To prevent data loss, action steps should only add or update data. If you are considering adding a delete action to your app, consider alternative actions for items such as deactivating, unsubscribing, or canceling, instead of deleting items completely.
+## 3. Delete actions
+
+Zapier recommends careful consideration of action steps that fully delete or remove data. To prevent data loss, action steps should only add or update data. 
+
+If you are considering adding a delete action to your app, consider alternative actions for items such as deactivating, unsubscribing, or canceling, instead of deleting items completely.
+
+If you do add a delete action, make sure to include a `Copy` field to clarify to users that the action is irreversible once the API request is made. 

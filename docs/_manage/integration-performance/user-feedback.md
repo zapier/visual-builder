@@ -28,7 +28,7 @@ Problems with your public integration, authentication and API calls will be logg
 
 - Affected user counts on issues typically underrepresent the actual totals, as only a small portion of all users facing an issue take the time to contact Zapier Support. 
 
-## 2. Respond to issues in a timely mannner
+## 2. Respond to issues in a timely manner
 
 - Reply to the Zapier team about the issue within the _Bugs & Feature Requests_ page to keep communications consistent for both your team and ours. These issues and comments are not visible to affected users; and users will only be notified when an issue is verified as closed/resolved by Zapier Support.
 
