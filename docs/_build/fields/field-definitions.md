@@ -71,4 +71,4 @@ Dynamic fields make a request to your app's API, showing the returned data in a 
 
 ## Line item groups
 
-Line item groups allow users to input line items provided from the trigger or prior action. Those items will then be sent in the request as an array of individual objects. Users cannot input comma separated values into a line item field, they need to be provided from the trigger or a prior action in line item format for them to be sent this way. Typically used to add multiple lines of similar details to an app, for example in invoice and accounting apps. Only available in Platform UI actions. 
+Line item groups allow users to input line items provided from the trigger or prior action. Those items will then be sent in the request as an array of individual objects. Users cannot input comma separated values into a line item field, they need to be provided from the trigger or a prior action in line item format for them to be sent this way. Typically used to add multiple lines of similar details to an app, for example in invoice and accounting apps. Only available in [Platform UI actions](https://platform.zapier.com/quickstart/ui-vs-cli). 
