@@ -143,10 +143,10 @@ View [example apps](https://zapier.com/apps/categories/customer-support).
 | New Contact/Lead/Person/Company  | *Update Record/Module Entry          | Find Lead/Contact/Person/Company       | Find or Create Lead/Contact/Person/Company     |
 | New Deal/Opportunity/Job/Inquiry | Create Contact/Lead/Person/Company   | Find Deal/Opportunity                  | Find or Create Deal/Opportunity                |
 | Tag Added or Removed             | Update Contact/Lead/Person/Company   |                                        |                                                |
-| Updated X Stage/Status (i.e. deal, opportunity, project, lead) | Create Deal/Opportunity |                       |                                                |
-| **Updated Record/Module Entry    | Update Deal/Opportunity              |                                        |                                                |
-|                                  | Create Note                          |                                        |                                                |
-|                                  | Add Contact/Lead to Campaign/Group   |                                        |                                                |
+| **Updated Record/Module Entry    | Create Deal/Opportunity |                       |                                                |
+| Updated Deal/Opportunity Status  | Update Deal/Opportunity              |                                        |                                                |
+| Updated Lead Status              | Create Note                          |                                        |                                                |
+| Updated Project Status           | Add Contact/Lead to Campaign/Group   |                                        |                                                |
 |                                  | Create Activity/Event                |                                        |                                                |
 |                                  | Add Tag to X (i.e. Contact, Record, Opportunity) |                            |                                                |
 {% endcapture %}
