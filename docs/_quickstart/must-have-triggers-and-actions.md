@@ -87,9 +87,9 @@ View [example apps](https://zapier.com/apps/categories/bookmarks).
 {% capture styled_table %}
 | Triggers                | Actions                     | Searches                               | Search or Creates                |
 |-------------------------|-----------------------------|----------------------------------------|----------------------------------|
-| New or Updated Event/Meeting | Create Event           | Find Event                             | Find or Create Event             |
+| New Event/Meeting       | Create Event           | Find Event                             | Find or Create Event             |
 | Event Started           | Add Attendee to Event       |                                        |                                  |
-| New Event/Meeting       |                             |                                        |                                  |
+| Updated Event/Meeting   |                             |                                        |                                  |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -111,9 +111,9 @@ View [example apps](https://zapier.com/apps/categories/call-tracking).
 {% capture styled_table %}
 | Triggers                                    | Actions                            | Searches                         | Search or Creates                |
 |---------------------------------------------|------------------------------------|----------------------------------|----------------------------------|
-| New or Updated Contact/Lead/Person/Company  | Create Contact/Lead/Person/Company | Find Contact/Lead/Person/Company | Find or Create Contact/Lead/Person/Company |
+| New Contact/Lead/Person/Company             | Create Contact/Lead/Person/Company | Find Contact/Lead/Person/Company | Find or Create Contact/Lead/Person/Company |
 | New Form Submission/Entry                   | Add Contact to Group/Tag/List      |                                  |                                  |
-| New Contact/Lead/Person/Company             | Update Contact/Lead/Person/Company |                                  |                                  |
+|                                             | Update Contact/Lead/Person/Company |                                  |                                  |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -127,13 +127,11 @@ View [example apps](https://zapier.com/apps/categories/contacts).
 | New Ticket/Request               | Update Ticket/Request/Conversation   | Find Ticket/Request/Conversation       |                                   |
 | New Customer/User/Lead           | Add/Remove Tag on User/Ticket/Lead   |                                        |                                   |
 | New Chat/Message/Conversation    | Send Message                         |                                        |                                   |
-| New Closed/Finished Conversation | *Create or Update Customer/User/Lead |                                        |                                   |
+| New Closed/Finished Conversation | Update Customer/User/Lead/Company    |                                        |                                   |
 |                                  | Add Comment/Note on Ticket/Request   |                                        |                                   |
 |                                  | Create Customer/User/Lead/Company    |                                        |                                   |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
-
-*If you’re adding a _Create or Update_ action instead of the [recommended _Update_ action to go along with a _Find or Create_ action](https://platform.zapier.com/publish/integration-publishing-guidelines#56-create-or-update-functionality), it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
 
 View [example apps](https://zapier.com/apps/categories/customer-support).
 
@@ -145,9 +143,8 @@ View [example apps](https://zapier.com/apps/categories/customer-support).
 | New Contact/Lead/Person/Company  | *Update Record/Module Entry          | Find Lead/Contact/Person/Company       | Find or Create Lead/Contact/Person/Company     |
 | New Deal/Opportunity/Job/Inquiry | Create Contact/Lead/Person/Company   | Find Deal/Opportunity                  | Find or Create Deal/Opportunity                |
 | Tag Added or Removed             | Update Contact/Lead/Person/Company   |                                        |                                                |
-| **Updated Record/Module Entry    | *Create or Update Contact/Lead/Person/Company   |                             |                                                |
 | Updated X Stage/Status (i.e. deal, opportunity, project, lead) | Create Deal/Opportunity |                       |                                                |
-|                                  | Update Deal/Opportunity              |                                        |                                                |
+| **Updated Record/Module Entry    | Update Deal/Opportunity              |                                        |                                                |
 |                                  | Create Note                          |                                        |                                                |
 |                                  | Add Contact/Lead to Campaign/Group   |                                        |                                                |
 |                                  | Create Activity/Event                |                                        |                                                |
@@ -166,7 +163,7 @@ View [example apps](https://zapier.com/apps/categories/crm).
 | Triggers                  | Actions               | Searches                                     | Search or Creates                     |
 |---------------------------|-----------------------|----------------------------------------------|---------------------------------------|
 | New Record/Row            | Create Record/Row     | Find Record/Row                              | Find or Create Record/Row             |
-| New or Updated Record/Row | Update Record/Row     |                                              |                                       |
+| Updated Record/Row        | Update Record/Row     |                                              |                                       |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
@@ -231,13 +228,12 @@ View [example apps](https://zapier.com/apps/categories/email).
 {% capture styled_table %}
 | Triggers                          | Actions                                  | Searches                                  | Search or Creates                         |
 |-----------------------------------|------------------------------------------|-------------------------------------------|-------------------------------------------|
-| New Subscriber/Contact in List/Audience/Tag | *Create or Update Subscriber/Contact | Find Subscriber/Contact             | Find or Create Subscriber/Contact         |
+| New Subscriber/Contact in List/Audience/Tag | Create Subscriber/Contact      | Find Subscriber/Contact             | Find or Create Subscriber/Contact         |
 | New Subscriber/Contact            | Send Email/Campaign                      |                                           |                                           |
 | Email Opened/Link Clicked         | Add/Subscribe Contact to List/Audience/Tag     |                                     |                                           |
-|                                   | Create Subscriber/Contact                |                                           |                                           |
+|                                   | Update Subscriber/Contact                |                                           |                                           |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
-*If you’re adding a _Create or Update_ action instead of the [recommended _Update_ action to go along with a _Find or Create_ action](https://platform.zapier.com/publish/integration-publishing-guidelines#56-create-or-update-functionality), it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario
 
 View [example apps](https://zapier.com/apps/categories/email-newsletters).
 
@@ -293,18 +289,16 @@ View [example apps](https://zapier.com/apps/categories/fundraising).
 {% capture styled_table %}
 | Triggers                             | Actions                                            | Searches                           | Search or Creates                      |
 |--------------------------------------|----------------------------------------------------|------------------------------------|----------------------------------------|
-| New Contact/Lead/Subscriber          | *Create or Update Opportunity/Deal                 | Find Contact/Lead/Subscriber       | Find or Create Contact/Lead/Subscriber |
-| New Contact in List/Audience/Segment | *Create or Update Contact/Lead/Subscriber          | Find Deal                          |                                        |
+| New Contact/Lead/Subscriber          | Create Contact/Lead/Subscriber                     | Find Contact/Lead/Subscriber       | Find or Create Contact/Lead/Subscriber |
+| New Contact in List/Audience/Segment | Create Opportunity/Deal/Order                      | Find Deal                          |                                        |
 | Tag Added/Removed from Contact/Lead/Subscriber | Update Opportunity/Deal                  |                                    |                                        |
-| Updated Deal/Pipeline Stage          | Add Contact/Lead/Subscriber to Campaign/List/Group |                                    |                                        |
-| New Order/Purchase/Sale              | Update Contact/Lead/Subscriber                     |                                    |                                        |
-| New Form Entry/Submission            | Create Opportunity/Deal/Order                      |                                    |                                        |
-| Updated Contact/Lead/Subscriber      | Create Contact/Lead/Subscriber                     |                                    |                                        |
-|                                      | Add/Remove Tag fro Contact/Lead/Subscriber         |                                    |                                        |
+| Updated Deal/Pipeline Stage          | Update Contact/Lead/Subscriberv                    |                                    |                                        |
+| New Order/Purchase/Sale              | Add Contact/Lead/Subscriber to Campaign/List/Group |                                    |                                        |
+| New Form Entry/Submission            | Add/Remove Tag fro Contact/Lead/Subscriber         |                                    |                                        |
+| Updated Contact/Lead/Subscriber      |                                                    |                                    |                                        |
+|                                      |                                                    |                                    |                                        |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
-
-*If you’re adding a _Create or Update_ action instead of the [recommended _Update_ action to go along with a _Find or Create_ action](https://platform.zapier.com/publish/integration-publishing-guidelines#56-create-or-update-functionality), it’s best practice to return in the response payload whether the action taken was a create or update. This way, users can add appropriate next steps to their Zap depending on the scenario.
 
 View [example apps](https://zapier.com/apps/categories/marketing-automation).
 
@@ -361,9 +355,9 @@ View [example apps](https://zapier.com/apps/categories/payment-processing).
 {% capture styled_table %}
 | Triggers                         | Actions                       | Searches                 | Search or Creates       |
 |----------------------------------|-------------------------------|--------------------------|-------------------------|
-| New SMS/Message Received         | Create or Update Contact      | Find Contact (by phone number) | Find or Create Contact  |
-| New Call                         | Send SMS/Message              |                          |                         |
-| New Recording                    | Create Contact                |                          |                         |
+| New SMS/Message Received         | Send SMS/Message              | Find Contact (by phone number) | Find or Create Contact  |
+| New Call                         | Create Contact                |                          |                         |
+| New Recording                    | Update Contact                |                          |                         |
 | Call Completed                   | Call Phone Number             |                          |                         |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
@@ -463,8 +457,8 @@ View [example apps](https://zapier.com/apps/categories/social).
 {% capture styled_table %}
 | Triggers                          | Actions                                | Searches                               | Search or Creates                |
 |-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------|
-| New or Updated Row                | Create/Add Row                         | Find Row                               | Find or Create Row               |
-| New Row                           | Create Row(s)                          | Find Row(s) (with line-item support)   |                                  |
+| New Row                           | Create/Add Row                         | Find Row                               | Find or Create Row               |
+| Updated Row                       | Create Row(s)                          | Find Row(s) (with line-item support)   |                                  |
 |                                   | Update Row                             |                                        |                                  |
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
