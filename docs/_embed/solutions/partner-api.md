@@ -257,7 +257,7 @@ For resources that require a valid access token you can use the [OAuth2 protocol
 Construct the following URL, and redirect the user to authorize your application:
 
 ```
-https://zapier.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}
+https://zapier.com/oauth/authorize/?client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}
 ```
 
 |      Parameter      | Requirement | Explanation                                                                                                                                                                                                         |
