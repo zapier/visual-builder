@@ -270,7 +270,7 @@ When deprecating a version of your integration, any Zap templates using the inte
 
 While invalid, the Zap template will not be _Public_ until it is adjusted to use a non-deprecated version, re-submitted for review and approved. This ensures users won’t use deprecated and broken Zap templates to make Zaps. If you’re having trouble accessing _Invalid_ templates, please [submit a ticket.](https://developer.zapier.com/contact)
 
-## Frequenly Asked Questions
+## Frequently Asked Questions
 
 **Q:** Why do I see Zap templates on my app's directory page that don’t appear under my [Zap Templates](https://developer.zapier.com/zap-templates)?
 
