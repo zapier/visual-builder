@@ -18,7 +18,7 @@ table {
 </style>
 
 # A Guide to Zapier Partner Program Benefits: _Accelerate your integration's growth and reach_
-Zapier offers a variety of marketing and support benefits to partners.. This cheat sheet is designed to help you understand when and how you can access each of these benefits as you unlock them.
+Zapier offers a variety of marketing and support benefits to partners. This cheat sheet is designed to help you understand when and how you can access each of these benefits as you unlock them.
 
 ## Access to our Partner Support team
 Access to integration best practices through our dedicated Support team.

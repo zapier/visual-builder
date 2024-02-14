@@ -26,15 +26,16 @@ Highlight new features and enhancements to your integration in your marketing ma
 
 > Pro Tip: Get your integration in front of more users by embedding Zapier’s [Partner Solutions](https://zapier.com/partner/solutions/plug-and-play) directly into your product. 
 
-## 5. Keep Your Integration Fresh with Regular Updates
+## 5. Keep your integration fresh with regular updates
 Regular updates signal to your users that you are committed to continuously improving their experience. Establish a cadence for updates that align with your sprint cycles.
 
 > Pro tip: Add them to your calendar.
 
-## Next Steps:
+**Next Steps:**
+
 - Actively monitor user feedback
 - [Leave a comment](https://platform.zapier.com/manage/user-feedback) on the Bugs & Feature Requests section inside your Partner Dashboard
 - When promoting a version, link any open bug reports and feature requests that the newly promoted version addresses
-    - _Only possible when promoting within the developer platform_
+    - _Only possible when promoting within the Platform UI_
 - Leverage [Quick Account Creation](https://platform.zapier.com/embed/quick-account-creation) to ease user signup friction and enhance security, through your embed placement
 - Make staying on top of your open bugs and feature requests a priority by leveraging [Zapier Issue Manager](https://platform.zapier.com/manage/user-feedback#3-consider-zapier-issue-manager)
