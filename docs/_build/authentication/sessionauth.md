@@ -24,7 +24,7 @@ Use Session authentication with your Zapier integration if your API is designed 
 
 - Session auth does not include any default input fields. Add the fields required by your API by selecting _Add Fields_ and fill in the details for each field. Add the most commonly needed fields first, in the order users expect, as you cannot reorder fields once added. 
 
-- Two types of fields are available when building an Session input form. Standard Fields, work much like other form fields with Zapier's [input form](https://platform.zapier.com/build/input-designer) in triggers and actions. [Computed Fields](https://platform.zapier.com/build/authentication/computed-fields) make sure specific fields are returned by your app's authentication API call response.
+- Two types of fields are available when building an Session input form. Standard Fields, work much like other form fields with Zapier's [input form](https://platform.zapier.com/build/input-designer) in triggers and actions. [Computed Fields](https://platform.zapier.com/build/computed-fields) make sure specific fields are returned by your app's authentication API call response.
 
 - For each field, add the required _Key_, the name your API uses to reference this field.
 
@@ -46,7 +46,7 @@ Use Session authentication with your Zapier integration if your API is designed 
 
 - Each input field is listed with its label, key, type, and required status in your authentication settings. Click the field to edit it, or click the gear icon and select _Delete_ to remove a field.
 
-- For computed fields, available in OAuth v2 and Session Auth only, review [computed fields documentation](https://platform.zapier.com/build/authentication/computed-fields). 
+- For computed fields, available in OAuth v2 and Session Auth only, review [computed fields documentation](https://platform.zapier.com/build/computed-fields). 
 
 ## 2. Add a Token Exchange Request
 
@@ -56,7 +56,7 @@ Use Session authentication with your Zapier integration if your API is designed 
 
 - To customize the token exchange request, select _Switch to Code Mode_ and write custom JavaScript code to handle the API call and the response parsing as needed. The first time you click the toggle, Zapier will [convert your API call to code](https://platform.zapier.com/build/code-mode). If you switch back to Form Mode though, Zapier will not convert your code changes to the Form Mode, nor will any subsequent changes in the form be added to your code.
 
-- If your token exchange request doesn't return the token and/or any [computed fields](https://platform.zapier.com/build/authentication/computed-fields) at the top level, also use [Code Mode](https://platform.zapier.com/build/code-mode) to modify the response so those fields are available at the top level. It is not possible to store an object with nested keys from the response.
+- If your token exchange request doesn't return the token and/or any [computed fields](https://platform.zapier.com/build/computed-fields) at the top level, also use [Code Mode](https://platform.zapier.com/build/code-mode) to modify the response so those fields are available at the top level. It is not possible to store an object with nested keys from the response.
 
 - All values will be referenced via {% raw %}`{{bundle.authData.field}}`{% endraw %}, where `field` is the key in the response.
 

@@ -2,8 +2,8 @@
 title: Add authentication with OAuth v2
 order: 5
 layout: post-toc
-redirect_from: 
-    - /docs/oauth
+redirect_from:
+  - /docs/oauth
 ---
 
 # Add authentication with OAuth v2
@@ -16,7 +16,7 @@ The user will see a familar window from your app showing either a login screen o
 
 Zapier implements the "Authorization Code" [grant type](https://tools.ietf.org/html/rfc6749#section-1.3.1) when you choose OAuth v2 in the Platform UI. If your OAuth v2 implementation supports refresh tokens, you can optionally configure a "Refresh Token" [request](https://tools.ietf.org/html/rfc6749#section-1.5).
 
-Platform UI does not currently support other grant types. If your integration requires a different OAuth v2 grant type, you'll need to use another supported authorization type with Zapier such as [Session](https://platform.zapier.com/build/sessionauth) or [API Key](https://platform.zapier.com/build/apikeyauth). 
+Platform UI does not currently support other grant types. If your integration requires a different OAuth v2 grant type, you'll need to use another supported authorization type with Zapier such as [Session](https://platform.zapier.com/build/sessionauth) or [API Key](https://platform.zapier.com/build/apikeyauth).
 
 If your integration requires OAuth v1 authentication, use the [Platform CLI](https://platform.zapier.com/quickstart/platform-cli-tutorial) instead of Platform UI.
 
@@ -34,11 +34,11 @@ If your integration requires OAuth v1 authentication, use the [Platform CLI](htt
 
 ![Zapier OAuth input form](https://cdn.zappy.app/3603f9715129250a93ecfcf78d4b5f17.png)
 
-- Two types of fields are available when building an OAuth v2 input form. Standard Fields, work much like other form fields with Zapier's [input form](https://platform.zapier.com/build/input-designer) in triggers and actions. [Computed Fields](https://platform.zapier.com/build/authentication/computed-fields) make sure specific fields are returned by your app's authentication API call response.
+- Two types of fields are available when building an OAuth v2 input form. Standard Fields, work much like other form fields with Zapier's [input form](https://platform.zapier.com/build/input-designer) in triggers and actions. [Computed Fields](https://platform.zapier.com/build/computed-fields) make sure specific fields are returned by your app's authentication API call response.
 
 - For standard fields to be input by the user, select the default _Field_ type. Add the most commonly needed fields first, in the order users expect, as you cannot reorder fields once added. Fill in the options as appropriate:
 
- -- **Key**: The internal name for your field, used to reference this field in Zapier API calls. For convenience, use the same key as your API uses for this field. Note: `client_id` and `client_secret` are reserved and cannot be used as keys for input form fields.
+  -- **Key**: The internal name for your field, used to reference this field in Zapier API calls. For convenience, use the same key as your API uses for this field. Note: `client_id` and `client_secret` are reserved and cannot be used as keys for input form fields.
 
 -- **Label**: A human-friendly name for this field that will be shown to users in the authentication form.
 
@@ -58,7 +58,7 @@ If your integration requires OAuth v1 authentication, use the [Platform CLI](htt
 
 ![Edit or delete input fields](https://cdn.zappy.app/573a3eb19a884c44fd67b9fa421c3bf4.png)
 
-- For computed fields, available in OAuth v2 and Session Auth only, review [computed fields documentation](https://platform.zapier.com/build/authentication/computed-fields). 
+- For computed fields, available in OAuth v2 and Session Auth only, review [computed fields documentation](https://platform.zapier.com/build/computed-fields).
 
 ### OAuth Redirect URL
 
@@ -70,11 +70,11 @@ If your integration requires OAuth v1 authentication, use the [Platform CLI](htt
 
 {% raw %}`{{bundle.inputData.redirect_uri}}`{% endraw %}
 
-> **Note**: When [building a public integration](https://platform.zapier.com/quickstart/private-vs-public-integrations),  the redirect URL will change once the app integration is approved for publishing, to be more consistent with your app’s branding. Depending on your API, you may need to add this new redirect URL to an allow list in order for users to continue connecting to your app from Zapier. To access the new redirect URL, head to Step 2 of the Authentication setup in the Platform UI once the integration is public. 
+> **Note**: When [building a public integration](https://platform.zapier.com/quickstart/private-vs-public-integrations), the redirect URL will change once the app integration is approved for publishing, to be more consistent with your app’s branding. Depending on your API, you may need to add this new redirect URL to an allow list in order for users to continue connecting to your app from Zapier. To access the new redirect URL, head to Step 2 of the Authentication setup in the Platform UI once the integration is public.
 
 ### Add PKCE Support
 
--  Zapier provides built-in support for [PKCE](https://oauth.net/2/pkce/#credentials) (Proof Key for Code Exchange and pronounced "pick-see"), an extension to the authorization code flow that adds a layer of protection against security vulnerabilities. The code generation and exchange steps of the flow occur automatically by Zapier when enabled.
+- Zapier provides built-in support for [PKCE](https://oauth.net/2/pkce/#credentials) (Proof Key for Code Exchange and pronounced "pick-see"), an extension to the authorization code flow that adds a layer of protection against security vulnerabilities. The code generation and exchange steps of the flow occur automatically by Zapier when enabled.
 
 ![Zapier OAuth v2 with PKCE Extension](https://cdn.zappy.app/124a3c00d8bc37dadd953f19451205a5.png)
 
@@ -87,8 +87,8 @@ If your integration requires OAuth v1 authentication, use the [Platform CLI](htt
 - Click _Save & Continue_ to save your progress so far.
 
 - Zapier automatically includes the Client ID and Secret in authentication API calls, but if you need to reference them in your integration's API calls or custom code, use the following codes:
--- Client Secret: {% raw %}`{{process.env.CLIENT_SECRET}}`{% endraw %}
--- Client ID: {% raw %}`{{process.env.CLIENT_ID}}`{% endraw %}
+  -- Client Secret: {% raw %}`{{process.env.CLIENT_SECRET}}`{% endraw %}
+  -- Client ID: {% raw %}`{{process.env.CLIENT_ID}}`{% endraw %}
 
 ### Add OAuth Endpoint Configuration
 
@@ -96,10 +96,10 @@ If your integration requires OAuth v1 authentication, use the [Platform CLI](htt
 
 ![Add Authorization URL to Zapier](https://cdn.zappy.app/1920c552acfc0cc03089feb2e9ada029.png)
 
-- By default, Zapier will pass the client ID, state, redirect URI, and a standard `code` response type as URL Params in the request to the authorization url. If you need to change that, click the _Show Options_ button and add any additional call details needed. 
+- By default, Zapier will pass the client ID, state, redirect URI, and a standard `code` response type as URL Params in the request to the authorization url. If you need to change that, click the *Show Options* button and add any additional call details needed.
 
-> **Note**: The Oauth2 `state` param is a [standard security feature](https://auth0.com/docs/secure/attack-protection/state-parameters) that helps ensure that authorization requests are only coming from your servers. Most Oauth clients have support for this and will send back the `state` query param that the user brings to your app. The Zapier Platform performs this check and this required field cannot be disabled. The state parameter is automatically generated by Zapier in the background, and can be accessed at `bundle.inputData.state`. 
-Since Zapier uses the `state` to verify that GET requests to your redirect URL truly come from your app, it needs to be generated by Zapier so that it can be validated later (once the user confirms that they'd like to grant Zapier permission to access their account in your app).
+> **Note**: The Oauth2 `state` param is a [standard security feature](https://auth0.com/docs/secure/attack-protection/state-parameters) that helps ensure that authorization requests are only coming from your servers. Most Oauth clients have support for this and will send back the `state` query param that the user brings to your app. The Zapier Platform performs this check and this required field cannot be disabled. The state parameter is automatically generated by Zapier in the background, and can be accessed at `bundle.inputData.state`.
+> Since Zapier uses the `state` to verify that GET requests to your redirect URL truly come from your app, it needs to be generated by Zapier so that it can be validated later (once the user confirms that they'd like to grant Zapier permission to access their account in your app).
 
 - To optionally limit Zapier's scope to let it only access specific data from your app, add OAuth scopes in the _Scope_ field with a comma- or space-separated list.
 
@@ -117,7 +117,7 @@ Since Zapier uses the `state` to verify that GET requests to your redirect URL
 
 ## 2. Add a Test API Request
 
-- Add an API call to your API that requires no configuration, typically a `/user` or `/me` call. Add the URL for the API call, and set the call type, typically a `GET`. This will test the user-entered credentials to ensure it enables a successful API call to your app. 
+- Add an API call to your API that requires no configuration, typically a `/user` or `/me` call. Add the URL for the API call, and set the call type, typically a `GET`. This will test the user-entered credentials to ensure it enables a successful API call to your app.
 
 ![Test API Call Zapier OAuth](https://cdn.zappy.app/48cdb444eab9a329023b3e991bfa0da9.png)
 
@@ -125,11 +125,11 @@ Since Zapier uses the `state` to verify that GET requests to your redirect URL
 
 ![Zapier Code Mode OAuth](https://cdn.zappy.app/f9d47ff9bd4af168dcb4c4811a1e184d.png)
 
-- To customize the test API request, select _Switch to Code Mode_ and write custom JavaScript code to handle your test API call and the response parsing as needed. The first time you click the toggle, Zapier will [convert your API call to code](https://platform.zapier.com/build/code-mode). If you switch back to Form Mode though, Zapier will not convert your code changes to the Form Mode, nor will any subsequent changes in the form be added to your code. 
+- To customize the test API request, select _Switch to Code Mode_ and write custom JavaScript code to handle your test API call and the response parsing as needed. The first time you click the toggle, Zapier will [convert your API call to code](https://platform.zapier.com/build/code-mode). If you switch back to Form Mode though, Zapier will not convert your code changes to the Form Mode, nor will any subsequent changes in the form be added to your code.
 
 ## 3. Configure a Connection Label
 
-Review [connection label documentation](https://platform.zapier.com/build/connection-label) to optionally differentiate the app accounts users connect.  
+Review [connection label documentation](https://platform.zapier.com/build/connection-label) to optionally differentiate the app accounts users connect.
 
 ## 4. Test your authentication
 
