@@ -111,7 +111,7 @@ Request dedicated support for your integration and product roadmap from a Zapier
 2. If you’re already a Partner, you can access some of the benefits of the next tier faster if you meet these requirements:
   - we detect a signup from an embed that originates on your site
   - your integration has a Healthy or Exceptional health score
-  - your integration meets a minimum active user count (40 for early Silver benefits, 300 for early Gold benefits, 2, 500 for early Platinum benefits)
+  - your integration meets a minimum active user count (40 for early Silver benefits, 300 for early Gold benefits, 2,500 for early Platinum benefits)
 
 Embedding your integration not only enhances your product's functionality but also fast-tracks your access to higher-tier benefits. It's our way of incentivizing partners to integrate with Zapier and reap the rewards sooner.
 

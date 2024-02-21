@@ -46,7 +46,7 @@ Choose the app’s trigger from the dropdown that starts your Zap.
 
 ![Zap Template select trigger](https://cdn.zappy.app/bcf87bac5267b210d520cb97ac0e5612.png)
 
-You won't be able to auth an account when creatign Zap templates. Instead, the Zap template creator will load the sample data available for the selected trigger. If there are fields you want to use that aren't available, it means the integration developer did not add those fields to the integration's sample data. You can still use the trigger event in a Zap template, though when setting up the Zap’s action step(s), you might not be able to pre-map fields for your users. If the trigger includes options, fill in any fields or leave the defaults to let users add info to the Zap themselves. On the `Test trigger` pane, you can view the sample data available. Click _Continue_ to move to the next step.
+You won't be able to auth an account when creating Zap templates. Instead, the Zap template creator will load the sample data available for the selected trigger. If there are fields you want to use that aren't available, it means the integration developer did not add those fields to the integration's sample data. You can still use the trigger event in a Zap template, though when setting up the Zap’s action step(s), you might not be able to pre-map fields for your users. If the trigger includes options, fill in any fields or leave the defaults to let users add info to the Zap themselves. On the `Test trigger` pane, you can view the sample data available. Click _Continue_ to move to the next step.
 
 ![Zap Template sample](https://cdn.zappy.app/d90a46d02a04c72341c2534c3c77e353.png)
 
@@ -82,7 +82,7 @@ Zap Template action forms include _required_ and _optional_ fields. When users s
 
 > **Note**: Do not enter plain text into an action form field unless _every_ user of this Zap Template would want the text included in the action.
 
-Zapier then shows a `Test action` pan, similar to what users see when setting up Zaps. You won't be able to test your action steps when building a Zap template. The `Test action` pane will default to showing a successful test.
+Zapier then shows a `Test action` pane, similar to what users see when setting up Zaps. You won't be able to test your action steps when building a Zap template. The `Test action` pane will default to showing a successful test.
 
 ![Finish Zap Template Action](https://cdn.zappy.app/6e87adbfde77b00ae144b487c4185c20.png)
 
