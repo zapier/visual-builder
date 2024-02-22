@@ -13,7 +13,7 @@ After your integration has entered the beta or public status, you can set a new 
 1. Log into the [Platform UI](https://zapier.com/app/developer).
 2. Select your **integration**. 
 3. In the *Manage* section in the left sidebar, click your **Versions**.  
-4. On your version you want to promote, click the **three dots icon** <img style="vertical-align: middle;" src="https://cdn.zappy.app/2ee11c82946187818a9622c4b4bf65bc.png" alt="navMoreHoriz icon" width="50%"> and **Promote**.
+4. On the version you want to promote, click the **three dots icon** <img style="vertical-align: middle;" src="https://cdn.zappy.app/2ee11c82946187818a9622c4b4bf65bc.png" alt="navMoreHoriz icon" width="50%"> and **Promote**.
 5. Fill in the [changelog form](https://platform.zapier.com/manage/user-feedback#3-close-resolved-issues) and click **Promote**. Selecting specific features added and bugs fixed will automatically queue up the issue(s) to be reviewed by our internal team for closure.
 
 > **Note**: If you have a private integration, you will not see the *Promote* option. Instead, you can [share your new version](https://platform.zapier.com/manage/share-integration) with users.

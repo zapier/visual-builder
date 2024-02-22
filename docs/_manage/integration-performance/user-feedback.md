@@ -44,7 +44,7 @@ Problems with your public integration, authentication and API calls will be logg
 
 - Bugs and feature requests require review and verification from Zapier's Support team before they can be closed. When an issue is closed, email notifications are sent out to all affected users on the issue, notifying them of the update.
 
-- Whenever a new version of your integration is promoted via the UI, you'll be prompted with a changelog form asking you to identify which features requests or bugs were resolved and to provide a user-facing description of the changes. Identified issues in the changelog will automatically be queued for review by our Support team and closed once resolution is confirmed. Promoting via the CLI doesn't currently support changelogs.
+- Whenever a new version of your integration is promoted via the UI, you'll be prompted with a changelog form asking you to identify which feature requests or bugs were resolved and to provide a user-facing description of the changes. Issues identified in the changelog will automatically be queued for review by our Support team and closed once resolution is confirmed. Promoting via the CLI doesn't currently support changelogs.
 
 ![Changelog Form with Issues](https://cdn.zappy.app/8afba17ecfb25faf6b87597e2cd54387.png)
 
