@@ -40,7 +40,19 @@ Problems with your public integration, authentication and API calls will be logg
 
 - Allocate ongoing resources in your team’s product roadmap for the maintenance of your Zapier integration to avoid surprise work or gaps in functionality. Consider a [Zapier Expert](https://zapier.com/experts/matchmaking) to help you fix one-off bugs or maintain your integration.
 
-## 3. Consider Zapier Issue Manager
+## 3. Close resolved issues
+
+- Bugs and feature requests require review and verification from Zapier's Support team before they can be closed. When an issue is closed, email notifications are sent out to all affected users on the issue, notifying them of the update.
+
+- Whenever a new version of your integration is promoted via the UI, you'll be prompted with a changelog form asking you to identify which feature requests or bugs were resolved and to provide a user-facing description of the changes. Issues identified in the changelog will automatically be queued for review by our Support team and closed once resolution is confirmed. Promoting via the CLI doesn't currently support changelogs.
+
+![Changelog Form with Issues](https://cdn.zappy.app/8afba17ecfb25faf6b87597e2cd54387.png)
+
+- You can also request issues to be closed manually by selecting one in the "Bugs & Feature Requests" tab of the developer platform, and leaving a comment to our Support team that the issue has been resolved. Provide info on what version number the fix is on, how to test the updates, and any other helpful callouts.
+
+- Once an issue is reviewed, it will either be closed or responded to with follow-up questions and feedback.
+
+## 4. Consider Zapier Issue Manager
 
 - If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), create Zaps using Zapier Issue Manager.
 
@@ -74,7 +86,7 @@ Problems with your public integration, authentication and API calls will be logg
   use-this-zap="show"
 ></zapier-zap-templates>
 
-## 4. Monitor integration insights
+## 5. Monitor integration insights
 
 - [See all the metrics tracked](https://platform.zapier.com/manage/integration-insights) in this table, or access them for any integration you are an Admin or Collaborator on from the _Dashboard_ tab of the Platform UI. Insights include important data on both the integration's growth and usage, such as monthly active users, retention rates, and Zap usage by triggers and actions.
 
