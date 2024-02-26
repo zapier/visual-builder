@@ -1,11 +1,11 @@
 ---
-title: Error -  Got a non-object result
+title: Error -  Got a non-object result, expected an object from create
 order: 11
 layout: post-toc
 redirect_from: 
 ---
 
-# Error: Got a non-object result
+# Error: Got a non-object result, expected an object from create
 
 ## Error shown
 
