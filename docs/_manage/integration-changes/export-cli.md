@@ -41,7 +41,7 @@ Similarly, your version can be found there, and elsewhere throughout the Platfor
 
 ![](https://cdn.zappy.app/e31dd202b5e64bbcb13fc8b200518d17.png)
 
-Using this example to create our project in the current directory our command would be:
+Using this example, to create our project in the current directory our command would be:
 
 `zapier convert 1234 . --version=1.0.0`
 
@@ -59,6 +59,7 @@ A couple of important notes before deploying:
 
 - When you push the CLI project to the server it will create a _new version_ of your integration. If you haven't gotten familiar with how versions work you might take a moment and learn about those [here](https://platform.zapier.com/manage/versions).
 - Take a look at the version number in your `package.json` file. When you created your project with the `convert` tool we automatically incremented the version you converted. You can change this to a different version number depending on your needs, but make sure a version with that number doesn't already exist in your integration. Run `zapier versions` from your project directory to see what's already been created.
+- Integrations converted with the `zapier convert` command will include `convertedByCLIVersion` in the `package.json` for informational purposes.
 
 When you're ready to deploy your CLI version run:
 

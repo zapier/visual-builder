@@ -115,7 +115,7 @@ Do not add adjectives or phrases to your app name, and only include your company
 The logo must be a square, transparent PNG at least 256x256px in size. Please use a bigger version if you have one available. If your app has a solid, square background, round the corners 3% of the width and set the background as transparent. If your icon is not square, make a square transparent image and center your icon inside the transparent square. Do not include the app name or other copy in the logo as it will not be legible at small sizes.
 
 ### 2.7 Description
-Write a short description (up to maximum of 140 characters) of your app’s core features and use cases in the form of `<Integration Name> is a...`. The copy should not include links or mentions of Zapier. Do not use flowery or overstated language, or make make it appear your integration is associated with or endorsed by Zapier.
+Write a short description (up to maximum of 140 characters) of your app’s core features and use cases in the form of `<Integration Name> is a...`. The copy should not include links or mentions of Zapier. Do not use flowery or overstated language, or make it appear your integration is associated with or endorsed by Zapier.
 
 **Example**:
 

@@ -98,7 +98,7 @@ If, for architectural reasons, your webhook will receive some data that shouldn'
 
 For data sent to Zapier via REST Hook, most requests will be successful and return a 200 status code with some request-tracking data. This indicates that Zapier has accepted the data, but it is still possible for errors to occur within the Zap if the structure of the provided data is unexpected.
 
-### Best practices when sending data to a Rest Hook trigger:
+### Best practices when sending data to a REST Hook trigger
 
 - Be mindful of Zapier's [rate limits](https://zapier.com/help/troubleshoot/behavior/rate-limits-and-throttling-in-zapier#step-4).
 - If your app receives a 410 response, that webhook subscription is no longer active, and you should stop sending data to it.

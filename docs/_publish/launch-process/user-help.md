@@ -16,3 +16,5 @@ Optionally include links out to documentation on your app's site to help custome
 Once submitted, it takes roughly 2 weeks to get help docs published in the Help Center.
 
 As you maintain and add functionality to your integration, use the same form to submit updates at any time to the Technical Writing team.
+
+When adding Zapier logos on any help documentation or pages in your app, access the up-to-date branding assets [here](https://brand.zapier.com/). 
