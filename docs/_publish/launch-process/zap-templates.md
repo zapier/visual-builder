@@ -253,9 +253,9 @@ Your integration’s directory page will show all published Zap templates that u
 Any public partner on Zapier is able to create and publish Zap templates using your integration. All Zap templates are subject to the same review process to ensure our quality standards are met.
 
 
-**Can Zap templates using a competitor's integration be removed or hidden from my directory page?**
+**Can we remove or hide Zap templates that include our competitors from our directory page?**
 
-All published Zap templates will remain visible on your integration's directory page and cannot be hidden. We are committed to maintaining an open and comprehensive ecosystem, where users have the freedom to explore a wide range of integrations, including those that may combine your services with those of competitors. Unpublishing Zap templates that incorporate both your integration and a competitor's integration is not a practice we support. However, if you wish to highlight specific Zap templates to your users, we encourage utilizing our [Zap Template embed solution](https://platform.zapier.com/embed/zap-templates). This tool allows you to showcase preferred Zap templates directly within your own platform.
+Zap templates, once published on your integration’s directory page, remain in place to ensure our ecosystem is open, inclusive, and offers a wide range of options to users. This includes showcasing integrations that might combine your services with those of competitors. While direct removal of these templates isn’t aligned with our approach, we offer a proactive solution. By leveraging our [Zap Template embed tool](https://platform.zapier.com/embed/zap-templates), you have the power to highlight specific Zap templates you prefer, directly within your own platform. This empowers you to curate and showcase the integrations most relevant to your users’ needs.
 
 
 **How can I make changes to a published Zap template?**
