@@ -107,7 +107,7 @@ Request dedicated support for your integration and product roadmap from a Zapier
 
 **Unlock the benefits of the Zapier Partner Program faster by embedding your integration into your product via your help docs, integration pages, or blog posts.** There are two ways to do this:
 
-1. If you’re in Beta, you’ll exit Beta after we detect 9 signups that originate from your embed.
+1. If you’re in Beta, you’ll exit Beta the day after we detect a signup that originate from your embed
 2. If you’re already a Partner, you can access some of the benefits of the next tier faster if you meet these requirements:
   - we detect a signup from an embed that originates on your site
   - your integration has a Healthy or Exceptional health score
