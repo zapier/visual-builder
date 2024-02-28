@@ -244,31 +244,51 @@ While invalid, the Zap template will not be _Public_ until it is adjusted to use
 ## Frequently Asked Questions
 
 **Why do I see Zap templates on my app's directory page that don’t appear under my [Zap Templates](https://developer.zapier.com/zap-templates)?**
+
 Your integration’s directory page will show all published Zap templates that use your integration. The developer platform will only show Zap templates created by the currently logged in user.
 
+
 **Who can publish Zap templates using my integration?**
+
 Any public partner on Zapier is able to create and publish Zap templates using your integration. All Zap templates are subject to the same review process to ensure our quality standards are met.
 
+
+**Can we remove or hide Zap templates that include our competitors from our directory page?**
+
+Zap templates, once published on your integration’s directory page, remain in place to ensure our ecosystem is open, inclusive, and offers a wide range of options to users. This includes showcasing integrations that might combine your services with those of competitors. While direct removal of these templates isn’t aligned with our approach, we offer a proactive solution. By leveraging our [Zap Template embed tool](https://platform.zapier.com/embed/zap-templates), you have the power to highlight specific Zap templates you prefer, directly within your own platform. This empowers you to curate and showcase the integrations most relevant to your users’ needs.
+
+
 **How can I make changes to a published Zap template?**
+
 Once a Zap template is published, you are unable to self-serve changes to it. To request changes, please submit our [contact form](https://developer.zapier.com/contact). When submitting the contact form, please ensure you provide the Zap template ID and the change you’re requesting per Zap template. The Zap template ID can be found by clicking on the [3-dot icon](https://cdn.zappy.app/227b0c1da48e72115ced60cdb8c06a97.png) in the developer platform, or [in the URL](https://cdn.zappy.app/c913c363b267fd1c4c33b5395e092460.png) when viewing a Zap template landing page. Please note the following when requesting changes:
 - Zap templates should work for the broadest audience. Try to avoid requesting changes that will exclude an audience segment from successfully using a Zap template
 - Every partner on Zapier has their own style and tone. We will not update titles or descriptions of Zap templates created by other partners to better accommodate your preferences. While a title and description might not match your tone and style, it could very well for the partner that published the Zap template
   - If you believe you found an error with a title or description (eg the title references the wrong action), we will review and consider making the correction
 - When requesting a functional change to a Zap template created by another partner, clearly state the Zap templates current behavior and the expected behavior to justify the requested change
 
+
 **How can I re-order Zap templates on my directory page?**
+
 Zap templates are loosely ordered by popularity, and you cannot modify the sort order.
 
+
 **How can I exclude specific Zap templates on my directory page?**
+
 All published Zap templates that use your integration will appear on your directory page. You are unable to exclude published Zap templates from appearing on that page. Note when embedding Zap templates using the [Zap Template Element](https://platform.zapier.com/embed/zap-templates), you can specify which Zap templates to embed.
 
+
 **How can I view all Zap templates created by my integration team?**
+
 You cannot view Zap templates in the developer platform created by other users, even if you’re on the same integration team. If required, we can help to transfer ownership of Zap templates created by your integration team members to a singular account. You can [submit our contact form](https://developer.zapier.com/contact) to learn more about this.
 
+
 **How can I unpublish a Zap template?**
+
 Zap templates are a key driver of traffic for your integration. Promoting Zap templates is a part of our SEO strategy, and they appear throughout our embed network. For these reasons, we err against unpublishing Zap templates where possible. For Zap templates you own, you can unpublishing them by [deleting them](https://cdn.zappy.app/c0f9036c4b6f166b4c8289034558c201.png). If you wish to unpublish a Zap template without deleting it, you can request this by submitting our [contact form](https://developer.zapier.com/contact). Be sure to include the Zap template ID. When requesting to unpublish a Zap template created by another partner, please justify the request (eg duplicate Zap template, Zap template broken) for our consideration.
 
+
 **Why were my Zap templates rejected?**
+
 Zap templates can be rejected due to different reasons. The day after your Zap templates are rejected, you'll receive an email notification that will include feedback as to why a Zap template might have been rejected. Some common reasons for why Zap templates are rejected include:
 - The title and/or description of the Zap template does not comply with our [style guide's](https://platform.zapier.com/publish/zap-templates#4-add-a-title-and-description) uniqueness requirements
 - Fields in the trigger step have not been correctly mapped to corresponding fields in the action step(s)
@@ -278,23 +298,37 @@ Zap templates can be rejected due to different reasons. The day after your Zap t
 - The Zap template includes a code, custom webhook, or custom formatter step which is currently not allowed
 - The Zap template contains hardcoded values such as phone numbers, emails, or IDs which should be dynamically mapped from the trigger or another action step
 
+
 **Can I select which Zap templates to display in my embed?**
+
 Yes, but only through our [Zap Templates](https://platform.zapier.com/embed/zap-templates) embed solution. You can choose between Popular Zap templates or Specific Zap templates, to highlight to your users.
 
+
 **How many users are using a particular Zap Template?**
+
 Although we don’t provide specific data around how many users are using a particular Zap template, you can track the number of active Zaps as well as activation rates by Trigger or Action. This information is available within your developer dashboard on the Dashboard page. You can learn more about the insights avilable on the Dashboard page [here](https://platform.zapier.com/manage/integration-insights). Zap templates are also loosely ordered by popularity on your integration’s directory page.
 
+
 **How many Zap templates should my integration have?**
+
 The more the merrier! One Zap template isn’t enough—you’ll want to make Zap templates for each of your app’s most popular use cases. Although there’s not a set number, we recommend adding 5 to 10 Zap templates to your integration, for a start. Learn more about Building Zap templates [here](https://platform.zapier.com/publish/zap-templates#how-to-build-a-zap-template).
 
+
 **Why did my Zap Templates stop working?**
+
 Common reasons your Zap template stopped working include breaking changes, versioning, migration, and authentication. Adding, updating, replacing, or deleting components can have various effects. Learn more about [planning and implementing integration changes](https://platform.zapier.com/manage/planning-changes).
 
+
 **Which use cases should my Zap templates highlight?**
+
 Your triggers, actions, and searches should focus on the main use cases of your platform. Check similar integrations in [Zapier’s App Directory](https://zapier.com/apps) and [recommended features](https://platform.zapier.com/build/recommended-integration-features) by app category for ideas on which items to include in your integration.
 
+
 **Can I add filters/other conditions to my Zap templates?**
+
 Yes. Most Zap templates only need a trigger and two action steps. However, we know sometimes you may need more steps for advanced workflows. Learn more [here](https://platform.zapier.com/publish/zap-templates#3-optional-add-filters-or-additional-action-steps).
 
+
 **Do users need to have an account to create their own Zaps?**
+
 All users requires their own Zapier account in order to create Zaps, even if the Zap originates from a Zap template. The account the Zap is owned by will add and store authentications for each app used in the Zap. To help reduce friction for new users, you should pair your embed solution with our [Quick Account Creation](https://platform.zapier.com/embed/quick-account-creation). This seamless, accelerated sign-up feature allows first-time Zapier users to skip the standard sign-up procedure and onboarding survey.
