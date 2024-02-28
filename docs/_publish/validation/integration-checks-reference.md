@@ -7,7 +7,7 @@ redirect_from: /docs/integration-checks-reference
 
 # Integration check reference
 
-Before you can submit your integration for publishing, it runs through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience. 
+Before you can submit your integration for publishing, it runs through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience.
 
 To [publish your integration](https://platform.zapier.com/publish/public-integration), all Errors and Publishing Tasks must be validated. Warnings are non-blocking and not strictly required to proceed, though we do recommend you review them for usability of your integration.
 
@@ -19,17 +19,17 @@ To help better address a check in communication, each check is given a unique ID
 
 You don't need to know the implication of the initial capitial letter. But if you're curious, they are:
 
-Area | Description
---- | ---
-<b><u>C</u></b>ompatibility | Only apply when your integration is public, these checks verify how the new version is backward compatible with the currently public version. They ask questions like "would this change break existing Zaps, Zap Templates, or connected accounts?"
-<b><u>D</u></b>efinition | Definition of the integration, including auth and trigger/search/action configurations. Some of these checks could block you from saving/pushing if the violation results in a broken trigger/search/action.
-<b><u>M</u></b>arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
-Connected <b><u>A</u></b>ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
-<b><u>S</u></b>tats | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.
-<b><u>T</u></b> - Zap History | Data from runs in your Zap History, produced by live (enabled) Zaps. These are more likely to block you from going public. The "T" checks are named as such for historical reasons. Zapier now shows tasks in the Zap History.
-<b><u>U</u></b>ser | Things in the developer's (your) account, such as Terms of Service acceptance.
-<b><u>L</u></b>ifecycle | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).
-<b><u>Z</u></b>ap | Things related to Zaps, such as the trigger samples you pulled into the Zap editor.
+| Area                             | Description                                                                                                                                                                                                                                              |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <b><u>C</u></b>ompatibility      | Only apply when your integration is public, these checks verify how the new version is backward compatible with the currently public version. They ask questions like "would this change break existing Zaps, Zap Templates, or connected accounts?"     |
+| <b><u>D</u></b>efinition         | Definition of the integration, including auth and trigger/search/action configurations. Some of these checks could block you from saving/pushing if the violation results in a broken trigger/search/action.                                             |
+| <b><u>M</u></b>arketing          | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public. |
+| Connected <b><u>A</u></b>ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.                                                                                                                                         |
+| <b><u>S</u></b>tats              | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.                                                                                                                                     |
+| <b><u>T</u></b> - Zap History    | Data from runs in your Zap History, produced by live (enabled) Zaps. These are more likely to block you from going public. The "T" checks are named as such for historical reasons. Zapier now shows tasks in the Zap History.                           |
+| <b><u>U</u></b>ser               | Things in the developer's (your) account, such as Terms of Service acceptance.                                                                                                                                                                           |
+| <b><u>L</u></b>ifecycle          | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).                                                                          |
+| <b><u>Z</u></b>ap                | Things related to Zaps, such as the trigger samples you pulled into the Zap editor.                                                                                                                                                                      |
 
 When the checks are run, we'll give a brief blurb summarizing the violation (with a check ID) along with a link to this page. This will act as a full reference explaining each error and giving examples for each.
 
@@ -119,9 +119,9 @@ Website Dashboard to find your API Key.
 A Connection Label helps a customer remember which account they connected.
 It should be short and easily identifiable.
 
-For both [Platform UI](https://platform.zapier.com/build/auth#how-to-add-a-connection-label-to-authenticated-accounts)
-and [CLI](https://platform.zapier.com/reference/cli-docs#authentication), the connection
-label is a string. You can use any data returned by your test function.
+For both [Platform UI](https://platform.zapier.com/build/connection-label)
+and [CLI](https://platform.zapier.com/reference/cli-docs#connection-label), the
+connection label is a string. You can use any data returned by your test function.
 
 For instance, if a successful run of the auth test returns the following data:
 
@@ -166,8 +166,8 @@ still be able to map custom fields, but this gets them started on the right foot
 
 Read more about implementing dynamic dropdowns below:
 
-- [Platform UI](https://platform.zapier.com/build/add-fields#dynamic-dropdown)
-- [Platform CLI](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#dynamic-dropdowns)
+- Platform UI: https://platform.zapier.com/build/field-definitions#dynamic-fields
+- Platform CLI: https://platform.zapier.com/reference/cli-docs#dynamic-dropdowns
 
 ---
 
@@ -192,9 +192,13 @@ sending an actual message in a Slack channel, which is disruptive.
 
 Instead, during testing, the Perform List (`performList`) operation fetches a
 (real) recent message using the provided URL for polling and uses it as the test result.
-The polling URL in a Rest Hook trigger is only used for testing during Zap setup..
+The polling URL is only used for tests.
 
-It's very important that the data structure of the array delivered from a webhook and from the poll are identical. Typically, this means modifying a poll result so that it looks like a hook. If a poll has fields that a hook doesn't, the user may map them to a later action step, and when the Zap runs live, the value will be blank. This would cause errors or unexpected results for users.
+It's very important that the structure of an object from a webhook and from a poll
+are identical. Typically, this means modifying a poll result so that it looks like a
+hook. If a poll has fields that a hook doesn't, the user may map them to a later
+step, and when the Zap runs live, the value will be blank. This can cause errors
+or unexpected results for users.
 
 Let's walk through an example. Say we have a `New Contact` REST Hook trigger. When a
 new contact is created, Zapier gets a webhook that looks like this:
@@ -237,9 +241,7 @@ remove the `friends` information, and return only the array of contacts, not the
 enclosing object.
 
 The polling result is not used when a user skips testing the Zap step. In that case,
-Zapier uses the sample data.
-
-See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
+Zapier uses the sample data. See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
 ---
 
@@ -248,8 +250,8 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 ## D007 - All URLs Should Be HTTPS
 
 When handling customer data (which all Zapier functions do), it's strongly
-encouraged that all communication take place securely. Using SSL is a big part
-of that, so ensure your URLs have HTTPS as their protocol.
+encouraged that all communication take place securely. Using SSL is a big part of
+that, so ensure your URLs have HTTPS as their protocol.
 
 If you need help setting up an SSL certificate for your API, we suggest
 [Let's Encrypt](https://letsencrypt.org/).
@@ -273,8 +275,8 @@ https://example.com/messages/subscribe
 ## D008 - Invalid Markdown Link
 
 A valid markdown link consists of a pair of square brackets with the link text
-paired with a pair of parentheses that have the link itself. See the
-[markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/) for
+paired with a pair of parens that have the link itself. See the
+[markdown cheatsheet](https://daringfireball.net/projects/markdown/syntax#link) for
 more info.
 
 If you want to show a full link without actually linking to it, use backticks. This
@@ -311,7 +313,7 @@ trigger/action/search and the help text for any fields that might have bad links
 
 ## D009 - Requires at Least One Search Field
 
-When making a search step, it's important to have a field to search by. Common
+When making a search step, it's important to have a field to search on! Common
 examples for searching for a user are by name, email, and username.
 
 ---
@@ -381,9 +383,13 @@ user. If the label and help text are the same, they are considered redundant.
 
 ## D012 - Static Sample Is Required
 
-When a user sets up a trigger or action (create or search), they need sample data to be returned in order to have fields available to map in the subsequent steps. If testing the trigger returns no live results, we use static sample data as a fallback.
+When a user sets up a trigger or action (create or search), they need sample data to be returned in order to have
+fields available to map in the subsequent steps. If testing the trigger returns no
+live results, we use static sample data as a fallback.
 
-It's very important that the data structure of the response from the actual trigger/action request and in the sample data are identical. Otherwise, users could map fields that don't exist in the live results, which results in a broken Zap.
+It's very important that the structure of an object from the actual trigger/action and in
+the sample data are identical. Otherwise, users could map fields that don't exist
+in the live results, which results in a broken Zap.
 
 See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
@@ -393,7 +399,9 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 
 ## D013 - Connects to a Non-Existing Search
 
-[Search-Powered Fields](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#search-powered-fields) prompt users to set up a search step to populate the value of the field. It won't work if the search key you specify doesn't exist.
+[Search-Powered Fields](https://platform.zapier.com/reference/cli-docs#search-powered-fields)
+prompt users to set up a search step to populate the value of the field. It won't
+work if the search key you specify doesn't exist.
 
 ---
 
@@ -401,7 +409,9 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 
 ## D014 - Has a Search Connector, but No Dynamic Dropdown
 
-By design, to get the "Add a Search Step" button to appear for users in the Zap editor, an action needs both a search connector and a (valid) dynamic dropdown. If you can't provide a valid dropdown, you can instead point to a dummy trigger that always returns an empty array.
+By design, to get the "Add a Search Step" button, an action needs both a search
+connector and a (valid) dynamic dropdown. If you can't provide a valid dropdown, you
+can instead point to a dummy trigger that always returns an empty array.
 
 ✘ an example of an **incorrect** setup:
 
@@ -437,7 +447,8 @@ existing search or action. Otherwise, it won't work.
 
 ## D016 - Consists Only a Static Webhook
 
-A REST Hook trigger missing a Subscribe or Unsubscribe endpoint, is presented to users as a [Static Webhook](https://cdn.zappy.app/3b35908a6a0c232087b5da807cf9d6fb.png). Static hooks are [not supported in public integrations](https://platform.zapier.com/publish/integration-checks-reference#d017---static-hook-is-discouraged), but they could be used if the integration intends to remain private. Howwver, Zapier doesn't allow integration that are a single static hook with the availability of [Webhooks by Zapier](https://zapier.com/apps/webhook/integrations). To
+Static Webhooks, while convenient to build, leave a lot to be desired from our side.
+For this reason, Zapier doesn't allow integration that are a single static hook. To
 fix this, add more triggers/searches/actions.
 
 ---
@@ -447,7 +458,10 @@ fix this, add more triggers/searches/actions.
 ## D017 - Static Hook Is Discouraged
 
 When a REST Hook trigger is missing a Subscribe or Unsubscribe endpoint, it is
-presented to users as a Static Webhook. As static webhooks require manual intervention by the user to set up correctly, we no longer support adding new static webhook triggers to a public integration. Please set up Subscribe and Unsubscribe requests for this trigger, or use a Polling trigger type instead.
+presented to users as a Static Webhook. As static webhooks are complicated to set up
+correctly, we no longer support adding new static webhook triggers to a public
+integration. Please set up Subscribe and Unsubscribe requests for this trigger,
+or use a Polling trigger type instead.
 
 ---
 
@@ -478,7 +492,6 @@ New Contact
 ## D021 - Trigger Description Requirements
 
 Trigger descriptions must start with `Triggers when ` and end with a `.`.
-
 
 ✘ examples of an **incorrect** implementation:
 
@@ -523,29 +536,29 @@ in the Zap History.
 ✘ examples of an **incorrect** implementation:
 
 ```
-01 Aug 2023
+01 Aug 2019
 ```
 
 ```
-01 Aug 2023 06:50:30
+01 Aug 2019 06:50:30
 ```
 
 ```
-2023-08-01T06:50:30
+2019-08-01T06:50:30
 ```
 
 ✔ examples of a **correct** implementation:
 
 ```
-2023-08-01
+2019-08-01
 ```
 
 ```
-2023-08-01T06:50:30-0500
+2019-08-01T06:50:30-0500
 ```
 
 ```
-2023-09-15T09:59:59Z
+2019-09-15T09:59:59Z
 ```
 
 ---
@@ -557,8 +570,8 @@ in the Zap History.
 If you define output fields for a trigger/action/search, they should be consistent
 with the static sample data. The specific checks are:
 
-* "required" fields must be in the sample
-* field values in the sample match their field type
+- "required" fields must be in the sample
+- field values in the sample match their field type
 
 ✘ an example of an **incorrect** implementation:
 
@@ -578,6 +591,30 @@ output fields: [
     {"key":  "id", "type": "integer"},
     {"key": "email", "type": "string", "required": true}
 ]
+```
+
+---
+
+<a name="D025"></a><a name="D00025"></a>
+
+## D025 - URLs Should Not Be Dangerous URIs
+
+In order to help prevent reflective cross-site-scripting (XSS) attacks on Zapier
+customers, we require that URLs inside the app definition do not match potentially
+dangerous URI patterns which could be used to run malicious code.
+
+Read more about XSS in the [OWASP Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html).
+
+✘ an example of an **incorrect** setup:
+
+```text
+javascript:alert('XSS');//
+```
+
+✔ an example of a **correct** implementation:
+
+```text
+https://example.com
 ```
 
 ---
@@ -604,7 +641,7 @@ back and you want to resubmit for another review, you should make changes on a
 
 ## L003 - Version Is Already Production
 
-This could happen if you're attempting to promote a version that is already in production.
+This could happen if you're promoting a version that is already production.
 
 ---
 
@@ -637,12 +674,12 @@ really like your service, you're not allowed to say "Zapier" in your app's
 description.
 
 Additionally, it's discouraged that you talk about how this integration will `sync`
-anything, as the space is supposed to be about your app itself instead of the
+anything, as the space is supposed to be about your service itself instead of the
 Zapier integration in particular.
 
 Lastly, this section should be short and sweet. A brief description (roughly
 tweet-sized) is best. Specifically, we're looking for 1 - 3 sentences or at least
-40 characters and a maximum of 140 characters.
+40 characters.
 
 ✘ an example of an **incorrect** setup:
 
@@ -676,9 +713,9 @@ to select your role.
 Your app's logo will be used all over the site in square containers and in various
 sizes. To ensure it looks good at all sizes, the logo image must be:
 
-* a square PNG image
-* at least 256px by 256px in size
-* in RGBA mode so it can have a transparent background
+- a square PNG image
+- at least 256px by 256px in size
+- in RGBA mode so it can have a transparent background
 
 To resize an image or convert an image to PNG, you can use this
 [tool](http://www.picresize.com/).
@@ -691,7 +728,9 @@ To resize an image or convert an image to PNG, you can use this
 
 To ensure that this integration is being submitted by the app owner we require that
 one of the Admin team members listed on the project have an email address with the same
-domain as your app's homepage URL (which must also be present). You can add the homepage URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`. Collaborator team members with the same domain as the homepage do not meet this requirement.
+domain as your app's homepage URL (which must also be present). You can add the homepage
+URL at `https://developer.zapier.com/app/APP_ID/version/APP_VERSION/settings`.
+Collaborator team members with the same domain as the homepage do not meet this requirement.
 
 ---
 
@@ -700,7 +739,7 @@ domain as your app's homepage URL (which must also be present). You can add the 
 ## M006 - Homepage URL Must Be Present
 
 Each app must have a homepage URL. You can add the homepage
-URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`.
+URL at `https://developer.zapier.com/app/APP_ID/version/APP_VERSION/settings`.
 
 ---
 
@@ -709,9 +748,10 @@ URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings
 ## M007 - Public Integration Already Exists
 
 We only allow one public integration in our app directory for a given app. If a
-public integration with the same title already exists, we won't approve
+public integration with the same title already exists, we probably won't approve
 your submission to go public. If you're the owner of the existing public
-integration, create an updated version with any edits and promote that instead of submitting a new integration.
+integration, you may want to create a version and promote that instead of submitting
+a new integration.
 
 ---
 
@@ -723,7 +763,7 @@ To verify user demand, there should be at least 3 users who have a live Zap usin
 this integration. "Live" means the Zaps are switched on with at least one successful
 [Zap run in recent history](https://help.zapier.com/hc/en-us/articles/8496291148685).
 
-You can [invite others to test your integration](https://platform.zapier.com/manage/share-integration)
+You can [invite others to test your integration](https://platform.zapier.com/manage/sharing)
 before publication.
 
 ---
@@ -737,7 +777,9 @@ of your integration should have a live Zap that demonstrates it works. "Live" me
 the Zaps are switched on with at least one successful
 [Zap run in recent history](https://help.zapier.com/hc/en-us/articles/8496291148685).
 
-You can create a [new Zapier account](https://help.zapier.com/hc/en-us/articles/8496197192461) and [invite it to your integration](https://platform.zapier.com/manage/share-integration) if you need extra Zaps.
+You can create a [new Zapier account](https://help.zapier.com/hc/en-us/articles/8496197192461)
+and [invite it to your integration](https://platform.zapier.com/manage/sharing)
+if you need extra Zaps.
 
 You can also [contact us](https://developer.zapier.com/contact) if you need a trial extension.
 
@@ -747,7 +789,8 @@ You can also [contact us](https://developer.zapier.com/contact) if you need a tr
 
 ## S003 - Live Version Count Limit
 
-You can't have more than 5 previous or current production versions with live Zaps. To continue, migrate users on older versions to a newer version.
+You can't have more than 5 previous or current production versions with live Zaps. To continue,
+migrate users on older versions to a newer version.
 
 ---
 
@@ -825,29 +868,29 @@ accounts.
 ✘ examples of an **incorrect** implementation:
 
 ```
-01 Aug 2023
+01 Aug 2019
 ```
 
 ```
-01 Aug 2023 06:50:30
+01 Aug 2019 06:50:30
 ```
 
 ```
-2023-08-01T06:50:30
+2019-08-01T06:50:30
 ```
 
 ✔ examples of a **correct** implementation:
 
 ```
-2023-08-01
+2019-08-01
 ```
 
 ```
-2023-08-01T06:50:30-0500
+2019-08-01T06:50:30-0500
 ```
 
 ```
-2023-09-15T09:59:59Z
+2019-09-15T09:59:59Z
 ```
 
 ---
@@ -895,8 +938,8 @@ This check takes the latest run from the [Zap History](https://zapier.com/app/hi
 and verifies whether the trigger result conforms to the output fields
 for the trigger in your integration (if defined). The specific checks are:
 
-* "required" fields must be in the trigger result
-* field values in the trigger result match their field type
+- "required" fields must be in the trigger result
+- field values in the trigger result match their field type
 
 This check is performed using the [Zap History](https://zapier.com/app/history)
 for accounts belonging to the integration admins, so build your test
@@ -930,7 +973,7 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 
 ## T006 - Polling Sample Contains a Subset of Keys from Live Result
 
-For REST Hook triggers, we require you to provide a `Perform List` URL
+For REST Hook triggers, we require you to provide a Perform List URL
 (check `D006`) so that users can retrieve a real data sample in the Zap
 editor. This is called a polling sample, and is created when you test
 the trigger in the Zap editor before turning it on.
@@ -966,6 +1009,7 @@ live: {"id": 2, "name": "Alice"}
 polling sample: {"id": 1, "name": "John"}
 live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ```
+
 See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
 ---
@@ -975,7 +1019,7 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 ## U001 - Developer Terms of Service
 
 You must agree to the latest Developer Terms of Service in order to proceed. Go to
-[Developer Home](https://developer.zapier.com) to agree.
+[Developer Home](https://zapier.com/app/developer) to agree.
 
 ---
 
@@ -983,7 +1027,7 @@ You must agree to the latest Developer Terms of Service in order to proceed. Go 
 
 ## Z001 - Polling Sample Respects Output Field Definition
 
-For REST Hook triggers, we require you to provide a `Perform List` URL
+For REST Hook triggers, we require you to provide a Perform List URL
 (check `D006`) so that users can pull a live sample in the Zap editor.
 This is called a polling sample.
 
@@ -991,8 +1035,8 @@ This check takes the latest polling sample from a Zap with this trigger
 and verifies that the sample conforms to the output fields for the
 trigger in your integration (if defined). The specific checks are:
 
-* "required" fields must be in the polling sample
-* field values in the trigger result must match their field type
+- "required" fields must be in the polling sample
+- field values in the trigger result must match their field type
 
 This check is performed using the Zaps in accounts belonging to the
 integration admins, so build your test Zaps in these accounts.
