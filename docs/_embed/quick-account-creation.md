@@ -65,7 +65,7 @@ https://zapier.com/webintent/create-zap?template=<zap-template-id>&utm_source=pa
 
 ### Procure a token and redirect users to a custom URL
 
-This implementation [provides an access token](https://platform.zapier.com/embed/partner-api#procuring-a-token) to [Zapier's Partner API](https://platform.zapier.com/embed/partner-api), then allows you to redirect users to a custom URL of your choosing.
+This implementation allows a new Zapier account to be created, [provides an access token](https://platform.zapier.com/embed/partner-api#procuring-a-token) to [Zapier's Partner API](https://platform.zapier.com/embed/partner-api), then allows you to redirect users to a custom URL of your choosing.
 
 1. Use the URL below to initiate Quick Account Creation, then redirect users to a specified URL:
 ```
