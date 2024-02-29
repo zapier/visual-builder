@@ -42,7 +42,10 @@ If you have an existing Full Zapier Experience or Zap templates element embed, y
 - sign-up-last-name="last_name_of_your_user"
 
 ## Add support to the Partner API
+
 ### Redirect users to the Zap editor
+
+After an account is created with this implementation, a [user token still needs to be procured](https://platform.zapier.com/embed/partner-api#access-token) to access specific Partner API endpoints. Generally, since the user will already be signed in to their newly created account in an active session on Zapier, users won't have to explicitly sign in again when prompted with Zapier's OAuth flow.
 
 1. Use the URL below to initiate Quick Account Creation, then redirect users into the Zap editor with the Zap template set in the parameters:
 ```
@@ -60,9 +63,9 @@ https://zapier.com/webintent/create-zap?template=<zap-template-id>&utm_source=pa
 | **sign-up-email**       |  Required   | Email address of the user signing up.                                                              |
 | **refer** or **referrer**|  Required   | URL of the page where the user clicked the link.                                                   |
 
-After an account is created, a [user token still needs to be procured](https://platform.zapier.com/embed/partner-api#access-token) to access specific Partner API endpoints. Generally, since the user will already be signed in to their newly created account in an active session on Zapier, users won't have to explicitly sign in again when prompted with Zapier's OAuth flow.
+### Procure a token and redirect users to a custom URL
 
-### Redirect users to a custom URL
+This implementation [provides an access token](https://platform.zapier.com/embed/partner-api#procuring-a-token) to [Zapier's Partner API](https://platform.zapier.com/embed/partner-api), then allows you to redirect users to a custom URL of your choosing.
 
 1. Use the URL below to initiate Quick Account Creation, then redirect users to a specified URL:
 ```
@@ -80,8 +83,6 @@ http://api.zapier.com/v2/authorize?redirect_uri=<redirect_uri>&scope=<scope>&res
 | **sign_up_first_name**  |  Required   | First name of the user signing up.                                                                 |
 | **sign_up_last_name**   |  Required   | Last name of the user signing up.                                                                  |
 | **sign_up_email**       |  Required   | Email address of the user signing up.                                                              |
-
-You can use this implementation to redirect users immediately to the OAuth flow to [procure an access token](https://platform.zapier.com/embed/partner-api#procuring-a-token) to [Zapier's Partner API](https://platform.zapier.com/embed/partner-api) or to another custom URL of your choosing.
 
 ## When Quick Account Creation is enabled
 
