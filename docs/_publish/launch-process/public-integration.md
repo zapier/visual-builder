@@ -80,15 +80,14 @@ After you’ve submitted your integration for review, one of our developers will
 
 ## **5. Beta phase**
 
+![Zapier beta lifecycle](https://cdn.zappy.app/ac77593e876f7283613c91f4f7408666.png)
+
 When your integration is approved, Zapier will update your:
 
-- App status to **Public**.
-- App version will update to **Beta**.
+- App status to **Beta**.
 - Integration will be added to [Zapier’s app directory](https://zapier.com/apps) with a Beta tag.
 
-Your integration will remain in beta for 90 days.
-
-Whilst in public beta, we recommend completing these tasks to improve your integration:
+Your integration will remain in beta for 90 days. Whilst in public beta, we recommend completing these tasks to improve your integration:
 
 ### **Add help docs to Zapier’s Help Center**
 
@@ -124,13 +123,13 @@ Learn more about [Zapier Issue Manager](https://platform.zapier.com/publish/zapi
 
 ### **Exit Beta early by embedding your integration**
 
-When activity from your integration is detected through one of the Zapier [embed tools](https://platform.zapier.com/embed/embed-benefits), you’ll exit Beta the next business day and unlock your [Partner Program benefits](https://zapier.com/developer-platform/partner-program). The simplest option is to feature your Zap templates in a launch announcement. Additionally, you can present a dynamic gallery of the 6,000+ applications that are now compatible with your app for creating workflows.
+When one signup for Zapier is detected from your implementation of a [Zapier embed tool](https://platform.zapier.com/embed/embed-benefits), you’ll exit Beta the next business day and unlock Partner Program benefits. The simplest option is to feature your Zap templates in a launch announcement. Additionally, you can present a dynamic gallery of the 6,000+ applications that are now compatible with your app for creating workflows.
 
 ## **6. Public phase**
 
 After 90 days in public beta, your integration will become public:
 
-- Your app version status will be updated to public, and the beta tag will be removed.
+- Your app status will be updated to public, and the beta tag will be removed.
 - You’re added to our [Partner Program](https://zapier.com/developer-platform/partner-program), where you can earn marketing and support benefits.
 
 Learn more about [maintaining your Zapier integration](https://platform.zapier.com/manage/user-feedback).
