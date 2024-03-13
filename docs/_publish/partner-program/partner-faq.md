@@ -23,17 +23,17 @@ With {{ site.partner_count }} public integration partners on Zapier, use these 1
 * [Surface Zapier in your website footer](#tip-9-surface-zapier-in-your-website-footer)
 * [Leverage marketing automation](#tip-10-leverage-marketing-automation)
 
-## Tip 1: Level up your team
+## Level up your team
 
 Make sure your sales and support teams say "yes!" when asked about an integration. Share these bite-sized [Zapier 101 videos](https://learn.zapier.com/) to get them up-to-speed on Zapier.
 
-## Tip 2: Monitor your integration insights on growth and usage
+## Monitor your integration insights on growth and usage
 
 Review your integration insights on a regular cadence to guide making decisions and [inform you on the quality](https://platform.zapier.com/manage/integration-insights) of your integration. We routinely hear from our partners that Zapier users are higher-value, sticky users. So, it's important to keep a pulse on how the integration is doing.
 
 **Clearbit case study:** Clearbit carefully tracks the success of their users and discovered Zapier users are 20% less likely to churn. Armed with this data, their team prioritizes promotion and development strategies that encourage more of their users to try integrations.
 
-## Tip 3: Boost user adoption by seamlessly embedding Zapier
+## Boost user adoption by seamlessly embedding Zapier
 
 Keep users engaged inside your own platform by embedding the Zapier experience in your app. Help users easily discover, build, and manage Zaps with our prebuilt, plug-and-play [Full Zapier Experience](https://platform.zapier.com/embed/full-zapier-experience), or utilize our [Partner API](https://platform.zapier.com/embed/partner-api) to create a seamless, custom solution.
 
@@ -46,7 +46,7 @@ Keep users engaged inside your own platform by embedding the Zapier experience i
 > + Using the [Full Zapier Experience](https://platform.zapier.com/embed/full-zapier-experience) or [Zap Templates](https://platform.zapier.com/embed/zap-templates) to embed popular Zaps in just a few minutes.
 > + Or designing a custom experience like Jotform did via our [Partner API](https://platform.zapier.com/embed/partner-api).
 
-## Tip 4: Share Zapier use cases in your onboarding
+## Share Zapier use cases in your onboarding
 
 From tool tips to testimonials, make sure your newest customers know it's possible to connect your tool to {{ site.partner_count }} other web apps via Zapier.
 
@@ -59,7 +59,7 @@ From tool tips to testimonials, make sure your newest customers know it's possib
 > + Identifying a point in your onboarding sequence that makes sense to introduce Zapier to new users.
 > + Linking to a customer story, a detailed help doc, or even display your most popular Zaps with [a simple snippet of code](https://platform.zapier.com/embed/zap-templates).
 
-## Tip 5: Add new features to your Zapier integration
+## Add new features to your Zapier integration
 
 As your product evolves, your integration should, too. An up-to-date, bug-free integration makes automation simple for users.
 
@@ -73,7 +73,7 @@ As your product evolves, your integration should, too. An up-to-date, bug-free i
 > + Creating new [Zap templates](https://developer.zapier.com/zap-templates) to inspire use cases.
 > + Promoting the new Zapier features to your users in a blog post or email.
 
-## Tip 6: Power up your app marketplace with Zapier-enabled listings
+## Power up your app marketplace with Zapier-enabled listings
 
 Chances are, your users are searching your marketplace for the apps they want to connect to. Close the loop on those high-intent searches with listings for the apps your users search for most, powered by Zapier.
 
@@ -88,7 +88,7 @@ Chances are, your users are searching your marketplace for the apps they want to
 > + Leveraging the [Full Zapier Experience](https://platform.zapier.com/embed/full-zapier-experience).
 > + Or utilizing [Zapier's Partner API](https://platform.zapier.com/embed/partner-api) to programmatically deploy and maintain your marketplace.
 
-## Tip 7: Suggest Zapier as an answer to common support questions
+## Suggest Zapier as an answer to common support questions
 
 What are your customers searching for help on? Our top partners think beyond a one-size-fits-all Zapier help doc. Whether it's how to export data to Google Sheets, or how to get custom alerts for new data, crafting custom Zapier tutorials helps you have answers at the ready.
 
@@ -100,7 +100,7 @@ What are your customers searching for help on? Our top partners think beyond a o
 > + [Creating a pre-made Zap](https://platform.zapier.com/publish/zap-templates) for a step-by-step solution to that common problem.
 > + Writing a tutorial with the pre-made Zap [embedded](https://platform.zapier.com/embed/zap-templates) in your help docs so readers can build the workflow without leaving your site.
 
-## Tip 8: Point empty marketplace search results to Zapier
+## Point empty marketplace search results to Zapier
 
 Make sure your users aren't left empty-handed. When search results in your marketplace turn up empty, point them to Zapier (chances are, we support their favorite app).
 
@@ -113,13 +113,13 @@ Make sure your users aren't left empty-handed. When search results in your marke
 > + Adding a search bar to your integrations directory.
 > + Displaying this sentence as default text on an empty search state, "Can't find what you're looking for? See if you can integrate with it via Zapier."
 
-## Tip 9: Surface Zapier in your website footer
+## Surface Zapier in your website footer
 
 Help your users find what they're looking for by linking to your Zapier integration from your site footer.
 
 **Close.io case study:** Close.io helps users discover their Zapier integration by linking to Zapier topics from their footer. This helps new users find out about Zapier and keeps Close.io as a top Zapier integration.
 
-## Tip 10: Leverage marketing automation
+## Leverage marketing automation
 
 Zero in on the users most likely to adopt automation into their everyday work. Watch for users to hit key milestones in your app, like creating a new contact or exporting data. Then, suggest automation as a natural next step.
 

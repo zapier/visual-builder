@@ -9,11 +9,11 @@ redirect_from:
 
 # Partner Program 
 
-> **The Partner Program is only eligible for public integrations.**
+> **The Partner Program is only available to public integrations.**
 
 The [Zapier Partner Program](https://zapier.com/developer-platform/partner-program) is a program for Zapier’s [6,000+ integration partners](https://zapier.com/apps). It is designed to give all partners a clear path to success for their integrations and reward them with benefits along the way.
 
-As you get more users and maintain a healthy integration, your integration accesses more benefits across our tiered system. We have 4 levels:
+As your integration gains more active users, and maintains a healthy health score, your integration will tier up in our Partner Program. Zapier's Partner Program consistes for 4 tiers:
 
 
 * Bronze
@@ -21,20 +21,20 @@ As you get more users and maintain a healthy integration, your integration acces
 * Gold
 * Platinum
 
-Learn more about what [benefits are available in each level](https://zapier.com/developer-platform/partner-program).
+Learn more about the [benefits are available in each tier](https://zapier.com/developer-platform/partner-program).
 
 
-## How levels are calculated
+## How tiers are calculated
 
-Your level in the Zapier Partner Program is determined by your integration’s number of active users and integration health score.
+Your tier in the Zapier Partner Program is determined by your integration’s number of active users and health score.
 
-![Zapier Partner Program levels](https://cdn.zappy.app/ea9bb3a0229584725b56c474c1f7bf0e.png)
+![Zapier Partner Program tiers](https://cdn.zappy.app/ea9bb3a0229584725b56c474c1f7bf0e.png)
 
-Levels are evaluated on a fixed quarterly basis: at the beginning of January, April, July, and October.
+Your tier in the Partner Program is evaluated on a fixed quarterly basis: at the beginning of January, April, July, and October. Your health score is calculated daily in response to your engagement with open bug reports and feature requests.
 
-You can change levels every quarter. You cannot change levels in the middle of a quarter. If at the beginning of a quarter, you don’t meet all requirements of a level, you will move down to a level that you do meet all the requirements of.
+If at the beginning of a quarter you don’t meet all requirements of a tier, you will move down to the next tier that you do qualify for.
 
-Zapier won’t externally share your level in the Partner Program with anyone, including other partners and Zapier users. But if you’d like to, you’re welcome to share your level in the program with your users.
+Zapier won’t externally share your tier in the Partner Program with anyone, including other partners and Zapier users. But if you’d like to, you’re welcome to share your tier in the program with your users.
 
 ### Active users
 
@@ -45,9 +45,16 @@ To increase usage of your Zapier integration, try out [these 10 tactics](https:/
 
 ### Integration health score
 
- We calculate the integration health score by looking at how many feature requests and bugs have been reported for your integration and how responsive your team is to those reports. Some feature requests and bugs impact your score more than others. For example, a feature request with 100 users voting for it will impact your health score more than a feature request with 1 vote.
+ The integration health score is calculated by looking at:
+ 
+ 
+ - how many open feature requests have been reported for your integration
+ - how many open bug reports have been reported for your integration
+ - how responsive your team is to the open issues
+ 
+ Some feature requests and bugs impact your score more than others. For example, a feature request with 100 users voting for it will impact your health score more than a feature request with 1 vote.
 
-As a reminder, our goal for all integrations is for them to maintain a “healthy” health score. No level of the program requires an “exceptional” health score (although it’s certainly great if your integration does go above and beyond!).
+Our goal for all integrations is for them to maintain a "healthy" health score. No tier of the Partner Program requires an “exceptional” health score.
 
 ![Zapier Partner Program Integration Health Score](https://cdn.zapier.com/storage/photos/1e71ec2a31c0cdecf7880f4ac1f4915d.gif)
 

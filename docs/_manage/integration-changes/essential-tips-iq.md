@@ -1,10 +1,11 @@
 ---
-title: Rollout cadence and integration quality health tips
+title: Essential tips for integrating quality health practices
 order: 15
 layout: post-toc
+redirect_from: /manage/rollout-cadence-iq-health-tips
 ---
 
-# Rollout Cadence and integration quality health tips
+# Essential tips for integrating quality health practices
 
 Our shared customers rely on Zapier and your integration for business-critical workflows. Addressing feedback early and often ensures users have the best experience, both with Zapier's platform and yours. Follow these tips on how.
 

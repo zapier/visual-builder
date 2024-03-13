@@ -20,6 +20,23 @@ table {
 # A Guide to Zapier Partner Program Benefits: _Accelerate your integration's growth and reach_
 Zapier offers a variety of marketing and support benefits to partners. This cheat sheet is designed to help you understand when and how you can access each of these benefits as you unlock them.
 
+## Accelerate your access to these benefits by embedding
+
+**Unlock the benefits of the Zapier Partner Program faster by embedding your integration into your product via your help docs, integration pages, or blog posts.** There are two ways to do this:
+
+1. If you’re in Beta, you’ll exit Beta the day after we detect a signup that originate from your embed
+2. If you’re already a Partner, you can access some of the benefits of the next tier faster if you meet these requirements:
+  - we detect a signup from an embed that originates on your site
+  - your integration has a Healthy or Exceptional health score
+  - your integration meets a minimum active user count (40 for early Silver benefits, 300 for early Gold benefits, 2,500 for early Platinum benefits)
+
+Embedding your integration not only enhances your product's functionality but also fast-tracks your access to higher-tier benefits. It's our way of incentivizing partners to integrate with Zapier and reap the rewards sooner.
+
+## Next steps
+- Review your integration tier on the Partner Program page in the developer dashboard
+- Plan benefit redemption around your integrations’ marketing calendar (and keep track of the annual usage limit of each benefit) 
+- Highlight your integration in your product and marketing assets with our  [partner embedding tools](https://zapier.com/l/partner/solutions)
+
 ## Access to our Partner Support team
 Access to integration best practices through our dedicated Support team.
 - **How to access this benefit:** Submit our [contact form](https://developer.zapier.com/contact)
@@ -102,20 +119,3 @@ Request dedicated support for your integration and product roadmap from a Zapier
 |	**Opportunity**		| Use this tailored benefit to approach adding new features or fixing new bugs on your integration, based on your product goals.	|
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
-
-## Accelerate your access to these benefits by embedding
-
-**Unlock the benefits of the Zapier Partner Program faster by embedding your integration into your product via your help docs, integration pages, or blog posts.** There are two ways to do this:
-
-1. If you’re in Beta, you’ll exit Beta the day after we detect a signup that originate from your embed
-2. If you’re already a Partner, you can access some of the benefits of the next tier faster if you meet these requirements:
-  - we detect a signup from an embed that originates on your site
-  - your integration has a Healthy or Exceptional health score
-  - your integration meets a minimum active user count (40 for early Silver benefits, 300 for early Gold benefits, 2,500 for early Platinum benefits)
-
-Embedding your integration not only enhances your product's functionality but also fast-tracks your access to higher-tier benefits. It's our way of incentivizing partners to integrate with Zapier and reap the rewards sooner.
-
-## Next steps
-- Review your integration tier on the Partner Program page in the developer dashboard
-- Plan benefit redemption around your integrations’ marketing calendar (and keep track of the annual usage limit of each benefit) 
-- Highlight your integration in your product and marketing assets with our  [partner embedding tools](https://zapier.com/l/partner/solutions)
