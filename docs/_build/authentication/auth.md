@@ -41,15 +41,17 @@ For more custom authentication schemes, switch to the [Platform CLI](https://pla
 
 ## How to Remove or Change Type of Authentication Scheme 
 
-You cannot change an integration’s authentication scheme. Instead, remove an existing integration’s authentication, then add a new authentication scheme.
+You cannot change an integration’s authentication scheme directly. First, remove the existing integration’s authentication scheme, then add a new authentication scheme.
+
+> **Note:** You can only do this for a (new) integration version that has not yet been promoted and has less than 5 active users, since this will break connected accounts for the version. If an integration’s authentication scheme needs to be changed, clone a new major version and add the new authentication. [Learn more](https://platform.zapier.com/docs/versions){:target="_blank"}
 
 To remove a Zapier integration's authentication scheme in the Platform UI, open the _Authentication_ page. Click the gear icon beside the existing authentication scheme, click _Delete_, then confirm to remove the authentication.
 
+![Zapier Remove Authentication Scheme](https://cdn.zappy.app/a616ced2f22bdf0873b0f910fc238424.png)
+
 Then add your app’s new authentication scheme to the Zapier integration instead.
 
-Never remove authentication from an existing integration with active users. If an active integration’s authentication scheme needs to be changed, clone a new major version and add the new authentication.
-
-![Zapier Remove Authentication Scheme](https://cdn.zappy.app/a616ced2f22bdf0873b0f910fc238424.png)
+> **Note:** Again, to not break connected accounts, you can normally not migrate existing users' Zaps and connected accounts to a new version that has a different authentication scheme. For public integrations that meet certain conditions, we can provide support to migrate connected accounts between authentication schemes. [Learn more](https://platform.zapier.com/manage/auth-scheme){:target="_blank"}
 
 ## Common Authentication Error Messages
 
