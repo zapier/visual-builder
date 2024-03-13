@@ -21,7 +21,7 @@ As your integration gains more active users, and maintains a healthy health scor
 * Gold
 * Platinum
 
-Learn more about what [benefits are available in each tier](https://zapier.com/developer-platform/partner-program).
+Learn more about the [benefits are available in each tier](https://zapier.com/developer-platform/partner-program).
 
 
 ## How tiers are calculated
