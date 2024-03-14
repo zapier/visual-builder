@@ -7,11 +7,9 @@ redirect_from: /docs/integration-checks-reference
 
 # Integration check reference
 
-Before you can submit your integration for publishing, it runs through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience. 
+Before you can submit your integration for publishing, it runs through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience.
 
-To [publish your integration](https://platform.zapier.com/publish/public-integration), all Errors and Publishing Tasks must be validated. Warnings are non-blocking and not strictly required to proceed, though we do recommend you review them for usability of your integration.
-
-Warnings are not going to block you from promoting that version, though we do recommend you review them for usability of your triggers.
+To [publish your integration](https://platform.zapier.com/publish/public-integration), all Errors and Publishing Tasks must be validated. Warnings are non-blocking and not strictly required to proceed as they would not prevent you from promoting a version, though we do recommend you review them for usability of your integration.
 
 If your integration will remain private, it isn't _necessary_ to pass the validation checks. You will be able to [share it with users](https://platform.zapier.com/manage/share-integration) as is. However, you can still select `Run Validation` from the _Version Overview_ tab in the Platform UI or run the `zapier validate` command [in the Platform CLI](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#validate) to be notified of any issues and recommendations to better the user experience.
 
@@ -19,17 +17,17 @@ To help better address a check in communication, each check is given a unique ID
 
 You don't need to know the implication of the initial capitial letter. But if you're curious, they are:
 
-Area | Description
---- | ---
-<b><u>C</u></b>ompatibility | Only apply when your integration is public, these checks verify how the new version is backward compatible with the currently public version. They ask questions like "would this change break existing Zaps, Zap Templates, or connected accounts?"
-<b><u>D</u></b>efinition | Definition of the integration, including auth and trigger/search/action configurations. Some of these checks could block you from saving/pushing if the violation results in a broken trigger/search/action.
-<b><u>M</u></b>arketing | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public.
-Connected <b><u>A</u></b>ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.
-<b><u>S</u></b>tats | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.
-<b><u>T</u></b> - Zap History | Data from runs in your Zap History, produced by live (enabled) Zaps. These are more likely to block you from going public. The "T" checks are named as such for historical reasons. Zapier now shows tasks in the Zap History.
-<b><u>U</u></b>ser | Things in the developer's (your) account, such as Terms of Service acceptance.
-<b><u>L</u></b>ifecycle | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).
-<b><u>Z</u></b>ap | Things related to Zaps, such as the trigger samples you pulled into the Zap editor.
+| Area                             | Description                                                                                                                                                                                                                                              |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <b><u>C</u></b>ompatibility      | Only apply when your integration is public, these checks verify how the new version is backward compatible with the currently public version. They ask questions like "would this change break existing Zaps, Zap Templates, or connected accounts?"     |
+| <b><u>D</u></b>efinition         | Definition of the integration, including auth and trigger/search/action configurations. Some of these checks could block you from saving/pushing if the violation results in a broken trigger/search/action.                                             |
+| <b><u>M</u></b>arketing          | Public-facing information, such as the app title, description, and logo. The intent of these rules is to give Zapier users a consistent style among texts and images across all public integrations. They're more likely to block you from going public. |
+| Connected <b><u>A</u></b>ccounts | Connected accounts that are linked to your integration. We verify these to ensure the authentication is working.                                                                                                                                         |
+| <b><u>S</u></b>tats              | Usage stats, such as the number of users your integration has. These are more likely to block you from going public.                                                                                                                                     |
+| <b><u>T</u></b> - Zap History    | Data from runs in your Zap History, produced by live (enabled) Zaps. These are more likely to block you from going public. The "T" checks are named as such for historical reasons. Zapier now shows tasks in the Zap History.                           |
+| <b><u>U</u></b>ser               | Things in the developer's (your) account, such as Terms of Service acceptance.                                                                                                                                                                           |
+| <b><u>L</u></b>ifecycle          | The lifecyle state of your integration or its versions, such as the visibility (private, pending, or public) and the version state (deprecated, non-production, or production).                                                                          |
+| <b><u>Z</u></b>ap                | Things related to Zaps, such as the trigger samples you pulled into the Zap editor.                                                                                                                                                                      |
 
 When the checks are run, we'll give a brief blurb summarizing the violation (with a check ID) along with a link to this page. This will act as a full reference explaining each error and giving examples for each.
 
@@ -479,7 +477,6 @@ New Contact
 
 Trigger descriptions must start with `Triggers when ` and end with a `.`.
 
-
 ✘ examples of an **incorrect** implementation:
 
 ```
@@ -557,8 +554,8 @@ in the Zap History.
 If you define output fields for a trigger/action/search, they should be consistent
 with the static sample data. The specific checks are:
 
-* "required" fields must be in the sample
-* field values in the sample match their field type
+- "required" fields must be in the sample
+- field values in the sample match their field type
 
 ✘ an example of an **incorrect** implementation:
 
@@ -676,9 +673,9 @@ to select your role.
 Your app's logo will be used all over the site in square containers and in various
 sizes. To ensure it looks good at all sizes, the logo image must be:
 
-* a square PNG image
-* at least 256px by 256px in size
-* in RGBA mode so it can have a transparent background
+- a square PNG image
+- at least 256px by 256px in size
+- in RGBA mode so it can have a transparent background
 
 To resize an image or convert an image to PNG, you can use this
 [tool](http://www.picresize.com/).
@@ -895,8 +892,8 @@ This check takes the latest run from the [Zap History](https://zapier.com/app/hi
 and verifies whether the trigger result conforms to the output fields
 for the trigger in your integration (if defined). The specific checks are:
 
-* "required" fields must be in the trigger result
-* field values in the trigger result match their field type
+- "required" fields must be in the trigger result
+- field values in the trigger result match their field type
 
 This check is performed using the [Zap History](https://zapier.com/app/history)
 for accounts belonging to the integration admins, so build your test
@@ -966,6 +963,7 @@ live: {"id": 2, "name": "Alice"}
 polling sample: {"id": 1, "name": "John"}
 live: {"id": 2, "name": "Alice", "email": "alice@example.com"}
 ```
+
 See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
 ---
@@ -991,8 +989,8 @@ This check takes the latest polling sample from a Zap with this trigger
 and verifies that the sample conforms to the output fields for the
 trigger in your integration (if defined). The specific checks are:
 
-* "required" fields must be in the polling sample
-* field values in the trigger result must match their field type
+- "required" fields must be in the polling sample
+- field values in the trigger result must match their field type
 
 This check is performed using the Zaps in accounts belonging to the
 integration admins, so build your test Zaps in these accounts.
