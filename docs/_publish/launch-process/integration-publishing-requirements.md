@@ -11,7 +11,7 @@ redirect_from:
 
 We are excited you are creating an integration for the [Zapier Platform](https://zapier.com/developer-platform). We are here to help you understand our platform and its requirements to successfully prepare your Zapier integration for publishing. Thousands of partners have built integrations on the Zapier Platform, so our mutual users can set up Zaps as easily and quickly as possible.
 
-Your Zapier integration can pass the review for publishing process quickly and smoothly when it meets these requirements. The requirements help maintain quality and consistency for all integrations listed in our [App Directory](https://zapier.com/apps). Please review them carefully before submitting for review to ensure your integration is compliant.
+Your Zapier integration can pass the review for publishing process quickly and smoothly when it meets these requirements. The requirements help maintain quality and consistency for all integrations listed in our [App Directory](https://zapier.com/apps). Please review them carefully before submitting for review to ensure your integration is compliant. Ask the [PublishBot](https://publishbot.zapier.app/) or write in via the [contact form](https://developer.zapier.com/contact) for any questions. 
 
 The requirements are arranged into multiple sections: [General](https://platform.zapier.com/publish/integration-publishing-requirements#1-general), [Meta](https://platform.zapier.com/publish/integration-publishing-requirements#2-meta), [Authentication](https://platform.zapier.com/publish/integration-publishing-requirements#3-authentication), [Triggers](https://platform.zapier.com/publish/integration-publishing-requirements#4-triggers), [Actions](https://platform.zapier.com/publish/integration-publishing-requirements#5-actions), [Searches](https://platform.zapier.com/publish/integration-publishing-requirements#6-searches), [Error Handling](https://platform.zapier.com/publish/integration-publishing-requirements#7-error-handling), and [Code](https://platform.zapier.com/integration-publishing-requirements#8-code).
 
@@ -34,7 +34,7 @@ Before submitting your [Zapier integration for app review](https://platform.zapi
 * Test early with real users. Use the [invite links to beta test](https://platform.zapier.com/manage/share-integration) the integration.
 * Enable backend services so they’re live and accessible during review.
 * Include detailed explanations of non-obvious features in the publishing request notes, including supporting documentation where appropriate. Integrations with unclear aspects may be rejected during the review.
-* Your developer should review the [integration check reference documentation](https://platform.zapier.com/publish/integration-checks-reference) while building your integration in order to pass the automatic validation when submitting for publishing. 
+* Your developer should review the [integration check reference documentation](https://platform.zapier.com/publish/integration-checks-reference) while building your integration in order to pass the automatic validation when submitting for publishing. To publish your integration, all Errors and Publishing Tasks must be validated. Warnings are non-blocking and not strictly required to proceed as they would not prevent you from promoting a version, though we do recommend you review them for usability of your integration.
 
 ## 1. General
 
