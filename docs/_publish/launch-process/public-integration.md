@@ -63,7 +63,7 @@ Learn more about testing your integration:
 
 After you've confirmed your integration is working as expected, you're almost ready to publish your app. To publish your integration, you need to submit your app for review by Zapier.
 
-Before submitting your integration, review [Zapier’s integration publishing requirements](https://platform.zapier.com/publish/integration-publishing-guidelines) to ensure they are met. 
+Before submitting your integration, review [Zapier’s integration publishing requirements](https://platform.zapier.com/publish/integration-publishing-requirements) or ask the [PublishBot](https://publishbot.zapier.app/) for a smoother app review process. 
 
 To submit your integration for app review:
 

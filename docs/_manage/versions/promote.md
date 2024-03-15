@@ -8,6 +8,8 @@ redirect_from:
 
 After your integration has entered the beta or public status, you can set a new default version for public use. This process is called promoting a version.
 
+Prior to promoting a version, run the [automated validation checks](https://platform.zapier.com/publish/integration-checks-reference). All Errors and Publishing Tasks must be validated. Warnings are non-blocking and not strictly required to proceed as they would not prevent you from promoting a version, though we do recommend you review them for usability of your integration.
+
 ## Promote a version with Platform UI 
 
 1. Log into the [Platform UI](https://zapier.com/app/developer).

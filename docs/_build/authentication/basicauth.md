@@ -45,7 +45,7 @@ Use Basic Auth if your API requires a username and password or other basic field
 
 ![Zapier Basic Auth Input Form](https://cdn.zappy.app/f4346b3456ea0080862db2eae7108050.png)
 
-- Input fields marked as password and all authentication fields with sensitive, private data such as both username and password from Basic Auth are automatically censored at runtime. These values are stored in the Auth bundle and used in API calls, but are replaced in Zapier’s logs with a censored value like this `:censored:6:82a3be9927:`.
+- Input fields marked as password and all authentication fields with sensitive, private data such as both username and password from Basic Auth are automatically censored at runtime. These values are stored in the Auth bundle and used in API calls, but are replaced in Zapier’s logs with a censored value like this `:censored:6:82a3be9927:`. Due to this, it is not possible to view the exact tokens or keys in Zapier's logs. To verify that the same token as was returned by the authentication, is being used in subsequent API calls; you can compare censored value characters, for example `:censored:6:82a3be9927:` would have the same value ending in 9927 when used in a subsequent call. 
 
 - Computed fields are not applicable to Basic Authentication and are only used with OAuth v2 and Session Auth.
 
