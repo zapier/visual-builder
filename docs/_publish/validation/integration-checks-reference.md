@@ -579,6 +579,30 @@ output fields: [
 
 ---
 
+<a name="D025"></a><a name="D00025"></a>
+
+## D025 - URLs Should Not Be Dangerous URIs
+
+In order to help prevent reflective cross-site-scripting (XSS) attacks on Zapier
+customers, we require that URLs inside the app definition do not match potentially
+dangerous URI patterns which could be used to run malicious code.
+
+Read more about XSS in the [OWASP Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html).
+
+✘ an example of an **incorrect** setup:
+
+```text
+javascript:alert('XSS');//
+```
+
+✔ an example of a **correct** implementation:
+
+```text
+https://example.com
+```
+
+---
+
 <a name="L001"></a><a name="L00001"></a>
 
 ## L001 - Version Is Deprecated
