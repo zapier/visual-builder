@@ -7,7 +7,7 @@ redirect_from: /docs/integration-checks-reference
 
 # Integration check reference
 
-Before you can submit your integration for publishing, it runs through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience. 
+Before you can submit your integration for publishing, it runs through a set of automated checks to ensure it's working properly and giving our users (and yours) the best possible experience.
 
 To [publish your integration](https://platform.zapier.com/publish/public-integration), all Errors and Publishing Tasks must be validated. Warnings are non-blocking and not strictly required to proceed, though we do recommend you review them for usability of your integration.
 
@@ -578,6 +578,30 @@ output fields: [
     {"key":  "id", "type": "integer"},
     {"key": "email", "type": "string", "required": true}
 ]
+```
+
+---
+
+<a name="D025"></a><a name="D00025"></a>
+
+## D025 - URLs Should Not Be Dangerous URIs
+
+In order to help prevent reflective cross-site-scripting (XSS) attacks on Zapier
+customers, we require that URLs inside the app definition do not match potentially
+dangerous URI patterns which could be used to run malicious code.
+
+Read more about XSS in the [OWASP Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html).
+
+✘ an example of an **incorrect** setup:
+
+```text
+javascript:alert('XSS');//
+```
+
+✔ an example of a **correct** implementation:
+
+```text
+https://example.com
 ```
 
 ---
