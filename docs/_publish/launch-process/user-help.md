@@ -17,7 +17,7 @@ As you maintain and add functionality to your integration, use the same form to 
 
 ## Self-hosted help documentation
 
-Step-up your documentation game. Implementing these essential strategies and tips can ensure that your audience gets the assistance they need, seamlessly. Elevate your documentation game today and revolutionize your approach to creating help docs!
+Step-up your documentation game. Implementing these essential strategies and tips can ensure that your audience gets the assistance they need, seamlessly.
 
 ### Speak your user's language
 
@@ -81,6 +81,6 @@ Step-up your documentation game. Implementing these essential strategies and tip
 - Partners often publish articles detailing workflows with a Zap template for that specific workflow embedded using our [Zap template element](https://platform.zapier.com/embed/zap-templates)
 - [Learn more about other embed benefits](https://platform.zapier.com/embed/embed-benefits)
 
-[See how Tasksade has embedded Zap templates using our Zap template element to help users discover automation inpsiration.](https://www.taskade.com/blog/taskade-zapier-integrations/)
+[See how Taskade has embedded Zap templates using our Zap template element to help users discover automation inpsiration.](https://www.taskade.com/blog/taskade-zapier-integrations/)
 
 Remember to regularly review and refine your content to ensure it remains accurate, relevant, and helpful to your users.
