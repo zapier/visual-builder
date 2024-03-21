@@ -1,27 +1,29 @@
 ---
 title: Benefits
 order: 1
-layout: post
+layout: post-toc
 redirect_from: 
    - /embed/benefits-embedding
    - /amplify-embed/
    - /embed/amplify-embed/
 ---
 
-## Benefits
+# Benefits
 
-Embedding Zapier in your product allows your users to search for apps that connect with yours, see popular workflows used with your app, and (most importantly) enables them to sign up for Zapier, building Zaps and editing them, too—without leaving your product. 
+![Embed stats](https://cdn.zappy.app/8e295cdf20175928495a9bceec2e9767.png)
 
-Embed features are available for public integrations. To enable embed features, [update your Intended Audience](https://platform.zapier.com/quickstart/private-vs-public-integrations) to public and [submit your integration for review](https://platform.zapier.com/publish/public-integration#4-submit-your-integration-for-app-review) to be published in the Zapier App Directory. 
+Embedding Zapier into your product allows your users to discover apps that connect with yours, discover automation inspiration, and enables them to sign up for Zapier. Embedding Zapier into your product also allows users to build and edit Zaps without leaving your product.
 
-Users can extend the power of your app when Zapier looks like an extension of your product, not a separate service with a separate sign-up page. The tools we offer let you create an integrated journey from start to finish.   
+Zapier's embed solutions are available for public integrations. To take advantage of our embed solution, first ensure your integration has been published to Zapier's App Directory. If your integration isn't yet published, [learn more about submitting your integration for review](https://platform.zapier.com/publish/public-integration#4-submit-your-integration-for-app-review).
+
+Users can extend the power of your app when Zapier looks like an extension of your product, not a separate service with a separate sign-up page. The tools we offer let you create an integrated journey from start to finish.
 
 > If you prefer to have a video overview of embedding Zapier in your product, see below
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ix1bG0mspMY" title="What is Embedding video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To help your integration become more visible, try one or all of these options to begin connecting your users with Zapier’s {{site.partner_count}} integrations.
 
-## Allow users to connect faster through accelerated sign-ups
+### Enable users to connect to Zapier faster through accelerated sign-ups
 **Why?** The [Quick Account Creation](https://platform.zapier.com/embed/quick-account-creation) feature allows you to make it easy for your users to sign up for a Zapier account while using your embed tool.
 **How?** Seamless user signups = more usage of your integration. Check how [Zapier Partner Adalo started using this feature](https://zapier.com/blog/adalo-user-experience-with-zapier/) and saw a 40 percent increase in users successfully creating Zaps. And it took less than a day to get set up!
 
