@@ -11,7 +11,9 @@ redirect_from:
 
 Zapier automatically deduplicates incoming trigger data for your integration, so that Zaps do not run multiple times on the same data. Consider the following requirements for your New item and Updated item triggers to work as users expect. 
 
-- Provide a unique `id` key.
+- Provide a unique primary key.
+  - By default, the field with key `id` is used as the primary key.
+  - You can also define other fields as primary key by enabling `primary` in `outputFields`. See [Output Fields](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#output-fields) in the CLI docs.
 - Sort reverse-chronologically by time created.
 
 The API endpoint must list new or updated items in an array sorted in reverse chronological order.
@@ -41,7 +43,7 @@ For example, say your endpoint for new items returns a list of tasks:
 {% endraw %}
 {% endhighlight %}
 
-When a Zap is first turned on, Zapier makes an initial call to your API to retrieve existing data, and caches and stores each `id` field in our database. When the Zap is turned off, that list is cleared.
+Assuming you're using the default primary key, the `id` field. When a Zap is first turned on, Zapier makes an initial call to your API to retrieve existing data, and caches and stores each `id` field in our database. When the Zap is turned off, that list is cleared.
 
 Active Zaps then [poll at an interval](https://help.zapier.com/hc/en-us/articles/8496181725453#01H8C8M008GXFT36C42W1157P0) (based on a [customer's plan](https://zapier.com/pricing)) and compare the `id`s to all those seen before, trigger on new items, and update the list of seen `id`s.  
 
