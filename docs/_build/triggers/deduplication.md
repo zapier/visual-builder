@@ -43,7 +43,7 @@ For example, say your endpoint for new items returns a list of tasks:
 {% endraw %}
 {% endhighlight %}
 
-Assuming you're using the default primary key, the `id` field. When a Zap is first turned on, Zapier makes an initial call to your API to retrieve existing data, and caches and stores each `id` field in our database. When the Zap is turned off, that list is cleared.
+The following assumes you're using the default primary key, the `id` field. When a Zap is first turned on, Zapier makes an initial call to your API to retrieve existing data, and caches and stores each `id` field in our database. When the Zap is turned off, that list is cleared.
 
 Active Zaps then [poll at an interval](https://help.zapier.com/hc/en-us/articles/8496181725453#01H8C8M008GXFT36C42W1157P0) (based on a [customer's plan](https://zapier.com/pricing)) and compare the `id`s to all those seen before, trigger on new items, and update the list of seen `id`s.  
 
