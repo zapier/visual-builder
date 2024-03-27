@@ -117,7 +117,7 @@ Alternatively, if you're using the CLI, you can use non-id fields as the primary
 
 ## Updated Item triggers
 
-When triggering on updated items, you'll want to define the `id` field or a primary key to be used for deduplication. Assuming your task API has an endpoint that can return tasks sorted by `updatedAt` in descending direction, here's example code to incorporate the `updatedAt` value with the `id`, so that Zapier recognizes a new update as a new item. Assuming that you have configured `options` with the appropriate API request URL and parameters:
+When triggering on updated items, you'll want to define the `id` field to be used for deduplication. Assuming your task API has an endpoint that can return tasks sorted by `updatedAt` in descending direction, here's example code to incorporate the `updatedAt` value with the `id`, so that Zapier recognizes a new update as a new item. Assuming that you have configured `options` with the appropriate API request URL and parameters:
 
 {% highlight javascript %}
 {% raw %}
@@ -135,3 +135,5 @@ return z.request(options)
 {% endhighlight %}
 
 Notice how the code preserves the original `id` value before setting `id` to a new combined value that is unique for every update of a task. This is useful to ensure that the original ID can still be used for other purposes, such as performing a search or associating records together.
+
+Alternatively, if you're using the CLI, you can set `primary: true` for the `id` and `updatedAt` fields. See ["How does deduplication work?"](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#how-does-deduplication-work) in the CLI docs for example code.
