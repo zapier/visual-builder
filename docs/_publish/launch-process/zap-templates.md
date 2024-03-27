@@ -202,7 +202,52 @@ If your Zap template is rejected, the automated email will provide a justificati
 
 Then make some more Zap templates. The more you make, the easier it will be for users to start using your Zapier integration.
 
-## Promote Your Zap templates
+## Manual field mapping (custom pills)
+
+When creating a Zap template, you typically map data between steps by selecting from a list of fields (or "pills") that have been added as sample data by the integration developer. Field mapping is what allows data to carry from one step to another. Custom pills take this a step further by letting you map fields that you know are returned by an integration, but haven’t been added as sample data. For example, if you wanted to map the field `eventType` between the trigger and step 2 of your Zap template, but `eventType` isn’t available in the trigger's sample data, you could create a custom pill to pull this field dynamically. Here’s how to create custom pills.
+
+**Step 1: Identify the step position**
+
+- The trigger is in position 1, with subsequent steps numbered sequentially
+
+![Screenshot showing position 1-3](https://cdn.zappy.app/ad95202cb4726f214d234f0711e6c1fe.png)
+
+**Step 2: Determine the field name**
+
+- Because the sample data doesn't include the field you want, we suggest setting up a live Zap replicating the Zap template you want to create
+- After publishing your Zap, let the Zap run live and then review its Zap history
+- From the Zap history, you can identify the exact name of the field you want to pull data from
+- In this example, we can see Google Calendar > New Event returns the field `eventType`
+
+![Screenshot showing eventType field](https://cdn.zappy.app/d0025c224ba67f6470ef9e2629dce890.png)
+
+**Step 3: Combine step position and field name**
+
+- Once you have both the step position and field name, you can combine them to create a custom pill
+- Start with 2 open curly braces ``{{`
+- Add the step position folllowed by 2 underscores `__`
+- Next, add the field name
+- Finally, finish with 2 closed curly braces `}}`
+
+Example: the `eventType` field isn’t returned in the sample data for Google Calendar > New Event. If you want to map that field in a Zap template, you can do so using the custom pill `{{1__eventType}}`.
+
+**Step 4: Insert custom pill**
+
+- You can insert the custom pill into any field in any step that comes after the field that returns the data
+
+**Additional Notes**
+
+- Custom pills work in both Zap templates and regular Zaps. [Learn more about creating custom pills in Zaps](https://community.zapier.com/featured-articles-65/how-to-manually-map-fields-that-do-not-appear-in-the-sample-data-aka-custom-pill-mapping-9738).
+- Custom pills will only work when a live Zap run returns the field used in the custom pill. If the field isn't returned during a live Zap run, fields where the custom pill has been mapped will remain empty
+- The methodology described above only works for top-level fields. If a field is nested under another field (or multiple fields), each nest would be separated by double underscores.
+- For example, if the trigger returned the following and you wanted to retrieve the response for question 3, your custom pill would look like this: `{{1__questions__3}}`
+
+![Screenshot showing nested fields](https://cdn.zappy.app/a64282d282a776319c77cc73f7aa504f.png)
+
+By following these steps, you should be able to effectively add custom pills to your Zap Templates.
+
+
+## Promote your Zap templates
 
 It’s not enough to turn your ideal workflows into Zap templates. You need to get them in front of your end-users. Zapier automatically promotes your Zap templates in our SEO, app directory, and on partner sites using our embed tools (where both your and their apps are used in the template). You can promote Zap templates further by embedding them into your site (user dashboards, blog posts, help articles) using our [Zap template element](https://platform.zapier.com/embed/zap-templates).
 
@@ -211,7 +256,7 @@ It’s not enough to turn your ideal workflows into Zap templates. You need to g
 Your published Zap templates will appear on your directory page. Zap templates are loosely ordered by popularity, helping users easily discover common use-cases. Users can also search for Zap templates that connect your app with another.
 ![Zapier App Directory Page](https://cdn.zappy.app/f56ac65d2c36314bae02f21b00f983e4.png)
 
-## Manage Your Zap templates
+## Manage your Zap templates
 
 Over time, you’ll likely make dozens of Zap templates. You can manage them — in draft, review, or publicly available — from your [Zap templates](https://zapier.com/zap-templates/) dashboard alongside Zapier’s Developer Platform tools.
 
@@ -225,13 +270,10 @@ If you have any Zap templates in your _Rejected_ list, edit them to fix the issu
 
 When promoting a new version of your integration, all Zap templates using the integration and having no breaking changes with the existing version will be updated to use the promoted version. The following are considered breaking changes:
 
-- A trigger/action is hidden or deleted.
-
-- A trigger/action key is changed.
-
-- A trigger/action input field key is changed or removed.
-
-- A trigger/action output field key is changed or removed.
+- A trigger/action is hidden or deleted
+- A trigger/action key is changed
+- A trigger/action input field key is changed or removed
+- A trigger/action output field key is changed or removed
 
 If breaking changes exist between the previous and newly promoted integration versions, existing Zap templates will not be automatically updated and will continue to use the previous version. This can result in an older version acquiring new users over time. Consider the user impacts of [changes made in new versions](https://platform.zapier.com/manage/making-changes).
 
