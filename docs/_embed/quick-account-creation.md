@@ -20,6 +20,8 @@ This video demonstrates how to implement Quick Account Creation using the Zap te
 
 <iframe allowtransparency="true" title="Search or create" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://cdn.zappy.app/v1f21dbddbc570407248253c13859a5d9.mp4" width="640" height="360"></iframe>
 
+Explore more live examples and success stories in our [Partner Embed Gallery](https://zapier.com/developer-platform/partner-embeds).
+
 ## Prerequisites
 
 - New or existing implementation of the [Full Zapier Experience](https://platform.zapier.com/embed/full-zapier-experience), [Zap templates element](https://platform.zapier.com/embed/zap-templates), or [Partner API](https://platform.zapier.com/embed/partner-api).
