@@ -38,7 +38,7 @@ If your integration requires OAuth v1 authentication, use the [Platform CLI](htt
 
 - For standard fields to be input by the user, select the default _Field_ type. Add the most commonly needed fields first, in the order users expect, as you cannot reorder fields once added. Fill in the options as appropriate:
 
-  -- **Key**: The internal name for your field, used to reference this field in Zapier API calls. For convenience, use the same key as your API uses for this field. Note: `client_id` and `client_secret` are reserved and cannot be used as keys for input form fields.
+-- **Key**: The internal name for your field, used to reference this field in Zapier API calls. For convenience, use the same key as your API uses for this field. Note: `client_id` and `client_secret` are reserved and cannot be used as keys for input form fields.
 
 -- **Label**: A human-friendly name for this field that will be shown to users in the authentication form.
 

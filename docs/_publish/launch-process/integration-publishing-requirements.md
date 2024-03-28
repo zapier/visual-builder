@@ -48,7 +48,7 @@ Your triggers, actions, and searches should focus on the main use cases of your 
 Test your integration early and often, both internally and externally during the build stage. This will help you catch bugs and identify any usability issues that you otherwise will be asked to address during the review process, extending the time to launch.
 
 #### 1.3.1 Internal Testing
-* Create test Zaps in your Zapier account with each of the triggers, actions, and searches in your integration, and run them, so each have some successful runs in the Zap History. This gives you firsthand experience of the Zap setup process our mutual users will go through, and lets you validate that triggers, actions, and searches look and work as intended. We may ask you to share your test Zaps with us when you submit your integration for review.
+* Create test Zaps in your Zapier account with each of the triggers, actions, and searches in your integration, and run them, so each have some successful runs in the Zap History. Do not delete these Zaps or Zap runs. This gives you firsthand experience of the Zap setup process our mutual users will go through, and lets you validate that triggers, actions, and searches look and work as intended. We may ask you to share your test Zaps with us when you submit your integration for review.
 
 #### 1.3.2 External testing with real users
 * Share your integration's [invite link](https://platform.zapier.com/manage/share-integration) before you request a review to gather early feedback from beta users. 
