@@ -9,11 +9,11 @@ redirect_from:
 
 # How deduplication works in Zapier
 
-Zapier automatically deduplicates incoming trigger data for your integration, so that Zaps do not run multiple times on the same data. Consider the following requirements for your New item and Updated item triggers to work as users expect. 
+Zapier automatically deduplicates incoming trigger data for your integration, so that Zaps do not run multiple times on the same data. Consider the following requirements for your "New Item" and "Updated Item" triggers to work as users expect. 
 
 - Provide a unique primary key.
-  - By default, the field with key `id` is used as the primary key.
-  - You can also define other fields as primary key by enabling `primary` in `outputFields`. See [Output Fields](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#output-fields) in the CLI docs.
+  - By default, the field with the key `id` is used as the primary key.
+  - Alternatively, if you're using the CLI, you can choose other fields as the primary key by enabling `primary` in `outputFields`. See [more information](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#how-does-deduplication-work) in the CLI docs.
 - Sort reverse-chronologically by time created.
 
 The API endpoint must list new or updated items in an array sorted in reverse chronological order.
@@ -94,11 +94,13 @@ One possible scenario could be:
 
 When adding additional requests to your custom code, all requests and processing code for a trigger must [finish within 30 seconds](https://platform.zapier.com/build/operating-constraints#timeouts-triggers). It is not recommended to attempt to fetch all pages of results.
 
-If the items your API returns do not have an `id` field or you're adding an Updated item trigger, you will use [Code Mode](https://platform.zapier.com/build/code-mode) to modify the API response.
+If the items your API returns do not have an `id` field or you're adding an Updated Item trigger, you will use [Code Mode](https://platform.zapier.com/build/code-mode) to modify the API response.
 
-## Custom ID fields
+## Custom primary keys
 
-In older, [legacy Zapier Web Builder apps](https://platform.zapier.com/manage/versions-legacy), Zapier guessed if `id` wasn't present. It is now required that an `id` field is present. If your API's items have a differently-named unique field, adapt this code snippet to ensure this test passes:
+In older, [legacy Zapier Web Builder apps](https://platform.zapier.com/manage/versions-legacy), Zapier guessed if `id` wasn't present. It is now required that you define one or more fields as the primary key.
+
+By default, Zapier uses the field with the key `id` as the primary key if no `outputFields` has `primary: true`. The `id` field would be required in this case. Otherwise, your trigger would run into an error at runtime. If your API's items have a differently-named unique field, adapt this code snippet to ensure this test passes:
 
 {% highlight javascript %}
 {% raw %}
@@ -111,8 +113,9 @@ return items.map((item) => {
 {% endraw %}
 {% endhighlight %}
 
+Alternatively, if you're using the CLI, you can use non-id fields as the primary key. See ["How does deduplication work?"](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#how-does-deduplication-work) in the CLI docs for example code.
 
-## Updated item triggers
+## Updated Item triggers
 
 When triggering on updated items, you'll want to define the `id` field to be used for deduplication. Assuming your task API has an endpoint that can return tasks sorted by `updatedAt` in descending direction, here's example code to incorporate the `updatedAt` value with the `id`, so that Zapier recognizes a new update as a new item. Assuming that you have configured `options` with the appropriate API request URL and parameters:
 
@@ -132,3 +135,5 @@ return z.request(options)
 {% endhighlight %}
 
 Notice how the code preserves the original `id` value before setting `id` to a new combined value that is unique for every update of a task. This is useful to ensure that the original ID can still be used for other purposes, such as performing a search or associating records together.
+
+Alternatively, if you're using the CLI, you can set `primary: true` for the `id` and `updatedAt` fields. See ["How does deduplication work?"](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#how-does-deduplication-work) in the CLI docs for example code.
