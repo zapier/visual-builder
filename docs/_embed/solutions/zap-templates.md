@@ -32,3 +32,5 @@ Find the Zap Templates generator under Embed on the left-hand menu of your integ
 This video shows an example implementation of the Zap Templates element embedded within the Zoho Sheet platform to surface popular workflows for users to easily discover and create Zaps:
 
 <iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/hg0qtkr80v" width="640" height="360"></iframe>
+
+Explore more live examples and success stories in our [Partner Embed Gallery](https://zapier.com/developer-platform/partner-embeds).

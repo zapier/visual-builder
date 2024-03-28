@@ -52,6 +52,8 @@ Unbounce uses the `/zaps` endpoint to display users' Zaps using their integratio
 
 <iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/zhls72cz15" width="640" height="360"></iframe>
 
+Explore more live examples and success stories in our [Partner Embed Gallery](https://zapier.com/developer-platform/partner-embeds).
+
 ## Embed Zap editor with Partner API
 
 With an embedded Zap editor in your product, your users can create and edit their Zaps without leaving your app.

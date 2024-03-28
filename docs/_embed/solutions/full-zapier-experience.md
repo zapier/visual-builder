@@ -24,6 +24,8 @@ This video shows an example implementation of the Full Zapier Experience, and ho
 
 <iframe allowtransparency="true" title="Wistia video player" allowFullscreen frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" src="https://fast.wistia.net/embed/iframe/84kpi5zau6" width="640" height="360"></iframe>
 
+Explore more live examples and success stories in our [Partner Embed Gallery](https://zapier.com/developer-platform/partner-embeds).
+
 ## Customize
 
 The [generator](https://zapier.com/partner/solutions/plug-and-play) lets you customize the visual design and features of Zapier you want to include, and generate code snippets that can be copied and pasted directly into your site. Generate the embed code in HTML, Vanilla JS, React, Angular, or Vue.js 2. No engineering resources are required.

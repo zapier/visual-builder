@@ -23,6 +23,9 @@ Users can extend the power of your app when Zapier looks like an extension of yo
 
 To help your integration become more visible, try one or all of these options to begin connecting your users with Zapier’s {{site.partner_count}} integrations.
 
+### Explore examples of live embeds
+Head over to the [Partner Embed Gallery](https://zapier.com/developer-platform/partner-embeds) to see how other Partners have successfully utilized the various embed tools to showcase their integration, gain more users, and simplify how their users connect their app with thousands of other tools.
+
 ### Enable users to connect to Zapier faster through accelerated sign-ups
 **Why?** The [Quick Account Creation](https://platform.zapier.com/embed/quick-account-creation) feature allows you to make it easy for your users to sign up for a Zapier account while using your embed tool.
 **How?** Seamless user signups = more usage of your integration. Check how [Zapier Partner Adalo started using this feature](https://zapier.com/blog/adalo-user-experience-with-zapier/) and saw a 40 percent increase in users successfully creating Zaps. And it took less than a day to get set up!
