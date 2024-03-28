@@ -36,7 +36,7 @@ Use environment variables in any Zapier integration API call through the form's 
 Zapier will then replace that variable with the value for that key from your _Advanced_ settings and will use the correct value every time if you change it in the future.
 You can also reference environment variables in custom code if you switch your API call to code mode.
 
-## 3. Change Environment Variables
+## 3. Change environment variables
 ![Edit Zapier Environment Variables](https://cdn.zappy.app/2bbe32e1bcfd77c62a75fce5be6eb03a.png)
 _You can change environment variable values, but not the original keys_
 
@@ -47,5 +47,57 @@ To change an environment variable:
 2. Select your **integration**. 
 3. In the _Build_ section in the left sidebar, click **Advanced**.
 4. Edit the text in the **Values** column with the new variable values. You cannot edit the _Key_. If you need to change a key and its value, first delete the old key, then add a new one instead.
+
+## 4. Use environment variables for staging and production versions
+
+We strongly recommend against the use of an independent integration for staging purposes. By utilising [version control](https://platform.zapier.com/manage/versions ) and environment variables instead, the deployment, integration and user management processes (eg. migration) will be significantly improved for your integration. It also helps [Developer Support](https://developer.zapier.com/contact) establish exactly what you’re working on and identifying relevant logs.
+
+It is conventional to reserve one version for testing/staging and one version for production, setting the applicable environment variables under _Advanced_ in each. 
+
+If you want to be able to work with both environments in development in one version, one approach is the following:
+ 
+- Set environment variables for both domains you want to call
+- Set another environment variable for the domain you want to work with. For example, `key: ENVFLAG / value: staging`
+
+![image](https://cdn.zappy.app/e2820a532b072401560d6c6afd7c90f8.png)
+
+- Throughout the app, in [Code Mode](https://platform.zapier.com/build/code-mode), check the value of the latter variable and conditionally reference the corresponding domain environment variable. 
+
+For example:
+
+```bash
+let domain;
+
+if (process.env.ENVFLAG === "staging") {
+  domain = process.env.STAGING
+} else {
+  domain = process.env.PRODUCTION
+}
+
+const options = {
+  url: domain // conditional, depending on envFlag
+  method: 'POST',
+  headers: {
+    // headers
+  },
+  body: {
+    // body
+  }
+}
+```
+Thus, during development, you can toggle the value of one environment variable to conditionally call the corresponding domain. 
+
+However, once a version is pushed to production, the variables are fixed, so in the case of a [public app](https://platform.zapier.com/quickstart/private-vs-public-integrations) make sure to set the flag environment variable accordingly before promoting.
+
+## 5. Allow users to select an environment
+
+Certain apps need to allow users to select the domain during authentication.  To do so, create an [input field in the authentication form](https://platform.zapier.com/build/oauth#optional-input-form), allowing the user to pick which domain they want their connection to interact with.
+
+![image](https://cdn.zappy.app/8da73bce1eb9f7b20c018be357c765b1.png)
+
+![image](https://cdn.zappy.app/10bd5195508ba9d9cc43e711504f96be.png)
+
+Reference the user's selection with {% raw %}`{{bundle.authData.env_url}}`{% endraw %} throughout the integration to conditionally call the corresponding domain. 
+
 
 

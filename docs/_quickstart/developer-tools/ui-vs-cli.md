@@ -30,7 +30,7 @@ Platform CLI is a terminal-based app that allows builders to scaffold new integr
 
 To get started, check out the following resources:
 
-- [Quick start guide to using Platform CLI](https://platform.zapier.com/reference/cli-docs#quick-setup-guide)
+- [Quick start guide to using Platform CLI](https://platform.zapier.com/quickstart/cli-tutorial)
 - [Tutorial using Github's API to build with Platform CLI](https://developer.zapier.com/cli-guide/introduction)
 - [CLI documentation](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md)
 
@@ -96,12 +96,12 @@ If you are still unsure after reviewing our comparsion tables, Zapier advises to
 
 Yes, it is possible to switch your integration from Platform UI to Platform CLI.
 
-You can [export](https://platform.zapier.com/manage/export-integration) an existing Platform UI integration to Platform CLI. Once exported, you can customize your integration in your local development environment. You will still have access to view your integration in the Platform UI.
+You can [export](https://platform.zapier.com/manage/export-cli) an existing Platform UI integration to Platform CLI. Once exported, you can customize your integration in your local development environment. You will still have access to view your integration in the Platform UI.
 
-Before making this change, Zapier recommends to learn about more the user impact when [switching from Platform UI to Platform CLI](https://platform.zapier.com/manage/making-changes#converting-ui-to-cli).
+Before making this change, Zapier recommends learning more about possible user impacts when [making changes to your integration](https://platform.zapier.com/manage/planning-changes).
 
 ### Platform CLI to Platform UI
 
-It's not possible to export an integration from Platform CLI to Platform UI. 
+It's not possible to directly export an integration from Platform CLI to Platform UI.
 
-You would need to create a new integration in the Platform UI, which means existing customers would need to update their Zaps to use your new integration. Learn more about [this process and best practices to minimize user impact](https://platform.zapier.com/manage/making-changes#converting-cli-to-ui).
+You would need to create a new integration version built in the Platform UI. Existing users would most likely need to manually update their Zaps to use the new version. Learn more about [this process and best practices to minimize user impact](https://platform.zapier.com/manage/export-ui) and contact [Developer Support](https://developer.zapier.com/contact) with any questions.

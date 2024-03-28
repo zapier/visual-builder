@@ -49,4 +49,8 @@ To deprecate an integration version use the command `zapier deprecate`. Learn mo
 
 You have the option to delete versions entirely, but exercise this option with extreme caution. Deleting a version makes it permanently inaccessible, both to you and to your users. Deleted versions cannot be restored by Zapier Developer Support. 
 
-In most scenarios, it’s advisable either to deprecate the version or leave it as a private version. Deletion should be a last resort, used only when you are certain that the version will never be needed again. Deletion is also only possible when 0 users remain on a version. 
+In most scenarios, it’s advisable either to deprecate the version or leave it as a private version. Deletion should be a last resort, used only when you are certain that the version will never be needed again. 
+
+Deletion is also only possible when 0 users remain on a version. The count of users on the _Versions_ page includes live Zaps only. If you're seeing the error `Unable to delete app version`, this can be caused by users on that version not included in the visible count (paused Zaps, app authentications for example).
+
+![image](https://cdn.zappy.app/1722db1a2658ec77e47f5d4de58720ff.png)

@@ -11,7 +11,7 @@ Before making updates to your integration, it's important to consider the potent
 
 ## Effects of Different Changes (Versioning Matrix)
 
-The matrix below illustrates the impact of different changes on ypur users. For public integrations, this will affect promotion and whether migration is possible. Refer to our best practices to facilitate the upgrade process for yourself and your users.
+The matrix below illustrates the impact of different changes on your users. For public integrations, this will affect promotion and whether migration is possible. Refer to our best practices to facilitate the upgrade process for yourself and your users.
 
 Columns:
 * Add: Adding a net new component
