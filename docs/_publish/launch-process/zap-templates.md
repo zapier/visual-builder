@@ -224,12 +224,12 @@ When creating a Zap template, you typically map data between steps by selecting 
 **Step 3: Combine step position and field name**
 
 - Once you have both the step position and field name, you can combine them to create a custom pill
-- Start with 2 open curly braces ``{{`
-- Add the step position folllowed by 2 underscores `__`
+- Start with 2 open curly braces {% raw %}`{{`{% endraw %}
+- Add the step position folllowed by 2 underscores {% raw %}`__`{% endraw %}
 - Next, add the field name
-- Finally, finish with 2 closed curly braces `}}`
+- Finally, finish with 2 closed curly braces {% raw %}`}}`{% endraw %}
 
-Example: the `eventType` field isn’t returned in the sample data for Google Calendar > New Event. If you want to map that field in a Zap template, you can do so using the custom pill `{{1__eventType}}`.
+Example: the `eventType` field isn’t returned in the sample data for Google Calendar > New Event. If you want to map that field in a Zap template, you can do so using the custom pill {% raw %}`{{1__eventType}}`{% endraw %}.
 
 **Step 4: Insert custom pill**
 
@@ -240,7 +240,7 @@ Example: the `eventType` field isn’t returned in the sample data for Google Ca
 - Custom pills work in both Zap templates and regular Zaps. [Learn more about creating custom pills in Zaps](https://community.zapier.com/featured-articles-65/how-to-manually-map-fields-that-do-not-appear-in-the-sample-data-aka-custom-pill-mapping-9738).
 - Custom pills will only work when a live Zap run returns the field used in the custom pill. If the field isn't returned during a live Zap run, fields where the custom pill has been mapped will remain empty
 - The methodology described above only works for top-level fields. If a field is nested under another field (or multiple fields), each nest would be separated by double underscores.
-- For example, if the trigger returned the following and you wanted to retrieve the response for question 3, your custom pill would look like this: `{{1__questions__3}}`
+- For example, if the trigger returned the following and you wanted to retrieve the response for question 3, your custom pill would look like this: {% raw %}`{{1__questions__3}}`{% endraw %}
 
 ![Screenshot showing nested fields](https://cdn.zappy.app/a64282d282a776319c77cc73f7aa504f.png)
 
