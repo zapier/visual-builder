@@ -40,6 +40,9 @@ Problems with your public integration, authentication and API calls will be logg
 
 - Allocate ongoing resources in your team’s product roadmap for the maintenance of your Zapier integration to avoid surprise work or gaps in functionality. Consider a [Zapier Expert](https://zapier.com/experts/matchmaking) to help you fix one-off bugs or maintain your integration.
 
+### Dormant Issues
+Any reported issue with no updates from you, Zapier Support, or end users for a year will now be automatically closed. This keeps your workspace current and focused, making it simpler to stay on top of active issues.
+
 ## 3. Close resolved issues
 
 - Bugs and feature requests require review and verification from Zapier's Support team before they can be closed. When an issue is closed, email notifications are sent out to all affected users on the issue, notifying them of the update.
