@@ -4,6 +4,7 @@ order: 3
 layout: post
 redirect_from: 
     - /embed/faq
+    - /embed/faqs
 ---
 
 # Security
