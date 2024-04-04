@@ -1,6 +1,6 @@
 ---
 title: Zapier Partner Sandbox
-order: 4
+order: 5
 layout: post-toc
 ---
 
@@ -19,8 +19,8 @@ Zapier Partner Sandbox is a workspace for people in your organization who are on
 
 Zapier Partner Sandbox does not include premium features for Zapier Tables or Zapier Interfaces.
 
-## Who’s eligible for Zapier Partner Sandbox?
-Any Admin or Collaborator on a public integration team can request access to Zapier Partner Sandbox.
+## Who is eligible for Zapier Partner Sandbox?
+Each Admin or Collaborator on a public integration team can request access to Zapier Partner Sandbox.
 
 ## How to apply for Zapier Partner Sandbox
 Write into `partners@zapier.com` requesting access, we'll be happy to help!
