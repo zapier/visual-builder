@@ -243,93 +243,119 @@ You also cannot prefill an action field with data returned from the trigger. In 
 
 There are two ways to authenticate to the Partner API.
 
-1. Your application's `client_id` which is available once you are approved for access to the API by publishing your app in Zapier's [App Directory](https://platform.zapier.com/quickstart/private-vs-public-integrations). 
+1. Your application's `client_id` which is available once you are approved for access to the API by publishing your app in Zapier's [App Directory](https://platform.zapier.com/quickstart/private-vs-public-integrations). This method only works for certain `v1` endpoints.
 2. A user's access token
 
 The authentication method you should use depends on which endpoint(s) you are using. Review each endpoint's documentation to understand which parameters are required.
 
-> Note: while we do generate a `client_secret`, the type of grant we use (`implicit`) doesn't need it so it is not provided to you. 
 
 #### Access token
 
-For resources that require a valid access token you can use the [OAuth2 protocol](https://oauth.net/2/). At the moment, we only permit the [`implicit`](Fworkaround) grant type. Should your use case require a different grant type [send us your request](mailto:partners@zapier.com). There's also a [suggested workaround on how to work with an implicit oauth flow below](#workaround-for-implicit-only).
+The Zapier Partner API uses [OAuth 2.0 authentication with the authorization code grant type](https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type). At the end of the Oauth authentication code flow, you'll get a user access token that you'll pass in a header with each API request.
 
-##### Procuring a token
+##### Prerequisite 1: Configure a redirect URI
 
-Construct the following URL, and redirect the user to authorize your application:
+> You will only be able to configure redirect URIs after you've published your app as a [public integration in Zapier's App Directory](https://platform.zapier.com/quickstart/private-vs-public-integrations).
 
+
+You can configure one (or multiple) **redirect URIs** in the [Zapier Developer Platform](https://developer.zapier.com/) under `Embed`→`Settings`→`Redirect URIs`
+
+![Configure redirect URIs](https://cdn.zappy.app/f8fbb9cf76864f457a0132b7eb8db196.png)
+
+##### Prerequisite 2: Get your Client ID and Client Secret
+>Your application's **Client ID** and **Client Secret** are only available after you've published your app as a [public integration in Zapier's App Directory](https://platform.zapier.com/quickstart/private-vs-public-integrations).
+
+You can find your **Client ID** and **Client Secret** in the [Zapier Developer Platform](https://developer.zapier.com/) under `Embed`→`Settings`→`Credentials`
+
+![Client ID and Secret](https://cdn.zappy.app/cb3660c17a3d26b36f438ab80c0860d5.png)
+
+---
+
+##### 1. Determine which OAuth scopes are required for your use case
+The various endpoints of the Zapier Partner API require different OAuth scopes. See the [API Reference](https://docs.api.zapier.com/api#/7b2a64020b290-get-actions) for documentation regarding which OAuth scopes are required by which endpoints.
+![OAuth Scope documentation example](https://cdn.zappy.app/9eb87de28fe59000353b78d594dad17e.png)
+
+##### 2. Initiate the OAuth flow and get the user's permission.
+Construct a URL like the one below (with your own redirect url, client id, OAuth scopes, etc.) and open a browser to that URL.
+```js
+https://zapier.com/oauth/authorize
+    ?response_type=code
+    &client_id={YOUR_CLIENT_ID}
+    &redirect_uri={YOUR_REDIRECT_URI}
+    &scope={YOUR_OAUTH_SCOPES}
+    &response_mode=query
+    &state={RANDOM_STRING}
 ```
-https://zapier.com/oauth/authorize/?client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}
-```
+Here's an explanation for each query parameter:
+* `response_type=code` - This tells the authorization server that the application is initiating the authorization code flow.
+* `client_id` - The public identifier for your application. This will be the same client id that you retrieved earlier.
+* `redirect_uri` - Tells Zapier's authorization server where to send the user back to after they approve the request. This should be the redirect URI that you configured earlier.
+* `scope` - One or more space-separated strings indicating which permissions your application is requesting. The OAuth scopes required for specific endpoints are documented in the Partner API Reference.
+* `state` - Your application generates a random string and includes it in the request. It should then check that the same value is returned after the user authorizes the app. This is used to prevent CSRF attacks.
 
-|      Parameter      | Requirement | Explanation                                                                                                                                                                                                         |
-| :-----------------: | :---------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|    **client_id**    |  Required   | Your application ID.                                                                                                                                                                                                |
-|  **redirect_uri**   |  Required   | The URI you provided in the sign-up form. If you need to modify this, you'll need to [send us a request](mailto:partners@zapier.com).                                                                               |
-|  **response_type**  |  Required   | Use `token`.                                                                                                                                                                                                        |
-|      **scope**      |  Optional   | Space (`%20`) separated values. See each resource for their required scope, if any. This (and all other params) should be properly [url encoded](https://en.wikipedia.org/wiki/Percent-encoding).                   |
-| **approval_prompt** |  Optional   | One of `auto` or `force`. Use `auto` if the second authorization (before expiration of previous token) should not prompt the user to re-authorize. Use `force` if the user should authorize your application again. |
-|      **state**      |  Optional   | A unique string to help your application guard against XSRF.                                                                                                                                                        |
-
-**Example Prompt**
-
-![Example OAuth2 Authorization Prompt](https://cdn.zapier.com/storage/photos/d926ea5ba6ca80c184a45cf3f5e420fb.png)
-
-##### Receiving the token, or error
-
-If the user cancels, or approves the authorization the user will be redirected to your `redirect_uri` with the following example urls:
-
-**Approved**
-
-```
-http://your.redirect.url/#access_token=iuqhw8egojqenduvybtoken_type=Bearer&expires_in=36000&scope=zap
-```
-
-**Cancelled**
-
-```
-http://your.redirect.url/?error=access_denied
-```
-
-Your application should use JavaScript to parse the hash parameter and use the token as needed. The **access token will not expire**. If ever invalid, however, provide the user with the authorize flow once more. In the `implicit` grant type, there are no refresh tokens. You can use a hidden iframe with `approval_prompt=auto`, or ask the user to authorize once more, to receive new tokens.
-
-##### Using the token
-
-Preferred use of the tokens is via an HTTP Authorization Header.
-
-```bash
-curl -H "Authorization: Bearer {token}" "https://api.zapier.com/v1/zaps"
-```
-
-##### Workaround for Implicit only
-
-While we consider and implement other OAuth flows, the following sequence diagram is a suggested workaround for working with the implicit OAuth flow.
-
-![](https://cdn.zapier.com/storage/photos/505e5f9b46d6f45822ae4090f7dcec8d.png)
-
-<div style="display: none">
-
-```mermaid
-sequenceDiagram
-    participant Your App's Dashboard
-    participant Zapier
-    participant Your App's Proxy (Read/POST Token)
-    participant Your App's Backend
-
-
-    Your App's Dashboard ->> Zapier: Redirect user to /oauth/authorize
-    Zapier -->> Your App's Proxy (Read/POST Token): Once approved we'll redirect to redirect_uri
-
-    Your App's Proxy (Read/POST Token) ->> Your App's Backend: Read token in URL fragment, and POSTs token to backend
-    Your App's Backend-->> Your App's Proxy (Read/POST Token): On 200 success
-    Your App's Proxy (Read/POST Token) ->> Your App's Dashboard: Redirect user back to the dashboard
+A full example would be:
+```js
+https://zapier.com/oauth/authorize
+  ?response_type=code
+  &client_id=5672067294567789354752
+  &redirect_uri=https%3A%2F%2Fyour-app.com%2Fcallback
+  &scope=zap%20zap:write%20authentication
+  &response_mode=query
+  &state=tney4952
 ```
 
-</div>
+When the user visits this URL, Zapier's authorization server will present them with a prompt asking if they would like to authorize your application's request.
+![OAuth prompt example](https://cdn.zappy.app/a58205b77ec7e6aa52226354af296125.png)
 
-The idea is to use an intermediate page that reads the access token from the URL fragment. An example like so: `https://your.app/your/redirect_uri#access_token=THE_USER_ACCESS_TOKEN`. The page then `POSTs` the access token to your backend. 
 
-If you created a popup, you can also use a `postMessage` to pass the access token to the main page. Ultimately, you'll want to save the token to your backend for the signed-in user. Once the backend returns a successful save, redirect the user (or close the popup) back to the page you'd like the user to interact with in your app and use the access token.
+##### 3. Receive a Redirect at your Redirect URI
+If the user approves the above request, then Zapier's authorization server will redirect the browser back to the `redirect_uri` that you specified and configured earlier. Two query string parameters, `code` and `state` will also be included.
+
+For example, the browser would be redirected to:
+```js
+https://your-app.com/redirect
+    ?code=dfJ2KuL0vKLRCwQIOL5NDGKQ&H9mlc
+    &state=tney4952
+```
+* The `code` value is the **authorization code** generated by Zapier's authorization server. In the next step, you'll exchange this code for an access token. Keep in mind that authorization codes are only valid for 2 minutes, and you'll need to do the exchange within that window of time to avoid errors.
+* The `state` value should match the state query parameter that you used in step 2. Your application should verify that these values match.
+
+##### 4. Exchange authorization code for an access token
+The final step is to exchange the **authorization code** that you just recieved for an **access token** that can be used to make authorized requests to the Zapier Partner API. You make the exchange with a `POST` request to Zapier's token endpoint `https://zapier.com/oauth/token/`.
+
+Below is an example of a cURL request that can be used to do the exchange. Though, in reality, you would make the exchange request in your application code.
+```cURL
+curl -v -u {CLIENT_ID}:{CLIENT_SECRET} \
+-d "grant_type=authorization_code&code={AUTHORIZATION_CODE}&redirect_uri={REDIRECT_URI}" \
+https://zapier.com/oauth/token/
+```
+* `CLIENT_ID` - This will be the same client id that you retrieved earlier.
+* `CLIENT_SECRET` - This is a secret known only to your application and the authorization server. It will be the same client secret that you retrieved earlier.
+* `AUTHORIZATION_CODE` - This is the authorization code you received in the above step.
+* `REDIRECT_URI` - This should be the redirect URI that you configured earlier.
+
+You'll receive a response that looks like this:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+Cache-Control: no-store
+Pragma: no-cache
+
+{
+  "access_token": "jk8s9dGJK39JKD93jkd03JD",
+  "expires_in": 36000,
+  "token_type": "Bearer",
+  "scope": "zap zap:write authentication",
+  "refresh_token": "9D9oz2ZzaouT12LpvklQwNBf6s4vva"
+}
+```
+🎉 This response contains the access token that you'll use to make API request on the user's behalf.
+
+##### 5. Using the access token
+The access token should be passed with requests an `Authorization` header. For example:
+```
+Authorization: Bearer jk8s9dGJK39JKD93jkd03JD
+```
 
 ### Endpoints
 
