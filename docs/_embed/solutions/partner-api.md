@@ -272,8 +272,8 @@ You can find your **Client ID** and **Client Secret** in the [Zapier Developer P
 ---
 
 ##### 1. Determine which OAuth scopes are required for your use case
-The various endpoints of the Zapier Partner API require different OAuth scopes. See the [API Reference](/api-reference/actions/get-actions) for documentation regarding which OAuth scopes are required by which endpoints.
-![OAuth Scope documentation example](https://cdn.zappy.app/3667a31edfb56bc1187739d8b1303c5c.png)
+The various endpoints of the Zapier Partner API require different OAuth scopes. See the [API Reference](https://docs.api.zapier.com/api#/7b2a64020b290-get-actions) for documentation regarding which OAuth scopes are required by which endpoints.
+![OAuth Scope documentation example](https://cdn.zappy.app/9eb87de28fe59000353b78d594dad17e.png)
 
 ##### 2. Initiate the OAuth flow and get the user's permission.
 Construct a URL like the one below (with your own redirect url, client id, OAuth scopes, etc.) and open a browser to that URL.
