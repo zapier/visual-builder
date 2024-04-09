@@ -324,7 +324,7 @@ https://your-app.com/redirect
 The final step is to exchange the **authorization code** that you just recieved for an **access token** that can be used to make authorized requests to the Zapier Partner API. You make the exchange with a `POST` request to Zapier's token endpoint `https://zapier.com/oauth/token/`.
 
 Below is an example of a cURL request that can be used to do the exchange. Though, in reality, you would make the exchange request in your application code.
-```cURL
+```sh
 curl -v -u {CLIENT_ID}:{CLIENT_SECRET} \
 -d "grant_type=authorization_code&code={AUTHORIZATION_CODE}&redirect_uri={REDIRECT_URI}" \
 https://zapier.com/oauth/token/
@@ -353,7 +353,17 @@ Pragma: no-cache
 }
 ```
 🎉 This response contains the access token that you'll use to make API request on the user's behalf, as well as a
-refresh token which should be stored securely for later use.
+refresh token. Both should be stored securely, to protect your users' privacy.
+
+The refresh token in particular must be secured, since it would allow a nefarious entity to generate access tokens
+indefinitely:
+
+- The refresh token MAY NOT be stored in localStorage
+- The refresh token MAY NOT be stored in sessionStorage
+- The refresh token MAY NOT be stored in indexedDB
+- The refresh token MAY NOT be stored in a regular cookie
+- The refresh token MAY be stored in a Secure; HTTPOnly cookie
+- The refresh token MAY be stored in a server side database, only accessible to the current user
 
 ##### 5. Using the access token
 The access token should be passed with requests as an `Authorization` header. For example:
@@ -367,7 +377,7 @@ that point, any request using that access token will return a 401 status code. T
 exchanged for a new access token _and_ a new refresh token. This will not require any interaction by the user.
 
 Below is an example request that can be used:
-```cURL
+```sh
 curl -v -u {CLIENT_ID}:{CLIENT_SECRET} \
 -d "grant_type=refresh_token&refresh_token={REFRESH_TOKEN}" \
 https://zapier.com/oauth/token/
