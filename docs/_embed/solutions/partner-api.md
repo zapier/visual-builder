@@ -403,8 +403,8 @@ Pragma: no-cache
 ```
 
 Note that you will receive a _new_ refresh token - the old refresh token can no longer be used again, and so the
-new refresh token should be stored securely for future use. Refresh tokens do have an expiration date - they only expire
-when they are used to get a new access token.
+new refresh token should be stored securely for future use. Refresh tokens don't have an expiration date - they only
+expire when they are used to get a new access token.
 
 ### Endpoints
 
