@@ -358,12 +358,12 @@ refresh token. Both should be stored securely, to protect your users' privacy.
 The refresh token in particular must be secured, since it would allow a nefarious entity to generate access tokens
 indefinitely:
 
-- The refresh token MAY NOT be stored in localStorage
-- The refresh token MAY NOT be stored in sessionStorage
-- The refresh token MAY NOT be stored in indexedDB
-- The refresh token MAY NOT be stored in a regular cookie
-- The refresh token MAY be stored in a Secure; HTTPOnly cookie
-- The refresh token MAY be stored in a server side database, only accessible to the current user
+- The refresh token **MAY NOT** be stored in localStorage
+- The refresh token **MAY NOT** be stored in sessionStorage
+- The refresh token **MAY NOT** be stored in indexedDB
+- The refresh token **MAY NOT** be stored in a regular cookie
+- The refresh token **MAY** be stored in a Secure; HTTPOnly cookie
+- The refresh token **MAY** be stored in a server side database, only accessible to the current user
 
 ##### 5. Using the access token
 The access token should be passed with requests as an `Authorization` header. For example:
