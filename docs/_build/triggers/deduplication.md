@@ -98,7 +98,7 @@ If the items your API returns do not have an `id` field or you're adding an Upda
 
 ## Custom primary keys
 
-In older, [legacy Zapier Web Builder apps](https://platform.zapier.com/manage/versions-legacy), Zapier guessed what fields make a unique key if `id` wasn't present. It is now required that you define one or more fields as the primary key.
+In older, [legacy Zapier Web Builder apps](https://platform.zapier.com/manage/versions-legacy), Zapier guessed what fields made a unique key if `id` wasn't present. It is now required that you define one or more fields as the primary key.
 
 By default, Zapier uses the field with the key `id` as the primary key if no `outputFields` has `primary: true`. The `id` field would be required in this case. Otherwise, your trigger would run into an error at runtime. If your API's items have a differently-named unique field, adapt this code snippet to ensure this test passes:
 
