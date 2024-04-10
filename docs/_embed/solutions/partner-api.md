@@ -324,7 +324,7 @@ https://your-app.com/redirect
 The final step is to exchange the **authorization code** that you just recieved for an **access token** that can be used to make authorized requests to the Zapier Partner API. You make the exchange with a `POST` request to Zapier's token endpoint `https://zapier.com/oauth/token/`.
 
 Below is an example of a cURL request that can be used to do the exchange. Though, in reality, you would make the exchange request in your application code.
-```cURL
+```sh
 curl -v -u {CLIENT_ID}:{CLIENT_SECRET} \
 -d "grant_type=authorization_code&code={AUTHORIZATION_CODE}&redirect_uri={REDIRECT_URI}" \
 https://zapier.com/oauth/token/
@@ -333,6 +333,9 @@ https://zapier.com/oauth/token/
 * `CLIENT_SECRET` - This is a secret known only to your application and the authorization server. It will be the same client secret that you retrieved earlier.
 * `AUTHORIZATION_CODE` - This is the authorization code you received in the above step.
 * `REDIRECT_URI` - This should be the redirect URI that you configured earlier.
+
+Note that, in addition to client id and secret being passed as a Basic Authentication header as above, they can be
+passed as part of the body, using the keys `client_id` and `client_secret`.
 
 You'll receive a response that looks like this:
 ```
@@ -349,13 +352,59 @@ Pragma: no-cache
   "refresh_token": "9D9oz2ZzaouT12LpvklQwNBf6s4vva"
 }
 ```
-🎉 This response contains the access token that you'll use to make API request on the user's behalf.
+🎉 This response contains the access token that you'll use to make API request on the user's behalf, as well as a
+refresh token. Both should be stored securely, to protect your users' privacy.
+
+The refresh token in particular must be secured, since it would allow a nefarious entity to generate access tokens
+indefinitely:
+
+- The refresh token **MAY NOT** be stored in localStorage
+- The refresh token **MAY NOT** be stored in sessionStorage
+- The refresh token **MAY NOT** be stored in indexedDB
+- The refresh token **MAY NOT** be stored in a regular cookie
+- The refresh token **MAY** be stored in a Secure; HTTPOnly cookie
+- The refresh token **MAY** be stored in a server side database, only accessible to the current user
 
 ##### 5. Using the access token
-The access token should be passed with requests an `Authorization` header. For example:
+The access token should be passed with requests as an `Authorization` header. For example:
 ```
 Authorization: Bearer jk8s9dGJK39JKD93jkd03JD
 ```
+
+##### 6. Refreshing the access token
+All access tokens will expire after 10 hours (the number of seconds in `expires_in`), for security purposes. After
+that point, any request using that access token will return a 401 status code. To proceed, the refresh token should be
+exchanged for a new access token _and_ a new refresh token. This will not require any interaction by the user.
+
+Below is an example request that can be used:
+```sh
+curl -v -u {CLIENT_ID}:{CLIENT_SECRET} \
+-d "grant_type=refresh_token&refresh_token={REFRESH_TOKEN}" \
+https://zapier.com/oauth/token/
+```
+* `CLIENT_ID` - This will be the same client id that you retrieved earlier.
+* `CLIENT_SECRET` - This is a secret known only to your application and the authorization server. It will be the same client secret that you retrieved earlier.
+* `REFRESH_TOKEN` - This is the refresh token code you received with the access token.
+
+You'll receive a response that looks like this:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+Cache-Control: no-store
+Pragma: no-cache
+
+{
+  "access_token": "NEfSRKpUjVd3Nj9yyaXKs15BrM7SVA",
+  "expires_in": 36000,
+  "token_type": "Bearer",
+  "scope": "zap zap:write authentication",
+  "refresh_token": "zzdumGAW2TmayeKjzu0z9oHJiziKdn"
+}
+```
+
+Note that you will receive a _new_ refresh token - the old refresh token can no longer be used again, and so the
+new refresh token should be stored securely for future use. Refresh tokens don't have an expiration date - they only
+expire when they are used to get a new access token.
 
 ### Endpoints
 
