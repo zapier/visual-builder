@@ -53,7 +53,7 @@ Any reported issue with no updates from you, Zapier Support, or end users for a 
 
 ![Changelog Form with Issues](https://cdn.zappy.app/8afba17ecfb25faf6b87597e2cd54387.png)
 
-- You can also request issues to be closed manually by updating their statuses to `Done`. Make sure updates are deployed and promoted to the lastest version of your integration before marking issues as `Done`, as it will be reviewed by a Zapier support member. See the [`Utilizing issue statuses` section](https://platform.zapier.com/manage/user-feedback#utilizing-issue-statuses) below for more details and best practices.
+- You can also request issues to be closed manually by updating their statuses to `Done`. Make sure updates are promoted to the latest version of your integration, and users are migrated if possible before marking issues before marking issues as `Done`, as it will be reviewed by a Zapier support member. See the [`Utilizing issue statuses` section](https://platform.zapier.com/manage/user-feedback#utilizing-issue-statuses) below for more details and best practices.
 
 ## 4. Consider Zapier Issue Manager
 
@@ -121,4 +121,4 @@ Once an issue is resolved, update the issue status to `Done`. You will be prompt
 * _Duplicate_: The issue is a duplicate of another issue. Please note the duplicate issue in the required comment.
 * _Cannot Reproduce_: All attempts at reproducing this issue failed.
 
-All issues marked `Done` are reviewed by the Zapier team for accuracy and completion. Any necessary explanation or feedback will be provided via comments on respective the issues after the internal review.
+All issues marked `Done` are reviewed by the Zapier team for accuracy and completion. Any necessary explanation or feedback will be provided via comments on respective issues after the internal review. Please respond with questions or concerns on the appropriate issue to keep discussions clear.
