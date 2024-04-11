@@ -53,7 +53,7 @@ To add a CRM app integration in the Platform UI:
 
 - For REST hook triggers, ensure that when relational data is reapplied to a record, your app sends Zapier that updated record.
 
-- For polling triggers, to account for [deduplication](https://platform.zapier.com/build/dedupe), you will need to customize your API call's code to [add a timestamp](https://platform.zapier.com/build/dedupe#custom-or-multiple-id-fields) to the `id` field that is used for deduplication to trigger the Zap each time the record is updated.
+- For polling triggers, to account for [deduplication](https://platform.zapier.com/build/deduplication), you will need to customize your API call's code to ensure each record has a unique primary key (usually an `id` field). This could mean [copying a unqiue timestamp](https://platform.zapier.com/build/deduplication#custom-primary-keys) to the `id` field or [setting `primary` to true](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#how-does-deduplication-work) for some output fields.
 
 ### Include linked information in trigger response
 

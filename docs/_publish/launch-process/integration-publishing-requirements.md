@@ -195,7 +195,7 @@ Live Zaps with [polling triggers](https://platform.zapier.com/build/trigger) aut
 * Return results from the polling URL in reverse chronological order by created date, so the most recently created or updated object is returned first. 
 * Return a sufficient amount of items from the polling endpoint. Generally, 100 items is plenty for most integrations, but there are cases where it’s common for users to perform an action in your app that would trigger more than 100+ records at once. Note that a trigger with more than 100 new items returned in a poll will run into the [polling trigger throttle](https://platform.zapier.com/build/operating-constraints#polling-trigger-throttle-zapier).
 * Use [pagination](https://platform.zapier.com/build/trigger#how-to-use-pagination) on the trigger results if large amounts of data will be returned.
-* Each result should contain an explicit `id` field for [deduplication](https://platform.zapier.com/build/dedupe) from the polling endpoint.
+* Each result should contain a unique primary key (usually an `id` field) for [deduplication](https://platform.zapier.com/build/dedupe) from the polling endpoint.
 
 ### 4.5 REST Hooks
 [REST hook-based triggers](https://platform.zapier.com/build/trigger) are Zapier’s preferred implementation of triggers, since they fire immediately after the triggering action is performed. Here’s a [post](https://zapier.com/engineering/introducing-resthooksorg/) further describing why we and our mutual users prefer REST hook triggers over polling triggers.
