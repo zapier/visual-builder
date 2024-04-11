@@ -40,6 +40,8 @@ Problems with your public integration, authentication and API calls will be logg
 
 - Allocate ongoing resources in your team’s product roadmap for the maintenance of your Zapier integration to avoid surprise work or gaps in functionality. Consider a [Zapier Expert](https://zapier.com/experts/matchmaking) to help you fix one-off bugs or maintain your integration.
 
+- Keep issue statuses up-to-date as you regularly review, triage, and address your integration's issues. See the [`Utilizing issue statuses` section](https://platform.zapier.com/manage/user-feedback#utilizing-issue-statuses) below for more details and best practices.
+
 ### Dormant Issues
 Any reported issue with no updates from you, Zapier Support, or end users for a year will now be automatically closed. This keeps your workspace current and focused, making it simpler to stay on top of active issues.
 
@@ -51,9 +53,7 @@ Any reported issue with no updates from you, Zapier Support, or end users for a 
 
 ![Changelog Form with Issues](https://cdn.zappy.app/8afba17ecfb25faf6b87597e2cd54387.png)
 
-- You can also request issues to be closed manually by selecting one in the "Bugs & Feature Requests" tab of the developer platform, and leaving a comment to our Support team that the issue has been resolved. Provide info on what version number the fix is on, how to test the updates, and any other helpful callouts.
-
-- Once an issue is reviewed, it will either be closed or responded to with follow-up questions and feedback.
+- You can also request issues to be closed manually by updating their statuses to `Done`. Make sure updates are deployed and promoted to the lastest version of your integration before marking issues as `Done`, as it will be reviewed by a Zapier support member. See the [`Utilizing issue statuses` section](https://platform.zapier.com/manage/user-feedback#utilizing-issue-statuses) below for more details and best practices.
 
 ## 4. Consider Zapier Issue Manager
 
@@ -100,3 +100,25 @@ Any reported issue with no updates from you, Zapier Support, or end users for a 
 - Usage details for each trigger and action will show which functionalities are the most popular and being effectively utilized. 
 
 - Share access to the insights by [inviting collaborators](https://platform.zapier.com/manage/invite-team-member) to the integration without giving them permissions to make changes to it.
+
+## Utilizing issue statuses
+
+Maintaining accurate issue statuses during regular triage and review of your integration's issues is critical for keeping your integration healthy. Not only do statuses help your team track progress and build roadmaps, but they also signal your engagement and prompt reviews for fixed issues to the Zapier team.
+
+Available statuses:
+
+* _Open_: The issue is open and no action has been taken.
+* _Planned_: Work has been committed to address the issue, but has not started.
+* _In Progress_: This issue is being actively worked on.
+* _Done_: Work is completed, and the updates for the issue have been promoted.
+* _Under review_: Zapier is reviewing the work completed on the issue.
+* _Rejected_: After review, Zapier deemed the issue resolution not complete.
+
+Once an issue is resolved, update the issue status to `Done`. You will be prompted to select one of the following issue resolutions:
+
+* _Resolved_: Work is completed and updates have been promoted.
+* _Won’t Do_: This issue won't be actioned (i.e. not on the roadmap, not technically possible, etc.). A comment explaining why is required.
+* _Duplicate_: The issue is a duplicate of another issue. Please note the duplicate issue in the required comment.
+* _Cannot Reproduce_: All attempts at reproducing this issue failed.
+
+All issues marked `Done` are reviewed by the Zapier team for accuracy and completion. Any necessary explanation or feedback will be provided via comments on respective the issues after the internal review.
