@@ -39,8 +39,8 @@ When the checks are run, we'll give a brief blurb summarizing the violation (wit
 
 ## A001 - A Connected Account Exists
 
-To ensure you've tested auth, we require you to set up at least one
-connected account.
+To ensure you've tested auth, we require you to set up at least one connected
+account.
 
 ---
 
@@ -117,9 +117,9 @@ Website Dashboard to find your API Key.
 A Connection Label helps a customer remember which account they connected.
 It should be short and easily identifiable.
 
-For both [Platform UI](https://platform.zapier.com/build/auth#how-to-add-a-connection-label-to-authenticated-accounts)
-and [CLI](https://platform.zapier.com/reference/cli-docs#authentication), the connection
-label is a string. You can use any data returned by your test function.
+For both [Platform UI](https://platform.zapier.com/build/connection-label)
+and [CLI](https://platform.zapier.com/reference/cli-docs#connection-label), the
+connection label is a string. You can use any data returned by your test function.
 
 For instance, if a successful run of the auth test returns the following data:
 
@@ -190,9 +190,13 @@ sending an actual message in a Slack channel, which is disruptive.
 
 Instead, during testing, the Perform List (`performList`) operation fetches a
 (real) recent message using the provided URL for polling and uses it as the test result.
-The polling URL in a Rest Hook trigger is only used for testing during Zap setup..
+The polling URL in a REST Hook trigger is only used for testing during a Zap setup.
 
-It's very important that the data structure of the array delivered from a webhook and from the poll are identical. Typically, this means modifying a poll result so that it looks like a hook. If a poll has fields that a hook doesn't, the user may map them to a later action step, and when the Zap runs live, the value will be blank. This would cause errors or unexpected results for users.
+It's very important that the structure of an object from a webhook and from a poll
+are identical. Typically, this means modifying a poll result so that it looks like a
+hook. If a poll has fields that a hook doesn't, the user may map them to a later
+step, and when the Zap runs live, the value will be blank. This can cause errors
+or unexpected results for users.
 
 Let's walk through an example. Say we have a `New Contact` REST Hook trigger. When a
 new contact is created, Zapier gets a webhook that looks like this:
@@ -237,7 +241,8 @@ enclosing object.
 The polling result is not used when a user skips testing the Zap step. In that case,
 Zapier uses the sample data.
 
-See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
+See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on
+this.
 
 ---
 
@@ -246,8 +251,8 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 ## D007 - All URLs Should Be HTTPS
 
 When handling customer data (which all Zapier functions do), it's strongly
-encouraged that all communication take place securely. Using SSL is a big part
-of that, so ensure your URLs have HTTPS as their protocol.
+encouraged that all communication take place securely. Using SSL is a big part of
+that, so ensure your URLs have HTTPS as their protocol.
 
 If you need help setting up an SSL certificate for your API, we suggest
 [Let's Encrypt](https://letsencrypt.org/).
@@ -272,7 +277,7 @@ https://example.com/messages/subscribe
 
 A valid markdown link consists of a pair of square brackets with the link text
 paired with a pair of parentheses that have the link itself. See the
-[markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/) for
+[markdown cheatsheet](https://www.markdownguide.org/basic-syntax/#links) for
 more info.
 
 If you want to show a full link without actually linking to it, use backticks. This
@@ -316,33 +321,85 @@ examples for searching for a user are by name, email, and username.
 
 <a name="D010"></a><a name="D00010"></a>
 
-## D010 - Missing "ID" Field in Static Sample Data
+## D010 - Missing Primary Key Fields in Static Sample Data
 
-For polling triggers, the deduper uses the `id` field to decide if it's seen an
-object before. It can be any sort of string, but it's important that it's unique.
-If your object is returned with a differently named `id` field (such as
-`contact_id`), write code to rename it. Hooks are not deduped, so they're not
-required to have an `id`.
+For polling triggers, the deduper uses the primary key field(s) to decide if it's
+seen an object before. You can define one or more output fields as the primary key.
+Each field can be a string or a number. But it's important that the primary key is
+unique. If no fields are set as `primary`, the deduper will by default use the `id`
+field as the primary key.
 
-This check is similiar to `T002`. This check validates the static samples in
-your integration definition, while `T002` validates the live polling results
-in the Zap History.
+Hooks are not deduped, so they're not required to have a primary key.
+
+This check ensures the static samples in your integration definition contain the
+primary key fields. It's similar to `T002`. The difference is that `T002` validates
+the live polling results in the Zap History.
 
 ✘ an example of an **incorrect** implementation:
 
-```json
+```jsonc
 {
-  "contact_id": 4,
-  "contact_name": "David"
+  // The deduper uses `id` field by default if no output fields are `primary`.
+  // So this sample should have an `id` field for it to pass.
+  "sample": {
+    "contact_id": 4,
+    "contact_name": "David"
+  }
 }
 ```
 
-✔ an example of a **correct** implementation:
+```jsonc
+{
+  // `contact_id` is set as `primary`, but it's missing in the sample
+  "sample": {
+    "id": 4,
+    "contact_name": "David"
+  },
+  "outputFields": [
+    { "key": "contact_id", "primary": true },
+    { "key": "contact_name" }
+  ]
+}
+```
+
+✔ examples of a **correct** implementation:
 
 ```json
 {
-  "id": 4,
-  "contact_name": "David"
+  "sample": {
+    "id": 4,
+    "contact_name": "David"
+  }
+}
+```
+
+```jsonc
+{
+  // This example defines `contact_id` as the unique primary key.
+  "sample": {
+    "contact_id": 4,
+    "contact_name": "David"
+  },
+  "outputFields": [
+    { "key": "contact_id", "primary": true },
+    { "key": "contact_name" }
+  ]
+}
+```
+
+```jsonc
+{
+  // If multiple fields are unique together, you can set them as `primary`.
+  "sample": {
+    "repo": "zapier/zapier-platform",
+    "number": 1234,
+    "title": "Add this feature please"
+  },
+  "outputFields": [
+    { "key": "repo", "primary": true },
+    { "key": "number", "primary": true },
+    { "key": "title" }
+  ]
 }
 ```
 
@@ -379,9 +436,14 @@ user. If the label and help text are the same, they are considered redundant.
 
 ## D012 - Static Sample Is Required
 
-When a user sets up a trigger or action (create or search), they need sample data to be returned in order to have fields available to map in the subsequent steps. If testing the trigger returns no live results, we use static sample data as a fallback.
+When a user sets up a trigger or action (create or search), they need sample data to
+be returned in order to have fields available to map in the subsequent steps. If
+testing the trigger returns no live results, we use static sample data as a
+fallback.
 
-It's very important that the data structure of the response from the actual trigger/action request and in the sample data are identical. Otherwise, users could map fields that don't exist in the live results, which results in a broken Zap.
+It's very important that the data structure of the response from the actual
+trigger/action request and in the sample data are identical. Otherwise, users could
+map fields that don't exist in the live results, which results in a broken Zap.
 
 See [Sample Data](https://platform.zapier.com/build/sample-data) for more details on this.
 
@@ -391,7 +453,9 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 
 ## D013 - Connects to a Non-Existing Search
 
-[Search-Powered Fields](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#search-powered-fields) prompt users to set up a search step to populate the value of the field. It won't work if the search key you specify doesn't exist.
+[Search-Powered Fields](https://platform.zapier.com/reference/cli-docs#search-powered-fields)
+prompt users to set up a search step to populate the value of the field. It won't
+work if the search key you specify doesn't exist.
 
 ---
 
@@ -399,7 +463,10 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 
 ## D014 - Has a Search Connector, but No Dynamic Dropdown
 
-By design, to get the "Add a Search Step" button to appear for users in the Zap editor, an action needs both a search connector and a (valid) dynamic dropdown. If you can't provide a valid dropdown, you can instead point to a dummy trigger that always returns an empty array.
+By design, to get the "Add a Search Step" button to appear for users in the Zap
+editor, an action needs both a search connector and a (valid) dynamic dropdown. If
+you can't provide a valid dropdown, you can instead point to a dummy trigger that
+always returns an empty array.
 
 ✘ an example of an **incorrect** setup:
 
@@ -435,8 +502,13 @@ existing search or action. Otherwise, it won't work.
 
 ## D016 - Consists Only a Static Webhook
 
-A REST Hook trigger missing a Subscribe or Unsubscribe endpoint, is presented to users as a [Static Webhook](https://cdn.zappy.app/3b35908a6a0c232087b5da807cf9d6fb.png). Static hooks are [not supported in public integrations](https://platform.zapier.com/publish/integration-checks-reference#d017---static-hook-is-discouraged), but they could be used if the integration intends to remain private. Howwver, Zapier doesn't allow integration that are a single static hook with the availability of [Webhooks by Zapier](https://zapier.com/apps/webhook/integrations). To
-fix this, add more triggers/searches/actions.
+A REST Hook trigger missing a Subscribe or Unsubscribe endpoint, is presented to
+users as a [Static Webhook](https://cdn.zappy.app/3b35908a6a0c232087b5da807cf9d6fb.png).
+Static hooks are [not supported in public integrations](https://platform.zapier.com/publish/integration-checks-reference#D017),
+but they could be used if the integration intends to remain private. However, Zapier
+doesn't allow integrations that are a single static hook with the availability of
+[Webhooks by Zapier](https://zapier.com/apps/webhook/integrations). To fix this, add
+more triggers/searches/actions.
 
 ---
 
@@ -445,7 +517,11 @@ fix this, add more triggers/searches/actions.
 ## D017 - Static Hook Is Discouraged
 
 When a REST Hook trigger is missing a Subscribe or Unsubscribe endpoint, it is
-presented to users as a Static Webhook. As static webhooks require manual intervention by the user to set up correctly, we no longer support adding new static webhook triggers to a public integration. Please set up Subscribe and Unsubscribe requests for this trigger, or use a Polling trigger type instead.
+presented to users as a [Static Webhook](https://cdn.zappy.app/3b35908a6a0c232087b5da807cf9d6fb.png).
+As static webhooks require manual intervention by the user to set up correctly, we
+no longer support adding new static webhook triggers to a public integration. Please
+set up Subscribe and Unsubscribe requests for this trigger, or use a Polling trigger
+type instead.
 
 ---
 
@@ -625,7 +701,8 @@ back and you want to resubmit for another review, you should make changes on a
 
 ## L003 - Version Is Already Production
 
-This could happen if you're attempting to promote a version that is already in production.
+This could happen if you're attempting to promote a version that is already in
+production.
 
 ---
 
@@ -654,12 +731,11 @@ Integration Settings page.
 ## M002 - Description Is Invalid
 
 Your app's description is a place to talk about your app, not ours! Even if we
-really like your service, you're not allowed to say "Zapier" in your app's
-description.
+really like your app, you're not allowed to say "Zapier" in your app's description.
 
-Additionally, it's discouraged that you talk about how this integration will `sync`
-anything, as the space is supposed to be about your app itself instead of the
-Zapier integration in particular.
+Additionally, it's discouraged that you talk about how this integration will "sync"
+anything, as the space is supposed to be about your app itself instead of the Zapier
+integration in particular.
 
 Lastly, this section should be short and sweet. A brief description (roughly
 tweet-sized) is best. Specifically, we're looking for 1 - 3 sentences or at least
@@ -711,8 +787,11 @@ To resize an image or convert an image to PNG, you can use this
 ## M005 - Admin Team Member Email Domain Matches App Domain
 
 To ensure that this integration is being submitted by the app owner we require that
-one of the Admin team members listed on the project have an email address with the same
-domain as your app's homepage URL (which must also be present). You can add the homepage URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`. Collaborator team members with the same domain as the homepage do not meet this requirement.
+one of the Admin team members listed on the project have an email address with the
+same domain as your app's homepage URL (which must also be present). You can add the
+homepage URL at `https://developer.zapier.com/app/APP_ID/version/APP_VERSION/settings`.
+Collaborator team members with the same domain as the homepage do not meet this
+requirement.
 
 ---
 
@@ -721,7 +800,7 @@ domain as your app's homepage URL (which must also be present). You can add the 
 ## M006 - Homepage URL Must Be Present
 
 Each app must have a homepage URL. You can add the homepage
-URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings`.
+URL at `https://developer.zapier.com/app/APP_ID/version/APP_VERSION/settings`.
 
 ---
 
@@ -730,9 +809,10 @@ URL at `https://zapier.com/app/developer/app/APP_ID/version/APP_VERSION/settings
 ## M007 - Public Integration Already Exists
 
 We only allow one public integration in our app directory for a given app. If a
-public integration with the same title already exists, we won't approve
-your submission to go public. If you're the owner of the existing public
-integration, create an updated version with any edits and promote that instead of submitting a new integration.
+public integration with the same title already exists, we won't approve your
+submission to go public. If you're the owner of the existing public integration,
+create an updated version with any edits and promote that instead of submitting a
+new integration.
 
 ---
 
@@ -744,7 +824,7 @@ To verify user demand, there should be at least 3 users who have a live Zap usin
 this integration. "Live" means the Zaps are switched on with at least one successful
 [Zap run in recent history](https://help.zapier.com/hc/en-us/articles/8496291148685).
 
-You can [invite others to test your integration](https://platform.zapier.com/manage/share-integration)
+You can [invite others to test your integration](https://platform.zapier.com/manage/sharing)
 before publication.
 
 ---
@@ -758,9 +838,12 @@ of your integration should have a live Zap that demonstrates it works. "Live" me
 the Zaps are switched on with at least one successful
 [Zap run in recent history](https://help.zapier.com/hc/en-us/articles/8496291148685).
 
-You can create a [new Zapier account](https://help.zapier.com/hc/en-us/articles/8496197192461) and [invite it to your integration](https://platform.zapier.com/manage/share-integration) if you need extra Zaps.
+You can create a [new Zapier account](https://help.zapier.com/hc/en-us/articles/8496197192461)
+and [invite it to your integration](https://platform.zapier.com/manage/sharing) if
+you need extra Zaps.
 
-You can also [contact us](https://developer.zapier.com/contact) if you need a trial extension.
+You can also [contact us](https://developer.zapier.com/contact) if you need a trial
+extension.
 
 ---
 
@@ -768,7 +851,8 @@ You can also [contact us](https://developer.zapier.com/contact) if you need a tr
 
 ## S003 - Live Version Count Limit
 
-You can't have more than 5 previous or current production versions with live Zaps. To continue, migrate users on older versions to a newer version.
+You can't have more than 5 previous or current production versions with live Zaps.
+To continue, migrate users on older versions to a newer version.
 
 ---
 
@@ -792,36 +876,91 @@ Learn more about the Zap History [here](https://help.zapier.com/hc/en-us/article
 
 <a name="T002"></a><a name="T00002"></a>
 
-## T002 - Missing "ID" Field in Live Polling Results
+## T002 - Missing Primary Key Fields in Live Polling Results
 
-For polling triggers, the deduper uses the `id` field to decide if it's seen an
-object before. It can be any sort of string, but it's important that it's unique.
-If your object is returned with a differently named `id` field (such as
-`contact_id`), write code to rename it.
+For polling triggers, the deduper uses the primary key field(s) to decide if it's
+seen an object before. You can define one or more output fields as the primary key.
+Each field can be a string or a number. But it's important that the primary key is
+unique. If no fields are set as `primary`, the deduper will by default use the `id`
+field as the primary key.
 
-This check is similiar to `D010`. This check validates the live
-polling results in the [Zap History](https://zapier.com/app/history), while `D010`
-validates the static samples in your integration definition.
+Hooks are not deduped, so they're not required to have a primary key.
+
+This check ensures the live polling results in the [Zap History](https://zapier.com/app/history)
+contain the primary key fields. It's similar to `D010`. The difference is that
+`D010` validates the static samples in your integration definition.
 
 This check is performed using the [Zap History](https://zapier.com/app/history) for
 accounts belonging to the integration admins, so build your test Zaps in these
 accounts.
 
-✘ an example of an **incorrect** implementation:
+✘ examples of an **incorrect** implementation:
 
-```json
+```jsonc
 {
-  "contact_id": 4,
-  "contact_name": "David"
+  // The deduper uses `id` field by default if no output fields are `primary`.
+  // So this sample should have an `id` field for it to pass.
+  // Note that `<live_polling_result>` represents a polling result in Zap History,
+  // not an actual key in your integration definition.
+  "<live_polling_result>": {
+    "contact_id": 4,
+    "contact_name": "David"
+  }
 }
 ```
 
-✔ an example of a **correct** implementation:
+```jsonc
+{
+  // `contact_id` is set as `primary`, but it's missing in the result
+  "<live_polling_result>": {
+    "id": 4,
+    "contact_name": "David"
+  },
+  "outputFields": [
+    { "key": "contact_id", "primary": true },
+    { "key": "contact_name" }
+  ]
+}
+```
+
+✔ examples of a **correct** implementation:
 
 ```json
 {
-  "id": 4,
-  "contact_name": "David"
+  "<live_result_result>": {
+    "id": 4,
+    "contact_name": "David"
+  }
+}
+```
+
+```jsonc
+{
+  // This example defines `contact_id` as the unique primary key.
+  "<live_polling_result>": {
+    "contact_id": 4,
+    "contact_name": "David"
+  },
+  "outputFields": [
+    { "key": "contact_id", "primary": true },
+    { "key": "contact_name" }
+  ]
+}
+```
+
+```jsonc
+{
+  // If multiple fields are unique together, you can set them as `primary`.
+  "<live_polling_result>": {
+    "repo": "zapier/zapier-platform",
+    "number": 1234,
+    "title": "Add this feature please"
+  },
+  "outputFields": [
+    { "key": "repo", "primary": true },
+    { "key": "number", "primary": true },
+    { "key": "title" }
+  ]
 }
 ```
 
@@ -913,8 +1052,8 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 ## T005 - Live Trigger Result Respects Output Field Definition
 
 This check takes the latest run from the [Zap History](https://zapier.com/app/history)
-and verifies whether the trigger result conforms to the output fields
-for the trigger in your integration (if defined). The specific checks are:
+and verifies whether the trigger result conforms to the output fields for the
+trigger in your integration (if defined). The specific checks are:
 
 - "required" fields must be in the trigger result
 - field values in the trigger result match their field type
@@ -951,10 +1090,10 @@ See [Sample Data](https://platform.zapier.com/build/sample-data) for more detail
 
 ## T006 - Polling Sample Contains a Subset of Keys from Live Result
 
-For REST Hook triggers, we require you to provide a `Perform List` URL
-(check `D006`) so that users can retrieve a real data sample in the Zap
-editor. This is called a polling sample, and is created when you test
-the trigger in the Zap editor before turning it on.
+For REST Hook triggers, we require you to provide a `Perform List` URL (check
+`D006`) so that users can retrieve a real data sample in the Zap editor. This is
+called a polling sample, and is created when you test the trigger in the Zap editor
+before turning it on.
 
 Errors occur when a Zap uses a field from the polling sample that is not
 provided by the hook payload sent once the Zap is running.
@@ -1005,9 +1144,9 @@ You must agree to the latest Developer Terms of Service in order to proceed. Go 
 
 ## Z001 - Polling Sample Respects Output Field Definition
 
-For REST Hook triggers, we require you to provide a `Perform List` URL
-(check `D006`) so that users can pull a live sample in the Zap editor.
-This is called a polling sample.
+For REST Hook triggers, we require you to provide a `Perform List` URL (check
+`D006`) so that users can pull a live sample in the Zap editor. This is called a
+polling sample.
 
 This check takes the latest polling sample from a Zap with this trigger
 and verifies that the sample conforms to the output fields for the
