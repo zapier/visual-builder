@@ -14,8 +14,8 @@ Dynamic fields are a type of field built from an API call. Custom code runs to s
 You can use dynamic fields, to retrieve fields in three different contexts:
 
 * Whenever the value of a field with `altersDynamicFields` is changed.
-* Whenever the *Set up* section for the trigger or action is opened in the Zap editor.
-* Whenever the *Refresh Fields* button is used on the trigger or action.
+* Whenever the *Set up* section for the action is opened in the Zap editor.
+* Whenever the *Refresh Fields* button is used on the action.
 
 In the [Platform UI](https://zapier.com/app/developer):
 1. In the _Build_ section in the left sidebar, click on your **action**.  
@@ -27,6 +27,7 @@ In the [Platform UI](https://zapier.com/app/developer):
 > **Note**: 
 - Do not rely on any input fields already having a value, since they won't have one the first time the Zap editor loads.
 - Dynamic fields using `z.request`  will not show in the Zap editor preview.
+- Dynamic fields can only be added to actions, not triggers.
 
 ![Add Zapier Dynamic Field](https://cdn.zappy.app/8177dce9ee77e014b8fe65f4f6d6e5ba.png)
 
@@ -43,7 +44,7 @@ In the [Platform UI](https://zapier.com/app/developer):
 ## Send dynamic field data to your API 
 
 In the [Platform UI](https://zapier.com/app/developer):
-1. In the _Build_ section in the left sidebar, click on your **trigger** or **action**.    
+1. In the _Build_ section in the left sidebar, click on your **action**.    
 2. Click the **API Configuration** tab.
 3. Click **Switch to Code Mode**
 4. In the dialog box, click **Switch to Code Mode**
@@ -54,7 +55,7 @@ In the [Platform UI](https://zapier.com/app/developer):
 
 To test how your dynamic fields will appear in the Zap editor:
 1. [Create a new Zap](https://zapier.com/app/editor/).  
-2. Add the trigger or action to your Zap that includes your dynamic field. This will allow for you to test how your trigger or action will appear to users. 
+2. Add the action to your Zap that includes your dynamic field. This will allow for you to test how your action will appear to users. 
 
 If you want more details about the API calls being made, in the [Platform UI](https://zapier.com/app/developer):
 - In the _Manage_ section in the left sidebar, click **Monitoring**.  
