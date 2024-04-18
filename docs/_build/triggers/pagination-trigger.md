@@ -25,7 +25,7 @@ These triggers used for populating dynamic dropdown fields will often find dozen
 
 ![](https://cdn.zappy.app/4680b6dd27b3db71b8364177e351fdd5.png) 
 
-- In the API Endpoint section, click _Show Options_ to include `bundle.meta.page` in your API call as Zapier does not include that automatically, then add a new URL Param for your API’s paging option (or optionally add it to your HTTP Headers if your API expects the paging value there). Use the page request field name from your API on the left, and `{{bundle.meta.page}}` on the right to have Zapier pull in the correct page value.
+- In the API Endpoint section, click _Show Options_ to include `bundle.meta.page` in your API call as Zapier does not include that automatically, then add a new URL Param for your API’s paging option (or optionally add it to your HTTP Headers if your API expects the paging value there). Use the page request field name from your API on the left, and {% raw %}`{{bundle.meta.page}}`{% endraw %} on the right to have Zapier pull in the correct page value.
 
 ![](https://cdn.zappy.app/2492cb37ec953861cceaf243c0625285.png)
 

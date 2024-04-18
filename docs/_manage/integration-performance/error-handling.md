@@ -15,7 +15,9 @@ Errors from your API cause pain for users at two vital points:
 - During the Zap setup process, stopping them from enabling and activating their Zaps
 - During the Zap’s runtime, once it has been turned on, preventing the Zap from completing all actions successfully
 
-Zap runs that encounter an error when making a request to your API throw an exception and receive the “Stopped / Errored” status. This will [display an error message to the user](https://help.zapier.com/hc/en-us/articles/20505304170637-Review-Zap-run-statuses) in their Zap History and they will be notified via email based on their [notification settings](https://help.zapier.com/hc/en-us/articles/8496289225229-Manage-notifications-when-errors-occur-in-Zaps). 
+Zap runs that encounter an error response status code when making a request to your API throw an exception and receive the “Stopped / Errored” status. This will [display an error message to the user](https://help.zapier.com/hc/en-us/articles/20505304170637-Review-Zap-run-statuses) in their Zap History and they will be notified via email based on their [notification settings](https://help.zapier.com/hc/en-us/articles/8496289225229-Manage-notifications-when-errors-occur-in-Zaps). 
+
+Even if the `message` included in the response details an error, users should **never receive** a success/200 response if there was an error in the request as this will not show up as an error in the Zap history. 
 
 If [95% of a Zap’s runs in the last 7 days are assigned the “Stopped / Errored” status](https://help.zapier.com/hc/en-us/articles/8496037690637-Troubleshoot-errors-in-Zapier#500-series-error-codes-0-3), the Zap will be automatically turned off. The Zap will not run again until the user manually enables it, so only return an error if the scenario is truly an error that needs to be fixed.
 

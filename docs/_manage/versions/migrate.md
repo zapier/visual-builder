@@ -36,10 +36,11 @@ In the [Platform UI](https://zapier.com/app/developer):
     - **Percentage**. This will allow you to migrate users, based on percentage between 5% to 100%. This cautious approach helps ensure that minor updates haven't inadvertently caused any issues. 
         - Select a **percentage**  
         - Click **Migrate**.
-    - **Email**. To migrate users one at a time, by email. **Note**: migrating a single user will only migrate Zaps that are private for that user. Zaps that are [shared across the team](https://help.zapier.com/hc/en-us/articles/8496277647629), [shared app connections](https://help.zapier.com/hc/en-us/articles/8496326497037-Share-app-connections-with-your-team), or in a [team/company account](https://help.zapier.com/hc/en-us/articles/22330977078157-Collaborate-with-members-of-your-Team-or-Company-account) will **not** be migrated.
+    - **Email**. To migrate users one at a time, by email. **Note**: migrating a single user will only migrate Zaps that are private for that user. Zaps that are [shared across the team](https://help.zapier.com/hc/en-us/articles/8496277647629), [shared app connections](https://help.zapier.com/hc/en-us/articles/8496326497037-Share-app-connections-with-your-team), or in a [team/enterprise account](https://help.zapier.com/hc/en-us/articles/22330977078157-Collaborate-with-members-of-your-Team-or-Enterprise-account) will **not** be migrated with this method.
         - In the *Email* field, add the **user's email address** attached to their Zapier account. 
         - Click **Migrate**.
-6. The *Versioning sidebar* will update to show *Update status:Estimating*. Once the migration has been completed, the *Versioning sidebar* will disappear.
+6. To migrate a user's Zaps, Private & Shared, within all accounts for which the specified user is a member (including Team and Enterprise accounts) you can use the `migrate` command with the `--account` flag if [working in the CLI](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#migrate). Be cautious as this can break shared Zaps for other users.   
+7. The *Versioning sidebar* will update to show *Update status:Estimating*. Once the migration has been completed, the *Versioning sidebar* will disappear.
 
 Once you're confident that the new version works well, you can go ahead and migrate the rest of your users.
 
