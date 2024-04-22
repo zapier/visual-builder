@@ -2,7 +2,9 @@
 title: Build your first private integration
 order: 1
 layout: post-toc
-redirect_from: /private_integrations/build-a-private-integration
+redirect_from: 
+    - /quickstart/
+    - /private_integrations/build-a-private-integration
 ---
 
 # Build your first private integration on Zapier
