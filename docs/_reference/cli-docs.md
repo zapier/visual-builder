@@ -2,7 +2,9 @@
 title: Zapier Platform CLI docs
 order: 1
 layout: post-toc
-redirect_from: /cli_docs/docs
+redirect_from: 
+    - /cli_docs/docs
+    - /reference/
 ---
 
 {% raw %}

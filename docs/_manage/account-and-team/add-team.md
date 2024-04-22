@@ -5,6 +5,7 @@ layout: post-toc
 redirect_from: 
     - /quickstart/invite-team-member
     - /manage/invite-team-member
+    - /manage/
 ---
 
 # Invite team members to your integration

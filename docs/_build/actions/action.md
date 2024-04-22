@@ -5,7 +5,7 @@ layout: post-toc
 redirect_from: 
     - /quickstart/build-action
     - /docs/actions
-
+    - /build/
 ---
 
 # Action
