@@ -5,6 +5,7 @@ layout: post-toc
 redirect_from: 
   - /partners/planning-guide
   - /publish/integration-brand-design-guidelines
+  - /publish/
 ---
 
 # Company branding guidelines
