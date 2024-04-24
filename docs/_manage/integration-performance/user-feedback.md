@@ -61,7 +61,7 @@ Any reported issue with no updates from you, Zapier Support, or end users for a 
 
 - Zapier Issue Manager is available to all _Beta_ and _Public_ Zapier partners who own and maintain their own integration. To request access, submit the request form below.
 
-<a class="button blue" href="https://airtable.com/shrK5ZOSGEAkDBAXg">Click here to request access to Zapier Issue Manager</a>
+<a class="button blue" href="https://zim.zapier.app/request">Click here to request access to Zapier Issue Manager</a>
 
 - Zapier Issue Manager offers the following for building Zaps:
 
