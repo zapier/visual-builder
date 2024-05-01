@@ -24,7 +24,7 @@ You may find some documents on the Zapier site duplicate or outdated. The most u
 
 Our code is updated frequently. To see a full list of changes, look no further than [the CHANGELOG](https://github.com/zapier/zapier-platform/blob/main/CHANGELOG.md).
 
-This doc describes the latest CLI version (**15.6.1**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc describes the latest CLI version (**15.7.1**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [14.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@14.1.2/packages/cli/README.md), [13.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@13.0.0/packages/cli/README.md)
 - CLI Reference: [14.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@14.1.2/packages/cli/docs/cli.md), [13.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@13.0.0/packages/cli/docs/cli.md)
@@ -781,8 +781,6 @@ The OAuth2 flow looks like this:
   4. Zapier stores the `access_token` and uses it to make calls on behalf of the user.
   5. (Optionally) Zapier can refresh the token if it expires.
 
-> Note: When [building a public integration](https://platform.zapier.com/private_integrations/private-vs-public-integrations),  the `redirect_uri` will change once the app is approved for publishing, to be more consistent with your app’s branding. Depending on your API, you may need to add this new `redirect_uri` to an allow list in order for users to continue connecting to your app on Zapier. To access the new `redirect_uri`, run `zapier describe` again once the app is published.
-
 You are required to define:
 
   * `authorizeUrl`: The authorization URL
@@ -1239,7 +1237,7 @@ Notably, fields come in different types, which may look and act differently in t
 | `datetime` | Accepts both [precise and human-readable date-time values](https://help.zapier.com/hc/en-us/articles/8496259603341-Different-field-types-in-Zaps#date-time-fields-0-0). Passes along an ISO-formatted time string. |
 | `file` | Accepts a file object or a string. If a URL is provided in the string, Zapier will automatically make a GET for that file. Otherwise, a text file will be generated. |
 | `password` | Displays entered characters as hidden, accepts text input. Does not accept input from previous steps. |
-| `copy` | Does not allow users enter data. Shows the value of the Markdown-formatted Help Text for the field as a rich text note in the Zap editor. Good for important notices to users. |
+| `copy` | Does not allow users to enter data. Shows the value of the Markdown-formatted Help Text for the field as a rich text note in the Zap editor. Good for important notices to users. |
 
 You can find more details on the different field schema options at [our Field Schema](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#fieldschema).
 
@@ -2496,7 +2494,7 @@ This behavior has changed periodically across major versions, which changes how/
 
 ![](https://cdn.zappy.app/e835d9beca1b6489a065d51a381613f3.png)
 
-Ensure you're handling errors correctly for your platform version. The latest released version is **15.6.1**.
+Ensure you're handling errors correctly for your platform version. The latest released version is **15.7.1**.
 
 ### HTTP Request Options
 
@@ -3693,7 +3691,7 @@ Broadly speaking, all releases will continue to work indefinitely. While you nev
 For more info about which Node versions are supported, see [the faq](#how-do-i-manually-set-the-nodejs-version-to-run-my-app-with).
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **15.6.1**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **15.7.1**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
