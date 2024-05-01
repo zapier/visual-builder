@@ -70,8 +70,6 @@ If your integration requires OAuth v1 authentication, use the [Platform CLI](htt
 
 {% raw %}`{{bundle.inputData.redirect_uri}}`{% endraw %}
 
-> **Note**: When [building a public integration](https://platform.zapier.com/quickstart/private-vs-public-integrations), the redirect URL will change once the app integration is approved for publishing, to be more consistent with your app’s branding. Depending on your API, you may need to add this new redirect URL to an allow list in order for users to continue connecting to your app from Zapier. To access the new redirect URL, head to Step 2 of the Authentication setup in the Platform UI once the integration is public.
-
 ### Add PKCE Support
 
 - Zapier provides built-in support for [PKCE](https://oauth.net/2/pkce/#credentials) (Proof Key for Code Exchange and pronounced "pick-see"), an extension to the authorization code flow that adds a layer of protection against security vulnerabilities. The code generation and exchange steps of the flow occur automatically by Zapier when enabled.
