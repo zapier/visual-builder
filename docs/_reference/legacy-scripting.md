@@ -2,20 +2,20 @@
 title: Scripting in converted Legacy Web Builder Integrations
 order: 7
 layout: post-toc
-redirect_from: 
-    - /legacy/scripting
-    - /manage/legacy-scripting
+redirect_from:
+  - /legacy/scripting
+  - /manage/legacy-scripting
 ---
 
 # Scripting in converted Legacy Web Builder Integrations
 
 ## Introduction
- 
+
 This guide provides instructions on editing and maintaining existing scripting methods for legacy web builder integrations that have been converted to either the Platform UI or Platform CLI.
 
 > **Note**: This guide isn't for new integrations built in Platform CLI or Platform UI. For new integrations, use the [Platform UI](https://platform.zapier.com/build/add) or the [Platform CLI](https://platform.zapier.com/reference/cli-docs) to build an integration in code.
 
-If you are creating new functionality, check [maintaining your converted integration] (https://platform.zapier.com/manage/maintain-converted-integration) for the best way forward.
+If you are creating new functionality, check [maintaining your converted integration](https://platform.zapier.com/manage/maintain-converted-integration) for the best way forward.
 
 Much like [Code Mode](https://platform.zapier.com/build/code-mode), Zapier's Web Builder Scripting was the previous way to allow you to directly manipulate the requests and responses that are exchanged between your app's API and Zapier. It continues to be supported using both the Platform UI and CLI.
 
@@ -24,8 +24,8 @@ Much like [Code Mode](https://platform.zapier.com/build/code-mode), Zapier's Web
 For integrations converted to Platform UI, you can access and edit these scripting methods by:
 
 1. Log into the [Platform UI](https://zapier.com/app/developer).
-2. Select your **integration**. 
-3. In the _Build_ section in the left sidebar, click **Advanced**.  
+2. Select your **integration**.
+3. In the _Build_ section in the left sidebar, click **Advanced**.
 4. Click the **Legacy Web Builder** tab.
 
 ![Platform UI code editor](https://cdn.zappy.app/e776d2b6349552e6347ca2757f4d06c1.png)
@@ -81,16 +81,16 @@ bundle.request.params: <object>
      bundle.zap: <object> # info about the zap
      bundle.meta: <object> # extra runtime information you can use
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     auth: bundle.request.auth,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
@@ -122,13 +122,13 @@ bundle.response.content: <str>
      bundle.zap: <object> # info about the zap
      bundle.meta: <object> # extra runtime information you can use
 
-   The response should be JSON serializable:
-     [
-       <object>, # with unique 'id' key
-       <object> # with unique 'id' key
-     ]
-   */
-   return [];
+The response should be JSON serializable:
+[
+<object>, # with unique 'id' key
+<object> # with unique 'id' key
+]
+\*/
+return [];
 
 }
 }
@@ -162,20 +162,20 @@ bundle.request.params: <object>
      If you include a callback in the arguments, you can also perform async:
        callback(err, response)
 
-   You must make the request yourself. The response should be JSON serializable:
-     [
-       <object>, # with unique 'id' key
-       <object> # with unique 'id' key
-     ]
-   */
-   return []; // or callback(null, [])
+You must make the request yourself. The response should be JSON serializable:
+[
+<object>, # with unique 'id' key
+<object> # with unique 'id' key
+]
+\*/
+return []; // or callback(null, [])
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -203,16 +203,16 @@ bundle.request.content: <str>
      bundle.trigger_fields: <object> # the fields provided by the user during setup
      bundle.zap: <object> # info about the zap
 
-   The response should be either a JSON serializable array...
-     [
-       <object>,
-       <object>
-     ]
+The response should be either a JSON serializable array...
+[
+<object>,
+<object>
+]
 
-   ...or a single object:
-     <object>
-   */
-   return []; // or {}
+...or a single object:
+<object>
+\*/
+return []; // or {}
 
 }
 }
@@ -246,23 +246,23 @@ bundle.request.data: <string>
      bundle.event: <string> # the event being subscribed to
      bundle.zap: <object> # info about the zap
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     auth: bundle.request.auth,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more in [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more in [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's legacy web builder, and is mostly incompatible with Platform CLI and Platform UI).
 
@@ -288,13 +288,13 @@ bundle.response.content: <str>
      bundle.trigger_fields: <object> # the data from trigger fields
      bundle.zap: <object> # info about the zap
 
-   The response should be JSON serializable, you'll have access to it as
-   subscribe_data in the unsubscribe call. Normally you'd store some state
-   about the hook resource you created, for example, some apps need
-   an ID to locate and unsubscribe from a hook.
+The response should be JSON serializable, you'll have access to it as
+subscribe_data in the unsubscribe call. Normally you'd store some state
+about the hook resource you created, for example, some apps need
+an ID to locate and unsubscribe from a hook.
 
-   */
-   return ""; // or {}, or []
+\*/
+return ""; // or {}, or []
 
 }
 }
@@ -327,23 +327,23 @@ bundle.request.data: <string>
      bundle.trigger_fields: <object> # the data from trigger fields
      bundle.zap: <object> # info about the zap
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     auth: bundle.request.auth,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more in [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more in [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -368,23 +368,23 @@ bundle.request.content: <string>
      bundle.trigger_fields: <object> # the fields provided by the user during setup
      bundle.zap: <object> # info about the zap
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     auth: bundle.request.auth,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more in [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more in [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -408,13 +408,13 @@ bundle.response.content: <str>
      bundle.trigger_fields: <object> # the fields provided by the user during setup
      bundle.zap: <object> # info about the zap
 
-   The response should be JSON serializable:
-     [
-       <object>,
-       <object>
-     ]
-   */
-   return [];
+The response should be JSON serializable:
+[
+<object>,
+<object>
+]
+\*/
+return [];
 
 }
 }
@@ -448,23 +448,23 @@ bundle.request.params: <object>
      bundle.trigger_fields: <object> # the fields provided by the user during setup
      bundle.zap: <object> # info about the zap
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     auth: bundle.request.auth,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more in [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more in [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -491,15 +491,19 @@ bundle.response.content: <str>
      bundle.trigger_fields: <object> # the fields provided by the user during setup
      bundle.zap: <object> # info about the zap
 
-   The response should be JSON serializable:
-     [
-       # `type` can be unicode, int, bool
-       # `key` should be unique and match a key found in the JSON representation Zapier receive from your API
-       # `label` is a human-readable name Zapier can give this field in the UI
-       {'type': <str>, 'key': <str>, 'label': <str>}
-     ]
-   */
-   return [];
+The response should be JSON serializable:
+[
+
+# `type` can be unicode, int, bool
+
+# `key` should be unique and match a key found in the JSON representation Zapier receive from your API
+
+# `label` is a human-readable name Zapier can give this field in the UI
+
+{'type': <str>, 'key': <str>, 'label': <str>}
+]
+\*/
+return [];
 
 }
 }
@@ -537,23 +541,23 @@ bundle.request.files: <object>
      bundle.action_fields_raw: <object> # before Zapier replace users' variables
      bundle.zap: <object> # info about the zap
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     auth: bundle.request.auth,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -579,11 +583,11 @@ bundle.response.content: <str>
      bundle.action_fields_raw: <object> # before Zapier replace users' variables
      bundle.zap: <object> # info about the zap
 
-   The response will be used to give the user more fields to use
-   in the next step of the Zap.  Please return a JSON serializable object.
+The response will be used to give the user more fields to use
+in the next step of the Zap. Please return a JSON serializable object.
 
-   return <object>;
-   */
+return <object>;
+\*/
 
 }
 }
@@ -594,7 +598,7 @@ bundle.response.content: <str>
 
 ### `KEY_write`
 
-Runs in place of pre_write and post_write. You get a bundle and are expected to make the request and return the appropriate response or throw an [exception](https://platform.zapier.com/manage/legacy-scripting/#available-exceptions). Zapier will **not** throw for status codes like 4xx and 5xx automatically! _Note:_ If the action occurs as part of a search-or-create Zap, the output of this method is _not_ exactly what the user sees. In that case, the action will be followed up with a request to fetch the written record, and Zapier will present the user with the output from that follow-up request. If you need to modify the returned data in that scenario, use `_post_read_resource`.
+Runs in place of pre*write and post_write. You get a bundle and are expected to make the request and return the appropriate response or throw an [exception](https://platform.zapier.com/manage/legacy-scripting/#available-exceptions). Zapier will **not** throw for status codes like 4xx and 5xx automatically! \_Note:* If the action occurs as part of a search-or-create Zap, the output of this method is _not_ exactly what the user sees. In that case, the action will be followed up with a request to fetch the written record, and Zapier will present the user with the output from that follow-up request. If you need to modify the returned data in that scenario, use `_post_read_resource`.
 
 {% highlight javascript %}
 {% raw %}
@@ -618,24 +622,24 @@ Arguments:
      bundle.action_fields_raw: <object> # before Zapier replace users' variables
      bundle.zap: <object> # info about the zap
 
-   If you include a callback in the arguments, you can also perform async:
-     callback(err, response)
+If you include a callback in the arguments, you can also perform async:
+callback(err, response)
 
-   The response will be used to give the user more fields to use
-   in the next step of the Zap.  Please return a JSON serializable object.
+The response will be used to give the user more fields to use
+in the next step of the Zap. Please return a JSON serializable object.
 
-   return <object>;
-   */
-   // your code to modify bundle.request before sent
-   var response = z.request(bundle.request);
-   return z.JSON.parse(response.content);
+return <object>;
+\*/
+// your code to modify bundle.request before sent
+var response = z.request(bundle.request);
+return z.JSON.parse(response.content);
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -660,23 +664,23 @@ bundle.request.params: <object>
      bundle.action_fields: <object> # the raw action fields (if applicable)
      bundle.zap: <object> # info about the zap (details below)
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     auth: bundle.request.auth,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/legacy/scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -701,15 +705,19 @@ bundle.response.content: <str>
      bundle.action_fields: <object> # the fields provided by the user during setup
      bundle.zap: <object> # info about the zap
 
-   The response should be JSON serializable:
-     [
-       # `type` can be unicode, int, bool
-       # `key` should be unique, and will be the "key" in "key: value" in the POST
-       # `help_text` and `label` are also available
-       {'type': <str>, 'key': <str>}
-     ]
-   */
-   return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
+The response should be JSON serializable:
+[
+
+# `type` can be unicode, int, bool
+
+# `key` should be unique, and will be the "key" in "key: value" in the POST
+
+# `help_text` and `label` are also available
+
+{'type': <str>, 'key': <str>}
+]
+\*/
+return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
 
 }
 }
@@ -738,8 +746,8 @@ bundle.request.params: <object>
        bundle.action_fields: <object> # the raw action fields (if applicable)
        bundle.zap: <object> # info about the zap
 
-   The response should be JSON serializable:
-       [
+The response should be JSON serializable:
+[
 
            # "type": "unicode",
            # "key": "json_key", // the field "name", will be used to construct a label if none is provided
@@ -754,13 +762,14 @@ bundle.request.params: <object>
         ]
       */
       return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
-   }
+
+}
 
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -784,16 +793,20 @@ bundle.response.content: <str>
        bundle.action_fields: <object> # the raw action fields (if applicable)
        bundle.zap: <object> # info about the zap
 
-   The response should be JSON serializable:
-       [
-           # `type` can be unicode, int, bool
-           # `key` should be unique, and will be the "key" in "key: value" in the response content
-           # `label` is also available
-           {'type': <str>, 'key': <str>, 'label': <str>}
-       ]
-      */
-      return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
-   }
+The response should be JSON serializable:
+[
+
+# `type` can be unicode, int, bool
+
+# `key` should be unique, and will be the "key" in "key: value" in the response content
+
+# `label` is also available
+
+{'type': <str>, 'key': <str>, 'label': <str>}
+]
+\*/
+return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
+}
 
 }
 {% endraw %}
@@ -822,23 +835,23 @@ bundle.request.params: <object>
        bundle.action_fields: <object> # the raw action fields (if applicable)
        bundle.zap: <object> # info about the zap (details below)
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-       url: bundle.request.url,
-       method: bundle.request.method,
-       auth: bundle.request.auth,
-       headers: bundle.request.headers,
-       params: bundle.request.params,
-       data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -862,16 +875,21 @@ bundle.response.content: <str>
        bundle.auth_fields: <object>
        bundle.action_fields: <object> # the raw action fields (if applicable)
        bundle.zap: <object> # info about the zap
-   The response should be JSON serializable:
-       [
-           # `type` can be unicode, int, bool
-           # `key` should be unique, and will be the "key" in "key: value" in the response content
-           # `label` is also available
-           {'type': <str>, 'key': <str>, 'label': <str>}
-       ]
-   */
-       return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
-   }
+
+The response should be JSON serializable:
+[
+
+# `type` can be unicode, int, bool
+
+# `key` should be unique, and will be the "key" in "key: value" in the response content
+
+# `label` is also available
+
+{'type': <str>, 'key': <str>, 'label': <str>}
+]
+\*/
+return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular action fields
+}
 
 }
 {% endraw %}
@@ -902,23 +920,23 @@ bundle.request.params: <object>
      bundle.search_fields: <object> # pruned and replaced users' fields
      bundle.zap: <object> # info about the zap
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     auth: bundle.request.auth,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -944,17 +962,17 @@ bundle.response.content: <str>
      bundle.search_fields: <object> # pruned and replaced users' fields
      bundle.zap: <object> # info about the zap
 
-   The response is an array, which may contain zero or more matches.
+The response is an array, which may contain zero or more matches.
 
-   If multiple matches are found, sort the array with the "best match" first.
+If multiple matches are found, sort the array with the "best match" first.
 
-   Use the available exceptions to vary errors.
-   */
-   return [ ]; // no matches
-   /* --- or --- */
-   return [ { ... } ];  // return a single match
-   /* --- or --- */
-   return [ { ... }, { ... }, ... ]; // several matches, with "best match" first
+Use the available exceptions to vary errors.
+_/
+return [ ]; // no matches
+/_ --- or --- _/
+return [ { ... } ]; // return a single match
+/_ --- or --- \*/
+return [ { ... }, { ... }, ... ]; // several matches, with "best match" first
 
 }
 }
@@ -988,21 +1006,21 @@ Arguments:
 
      bundle.zap: <object> # info about the zap
 
-   If you include a callback in the arguments, you can also perform async:
-     callback(err, response)
+If you include a callback in the arguments, you can also perform async:
+callback(err, response)
 
-   The response will be used to give the user more fields to use
-   in the next step of the Zap.  Please return a JSON serializable object.
-   */
+The response will be used to give the user more fields to use
+in the next step of the Zap. Please return a JSON serializable object.
+\*/
 
-   return {...}; // or callback(null, {...})
+return {...}; // or callback(null, {...})
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -1028,24 +1046,23 @@ bundle.request.params: <object>
 
      bundle.zap: <object> # info about the zap (details below)
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     auth: bundle.request.auth,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -1069,15 +1086,19 @@ bundle.response.content: <str>
      bundle.auth_fields: <object>
      bundle.zap: <object> # info about the zap
 
-   The response should be JSON serializable:
-     [
-       # `type` can be unicode, int, bool
-       # `key` should be unique, and will be the "key" in "key: value" in the POST
-       # `help_text` and `label` are also available
-       {'type': <str>, 'key': <str>}
-     ]
-   */
-   return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
+The response should be JSON serializable:
+[
+
+# `type` can be unicode, int, bool
+
+# `key` should be unique, and will be the "key" in "key: value" in the POST
+
+# `help_text` and `label` are also available
+
+{'type': <str>, 'key': <str>}
+]
+\*/
+return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
 
 }
 }
@@ -1104,14 +1125,19 @@ bundle.request.params: <object>
 
      bundle.auth_fields: <object>
      bundle.zap: <object> # info about the zap
-   The response should be JSON serializable:
-   [
-     # `type` can be unicode, int, bool
-     # `key` should be unique, and will be the "key" in "key: value" in the POST
-     # `help_text` and `label` are also available
-     {'type': <str>, 'key': <str>}
-   ]
-   */
+
+The response should be JSON serializable:
+[
+
+# `type` can be unicode, int, bool
+
+# `key` should be unique, and will be the "key" in "key: value" in the POST
+
+# `help_text` and `label` are also available
+
+{'type': <str>, 'key': <str>}
+]
+\*/
 
 return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
 }
@@ -1119,7 +1145,7 @@ return []; // return fields in the order you want them displayed in the UI. They
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -1151,7 +1177,8 @@ bundle.response.content: <str>
           ]
        */
        return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
-   }
+
+}
 
 }
 {% endraw %}
@@ -1180,23 +1207,23 @@ bundle.request.params: <object>
        bundle.search_fields: <object> # the raw search fields (if applicable)
        bundle.zap: <object> # info about the zap (details below)
 
-   The response should be bundle.request or a similar object
-   */
-       return {
-           url: bundle.request.url,
-           method: bundle.request.method,
-           auth: bundle.request.auth,
-           headers: bundle.request.headers,
-           params: bundle.request.params,
-           data: bundle.request.data
-       }; // or return bundle.request;
-   }
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
+}
 
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -1219,16 +1246,21 @@ bundle.response.content: <str>
        bundle.url_raw: <string>
        bundle.auth_fields: <object>
        bundle.zap: <object> # info about the zap
-   The response should be JSON serializable:
-          [
-              # `type` can be unicode, int, bool
-              # `key` should be unique, and will be the "key" in "key: value" in the response content
-              # `label` should be provided
-              {'type': <str>, 'key': <str>, 'label': <str>}
-          ]
-   */
-       return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
-   }
+
+The response should be JSON serializable:
+[
+
+# `type` can be unicode, int, bool
+
+# `key` should be unique, and will be the "key" in "key: value" in the response content
+
+# `label` should be provided
+
+{'type': <str>, 'key': <str>, 'label': <str>}
+]
+\*/
+return []; // return fields in the order you want them displayed in the UI. They'll be appended after the regular search fields
+}
 
 }
 {% endraw %}
@@ -1258,23 +1290,23 @@ bundle.request.params: <object>
      bundle.read_context: <object> # the original params passed into the search (or the write in case of search-or-write)
      bundle.zap: <object> # info about the zap (details below)
 
-   The response should be bundle.request or a similar object
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     auth: bundle.request.auth,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be bundle.request or a similar object
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+auth: bundle.request.auth,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -1301,12 +1333,12 @@ bundle.response.content: <str>
 
      bundle.zap: <object> # info about the zap
 
-   The response will be used to give the user more fields to use
-   in the next step of the Zap.  Please return a JSON serializable object.
+The response will be used to give the user more fields to use
+in the next step of the Zap. Please return a JSON serializable object.
 
-   return <object>;
-   */
-   return {...};
+return <object>;
+\*/
+return {...};
 
 }
 }
@@ -1339,19 +1371,20 @@ Arguments:
 
      bundle.zap: <object> # info about the zap
 
-   If you include a callback in the arguments, you can also perform async:
-     callback(err, response)
+If you include a callback in the arguments, you can also perform async:
+callback(err, response)
 
      The response should be an object representing the resource. Can also use the available exceptions to vary errors.
-   */
-   return {...}; // or callback(null, {...})
+
+\*/
+return {...}; // or callback(null, {...})
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -1379,27 +1412,27 @@ bundle.request.params: <object> client_id, client_secret, redirect_uri, grant_ty
      bundle.oauth_data: <object> # obj that contains your client_id, client_secret, etc...
      bundle.zap: <object> # info about the zap
 
-   The response should be an object of:
-     url: <string>
-     method: <string> # 'GET', 'POST', 'PATCH', 'PUT', 'DELETE'
-     headers: <object>
-     params: <object> # this will be mapped into the query string
-     data: <string> or null # request body: optional if POST, not needed if GET
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be an object of:
+url: <string>
+method: <string> # 'GET', 'POST', 'PATCH', 'PUT', 'DELETE'
+headers: <object>
+params: <object> # this will be mapped into the query string
+data: <string> or null # request body: optional if POST, not needed if GET
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -1419,11 +1452,12 @@ bundle.response.content: <str>
 
      bundle.oauth_data: <object> # client id/secret and oauth related URLs
      bundle.auth_fields: <object>
-   */
-   // If you have defined extra fields besides access_token
-   // and refresh_token in the Extra Requested Fields setup,
-   // you may return them here as well.
-   return z.JSON.parse(bundle.response.content);
+
+\*/
+// If you have defined extra fields besides access_token
+// and refresh_token in the Extra Requested Fields setup,
+// you may return them here as well.
+return z.JSON.parse(bundle.response.content);
 
 }
 }
@@ -1453,27 +1487,27 @@ bundle.request.data: <object> # client_id, client_secret, refresh_token, grant_t
      bundle.oauth_data: <object> # obj that contains your client_id, client_secret, etc...
      bundle.zap: <object> # info about the zap
 
-   The response should be an object of:
-     url: <string>
-     method: <string> # 'GET', 'POST', 'PATCH', 'PUT', 'DELETE'
-     headers: <object>
-     params: <object> # this will be mapped into the query string
-     data: <string> or null # request body: optional if POST, not needed if GET
-   */
-   return {
-     url: bundle.request.url,
-     method: bundle.request.method,
-     headers: bundle.request.headers,
-     params: bundle.request.params,
-     data: bundle.request.data
-   }; // or return bundle.request;
+The response should be an object of:
+url: <string>
+method: <string> # 'GET', 'POST', 'PATCH', 'PUT', 'DELETE'
+headers: <object>
+params: <object> # this will be mapped into the query string
+data: <string> or null # request body: optional if POST, not needed if GET
+\*/
+return {
+url: bundle.request.url,
+method: bundle.request.method,
+headers: bundle.request.headers,
+params: bundle.request.params,
+data: bundle.request.data
+}; // or return bundle.request;
 
 }
 }
 {% endraw %}
 {% endhighlight %}
 
-Learn more about [bundle.request](https://platform.zapier.com/manage/legacy-scripting#prepared-request-via-bundlerequest).
+Learn more about [bundle.request](https://platform.zapier.com/reference/legacy-scripting#bundle-details).
 
 > **Note**: This code is only valid for Zapier's Legacy Web Builder. It's mostly incompatible with Zapier's Platform CLI and Platform UI.
 
@@ -1486,17 +1520,17 @@ Zapier exposes a `get_session_info()` function for APIs that require any form of
 {% highlight javascript %}
 {% raw %}
 Zap = {
-get_session_info: function(bundle) {
-/_
+get*session_info: function(bundle) {
+/*
 Argument:
-bundle.auth_fields: <object>
+bundle.auth*fields: <object>
 bundle.zap: <object> # info about the zap
-_/
+*/
 
-   // Make z.request calls as needed.
+// Make z.request calls as needed.
 
-   // Returned object will be mixed into bundle.auth_fields in future calls.
-   return {'api_key': api_key};
+// Returned object will be mixed into bundle.auth_fields in future calls.
+return {'api_key': api_key};
 
 }
 };
@@ -1514,19 +1548,19 @@ Zapier exposes a `get_connection_label()` function for APIs that need customizat
 {% highlight javascript %}
 {% raw %}
 Zap = {
-get_connection_label: function(bundle) {
-/_
+get*connection_label: function(bundle) {
+/*
 Argument:
-bundle.test_result: <object> # results from the test trigger, if it returned an object
+bundle.test*result: <object> # results from the test trigger, if it returned an object
 bundle.auth_fields: <object>
 bundle.zap: <object> # info about the zap
-_/
+*/
 
 // Make z.request calls as needed.
 
-   // Returned string will be used as a Connection Label.
-   // Please note it should be short and easily identifiable
-   return 'partners@zapier.com';
+// Returned string will be used as a Connection Label.
+// Please note it should be short and easily identifiable
+return 'partners@zapier.com';
 
 }
 };
@@ -1559,10 +1593,10 @@ The `z.request` function allows you to make external calls. It performs in a syn
 #### Options
 
 - `request <Object>`: Takes all [options for the NPM request package](https://www.npmjs.com/package/request#requestoptions-callback) plus some that allow it to accept what most pre-scripting methods receive as `bundle.request`:
- - `request <Object>`: Means you can also pass `bundle` and we'll extract `bundle.request` to work with.
- - `auth <Array> | <Object>`: If `auth` is an `Array`, it will be transforrmed to `{'user':auth[0], 'pass':auth[1]}` to match the package's [HTTP Authentication](https://www.npmjs.com/package/request#http-authentication). If your Zapier app is configured to use Basic Auth then `bundle.request.auth` will be array with 2 elements for the username and password. If it uses Digest Auth then the third element will be `false`. In this case, when `auth[2]` is set, Zapier will set `auth.sendImmediately` to `auth[2]` and also default `jar` to `true` since most digest servers require cookies.
- - `params <Object>`: Will become `qs` unless that already exists.
- - `data <string>` Will become `body` unless that already exists. While `bundle.request.data` will always be a `String`, be aware that `body` also accepts a `Buffer`, `ReadStream` or - if `json` is set to `true` - any JSON-serializable object.
+- `request <Object>`: Means you can also pass `bundle` and we'll extract `bundle.request` to work with.
+- `auth <Array> | <Object>`: If `auth` is an `Array`, it will be transforrmed to `{'user':auth[0], 'pass':auth[1]}` to match the package's [HTTP Authentication](https://www.npmjs.com/package/request#http-authentication). If your Zapier app is configured to use Basic Auth then `bundle.request.auth` will be array with 2 elements for the username and password. If it uses Digest Auth then the third element will be `false`. In this case, when `auth[2]` is set, Zapier will set `auth.sendImmediately` to `auth[2]` and also default `jar` to `true` since most digest servers require cookies.
+- `params <Object>`: Will become `qs` unless that already exists.
+- `data <string>` Will become `body` unless that already exists. While `bundle.request.data` will always be a `String`, be aware that `body` also accepts a `Buffer`, `ReadStream` or - if `json` is set to `true` - any JSON-serializable object.
 - `callback Function ([error], response)`: Will be called on completion, with: - `error <Error>`: Any error, when applicable. - `response <Object>`: See _Response_.
 
 #### Response
@@ -1694,15 +1728,16 @@ bundle.zap: <object> # info about the zap
            auth: [bundle.auth_fields.api_key, ''] // you'll need to handle auth
        }).content) || {};
        return contact;
-   },
-   deal_post_poll: function(bundle) {
-       var deals = z.JSON.parse(bundle.response.content);
-       return _.map(deals, function(deal) {
-           // this delays Zap.get_contact({contact_id: deal.contact_id, auth_fields: bundle_auth_fields})
-           deal.contact = z.dehydrate('get_contact', {contact_id: deal.contact_id});
-           return deal;
-       });
-   }
+
+},
+deal*post_poll: function(bundle) {
+var deals = z.JSON.parse(bundle.response.content);
+return *.map(deals, function(deal) {
+// this delays Zap.get_contact({contact_id: deal.contact_id, auth_fields: bundle_auth_fields})
+deal.contact = z.dehydrate('get_contact', {contact_id: deal.contact_id});
+return deal;
+});
+}
 
 };
 {% endraw %}
@@ -1916,16 +1951,16 @@ return bundle.request;
 
 ## Available exceptions
 
-> **Note**: This guide is for Zapier's legacy web builder. 
+> **Note**: This guide is for Zapier's legacy web builder.
 > If you use Platform UI, Zapier expects [standard HTTP errors](https://platform.zapier.com/build/auth#common-authentication-error-messages) to be thrown.
 > If you use Platform CLI, learn more in our [CLI error handling docs](https://zapier.github.io/zapier-platform-cli/#error-handling).
 
 In scripting, you have several exception classes at your disposal:
+
 - General errors
 - Halting execution
 - Stale authentication credentials
 - Updating session credentials
-
 
 ### General errors
 
@@ -2063,8 +2098,8 @@ sale*post_poll: function(bundle) {
 var results = z.JSON.parse(bundle.response.content);
 *.each(results, function(result) {
 result.dollars = "$" + (Math.floor(result.cents / 100)) + "." + (result.cents % 100);
-   })
-   // results is '[{"id":1234,"cents":925,"dollars":"$9.25"}, ... ]'
+})
+// results is '[{"id":1234,"cents":925,"dollars":"$9.25"}, ... ]'
 return results;
 },
 
@@ -2084,12 +2119,12 @@ return results;
 // </messages>
 my*xml_doc_post_poll: function(bundle) {
 // bundle.response.content is xml string from API, $ is preloaded jQuery
-   var xml = $(\$.parseXML(bundle.response.content)).find('message');
+var xml = $(\$.parseXML(bundle.response.content)).find('message');
 // build javascript primitives: array of objects
 var results = *.map(xml, function(element){
 return {
 id: $(element).find('id').text(),
-       title: $(element).find('title').text(),
+title: $(element).find('title').text(),
 body: \$(element).find('body').text()
 };
 });
@@ -2126,8 +2161,8 @@ simple_get_catch_hook: function(bundle) {
 // but you could parse it yourself from bundle.request.querystring:
 var example = \$.param(bundle.request.querystring);
 
-   // but let's just return the cleaned_request version:
-   return bundle.cleaned_request.querystring; // {"name":"bryan","age":27}
+// but let's just return the cleaned_request version:
+return bundle.cleaned_request.querystring; // {"name":"bryan","age":27}
 
 },
 
@@ -2141,8 +2176,8 @@ myjson_catch_hook: function(bundle) {
 // but you could parse it yourself from bundle.request.content:
 var example = z.JSON.parse(bundle.request.content).data;
 
-   // but let's just return the cleaned_request version:
-   return bundle.cleaned_request.data; // the array
+// but let's just return the cleaned_request version:
+return bundle.cleaned_request.data; // the array
 
 }
 
@@ -2153,18 +2188,18 @@ filter_out_catch_hook: function(bundle) {
 // manually create json from the posted string
 var json = z.JSON.parse(bundle.request.content);
 
-   // filter out hooks that aren't the event type Zapier cares about
-   if (json.event_type != 'new_comment') {
-     return []; // return [] or {} to take no action
-   }
+// filter out hooks that aren't the event type Zapier cares about
+if (json.event_type != 'new_comment') {
+return []; // return [] or {} to take no action
+}
 
-   // filter out hooks that aren't the status that the user expected
-   if (bundle.trigger_fields.status && json.status != bundle.trigger_fields.status) {
-     return []; // return [] or {} to take no action
-   }
+// filter out hooks that aren't the status that the user expected
+if (bundle.trigger_fields.status && json.status != bundle.trigger_fields.status) {
+return []; // return [] or {} to take no action
+}
 
-   // else
-   return json;
+// else
+return json;
 
 },
 }
@@ -2217,9 +2252,9 @@ return bundle.request;
 xml_doc_pre_write: function(bundle) {
 // root el is ignored in .html()
 var xml = $("<XMLDocument><message/></XMLDocument>");
-   // bundle.action_fields is {title: "Anyone home?", body: "I can't seem to see anything!"}
-   Object.keys(bundle.action_fields).forEach(function(key){
-     $(xml.find("message")).append(\$("<" + key + " />").text(bundle.action_fields[key]));
+// bundle.action_fields is {title: "Anyone home?", body: "I can't seem to see anything!"}
+Object.keys(bundle.action_fields).forEach(function(key){
+$(xml.find("message")).append(\$("<" + key + " />").text(bundle.action_fields[key]));
 })
 // '<message><title>Anyone home?</title><body>I can't seem to see anything!</body></message>'
 bundle.request.data = xml.html();
@@ -2336,40 +2371,40 @@ var api_key,
 api_key_request_payload,
 api_key_response;
 
-   // Assemble the meta data for our key swap request
-   api_key_request_payload = {
-       method: 'POST',
-       url: 'https://api.domain-name.com/api/login',
-       params: bundle.auth_fields,
-       headers: {
-           'Content-Type': 'application/json',  // Could be anything.
-           Accept: 'application/json'
-       }
-   };
+// Assemble the meta data for our key swap request
+api_key_request_payload = {
+method: 'POST',
+url: 'https://api.domain-name.com/api/login',
+params: bundle.auth_fields,
+headers: {
+'Content-Type': 'application/json', // Could be anything.
+Accept: 'application/json'
+}
+};
 
-   // Fire off the key exchange request.
-   api_key_response = z.request(api_key_request_payload);
+// Fire off the key exchange request.
+api_key_response = z.request(api_key_request_payload);
 
-   // Extract the `api_key` from returned JSON.
-   api_key = z.JSON.parse(api_key_response.content).api_key;
+// Extract the `api_key` from returned JSON.
+api_key = z.JSON.parse(api_key_response.content).api_key;
 
-   // This structure is an example. You may need to add
-   // a different key name, or multiple keys, depending
-   // on your API's requirements.
-   // This will be mixed into bundle.auth_fields in future calls.
-   return {'api_key': api_key};
+// This structure is an example. You may need to add
+// a different key name, or multiple keys, depending
+// on your API's requirements.
+// This will be mixed into bundle.auth_fields in future calls.
+return {'api_key': api_key};
 
 },
 
 new_contact_post_poll: function(bundle) {
 
-   // Zapier will catch bundle.response.status_code === 401
-   // If your API doesn't conform to this standard, you can handle it yourself:
-   if (z.JSON.parse(bundle.response.content).code === 401) {
-     throw new InvalidSessionException(); // Call get_session_info() and try the request again
-   }
+// Zapier will catch bundle.response.status_code === 401
+// If your API doesn't conform to this standard, you can handle it yourself:
+if (z.JSON.parse(bundle.response.content).code === 401) {
+throw new InvalidSessionException(); // Call get_session_info() and try the request again
+}
 
-   return z.JSON.parse(bundle.response.content);
+return z.JSON.parse(bundle.response.content);
 
 }
 };
@@ -2387,5 +2422,3 @@ https://platform.zapier.com/build/test-integration#monitoring
 
 For Platform CLI:
 https://platform.zapier.com/reference/cli-docs#logging
-
-
