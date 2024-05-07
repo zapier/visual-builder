@@ -105,6 +105,8 @@ Any reported issue with no updates from you, Zapier Support, or end users for a 
 
 Maintaining accurate issue statuses during regular triage and review of your integration's issues is critical for keeping your integration healthy. Not only do statuses help your team track progress and build roadmaps, but they also signal your engagement and prompt reviews for fixed issues to the Zapier team.
 
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="500" src="https://on.driveway.app/guides/zEVVdGE/embed" allow="clipboard-write" allowfullscreen></iframe>
+
 Available statuses:
 
 * _Open_: The issue is open and no action has been taken.
