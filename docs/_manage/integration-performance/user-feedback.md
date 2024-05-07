@@ -14,7 +14,7 @@ redirect_from:
 
 For public integrations, Zapier's Support team logs user requests and reported problems in Zapier's issue tracker, that your team can see from the _Bug & Feature Requests_ page in the Manage section. 
 
-![Issues in Zapier Integration](https://cdn.zappy.app/b986eef73a1558ee3e121cf5d985339a.png)
+![Issues in Zapier Integration](https://cdn.zappy.app/94abfa479ae98ff706e93e24999a125a.png)
 
 Problems with your public integration, authentication and API calls will be logged as `bug`, while new functionality users request for your app integration will be logged as `feature request`. You have the ability to filter open `bugs` and `feature requests` to view issues by individual Trigger or Action.
 
@@ -55,7 +55,7 @@ Any reported issue with no updates from you, Zapier Support, or end users for a 
 
 - You can also request issues to be closed manually by updating their statuses to `Done`. Make sure updates are promoted to the latest version of your integration, and users are migrated if possible before marking issues before marking issues as `Done`, as it will be reviewed by a Zapier support member. See the [`Utilizing issue statuses` section](https://platform.zapier.com/manage/user-feedback#utilizing-issue-statuses) below for more details and best practices.
 
-## 4. Consider Zapier Issue Manager
+## 4. Consider Zapier Issue Manager (ZIM)
 
 - If you prefer syncing and managing issues from your own issue-tracking tools (such as Jira or Trello), create Zaps using Zapier Issue Manager.
 
