@@ -14,7 +14,7 @@ redirect_from:
 
 For public integrations, Zapier's Support team logs user requests and reported problems in Zapier's issue tracker, that your team can see from the _Bug & Feature Requests_ page in the Manage section. 
 
-![Issues in Zapier Integration](https://cdn.zappy.app/94abfa479ae98ff706e93e24999a125a.png)
+![Issues in Zapier Integration](https://cdn.zappy.app/b986eef73a1558ee3e121cf5d985339a.png)
 
 Problems with your public integration, authentication and API calls will be logged as `bug`, while new functionality users request for your app integration will be logged as `feature request`. You have the ability to filter open `bugs` and `feature requests` to view issues by individual Trigger or Action.
 
@@ -32,7 +32,7 @@ Problems with your public integration, authentication and API calls will be logg
 
 - Reply to the Zapier team about the issue within the _Bugs & Feature Requests_ page to keep communications consistent for both your team and ours. These issues and comments are not visible to affected users; and users will only be notified when an issue is verified as closed/resolved by Zapier Support.
 
-![Reply to Zapier Integration Issue](https://cdn.zappy.app/a5808bdc70214728d0eac9f569f2d2e7.png)
+![Reply to Zapier Integration Issue](https://cdn.zappy.app/2f7af76046895c4b4f053a1b1ce9781d.png)
 
 - Lowering your count of issues will help improve your integration’s [health score](https://platform.zapier.com/publish/partner-program#integration-health-score) and increase your tier in the [Partner Program](https://zapier.com/platform/partner-program). The more you maintain a bug-free, quality integration, the more essential your product becomes to your users' workflows. This sets you up to reduce churn, drive account upgrades, and increase customer lifetime value.
 
@@ -106,6 +106,9 @@ Any reported issue with no updates from you, Zapier Support, or end users for a 
 Maintaining accurate issue statuses during regular triage and review of your integration's issues is critical for keeping your integration healthy. Not only do statuses help your team track progress and build roadmaps, but they also signal your engagement and prompt reviews for fixed issues to the Zapier team.
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="500" src="https://on.driveway.app/guides/zEVVdGE/embed" allow="clipboard-write" allowfullscreen></iframe>
+<p style="font-family: Helvetica, sans-serif; font-size: 12px; color: gray;">
+    Click on "Enter Fullscreen" for a better demo experience.
+</p>
 
 Available statuses:
 
