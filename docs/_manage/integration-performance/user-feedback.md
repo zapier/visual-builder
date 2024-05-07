@@ -26,7 +26,33 @@ Problems with your public integration, authentication and API calls will be logg
 
 - Bug count is not as important as how many of your users are affected overall and what percentage of the app’s overall monthly active users that impacts. Past history on closing bugs doesn’t influence your app's current health score. 
 
-- Affected user counts on issues typically underrepresent the actual totals, as only a small portion of all users facing an issue take the time to contact Zapier Support. 
+- Affected user counts on issues typically underrepresent the actual totals, as only a small portion of all users facing an issue take the time to contact Zapier Support.
+
+### Utilizing issue statuses
+Maintaining accurate issue statuses during regular triage and review of your integration's issues is critical for keeping your integration healthy. Not only do statuses help your team track progress and build roadmaps, but they also signal your engagement and prompt reviews for fixed issues to the Zapier team.
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="500" src="https://on.driveway.app/guides/zEVVdGE/embed" allow="clipboard-write" allowfullscreen></iframe>
+<p style="font-family: Helvetica, sans-serif; font-size: 12px; color: gray;">
+    Click on "Enter Fullscreen" for a better demo experience.
+</p>
+
+Available statuses:
+
+* _Open_: The issue is open and no action has been taken.
+* _Planned_: Work has been committed to address the issue, but has not started.
+* _In Progress_: This issue is being actively worked on.
+* _Done_: Work is completed, and the updates for the issue have been promoted.
+* _Under review_: Zapier is reviewing the work completed on the issue.
+* _Rejected_: After review, Zapier deemed the issue resolution not complete.
+
+Once an issue is resolved, update the issue status to `Done`. You will be prompted to select one of the following issue resolutions:
+
+* _Resolved_: Work is completed and updates have been promoted.
+* _Won’t Do_: This issue won't be actioned (i.e. not on the roadmap, not technically possible, etc.). A comment explaining why is required.
+* _Duplicate_: The issue is a duplicate of another issue. Please note the duplicate issue in the required comment.
+* _Cannot Reproduce_: All attempts at reproducing this issue failed.
+
+All issues marked `Done` are reviewed by the Zapier team for accuracy and completion. Any necessary explanation or feedback will be provided via comments on respective issues after the internal review. Please respond with questions or concerns on the appropriate issue to keep discussions clear.
 
 ## 2. Respond to issues in a timely manner
 
@@ -100,30 +126,3 @@ Any reported issue with no updates from you, Zapier Support, or end users for a 
 - Usage details for each trigger and action will show which functionalities are the most popular and being effectively utilized. 
 
 - Share access to the insights by [inviting collaborators](https://platform.zapier.com/manage/invite-team-member) to the integration without giving them permissions to make changes to it.
-
-## Utilizing issue statuses
-
-Maintaining accurate issue statuses during regular triage and review of your integration's issues is critical for keeping your integration healthy. Not only do statuses help your team track progress and build roadmaps, but they also signal your engagement and prompt reviews for fixed issues to the Zapier team.
-
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="500" src="https://on.driveway.app/guides/zEVVdGE/embed" allow="clipboard-write" allowfullscreen></iframe>
-<p style="font-family: Helvetica, sans-serif; font-size: 12px; color: gray;">
-    Click on "Enter Fullscreen" for a better demo experience.
-</p>
-
-Available statuses:
-
-* _Open_: The issue is open and no action has been taken.
-* _Planned_: Work has been committed to address the issue, but has not started.
-* _In Progress_: This issue is being actively worked on.
-* _Done_: Work is completed, and the updates for the issue have been promoted.
-* _Under review_: Zapier is reviewing the work completed on the issue.
-* _Rejected_: After review, Zapier deemed the issue resolution not complete.
-
-Once an issue is resolved, update the issue status to `Done`. You will be prompted to select one of the following issue resolutions:
-
-* _Resolved_: Work is completed and updates have been promoted.
-* _Won’t Do_: This issue won't be actioned (i.e. not on the roadmap, not technically possible, etc.). A comment explaining why is required.
-* _Duplicate_: The issue is a duplicate of another issue. Please note the duplicate issue in the required comment.
-* _Cannot Reproduce_: All attempts at reproducing this issue failed.
-
-All issues marked `Done` are reviewed by the Zapier team for accuracy and completion. Any necessary explanation or feedback will be provided via comments on respective issues after the internal review. Please respond with questions or concerns on the appropriate issue to keep discussions clear.
