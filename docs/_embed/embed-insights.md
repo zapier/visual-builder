@@ -1,6 +1,6 @@
 ---
 title: Embed insights definitions
-order: 4
+order: 2
 layout: post-toc
 redirect_from: 
     - /manage/analyze-integration-performance#embed-insights-definitions
