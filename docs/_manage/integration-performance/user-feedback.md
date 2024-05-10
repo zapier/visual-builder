@@ -54,6 +54,8 @@ Once an issue is resolved, update the issue status to `Done`. You will be prompt
 
 All issues marked `Done` are reviewed by the Zapier team for accuracy and completion. Any necessary explanation or feedback will be provided via comments on respective issues after the internal review. Please respond with questions or concerns on the appropriate issue to keep discussions clear.
 
+Plus, any of the statuses above can sync right into your preferred issue-tracking tool thanks to the [Zapier Issue Manager integration](https://platform.zapier.com/manage/user-feedback#4-consider-zapier-issue-manager-zim).
+
 ## 2. Respond to issues in a timely manner
 
 - Reply to the Zapier team about the issue within the _Bugs & Feature Requests_ page to keep communications consistent for both your team and ours. These issues and comments are not visible to affected users; and users will only be notified when an issue is verified as closed/resolved by Zapier Support.
