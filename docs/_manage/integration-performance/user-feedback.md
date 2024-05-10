@@ -89,7 +89,7 @@ Any reported issue with no updates from you, Zapier Support, or end users for a 
 
 <a class="button blue" href="https://zim.zapier.app/request">Click here to request access to Zapier Issue Manager</a>
 
-- Zapier Issue Manager offers the following for building Zaps:
+Zapier Issue Manager offers the following for building Zaps:
 
 ### Triggers
 
@@ -97,21 +97,26 @@ Any reported issue with no updates from you, Zapier Support, or end users for a 
 * Issue Closed
 * New Comment
 * Affected User Added
+* Issue Reopened
 
 ### Actions
 
 * Create Comment
 * List Issues
 * Find Issue
+* Close Issue
+* Update Work Status
 * Generate Report
 
-- Here are some Zap templates to help you get started using Zapier Issue Manager.
+Here are some Zap templates to help you get started using Zapier Issue Manager.
 
 <zapier-zap-templates
+  client-id="cOyG6pUbDTtX6i8F4eQJutA3Sc39Y8B1vnzGdziM"
   theme="light"
-  ids="1186967,1186970,1188008,1188017,1188026,1188034,1188054,1188084,1188092,1188102"
-  limit="5"
-  presentation="row"
+  apps="zapier-issue-manager"
+  create-without-template="hide"
+  limit=10
+  presentation="card"
   use-this-zap="show"
 ></zapier-zap-templates>
 
