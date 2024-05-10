@@ -54,7 +54,7 @@ Currently, we are not issuing credits instead of access to Zapier Partner Sandbo
 
 **Can I modify who can access my integration’s Zapier Partner Sandbox?**
 
-You can't manually add or remove users to your integration’s Zapier Partner Sandbox workspace. Qualifying users must request access by writing into `partners@zapier.com`.
+You can't manually add or remove users to your integration’s Zapier Partner Sandbox workspace. Qualifying users must request access by submitting the form linked at the top of the "Manage Team" page in the developer platform for their qualifying integration.
 
 
 **Can I lose access to Zapier Partner Sandbox?**
@@ -79,7 +79,7 @@ Zapier Partner Sandbox workspaces are owned and maintained by Zapier. These work
 
 **I am an Administrator or Collaborator for multiple public integrations. Can I request access to Zapier Partner Sandbox for each integration?**
 
-A: Yes, you can request access to Zapier Partner Sandbox for each qualifying integration. Write into `partners@zapier.com`.
+A: Yes, you can request access to Zapier Partner Sandbox for each qualifying integration. Visit the "Manage Team" page in the developer platform for each of your qualifying integrations, and submit the form linked at the top of the page.
 
 
 **Can I see who else from my integration team can access Zapier Partner Sandbox?**
