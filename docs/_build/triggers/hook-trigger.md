@@ -73,7 +73,7 @@ It is recommended that a successful Subscribe response return a 201 status code.
 
 ### Unsubscribe
 
-This request, usually a DELETE, is how Zapier notifies your API when it is no longer listening for trigger events, when the Zap is deactivated or deleted. If your API continues posting notification payloads to the Zap after it has unsubscribed, you would see a 200 response from Zapier.
+This request, usually a DELETE, is how Zapier notifies your API when it is no longer listening for trigger events, when the Zap is deactivated or deleted. If your API continues posting notification payloads to the Zap after it has unsubscribed, you can expect to see a 410 response from Zapier.
 
 Click on the _Show Options_ dropdown to add data to the Request Body or HTTP Headers that is needed by your API for a successful unsubscription. Note that you’ll need to make sure the keys here match what your API expects. When Zapier sends the request to your API to unsubscribe the webhook, it can reference any data that was returned from your API during the Subscribe request and was stored in `bundle.subscribeData`.
 
@@ -104,7 +104,7 @@ For data sent to Zapier via REST Hook, most requests will be successful and retu
 ### Best practices when sending data to a REST Hook trigger
 
 - Be mindful of Zapier's [rate limits](https://zapier.com/help/troubleshoot/behavior/rate-limits-and-throttling-in-zapier#step-4).
-- Inactive webhook subscriptions no longer return a 410 from Zapier, they would continue to return a 200 if your app sends notifications to an inactive Zap. The DELETE request to the subscription endpoint would be the only indication when a Zap is turned off.
+- If your app receives a 410 response, that webhook subscription is no longer active, and you should stop sending data to it.
 - If your app receives repeated 4xx or 5xx failures from Zapier outside those error types, this can be handled at your discretion. You may choose to try again later, or to stop sending data and deactivate the hook.
 - To signal that your app has deactivated the hook for any reason, you can optionally send a _reverse unsubscribe_ call to Zapier. This can allow users to manage their subscriptions from inside your app, or permit you to clean up after a user deletes their account or revokes credentials. The request should be of the form `DELETE <target_url>`, where `target_url` is the unique target URL that was provided when the subscription was created. This will pause the Zap within Zapier.
 
