@@ -23,7 +23,7 @@ Zapier Partner Sandbox does not include premium features for Zapier Tables or Za
 Each Admin or Collaborator on a public integration team can request access to Zapier Partner Sandbox.
 
 ## How to apply for Zapier Partner Sandbox
-Write into `partners@zapier.com` requesting access, we'll be happy to help!
+Visit the "Manage Team" page in the developer platform for your qualifying integration, and submit the form linked at the top of the page.
 
 ## How to access Zapier Partner Sandbox
 When your request is approved, you’ll continue to log into Zapier using your existing account. Clicking the icon in the top-right corner (1) will allow you to switch between your personal Zapier account (2) and the Zapier Partner Sandbox workspace (3). Your personal account will show the name set on your profile, while the Zapier Partner Sandbox workspace will show a “ZPS” avatar and “App XXX”, where “XXX” is replaced by your app ID.
