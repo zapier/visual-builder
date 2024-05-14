@@ -38,7 +38,7 @@ redirect_from:
 
 # Partner Solutions Documentation
 
-Our [Embed docs](https://docs.api.zapier.com/guides/intro) have moved.
+Heads up, our [Embed docs](https://docs.api.zapier.com/guides/intro) have moved.
 
 Our partner solutions are the easiest ways to embed Zapier and surface integrations within your product. Check out the [Partner Solutions documentation](https://docs.api.zapier.com/guides/intro) to learn about [plug-and-play elements](https://docs.api.zapier.com/guides/workflow-element/zap-templates-element), the [Workflow API](https://docs.api.zapier.com/api-reference/getting-started/authentication), [quick account creation](https://docs.api.zapier.com/guides/quac/intro-quac), and more.
 
