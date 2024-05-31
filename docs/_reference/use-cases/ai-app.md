@@ -20,10 +20,8 @@ AI app integrations built on Zapier allow users to automate tasks using AI capab
 * Use `z.generateCallbackUrl()` and `performResume`
   * `z.generateCallbackUrl()`: This method generates a callback URL that your service can call once the long-running task is complete.  
   * `performResume`: This function allows the action to pause until the callback URL is called, resuming once the task is complete.  
-  * **Why:** These tools help handle tasks that exceed Zapier's execution time limits by offloading the wait to an external service and resuming only when the task is done [Source].
-* Contact Zapier Partner Support:  
-  * If you need more time for live Zap executions, you can request an extension by contacting Zapier Partner Support through their [contact form](https://zapier.com/partner/contact/). However, we can only do this so much and the most foolproof way would be to implement the previous recommendation.
-  * **Why:** Extending the execution time for live Zaps can help accommodate actions that inherently take longer to process.
+  * **Why:** These tools help handle tasks that exceed Zapier's execution time limits by offloading the wait to an external service and resuming only when the task is done.
+  * [Documentation](https://platform.zapier.com/reference/cli-docs#zgeneratecallbackurl)
 
 ### 2. Handling Samples for Long-Running Tasks  
 
@@ -34,6 +32,7 @@ AI app integrations built on Zapier allow users to automate tasks using AI capab
 * Use `bundle.meta.isLoadingSample`:  
   * When `bundle.meta.isLoadingSample` is true, return a simplified or cached version of the data that represents a typical response.  
   * **Why:** This approach ensures that users get a quick response during setup, avoiding delays caused by the actual long-running task.
+  * [Documentation](https://platform.zapier.com/reference/cli-docs#bundlemeta)
 
 ### 3. Hiding Complex Fields in Actions  
 
@@ -42,9 +41,10 @@ AI app integrations built on Zapier allow users to automate tasks using AI capab
 **Recommendation:**
 
 * Use Custom Input Fields:  
-  * You can create an input field that depends on another. For example, you could create an “Advanced Features” input field at the bottom of all of your other ones that has the property `altersDynamicFields: true` so when it’s updated, all of the other fields refresh. Then for any some additional input fields, they would be dependent if that “Advanced Features” input field is true, then display the more advanced ones that are not necessarily required. (ie. `if (bundle.inputData.advanced === true)`)
+  * You can create an input field that depends on another. For example, you could create an “Advanced Features” input field at the bottom of all of your other ones that has the property `altersDynamicFields: true` so when it’s updated, all of the other fields refresh. Then any additional input fields could be dependent on whether that “Advanced Features” input field is true, then display the more advanced ones that are not necessarily required for all users. (ie. `if (bundle.inputData.advanced === true)`)
   * These custom input fields can hide complex fields behind simpler user interfaces.  
   * **Why:** Simplifying the user interface makes it more user-friendly, leading to a better experience and fewer setup errors.
+  * [Documentation](https://platform.zapier.com/reference/cli-docs#customdynamic-fields)
 
 ### 4. Use-Case Specific Actions  
 
@@ -58,6 +58,7 @@ AI app integrations built on Zapier allow users to automate tasks using AI capab
 * Create Use-Case Specific Dropdown:  
   * For example, a “Send Prompt" action could have a dropdown of available “use-cases” that when selected, pre-fill input fields for the user. This can be accomplished by having a mapping of sorts for your use-cases and some complex logic using `altersDynamicFields: true` to then have all of your input fields as custom ones which are loaded in via functions based on the the use-case selected and the default of them pre-filled.
   * **Why:** Pre-configured AI prompts tailored to specific use cases streamline the user experience, making it easier for users to set up and use your app effectively and for them to understand how the AI is working where they could then tweak the prompt/other input fields themselves if need be.
+  * [Documentation](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#fieldschema)
 
 ### 5. Value of Zap Templates  
 
@@ -65,8 +66,8 @@ AI app integrations built on Zapier allow users to automate tasks using AI capab
 
 **Recommendation:**
 
-* Provide Zap Templates:  
+* Provide [Zap Templates](https://platform.zapier.com/publish/zap-templates):  
   * Create templates for common use cases with pre-mapped variables and good starter prompts.  
   * **Why:** Templates serve as a starting point, helping users quickly set up their Zaps without having to configure everything from scratch.
 
-By addressing these pain points with the recommended strategies, you can significantly improve the user experience and functionality of AI apps on the Zapier platform. For detailed guidance and support, always refer to the [Zapier Developer Documentation](https://platform.zapier.com/docs) or contact the [Zapier support team](https://zapier.com/help/contact/).
+By addressing these pain points with the recommended strategies, you can significantly improve the user experience and functionality of AI apps on the Zapier platform. For detailed guidance and support, always refer to the [Zapier Developer Documentation](https://platform.zapier.com/docs) or contact the [Zapier support team](https://developer.zapier.com/contact).
