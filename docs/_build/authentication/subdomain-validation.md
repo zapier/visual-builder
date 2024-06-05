@@ -7,7 +7,7 @@ redirect_from:
 
 # Validate domain and subdomain input fields during authentication
 
-When adding a subdomain input field, commonly used in Oauth implementations, additional validation is required to prevent a security vulnerability. If not taken into account, an attacker could utilize a maliciously constructed subdomain field (like `attacker-domain.com/`) in order to redirect OAuth connection requests to an attacker-controlled domain. 
+When adding a subdomain input field, commonly used in OAuth implementations, additional validation is strongly recommended to prevent a potential security vulnerability. If not taken into account, an attacker could utilize a maliciously constructed subdomain field (like `attacker-domain.com/`) in order to redirect OAuth connection requests to that attacker-controlled domain (because `attacker-domain.com/.your-domain.com` resolves to the attacker's domain instead of the expected one).
 Taking the following steps prevents the potential for an attacker to access your integration's sensitive authentication information, such as the OAuth client ID or secret.
 
 ## Prerequisites
