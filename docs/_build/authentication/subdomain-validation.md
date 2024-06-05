@@ -60,7 +60,7 @@ return z.request(options)
 ### Handle subdomain validation in Platform CLI
 
 - If you're using OAuth-based authentications, update the `getAccessToken` and optional `refreshAccessToken` configuration methods. If the integration uses [shorthand HTTP requests](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#shorthand-http-requests), switching to [manual HTTP requests](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#manual-http-requests) will allow you to perform this manual subdomain validation.
-- Example Code Update for handling subdomain validation in Platform CLI:
+- Example code for handling subdomain validation in integrations built using the Platform CLI:
 
 ```js
 const refreshAccessToken = async (z, bundle) => {
