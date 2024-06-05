@@ -26,7 +26,7 @@ Taking the following steps prevents the potential for an attacker to access your
 ### Handle subdomain validation in Platform UI
 
 - Update the _Access Token Request_ and related sections under the _OAuth v2 Endpoint Configuration_ options, using the [Code Mode](https://platform.zapier.com/build/code-mode) editor.
-- Example Code Update for  for handling subdomain validation in Platform UI integrations: 
+- Example code for handling subdomain validation in integrations built using the Platform UI, via Code Mode: 
 
 ```js
 // --- UPDATE: add your validation for the subdomain field before using it ---
