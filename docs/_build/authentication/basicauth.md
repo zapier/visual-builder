@@ -39,7 +39,7 @@ Use Basic Auth if your API requires a username and password or other basic field
 
 -- **Help Text**: Include details to assist users in authenticating with your app, especially if they may be unsure where to find the data needed within your app. Format text with [Markdown](https://zapier.com/blog/beginner-ultimate-guide-markdown/), and include a hyperlink if needed.
 
--- **Input Format**: (optional) Help users figure out exactly what piece of data you need them to enter. For example, for a subdomain, https://{{input}}.yourdomain.com/.
+-- **Input Format**: (optional) Help users figure out exactly what piece of data you need them to enter. For example, for [a subdomain](https://platform.zapier.com/build/subdomain-validation), https://{{input}}.yourdomain.com/.
 
 -- **Default Value**: Include a value for this field to be used as a fallback. For optional fields, the default value is set on initial connection creation and used in the API call instead of missing or null values every time the Zap runs. For required fields, this value is used during connection creation, but not when the Zap runs (Zapier raises an error for missing/null values instead).
 
