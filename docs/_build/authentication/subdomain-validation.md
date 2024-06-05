@@ -12,7 +12,7 @@ Taking the following steps prevents the potential for an attacker to access your
 
 ## Prerequisites
 
-- Oauth authentication method 
+- An authentication method that uses pre-configured tokens or secret values (for example, OAuth 2)
 - User is required to input a domain or subdomain when authenticating within Zapier
 
 ## Steps
