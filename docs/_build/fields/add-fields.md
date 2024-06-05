@@ -68,7 +68,7 @@ If users could add multiple entries in the same field, check the _Allows Multipl
 
 ![Zapier Field Allows Multiples](https://cdn.zappy.app/bf4c2a6ad55c12f6e3079e50f5d38e6c.png)
 
-That will add another entry row to allow the user to input another entry for that field. An [array containing a comma separated list of entries](https://cdn.zappy.app/9d79f45398558eb8f845770c0639582a.png) is sent in the API request. Never ask users to type in a comma separated list, rather use this functionality. 
+That will add another entry row to allow the user to input another entry for that field. An [array containing a comma separated list of entries](https://cdn.zappy.app/95938b473edfee13663161ee3c8e5ea4.png) is sent in the API request. Never ask users to type in a comma separated list, rather use this functionality. 
 
 ### Alters dynamic fields
 

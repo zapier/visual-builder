@@ -23,4 +23,4 @@ Review our documentation on how the [static IP address functions within Zapier](
 
 1. **Consult with your Security team:** They can confirm if a static IP address is permitted within your network security policies and advise on any potential conflicts with existing security measures.
 
-2. **[Contact Zapier Support](https://developer.zapier.com/contact)**: They can help you enable static IP addresses for your private app integration. The turnaround time is typically within 1 business day.
+2. **[Contact Zapier Support](https://developer.zapier.com/contact)**: They can help you enable static IP addresses for any public or private app integration you are an [Admin](https://platform.zapier.com/manage/add-team) for. The turnaround time is typically within 1 business day.
