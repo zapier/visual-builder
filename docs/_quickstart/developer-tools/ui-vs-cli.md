@@ -105,4 +105,4 @@ Before making this change, Zapier recommends learning more about possible user i
 
 It's not possible to directly export an integration from Platform CLI to Platform UI.
 
-You would need to create a new integration version built in the Platform UI. Existing users would most likely need to manually update their Zaps to use the new version. Learn more about [this process and best practices to minimize user impact](https://platform.zapier.com/manage/export-ui) and contact [Developer Support](https://developer.zapier.com/contact) with any questions.
+You would need to create a new integration **version** built in the Platform UI (do not create an entirely new app). Existing users would most likely need to manually update their Zaps to use the new version. Learn more about [this process and best practices to minimize user impact](https://platform.zapier.com/manage/export-ui) and contact [Developer Support](https://developer.zapier.com/contact) with any questions.

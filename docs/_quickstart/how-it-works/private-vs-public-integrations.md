@@ -72,8 +72,8 @@ If you’re building a private integration, there are specific limitations to be
 
 * Rate limits depend on the Zapier plan of the integration owner. When using your private app in their Zaps, users' Zap runs will be [held](https://help.zapier.com/hc/en-us/articles/8496291148685-View-and-manage-your-Zap-history) if the cumulative calls across all users of your private integration exceed the following limits on the integration owner's plan:
 
-    - Free, Starter, and Professional plans: 100 calls every 60 seconds.
-    - Team, or Company plans: 5000 calls every 60 seconds.
+    - Free and Professional plans: 100 calls every 60 seconds.
+    - Team and Enterprise plans: 5000 calls every 60 seconds.
     - To increase a private integration rate limit for your users, [upgrade your Zapier plan](https://help.zapier.com/hc/en-us/articles/8496277302157-Change-or-cancel-your-Zapier-plan). 
     - To request an increase in the rate limit for your private integration beyond 5000 calls, contact our [Sales team](https://zapier.com/l/contact-sales).
 
