@@ -110,6 +110,7 @@ We offer a variety of categories for you to list your integration in. Each top-l
   - Transcription - Tools to transcribe audio into text.
   - Video & Audio - Tools to store and share multimedia assets.
 - Human Resources - Tools to manage all aspects of human resources, from hiring and recruitment to employee management and development.
+  - Education - Tools to enhance learning and teaching experiences
   - HR Talent & Recruitment	- Tools to manage your hiring and human resource department.
 - Internet of Things - Tools to connect and manage IoT devices and services.
   - Devices - Tools for connecting Internet of Things devices through Zapier.

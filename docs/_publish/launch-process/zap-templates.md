@@ -292,7 +292,7 @@ Your integration’s directory page will show all published Zap templates that u
 
 **Who can publish Zap templates using my integration?**
 
-Any public partner on Zapier is able to create and publish Zap templates using your integration. All Zap templates are subject to the same review process to ensure our quality standards are met.
+Any user on Zapier is able to create and publish Zap templates using any integration that is in beta or public status. Zapier also identifies real-world usage and automatically generates Zap templates to help users discover use cases, enhance integration usage, and create more engaged users on both platforms. All Zap templates are subject to the same review process to ensure our quality standards are met.
 
 
 **Can we remove or hide Zap templates that include our competitors from our directory page?**
@@ -311,7 +311,7 @@ Once a Zap template is published, you are unable to self-serve changes to it. To
 
 **How can I re-order Zap templates on my directory page?**
 
-Zap templates are loosely ordered by popularity, and you cannot modify the sort order.
+Our current sorting system prioritizes Zap templates based on popularity and user engagement, ensuring users who land on the your integration’s page on Zapier see the most helpful examples of real workflows. The sort order cannot be modified.
 
 
 **How can I exclude specific Zap templates on my directory page?**
