@@ -679,6 +679,43 @@ https://example.com
 
 ---
 
+<a name="D026"></a><a name="D00026"></a>
+
+## D026 - Manual domain validation recommended if using "inputFormat" or domain-related authentication fields
+
+When utilizing authentication fields which allow a user to input their own domain or subdomain,
+we strongly recommend performing [manual validation](https://platform.zapier.com/build/subdomain-validation)
+on the input data to ensure that it matches your expectations and filters out values which
+could be used to redirect users into unexpected domains.
+
+✘ an example of an **incorrect** implementation:
+
+```javascript
+// No subdomain validation, trusting the user input
+const response = await z.request({
+  url: `https://${bundle.authData.yourSubdomainField}.mydomain.com/oauth/token`,
+  // ...
+});
+```
+
+✔ an example of a **correct** implementation:
+
+```javascript
+// Manual validation step to ensure the subdomain matches your requirements
+if (!/^[a-z0-9-]+$/.test(bundle.authData.yourSubdomainField)) {
+  throw new Error(
+    "Subdomain can only contain letters, numbers and dashes (-)."
+  );
+}
+
+const response = await z.request({
+  url: `https://${bundle.authData.yourSubdomainField}.mydomain.com/oauth/token`,
+  // ...
+});
+```
+
+---
+
 <a name="L001"></a><a name="L00001"></a>
 
 ## L001 - Version Is Deprecated
