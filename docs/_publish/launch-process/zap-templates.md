@@ -311,7 +311,7 @@ Once a Zap template is published, you are unable to self-serve changes to it. To
 
 **How can I re-order Zap templates on my directory page?**
 
-Our current sorting system prioritizes Zap templates based on popularity and user engagement, ensuring users who land on the your integration’s page on Zapier see the most helpful examples of real workflows. The sort order cannot be modified.
+Our current sorting system prioritizes Zap templates based on popularity and user engagement, ensuring users who land on your integration’s page on Zapier see the most helpful examples of real workflows. The sort order cannot be modified.
 
 
 **How can I exclude specific Zap templates on my directory page?**
