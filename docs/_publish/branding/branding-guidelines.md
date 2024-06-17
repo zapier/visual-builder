@@ -12,9 +12,6 @@ redirect_from:
 
 Your customers already recognize your app name and logo, and they’ll look for it inside Zapier. Zapier users who have never used your app may discover it through Zapier when looking for a new tool. That makes consistent branding a requirement for a Zapier integration.
 
-![Zapier app directory](https://cdn.zappy.app/a0f7ce40c90b488c9ddf04b65db1c58b.png)
-_The Zapier app directory is the best way to find new apps to add to your workflows_
-
 The search for new apps and integrations starts at the [Zapier app directory](https://zapier.com/apps/). Apps are ranked by popularity and category, with a search box to filter through the list.
 
 ![Zapier app directory pages](https://cdn.zappy.app/06ab4121b4b18d05816e1293aeb185a5.png)
@@ -24,9 +21,9 @@ Each app includes a standalone app profile page. Your app’s branding plays the
 
 App profile pages include [Zap Templates](https://platform.zapier.com/publish/zap-templates), predefined and curated examples of popular integration use cases with pre-mapped fields that users can set up in a few clicks.
 
-Inside Zapier’s account dashboard, the _Recommended for you_ section shows Zap Templates for apps users have connected to their accounts.
+Inside Zapier’s account dashboard, the _Start with a template_ section shows Zap Templates for apps users have connected to their accounts.
 
-![Zapier Recommended](https://cdn.zappy.app/edd5df8d4fcf56f25188b9ea2a1255a0.png)
+![Zapier Recommended](https://cdn.zappy.app/4b85f4fa4dde1779ffcb11652db92814.png)
 
 Inside the core Zapier app, users will again see your app name and logo in the Zap editor, where they can select the apps they want to connect in a Zap.
 
@@ -66,7 +63,7 @@ Todoist's icon includes transparent, rounded corners.
 ### App description copy
 
 Write a short description (up to 140 characters) of your app’s core features and use cases in the form of *<Integration Name> is a....* . 
-The description should be less about selling the platform and more about what the platform actually does. Use proper English and full sentences. The copy should not include links or mentions of Zapier. Do not use flowery or overstated language, or make make it appear your integration is associated with or endorsed by Zapier.
+The description should be less about selling the platform and more about what the platform actually does. Use proper English and full sentences. The copy should not include links or mentions of Zapier. Do not use flowery or overstated language, or make it appear your integration is associated with or endorsed by Zapier.
 
 **Example**:
 
@@ -77,7 +74,88 @@ The description should be less about selling the platform and more about what th
 
 Select the category that best fits your app's core features and use case. If your app includes features from multiple categories, choose the category that best describes your app’s primary use case today.
 
-You may update your app's category in th future if needed, so do not select a category that fits your future ambitions for the app instead of its features today. Additionally, do not select a category that applies only to a secondary feature in your app or a narrow category that does not cover your app’s broader focus.
+You may update your app's category in the future if needed, so do not select a category that fits your future ambitions for the app instead of its features today. Additionally, do not select a category that applies only to a secondary feature in your app or a narrow category that does not cover your app’s broader focus.
+
+## Available Categories
+
+We offer a variety of categories for you to list your integration in. Each top-level category includes all integrations from its child categories. To maximize visibility for your integration, we recommend selecting a specific child category rather than a general parent category. Integrations within each category are ranked by popularity. By choosing a child category, your integration can achieve a higher ranking and greater visibility within that category.
+
+- Artifical Intelligence - Tools that offer AI features such as natural language processing, image classification, and more.
+  - AI Tools - Tools to unlock AI potential in your workflow.
+- Business Intelligence - Tools to gather, analyze, and visualize business data.
+  - Analytics	- Tools to measure and report on success.
+  - Dashboards	- Tools to view your data on a full-screen dashboard.
+  - Reviews	- Tools to manage your reviews and ratings.
+- Commerce - Tools to facilitate all aspects of business transactions, both online and offline.
+  - Taxes - Tools for automating your taxes.
+  - Accounting - Tools for accounting and finance.
+  - eCommerce - Tools to sell your products online.
+  - Fundraising - Tools to set up fundraising events and projects.
+  - Payment Processing - Tools to process payments on your site or app.
+  - Proposal & Invoice Management - Tools to create and send proposals and invoices to clients.
+- Communication - Tools to streamline and enhance communication across various channels.
+  - Call Tracking - Tools to monitor calls and track data from non-digital marketing campaigns.
+  - Email - Tools to manage your personal and business email correspondence.
+  - Fax - Tools to send documents over fax.
+  - Notifications - Tools to get customized notifications on your computer or mobile devices.
+  - Phone & SMS - Tools to make calls and send SMS messages.
+  - Team Chat - Tools to help teams collaborate together online with real-time chat.
+  - Team Collaboration - Tools for business social networking, file sharing, and chat to help teams work together more effectively.
+  - Video Conferencing - Tools to host team video calls and webinars.
+- Content & Files - Tools to create, manage, and share various types of content and files.
+  - Documents - Tools to write, edit, and share text documents.
+  - File Management & Storage - Tools to organize, share, and sync files.
+  - Images & Design - Tools for creatives and those dealing with images.
+  - Notes - Tools to write down thoughts and organize them in notebooks.
+  - Transcription - Tools to transcribe audio into text.
+  - Video & Audio - Tools to store and share multimedia assets.
+- Human Resources - Tools to manage all aspects of human resources, from hiring and recruitment to employee management and development.
+  - Education - Tools to enhance learning and teaching experiences
+  - HR Talent & Recruitment	- Tools to manage your hiring and human resource department.
+- Internet of Things - Tools to connect and manage IoT devices and services.
+  - Devices - Tools for connecting Internet of Things devices through Zapier.
+  - Printing - Tools to print your designs, either on your printer or on products such as t-shirts and stickers.
+- IT Operations - Tools to manage and optimize IT infrastructure and services.
+  - Databases - Tools for developers to store and manage data.
+  - Developer - Tools	to build and maintain software, services, and websites.
+  - Online Courses - Tools to publish lessons and educational material.
+  - Security & Identity - Tools	to manage security and identity/permissions
+  - Server Monitoring - Tools that monitor services and application metrics.
+- Lifestyle & Entertainment - Tools to enhance various aspects of your personal life and leisure activities.
+  - Fitness	- Tools to track your workouts, food, and more.
+  - Gaming	- Tools that are centered around video gaming.
+  - News & Lifestyle	- Tools to keep you informed on news and lifestyle content.
+- Marketing - Tools to plan, execute, and measure marketing campaigns across various channels.
+  - Ads & Conversion - Tools to track and reach an audience online.
+  - Drip Emails - Tools to send automated email messages on a set schedule.
+  - Email Newsletters - Tools to send regular email updates and newsletters to your subscribers.
+  - Event Management - Tools to manage events and attendees.
+  - Marketing Automation - Tools to market products, track interests, and turn visitors into customers.
+  - Social Media Accounts - Tools to connect and share with others online.
+  - Social Media Marketing - Tools to automatically share posts on social networks.
+  - Transactional Email - Tools to send email messages through your application.
+  - URL Shortener - Tools to shorten URLs.
+  - Webinars - Tools for scheduling and holding webinars.
+- Productivity - Tools to enhance efficiency and organization in your personal and professional life.
+  - Bookmark Managers - Tools to save your favorite links to view and read later.
+  - Calendar - Tools to plan your events and schedule.
+  - Product Management - Tools to plan your product's lifecycle and roadmap.
+  - Project Management - Tools for managing projects.
+  - Spreadsheets - Tools to manage numbers and data.
+  - Task Management - Tools to manage your tasks on simple lists.
+  - Time Tracking Software - Tools to track time spent on work and projects.
+- Sales & CRM - Tools to manage and optimize your sales processes and customer relationships.
+  - Contact Management - Tools to keep track of the people you need to keep in touch with most.
+  - CRM (Customer Relationship Management) - Tools for customer relationship management.
+  - Forms & Surveys	- Tools to build forms and gather data from your website or apps.
+  - Scheduling & Booking - Tools to schedule appointments and events.
+  - Signatures - Tools to manage and sign legal documents online.
+- Support - Tools to enhance customer satisfaction and provide effective assistance.
+  - Customer Appreciation	- Tools that help you show appreciation to your customers.
+  - Customer Support	- Tools to answer your customers' questions through email, chat, and documentation.
+- Website & App Building - Tools to create and customize websites and applications.
+  - App Builder - Tools to build a custom app with forms and databases.
+  - Website Builders - Tools to help manage content and build websites for your business.
 
 **Example**:
 
