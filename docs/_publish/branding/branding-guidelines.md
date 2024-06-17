@@ -33,7 +33,7 @@ When creating a new Zapier integration, you’ll be asked to add the app’s nam
 
 Follow these guidelines to effectively brand your app on Zapier:
 
-### App name
+## App name
 
 Use the actual, unique name of your app with the same capitalization your company uses in your core branding. Trademark/copyright identifiers such as a TM suffix aren't allowed in the app name, though they can be added to the description.
 
@@ -45,7 +45,7 @@ Do not add adjectives or phrases to your app name, and only include your company
 - `Google Sheets`, not `Sheets` or `Google Spreadsheets`
 - `App Name`, not `App Name's integration`
 
-### App logo
+## App logo
 
 The logo must be a square, transparent PNG at least 256x256px in size. Please use a bigger version if you have one available. If your app has a solid, square background, round the corners 3% of the width and set the background as transparent. If your icon is not square, make a square transparent image and center your icon inside the transparent square. Do not include the app name or other copy in the logo as it will not be legible at small sizes.
 
@@ -60,7 +60,7 @@ Evernote's elephant icon is included in a transparent square rectangle.
 Todoist's icon includes transparent, rounded corners.
 
 
-### App description copy
+## App description copy
 
 Write a short description (up to 140 characters) of your app’s core features and use cases in the form of *<Integration Name> is a....* . 
 The description should be less about selling the platform and more about what the platform actually does. Use proper English and full sentences. The copy should not include links or mentions of Zapier. Do not use flowery or overstated language, or make it appear your integration is associated with or endorsed by Zapier.
@@ -70,13 +70,13 @@ The description should be less about selling the platform and more about what th
 - `Trello is a team collaboration tool to organize anything on a kanban board.`, not `Trello is the best project management tool.`
 - `Dropbox lets you store files online, sync them to all your devices, and share them easily.`, not `A file storage app.`
 
-### Category
+## Category
 
 Select the category that best fits your app's core features and use case. If your app includes features from multiple categories, choose the category that best describes your app’s primary use case today.
 
 You may update your app's category in the future if needed, so do not select a category that fits your future ambitions for the app instead of its features today. Additionally, do not select a category that applies only to a secondary feature in your app or a narrow category that does not cover your app’s broader focus.
 
-## Available Categories
+### Available Categories
 
 We offer a variety of categories for you to list your integration in. Each top-level category includes all integrations from its child categories. To maximize visibility for your integration, we recommend selecting a specific child category rather than a general parent category. Integrations within each category are ranked by popularity. By choosing a child category, your integration can achieve a higher ranking and greater visibility within that category.
 
@@ -163,7 +163,7 @@ We offer a variety of categories for you to list your integration in. Each top-l
 - _Slack_ is primarily a team communication tool for chat, so it fits best in the `team chat` category alongside apps like _Discord_ and _ChatWork_, not in the `video calls` category even though it does include a video call tool as a secondary feature.
 - _Google Contacts_ is primarily an address book that fits best with other `contacts` apps, while _HubSpot CRM_ can manage contacts but also includes deals and contact tracking which makes it a better fit for the `CRM` category.
 
-### Colors
+## Colors
 
 When you release your Zapier integration to the public, Zapier requires your app’s primary color. The primary color is the main color used in your app’s logo or branding.
 
