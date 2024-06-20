@@ -24,7 +24,7 @@ You may find some documents on the Zapier site duplicate or outdated. The most u
 
 Our code is updated frequently. To see a full list of changes, look no further than [the CHANGELOG](https://github.com/zapier/zapier-platform/blob/main/CHANGELOG.md).
 
-This doc describes the latest CLI version (**15.7.3**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc describes the latest CLI version (**15.8.0**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [14.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@14.1.2/packages/cli/README.md), [13.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@13.0.0/packages/cli/README.md)
 - CLI Reference: [14.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@14.1.2/packages/cli/docs/cli.md), [13.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@13.0.0/packages/cli/docs/cli.md)
@@ -1924,7 +1924,9 @@ Content-Type: application/json
 ```
 > We recommend using `bundle.meta.isLoadingSample` to determine if the execution is happening in the foreground (IE: during Zap setup) as using `z.generateCallbackUrl()` can be inappropriate given the disconnect. Instead, wait for the long running request without generating a callback, or if you must, return stubbed data.
 
-And finally, in a `performResume` to handle the final step which will receive three bundle properties:
+By default the payload `POST`ed to the callback URL will augment the data returned from the initial `perform` to compose the final value.
+
+If you need to customize what the final value should be you can define a `performResume` method that receives three bundle properties:
 
 * `bundle.outputData` is `{"hello": "world"}`, the data returned from the initial `perform`
 * `bundle.cleanedRequest` is `{"foo": "bar"}`, the payload from the callback URL
@@ -1933,6 +1935,8 @@ And finally, in a `performResume` to handle the final step which will receive th
 ```js
 const performResume = async (z, bundle) => {
   // this will give a final value of: {"hello": "world", "foo": "bar"}
+  // which is the default behavior when a custom `performResume` is not
+  // defined.
   return  { ...bundle.outputData, ...bundle.cleanedRequest };
 };
 ```
@@ -2216,16 +2220,18 @@ To throttle an action, you need to set a `throttle` object with the following va
   1. `window [integer]`: The timeframe, in seconds, within which the system tracks the number of invocations for an action. The number of invocations begins at zero at the start of each window.
   2. `limit [integer]`: The maximum number of invocations for an action, allowed within the timeframe window.
   3. `key [string]` (_added in v15.6.0_): The key to throttle with in combination with the scope. User data provided for the input fields can be used in the key with the use of the curly braces referencing. For example, to access the user data provided for the input field "test_field", use `{{bundle.inputData.test_field}}`. Note that a required input field should be referenced to get user data always.
-  4. `scope [array]`: The granularity to throttle by. You can set the scope to one or more of the following options;
+  4. `retry [boolean]` (_added in v15.8.0_): The effect of throttling on the tasks of the action. `true` means throttled tasks are automatically retried after some delay, while `false` means tasks are held without retry. It defaults to `true`. NOTE that it has no effect on polling triggers and should not be set.
+  5. `filter [string]` (_added in v15.8.0_): EXPERIMENTAL: Account-based attribute to override the throttle by. You can set to one of the following: "free", "trial", "paid". Therefore, the throttle scope would be automatically set to "account" and ONLY the accounts based on the specified filter will have their requests throttled based on the throttle overrides while the rest are throttled based on the original configuration.
+  6. `scope [array]`: The granularity to throttle by. You can set the scope to one or more of the following options;
         - 'user' - Throttles based on user ids.
         - 'auth' - Throttles based on auth ids.
         - 'account' - Throttles based on account ids for all users under a single account.
         - 'action' - Throttles the action it is set on separately from other actions.
-  5. `overrides [array[object]]` (_added in v15.6.0_): EXPERIMENTAL: Overrides the original throttle configuration based on a Zapier account attribute;
+  7. `overrides [array[object]]` (_added in v15.6.0_): EXPERIMENTAL: Overrides the original throttle configuration based on a Zapier account attribute;
         - `window [integer]`: Same description as above.
         - `limit [integer]`: Same description as above.
         - `filter [string]`: Account-based attribute to override the throttle by. You can set to one of the following: "free", "trial", "paid". Therefore, the throttle scope would be automatically set to "account" and ONLY the accounts based on the specified filter will have their requests throttled based on the throttle overrides while the rest are throttled based on the original configuration.
-        - `retry [boolean]` (_added in v15.6.1_): The effect of throttling on the tasks of the action. `true` means throttled tasks are automatically retried after some delay, while `false` means tasks are held without retry. It defaults to `true`.
+        - `retry [boolean]` (_added in v15.6.1_): The effect of throttling on the tasks of the action. `true` means throttled tasks are automatically retried after some delay, while `false` means tasks are held without retry. It defaults to `true`. NOTE that it has no effect on polling triggers and should not be set.
 
 Both `window` and `limit` are required and others are optional. By default, throttling is scoped to the action and account.
 
@@ -2258,6 +2264,7 @@ const App = {
           window: 600,
           limit: 5,
           key: 'test-key-{{bundle.inputData.name}}',
+          retry: false,
           scope: ['account'],
           overrides: [
             {
@@ -2544,7 +2551,7 @@ This behavior has changed periodically across major versions, which changes how/
 
 ![](https://cdn.zappy.app/e835d9beca1b6489a065d51a381613f3.png)
 
-Ensure you're handling errors correctly for your platform version. The latest released version is **15.7.3**.
+Ensure you're handling errors correctly for your platform version. The latest released version is **15.8.0**.
 
 ### HTTP Request Options
 
@@ -3741,7 +3748,7 @@ Broadly speaking, all releases will continue to work indefinitely. While you nev
 For more info about which Node versions are supported, see [the faq](#how-do-i-manually-set-the-nodejs-version-to-run-my-app-with).
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **15.7.3**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **15.8.0**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
