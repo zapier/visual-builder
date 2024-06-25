@@ -295,6 +295,11 @@ Your integration’s directory page will show all published Zap templates that u
 Any user on Zapier is able to create and publish Zap templates using any integration that is in beta or public status. Zapier also identifies real-world usage and automatically generates Zap templates to help users discover use cases, enhance integration usage, and create more engaged users on both platforms. All Zap templates are subject to the same review process to ensure our quality standards are met.
 
 
+**Can I opt out of Zapier-generated Zap templates for my integration?**
+
+Currently, we do not offer the option for integrations to opt out of Zapier-generated Zap templates. These templates are designed based on real-world usage to enhance the end-user experience by highlighting commonly implemented workflows. They also aim to boost adoption for both Zapier and our integration partners.
+
+
 **Can we remove or hide Zap templates that include our competitors from our directory page?**
 
 Zap templates, once published on your integration’s directory page, remain in place to ensure our ecosystem is open, inclusive, and offers a wide range of options to users. This includes showcasing integrations that might combine your services with those of competitors. While direct removal of these templates isn’t aligned with our approach, we offer a proactive solution. By leveraging our [Zap Template embed tool](https://platform.zapier.com/embed/zap-templates), you have the power to highlight specific Zap templates you prefer, directly within your own platform. This empowers you to curate and showcase the integrations most relevant to your users’ needs.
