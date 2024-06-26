@@ -80,7 +80,7 @@ You may update your app's category in the future if needed, so do not select a c
 
 We offer a variety of categories for you to list your integration in. Each top-level category includes all integrations from its child categories. To maximize visibility for your integration, we recommend selecting a specific child category rather than a general parent category. Integrations within each category are ranked by popularity. By choosing a child category, your integration can achieve a higher ranking and greater visibility within that category.
 
-- Artifical Intelligence - Tools that offer AI features such as natural language processing, image classification, and more.
+- Artificial Intelligence - Tools that offer AI features such as natural language processing, image classification, and more.
   - AI Tools - Tools to unlock AI potential in your workflow.
 - Business Intelligence - Tools to gather, analyze, and visualize business data.
   - Analytics	- Tools to measure and report on success.
@@ -172,3 +172,33 @@ When you release your Zapier integration to the public, Zapier requires your app
 Do not use pure white (`#FFFFFF`) as the color, as overlaid text would be unreadable. If your logo is black and white, use the next most common color from your branding.
 
 Zapier uses the primary color as the background color in your app’s Zapier App Directory listing, and may additionally use it in the Zapier app dashboard, Zapier blog marketing materials, and other parts of Zapier’s app and content that promote your app’s integrations.
+
+## Frequently Asked Questions
+
+**Can my integration belong to more than 1 category?**
+
+Currently, we only allow 1 category per integration^. This is to maintain our categorization effectiveness, making it easier for users to find relevant integrations. Limiting integrations to 1 category also helps to improve your discoverability within the category.
+
+_^Additional categories are limited to App Families and AI Tools at Zapier's discretion_
+
+
+**Can I change my integration’s category in the future?**
+
+Yes, you can. Submit the Rebrand Form located at the top of the Settings page for your integration in the [Developer platform](https://developer.zapier.com).
+
+![Screenshot showing how to access the rebranding form](https://cdn.zappy.app/45d5c80072008f65856e8304a6394866.png)
+
+
+**What’s an App Family?**
+
+An app family refers to a collection of related integrations, typically developed by the same organization. Being added to an App Family is at the discretion of Zapier.
+
+
+**How can I become a Premium integration?**
+
+Being classified as a Premium app isn’t something we currently offer to partner-owned integrations. The justification as to why a Zapier-owned integration might be classed as Premium varies, but is often due to an increased cost on our end to be able to offer that integration. Only users on a paid Zapier plan can use Premium integrations, which helps to ensure we can continue to invest in the development of that integration.
+
+
+**Can I suggest a new category?**
+
+[Submit this form](https://integration-branding.zapier.app/suggest) to suggest a new category. Our team will review all submissions for consideration. If we move forward with adding your suggestion as a category, we'll notify you via email.
