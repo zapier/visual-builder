@@ -54,7 +54,7 @@ Currently, we are not issuing credits instead of access to Zapier Partner Sandbo
 
 **Can I modify who can access my integration’s Zapier Partner Sandbox?**
 
-You can't manually add or remove users to your integration’s Zapier Partner Sandbox workspace. Qualifying users must request access by submitting the form linked at the top of the "Manage Team" page in the developer platform for their qualifying integration.
+Qualifying users can request access by submitting the form linked at the top of the "Manage Team" page in the developer platform for their qualifying integration. You can also manually add other integration team members to your Zapier Partner Sandbox workspace. When manually adding users, they will receive an email requiring them to accept the Zapier Partner Sandbox Terms of Use. If the Terms of Use are not agreed to within 7 days, their access will be removed. If ineligible members are added to your Zapier Partner Sandbox (ie users that are not an Admin or Collaborator for your integration), their access will be removed within 1 business day.
 
 
 **Can I lose access to Zapier Partner Sandbox?**
@@ -77,14 +77,29 @@ No, Zapier Partner Sandbox is a benefit exclusively for partners with a public i
 Zapier Partner Sandbox workspaces are owned and maintained by Zapier. These workspaces are created on a per-integration basis.
 
 
+**Can I move Zaps between my personal account and Zapier Partner Sandbox?**
+
+Yes. [Learn more about moving Zaps between accounts](https://help.zapier.com/hc/en-us/articles/8496275081357-Move-Zaps-between-accounts).
+
+
+**Can Zaps I created in Zapier Partner Sandbox be transferred to my personal account after I lose access to Zapier Partner Sandbox?**
+
+No, once your access to Zapier Partner Sandbox is removed, transferring Zaps to your personal account is impossible.
+
+
 **I am an Administrator or Collaborator for multiple public integrations. Can I request access to Zapier Partner Sandbox for each integration?**
 
-A: Yes, you can request access to Zapier Partner Sandbox for each qualifying integration. Visit the "Manage Team" page in the developer platform for each of your qualifying integrations, and submit the form linked at the top of the page.
+Yes, you can request access to Zapier Partner Sandbox for each qualifying integration. Visit the "Manage Team" page in the developer platform for each of your qualifying integrations, and submit the form linked at the top of the page.
 
 
 **Can I see who else from my integration team can access Zapier Partner Sandbox?**
 
-No, you cannot see who else from your integration team has access to Zapier Partner Sandbox.
+Yes. Visit the "Members" page for the Zapier Partner Sandbox account from the [settings page](https://zapier.com/app/settings/).
+
+
+**I’ve already been granted access to Zapier Partner Sandbox. Looking in the account settings, I see an organization owned by app_xxx@zapierpartner.com. What is this and how can I access it?**
+
+The email address shown is the systematic owner of your integration’s Zapier Partner Sandbox workspace. This is owned and maintained by Zapier. You are unable to log into Zapier using that account.
 
 
 **Can I share Zaps and/or folders in Zapier Partner Sandbox?**
