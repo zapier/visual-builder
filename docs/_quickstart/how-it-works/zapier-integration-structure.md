@@ -14,9 +14,15 @@ redirect_from:
 
 ### Dashboard
 
-_Dashboard_ tab is used to monitor and analyze your integration's growth, usage, and embed metrics. You **must** be an [admin or collaborator](https://platform.zapier.com/manage/add-team) to view an integration’s dashboard.
+_Dashboard_ tab is used to see your Partnership level, active user total count, overall embed status and [integration health score](https://platform.zapier.com/publish/partner-program#integration-health-score). You **must** be an [admin or collaborator](https://platform.zapier.com/manage/add-team) to view an integration’s dashboard.
 
-![Screenshot of Dashboard tab in Developer Platform](https://cdn.zappy.app/d7a53ee12f8fb94a44edbc0f8e3195ea.png)
+![](https://cdn.zappy.app/3b26f7098360a25ec055ab9be6713e9d.png)
+
+### Insights
+
+_Insights_ tab is used to monitor and analyze your integration's growth, usage, and detailed embed metrics. You **must** be an [admin or collaborator](https://platform.zapier.com/manage/add-team) to view an integration’s insights.
+
+![Screenshot of Insights tab in Developer Platform](https://cdn.zappy.app/81930868f966d933d1edb90cc61623bc.png)
 
 ### Build
 

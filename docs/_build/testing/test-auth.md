@@ -40,3 +40,4 @@ Testing a user's authentication is crucially important, as it is later used to t
     ![Example account with multiple test accounts](https://cdn.zappy.app/943cd7b0ee2ada32492c834157a2eccb.png)
 
     ![Remove authed accounts](https://cdn.zappy.app/b31f5c7f712c1a585e727b729248615a.png)
+10. A caveat of testing in the Platform UI is that tokens are not saved in the Zapier database, so if you are testing the access/refresh token mechanism, make sure to test in a Zap in your account to avoid connections expiring or being marked as invalid. 

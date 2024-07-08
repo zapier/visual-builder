@@ -196,7 +196,7 @@ Finally, when your Zap template is ready for public release, click `Submit for R
 
 ![Submit for review](https://cdn.zappy.app/09d633673809c700778cfa945b63d4ba.png)
 
-We'll send you an automated email, typically within 2 weeks, after reviewing your Zap template(s). If your Zap template(s) passes the review, we will mark them as public to have them appear on your app's directory page and in our embed solutions.
+We'll send you an automated email with the subject line _We've reviewed your Zap templates!_, typically within 2 weeks, after reviewing your Zap template(s). If your Zap template(s) passes the review, we will mark them as public to have them appear on your app's directory page and in our embed solutions.
 
 If your Zap template is rejected, the automated email will provide a justification what's required to amend the template before re-submitting for review.
 

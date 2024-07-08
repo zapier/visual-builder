@@ -11,6 +11,8 @@ Input fields in Zapier add one item each time the Zap runs. But, if you want use
 
 > **Tip**: Learn more about line items from Zapier’s [guide](https://zapier.com/blog/formatter-line-item-automation/) and [help documentation](https://help.zapier.com/hc/en-us/articles/8496277737997).
 
+Line items can be challenging for users to work with as a concept, so make sure to consider what a user would be inputting and do not add line item group fields unless there is a clear use case for them.
+
 ## Before adding a line item group
 
 Before adding a line item group to an action:
@@ -37,3 +39,9 @@ To add line item group to an action:
 Your new Line Item groups will show up in the Zap editor as a separate block with the different line item input fields within:
 
 ![](https://cdn.zappy.app/41f81ef42d5101767810a9ffc5626e95.png)
+
+Users will need to map line item values from earlier steps in their Zap into the fields within the line item group. They would be sent to your API as an array of individual objects. Users cannot input comma separated values into a line item field, they need to be provided from the trigger or a prior action in line item format for them to be sent this way. 
+
+![](https://cdn.zappy.app/533efc7f7719fa85587f72b04204371f.png)
+
+![](https://cdn.zappy.app/a7bad08984545eb39e96ed2782660737.png)
