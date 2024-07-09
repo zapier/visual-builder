@@ -33,20 +33,24 @@ Testing inside the Platform UI is crucial during the building process. To ensure
 - **Input**: Open your app, and check each item that Zapier actions added or updated for the correct format and expected appearance in your app. 
 - **Automation**: Turn on Zaps with each of your integration's triggers and actions. Do they run correctly when the data they watch for is added or updated in your app? You can check your [Zap History](https://zapier.com/app/history) to make sure Zaps ran as expected for triggering events. Do your integration's actions successfully add and update items when those Zaps are triggered? 
 
-4. Use the _Monitoring_ page in the Platform UI to ensure that test Zaps and the expected requests are running without errors. Every request made to your API by your Zapier integration is shown. 
+## Monitoring
 
-    Adjust the Chart Filter for the correct timeframe, then click on any data point in the chart to see the any error messages and logs which should help you troubleshoot further. You can also filter by log type and by user email. 
+Use the _Monitoring_ page in the Platform UI to ensure that test Zaps and the expected requests are running without errors. Every request made to your API by your Zapier integration is shown. 
 
-    ![Monitoring Zapier integration](https://cdn.zappy.app/8e7113b876e9dd37b71722fee763cf3e.png)
+Adjust the Chart Filter for the correct timeframe, then click on any data point in the chart to see the any error messages and logs which should help you troubleshoot further. You can also filter by log type and by user email. 
 
-    To manually print a log statement you can see in Monitoring, use `z.console.log` in Code Mode:
+![Monitoring Zapier integration](https://cdn.zappy.app/8e7113b876e9dd37b71722fee763cf3e.png)
 
-    `z.console.log('Here are the input fields', bundle.inputData);`
+To manually print a log statement you can see in Monitoring, use `z.console.log` in Code Mode:
 
-5. Have internal team members and/or beta users test your integration. If you are going to submit your app for _Publishing_ in the Zapier App Directory, you'll need at least 3 users with live Zaps. Each additional tester helps ensure that your app doesn't ship with usability problems or bugs.
+`z.console.log('Here are the input fields', bundle.inputData);`
 
-    Internal team members can be invited from _[Manage Team](https://platform.zapier.com/manage/invite-team-member)_ as admins or collaborators. 
+## User testing
 
-    Beta users external to your organization can be invited from _[Sharing](https://platform.zapier.com/manage/share-integration)_
+Have internal team members and/or beta users test your integration. If you are going to submit your app for _Publishing_ in the Zapier App Directory, you'll need at least 3 users with live Zaps. Each additional tester helps ensure that your app doesn't ship with usability problems or bugs.
 
-    The _Dashboard_ section in the Platform UI provides usage statistics by trigger and action. 
+Internal team members can be invited from _[Manage Team](https://platform.zapier.com/manage/invite-team-member)_ as admins or collaborators. 
+
+Beta users external to your organization can be invited from _[Sharing](https://platform.zapier.com/manage/share-integration)_
+
+The _Insights_ section in the Platform UI provides usage statistics by trigger and action. 

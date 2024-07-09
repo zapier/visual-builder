@@ -55,6 +55,8 @@ REST Hook triggers are marked as _Instant_ [in the Zap editor](https://cdn.zappy
 
 This request, usually a POST, is performed when a user activates a Zap that starts with this REST Hook trigger. This is how a Zap makes a subscription request to your API to be notified (via webhook) of all trigger events with the given parameters going forward.
 
+The subscribe request is **only** made when a Zap is turned on for the first time, or if an active Zap is paused and then unpaused. Note that [publishing a new Draft](https://help.zapier.com/hc/en-us/articles/8496260938125-Create-drafts-of-your-Zaps) would not always mean pausing/unpausing a Zap. Only if a new trigger subscription is required, would a new subscribe request be made. In cases of remapping action step fields (from existing trigger data), this doesn’t require any change to the trigger itself as a datasource, so a new subscribe request would **not** be made when that Draft was published. 
+
 Click on the _Show Options_ dropdown to add data to the Request Body or HTTP Headers that are needed by your API for a successful subscription. Note that you’ll need to make sure the keys here match what your API expects.
 
 Zapier includes a `targetUrl` when making this request. You need to store the targetUrl, usually in a database, and you'd typically associate it with an id. Return that id in the response back to Zapier to be used later in the Unsubscribe.
