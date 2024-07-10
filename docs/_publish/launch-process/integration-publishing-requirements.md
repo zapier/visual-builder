@@ -7,7 +7,7 @@ redirect_from:
   - /publish/integration-publishing-guidelines
 ---
 
-# Integration Publishing Requirements
+# Integration publishing requirements
 
 We’re excited you are creating an integration for the [Zapier Platform](https://zapier.com/developer-platform). We’re here to help you understand our platform and its requirements so that you can successfully prepare your Zapier integration for publishing. Thousands of partners have built integrations on the Zapier Platform that enable our mutual users to set up Zaps as easily and quickly as possible.
 

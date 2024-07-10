@@ -5,11 +5,11 @@ layout: post-toc
 redirect_from:
 ---
 
-# Integration Build Guidelines
+# Integration build guidelines
 
 Before publishing your integration on Zapier, it is essential to ensure that your integration is well-prepared to provide a seamless and efficient user experience. The following guidelines are designed to assist you in refining your integration before submitting it for review. Adhering to these guidelines will help enhance the functionality and user interaction with your integration and will provide you with the best value and opportunities to harness Zapier as a method of obtaining new users and most commonly, boosting the lifetime value of your current customers
 
-## Familiariasation and testing
+## Familiarization and testing
 
 ### Familiarize yourself with Zapier
 
@@ -130,10 +130,10 @@ The response content is what is returned to Zapier by the trigger. The response 
 
 - **Date-times**: Date-time values are required to be in [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it is UTC). This includes date-time values returned from the polling URL, in the hook payload, and your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-15T01:15:13Z` (or `-0000` instead of `Z`)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-01T12:32:01-0800`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-01T12:32:01-08:00`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-13` (for date-only values)
+- `2023-12-15T01:15:13Z` (or `-0000` instead of `Z`)
+- `2023-12-01T12:32:01-0800`
+- `2023-12-01T12:32:01-08:00`
+- `2023-12-13` (for date-only values)
 
 - **Booleans**: Set boolean values as true or false. Do not use 1 and 0 or alternative representations for boolean values.
 
@@ -204,10 +204,10 @@ Return information about the resource that was created, updated, or affected by 
 
 - **Date-times**: Date-time values are required to be in standard [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it is UTC). This includes date-time values returned in the response content and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-15T01:15:13Z` (or `-0000` instead of `Z`)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-01T12:32:01-0800`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-01T12:32:01-08:00`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-13` (for date-only values)
+- `2023-12-15T01:15:13Z` (or `-0000` instead of `Z`)
+- `2023-12-01T12:32:01-0800`
+- `2023-12-01T12:32:01-08:00`
+- `2023-12-13` (for date-only values)
 
 - **Booleans**: Set boolean values as true or false. Do not use 1 and 0 or alternative representations for boolean values.
 
@@ -296,12 +296,12 @@ While “create” actions return a single object to Zapier; searches must retur
 
 - **Addresses**: Likewise with names, most actions in Zapier require address components in separate fields (street, street2, city, state, zip), instead of requiring the complete address in a single field. Always provide separated address fields, though feel free to return the complete address as well if the response already includes this.
 
-- **Date-times**: Date-time values are required to be in standard [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it is UTC). This includes date-time values returned in the response content and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats.
+- **Date-times**: Date-time values are required to be in standard [ISO 8601 format](http://www.cl.cam.ac.uk/~mgk25/iso-time.html?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier#date) and should always include a time zone offset (even if it is UTC). This includes date-time values returned in the response content and in your sample data. Avoid UNIX/Epoch timestamps. Date-time values may be modified in your API call custom code if your API returns dates in different formats. Example acceptable date-time values include:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-15T01:15:13Z` (or `-0000` instead of `Z`)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-01T12:32:01-0800`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-01T12:32:01-08:00`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`2023-12-13` (for date-only values)
+- `2023-12-15T01:15:13Z` (or `-0000` instead of `Z`)
+- `2023-12-01T12:32:01-0800`
+- `2023-12-01T12:32:01-08:00`
+- `2023-12-13` (for date-only values)
 
 - **Booleans**: Set boolean values as true or false. Do not use 1 and 0 or alternative representations for boolean values.
 
