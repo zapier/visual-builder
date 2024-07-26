@@ -69,6 +69,34 @@ To toggle the “Join an Integration as Collaborators” feature, please follow 
 
 You can view a list of invited team members (both accepted and pending invites) from the _Manage Team_ page. Admins have the ability to remove team members (both other Admins and Collaborators) from this page. Collaborators can only remove other Collaborators. You can also remove yourself from the team, regardless of your role. It’s important to note that if you are removed as an Admin, you can regain Admin access only if invited by an existing Admin.
 
+## Assign marketing and technical contacts
+
+Admins have the ability to assign dedicated marketing and technical contacts on the integration team. Assigning these contacts allows us to better streamline outbound communication, and ensures the right contacts receive timely information.
+
+### How to assign contacts
+
+1. Navigate to the “Manage team” page in the developer platform
+2. Click the “Settings” icon for the user you want to assign a role to
+3. Click either “Set marketing contact” or “Set technical contact”
+4. Users will be tagged with the role they are assigned
+
+![Screenshot showing options to select contact type](https://cdn.zappy.app/6e7b628f49cccb820ea693b224619da8.png)
+![Screenshot shoting marketing and techincal contact tags](https://cdn.zappy.app/473075ad407c94a93cbccd1504173268.png)
+
+### Notes
+
+* Each integration team can have only one designated marketing contact and one designated technical contact at a time
+* A single user can be labelled as both the technical and marketing contact, they do not need to be separate users
+* Users are not alerted when they are assigned or removed from a role
+* Only Admins can assign roles, Collaborators cannot assign roles
+* You can manually remove a role from a user by clicking the “Settings” icon and selecting “Revoke technical contact” or “Revoke marketing contact”
+* You do not need to remove a role from a user before assigning the role to another user
+* Assigning a role to a new user that’s already been assigned to another user will cause the role to automatically be removed from the original user
+* Only integration team members that have accepted a role can be assigned a role (ie team members that are Invitation Pending cannot be assigned a role)
+* The user assigned as the marketing contact will be shown as the contact on private invite sharing pages
+
+![Screenshot showing private invite sharing page](https://cdn.zappy.app/defb445b2a2807fd2c6d0e45dde346b5.png)
+
 ## Manage email subscriptions relating to your integration
 
 ### General marketing updates
