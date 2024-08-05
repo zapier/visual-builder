@@ -133,6 +133,19 @@ Being featured on Zapier’s blog means you benefit from our high web traffic an
 {% endcapture %}
 {{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
 
+## Prioritized Marketing Inclusion
+Get ahead with early access to Zapier-initiated co-marketing campaigns, giving your integration more exposure and engagement opportunities.
+
+{% capture styled_table %}
+| Prioritized Marketing Inclusion  |                 |
+|-------------------|---------------------------|
+|	**Tier**			| Platinum				|
+|	**How to redeem**	| Automatically included. We’ll prioritize invites for Platinum Partners to participate in our co-marketing campaigns.	|
+|	**Opportunity**		| Boost your integration’s visibility and user engagement by being featured in high-impact marketing efforts.	|
+| **Best used** | Take advantage of early access to promote your integration effectively across multiple channels. |
+{% endcapture %}
+{{ styled_table | markdownify | replace: '<table>', '<table class="even-columns">' }}
+
 ## Priority Developer Support
 Request dedicated support for your integration and product roadmap from a Zapier Solutions Engineer. Technical troubleshooting and code review are available.
 
