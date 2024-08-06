@@ -71,7 +71,7 @@ You can view a list of invited team members (both accepted and pending invites) 
 
 ## Assign marketing and technical contacts
 
-Admins have the ability to assign dedicated marketing and technical contacts on the integration team. Assigning these contacts allows us to better streamline outbound communication, and ensures the right contacts receive timely information.
+Admins have the ability to assign dedicated marketing and technical contacts on the integration team. Assigning these contacts allows us to better streamline outbound communication, and ensures the right contacts receive timely information. Please note that Zapier's support teams might reach out to the technical contact for technical support. E.g. we might contact this person so we can collaborate on trickier Customer Support tickets on Zaps that involve your integration.
 
 ### How to assign contacts
 
