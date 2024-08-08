@@ -24,7 +24,7 @@ You may find some documents on the Zapier site duplicate or outdated. The most u
 
 Our code is updated frequently. To see a full list of changes, look no further than [the CHANGELOG](https://github.com/zapier/zapier-platform/blob/main/CHANGELOG.md).
 
-This doc describes the latest CLI version (**15.8.0**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc describes the latest CLI version (**15.11.1**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [14.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@14.1.2/packages/cli/README.md), [13.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@13.0.0/packages/cli/README.md)
 - CLI Reference: [14.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@14.1.2/packages/cli/docs/cli.md), [13.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@13.0.0/packages/cli/docs/cli.md)
@@ -1996,6 +1996,7 @@ You'll usually want to use `bundle.inputData` instead.
 | `limit` | `-1` | The number of items you should fetch. `-1` indicates there's no limit. Build this into your calls insofar as you are able |
 | `page` | `0` | Used in [paging](#paging) to uniquely identify which page of results should be returned |
 | `isTestingAuth` | `false` | (legacy property) If true, the poll was triggered by a user testing their account (via [clicking "test"](https://cdn.zapier.com/storage/photos/5c94c304ce11b02c073a973466a7b846.png) or during setup). We use this data to populate the auth label, but it's mostly used to verify we made a successful authenticated request |
+| `withSearch` | `undefined` | When a create is called as part of a search-or-create step, `withSearch` will be the key of the search. |
 
 > Before v8.0.0, the information in `bundle.meta` was different. See [the old docs](https://github.com/zapier/zapier-platform-cli/blob/a058e6d538a75d215d2e0c52b9f49a97218640c4/README.md#bundlemeta) for the previous values and [the wiki](https://github.com/zapier/zapier-platform/wiki/bundle.meta-changes) for a mapping of old values to new.
 
@@ -2551,7 +2552,7 @@ This behavior has changed periodically across major versions, which changes how/
 
 ![](https://cdn.zappy.app/e835d9beca1b6489a065d51a381613f3.png)
 
-Ensure you're handling errors correctly for your platform version. The latest released version is **15.8.0**.
+Ensure you're handling errors correctly for your platform version. The latest released version is **15.11.1**.
 
 ### HTTP Request Options
 
@@ -3670,6 +3671,8 @@ Since v15.6.0, instead of using the default `id` field, you can also define one 
 
 will tell Zapier to use `(userId, slug)` as the unique primary key to deduplicate items when running a polling trigger.
 
+**Limitation:** The `primary` option currently doesn't support mixing top-level fields with nested fields that use double underscores in their keys. For example, if you set `primary: true` on both `id` and `user__id`, the `primary` setting on the `user__id` field will be ignored; only `id` will be used for deduplication. However, if all the `primary` fields are all nested, such as `user__id` + `user__name`, it will work as expected.
+
 ### Node X No Longer Supported
 
 If you're seeing errors like the following:
@@ -3748,7 +3751,7 @@ Broadly speaking, all releases will continue to work indefinitely. While you nev
 For more info about which Node versions are supported, see [the faq](#how-do-i-manually-set-the-nodejs-version-to-run-my-app-with).
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **15.8.0**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **15.11.1**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
