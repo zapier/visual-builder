@@ -344,6 +344,7 @@ Zap templates can be rejected due to different reasons. The day after your Zap t
 - The Zap template title and/or description was written in a language other than English
 - The Zap template includes a code, custom webhook, or custom formatter step which is currently not allowed
 - The Zap template contains hardcoded values such as phone numbers, emails, or IDs which should be dynamically mapped from the trigger or another action step
+- Submitting a large number of Zap templates for an integration with a low active user count can lead to rejection. We aim to ensure that our review resources are allocated fairly across all partners. When a disproportionate amount of submissions comes from a single source, it negatively impacts the review process for others. To maintain a balanced and efficient review process, we enforce limits based on the size and usage of the app
 
 
 **Can I select which Zap templates to display in my embed?**
