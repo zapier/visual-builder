@@ -28,6 +28,8 @@ The following areas are however beyond our support scope:
 
 We encourage developers to use our comprehensive documentation and community resources for topics that fall outside of our support boundaries. Our aim is to empower you with the tools and knowledge you need to excel on the Zapier Platform.
 
+Reach out to our Platform Support team via the [contact form](https://developer.zapier.com/contact).
+
 ## Partnering with Zapier
 
 For public integrations, the Partner Support team is here to help with:
@@ -37,7 +39,13 @@ For public integrations, the Partner Support team is here to help with:
 - **Branding and Page Updates**: Updating your integration’s branding and directory page.
 - **Solutions for Embedding**: Any questions about [embedding Zapier](https://platform.zapier.com/embed/overview) in your app and Zap templates.
 
-Reach out to either our Platform and Partner Support teams via the [contact form](https://developer.zapier.com/contact).
+Reach out to our Partner Support team via the [contact form](https://developer.zapier.com/contact).
+
+## Build Faster with Zapier Experts
+
+If you’re working to build [public](https://platform.zapier.com/quickstart/private-vs-public-integrations#public-integrations) or [private](https://platform.zapier.com/quickstart/private-vs-public-integrations#private-integrations) integrations on the Zapier Developer Platform but need additional technical expertise or your developers are focused on other priorities, consider partnering with a Zapier Expert. Our certified Zapier Experts can help you build integrations quickly and efficiently, ensuring your projects stay on track. Whether you need guidance building an integration or full end-to-end integration development, a Zapier Expert can provide the expertise and assistance you need.
+
+Learn more about Zapier Experts who are [trusted integration developers](https://platform.zapier.com/quickstart/trusted-developers), or [search the Zapier Expert Directory](https://zapier.com/experts?f_services-needed=building-a-public-or-private-zapier-integrationapi).
 
 ## Zapier’s Developer Community
 
