@@ -3769,5 +3769,4 @@ You can get help by either emailing `partners@zapier.com` or by [joining our dev
 
 See [CONTRIBUTING.md](https://github.com/zapier/zapier-platform/blob/main/CONTRIBUTING.md).
 
-
 {% endraw %}
