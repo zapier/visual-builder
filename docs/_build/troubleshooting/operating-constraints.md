@@ -31,7 +31,7 @@ Many errors can be viewed in your integration's log monitoring in the [Platform 
 | Deduplication table   | 105,000 rows per Zap |
 | Custom fields         | 1000                 |
 | Webhook payload       | 10 MB                |
-| HTTP response payload | 6 MB                 |
+| HTTP response payload | 20 MB                 |
 | Downloaded files      | ~120 MB              |
 
 | Throttles                                                                                                           |                             |
