@@ -15,11 +15,11 @@ redirect_from:
 
 ### Constraint 
 
-When a user clicks **Test Trigger** in the Zap editor, the response payload must be less than 6MB.
+When a user clicks **Test Trigger** in the Zap editor, the response payload must be less than 20MB.
 
 ### Errors user will see if constraint is hit
 
-- _“Scripting payload too large ('n' bytes but max is 6291456bytes).”_ - ('n' is the number of bytes in the payload.)
+- _“Scripting payload too large ('n' bytes but max is xxx bytes).”_ - ('n' is the number of bytes in the payload.)
 
 ### Best practice
 
@@ -35,7 +35,7 @@ When a user toggles a Zap with a polling trigger “On”, Zapier does some addi
 
 First, it tests the user’s authentication to your service. 
 
-Then it uses the trigger's `perform` method to build a [deduplication table](https://platform.zapier.com/build/deduplication) of records, so that the Zap will not run for existing records. The payload returned from this request must also be less than 6 MB.
+Then it uses the trigger's `perform` method to build a [deduplication table](https://platform.zapier.com/build/deduplication) of records, so that the Zap will not run for existing records. The payload returned from this request must also be less than 20 MB.
 
 ### Errors user will see if constraint is hit
 
@@ -55,7 +55,7 @@ For those requests that might otherwise exceed timeout or size limits, you can m
 
 ### Constraint
  
-Each time a Zap executes, the trigger's response payload must be less than 6MB for a polling trigger and less than 10 MB for a REST Hook trigger. 
+Each time a Zap executes, the trigger's response payload must be less than 20MB for a polling trigger and less than 10 MB for a REST Hook trigger. 
 
 ### Errors user will see if constraint is hit
 
