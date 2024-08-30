@@ -42,9 +42,14 @@ Integrations created with the Platform CLI cannot be edited in the Platform UI, 
 
 ### What do I do if I am blocked from pushing new versions?
 
-Zapier may fix bugs or add new features to your integration and release a new version. You can run `zapier pull` to update your local files with the latest version.
+Zapier may fix bugs or add new features to your integration and release a new version.
 
-Any destructive file changes will prompt you with a confirmation dialog before continuing.
+In the event that Zapier has made changes to your integration, you will be unable to do the following until you update your local files by running `zapier pull`:
+- push to the promoted version
+- promote a new version
+- migrate from one version to another version
+
+Run `zapier pull` to update your local files with the latest version and remove these restrictions. Any destructive file changes will prompt you with a confirmation dialog before continuing.
 
 ## Who can view your versions?
 
