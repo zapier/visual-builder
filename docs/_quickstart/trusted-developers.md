@@ -12,19 +12,20 @@ If you don't have the time/resources to dedicate towards building and launching 
 
 ## Approved trusted Zapier app developers
 
-* [Left Hook Digital](http://lefthookdigital.com/zapier-integration-developer-partner/)
+* [Left Hook Digital](https://lefthook.com/opportunities/zapier-public-app/)
 
-* [DataAutomation](https://dataautomation.com/zapier-developer/)
+* [DataAutomation](https://zapier.com/experts/dataautomation)
 
-* [GetUWired](https://www.getuwired.com/zapier-partner-page/)
+* [GetUWired](https://zapier.com/experts/getuwired)
 
-* [Mercology](https://integration.mercology.net/)
+* [Mercology](https://zapier.com/experts/mercology)
 
-* [Connex Digital](https://connex.digital/zapier-bpa/)
+* [Connex Digital](https://zapier.com/experts/connex-digital)
 
-If you're looking for help with Zap workflows and not building an app, contact one of our [Zapier Experts](https://zapier.com/experts/) who can help you out.
 
-> Note*: If you do work with one of our Zapier trusted developers to develop an app, make sure you develop a plan for continued support and maintenance, either using that developer, or with an in-house team who will take responsibility for the app.*
+You can also [reach out to a Zapier Expert](https://zapier.com/experts/) who offers integration building services, or if you need help building Zap workflows or any other automation solutions.
+
+> Note: *If you work with a Zapier trusted app developer or Zapier Expert to build an integration, make sure you develop a plan for continued support and maintenance, either using that developer, or with an in-house team who will take responsibility for the app.*
 
 ## Requirements for Zapier trusted developers
 
