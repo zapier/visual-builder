@@ -363,11 +363,11 @@ We recommend migrating a small subset of users first, via the percent argument, 
 
 You can migrate a specific user's Zaps by using `--user` (i.e. `zapier migrate 1.0.0 1.0.1 --user=user@example.com`). This will migrate Zaps that are private for that user. Zaps that are
 
-  - [shared across the team](https://help.zapier.com/hc/en-us/articles/8496277647629),
+- [shared across the team](https://help.zapier.com/hc/en-us/articles/8496277647629),
 
-  - [shared app connections](https://help.zapier.com/hc/en-us/articles/8496326497037-Share-app-connections-with-your-team), or
+- [shared app connections](https://help.zapier.com/hc/en-us/articles/8496326497037-Share-app-connections-with-your-team), or
 
-  - in a [team/company account](https://help.zapier.com/hc/en-us/articles/22330977078157-Collaborate-with-members-of-your-Team-or-Company-account)
+- in a [team/company account](https://help.zapier.com/hc/en-us/articles/22330977078157-Collaborate-with-members-of-your-Team-or-Company-account)
 
 will **not** be migrated.
 
@@ -518,11 +518,11 @@ You can mix and match several options to customize the created scaffold for your
 
 These users come in three levels:
 
-  * `admin`, who can edit everything about the integration
+* `admin`, who can edit everything about the integration
 
-  * `collaborator`, who has read-only access for the app, and will receive periodic email updates. These updates include quarterly health scores and more.
+* `collaborator`, who has read-only access for the app, and will receive periodic email updates. These updates include quarterly health scores and more.
 
-  * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health scores and more.
+* `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health scores and more.
 
 Team members can be freely added and removed.
 
@@ -551,11 +551,11 @@ Team members can be freely added and removed.
 
 These users come in three levels:
 
-  * `admin`, who can edit everything about the integration
+* `admin`, who can edit everything about the integration
 
-  * `collaborator`, who has read-only access for the app, and will receive periodic email updates. These updates include quarterly health scores and more.
+* `collaborator`, who has read-only access for the app, and will receive periodic email updates. These updates include quarterly health scores and more.
 
-  * `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health scores and more.
+* `subscriber`, who can't directly access the app, but will receive periodic email updates. These updates include quarterly health scores and more.
 
 Use the `zapier team:add` and `zapier team:remove` commands to modify your team.
 
