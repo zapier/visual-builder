@@ -40,6 +40,17 @@ Learn more on:
 
 Integrations created with the Platform CLI cannot be edited in the Platform UI, however you can view the available versions in the Platform UI. You can also run the [`zapier versions`](https://github.com/zapier/zapier-platform/blob/master/packages/cli/docs/cli.md#versions) command to see the same information in your local terminal.
 
+### What do I do if I am blocked from pushing new versions?
+
+Zapier may fix bugs or add new features to your integration and release a new version.
+
+In the event that Zapier has made changes to your integration, you will be unable to do the following until you update your local files by running `zapier pull`:
+- push to the promoted version
+- promote a new version
+- migrate from one version to another version
+
+Run `zapier pull` to update your local files with the latest version and remove these restrictions. Any destructive file changes will prompt you with a confirmation dialog before continuing.
+
 ## Who can view your versions?
 
 For public integrations, which are searchable in the Zap editor or in the app directory, a user who selects your integration in the Zap Editor will be using the current public version by default. 
