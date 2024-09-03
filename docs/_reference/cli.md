@@ -433,7 +433,7 @@ Check `zapier jobs` to track the status of the promotion. Or use `zapier history
 
 ## pull
 
-> Retrieve and update your local integration filess with the latest version.
+> Retrieve and update your local integration files with the latest version.
 
 **Usage**: `zapier pull`
 
