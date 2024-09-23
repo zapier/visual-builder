@@ -23,7 +23,7 @@ Unit tests will ensure your integration code functionality matches what you inte
 
 `zapier canary` provides a new way to validate your integration and build confidence that the change can work for all different types of Zap set ups.
 `zapier canary` allows you to set the version you want to test with, the version you want to replace with, the percentage of traffic, and a duration before the versions are rolled back.
-You can choose to delete the canary test before the duration is expired in case something catastrophic occurs.
+You can choose to delete the canary test before the duration is expired in case something unexpected occurs.
 
 
 ### Best Practices
