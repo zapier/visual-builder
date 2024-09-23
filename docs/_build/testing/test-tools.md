@@ -1,8 +1,7 @@
 ---
-title: Canary Testing
+title: Integration testing and validation tools
 order: 3
 layout: post-toc
-redirect_from: /build/test-integration#monitoring
 ---
 
 # Testing Tools
