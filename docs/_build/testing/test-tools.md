@@ -18,11 +18,17 @@ These users are not informed or aware of the changes, as this is usually done at
 - Completed build of your Zapier integration, built from the CLI (as of Sep 23, 2024, this is a CLI only feature)
 - If you haven’t used Zapier before, you'll want to learn the basics in our [Zapier Getting Started Guide](https://zapier.com/learn/zapier-quick-start-guide/).
 
-You may want to use the canary tool when adding a new feature, or fixing a bug. For example, if you are planning to roll out a bug fix, you may want to test this out to see if the fix will work. The usual validation steps may include unit tests, and _[setting up Zaps for validation](https://platform.zapier.com/build/test-monitoring). 
+You may want to use the canary tool when adding a new feature, or fixing a bug. For example, if you are planning to roll out a bug fix, you may want to test this out to see if the fix will work. The usual validation steps may include unit tests, and [setting up Zaps for validation](https://platform.zapier.com/build/test-monitoring). 
 Unit tests will ensure your integration code functionality matches what you intended to do. Setting up Zaps will ensure the trigger or action works with the inputs you provide. The canary tool ensures your changes work for many existing live Zaps, with different inputs and outputs. 
 
-`zapier canary` provides a new way to validate your integration and build confidence that the change can work for all different types of Zap set ups.
-`zapier canary` allows you to set the version you want to test with, the version you want to replace with, the percentage of traffic, and a duration before the versions are rolled back.
+
+[`zapier canary`](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#canarycreate) provides a new way to validate your integration and build confidence that the change can work for all different types of Zap set ups.
+
+[`zapier canary:create`](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#canarycreate) allows you to set the version you want to test with, the version you want to replace with, the percentage of traffic, and a duration before the versions are rolled back.
+
+[`zapier canary:list`](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#canarylist) allows you to see the active canary and see how much time is left.
+
+[`zapier canary:delete`](https://github.com/zapier/zapier-platform/blob/main/packages/cli/docs/cli.md#canarydelete)
 You can choose to delete the canary test before the duration is expired in case something unexpected occurs.
 
 
@@ -46,4 +52,4 @@ A: The system will automatically rollback to the previous version after the spec
 A: Yes, you can extend the duration by stopping the existing canary, and re-running the `zapier canary` command with a new duration.
 
 **Q: How do I monitor the canary test?**
-A: Use Zapier's monitoring tools and logs to keep track of the test performance.
+A: Use Zapier's monitoring tools and logs to keep track of the test performance. We don't currently have a way to isolate monitoring for canary, only the overall success or error pattern.
