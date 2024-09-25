@@ -46,10 +46,13 @@ You can choose to delete the canary test before the duration is expired in case 
 ### FAQ
 
 **Q: What happens if I don't rollback in time?**
+
 A: The system will automatically rollback to the previous version after the specified duration.
 
 **Q: Can I extend the duration of a canary test?**
+
 A: Yes, you can extend the duration by stopping the existing canary, and re-running the `zapier canary` command with a new duration.
 
 **Q: How do I monitor the canary test?**
+
 A: Use Zapier's monitoring tools and logs to keep track of the test performance. We don't currently have a way to isolate monitoring for canary, only the overall success or error pattern.
