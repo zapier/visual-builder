@@ -1,6 +1,6 @@
 ---
 title: Test and monitor your integration in your Zapier account
-order: 3
+order: 4
 layout: post-toc
 redirect_from: /build/test-integration#monitoring
 ---
