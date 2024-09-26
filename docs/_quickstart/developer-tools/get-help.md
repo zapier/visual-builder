@@ -45,7 +45,7 @@ Reach out to our Partner Support team via the [contact form](https://developer.z
 
 If you’re working to build [public](https://platform.zapier.com/quickstart/private-vs-public-integrations#public-integrations) or [private](https://platform.zapier.com/quickstart/private-vs-public-integrations#private-integrations) integrations on the Zapier Developer Platform but need additional technical expertise or your developers are focused on other priorities, consider partnering with a Zapier Expert. Our certified Zapier Experts can help you build integrations quickly and efficiently, ensuring your projects stay on track. Whether you need guidance building an integration or full end-to-end integration development, a Zapier Expert can provide the expertise and assistance you need.
 
-Learn more about Zapier Experts who are [trusted integration developers](https://platform.zapier.com/quickstart/trusted-developers), or [search the Zapier Expert Directory](https://zapier.com/experts?f_services-needed=building-a-public-or-private-zapier-integrationapi).
+Find a Zapier Expert who is a [trusted integration developer](https://platform.zapier.com/quickstart/trusted-developers), or [search the Zapier Expert Directory](https://zapier.com/experts?f_services-needed=building-a-public-or-private-zapier-integrationapi).
 
 ## Zapier’s Developer Community
 
