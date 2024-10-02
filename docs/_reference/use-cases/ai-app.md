@@ -13,7 +13,7 @@ AI app integrations built on Zapier allow users to automate tasks using AI capab
 ## Pain Points
 ### 1. Long-Running Actions  
 
-**Pain Point:** Actions that take a long time to process can cause issues, especially with Zapier's execution time limits. Test steps in the Zapier editor are limited to 50 seconds, and live Zap executions default to 45 seconds.
+**Pain Point:** Actions that take a long time to process can cause issues, especially with Zapier's execution time limits. Test steps in the Zapier editor are limited to 50 seconds, and live Zap executions default to 30 seconds.
 
 **Recommendations:**
 
