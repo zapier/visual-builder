@@ -39,4 +39,6 @@ This trigger requires your app to support REST Hooks - webhook subscriptions tha
 
 This method of triggering also prevents numerous - and sometimes unnecessary - requests from being made to your API's endpoints in polling requests. 
 
-A webhook subscription is created between Zapier and your app, and whenever the trigger event occurs in your app, a webhook is sent by your app to the unique webhook URL provided by Zapier for each active Zap started with that trigger. Zapier does not support Identity Confirmation.
+A webhook subscription is created between Zapier and your app, and whenever the trigger event occurs in your app, a webhook is sent by your app to the unique webhook URL provided by Zapier for each active Zap started with that trigger. 
+
+Zapier supports immediate webhook handshake confirmations by echoing back the `X-Hook-Secret` header when present, but does not support additional identity verification steps beyond this.
