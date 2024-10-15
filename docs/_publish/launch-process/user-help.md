@@ -1,5 +1,5 @@
 ---
-title: Best practices for creating exceptional documentation
+title: Create help documentation for your users
 order: 5
 layout: post-toc
 redirect_from:

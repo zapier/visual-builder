@@ -1,5 +1,5 @@
 ---
-title: Company branding guidelines
+title: Integration branding guidelines
 order: 1
 layout: post-toc
 redirect_from: 
@@ -8,46 +8,43 @@ redirect_from:
   - /publish/
 ---
 
-# Company branding guidelines
+# Integration Branding Guidelines
 
-Your customers already recognize your app name and logo, and they’ll look for it inside Zapier. Zapier users who have never used your app may discover it through Zapier when looking for a new tool. That makes consistent branding a requirement for a Zapier integration.
+When creating your integration, you'll add your app’s name, logo, description, category, and primary brand color. Consistent branding is essential for helping users recognize and discover your app on Zapier.
 
-The search for new apps and integrations starts at the [Zapier app directory](https://zapier.com/apps/). Apps are ranked by popularity and category, with a search box to filter through the list.
+The journey starts at the [Zapier app directory](https://zapier.com/apps/), where apps are ranked by popularity and category. Users search for new apps and integrations here.
 
-![Zapier app directory pages](https://cdn.zappy.app/06ab4121b4b18d05816e1293aeb185a5.png)
+![Zapier app directory pages](https://cdn.zappy.app/13ce36334d97ddf10fa31c896d19a6de.png)
 _App Directory listings help users discover new ways to connect apps_
 
-Each app includes a standalone app profile page. Your app’s branding plays the strongest role here as it's the first place many users will see your app on Zapier. Here users explore details about your app and its integrations, or select another popular app to see how the two can work together in Zapier.
+Each integration gets its own app profile page on Zapier, where your branding stands out. Users can explore your app’s features and see how it works with other apps.
 
-App profile pages include [Zap Templates](https://platform.zapier.com/publish/zap-templates), predefined and curated examples of popular integration use cases with pre-mapped fields that users can set up in a few clicks.
-
-Inside Zapier’s account dashboard, the _Start with a template_ section shows Zap Templates for apps users have connected to their accounts.
+App profiles feature [Zap Templates](https://platform.zapier.com/publish/zap-templates)—pre-built workflows that users can set up with just a few clicks. These templates are also shown in the Zapier dashboard for connected apps.
 
 ![Zapier Recommended](https://cdn.zappy.app/4b85f4fa4dde1779ffcb11652db92814.png)
 
-Inside the core Zapier app, users will again see your app name and logo in the Zap editor, where they can select the apps they want to connect in a Zap.
+In the Zap editor, your app’s logo and name appear when users select apps to connect.
 
-![Zap Editor app selector](https://cdn.zappy.app/c53f3dc2f9b6cbc46ee0796676cbcaad.png)
+![Zap Editor app selector](https://cdn.zappy.app/9a28eb87b287ee52b23c7aee61066207.png)
 
-When creating a new Zapier integration, you’ll be asked to add the app’s name, logo, description and category when building; along with a brand color when the integration is submitted for publishing. 
-
-Follow these guidelines to effectively brand your app on Zapier:
+Follow these guidelines to ensure consistent, effective branding for your Zapier integration:
 
 ## App name
 
 Use the actual, unique name of your app with the same capitalization your company uses in your core branding. Trademark/copyright identifiers such as a TM suffix aren't allowed in the app name, though they can be added to the description.
 
-Do not add adjectives or phrases to your app name, and only include your company name if the company and app name are always used together in your branding. Do not include the word "app" unless you always include that in your app’s branding. 
+Do not add adjectives or phrases to your app name, and only include your company name if the company and app name are always used together in your branding. Do not include the word "app" unless you always include that in your app’s branding.
+
+Abbreviations like "FKA" (formerly known as), "AKA" (also known as), and "NKA" (now known as) are not allowed in integration titles. Your integration title must exactly match your app's current name. Requests to include abbreviations in the title during rebranding will not be accepted. For example, if your integration was originally titled "My Cool CRM" and rebrands to "My New Cool CRM", a request to change the title to "My New Cool CRM (fka My Cool CRM)" will result in the integration being titled as "My New Cool CRM".
 
 **Example**:
 
 - `Evernote`, not `Evernote Note Taking App` or `EverNote`
 - `Google Sheets`, not `Sheets` or `Google Spreadsheets`
-- `App Name`, not `App Name's integration`
 
 ## App logo
 
-The logo must be a square, transparent PNG at least 256x256px in size. Please use a bigger version if you have one available. If your app has a solid, square background, round the corners 3% of the width and set the background as transparent. If your icon is not square, make a square transparent image and center your icon inside the transparent square. Do not include the app name or other copy in the logo as it will not be legible at small sizes.
+The logo must be a square, transparent PNG at least 256x256px in size with identical height/width measurements. Please use a bigger version if you have one available. If your icon is not square, make a square transparent image and center your icon inside the transparent square. Do not include the app name or other copy in the logo as it will not be legible at small sizes.
 
 **Example**:
 
@@ -62,8 +59,7 @@ Todoist's icon includes transparent, rounded corners.
 
 ## App description copy
 
-Write a short description (up to 140 characters) of your app’s core features and use cases in the form of *<Integration Name> is a....* . 
-The description should be less about selling the platform and more about what the platform actually does. Use proper English and full sentences. The copy should not include links or mentions of Zapier. Do not use flowery or overstated language, or make it appear your integration is associated with or endorsed by Zapier.
+Write a short description (up to 140 characters) of your app’s core features and use cases in the form of "**Integration Name** is a....". The description should be less about selling the platform and more about what the platform actually does. Use proper English and full sentences. The copy should not include links or mentions of Zapier. Do not use flowery or overstated language, or make it appear your integration is associated with or endorsed by Zapier.
 
 **Example**:
 
@@ -73,6 +69,8 @@ The description should be less about selling the platform and more about what th
 ## Category
 
 Select the category that best fits your app's core features and use case. If your app includes features from multiple categories, choose the category that best describes your app’s primary use case today.
+
+Can't find an existing category that represents your app? Let us know! Suggest a category you'd like to see added to our app directory by [submitting this form](https://integration-branding.zapier.app/suggest).
 
 You may update your app's category in the future if needed, so do not select a category that fits your future ambitions for the app instead of its features today. Additionally, do not select a category that applies only to a secondary feature in your app or a narrow category that does not cover your app’s broader focus.
 
