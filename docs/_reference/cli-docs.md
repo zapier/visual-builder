@@ -11,18 +11,6 @@ redirect_from:
 
 <!-- GENERATED! ONLY EDIT `README-source.md` -->
 
-<h1 align="center">
-  <img alt="Zapier Logo" src="https://cdn.zappy.app/1cd66b15407db2d9a01fbe8d600772fe.svg" width="300px">
-  <br>
-  Platform CLI
-  <br>
-  <br>
-</h1>
-
-<p align="center">
-  <a href="https://www.npmjs.com/package/zapier-platform-cli"><img src="https://img.shields.io/npm/v/zapier-platform-cli.svg" alt="npm version"></a>
-</p>
-
 Zapier is a platform for creating integrations and workflows. This CLI is your gateway to creating custom applications on the Zapier platform.
 
 You may find some documents on the Zapier site duplicate or outdated. The most up-to-date contents are always available on GitHub:
@@ -33,7 +21,7 @@ You may find some documents on the Zapier site duplicate or outdated. The most u
 
 Our code is updated frequently. To see a full list of changes, look no further than [the CHANGELOG](https://github.com/zapier/zapier-platform/blob/main/CHANGELOG.md).
 
-This doc describes the latest CLI version (**15.14.0**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
+This doc describes the latest CLI version (**15.17.0**), as of this writing. If you're using an older version of the CLI, you may want to check out these historical releases:
 
 - CLI Docs: [14.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@14.1.2/packages/cli/README.md), [13.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@13.0.0/packages/cli/README.md)
 - CLI Reference: [14.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@14.1.2/packages/cli/docs/cli.md), [13.x](https://github.com/zapier/zapier-platform/blob/zapier-platform-cli@13.0.0/packages/cli/docs/cli.md)
@@ -58,7 +46,7 @@ This doc describes the latest CLI version (**15.14.0**), as of this writing. If 
   * [Private App Version (default)](#private-app-version-default)
   * [Sharing an App Version](#sharing-an-app-version)
   * [Promoting an App Version](#promoting-an-app-version)
-  * [Pulling the latest version from Zapier](#pulling-the-latest-version-from-zapier)
+  * [Pulling Latest Version from Zapier](#pulling-latest-version-from-zapier)
 - [Converting an Existing App](#converting-an-existing-app)
 - [Authentication](#authentication)
   * [Basic](#basic)
@@ -84,6 +72,7 @@ This doc describes the latest CLI version (**15.14.0**), as of this writing. If 
   * [Nested & Children (Line Item) Fields](#nested--children-line-item-fields)
 - [Output Fields](#output-fields)
   * [Nested & Children (Line Item) Fields](#nested--children-line-item-fields-1)
+- [Buffered Create Actions](#buffered-create-actions)
 - [Z Object](#z-object)
   * [`z.request([url], options)`](#zrequesturl-options)
   * [`z.console`](#zconsole)
@@ -105,6 +94,12 @@ This doc describes the latest CLI version (**15.14.0**), as of this writing. If 
   * [`bundle.outputData`](#bundleoutputdata)
   * [`bundle.targetUrl`](#bundletargeturl)
   * [`bundle.subscribeData`](#bundlesubscribedata)
+- [BufferedBundle Object](#bufferedbundle-object)
+  * [`bufferedBundle.authData`](#bufferedbundleauthdata)
+  * [`bufferedBundle.groupedBy`](#bufferedbundlegroupedby)
+  * [`bufferedBundle.buffer`](#bufferedbundlebuffer)
+    + [`bufferedBundle.buffer[].inputData`](#bufferedbundlebufferinputdata)
+    + [`bufferedBundle.buffer[].meta`](#bufferedbundlebuffermeta)
 - [Environment](#environment)
   * [Defining Environment Variables](#defining-environment-variables)
   * [Accessing Environment Variables](#accessing-environment-variables)
@@ -133,6 +128,7 @@ This doc describes the latest CLI version (**15.14.0**), as of this writing. If 
   * [Stale Authentication Credentials](#stale-authentication-credentials)
   * [Handling Throttled Requests](#handling-throttled-requests)
 - [Testing](#testing)
+  * [Using `zapier invoke` Command](#using-zapier-invoke-command)
   * [Writing Unit Tests](#writing-unit-tests)
   * [Using the `z` Object in Tests](#using-the-z-object-in-tests)
   * [Mocking Requests](#mocking-requests)
@@ -179,12 +175,12 @@ what options to present end users in the Zap Editor.
 
 For those not familiar with Zapier terminology, here is how concepts in the CLI map to the end user experience:
 
-* [Authentication](#authentication), (usually) which lets us know what credentials to ask users
-  for. This is used during the "Connect Accounts" section of the Zap Editor.
-* [Triggers](#triggerssearchescreates), which read data *from* your API. These have their own section in the Zap Editor.
-* [Creates](#triggerssearchescreates), which send data *to* your API to create new records. These are listed under "Actions" in the Zap Editor.
-* [Searches](#triggerssearchescreates), which find specific records *in* your system. These are also listed under "Actions" in the Zap Editor.
-* [Resources](#resources), which define an object type in your API (say a contact) and the operations available to perform on it. These are automatically extracted into Triggers, Searches, and Creates.
+ * [Authentication](#authentication), (usually) which lets us know what credentials to ask users
+   for. This is used during the "Connect Accounts" section of the Zap Editor.
+ * [Triggers](#triggerssearchescreates), which read data *from* your API. These have their own section in the Zap Editor.
+ * [Creates](#triggerssearchescreates), which send data *to* your API to create new records. These are listed under "Actions" in the Zap Editor.
+ * [Searches](#triggerssearchescreates), which find specific records *in* your system. These are also listed under "Actions" in the Zap Editor.
+ * [Resources](#resources), which define an object type in your API (say a contact) and the operations available to perform on it. These are automatically extracted into Triggers, Searches, and Creates.
 
 ### How does Zapier Platform CLI Work?
 
@@ -403,7 +399,7 @@ If you'd like to manage your **Version**, use these commands:
 * `zapier deprecate 1.0.0 2020-06-01` - mark a version as deprecated, but let users continue to use it (we'll email them)
 * `zapier env:set 1.0.0 KEY=VALUE` - set an environment variable to some value
 * `zapier delete:version 1.0.0` - delete a version entirely. This is mostly for clearing out old test apps you used personally. It will fail if there are any users. You probably want `deprecate` instead.
-* `zapier pull` - pull the latest version from Zapier server. This is used in the event that Zapier made an update since your last version
+* `zapier pull` - pull the latest version from Zapier server. This is used in the event that Zapier made an update since your last version.
 
 > Note: To see the changes that were just pushed reflected in the browser, you have to manually refresh the browser each time you push.
 
@@ -444,7 +440,7 @@ zapier migrate 1.0.0 1.0.1
 zapier deprecate 1.0.0 2020-06-01
 ```
 
-### Pulling the latest version from Zapier
+### Pulling Latest Version from Zapier
 
 Zapier may fix bugs or add new features to your integration and release a new version. If you attempt to use `zapier push` and we've released a newer version, you will be prevented from pushing until you run `zapier pull` to update your local files with the latest version.
 
@@ -671,17 +667,17 @@ Zapier's OAuth1 implementation matches [Twitter](https://developer.twitter.com/e
 
 The flow works like this:
 
-1. Zapier makes a call to your API requesting a "request token" (also known as "temporary credentials").
-2. Zapier sends the user to the authorization URL, defined by your app, along with the request token.
-3. Once authorized, your website sends the user to the `redirect_uri` Zapier provided. Use `zapier describe` command to find out what it is: ![](https://zappy.zapier.com/117ECB35-5CCA-4C98-B74A-35F1AD9A3337.png)
-4. Zapier makes a backend call to your API to exchange the request token for an "access token" (also known as "long-lived credentials").
-5. Zapier stores the `access_token` and uses it to make calls on behalf of the user.
+  1. Zapier makes a call to your API requesting a "request token" (also known as "temporary credentials").
+  2. Zapier sends the user to the authorization URL, defined by your app, along with the request token.
+  3. Once authorized, your website sends the user to the `redirect_uri` Zapier provided. Use `zapier describe` command to find out what it is: ![](https://zappy.zapier.com/117ECB35-5CCA-4C98-B74A-35F1AD9A3337.png)
+  4. Zapier makes a backend call to your API to exchange the request token for an "access token" (also known as "long-lived credentials").
+  5. Zapier stores the `access_token` and uses it to make calls on behalf of the user.
 
 You are required to define:
 
-* `getRequestToken`: The API call to fetch the request token
-* `authorizeUrl`: The authorization URL
-* `getAccessToken`: The API call to fetch the access token
+  * `getRequestToken`: The API call to fetch the request token
+  * `authorizeUrl`: The authorization URL
+  * `getAccessToken`: The API call to fetch the access token
 
 You'll also likely need to set your `CLIENT_ID` and `CLIENT_SECRET` as environment variables. These are the consumer key and secret in OAuth1 terminology.
 
@@ -793,16 +789,16 @@ If your app's OAuth2 flow uses a different grant type, such as `client_credentia
 
 The OAuth2 flow looks like this:
 
-1. Zapier sends the user to the authorization URL defined by your app.
-2. Once authorized, your website sends the user to the `redirect_uri` Zapier provided. Use the `zapier describe` command to find out what it is: ![](https://zappy.zapier.com/83E12494-0A03-4DB4-AA46-5A2AF6A9ECCC.png)
-3. Zapier makes a backend call to your API to exchange the `code` for an `access_token`.
-4. Zapier stores the `access_token` and uses it to make calls on behalf of the user.
-5. (Optionally) Zapier can refresh the token if it expires.
+  1. Zapier sends the user to the authorization URL defined by your app.
+  2. Once authorized, your website sends the user to the `redirect_uri` Zapier provided. Use the `zapier describe` command to find out what it is: ![](https://zappy.zapier.com/83E12494-0A03-4DB4-AA46-5A2AF6A9ECCC.png)
+  3. Zapier makes a backend call to your API to exchange the `code` for an `access_token`.
+  4. Zapier stores the `access_token` and uses it to make calls on behalf of the user.
+  5. (Optionally) Zapier can refresh the token if it expires.
 
 You are required to define:
 
-* `authorizeUrl`: The authorization URL
-* `getAccessToken`: The API call to fetch the access token
+  * `authorizeUrl`: The authorization URL
+  * `getAccessToken`: The API call to fetch the access token
 
 If the access token has a limited life and you want to refresh the token when it expires, you'll also need to define the API call to perform that refresh (`refreshAccessToken`). You can choose to set `autoRefresh: true`, as in the example app, if you want Zapier to automatically make a call to refresh the token after receiving a 401. See [Stale Authentication Credentials](#stale-authentication-credentials) for more details on handling auth refresh.
 
@@ -902,16 +898,16 @@ Since Zapier uses the `state` to verify that GET requests to your redirect URL
 Zapier's OAuth2 implementation also supports [PKCE](https://oauth.net/2/pkce/). This implementation is an extension of the OAuth2 `authorization_code` flow described above.
 
 To use PKCE in your OAuth2 flow, you'll need to set the following variables:
-1. `enablePkce: true`
-2. `getAccessToken.body` to include `code_verifier: "{{bundle.inputData.code_verifier}}"`
+  1. `enablePkce: true`
+  2. `getAccessToken.body` to include `code_verifier: "{{bundle.inputData.code_verifier}}"`
 
 The OAuth2 PKCE flow uses the same flow as OAuth2 but adds a few extra parameters:
 
-1. Zapier computes a `code_verifier` and `code_challenge` internally and stores the `code_verifier` in the Zapier bundle.
-2. Zapier sends the user to the authorization URL defined by your app. We automatically include the computed `code_challenge` and `code_challenge_method` in the authorization request.
-3. Once authorized, your website sends the user to the `redirect_uri` Zapier provided.
-4. Zapier makes a call to your API to exchange the code but you must include the computed `code_verifier` in the request for an `access_token`.
-5. Zapier stores the `access_token` and uses it to make calls on behalf of the user.
+  1. Zapier computes a `code_verifier` and `code_challenge` internally and stores the `code_verifier` in the Zapier bundle.
+  2. Zapier sends the user to the authorization URL defined by your app. We automatically include the computed `code_challenge` and `code_challenge_method` in the authorization request.
+  3. Once authorized, your website sends the user to the `redirect_uri` Zapier provided.
+  4. Zapier makes a call to your API to exchange the code but you must include the computed `code_verifier` in the request for an `access_token`.
+  5. Zapier stores the `access_token` and uses it to make calls on behalf of the user.
 
 Your auth definition would look something like this:
 
@@ -1001,7 +997,7 @@ When using a function, this "hoisting" of data to the top level is skipped, and 
 
 ### Domain and subdomain validation
 
-When adding a subdomain input field, commonly used in OAuth implementations, additional validation is strongly recommended to prevent a potential security vulnerability. If not taken into account, an attacker could utilize a maliciously constructed subdomain field (like `attacker-domain.com/`) in order to redirect OAuth connection requests to that attacker-controlled domain (because `attacker-domain.com/.your-domain.com` resolves to the attacker’s domain instead of the expected one).
+When adding a subdomain input field, commonly used in OAuth implementations, additional validation is strongly recommended to prevent a potential security vulnerability. If not taken into account, an attacker could utilize a maliciously constructed subdomain field (like `attacker-domain.com/`) in order to redirect OAuth connection requests to that attacker-controlled domain (because `attacker-domain.com/.your-domain.com` resolves to the attacker’s domain instead of the expected one). 
 
 This vulnerability presents itself when:
 
@@ -1015,9 +1011,9 @@ Taking the following steps prevents the potential for an attacker to access your
 
 2. If your integration allows for the user to provide a subdomain, add conditional validation for the subdomain string whenever you include the value in your OAuth HTTP requests. This change will prevent potential exploitation of the subdomain vulnerability.
 
-- If you’re using OAuth-based authentications, update the `getAccessToken` and optional `refreshAccessToken` configuration methods. If the integration uses [shorthand HTTP requests](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#shorthand-http-requests), switching to [manual HTTP requests](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#manual-http-requests) will allow you to perform this manual subdomain validation.
-
-Example code for handling subdomain validation:
+  - If you’re using OAuth-based authentications, update the `getAccessToken` and optional `refreshAccessToken` configuration methods. If the integration uses [shorthand HTTP requests](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#shorthand-http-requests), switching to [manual HTTP requests](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#manual-http-requests) will allow you to perform this manual subdomain validation.
+  
+  Example code for handling subdomain validation:
 
 ```js
   const refreshAccessToken = async (z, bundle) => {
@@ -1092,8 +1088,8 @@ After those, there is a set of optional properties that tell Zapier what methods
 The complete list of available methods can be found in the [Resource Schema Docs](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#resourceschema).
 For now, let's focus on two:
 
-* `list` - Tells Zapier how to fetch a set of this resource. This becomes a Trigger in the Zapier Editor.
-* `create` - Tells Zapier how to create a new instance of the resource. This becomes an Action in the Zapier Editor.
+ * `list` - Tells Zapier how to fetch a set of this resource. This becomes a Trigger in the Zapier Editor.
+ * `create` - Tells Zapier how to create a new instance of the resource. This becomes an Action in the Zapier Editor.
 
 Here is a complete example of what the list method might look like
 
@@ -1849,6 +1845,125 @@ const App = {
 
 ```
 
+## Buffered Create Actions
+
+_Added in v15.15.0. This feature is currently **internal-only**._
+
+A Buffered Create allows you to create objects in bulk with a single or fewer API request(s). This is useful when you want to reduce the number of requests made to your server. When enabled, Zapier holds the data until the buffer reaches a size limit or a certain time has passed, then sends the buffered data using the `performBuffer` function you define.
+
+To implement a Buffered Create, you define a [`buffer`](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#bufferconfigschema) configuration object and a `performBuffer` function in the `operation` object. In the `buffer` config object, you specify how you want to group the buffered data using the `groupedBy` setting and the maximum number of items to buffer using the `limit` setting.
+
+The `performBuffer` function should replace the `perform` function. Note that `perform` cannot be defined along with `performBuffer`. Check out the [`create` action operation schema](https://github.com/zapier/zapier-platform/blob/main/packages/schema/docs/build/schema.md#basiccreateactionoperationschema) for details.
+
+Similar to the general `perform` function accepting two arguments, [`z`](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#z-object) and [`bundle`](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#bundle-object) objects, the `performBuffer` function accepts [`z`](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#z-object) and [`bufferedBundle`](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#bufferedbundle-object) objects. They share the same `z` object, but the `bufferedBundle` object is different from the `bundle` object. The `bufferedBundle` object has an idempotency ID set at `bufferedBundle.buffer[].meta.id` for each object in the buffer. `performBuffer` would have to return the idempotency IDs to tell Zapier which objects were successfully written. Find the details about the `bufferedBundle` object [here](https://github.com/zapier/zapier-platform/blob/main/packages/cli/README.md#bufferedbundle-object).
+
+Here is an example of a Buffered Create action:
+
+```js
+const performBuffer = async (z, bufferedBundle) => {
+  // Grab the line items, preserving the order
+  const rows = bufferedBundle.buffer.map(({ inputData }) => {
+    return { title: inputData.title, year: inputData.year };
+  });
+
+  // Make the bulk-create API request
+  const response = await z.request({
+    method: 'POST',
+    url: 'https://api.example.com/add_rows',
+    body: {
+      spreadsheet: bufferedBundle.groupedBy.spreadsheet,
+      worksheet: bufferedBundle.groupedBy.worksheet,
+      rows,
+    },
+  });
+
+  // Create a matching result using the idempotency ID for each buffered invocation run.
+  // The returned IDs will tell Zapier backend which items were successfully written.
+  const result = {};
+  bufferedBundle.buffer.forEach(({ inputData, meta }, index) => {
+    let error = '';
+    let outputData = {};
+
+    // assuming request order matches response and
+    // response.data = {
+    //   "rows": [
+    //     {"id": "12910"},
+    //     {"id": "92830"},
+    //     {"error": "Not Created"},
+    //     ...
+    //   ]
+    // }
+    if (response.data.rows.length > index) {
+      // assuming an error is returned with an "error" key in the response data
+      if (response.data.rows[index].error) {
+        error = response.data.rows[index].error;
+      } else {
+        outputData = response.data.rows[index];
+      }
+    }
+
+    // the performBuffer method must return a data just like this
+    // {
+    //   "idempotency ID 1": {
+    //     "outputData": {"id": "12910"},
+    //     "error": ""
+    //   },
+    //   "idempotency ID 2": {
+    //     "outputData": {"id": "92830"},
+    //     "error": ""
+    //   },
+    // "idempotency ID 3": {
+    //     "outputData": {},
+    //     "error": "Not Created"
+    //   },
+    //   ...
+    // }
+    result[meta.id] = { outputData, error };
+  });
+
+  return result;
+};
+
+module.exports = {
+  key: 'add_rows',
+  noun: 'Rows',
+  display: {
+    label: 'Add Rows',
+    description: 'Add rows to a worksheet.',
+  },
+  operation: {
+    buffer: {
+      groupedBy: ['spreadsheet', 'worksheet'],
+      limit: 3,
+    },
+    performBuffer,
+    inputFields: [
+      {
+        key: 'spreadsheet',
+        type: 'string',
+        required: true,
+      },
+      {
+        key: 'worksheet',
+        type: 'string',
+        required: true,
+      },
+      {
+        key: 'title',
+        type: 'string',
+      },
+      {
+        key: 'year',
+        type: 'string',
+      },
+    ],
+    outputFields: [{ key: 'id', type: 'string' }],
+    sample: { id: '12345' },
+  },
+};
+
+```
+
 ## Z Object
 
 We provide several methods off of the `z` object, which is provided as the first argument to all function calls in your app.
@@ -2129,6 +2244,34 @@ This is an object that contains the data you returned from the `performSubscribe
 
 Read more in the [REST hook example](https://github.com/zapier/zapier-platform/blob/main/example-apps/rest-hooks/triggers/recipe.js).
 
+## BufferedBundle Object
+
+*Added in v15.15.0.*
+
+This object holds a user's auth details (`bufferedBundle.authData`) and the buffered data (`bufferedBundle.buffer`) for the API requests. It is used only with a `create` action's `performBuffer` function.
+
+> The `bufferedBundle` object is passed into the `performBuffer` function as the second argument - IE: `performBuffer: async (z, bufferedBundle) => {}`.
+
+### `bufferedBundle.authData`
+
+It is a user-provided authentication data, like `api_key` or `access_token`. [Read more on authentication.](#authentication)
+
+### `bufferedBundle.groupedBy`
+
+It is a user-provided data for a set of selected [`inputFields`](#input-fields) to group the multiple runs of a `create` action by.
+
+### `bufferedBundle.buffer`
+
+It is an array of objects of user-provided data and some meta data to allow multiple runs of a `create` action be processed in a single API request.
+
+#### `bufferedBundle.buffer[].inputData`
+
+It is a user-provided data for a particular run of a `create` action in the buffer, as defined by the [`inputFields`](#input-fields).
+
+#### `bufferedBundle.buffer[].meta`
+
+It contains an idempotency `id` provided to the `create` action to identify each run's data in the buffered data.
+
 ## Environment
 
 Apps can define environment variables that are available when the app's code executes. They work just like environment
@@ -2235,21 +2378,21 @@ const App = {
 When a throttle configuration is set for an action, Zapier uses it to apply throttling when the limit for the timeframe window is exceeded. It can be set at the root level and/or on an action. When set at the root level, it is the default throttle configuration used on each action of the integration. And when set in an action's operation object, the root-level default is overwritten for that action only. Note that the throttle limit is not shared across actions unless for those with the same key, window, limit, and scope when "action" is not in the scope.
 
 To throttle an action, you need to set a `throttle` object with the following variables:
-1. `window [integer]`: The timeframe, in seconds, within which the system tracks the number of invocations for an action. The number of invocations begins at zero at the start of each window.
-2. `limit [integer]`: The maximum number of invocations for an action, allowed within the timeframe window.
-3. `key [string]` (_added in v15.6.0_): The key to throttle with in combination with the scope. User data provided for the input fields can be used in the key with the use of the curly braces referencing. For example, to access the user data provided for the input field "test_field", use `{{bundle.inputData.test_field}}`. Note that a required input field should be referenced to get user data always.
-4. `retry [boolean]` (_added in v15.8.0_): The effect of throttling on the tasks of the action. `true` means throttled tasks are automatically retried after some delay, while `false` means tasks are held without retry. It defaults to `true`. NOTE that it has no effect on polling triggers and should not be set.
-5. `filter [string]` (_added in v15.8.0_): EXPERIMENTAL: Account-based attribute to override the throttle by. You can set to one of the following: "free", "trial", "paid". Therefore, the throttle scope would be automatically set to "account" and ONLY the accounts based on the specified filter will have their requests throttled based on the throttle overrides while the rest are throttled based on the original configuration.
-6. `scope [array]`: The granularity to throttle by. You can set the scope to one or more of the following options;
-  - 'user' - Throttles based on user ids.
-  - 'auth' - Throttles based on auth ids.
-  - 'account' - Throttles based on account ids for all users under a single account.
-  - 'action' - Throttles the action it is set on separately from other actions.
-7. `overrides [array[object]]` (_added in v15.6.0_): EXPERIMENTAL: Overrides the original throttle configuration based on a Zapier account attribute;
-  - `window [integer]`: Same description as above.
-  - `limit [integer]`: Same description as above.
-  - `filter [string]`: Account-based attribute to override the throttle by. You can set to one of the following: "free", "trial", "paid". Therefore, the throttle scope would be automatically set to "account" and ONLY the accounts based on the specified filter will have their requests throttled based on the throttle overrides while the rest are throttled based on the original configuration.
-  - `retry [boolean]` (_added in v15.6.1_): The effect of throttling on the tasks of the action. `true` means throttled tasks are automatically retried after some delay, while `false` means tasks are held without retry. It defaults to `true`. NOTE that it has no effect on polling triggers and should not be set.
+  1. `window [integer]`: The timeframe, in seconds, within which the system tracks the number of invocations for an action. The number of invocations begins at zero at the start of each window.
+  2. `limit [integer]`: The maximum number of invocations for an action, allowed within the timeframe window.
+  3. `key [string]` (_added in v15.6.0_): The key to throttle with in combination with the scope. User data provided for the input fields can be used in the key with the use of the curly braces referencing. For example, to access the user data provided for the input field "test_field", use `{{bundle.inputData.test_field}}`. Note that a required input field should be referenced to get user data always.
+  4. `retry [boolean]` (_added in v15.8.0_): The effect of throttling on the tasks of the action. `true` means throttled tasks are automatically retried after some delay, while `false` means tasks are held without retry. It defaults to `true`. NOTE that it has no effect on polling triggers and should not be set.
+  5. `filter [string]` (_added in v15.8.0_): EXPERIMENTAL: Account-based attribute to override the throttle by. You can set to one of the following: "free", "trial", "paid". Therefore, the throttle scope would be automatically set to "account" and ONLY the accounts based on the specified filter will have their requests throttled based on the throttle overrides while the rest are throttled based on the original configuration.
+  6. `scope [array]`: The granularity to throttle by. You can set the scope to one or more of the following options;
+        - 'user' - Throttles based on user ids.
+        - 'auth' - Throttles based on auth ids.
+        - 'account' - Throttles based on account ids for all users under a single account.
+        - 'action' - Throttles the action it is set on separately from other actions.
+  7. `overrides [array[object]]` (_added in v15.6.0_): EXPERIMENTAL: Overrides the original throttle configuration based on a Zapier account attribute;
+        - `window [integer]`: Same description as above.
+        - `limit [integer]`: Same description as above.
+        - `filter [string]`: Account-based attribute to override the throttle by. You can set to one of the following: "free", "trial", "paid". Therefore, the throttle scope would be automatically set to "account" and ONLY the accounts based on the specified filter will have their requests throttled based on the throttle overrides while the rest are throttled based on the original configuration.
+        - `retry [boolean]` (_added in v15.6.1_): The effect of throttling on the tasks of the action. `true` means throttled tasks are automatically retried after some delay, while `false` means tasks are held without retry. It defaults to `true`. NOTE that it has no effect on polling triggers and should not be set.
 
 Both `window` and `limit` are required and others are optional. By default, throttling is scoped to the action and account.
 
@@ -2276,7 +2419,7 @@ const App = {
       },
       operation: {
         perform: () => {},
-        inputFields: [{key: 'name', required: true, type: 'string'}],
+        inputFields: [{ key: 'name', required: true, type: 'string' }],
         // overwrites the default, for this action
         throttle: {
           window: 600,
@@ -2569,7 +2712,7 @@ This behavior has changed periodically across major versions, which changes how/
 
 ![](https://cdn.zappy.app/e835d9beca1b6489a065d51a381613f3.png)
 
-Ensure you're handling errors correctly for your platform version. The latest released version is **15.14.0**.
+Ensure you're handling errors correctly for your platform version. The latest released version is **15.17.0**.
 
 ### HTTP Request Options
 
@@ -2589,6 +2732,7 @@ Ensure you're handling errors correctly for your platform version. The latest re
 * `compress`: support gzip/deflate content encoding. Set to `false` to disable. Default is `true`.
 * `agent`: Node.js `http.Agent` instance, allows custom proxy, certificate etc. Default is `null`.
 * `timeout`: request / response timeout in ms. Set to `0` to disable (OS limit still applies), timeout reset on `redirect`. Default is `0` (disabled).
+* `signal` (_added in v15.14.1_): enables cancelling requests via a timeout set by an `AbortController`. More details in `node-fetch` docs [here](https://www.npmjs.com/package/node-fetch#request-cancellation-with-abortsignal). Default is `null`.
 * `size`: maximum response body size in bytes. Set to `0` to disable. Default is `0` (disabled).
 * `skipThrowForStatus` (_added in v10.0.0_): don't call `response.throwForStatus()` before resolving the request with `response`. See [HTTP Response Object](#http-response-object).
 
@@ -2678,7 +2822,7 @@ The method `z.dehydrate(func, inputData)` has two required arguments:
 
 * `func` - the function to call to fetch the extra data. Can be any raw `function`, defined in the file doing the dehydration or imported from another part of your app. You must also register the function in the app's `hydrators` property. Note that since v10.1.0, the maximum payload size to pass to `z.dehydrate` / `z.dehydrateFile` is 6KB.
 * `inputData` - this is an object that contains things like a `path` or `id` - whatever you need to load data on the other side
-* A known limitation of hydration is a 5 minute cache if the hydration call is made with identical `inputData` within that timeframe. To workaround this cache for records triggering hydration in close succession, include a unique value in the `inputData`, for example a `timestamp` in addition to the record `id`.
+* A known limitation of hydration is a 5 minute cache if the hydration call is made with identical `inputData` within that timeframe. To workaround this cache for records triggering hydration in close succession, include a unique value in the `inputData`, for example a `timestamp` in addition to the record `id`. 
 
 > **Why do I need to register my functions?** Because of how JavaScript works with its module system, we need an explicit handle on the function that can be accessed from the App definition without trying to "automagically" (and sometimes incorrectly) infer code locations.
 
@@ -2960,11 +3104,11 @@ Example: `throw new z.errors.Error('Contact name is too long.', 'InvalidData', 4
 
 A couple best practices to keep in mind:
 
-* Elaborate on terse messages. "not_authenticated" -> "Your API Key is invalid. Please reconnect your account."
-* If the error calls out a specific field, surface that information to the user. "Provided data is invalid" -> "Contact name is invalid"
-* If the error provides details about why a field is invalid, add that in too! "Contact name is invalid" -> "Contact name is too long"
-* The second, optional argument should be a code that a computer could use to identify the type of error.
-* The last, optional argument should be the HTTP status code, if any.
+  * Elaborate on terse messages. "not_authenticated" -> "Your API Key is invalid. Please reconnect your account."
+  * If the error calls out a specific field, surface that information to the user. "Provided data is invalid" -> "Contact name is invalid"
+  * If the error provides details about why a field is invalid, add that in too! "Contact name is invalid" -> "Contact name is too long"
+  * The second, optional argument should be a code that a computer could use to identify the type of error.
+  * The last, optional argument should be the HTTP status code, if any.
 
 The code and status can be used by us to provide relevant troubleshooting to the
 user when we communicate the error.
@@ -3031,8 +3175,40 @@ For throttled requests that occur during processing of a webhook trigger's perfo
 
 ## Testing
 
-You can write unit tests for your Zapier integration that run locally, outside of the Zapier editor.
-You can run these tests in a CI tool like [Travis](https://travis-ci.com/).
+There are several ways to test your Zapier integration:
+
+* You can use the `zapier invoke` command to invoke a trigger, search, create, or an auth operation locally.
+* You can write unit tests for your Zapier integration that run locally, outside of the Zapier editor.
+* You can run these tests in a CI tool like [Travis](https://travis-ci.com/).
+
+### Using `zapier invoke` Command
+
+*Added in v15.17.0.*
+
+The `zapier invoke <ACTION_TYPE> <ACTION_KEY>` CLI command emulates how the Zapier production environment would invoke your app. Since it runs code locally, it's a fast way to debug and test interactively without needing to deploy the code to Zapier.
+
+Its general execution flow involves calling `operation.inputFields` of an action, resolving the input data to the expected types, and then calling the `operation.perform` method.
+
+`zapier invoke --help` should be self-explanatory, but here's a quick rundown:
+
+```bash
+# Initialize auth data in .env file
+zapier invoke auth start
+
+# Refresh auth data (for OAuth2 or Session auth)
+zapier invoke auth refresh
+
+# Test your auth data in .env
+zapier invoke auth test
+zapier invoke auth label
+
+# Invoke a polling trigger
+zapier invoke trigger new_recipe
+
+# Invoke a create action
+zapier invoke create add_recipe --inputData '{"name": "Pancakes"}'
+zapier invoke create add_recipe --inputData @file.json
+```
 
 ### Writing Unit Tests
 
@@ -3768,7 +3944,7 @@ Broadly speaking, all releases will continue to work indefinitely. While you nev
 For more info about which Node versions are supported, see [the faq](#how-do-i-manually-set-the-nodejs-version-to-run-my-app-with).
 
 <!-- TODO: if we decouple releases, change this -->
-The most recently released version of `cli` and `core` is **15.14.0**. You can see the versions you're working with by running `zapier -v`.
+The most recently released version of `cli` and `core` is **15.17.0**. You can see the versions you're working with by running `zapier -v`.
 
 To update `cli`, run `npm install -g zapier-platform-cli`.
 
