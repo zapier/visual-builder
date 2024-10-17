@@ -52,4 +52,4 @@ Here are two great starter videos you can create:
 - **Welcome to Zapier** — Create an introductory video that walks users through a high-level overview of Zapier to help get them started.
 - **Setup deep dive** — Break down the technical setup process in a thorough, engaging tutorial.
 
--Examples_: Adalo ([Intro video](https://www.youtube.com/watch?v=2IrXNEJkvcQ&t=2s), [deep dive video](https://www.youtube.com/watch?v=nS4C7-7D14M&t=1s))
+_Examples_: Adalo ([Intro video](https://www.youtube.com/watch?v=2IrXNEJkvcQ&t=2s), [deep dive video](https://www.youtube.com/watch?v=nS4C7-7D14M&t=1s))
