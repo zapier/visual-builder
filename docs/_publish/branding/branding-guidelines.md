@@ -44,7 +44,15 @@ Abbreviations like "FKA" (formerly known as), "AKA" (also known as), and "NKA" (
 
 ## App logo
 
-The logo must be a square, transparent PNG at least 256x256px in size with identical height/width measurements. Please use a bigger version if you have one available. If your icon is not square, make a square transparent image and center your icon inside the transparent square. Do not include the app name or other copy in the logo as it will not be legible at small sizes.
+The logo you provide will be used across Zapier’s platform, including on your app’s dedicated directory page. Please ensure the logo you provide meets the following requirements:
+
+* PNG, transparent
+* Minimum 512x512px (identical height/width measurements)
+* Minimum 72 DPI
+
+This will ensure your logo displays properly throughout the site.
+
+Please use a bigger version if you have one available. If your icon is not square, make a square transparent image and center your icon inside the transparent square. Do not include the app name or other copy in the logo as it will not be legible at small sizes.
 
 **Example**:
 
